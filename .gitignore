@@ -1,0 +1,6 @@
+
+*.config
+*.ide-shm
+*.ide-wal
+*.cache
+*.cache

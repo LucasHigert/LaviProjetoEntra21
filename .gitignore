@@ -5,3 +5,5 @@
 *.cache
 *.cache
 LaviProjeto/.vs/LaviProjeto/v15/.suo
+*.ide-shm
+*.ide-wal

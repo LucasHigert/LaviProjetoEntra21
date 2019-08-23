@@ -48,7 +48,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< Updated upstream
+    <Compile Include="Interfaces\ICargoRepository.cs" />
+    <Compile Include="Interfaces\IEstadoRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
 =======
     <Compile Include="Interfaces\ICargoRepository.cs" />
@@ -58,6 +59,9 @@
     <Compile Include="SistemaContext.cs" />
     <Compile Include="Repository\EstadoRepository.cs" />
 >>>>>>> Stashed changes
+    <Compile Include="Repository\CargoRepository.cs" />
+    <Compile Include="SistemaContext.cs" />
+    <Compile Include="Repository\EstadoRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="BancoDados\Estrutura.sql" />

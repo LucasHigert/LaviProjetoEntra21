@@ -6,18 +6,12 @@ using System.Web.Mvc;
 
 namespace View.Controllers
 {
-    public class LoginController : Controller
+    public class PacienteController : Controller
     {
-        // GET: Login
+        // GET: Paciente
         public ActionResult Index()
         {
             return View();
-        }
-
-        public ActionResult VerificaLogin(string login, string senha)
-        {
-
-            return Redirect("/telainicial/index");
         }
     }
 }

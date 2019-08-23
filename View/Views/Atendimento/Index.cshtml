@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Adicionar Atendimento</h2>
+<form action="" method="post">
+    <!--Esta div contera o atendente e o medico, quando o atendente abrir nao tera a opção medico-->
+    <!--Quando o medico abrir nao tera o atendente-->
+    <div class="row">
+        <div class="col-6">
+            <label for="campo-atendente">Atendente</label>
+            <select name="atentendente" id="campo-atendente"></select>
+        </div>
+        <div class="col-6">
+            <label>Medico</label>
+            <select name="medico" id="campo-medico"></select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <label for="campo-paciente">Paciente</label>
+            <select name="paciente" id="campo-paciente"></select>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <label for="campo-data">Data</label>
+            <input type="date" name="data" id="campo-data" />
+        </div>
+        <div class="col-6">
+            <div>
+                <label for="campo-prioridade">Prioridade</label>
+                <select name="prioridade" id="campo-prioridade">
+                    <option value="alto">Alto</option>
+                    <option value="medio">Medio</option>
+                    <option value="baixo">Baixo</option>
+                </select>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <label for="campo-observacao">Observação</label>
+            <textarea class="form-control" id="campo-observacao" name="observacao" maxlength="150"></textarea>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <label for="campo-tratamento">Tratamento</label>
+            <textarea class="form-control" id="campo-tratamento" name="tratamento" maxlength="100"></textarea>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <label for="campo-encaminhamento">Encaminhamento</label>
+            <select name="encaminhamento" id="campo-encaminhamento">
+
+            </select>
+        </div>
+    </div>
+    
+    <button class="btn btn-success" type="submit">Salvar</button>
+
+</form>
+
+

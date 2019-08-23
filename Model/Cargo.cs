@@ -8,8 +8,9 @@ using System.Threading.Tasks;
 
 namespace Model
 {
+
     [Table("cargos")]
-    public class Cargos
+    public class Cargo
     {
         [Key, Column("id_cargo")]
         public int IdCargo { get; set; }

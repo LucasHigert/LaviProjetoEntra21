@@ -49,8 +49,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\ICargoRepository.cs" />
+    <Compile Include="Interfaces\ICidadeRepository.cs" />
     <Compile Include="Interfaces\IEstadoRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\CidadeRepository.cs" />
     <Compile Include="SistemaContext.cs" />
     <Compile Include="Repository\EstadoRepository.cs" />
   </ItemGroup>

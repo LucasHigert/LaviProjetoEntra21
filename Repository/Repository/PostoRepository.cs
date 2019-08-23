@@ -11,7 +11,7 @@ namespace Repository.Repository
     public class PostoRepository : IPostoRepository
     {
         private SistemaContext context;
-        public CargoRepository()
+        public PostoRepository()
         {
             context = new SistemaContext();
         }

@@ -52,6 +52,7 @@
     <Compile Include="Cidade.cs" />
     <Compile Include="Estado.cs" />
     <Compile Include="Paciente.cs" />
+    <Compile Include="Posto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

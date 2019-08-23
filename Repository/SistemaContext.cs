@@ -14,5 +14,6 @@ namespace Repository
 
         public DbSet<Paciente> Paciente { get; set; }
         public DbSet<Cargo> Cargos { get; set; }
+        public DbSet<Posto> Postos { get; set; }
     }
 }

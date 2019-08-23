@@ -1,0 +1,88 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<title>Cadastro de paciente</title>
+<h2>Cadastro de paciente</h2>
+
+<form action="" method="post">
+    <!--Campos relacionados com o endereço-->
+    <div class="row">
+        <div class="col-4">
+            <label for="campo-cep">CEP</label>
+            <input type="text" id="campo-cep" name="cep" maxlength="9" />
+
+        </div>
+        <div class="col-4">
+            <label for="campo-estado">Estado</label>
+            <select name="estado" id="campo-estado" required="" class="form-control"></select>
+        </div>
+        <div class="col-4">
+            <label for="campo-cidade">Cidade</label>
+            <select name="cidade" id="campo-estdo" required="" class="form-control"></select>
+        </div>
+    </div>
+    <div>
+        <label for="campo-endereco">Endereço</label>
+        <input type="text" id="campo-endereco" name="endereco" required="" class="form-control" maxlength="100" />
+    </div>
+
+
+    <!--Campos para informações pessoas-->
+    <div>
+        <label for="campo-nome">Nome</label>
+        <input type="text" id="campo-nome" name="nomePaciente" class="form-control" maxlength="100" required="">
+    </div>
+
+    <div class="row">
+        <div class="col-3">
+            <label for="campo-idade">Idade</label>
+            <input type="number" id="campo-idade" name="idade" maxlength="2" />
+        </div>
+        <div class="col-3">
+            <label>Sexo</label>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <input type="radio" aria-label="Masculino">
+                    <input type="radio" aria-label="Feminino" />
+                </div>
+            </div>
+        </div>
+
+        <div class="col-3">
+            <label for="campo-altura">Altura</label>
+            <input type="number" id="campo-altura" name="altura" class="form-control" />
+        </div>
+
+        <div class="col-3">
+            <label for="campo-peso">Peso</label>
+            <input type="number" id="campo-peso" name="peso" class="form-control" />
+        </div>
+
+    </div>
+
+    <!-- Campos com informações de identificação (cpf,telefone,rne,...)-->
+    <div class="row">
+        <div class="col-3">
+            <label for="campo-cpf">CPF</label>
+            <input type="text" required="" maxlength="15" id="campo-cpf" name="cpf" />
+        </div>
+        <div class="col-3">
+            <label for="campo-rne">RNE</label>
+            <input type="text" id="campo-rne" name="rne" maxlength="50" />
+        </div>
+
+        <div class="col-3">
+            <label for="campo-passaporte">Passaporte</label>
+            <input type="text" id="campo-passaporte" name="passaporte" maxlength="50" />
+        </div>
+
+        <div class="col-3">
+            <label for="campo-telefone">Telefone</label>
+            <input type="tel" id="campo-telefone" name="telefone" maxlength="14" />
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-success">Salvar</button>
+</form>
+

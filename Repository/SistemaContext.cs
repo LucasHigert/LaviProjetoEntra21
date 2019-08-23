@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -12,5 +13,6 @@ namespace Repository
         public SistemaContext() : base("SqlServerConnection") { }
 
         public DbSet<Paciente> Paciente { get; set; }
+        public DbSet<Cargo> Cargos { get; set; }
     }
 }

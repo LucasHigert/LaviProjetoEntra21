@@ -8,5 +8,6 @@ namespace Model
 {
     class Estado
     {
+        //Modificado para testes
     }
 }

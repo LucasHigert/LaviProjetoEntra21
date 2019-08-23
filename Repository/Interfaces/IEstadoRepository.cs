@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Repository.Interfaces
 {
-    interface IEstado
+    interface IEstadoRepository
     {
         List<Estado> ObterTodos();
 

@@ -1,0 +1,47 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login Lavi</title>
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Content/font-awesome.css" />
+</head>
+<body>
+
+    <!--Classe container é uma parte do site que fica mais centralizada -->
+    <div class="container mt-5">
+        <form action="#" method="post">
+            <div class="form-group">
+
+                <!--Define a div como uma linha com 12 colunas, depois ciramos outras div que ocuparao 6 cada-->
+                <!--Isso irá fazer com que os componentes fiquem um ao lado do outro-->
+                
+                <div class="row">
+                    <div class="col-6">
+                        <label for="campo-login">Login</label>
+                        <input type="text" class="form-control" maxlength="45" />
+                    </div>
+                    <div class="col-6">
+                        <label for="campo-senha">Senha</label>
+                        <input type="text" class="form-control" maxlength="45" />
+                    </div>
+                </div>
+                <button class="btn btn-primary" type="submit">Entrar</button>
+            </div>
+        </form>
+    </div>
+
+
+
+    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
+    <script src="~/Scripts/popper.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+</body>
+</html>

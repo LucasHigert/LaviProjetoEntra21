@@ -49,7 +49,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cargo.cs" />
-    <Compile Include="Cargos.cs" />
     <Compile Include="Cidade.cs" />
     <Compile Include="Estado.cs" />
     <Compile Include="Paciente.cs" />

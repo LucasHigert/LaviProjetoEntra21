@@ -13,5 +13,11 @@ namespace View.Controllers
         {
             return View();
         }
+
+        public ActionResult VerificaLogin(string login, string senha)
+        {
+
+            return Redirect("/telainicial/index");
+        }
     }
 }

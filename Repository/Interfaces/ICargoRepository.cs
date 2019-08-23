@@ -10,7 +10,7 @@ namespace Repository.Interfaces
     public interface ICargoRepository
     {
         List<Cargo> ObterTodos();
-   
+
         Cargo ObterPeloId(int id);
     }
 }

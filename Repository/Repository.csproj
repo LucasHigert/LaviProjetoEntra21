@@ -49,14 +49,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SistemaContext.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Estrutura.sql" />
-    <Content Include="InsertDados.sql" />
+    <Content Include="BancoDados\Estrutura.sql" />
+    <Content Include="BancoDados\InsertDados.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{95aeb663-d654-48c3-8c0c-3df4caefebdb}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
+    <Folder Include="Repository\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

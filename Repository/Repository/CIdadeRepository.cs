@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Repository.Repository
 {
-    class CidadeRepository : IEstadoRepository
+    class CidadeRepository : ICidadeRepository
     {
         private SistemaContext context;
         public CidadeRepository()
@@ -38,27 +38,24 @@ namespace Repository.Repository
 
         public List<Cidade> ObterCidadesPeloIdEstado(int idEstado)
         {
-            throw new NotImplementedException();
-        }
-
-        public Estado ObterPeloId(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Estado> ObterTodos()
-        {
-            throw new NotImplementedException();
+            return context.Cidades.Where(x => x.IdEstado == idEstado && x.RegistroAtivo).ToList();
         }
 
         public Cidade ObterPeloId(int id)
         {
-            throw new NotImplementedException();
+            return context.Cidades.FirstOrDefault(x => x.Id == id);
         }
 
         public bool Apagar(int id)
         {
-            throw new NotImplementedException();
+            var cidade = context.Cidades.FirstOrDefault(x => x.Id == id);
+
+            if (cidade == null)
+                return false;
+
+            cidade.RegistroAtivo = false;
+            int quantidadeAfetada = context.SaveChanges();
+            return quantidadeAfetada == 1;
         }
     }
 }

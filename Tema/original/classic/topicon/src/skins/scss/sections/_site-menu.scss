@@ -1,0 +1,160 @@
+.site-menu {
+  &-sub {
+    border: 1px solid $color-blue-grey-200;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+  }
+
+  //Status Color
+  &-item {
+    > a {
+      color: inherit;
+
+      &:hover {
+        color: $site-menu-top-hover-color;
+        background-color: $site-menu-top-hover-bg;
+      }
+    }
+
+    &:hover {
+      > a {
+        color: $site-menu-top-hover-color;
+        background-color: $site-menu-top-hover-bg;
+      }
+    }
+
+    &.active {
+      > a {
+        color: $site-menu-top-active-color;
+        background-color: $site-menu-sub-active-bg;
+      }
+    }
+  }
+}
+
+.site-menubar-light {
+  .site-menu {
+    &-item {
+      > a {
+        color: inherit;
+
+        &:hover {
+          color: $site-menu-light-top-hover-color;
+          background-color: $site-menu-light-top-hover-bg;
+        }
+      }
+
+      &:hover {
+        > a {
+          color: $site-menu-light-top-hover-color;
+          background-color: $site-menu-light-top-hover-bg;
+        }
+      }
+
+      &.active {
+        > a {
+          color: $site-menu-light-top-active-color;
+          background-color: $site-menu-light-sub-active-bg;
+        }
+      }
+    }
+
+    &-sub {
+      background-color: $inverse;
+    }
+  }
+}
+
+// @media screen and (max-width: @screen-xs-max) {
+@include media-breakpoint-down(sm) {  
+  .site-menu { 
+    &-sub {
+      background-color: transparent;
+      border: none;
+      box-shadow: none;
+    }
+
+    //Status Color
+    &-item {
+      > a {
+        color: inherit;
+
+        &:hover {
+          color: $site-menu-top-hover-color;
+          background-color: $site-menu-top-hover-bg;
+        }
+      }
+
+      &.open {
+        background-color: $site-menu-sub-open-bg;
+
+        > a {
+          color: $site-menu-sub-open-color;
+          background-color: transparent;
+
+          &:hover {
+            background-color: transparent;
+          }
+        }
+      }
+
+      &.active {
+        > a {
+          color: $site-menu-top-active-color;
+          background-color: $site-menu-sub-active-bg;
+        }
+
+        &.open {
+          > a {
+            background-color: transparent;
+          }
+        }
+      }
+    }
+  }
+
+  .site-menubar-light {
+    .site-menu {
+      &-sub {
+        background-color: transparent;
+      }
+
+      //Status Color
+      &-item {
+        > a {
+          color: inherit;
+
+          &:hover {
+            color: $site-menu-light-top-hover-color;
+            background-color: $site-menu-light-top-hover-bg;
+          }
+        }
+
+        &.open {
+          background-color: $site-menu-light-sub-open-bg;
+
+          > a {
+            color: $site-menu-light-sub-open-color;
+            background-color: transparent;
+
+            &:hover {
+              background-color: transparent;
+            }
+          }
+        }
+
+        &.active {
+          > a {
+            color: $site-menu-light-top-active-color;
+            background-color: $site-menu-light-sub-active-bg;
+          }
+
+          &.open {
+            > a {
+              background-color: transparent;
+            }
+          }
+        }
+      }
+    }
+  }
+}

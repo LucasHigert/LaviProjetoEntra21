@@ -51,10 +51,7 @@ namespace Repository.Repository
             throw new NotImplementedException();
         }
 
-        public Cidade ObterPeloId(int id)
-        {
-            throw new NotImplementedException();
-        }
+     
 
         public bool Apagar(int id)
         {

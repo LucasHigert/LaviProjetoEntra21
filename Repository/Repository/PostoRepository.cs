@@ -8,21 +8,21 @@ using System.Threading.Tasks;
 
 namespace Repository.Repository
 {
-    public class PostoRepository : IPostoRepository
-    {
+    class PostoRepository : IPostoRepository
+    {         
         private SistemaContext context;
         public PostoRepository()
         {
             context = new SistemaContext();
         }
 
-        public Posto ObterPeloId(int id)
+        Posto IPostoRepository.ObterPeloId(int id)
         {
             var posto = context.Postos.FirstOrDefault(x => x.IdPosto == id);
             return posto;
         }
 
-        public List<Posto> ObterTodos()
+        List<Posto> IPostoRepository.ObterTodos()
         {
             return context.Postos.Where(x => x.RegistroAtivo == true).OrderBy(x => x.IdPosto).ToList();
         }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Repository.Repository
 {
-    class CidadeRepository : ICidadeRepository
+    public class CidadeRepository : ICidadeRepository
     {
         private SistemaContext context;
         public CidadeRepository()

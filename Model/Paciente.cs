@@ -14,6 +14,9 @@ namespace Model
         [Key, Column("id")]
         public int Id { get; set; }
 
+        [Column("id_cidade")]
+        public int IdCidade { get; set; }
+
         [ForeignKey("IdCidade")]
         public  Cidade Cidade { get; set; }
 

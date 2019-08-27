@@ -6,7 +6,6 @@ CREATE TABLE estados(
 	registro_ativo BIT
 );
 
-
 CREATE TABLE cidades(
 	id INT PRIMARY KEY IDENTITY(1,1),
 	nome VARCHAR(100),
@@ -24,7 +23,6 @@ CREATE TABLE pacientes(
 	sexo BIT,
 	altura DECIMAL(4,2),
 	peso DECIMAL(5,1),
-	registro_ativo BIT,
 	cpf VARCHAR(14),
 	rne VARCHAR(10),
 	passaporte VARCHAR(16),

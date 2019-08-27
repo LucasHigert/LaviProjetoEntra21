@@ -115,6 +115,7 @@
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\cidade\cidade.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
     <Content Include="Scripts\esm\popper.js" />
@@ -184,6 +185,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Paciente\Index.cshtml" />
     <Content Include="Views\Atendimento\Index.cshtml" />
+    <Content Include="Views\Cidade\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -191,9 +193,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Cidade\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>

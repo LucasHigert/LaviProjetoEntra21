@@ -1,37 +1,37 @@
-﻿
-INSERT INTO estados (nome) VALUES
-('Acre'),
-('Alagoas'),
-('Amazonas'),
-('Amapá'),
-('Bahia'),
-('Ceará'),
-('Distrito Federal'),
-('Espírito Santo'),
-('Goiás'),
-( 'Maranhão'),
-( 'Minas Gerais'),
-( 'Mato Grosso do Sul'),
-( 'Mato Grosso'),
-( 'Pará'),
-( 'Paraía'), 
-( 'Pernambuco'),
-( 'Piauí'),
-( 'Paraná'),
-( 'Rio de Janeiro'),
-( 'Rio Grande do Norte'),
-( 'Rondônia'),
-( 'Roraima'),
-( 'Rio Grande do Sul'),
-( 'Santa Catarina'),
-( 'Sergipe'),
-( 'São Paulo'),
-( 'Tocantins');
-SELECT * FROM estados;
+﻿INSERT INTO estados (nome, registro_ativo) VALUES
+('Acre', 1),
+('Alagoas', 1),
+('Amazonas', 1),
+('Amapá', 1),
+('Bahia', 1),
+('Ceará', 1),
+('Distrito Federal', 1),
+('Espírito Santo', 1),
+('Goiás', 1),
+( 'Maranhão', 1),
+( 'Minas Gerais', 1),
+( 'Mato Grosso do Sul', 1),
+( 'Mato Grosso', 1),
+( 'Pará', 1),
+( 'Paraía', 1), 
+( 'Pernambuco', 1),
+( 'Piauí', 1),
+( 'Paraná', 1),
+( 'Rio de Janeiro', 1),
+( 'Rio Grande do Norte', 1),
+( 'Rondônia', 1),
+( 'Roraima', 1),
+( 'Rio Grande do Sul', 1),
+( 'Santa Catarina', 1),
+( 'Sergipe', 1),
+( 'São Paulo', 1),
+( 'Tocantins', 1);
+Select* FROM estados;
 
-INSERT INTO cidades (nome, id_estado) VALUES
-('Blumenau',24),
-('Gaspar', 24);
+INSERT INTO cidades (nome, id_estado, registro_ativo) VALUES
+('Blumenau', 24, 1),
+('Gaspar', 24, 1);
+Select* FROM cidades;
 
 INSERT INTO postos (id_cidade,nome,cep,registro_ativo) VALUES
 (1,'Posto Salto do Norte','89027-031',1),
@@ -67,6 +67,6 @@ INSERT INTO funcionarios (id_posto,id_cargo,nome,login,senha,registro_ativo) VAL
 (2,3,'Marilene Peixes','Marilene Peixe','olamarilene',1),
 (2,3,'Vanessa Revineia','Revineia','triagemboa',0);
 
-
+SELECT*FROM cidades
 
 

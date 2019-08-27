@@ -1,4 +1,5 @@
 ﻿using Model;
+using Repository;
 using Repository.Repository;
 using System;
 using System.Collections.Generic;
@@ -57,6 +58,14 @@ namespace View.Controllers
             var apagou = repository.Apagar(id);
             var resultado = new { status = apagou };
             return Json(resultado, JsonRequestBehavior.AllowGet);
+        }
+
+
+        public ActionResult Index()
+        {
+            SistemaContext context = new SistemaContext();
+            ViewBag.Cidades = context.Cidades.ToList();
+            return View();
         }
     }
 }

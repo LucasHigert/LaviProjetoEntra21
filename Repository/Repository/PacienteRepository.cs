@@ -8,22 +8,46 @@ using System.Threading.Tasks;
 
 namespace Repository.Repository
 {
-   public class PacienteRepository : IPacienteRepository
+    public class PacienteRepository : IPacienteRepository
     {
         private SistemaContext context;
-        
+
         public PacienteRepository()
         {
             context = new SistemaContext();
         }
         public bool Alterar(Paciente paciente)
         {
-            throw new NotImplementedException();
+            var pacienteOriginal = context.Pacientes.FirstOrDefault(x => x.Id == paciente.Id);
+
+            if (pacienteOriginal == null)
+                return false;
+
+            pacienteOriginal.Nome = paciente.Nome;
+            pacienteOriginal.Cpf = paciente.Cpf;
+            int quantidadeAfetada = context.SaveChanges();
+            return quantidadeAfetada == 1;
         }
 
         public bool Apagar(int id)
         {
-            throw new NotImplementedException();
+            var paciente = context.Pacientes.FirstOrDefault(x => x.Id == id);
+            //Caso específico em que somente a linha abaixo do if/else pertence à condiição
+            /*if (paciente == null)
+                return false;
+            paciente.RegistroAtivo = false;
+            int quantidadeAfetada = context.SaveChanges();
+            return quantidadeAfetada == 1;*/
+
+            if (paciente == null)
+            {
+                return false;
+            }
+
+            paciente.RegistroAtivo = false;
+            int quantidadeAfetada = context.SaveChanges();
+
+            return quantidadeAfetada == 1;
         }
 
         public int Inserir(Paciente paciente)
@@ -33,14 +57,19 @@ namespace Repository.Repository
             return paciente.Id;
         }
 
-        public List<Paciente> ObterPacientesPeloIdCidade(int IdCidade)
+        public List<Paciente> ObterPacientesPeloIdCidade(int idCidade)
         {
-            throw new NotImplementedException();
+
+            return context.Pacientes
+        .Where(x => x.IdCidade == idCidade
+            && x.RegistroAtivo)
+        .ToList();
         }
 
         public Paciente ObterPeloId(int id)
         {
-            throw new NotImplementedException();
+            var paciente = context.Pacientes.FirstOrDefault(x => x.Id == id);
+            return paciente;
         }
     }
 }

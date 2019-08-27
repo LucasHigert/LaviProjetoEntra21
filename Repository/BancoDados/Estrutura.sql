@@ -2,7 +2,8 @@
 
 CREATE TABLE estados(
 	id INT PRIMARY KEY IDENTITY(1,1),
-	nome VARCHAR(100)
+	nome VARCHAR(100),
+	registro_ativo BIT
 );
 
 
@@ -10,6 +11,7 @@ CREATE TABLE cidades(
 	id INT PRIMARY KEY IDENTITY(1,1),
 	nome VARCHAR(100),
 	id_estado INT, FOREIGN KEY (id_estado) REFERENCES estados(id),
+	registro_ativo BIT
 );
 
 CREATE TABLE pacientes(
@@ -75,6 +77,7 @@ CREATE TABLE atendimentos(
 	status_atendimento INT,
 	observacao VARCHAR(100),
 	pressao VARCHAR(7)
+
 );
 
 CREATE TABLE partes_corpo(
@@ -82,6 +85,7 @@ id INT PRIMARY KEY IDENTITY(1,1),
 nome VARCHAR(100),
 traducao_criolo VARCHAR(100),
 traducao_frances VARCHAR(100),
+registro_ativo BIT
 );
 
 CREATE TABLE sintomas(
@@ -90,17 +94,20 @@ CREATE TABLE sintomas(
 	nome VARCHAR(100),
 	traducao_criolo VARCHAR(100),
 	traducao_frances VARCHAR(100),
+	registro_ativo BIT
 );
 
 CREATE TABLE atendimentos_partes_corpo_sintomas(
 	id INT PRIMARY KEY IDENTITY(1,1),
 	id_atendimento INT,FOREIGN KEY (id_atendimento) REFERENCES atendimentos(id),
 	id_parte_corpo INT, FOREIGN KEY (id_parte_corpo) REFERENCES partes_corpo(id),
-	nivel_dor INT
+	nivel_dor INT,
+	registro_ativo BIT
 );
 
 CREATE TABLE partes_corpo_sintomas(
 	id INT PRIMARY KEY IDENTITY(1,1),
 	id_sintoma INT, FOREIGN KEY (id_sintoma) REFERENCES sintomas(id),
-	id_parte_corpo_sintomas INT, FOREIGN KEY (id_parte_corpo_sintomas) REFERENCES atendimentos_partes_corpo_sintomas(id)
+	id_parte_corpo_sintomas INT, FOREIGN KEY (id_parte_corpo_sintomas) REFERENCES atendimentos_partes_corpo_sintomas(id),
+	registro_ativo BIT
 );

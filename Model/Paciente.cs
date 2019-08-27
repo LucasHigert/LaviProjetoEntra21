@@ -27,7 +27,7 @@ namespace Model
         public string Sexo { get; set; }
 
         [Column("altura")]
-        public decimal Alutra { get; set; }
+        public decimal Altura { get; set; }
 
         [Column("peso")]
         public decimal Peso { get; set; }

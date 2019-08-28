@@ -26,7 +26,6 @@ namespace Repository.Repository
                 return false;
             }
 
-
             parteCorpoAnterior.Nome = parteCorpo.Nome;
             int quantidadeAfetada = context.SaveChanges();
             return quantidadeAfetada == 1;
@@ -47,16 +46,25 @@ namespace Repository.Repository
             return quantidadeAfetada == 1;
         }
 
-        public int Inserir(ParteCorpo parteCorpo)
+        public bool Inserir(ParteCorpo parteCorpo)
         {
-            context.PartesCorpo.Add(parteCorpo);
-            context.SaveChanges();
-            return parteCorpo.Id;
+            // irá buscar o banco se já tem um registro com aquele nome, caso não irá cadastrar
+            var parteOriginal = context.PartesCorpo.Where(x => x.Nome == parteCorpo.Nome).FirstOrDefault();
+            if (parteOriginal == null)
+            {
+                context.PartesCorpo.Add(parteCorpo);
+                context.SaveChanges();
+                return parteCorpo.Id == 1;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public ParteCorpo ObterPeloId(int id)
         {
-            var parteCorpo = context.PartesCorpo.FirstOrDefault(x => x.Id == id);
+            var parteCorpo = context.PartesCorpo.FirstOrDefault(x => x.Id == id && x.RegistroAtivo == true);
             return parteCorpo;
         }
 

@@ -9,7 +9,7 @@ namespace Repository.Interfaces
 {
     public interface IParteCorpoRepository
     {
-        int Inserir(ParteCorpo parteCorpo);
+        bool Inserir(ParteCorpo parteCorpo);
 
         bool Alterar(ParteCorpo parteCorpo);
 

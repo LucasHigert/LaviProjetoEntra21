@@ -190,6 +190,7 @@
     <Content Include="Views\Atendimento\Index.cshtml" />
     <Content Include="Views\Cargo\Index.cshtml" />
     <Content Include="Views\Cidade\Index.cshtml" />
+    <Content Include="Views\ParteCorpo\Cadastrar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -199,7 +200,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Funcionario\" />
-    <Folder Include="Views\ParteCorpo\" />
     <Folder Include="Views\Posto\" />
   </ItemGroup>
   <ItemGroup />

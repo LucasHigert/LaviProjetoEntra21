@@ -39,6 +39,9 @@ namespace Repository.Repository
             {
                 return false;
             }
+            encaminhamento.RegistroAtivo = false;
+            int quantidadeAfetada = context.SaveChanges();
+            return quantidadeAfetada == 1;
 
 
         }

@@ -20,9 +20,6 @@ namespace Model
         [ForeignKey("IdCidade")]
         public Cidade Cidade { get; set; }
 
-        [Column("id_cidade")]
-        public int IdCidade { get; set; }
-
         [Column("nome")]
         public string Nome { get; set; }
 
@@ -40,7 +37,6 @@ namespace Model
 
         [Column("cpf")]
         public string Cpf { get; set; }
-
 
         [Column("rne")]
         public string Rne { get; set; }

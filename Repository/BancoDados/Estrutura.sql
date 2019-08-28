@@ -24,7 +24,6 @@ CREATE TABLE pacientes(
 	sexo BIT,
 	altura DECIMAL(4,2),
 	peso DECIMAL(5,1),
-	registro_ativo BIT,
 	cpf VARCHAR(14),
 	rne VARCHAR(10),
 	passaporte VARCHAR(16),

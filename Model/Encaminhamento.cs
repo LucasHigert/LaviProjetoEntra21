@@ -35,5 +35,8 @@ namespace Model
         [Column("status")]
         public int Status { get; set; }
 
+        [Column("registro_ativo")]
+        public bool RegistroAtivo { get; set; }
+
     }
 }

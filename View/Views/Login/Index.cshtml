@@ -19,20 +19,24 @@
         <form action="#" method="post">
             <div class="form-group">
 
-                <!--Define a div como uma linha com 12 colunas, depois ciramos outras div que ocuparao 6 cada-->
-                <!--Isso irá fazer com que os componentes fiquem um ao lado do outro-->
-                
-                <div class="row">
-                    <div class="col-6">
-                        <label for="campo-login">Login</label>
-                        <input type="text" class="form-control" maxlength="45" />
+                <div class="card-body">
+                    <h1 class="card-title text-center mb-5">Login Lavi </h1>
+                    <!--Define a div como uma linha com 12 colunas, depois ciramos outras div que ocuparao 6 cada-->
+                    <!--Isso irá fazer com que os componentes fiquem um ao lado do outro-->
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="campo-login">Login</label>
+                            <input type="text" class="form-control" maxlength="45" />
+                        </div>
+                        <div class="col-6">
+                            <label for="campo-senha">Senha</label>
+                            <input type="text" class="form-control" maxlength="45" />
+                        </div>
+
                     </div>
-                    <div class="col-6">
-                        <label for="campo-senha">Senha</label>
-                        <input type="text" class="form-control" maxlength="45" />
-                    </div>
+                    <button class="btn btn-primary mt-3" type="submit">Entrar</button>
+
                 </div>
-                <button class="btn btn-primary" type="submit">Entrar</button>
             </div>
         </form>
     </div>

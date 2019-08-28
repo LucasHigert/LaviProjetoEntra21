@@ -12,6 +12,10 @@ namespace Repository
     {
         public SistemaContext() : base("SqlServerConnection") { }
 
+        public DbSet<Paciente> Pacientes { get; set; }
+        public DbSet<Estado> Estados { get; set; }
+        public DbSet<Cidade> Cidades { get; set; }
+        public DbSet<Cargo> Cargos { get; set; }
         public DbSet<Paciente> Paciente { get; set; }
         public DbSet<Sintoma> Sintomas { get; set; }
         public DbSet<ParteCorpo> PartesCorpo { get; set; }

@@ -1,0 +1,9 @@
+.site-menubar {
+  background: $site-menubar-bg;
+  color: $site-menubar-color;
+  box-shadow: $site-menubar-shadow;
+  &.site-menubar-light {
+    background: $site-menubar-light-bg;
+    box-shadow: $site-menubar-light-shadow;
+  }
+}

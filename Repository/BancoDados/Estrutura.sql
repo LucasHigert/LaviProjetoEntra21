@@ -29,7 +29,8 @@ CREATE TABLE pacientes(
 	rne VARCHAR(10),
 	passaporte VARCHAR(16),
 	telefone VARCHAR(14),
-	logradouro VARCHAR(100)
+	logradouro VARCHAR(100),
+	registro_ativo BIT
 );
 
 CREATE TABLE postos(
@@ -52,7 +53,8 @@ CREATE TABLE encaminhamentos(
 	traducao_criolo VARCHAR(100),
 	traducao_frances VARCHAR(100),
 	local_encaminhamento VARCHAR(100),
-	status_encaminhamento INT
+	status_encaminhamento INT,
+	registro_ativo BIT
 );
 
 CREATE TABLE funcionarios(
@@ -76,8 +78,8 @@ CREATE TABLE atendimentos(
 	prioridade INT,
 	status_atendimento INT,
 	observacao VARCHAR(100),
-	pressao VARCHAR(7)
-
+	pressao VARCHAR(7),
+	registro_ativo BIT
 );
 
 CREATE TABLE partes_corpo(

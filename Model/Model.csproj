@@ -48,11 +48,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AtendimentoParteCorpoSintoma.cs" />
     <Compile Include="Cargo.cs" />
     <Compile Include="Cidade.cs" />
+    <Compile Include="Encaminhamento.cs" />
     <Compile Include="Estado.cs" />
     <Compile Include="Paciente.cs" />
+    <Compile Include="ParteCorpo.cs" />
+    <Compile Include="ParteCorpoSintoma.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sintoma.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

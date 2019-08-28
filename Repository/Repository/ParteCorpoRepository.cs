@@ -21,8 +21,11 @@ namespace Repository.Repository
         {
             var parteCorpoAnterior = context.PartesCorpo.FirstOrDefault(x => x.Id == parteCorpo.Id);
 
-            if (parteCorpoAnterior == null)
+            if (parteCorpo == null)
+            {
                 return false;
+            }
+                
 
             parteCorpoAnterior.Nome = parteCorpo.Nome;
             int quantidadeAfetada = context.SaveChanges();

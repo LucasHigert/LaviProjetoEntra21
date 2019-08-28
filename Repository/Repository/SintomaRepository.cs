@@ -22,7 +22,9 @@ namespace Repository.Repository
             var sintomaAnterior
                 = context.Sintomas.FirstOrDefault(x => x.Id == sintoma.Id);
             if (sintoma == null)
+            {
                 return false;
+            }
 
             sintomaAnterior.IdParteCorpo = sintoma.IdParteCorpo;
             sintomaAnterior.Nome = sintoma.Nome;
@@ -34,7 +36,9 @@ namespace Repository.Repository
         {
             var sintoma = context.Sintomas.FirstOrDefault(x => x.Id == id);
             if (sintoma == null)
+            {
                 return false;
+            }
 
             sintoma.RegistroAtivo = false;
             int quantidadeAfetada = context.SaveChanges();

@@ -51,6 +51,7 @@
     <Compile Include="AtendimentoParteCorpoSintoma.cs" />
     <Compile Include="Cargo.cs" />
     <Compile Include="Cidade.cs" />
+    <Compile Include="Encaminhamento.cs" />
     <Compile Include="Estado.cs" />
     <Compile Include="Paciente.cs" />
     <Compile Include="ParteCorpo.cs" />

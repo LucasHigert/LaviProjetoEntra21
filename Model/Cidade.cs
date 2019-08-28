@@ -8,19 +8,22 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    [Table("cidade")]
+    [Table("cidades")]
     public class Cidade
     {
-        [Key,Column("id")]
+        [Key, Column("id")]
         public int Id { get; set; }
 
         [Column("nome")]
         public string Nome { get; set; }
 
-        [Column("id_estado")]
+        [Column ("id_estado")]
         public int IdEstado { get; set; }
 
         [ForeignKey("IdEstado")]
         public Estado Estado { get; set; }
+
+        [Column("registro_ativo")]
+        public bool RegistroAtivo { get; set; }
     }
 }

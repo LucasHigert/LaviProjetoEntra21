@@ -9,11 +9,12 @@ namespace Repository.Interfaces
 {
     public interface IPacienteRepository
     {
+
         int Inserir(Paciente paciente);
 
         bool Alterar(Paciente paciente);
 
-        List<Paciente> ObterTodos();
+        List<Paciente> ObterPacientesPeloIdCidade(int IdCidade);
 
         bool Apagar(int id);
 

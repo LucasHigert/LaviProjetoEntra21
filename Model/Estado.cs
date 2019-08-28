@@ -11,7 +11,6 @@ namespace Model
     [Table("estados")]
     public class Estado
     {
-
         [Key, Column("id")]
         public int Id { get; set; }
 
@@ -20,6 +19,5 @@ namespace Model
 
         [Column("registro_ativo")]
         public bool RegistroAtivo { get; set; }
-
     }
 }

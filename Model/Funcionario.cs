@@ -8,17 +8,17 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    [Table("funcioarios")]
+    [Table("funcionarios")]
     public class Funcionario
     {
         [Key, Column("id_funcionario")]
         public int IdFuncionario { get; set; }
 
-        [Column("id_posto")]
-        public int IdPosto { get; set; }
+        [ForeignKey("id_posto")]
+        public Posto IdPosto { get; set; }
 
-        [Column("id_cargo")]
-        public int IdCargo { get; set; }
+        [ForeignKey("id_cargo")]
+        public Cargo IdCargo { get; set; }
 
         [Column("nome")]
         public string Nome { get; set; }

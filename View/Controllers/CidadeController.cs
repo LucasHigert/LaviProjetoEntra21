@@ -25,17 +25,22 @@ namespace View.Controllers
         }
 
         [HttpGet, Route("obtercidadespeloidestado")]
-        public JsonResult ObterCidadesPeloIdEstado(int idCidade)
+        public JsonResult ObterCidadesPeloIdEstado(int idEstado)
         {
-            var cidades = repository.ObterCidadesPeloIdEstado(idCidade);
+            var cidades = repository.ObterCidadesPeloIdEstado(idEstado);
             var resultado = new { data = cidades };
             return Json(resultado, JsonRequestBehavior.AllowGet);
         }
 
-        [HttpGet, Route("cidade/")]
+        [HttpGet, Route("obterpeloid")]
         public JsonResult ObterPeloId(int id)
         {
-            return Json(repository.ObterPeloId(id), JsonRequestBehavior.AllowGet);
+            var cidade = repository.ObterPeloId(id);
+            //if (cidade == null)
+            //    return HttpNotFound();
+
+            return Json(cidade,
+                JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]

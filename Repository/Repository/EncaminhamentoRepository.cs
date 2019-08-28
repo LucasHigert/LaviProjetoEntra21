@@ -40,22 +40,28 @@ namespace Repository.Repository
                 return false;
             }
 
-
+            encaminhamento.Status = 2;
+            context.Encaminhamentos.Add(encaminhamento);
+            int rows = context.SaveChanges();
+            return rows == 1;
         }
 
         public int Inserir(Encaminhamento encaminhamento)
         {
-            throw new NotImplementedException();
+            encaminhamento.Status = 0;
+            context.Encaminhamentos.Add(encaminhamento);
+            context.SaveChanges();
+            return encaminhamento.Id;
         }
 
         public Encaminhamento ObterPeloId(int id)
         {
-            throw new NotImplementedException();
+            return context.Encaminhamentos.Include("Posto").FirstOrDefault(x => x.Id == id);
         }
 
-        public List<Encaminhamento> ObterTodos()
+        public List<Encaminhamento> ObterTodosPeloStatus(int status)
         {
-            throw new NotImplementedException();
+            return context.Encaminhamentos.Where(x => x.Status == status).ToList();
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    class Atendimento
+    public class Atendimento
     {
     }
 }

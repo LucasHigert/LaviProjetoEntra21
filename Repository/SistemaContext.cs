@@ -22,5 +22,7 @@ namespace Repository
         public DbSet<ParteCorpoSintoma> PartesCorpoSintomas { get; set; }
         public DbSet<AtendimentoParteCorpoSintoma> AtendimentosPartesCorpoSintomas { get; set; }
         public DbSet<Encaminhamento> Encaminhamentos { get; set; }
+        public DbSet<Posto> Postos { get; set; }
+        public DbSet<Funcionario> Funcionarios { get; set; }
     }
 }

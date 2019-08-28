@@ -156,10 +156,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CargoController.cs" />
     <Compile Include="Controllers\AtendimentoController.cs" />
+    <Compile Include="Controllers\CidadeController.cs" />
+    <Compile Include="Controllers\FuncionarioController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PacienteController.cs" />
     <Compile Include="Controllers\ParteCorpoController.cs" />
+    <Compile Include="Controllers\PostoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -184,6 +188,8 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Paciente\Index.cshtml" />
     <Content Include="Views\Atendimento\Index.cshtml" />
+    <Content Include="Views\Cargo\Index.cshtml" />
+    <Content Include="Views\Cidade\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -192,8 +198,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Views\Funcionario\" />
     <Folder Include="Views\ParteCorpo\" />
+    <Folder Include="Views\Posto\" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>

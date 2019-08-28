@@ -46,11 +46,11 @@ namespace Repository.Repository
             return context.Estados.FirstOrDefault(x => x.Id == id);
         }
 
-        public List<Estado> ObterTodos()
+        public List<Cidade> ObterTodos()
         {
             return context
-                .Estados
-                .Where(x => x.RegistroAtivo)
+                .Cidades
+                .Where(x => x.RegistroAtivo == true)
                 .ToList();
         }
 

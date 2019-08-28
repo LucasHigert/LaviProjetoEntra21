@@ -62,5 +62,13 @@ namespace View.Controllers
             var resultado = new { status = alterou };
             return Json(resultado);
         }
+
+        [HttpGet]
+        public JsonResult ObterTodos()
+        {
+            var cidades = repository.ObterTodos();
+            var resultado = new { data = cidades };
+            return Json(resultado, JsonRequestBehavior.AllowGet);
+        }
     }
 }

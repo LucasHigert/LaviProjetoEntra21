@@ -18,13 +18,13 @@ namespace Repository.Repository
 
         public Cargo ObterPeloId(int id)
         {
-            var cargo = ContextBoundObject.Cargos.Where(x => x.RegistroAtivo == true).OrderBy(x => x.IdCargo).ToList();
+            var cargo = context.Cargos.FirstOrDefault(x => x.IdCargo == id);
             return cargo;
         }
 
         public List<Cargo> ObterTodos()
         {
-            return ContextBoundObject.Cargos.Where(x => x.RegistroAtivo == true).OrderBy(x => x.IdCargo).ToList();
+            return context.Cargos.Where(x => x.RegistroAtivo == true).OrderBy(x => x.IdCargo).ToList();
         }
     }
 }

@@ -13,7 +13,7 @@ namespace Repository.Interfaces
 
         bool Alterar(Encaminhamento encaminhamento);
 
-        List<Encaminhamento> ObterTodos();
+        List<Encaminhamento> ObterTodosPeloStatus(int status);
 
         bool Apagar(int id);
 

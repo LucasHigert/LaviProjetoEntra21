@@ -1,28 +1,44 @@
-﻿using Repository.Repository;
+﻿using System.Data.Entity.Migrations.Model;
+using Repository.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Model;
 
 namespace View.Controllers
 {
-    public class ParteCorpoController : Controller
+    [Route("partecorpo/")]
+    public class ParteCorpoRepository : Controller
     {
-        // GET: ParteCorpo
-        private ParteCorpoRepository repository;
+        ParteCorpoRepository repository;
 
-        public ParteCorpoController()
+        public ParteCorpoRepository()
         {
             repository = new ParteCorpoRepository();
         }
 
-        [HttpGet]
-        public ActionResult Index()
+        [HttpGet, Route("obtertodos")]
+        public JsonResult ObterTodos()
         {
-            return View();
+            var parteCorpo = repository.ObterTodos();
+            var resultado = new { data = parteCorpo };
+            return Json(resultado, JsonRequestBehavior.AllowGet);
         }
 
+        [HttpPost, Route("cadastrar")]
+        public ActionResult Cadastrar(ParteCorpo parteCorpo)
+        {
+            int id = repository.Inserir(parteCorpo);
+            return RedirectToAction("Editar", new { id = id });
+        }
+
+        [HttpPost, Route("editar")]
+        public JsonResult Editar(ParteCorpo parteCorpo)
+        {
+
+        }
      
     }
 }

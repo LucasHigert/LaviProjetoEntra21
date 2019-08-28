@@ -25,7 +25,7 @@ namespace Repository.Repository
             {
                 return false;
             }
-                
+
 
             parteCorpoAnterior.Nome = parteCorpo.Nome;
             int quantidadeAfetada = context.SaveChanges();

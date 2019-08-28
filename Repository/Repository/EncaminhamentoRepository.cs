@@ -42,11 +42,6 @@ namespace Repository.Repository
             encaminhamento.RegistroAtivo = false;
             int quantidadeAfetada = context.SaveChanges();
             return quantidadeAfetada == 1;
-
-            encaminhamento.Status = 2;
-            context.Encaminhamentos.Add(encaminhamento);
-            int rows = context.SaveChanges();
-            return rows == 1;
         }
 
         public int Inserir(Encaminhamento encaminhamento)

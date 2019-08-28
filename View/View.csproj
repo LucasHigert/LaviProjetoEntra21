@@ -161,6 +161,7 @@
     <Compile Include="Controllers\FuncionarioController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PacienteController.cs" />
+    <Compile Include="Controllers\ParteCorpoController.cs" />
     <Compile Include="Controllers\PostoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -193,6 +194,9 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\ParteCorpo\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Funcionario\" />

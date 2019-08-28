@@ -14,8 +14,14 @@ namespace Model
         [Key, Column("id")]
         public int Id { get; set; }
 
+        [Column("id_cidade")]
+        public int IdCidade { get; set; }
+
         [ForeignKey("IdCidade")]
-        public  Cidade Cidade { get; set; }
+        public Cidade Cidade { get; set; }
+
+        [Column("id_cidade")]
+        public int IdCidade { get; set; }
 
         [Column("nome")]
         public string Nome { get; set; }
@@ -24,10 +30,10 @@ namespace Model
         public string Cep { get; set; }
 
         [Column("sexo")]
-        public string Sexo { get; set; }
+        public bool Sexo { get; set; }
 
         [Column("altura")]
-        public decimal Alutra { get; set; }
+        public decimal Altura { get; set; }
 
         [Column("peso")]
         public decimal Peso { get; set; }
@@ -43,7 +49,7 @@ namespace Model
         public string Passaporte { get; set; }
 
         [Column("endereco")]
-        public int Endereco { get; set; }
+        public string Endereco { get; set; }
 
         [Column("telefone")]
         public string Telefone { get; set; }

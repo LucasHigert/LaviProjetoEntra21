@@ -17,6 +17,8 @@ namespace Repository.Interfaces
 
         bool Alterar(Cidade cidade);
 
+        List<Cidade> ObterTodos();
+
         bool Apagar(int id);
     }
 }

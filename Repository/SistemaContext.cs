@@ -16,7 +16,6 @@ namespace Repository
         public DbSet<Estado> Estados { get; set; }
         public DbSet<Cidade> Cidades { get; set; }
         public DbSet<Cargo> Cargos { get; set; }
-        public DbSet<Paciente> Paciente { get; set; }
         public DbSet<Sintoma> Sintomas { get; set; }
         public DbSet<ParteCorpo> PartesCorpo { get; set; }
         public DbSet<ParteCorpoSintoma> PartesCorpoSintomas { get; set; }

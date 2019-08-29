@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
     <link rel="stylesheet" href="~/Content/font-awesome.css" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    @RenderSection("css", false)
+    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
 </head>
 <body>
     <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
@@ -96,7 +98,7 @@
             </nav>
 
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-                            @RenderBody()
+                @RenderBody()
             </main>
         </div>
     </div>
@@ -105,6 +107,8 @@
     <script src="~/Scripts/jquery-3.0.0.min.js"></script>
     <script src="~/Scripts/popper.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    @RenderSection("js", false)
 </body>
 
 </html>

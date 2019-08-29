@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    [Table("partes_corpo_intomas")]
+    [Table("partes_corpo_sintomas")]
     public class ParteCorpoSintoma
     {
         [Key, Column("id")]
@@ -23,7 +23,7 @@ namespace Model
         [Column("id_parte_corpo_sintoma")]
         public int IdParteCorpoSintoma { get; set; }
 
-        [ForeignKey("IdAtendimentoParteCorpoSintoma")]
+        [ForeignKey("IdParteCorpoSintoma")]
         public AtendimentoParteCorpoSintoma AtendimentoParteCorpoSintoma { get; set; }
 
         [Column("registro_ativo")]

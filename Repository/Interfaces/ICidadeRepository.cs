@@ -9,7 +9,7 @@ namespace Repository.Interfaces
 {
     interface ICidadeRepository
     {
-        List<Cidade> ObterCidadesPeloIdEstado(int idEstado);
+       // List<Cidade> ObterCidadesPeloIdEstado(int idEstado);
 
         Cidade ObterPeloId(int id);
 
@@ -17,7 +17,7 @@ namespace Repository.Interfaces
 
         bool Alterar(Cidade cidade);
 
-        List<Cidade> ObterTodos();
+        List<Cidade> ObterTodos(string busca);
 
         bool Apagar(int id);
     }

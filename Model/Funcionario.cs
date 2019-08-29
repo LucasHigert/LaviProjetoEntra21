@@ -14,19 +14,14 @@ namespace Model
         [Key, Column("id")]
         public int Id { get; set; }
 
-        [ForeignKey("id_posto")]
-        public Posto IdPosto { get; set; }
+        [Column("id_posto")]
+        public int IdPosto { get; set; }
 
-<<<<<<< HEAD
         [ForeignKey("IdPosto")]
         public Posto Posto { get; set; }
 
         [Column("id_cargo")]
         public int IdCargo { get; set; }
-=======
-        [ForeignKey("id_cargo")]
-        public Cargo IdCargo { get; set; }
->>>>>>> 1d45a71ca69d1ea578c5ea124b1106d27d3c07c1
 
         [ForeignKey("IdCargo")]
         public Cargo Cargo { get; set; }

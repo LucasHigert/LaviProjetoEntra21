@@ -21,6 +21,7 @@ namespace View.Controllers
         [HttpGet]
         public ActionResult Index()
         {
+            var cidades = repository.ObterTodos("");
             return View();
         }
 

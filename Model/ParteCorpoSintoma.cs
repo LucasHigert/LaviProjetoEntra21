@@ -20,10 +20,10 @@ namespace Model
         [ForeignKey("IdSintoma")]
         public Sintoma Sintoma { get; set; }
 
-        [Column("id_parte_corpo_sintoma")]
-        public int IdParteCorpoSintoma { get; set; }
+        [Column("id_atentimento_parte_corpo_sintoma")]
+        public int IdAtendimentoParteCorpoSintoma { get; set; }
 
-        [ForeignKey("IdParteCorpoSintoma")]
+        [ForeignKey("IdAtendimentoParteCorpoSintoma")]
         public AtendimentoParteCorpoSintoma AtendimentoParteCorpoSintoma { get; set; }
 
         [Column("registro_ativo")]

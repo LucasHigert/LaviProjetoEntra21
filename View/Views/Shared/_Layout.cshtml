@@ -6,13 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
 
-<<<<<<< HEAD
-    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/Content/font-awesome.css" />
-    <script src="~/Scripts/modernizr-2.6.2.js"></script>
-    @RenderSection("css", false)
-    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
-=======
     <title>Lavi</title>
 
     <link rel="shortcut icon" href="~/Content/Imagens/Logo Lavi .png">
@@ -30,9 +23,6 @@
     <link rel="stylesheet" href="~/Scripts/Tema/global/vendor/slidepanel/slidePanel.css">
     <link rel="stylesheet" href="~/Scripts/Tema/global/vendor/jquery-mmenu/jquery-mmenu.css">
     <link rel="stylesheet" href="~/Scripts/Tema/global/vendor/flag-icon-css/flag-icon.css">
-    <link rel="stylesheet" href="~/Scripts/Tema/global/vendor/chartist/chartist.css">
-    <link rel="stylesheet" href="~/Scripts/Tema/global/vendor/jvectormap/jquery-jvectormap.css">
-    <link rel="stylesheet" href="~/Scripts/Tema/global/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.css">
     <link rel="stylesheet" href="~/Scripts/Tema/assets/examples/css/dashboard/v1.css">
 
 
@@ -42,11 +32,10 @@
     <link rel="stylesheet" href="~/Scripts/Tema/global/fonts/brand-icons/brand-icons.min.css">
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
 
-
+    @RenderSection("css", false)
     <!-- Scripts -->
     <script src="~/Scripts/Tema/global/vendor/breakpoints/breakpoints.js"></script>
     <script>Breakpoints();</script>
->>>>>>> 1d45a71ca69d1ea578c5ea124b1106d27d3c07c1
 </head>
 <body class="animsition site-navbar-small dashboard">
 
@@ -93,7 +82,6 @@
 
                 </ul>
                 <!-- End Navbar Toolbar -->
-
                 <!-- Navbar Toolbar Right -->
                 <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
                     <!-- Seletor de idioma que podemos usar em outras partes do codigo-->
@@ -197,41 +185,6 @@
                         <a class="animsition-link" href="pages/faq.html">
                             <span class="site-menu-title">Abrir atendimento</span>
                         </a>
-<<<<<<< HEAD
-                    </h6>
-                    <ul class="nav flex-column mb-2">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                                Neste mês
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                                Último trimestre
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                                Engajamento social
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                                Vendas do final de ano
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-
-            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-                @RenderBody()
-            </main>
-=======
                     </li>
                 </ul>
             </li>
@@ -265,20 +218,9 @@
     <div class="page">
         <div class="page-content container-fluid">
             @RenderBody()
->>>>>>> 1d45a71ca69d1ea578c5ea124b1106d27d3c07c1
         </div>
     </div>
     <!-- End Page -->
-
-
-<<<<<<< HEAD
-    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
-    <script src="~/Scripts/popper.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    @RenderSection("js", false)
-</body>
-=======
     <!-- Core  -->
     <script src="~/Scripts/Tema/global/vendor/babel-external-helpers/babel-external-helpers.js"></script>
     <script src="~/Scripts/Tema/global/vendor/jquery/jquery.js"></script>
@@ -296,19 +238,13 @@
     <script src="~/Scripts/Tema/global/vendor/screenfull/screenfull.js"></script>
     <script src="~/Scripts/Tema/global/vendor/slidepanel/jquery-slidePanel.js"></script>
     <script src="~/Scripts/Tema/global/vendor/skycons/skycons.js"></script>
-    <script src="~/Scripts/Tema/global/vendor/chartist/chartist.min.js"></script>
-    <script src="~/Scripts/Tema/global/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.js"></script>
-    <script src="~/Scripts/Tema/global/vendor/aspieprogress/jquery-asPieProgress.min.js"></script>
-    <script src="~/Scripts/Tema/global/vendor/jvectormap/jquery-jvectormap.min.js"></script>
-    <script src="~/Scripts/Tema/global/vendor/jvectormap/maps/jquery-jvectormap-au-mill-en.js"></script>
-    <script src="~/Scripts/Tema/global/vendor/matchheight/jquery.matchHeight-min.js"></script>
+
 
     <!-- Scripts -->
     <script src="~/Scripts/Tema/global/js/Component.js"></script>
     <script src="~/Scripts/Tema/global/js/Plugin.js"></script>
     <script src="~/Scripts/Tema/global/js/Base.js"></script>
     <script src="~/Scripts/Tema/global/js/Config.js"></script>
->>>>>>> 1d45a71ca69d1ea578c5ea124b1106d27d3c07c1
 
     <script src="~/Scripts/Tema/assets/js/Section/Menubar.js"></script>
     <script src="~/Scripts/Tema/assets/js/Section/Sidebar.js"></script>
@@ -329,6 +265,8 @@
     <script src="~/Scripts/Tema/global/js/Plugin/jvectormap.js"></script>
 
     <script src="~/Scripts/Tema/assets/examples/js/dashboard/v1.js"></script>
+
+    @RenderSection("js", false)
 
 </body>
 </html>

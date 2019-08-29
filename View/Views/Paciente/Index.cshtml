@@ -5,7 +5,7 @@
 <title>Cadastro de paciente</title>
 <h2 class="display-4 mt-5 mb-5">Cadastro de paciente</h2>
 
-<form action="" method="post">
+<form action="/paciente/inserir" method="post">
     <!--Campos relacionados com o  endereço-->
     <div class="row">
         <div class="col-4">
@@ -15,11 +15,15 @@
         </div>
         <div class="col-4">
             <label for="campo-estado">Estado</label>
-            <select name="estado" id="campo-estado" required="" class="form-control"></select>
+            <select id="campo-estado" required="" class="form-control">
+                <option value="1">TesteEstado</option>
+            </select>
         </div>
         <div class="col-4">
             <label for="campo-cidade">Cidade</label>
-            <select name="cidade" id="campo-estdo" required="" class="form-control"></select>
+            <select name="IdCidade" id="campo-cidade" required="" class="form-control">
+                <option value="1">TesteCidade</option>
+            </select>
         </div>
     </div>
     <div>
@@ -42,8 +46,8 @@
         <div class="col-3">
             <label for="campo-sexo">Sexo</label>
             <select id="campo-sexo" name="sexo" class="form-control">
-                <option value="1">Feminino</option>
-                <option value="0">Masculino</option>
+                <option value="true">Feminino</option>
+                <option value="false">Masculino</option>
             </select>
         </div>
 

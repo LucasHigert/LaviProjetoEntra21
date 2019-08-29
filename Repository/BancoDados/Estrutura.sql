@@ -6,17 +6,18 @@ CREATE TABLE estados(
 	registro_ativo BIT
 );
 
-
 CREATE TABLE cidades(
 	id INT PRIMARY KEY IDENTITY(1,1),
 	nome VARCHAR(100),
-	id_estado INT, FOREIGN KEY (id_estado) REFERENCES estados(id),
+	id_estado INT, 
+	FOREIGN KEY (id_estado) REFERENCES estados(id) ON DELETE CASCADE ON UPDATE CASCADE,
 	registro_ativo BIT
 );
 
 CREATE TABLE pacientes(
 	id INT PRIMARY KEY IDENTITY(1,1),
-	id_cidade INT, FOREIGN KEY (id_cidade) REFERENCES cidades(id),
+	id_cidade INT, 
+	FOREIGN KEY (id_cidade) REFERENCES cidades(id) ON DELETE CASCADE ON UPDATE CASCADE,
 	nome VARCHAR(100),
 	endereco VARCHAR(100),
 	cep VARCHAR(9),
@@ -24,7 +25,6 @@ CREATE TABLE pacientes(
 	sexo BIT,
 	altura DECIMAL(4,2),
 	peso DECIMAL(5,1),
-	registro_ativo BIT,
 	cpf VARCHAR(14),
 	rne VARCHAR(10),
 	passaporte VARCHAR(16),
@@ -35,7 +35,8 @@ CREATE TABLE pacientes(
 
 CREATE TABLE postos(
 	id INT PRIMARY KEY IDENTITY(1,1),
-	id_cidade INT, FOREIGN KEY (id_cidade) REFERENCES cidades(id),
+	id_cidade INT, 
+	FOREIGN KEY (id_cidade) REFERENCES cidades(id)  ON DELETE CASCADE ON UPDATE CASCADE,
 	nome VARCHAR(100),
 	cep VARCHAR(9),
 	registro_ativo BIT
@@ -59,8 +60,12 @@ CREATE TABLE encaminhamentos(
 
 CREATE TABLE funcionarios(
 	id INT PRIMARY KEY IDENTITY(1,1),
-	id_posto INT, FOREIGN KEY (id_posto) REFERENCES postos(id),
-	id_cargo INT, FOREIGN KEY (id_Cargo) REFERENCES cargos(id),
+	id_posto INT, 
+	FOREIGN KEY (id_posto) REFERENCES postos(id)  ON DELETE CASCADE ON UPDATE CASCADE,
+
+	id_cargo INT, 
+	FOREIGN KEY (id_cargo) REFERENCES cargos(id)  ON DELETE CASCADE ON UPDATE CASCADE,
+
 	nome VARCHAR(100),
 	login VARCHAR(100),
 	senha VARCHAR(100),
@@ -69,10 +74,19 @@ CREATE TABLE funcionarios(
 
 CREATE TABLE atendimentos(
 	id INT PRIMARY KEY IDENTITY(1,1),
-	id_encaminhamento INT, FOREIGN KEY (id_encaminhamento) REFERENCES encaminhamentos(id),
-	id_funcionario_atendente INT, FOREIGN KEY (id_funcionario_atendente)  REFERENCES funcionarios(id),
-	id_paciente INT, FOREIGN KEY (id_paciente) REFERENCES pacientes(id),
-	id_funcionario_medico INT, FOREIGN KEY (id_funcionario_medico) REFERENCES funcionarios(id),
+	id_encaminhamento INT, 
+
+	FOREIGN KEY (id_encaminhamento) REFERENCES encaminhamentos(id)  ON DELETE CASCADE ON UPDATE CASCADE,
+
+	id_funcionario_atendente INT, 
+	FOREIGN KEY (id_funcionario_atendente)  REFERENCES funcionarios(id)  ON DELETE CASCADE ON UPDATE CASCADE,
+
+	id_paciente INT, 
+	FOREIGN KEY (id_paciente) REFERENCES pacientes(id)  ON DELETE CASCADE ON UPDATE CASCADE,
+
+	id_funcionario_medico INT, 
+	--FOREIGN KEY (id_funcionario_medico) REFERENCES funcionarios(id)  ON DELETE CASCADE ON UPDATE CASCADE,
+
 	data_atendimento DATE,
 	tratamento VARCHAR(100),
 	prioridade INT,
@@ -83,16 +97,17 @@ CREATE TABLE atendimentos(
 );
 
 CREATE TABLE partes_corpo(
-id INT PRIMARY KEY IDENTITY(1,1),
-nome VARCHAR(100),
-traducao_criolo VARCHAR(100),
-traducao_frances VARCHAR(100),
-registro_ativo BIT
+	id INT PRIMARY KEY IDENTITY(1,1),
+	nome VARCHAR(100),
+	traducao_criolo VARCHAR(100),
+	traducao_frances VARCHAR(100),
+	registro_ativo BIT
 );
 
 CREATE TABLE sintomas(
 	id INT PRIMARY KEY IDENTITY(1,1),
-	id_parte_corpo INT, FOREIGN KEY (id_parte_corpo) REFERENCES partes_corpo(id),
+	id_parte_corpo INT, 
+	FOREIGN KEY (id_parte_corpo) REFERENCES partes_corpo(id) ON DELETE CASCADE ON UPDATE CASCADE,
 	nome VARCHAR(100),
 	traducao_criolo VARCHAR(100),
 	traducao_frances VARCHAR(100),
@@ -101,15 +116,20 @@ CREATE TABLE sintomas(
 
 CREATE TABLE atendimentos_partes_corpo_sintomas(
 	id INT PRIMARY KEY IDENTITY(1,1),
-	id_atendimento INT,FOREIGN KEY (id_atendimento) REFERENCES atendimentos(id),
-	id_parte_corpo INT, FOREIGN KEY (id_parte_corpo) REFERENCES partes_corpo(id),
+	id_atendimento INT,
+	FOREIGN KEY (id_atendimento) REFERENCES atendimentos(id) ON DELETE CASCADE ON UPDATE CASCADE,
+	id_parte_corpo INT, 
+	FOREIGN KEY (id_parte_corpo) REFERENCES partes_corpo(id) ON DELETE CASCADE ON UPDATE CASCADE,
 	nivel_dor INT,
 	registro_ativo BIT
 );
 
 CREATE TABLE partes_corpo_sintomas(
 	id INT PRIMARY KEY IDENTITY(1,1),
-	id_sintoma INT, FOREIGN KEY (id_sintoma) REFERENCES sintomas(id),
-	id_parte_corpo_sintomas INT, FOREIGN KEY (id_parte_corpo_sintomas) REFERENCES atendimentos_partes_corpo_sintomas(id),
+	id_sintoma INT, 
+	FOREIGN KEY (id_sintoma) REFERENCES sintomas(id) ON DELETE CASCADE ON UPDATE CASCADE,
+	id_atendimento_parte_corpo_sintoma INT, 
+	--FOREIGN KEY (id_atendimento_parte_corpo_sintoma) 
+	--REFERENCES atendimentos_partes_corpo_sintomas(id) ON DELETE CASCADE ON UPDATE CASCADE,
 	registro_ativo BIT
 );

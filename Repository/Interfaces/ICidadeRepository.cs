@@ -9,13 +9,15 @@ namespace Repository.Interfaces
 {
     interface ICidadeRepository
     {
-        List<Cidade> ObterCidadesPeloIdEstado(int idEstado);
+       // List<Cidade> ObterCidadesPeloIdEstado(int idEstado);
 
         Cidade ObterPeloId(int id);
 
         int Inserir(Cidade cidade);
 
         bool Alterar(Cidade cidade);
+
+        List<Cidade> ObterTodos(string busca);
 
         bool Apagar(int id);
     }

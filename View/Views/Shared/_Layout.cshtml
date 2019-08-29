@@ -1,72 +1,203 @@
-﻿<!DOCTYPE html>
-<html>
+﻿
+<!DOCTYPE html>
+<html class="no-js css-menubar" lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
 
+<<<<<<< HEAD
     <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
     <link rel="stylesheet" href="~/Content/font-awesome.css" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
     @RenderSection("css", false)
     <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
-</head>
-<body>
-    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-        <a class="navbar-brand col-sm-3 col-md-2 mr-0 text-white">
-            <i class="fa fa-medkit"> Lavi</i>
-        </a>
+=======
+    <title>Lavi</title>
 
+    <link rel="shortcut icon" href="~/Content/Imagens/Logo Lavi .png">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="~/Scripts/Tema/global/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Scripts/Tema/global/css/bootstrap-extend.min.css">
+    <link rel="stylesheet" href="~/Scripts/Tema/assets/css/site.min.css">
+
+    <!-- Plugins -->
+    <link rel="stylesheet" href="~/Scripts/Tema/global/vendor/animsition/animsition.css">
+    <link rel="stylesheet" href="~/Scripts/Tema/global/vendor/asscrollable/asScrollable.css">
+    <link rel="stylesheet" href="~/Scripts/Tema/global/vendor/switchery/switchery.css">
+    <link rel="stylesheet" href="~/Scripts/Tema/global/vendor/intro-js/introjs.css">
+    <link rel="stylesheet" href="~/Scripts/Tema/global/vendor/slidepanel/slidePanel.css">
+    <link rel="stylesheet" href="~/Scripts/Tema/global/vendor/jquery-mmenu/jquery-mmenu.css">
+    <link rel="stylesheet" href="~/Scripts/Tema/global/vendor/flag-icon-css/flag-icon.css">
+    <link rel="stylesheet" href="~/Scripts/Tema/global/vendor/chartist/chartist.css">
+    <link rel="stylesheet" href="~/Scripts/Tema/global/vendor/jvectormap/jquery-jvectormap.css">
+    <link rel="stylesheet" href="~/Scripts/Tema/global/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.css">
+    <link rel="stylesheet" href="~/Scripts/Tema/assets/examples/css/dashboard/v1.css">
+
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="~/Scripts/Tema/global/fonts/weather-icons/weather-icons.css">
+    <link rel="stylesheet" href="~/Scripts/Tema/global/fonts/web-icons/web-icons.min.css">
+    <link rel="stylesheet" href="~/Scripts/Tema/global/fonts/brand-icons/brand-icons.min.css">
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
+
+
+    <!-- Scripts -->
+    <script src="~/Scripts/Tema/global/vendor/breakpoints/breakpoints.js"></script>
+    <script>Breakpoints();</script>
+>>>>>>> 1d45a71ca69d1ea578c5ea124b1106d27d3c07c1
+</head>
+<body class="animsition site-navbar-small dashboard">
+
+
+    <nav class="site-navbar navbar navbar-default navbar-fixed-top navbar-mega" role="navigation">
+
+        <!--Sidenav logo-->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggler hamburger hamburger-close navbar-toggler-left hided"
+                    data-toggle="menubar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="hamburger-bar"></span>
+            </button>
+            <button type="button" class="navbar-toggler collapsed" data-target="#site-navbar-collapse"
+                    data-toggle="collapse">
+                <i class="icon wb-more-horizontal" aria-hidden="true"></i>
+            </button>
+            <div class="navbar-brand navbar-brand-center site-gridmenu-toggle" data-toggle="gridmenu">
+                <img class="navbar-brand-logo" src="~/Content/Imagens/Logo Lavi Preto.png" title="Lavi">
+                <span class="navbar-brand-text hidden-xs-down"> Lavi</span>
+            </div>
+
+        </div>
+
+        <div class="navbar-container container-fluid">
+            <!-- Navbar Collapse -->
+            <div class="collapse navbar-collapse navbar-collapse-toolbar" id="site-navbar-collapse">
+                <!-- Navbar Toolbar -->
+                <!--Navbar top, superior, fullscreen, perfil-->
+                <ul class="nav navbar-toolbar">
+                    <li class="nav-item hidden-float" id="toggleMenubar">
+                        <a class="nav-link" data-toggle="menubar" href="#" role="button">
+                            <i class="icon hamburger hamburger-arrow-left">
+                                <span class="sr-only">Toggle menubar</span>
+                                <span class="hamburger-bar"></span>
+                            </i>
+                        </a>
+                    </li>
+                    <li class="nav-item hidden-sm-down" id="toggleFullscreen">
+                        <a class="nav-link icon icon-fullscreen" data-toggle="fullscreen" href="#" role="button">
+                            <span class="sr-only">Tela Cheia</span>
+                        </a>
+                    </li>
+
+                </ul>
+                <!-- End Navbar Toolbar -->
+
+                <!-- Navbar Toolbar Right -->
+                <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
+                    <!-- Seletor de idioma que podemos usar em outras partes do codigo-->
+                    <!--
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link" data-toggle="dropdown" href="javascript:void(0)" data-animation="scale-up"
+                                               aria-expanded="false" role="button">
+                                                <span class="flag-icon flag-icon-us"></span>
+                                            </a>
+                                            <div class="dropdown-menu" role="menu">
+                                                <a class="dropdown-item" href="javascript:void(0)" role="menuitem">
+                                                    <span class="flag-icon flag-icon-gb"></span> English
+                                                </a>
+                                                <a class="dropdown-item" href="javascript:void(0)" role="menuitem">
+                                                    <span class="flag-icon flag-icon-fr"></span> French
+                                                </a>
+                                                <a class="dropdown-item" href="javascript:void(0)" role="menuitem">
+                                                    <span class="flag-icon flag-icon-cn"></span> Chinese
+                                                </a>
+                                                <a class="dropdown-item" href="javascript:void(0)" role="menuitem">
+                                                    <span class="flag-icon flag-icon-de"></span> German
+                                                </a>
+                                                <a class="dropdown-item" href="javascript:void(0)" role="menuitem">
+                                                    <span class="flag-icon flag-icon-nl"></span> Dutch
+                                                </a>
+                                            </div>
+                                        </li>
+                    -->
+                    <!-- Botao de perfil-->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link navbar-avatar" data-toggle="dropdown" href="#" aria-expanded="false"
+                           data-animation="scale-up" role="button">
+                            <span class="avatar avatar-online">
+                                <img src="~/Scripts/Tema/global/portraits/5.jpg" alt="...">
+                                <i></i>
+                            </span>
+                        </a>
+                        <div class="dropdown-menu" role="menu">
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-user" aria-hidden="true"></i> Perfil</a>
+                            <div class="dropdown-divider" role="presentation"></div>
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-power" aria-hidden="true"></i> Sair</a>
+                        </div>
+                    </li>
+
+                </ul>
+                <!-- End Navbar Toolbar Right -->
+            </div>
+        </div>
     </nav>
 
-    <!--Container fluid irá prencheer toda tela-->
-    <div class="container-fluid">
-        <div class="row">
-            <nav class="col-md-2 d-none d-md-block bg-dark sidebar">
-                <div class="sidebar-sticky">
-                    <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-                                Dashboard <span class="sr-only">(atual)</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
-                                Pedidos
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-                                Produtos
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                                Clientes
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bar-chart-2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
-                                Relatórios
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
-                                Integrações
-                            </a>
-                        </li>
-                    </ul>
 
-                    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-                        <span>Relatórios salvos</span>
-                        <a class="d-flex align-items-center text-muted" href="#">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+    <!--Barra lateral, sidenav, sidebar-->
+    <div class="site-menubar">
+        <ul class="site-menu">
+
+            <!--Opção intruções da sitenav-->
+            <li class="site-menu-item has-sub">
+                <a href="http://www.google.com">
+                    <i class="site-menu-icon wb-dashboard" aria-hidden="true"></i>
+                    <span class="site-menu-title">Instruções</span>
+                </a>
+            </li>
+
+
+            <!--Opcão pacientes da sidenav-->
+            <li class="site-menu-item has-sub">
+                <a href="javascript:void(0)">
+                    <i class="site-menu-icon wb-layout" aria-hidden="true"></i>
+                    <span class="site-menu-title">Pacientes</span>
+                    <span class="site-menu-arrow"></span>
+                </a>
+                <ul class="site-menu-sub">
+                    <li class="site-menu-item">
+                        <a class="animsition-link" href="layouts/menu-collapsed.html">
+                            <span class="site-menu-title">Lista de pacientes</span>
                         </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a class="animsition-link" href="layouts/menu-expended.html">
+                            <span class="site-menu-title">Cadastrar paciente</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+
+            <!--Opção atendimento da sidenav-->
+            <li class="site-menu-item has-sub">
+                <a href="javascript:void(0)">
+                    <i class="site-menu-icon wb-file" aria-hidden="true"></i>
+                    <span class="site-menu-title">Atendimento</span>
+                    <span class="site-menu-arrow"></span>
+                </a>
+                <ul class="site-menu-sub">
+                    <li class="site-menu-item has-sub">
+                        <a href="javascript:void(0)">
+                            <span class="site-menu-title">Atendimentos em aberto</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a class="animsition-link" href="pages/faq.html">
+                            <span class="site-menu-title">Abrir atendimento</span>
+                        </a>
+<<<<<<< HEAD
                     </h6>
                     <ul class="nav flex-column mb-2">
                         <li class="nav-item">
@@ -100,15 +231,104 @@
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
                 @RenderBody()
             </main>
-        </div>
+=======
+                    </li>
+                </ul>
+            </li>
+
+            <!--Opção encaminhamento da sidenav-->
+            <li class="site-menu-item has-sub">
+                <a href="javascript:void(0)">
+                    <i class="site-menu-icon wb-bookmark" aria-hidden="true"></i>
+                    <span class="site-menu-title">Encaminhamento</span>
+                    <span class="site-menu-arrow"></span>
+                </a>
+                <ul class="site-menu-sub">
+                    <li class="site-menu-item has-sub">
+                        <a href="javascript:void(0)">
+                            <span class="site-menu-title">Lista de encaminhamentos</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a class="animsition-link" href="uikit/buttons.html">
+                            <span class="site-menu-title">Cadastrar</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+
+        </ul>
     </div>
 
+    <!-- Pagina -->
+    <div class="page">
+        <div class="page-content container-fluid">
+            @RenderBody()
+>>>>>>> 1d45a71ca69d1ea578c5ea124b1106d27d3c07c1
+        </div>
+    </div>
+    <!-- End Page -->
 
+
+<<<<<<< HEAD
     <script src="~/Scripts/jquery-3.0.0.min.js"></script>
     <script src="~/Scripts/popper.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     @RenderSection("js", false)
 </body>
+=======
+    <!-- Core  -->
+    <script src="~/Scripts/Tema/global/vendor/babel-external-helpers/babel-external-helpers.js"></script>
+    <script src="~/Scripts/Tema/global/vendor/jquery/jquery.js"></script>
+    <script src="~/Scripts/Tema/global/vendor/popper-js/umd/popper.min.js"></script>
+    <script src="~/Scripts/Tema/global/vendor/bootstrap/bootstrap.js"></script>
+    <script src="~/Scripts/Tema/global/vendor/animsition/animsition.js"></script>
+    <script src="~/Scripts/Tema/global/vendor/mousewheel/jquery.mousewheel.js"></script>
+    <script src="~/Scripts/Tema/global/vendor/asscrollbar/jquery-asScrollbar.js"></script>
+    <script src="~/Scripts/Tema/global/vendor/asscrollable/jquery-asScrollable.js"></script>
 
+    <!-- Plugins -->
+    <script src="~/Scripts/Tema/global/vendor/jquery-mmenu/jquery.mmenu.min.all.js"></script>
+    <script src="~/Scripts/Tema/global/vendor/switchery/switchery.js"></script>
+    <script src="~/Scripts/Tema/global/vendor/intro-js/intro.js"></script>
+    <script src="~/Scripts/Tema/global/vendor/screenfull/screenfull.js"></script>
+    <script src="~/Scripts/Tema/global/vendor/slidepanel/jquery-slidePanel.js"></script>
+    <script src="~/Scripts/Tema/global/vendor/skycons/skycons.js"></script>
+    <script src="~/Scripts/Tema/global/vendor/chartist/chartist.min.js"></script>
+    <script src="~/Scripts/Tema/global/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.js"></script>
+    <script src="~/Scripts/Tema/global/vendor/aspieprogress/jquery-asPieProgress.min.js"></script>
+    <script src="~/Scripts/Tema/global/vendor/jvectormap/jquery-jvectormap.min.js"></script>
+    <script src="~/Scripts/Tema/global/vendor/jvectormap/maps/jquery-jvectormap-au-mill-en.js"></script>
+    <script src="~/Scripts/Tema/global/vendor/matchheight/jquery.matchHeight-min.js"></script>
+
+    <!-- Scripts -->
+    <script src="~/Scripts/Tema/global/js/Component.js"></script>
+    <script src="~/Scripts/Tema/global/js/Plugin.js"></script>
+    <script src="~/Scripts/Tema/global/js/Base.js"></script>
+    <script src="~/Scripts/Tema/global/js/Config.js"></script>
+>>>>>>> 1d45a71ca69d1ea578c5ea124b1106d27d3c07c1
+
+    <script src="~/Scripts/Tema/assets/js/Section/Menubar.js"></script>
+    <script src="~/Scripts/Tema/assets/js/Section/Sidebar.js"></script>
+    <script src="~/Scripts/Tema/assets/js/Section/PageAside.js"></script>
+    <script src="~/Scripts/Tema/assets/js/Section/GridMenu.js"></script>
+
+    <!-- Config -->
+    <script src="~/Scripts/Tema/global/js/config/colors.js"></script>
+    <script src="~/Scripts/Tema/assets/js/config/tour.js"></script>
+    <script>Config.set('assets', 'assets');</script>
+
+    <!-- Page -->
+    <script src="~/Scripts/Tema/assets/js/Site.js"></script>
+    <script src="~/Scripts/Tema/global/js/Plugin/asscrollable.js"></script>
+    <script src="~/Scripts/Tema/global/js/Plugin/slidepanel.js"></script>
+    <script src="~/Scripts/Tema/global/js/Plugin/switchery.js"></script>
+    <script src="~/Scripts/Tema/global/js/Plugin/matchheight.js"></script>
+    <script src="~/Scripts/Tema/global/js/Plugin/jvectormap.js"></script>
+
+    <script src="~/Scripts/Tema/assets/examples/js/dashboard/v1.js"></script>
+
+</body>
 </html>

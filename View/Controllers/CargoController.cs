@@ -21,6 +21,7 @@ namespace View.Controllers
         [HttpGet]
         public ActionResult Index()
         {
+            ViewBag.Cargos = repository.ObterTodos();
             return View();
         }
 

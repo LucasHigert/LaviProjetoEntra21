@@ -18,7 +18,7 @@ namespace Model
         public int IdAtendimento { get; set; }
 
         [ForeignKey ("IdAtendimento")]
-        public AtendimentoParteCorpoSintoma Atendimento { get; set; }
+        public Atendimento Atendimento { get; set; }
 
         [Column ("id_parte_corpo")]
         public int IdParteCorpo { get; set; }

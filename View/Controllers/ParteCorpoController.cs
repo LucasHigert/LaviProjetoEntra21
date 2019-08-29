@@ -10,11 +10,11 @@ using Model;
 namespace View.Controllers
 {
     [Route("partecorpo/")]
-    public class ParteCorpoRepository : Controller
+    public class ParteCorpoController : Controller
     {
         ParteCorpoRepository repository;
 
-        public ParteCorpoRepository()
+        public ParteCorpoController()
         {
             repository = new ParteCorpoRepository();
         }
@@ -37,7 +37,7 @@ namespace View.Controllers
         [HttpPost, Route("editar")]
         public JsonResult Editar(ParteCorpo parteCorpo)
         {
-
+            return Json("eu", JsonRequestBehavior.AllowGet);
         }
      
     }

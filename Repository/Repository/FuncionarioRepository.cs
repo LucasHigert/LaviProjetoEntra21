@@ -56,7 +56,8 @@ namespace Repository.Repository
 
         public List<Funcionario> ObterFuncionariosPeloIdPosto(int idPosto)
         {
-            return context.Funcionarios.Where(x => x.IdPosto == idPosto && x.RegistroAtivo).ToList();
+            
+            return context.Funcionarios.Where(x => x.IdPosto == idPosto && x.RegistroAtivo == true).ToList();
         }
 
         public Funcionario ObterPeloId(int id)

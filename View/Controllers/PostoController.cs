@@ -11,8 +11,7 @@ namespace View.Controllers
     public class PostoController : Controller
     {
         // GET: Posto
-
-        private SistemaContext context;
+               
         private PostoRepository repository;
 
         public PostoController()

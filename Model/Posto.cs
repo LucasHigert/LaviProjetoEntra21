@@ -14,8 +14,11 @@ namespace Model
         [Key, Column("id_posto")]
         public int IdPosto { get; set; }
 
-        [ForeignKey("id_cidade")]
-        public Cidade IdCidade { get; set; }
+        [Column("id_cidade")]
+        public int IdCidade { get; set; }
+
+        [ForeignKey("IdCidade")]
+        public Cidade Cidade { get; set; }
 
         [Column("nome")]
         public string Nome { get; set; }

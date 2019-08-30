@@ -30,8 +30,10 @@ namespace Repository.Repository
             if (cidadeOriginal == null)
                 return false;
 
+            cidadeOriginal.Id = cidade.Id;
+            cidadeOriginal.Estado.Id = cidade.Estado.Id;
             cidadeOriginal.Nome = cidade.Nome;
-             
+
             int quantidadeAfetada = context.SaveChanges();
             return quantidadeAfetada == 1;
         }

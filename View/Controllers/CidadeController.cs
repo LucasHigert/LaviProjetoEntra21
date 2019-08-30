@@ -51,11 +51,12 @@ namespace View.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult Update(int id,string nome)
+        public ActionResult Update(int id, int idEstado, string nome)
         {
             Cidade cidade = new Cidade();
             cidade.Id = id;
             cidade.Nome = nome;
+            cidade.Estado.Id = idEstado;
 
             repository.Alterar(cidade);
             return RedirectToAction("Index");
@@ -64,7 +65,7 @@ namespace View.Controllers
         public ActionResult Alterar(int id)
         {
             Cidade cidade = repository.ObterPeloId(id);
-            ViewBag.Categoria = cidade;
+            ViewBag.Cidade = cidade;
             return View();
         }
 

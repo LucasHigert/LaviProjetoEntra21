@@ -5667,6 +5667,7 @@
     <Content Include="Scripts\Tema\global\vendor\summernote\summernote.woff" />
     <Content Include="Scripts\Tema\global\vendor\toastr\toastr.js.map" />
     <Content Include="Views\Cidade\Cadastro.cshtml" />
+    <Content Include="Views\Cidade\Alterar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

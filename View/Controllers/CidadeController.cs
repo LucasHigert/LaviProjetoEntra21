@@ -21,16 +21,17 @@ namespace View.Controllers
         [HttpGet]
         public ActionResult Index()
         {
+            var cidades = repository.ObterTodos("");
             return View();
         }
 
-        [HttpGet, Route("obtercidadespeloidestado")]
-        public JsonResult ObterCidadesPeloIdEstado(int idCidade)
-        {
-            var cidades = repository.ObterCidadesPeloIdEstado(idCidade);
-            var resultado = new { data = cidades };
-            return Json(resultado, JsonRequestBehavior.AllowGet);
-        }
+        //[HttpGet, Route("obtercidadespeloidestado")]
+        //public JsonResult ObterCidadesPeloIdEstado(int idCidade)
+        //{
+        //    var cidades = repository.ObterCidadesPeloIdEstado(idCidade);
+        //    var resultado = new { data = cidades };
+        //    return Json(resultado, JsonRequestBehavior.AllowGet);
+        //}
 
         [HttpGet, Route("cidade/")]
         public JsonResult ObterPeloId(int id)
@@ -47,7 +48,7 @@ namespace View.Controllers
             return Json(resultado);
         }
 
-        [HttpGet]
+        [HttpGet, Route ("apagar")]
         public JsonResult Apagar(int id)
         {
             var apagou = repository.Apagar(id);
@@ -55,12 +56,20 @@ namespace View.Controllers
             return Json(resultado, JsonRequestBehavior.AllowGet);
         }
 
-        [HttpPost]
+        [HttpPost, Route("alterar")]
         public JsonResult Update(Cidade cidade)
         {
             var alterou = repository.Alterar(cidade);
             var resultado = new { status = alterou };
             return Json(resultado);
+        }
+
+        [HttpGet, Route("obtertodos")]
+        public JsonResult ObterTodos(string busca)
+        {
+            var cidades = repository.ObterTodos(busca);
+            var resultado = new { data = cidades };
+            return Json(resultado, JsonRequestBehavior.AllowGet);
         }
     }
 }

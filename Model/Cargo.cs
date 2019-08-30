@@ -12,8 +12,8 @@ namespace Model
     [Table("cargos")]
     public class Cargo
     {
-        [Key, Column("id_cargo")]
-        public int IdCargo { get; set; }
+        [Key, Column("id")]
+        public int Id { get; set; }
 
         [Column("nome")]
         public string Nome { get; set; }

@@ -12,7 +12,6 @@ namespace View.Controllers
     {
         // GET: Posto
 
-        private SistemaContext context;
         private PostoRepository repository;
 
         public PostoController()
@@ -40,5 +39,6 @@ namespace View.Controllers
             var resultado = new { data = postos };
             return Json(resultado, JsonRequestBehavior.AllowGet);
         }
+               
     }
 }

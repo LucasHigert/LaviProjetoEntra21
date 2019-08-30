@@ -21,26 +21,23 @@ namespace View.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            var cidades = repository.ObterTodos("");
+            ////var cidades = repository.ObterTodos(cidades);
+            //List<Cidade> cidades = repository.ObterTodos();
+            //return View();
+
+            List<Cidade> cidades = repository.ObterTodos();
+            ViewBag.Cidades = cidades;
             return View();
         }
 
-        //[HttpGet, Route("obtercidadespeloidestado")]
-        //public JsonResult ObterCidadesPeloIdEstado(int idCidade)
-        //{
-        //    var cidades = repository.ObterCidadesPeloIdEstado(idCidade);
-        //    var resultado = new { data = cidades };
-        //    return Json(resultado, JsonRequestBehavior.AllowGet);
-        //}
-
         [HttpGet, Route("cidade/")]
-        public JsonResult ObterPeloId(int id)
+        public ActionResult ObterPeloId(int id)
         {
             return Json(repository.ObterPeloId(id), JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]
-        public JsonResult Inserir(Cidade cidade)
+        public ActionResult Inserir(Cidade cidade)
         {
             cidade.RegistroAtivo = true;
             var id = repository.Inserir(cidade);
@@ -49,7 +46,7 @@ namespace View.Controllers
         }
 
         [HttpGet, Route ("apagar")]
-        public JsonResult Apagar(int id)
+        public ActionResult Apagar(int id)
         {
             var apagou = repository.Apagar(id);
             var resultado = new { status = apagou };
@@ -57,19 +54,25 @@ namespace View.Controllers
         }
 
         [HttpPost, Route("alterar")]
-        public JsonResult Update(Cidade cidade)
+        public ActionResult Update(Cidade cidade)
         {
             var alterou = repository.Alterar(cidade);
             var resultado = new { status = alterou };
             return Json(resultado);
         }
 
-        [HttpGet, Route("obtertodos")]
-        public JsonResult ObterTodos(string busca)
+        //[HttpGet, Route("obtertodos")]
+        public ActionResult ObterTodos()
+        //public JsonResult ObterTodos()
         {
-            var cidades = repository.ObterTodos(busca);
-            var resultado = new { data = cidades };
-            return Json(resultado, JsonRequestBehavior.AllowGet);
+            List<Cidade> cidades = repository.ObterTodos();
+            ViewBag.Cidades = cidades;
+            return View();
+
+            //var cidades = repository.ObterTodos();
+            //var resultado = new { data = cidades };
+            //return Json(resultado,
+            //    JsonRequestBehavior.AllowGet);
         }
     }
 }

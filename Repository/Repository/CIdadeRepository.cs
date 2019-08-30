@@ -36,21 +36,17 @@ namespace Repository.Repository
             return quantidadeAfetada == 1;
         }
 
-        //public List<Cidade> ObterCidadesPeloIdEstado(int idEstado)
-        //{
-            //throw new NotImplementedException();
-        //}
-
         public Cidade ObterPeloId(int id)
         {
             return context.Cidades.FirstOrDefault(x => x.Id == id);
         }
 
-        public List<Cidade> ObterTodos(string busca)
+        public List<Cidade> ObterTodos()
         {
-            //return contextCidades.Where(x => x.RegistroAtivo == true).ToList();
-
-            return (from cidade in context.Cidades where cidade.RegistroAtivo == true select cidade).ToList();
+            return context.Cidades
+                .Include("Estado")
+                .Where(x => x.RegistroAtivo == true)
+                .ToList();
         }
 
         public bool Apagar(int id)

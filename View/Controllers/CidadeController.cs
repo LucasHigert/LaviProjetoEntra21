@@ -45,21 +45,29 @@ namespace View.Controllers
             return Json(resultado);
         }
 
-        [HttpGet, Route ("apagar")]
         public ActionResult Apagar(int id)
         {
-            var apagou = repository.Apagar(id);
-            var resultado = new { status = apagou };
-            return Json(resultado, JsonRequestBehavior.AllowGet);
+            repository.Apagar(id);
+            return RedirectToAction("Index");
         }
 
-        [HttpPost, Route("alterar")]
-        public ActionResult Update(Cidade cidade)
+        public ActionResult Update(int id,string nome)
         {
-            var alterou = repository.Alterar(cidade);
-            var resultado = new { status = alterou };
-            return Json(resultado);
+            Cidade cidade = new Cidade();
+            cidade.Id = id;
+            cidade.Nome = nome;
+
+            repository.Alterar(cidade);
+            return RedirectToAction("Index");
         }
+
+        public ActionResult Alterar(int id)
+        {
+            Cidade cidade = repository.ObterPeloId(id);
+            ViewBag.Categoria = cidade;
+            return View();
+        }
+
 
         //[HttpGet, Route("obtertodos")]
         public ActionResult ObterTodos()

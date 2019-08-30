@@ -42,10 +42,24 @@ namespace View.Controllers
             //cidade.RegistroAtivo = true;
             //var id = repository.Inserir(cidade);
             //var resultado = new { id = id };
-            return View("cadastro");
+            //return View("cadastro");
+
+            //Puxa Info dos estados
+            EstadoRepository estadoRepository = new EstadoRepository();
+            List<Estado> estados = estadoRepository.ObterTodos();
+            ViewBag.Estados = estados;
+
+            return View();
         }
 
-        public ActionResult Apagar(int id)
+        public ActionResult Inserir(Cidade cidade)
+        {
+            int id = repository.Inserir(cidade);
+            return RedirectToAction("Index");
+            //, new { id = id });
+        }
+
+            public ActionResult Apagar(int id)
         {
             repository.Apagar(id);
             return RedirectToAction("Index");

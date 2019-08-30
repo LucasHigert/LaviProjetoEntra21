@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Repository.Repository
 {
 
-    class EstadoRepository : IEstadoRepository
+    public class EstadoRepository : IEstadoRepository
     {
         private SistemaContext context;
         public EstadoRepository()

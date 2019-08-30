@@ -5,7 +5,7 @@
 
 <h2>Cadastre sua Cidade</h2>
 
-<form action="/cidade/cadastro" method="post">
+<form action="/cidade/inserir" method="post">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -17,7 +17,7 @@
 
     <div class="col-12">
         <label for="campo-estado">Estado</label>
-        <select name="estado" id="campo-estado" required="" class="form-control">
+        <select name="idEstado" id="campo-estado" required="" class="form-control">
             <option selected="" disabled="disabled">Selecione um estado</option>
             @foreach (Model.Estado Estado in ViewBag.Estados)
             {

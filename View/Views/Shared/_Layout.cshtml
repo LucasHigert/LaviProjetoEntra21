@@ -23,9 +23,6 @@
     <link rel="stylesheet" href="~/Scripts/Tema/global/vendor/slidepanel/slidePanel.css">
     <link rel="stylesheet" href="~/Scripts/Tema/global/vendor/jquery-mmenu/jquery-mmenu.css">
     <link rel="stylesheet" href="~/Scripts/Tema/global/vendor/flag-icon-css/flag-icon.css">
-    <link rel="stylesheet" href="~/Scripts/Tema/global/vendor/chartist/chartist.css">
-    <link rel="stylesheet" href="~/Scripts/Tema/global/vendor/jvectormap/jquery-jvectormap.css">
-    <link rel="stylesheet" href="~/Scripts/Tema/global/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.css">
     <link rel="stylesheet" href="~/Scripts/Tema/assets/examples/css/dashboard/v1.css">
 
 
@@ -35,7 +32,7 @@
     <link rel="stylesheet" href="~/Scripts/Tema/global/fonts/brand-icons/brand-icons.min.css">
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
 
-
+    @RenderSection("css", false)
     <!-- Scripts -->
     <script src="~/Scripts/Tema/global/vendor/breakpoints/breakpoints.js"></script>
     <script>Breakpoints();</script>
@@ -85,7 +82,6 @@
 
                 </ul>
                 <!-- End Navbar Toolbar -->
-
                 <!-- Navbar Toolbar Right -->
                 <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
                     <!-- Seletor de idioma que podemos usar em outras partes do codigo-->
@@ -225,8 +221,6 @@
         </div>
     </div>
     <!-- End Page -->
-
-
     <!-- Core  -->
     <script src="~/Scripts/Tema/global/vendor/babel-external-helpers/babel-external-helpers.js"></script>
     <script src="~/Scripts/Tema/global/vendor/jquery/jquery.js"></script>
@@ -244,12 +238,7 @@
     <script src="~/Scripts/Tema/global/vendor/screenfull/screenfull.js"></script>
     <script src="~/Scripts/Tema/global/vendor/slidepanel/jquery-slidePanel.js"></script>
     <script src="~/Scripts/Tema/global/vendor/skycons/skycons.js"></script>
-    <script src="~/Scripts/Tema/global/vendor/chartist/chartist.min.js"></script>
-    <script src="~/Scripts/Tema/global/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.js"></script>
-    <script src="~/Scripts/Tema/global/vendor/aspieprogress/jquery-asPieProgress.min.js"></script>
-    <script src="~/Scripts/Tema/global/vendor/jvectormap/jquery-jvectormap.min.js"></script>
-    <script src="~/Scripts/Tema/global/vendor/jvectormap/maps/jquery-jvectormap-au-mill-en.js"></script>
-    <script src="~/Scripts/Tema/global/vendor/matchheight/jquery.matchHeight-min.js"></script>
+
 
     <!-- Scripts -->
     <script src="~/Scripts/Tema/global/js/Component.js"></script>
@@ -276,6 +265,8 @@
     <script src="~/Scripts/Tema/global/js/Plugin/jvectormap.js"></script>
 
     <script src="~/Scripts/Tema/assets/examples/js/dashboard/v1.js"></script>
+
+    @RenderSection("js", false)
 
 </body>
 </html>

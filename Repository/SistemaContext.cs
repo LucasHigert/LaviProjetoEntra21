@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,7 +17,6 @@ namespace Repository
         public DbSet<Estado> Estados { get; set; }
         public DbSet<Cidade> Cidades { get; set; }
         public DbSet<Cargo> Cargos { get; set; }
-        public DbSet<Paciente> Paciente { get; set; }
         public DbSet<Sintoma> Sintomas { get; set; }
         public DbSet<ParteCorpo> PartesCorpo { get; set; }
         public DbSet<ParteCorpoSintoma> PartesCorpoSintomas { get; set; }
@@ -25,5 +25,10 @@ namespace Repository
         public DbSet<Posto> Postos { get; set; }
         public DbSet<Funcionario> Funcionarios { get; set; }
         public DbSet<Atendimento> Atendimentos { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+        }
     }
 }

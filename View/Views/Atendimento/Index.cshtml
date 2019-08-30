@@ -2,70 +2,63 @@
 @{
     ViewBag.Title = "Index";
 }
-<h2 class="display-4 mt-5 mb-5">Adicionar Atendimento</h2>
-<form action="" method="post">
-    <!--Esta div contera o atendente e o medico, quando o atendente abrir nao tera a opção medico-->
-    <!--Quando o medico abrir nao tera o atendente-->
-    <div class="row">
-        <div class="col-6">
-            <label for="campo-atendente">Atendente</label>
-            <select name="atentendente" id="campo-atendente" class="form-control border-dark"></select>
-        </div>
-        <div class="col-6">
-            <label>Medico</label>
-            <select name="medico" id="campo-medico" class="form-control border-dark"></select>
-        </div>
-    </div>
 
-    <div class="row">
-        <div class="col-12">
-            <label for="campo-paciente">Paciente</label>
-            <select name="paciente" id="campo-paciente" class="form-control border-dark"></select>
+<h2 class="display-4">Atendimentos Triagem</h2>
 
-        </div>
-    </div>
+<table class="table table-primary table-hover table-bordered text-dark">
+    <thead class="bg-dark">
+        <tr>
+            <td hidden>Id</td>
+            <td>Paciente</td>
+            <td>Prioridade</td>
+            <td>Observação</td>
+            <td>Ação</td>
+        </tr>
+    </thead>
+    <tbody class="font-weight-bold">
+        @foreach (Model.Atendimento atendimento in ViewBag.Atendimentos)
+        {
+            if (atendimento.Prioridade == 3)
+            {
+                <tr class="bg-red-500">
+                    <td hidden>@atendimento.Id</td>
+                    <td>@atendimento.Paciente.Nome</td>
+                    <td>@atendimento.Prioridade</td>
+                    <td>@atendimento.Observacao </td>
+                    <td>
+                        <a class="btn btn-primary" href="/atendimento/alterar?id=@atendimento.Id?carco=2">Atender</a>
+                    </td>
+                </tr>
+            }
+            else if (atendimento.Prioridade == 2)
+            {
+                <tr class="bg-yellow-500">
+                    <td hidden>@atendimento.Id</td>
+                    <td>@atendimento.Paciente.Nome</td>
+                    <td>@atendimento.Prioridade</td>
+                    <td>@atendimento.Observacao </td>
+                    <td>
+                        <a class="btn btn-primary" href="/atendimento/alterar?id=@atendimento.Id?carco=2">Atender</a>
+                    </td>
+                </tr>
+            }
+            else
+            {
+                <tr>
+                    <td hidden>@atendimento.Id</td>
+                    <td>@atendimento.Paciente.Nome</td>
+                    <td>@atendimento.Prioridade</td>
+                    <td>@atendimento.Observacao </td>
+                    <td>
+                        <a class="btn btn-primary" href="/atendimento/alterar?id=@atendimento.Id?carco=2">Atender</a>
+                    </td>
+                </tr>
 
-    <div class="row">
-        <div class="col-6">
-            <label for="campo-data">Data</label>
-            <input type="date" name="data" id="campo-data" class="form-control border-dark" />
-        </div>
-        <div class="col-6">
-            <div>
-                <label for="campo-prioridade">Prioridade</label>
-                <select name="prioridade" id="campo-prioridade" class="form-control border-dark">
-                    <option value="alto">Alto</option>
-                    <option value="medio">Medio</option>
-                    <option value="baixo">Baixo</option>
-                </select>
+            }
 
-            </div>
-        </div>
-    </div>
+        }
+    </tbody>
 
-    <div class="row">
-        <div class="col-12">
-            <label for="campo-observacao">Observação</label>
-            <textarea class="form-control border-dark" id="campo-observacao" name="observacao" maxlength="150"></textarea>
-        </div>
-    </div>
 
-    <div class="row">
-        <div class="col-12">
-            <label for="campo-tratamento">Tratamento</label>
-            <textarea class="form-control border-dark" id="campo-tratamento" name="tratamento" maxlength="100"></textarea>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-12">
-            <label for="campo-encaminhamento">Encaminhamento</label>
-            <select name="encaminhamento border-dark" id="campo-encaminhamento" class="form-control"></select>
-        </div>
-    </div>
-
-    <button class="btn btn-success mt-3" type="submit">Salvar</button>
-
-</form>
-
+</table>
 

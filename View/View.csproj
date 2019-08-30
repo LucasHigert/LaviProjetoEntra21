@@ -5676,7 +5676,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Funcionario\" />
-    <Folder Include="Views\ParteCorpo\" />
     <Folder Include="Views\Posto\" />
   </ItemGroup>
   <ItemGroup />

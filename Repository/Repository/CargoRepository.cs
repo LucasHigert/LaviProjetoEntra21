@@ -26,5 +26,26 @@ namespace Repository.Repository
         {
             return context.Cargos.Where(x => x.RegistroAtivo == true).OrderBy(x => x.Id).ToList();
         }
+
+        public bool Apagar(int id)
+        {
+            var cargo = context.Cargos.FirstOrDefault(x => x.Id == id);
+            if (cargo == null) return false;
+
+            cargo.RegistroAtivo = false;
+            int quantidadeAfetada = context.SaveChanges();
+            return quantidadeAfetada == 1;
+        }
+
+        public bool Alterar(Cargo cargo)
+        {
+            var cargoOriginal = context.Cargos.FirstOrDefault(x => x.Id == cargo.Id);
+            if (cargoOriginal == null)
+                return false;
+
+            cargoOriginal.Nome = cargo.Nome;           
+            int quantidadeAfetada = context.SaveChanges();
+            return quantidadeAfetada == 1;
+        }
     }
 }

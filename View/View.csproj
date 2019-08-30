@@ -113,6 +113,7 @@
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\cargo\cargo.js" />
     <Content Include="Scripts\cidade\cidade.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
@@ -5666,6 +5667,8 @@
     <Content Include="Scripts\Tema\global\vendor\summernote\summernote.ttf" />
     <Content Include="Scripts\Tema\global\vendor\summernote\summernote.woff" />
     <Content Include="Scripts\Tema\global\vendor\toastr\toastr.js.map" />
+    <Content Include="Views\Funcionario\Index.cshtml" />
+    <Content Include="Views\Cargo\EditarCargo.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -5675,7 +5678,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Funcionario\" />
     <Folder Include="Views\ParteCorpo\" />
     <Folder Include="Views\Posto\" />
   </ItemGroup>

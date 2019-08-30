@@ -2,20 +2,28 @@
 @{
     ViewBag.Title = "Index";
 }
-
 <h2>Cargos</h2>
+<a class="btn btn-outline-secondary float-right" href="cargo/funcionario">Funcionários</a>
 <table class="table table-striped table-bordered table-hover" id="cidades-index">
     <thead>
         <tr>
-            <th>Cargos</th>
+            <th>Cargo</th>
+            <th width="170px">Ação</th>
         </tr>
     </thead>
     <tbody>
         @foreach (Model.Cargo cargo in ViewBag.Cargos)
         {
             <tr>
-              <td>@cargo.Nome</td>
-          </tr>
+                <td>@cargo.Nome</td>
+                <td>
+                    <a class="btn btn-outline-primary float-right" href="/cargo/editar">Editar</a>
+                    <a class="btn btn-outline-danger float-right" href="/cargo/apagar">Apagar</a>
+                </td>
+            </tr>
         }
     </tbody>
 </table>
+@section js{
+    <script src="~/Scripts/cargo/cargo.js"></script>
+    }

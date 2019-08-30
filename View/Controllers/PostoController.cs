@@ -11,7 +11,7 @@ namespace View.Controllers
     public class PostoController : Controller
     {
         // GET: Posto
-               
+
         private PostoRepository repository;
 
         public PostoController()

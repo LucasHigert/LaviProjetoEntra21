@@ -11,12 +11,12 @@ namespace Model
     [Table("funcionarios")]
     public class Funcionario
     {
-        [Key, Column("id_funcionario")]
-        public int IdFuncionario { get; set; }
+        [Key, Column("id")]
+        public int Id { get; set; }
 
         [Column("id_posto")]
         public int IdPosto { get; set; }
-        
+
         [ForeignKey("IdPosto")]
         public Posto Posto { get; set; }
 

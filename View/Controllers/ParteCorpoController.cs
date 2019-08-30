@@ -37,7 +37,7 @@ namespace View.Controllers
         [HttpPost, Route("editar")]
         public JsonResult Editar(ParteCorpo parteCorpo)
         {
-            return Json("", JsonRequestBehavior.AllowGet);
+            return Json("eu", JsonRequestBehavior.AllowGet);
         }
      
     }

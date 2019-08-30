@@ -36,13 +36,13 @@ namespace View.Controllers
             return Json(repository.ObterPeloId(id), JsonRequestBehavior.AllowGet);
         }
 
-        [HttpPost]
-        public ActionResult Inserir(Cidade cidade)
+        //[HttpPost]
+        public ActionResult Cadastro()
         {
-            cidade.RegistroAtivo = true;
-            var id = repository.Inserir(cidade);
-            var resultado = new { id = id };
-            return Json(resultado);
+            //cidade.RegistroAtivo = true;
+            //var id = repository.Inserir(cidade);
+            //var resultado = new { id = id };
+            return View("cadastro");
         }
 
         [HttpGet, Route ("apagar")]

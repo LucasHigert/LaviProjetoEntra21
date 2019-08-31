@@ -12,5 +12,9 @@ namespace Repository.Interfaces
         List<Cargo> ObterTodos();
 
         Cargo ObterPeloId(int id);
+        
+        bool Apagar(int id);
+
+        bool Alterar(Cargo cargo);
     }
 }

@@ -39,5 +39,6 @@ namespace View.Controllers
             var resultado = new { data = postos };
             return Json(resultado, JsonRequestBehavior.AllowGet);
         }
+               
     }
 }

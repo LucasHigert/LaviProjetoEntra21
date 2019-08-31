@@ -17,13 +17,6 @@ namespace View.Controllers
             repository = new FuncionarioRepository();
         }
 
-        [HttpGet]
-        public ActionResult Index()
-        {
-            ViewBag.Funcionarios = repository.ObterTodos();
-            return View();
-        }
-
         [HttpGet, Route("Obtertodospeloidposto")]
         public JsonResult ObterTodosPeloIdPosto(int idPosto)
         {

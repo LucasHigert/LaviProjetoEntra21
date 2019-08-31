@@ -51,22 +51,18 @@ namespace Repository.Repository
 
         public List<Funcionario> ObterFuncionarioPeloIdCargo(int idCargo)
         {
-            return context.Funcionarios.Where(x => x.IdCargo == idCargo && x.RegistroAtivo == true).ToList();
+            return context.Funcionarios.Where(x => x.IdCargo == idCargo && x.RegistroAtivo).ToList();
         }
 
         public List<Funcionario> ObterFuncionariosPeloIdPosto(int idPosto)
-        {            
+        {
+            
             return context.Funcionarios.Where(x => x.IdPosto == idPosto && x.RegistroAtivo == true).ToList();
         }
 
         public Funcionario ObterPeloId(int id)
         {
             return context.Funcionarios.FirstOrDefault(x => x.Id == id);
-        }
-
-        public List<Funcionario> ObterTodos()
-        {
-            return context.Funcionarios.Where(x => x.RegistroAtivo == true).OrderBy(x => x.Id).ToList();             
         }
     }
 }

@@ -47,7 +47,8 @@ namespace Repository.Repository
 
         public List<Cargo> ObterTodos()
         {
-            return context.Cargos.Where(x => x.RegistroAtivo == true).OrderBy(x => x.Id).ToList();
+           // return context.Cargos.Where(x => x.RegistroAtivo == true).OrderBy(x => x.Id).ToList();
+            return (from cargo in context.Cargos where cargo.RegistroAtivo == true select cargo).ToList();
         }
       
     }

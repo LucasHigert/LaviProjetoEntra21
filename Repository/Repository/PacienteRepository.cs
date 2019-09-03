@@ -52,7 +52,7 @@ namespace Repository.Repository
 
         public int Inserir(Paciente paciente)
         {
-            paciente.RegistroAtivo = true;
+            //paciente.RegistroAtivo = true;
             context.Pacientes.Add(paciente);
             context.SaveChanges();
             return paciente.Id;
@@ -67,6 +67,14 @@ namespace Repository.Repository
         {
             var paciente = context.Pacientes.FirstOrDefault(x => x.Id == id);
             return paciente;
+        }
+
+        public List<Paciente> ObterTodos()
+        {
+            return context.Pacientes
+               .Include("Cidade")
+               .Where(x => x.RegistroAtivo == true)
+               .ToList();
         }
     }
 }

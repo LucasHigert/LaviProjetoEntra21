@@ -18,7 +18,6 @@ namespace View.Controllers
             repository = new PacienteRepository();
         }
 
-        [HttpGet]
         public ActionResult Index()
         {
             return View();
@@ -61,6 +60,11 @@ namespace View.Controllers
             var alterou = repository.Alterar(paciente);
             var resultado = new { status = alterou };
             return Json(resultado);
+        }
+
+        public ActionResult Alterar()
+        {
+            return View("Alterar");
         }
     }
 }

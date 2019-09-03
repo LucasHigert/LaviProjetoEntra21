@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = "Alterar";
+}
+
+
+<div class="container container-fluid">
+
+
+    <div class="row">
+        <div class="col-12">
+            <div class="bg-light navbar-nav rounded-bottom">
+                <h3 class="align-baseline mb-3 mt-2 p-3 text-info">Editando cidade</h3>
+            </div>
+        </div>
+    </div>
+
+    <form method="post" action="/cidade/update">
+
+        <a href="/cidade/index" class="btn btn-danger">Lista de Cidades</a>
+
+        <input type="hidden" name="id" value="@ViewBag.Cidade.Id" />
+
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="campo-nome">Nome da Cidade</label>
+                    <input type="text" name="nome" class="form-control" id="campo-nome" value="@ViewBag.Cidade.Nome" />
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    <label form="campo-estado">Estado</label>
+                    <select class="form-control" name="idEstado">
+                        <option disabled="disabled" selected="selected">Selecione um estado</option>
+                        @foreach (Model.Estado estado in ViewBag.Estados)
+                        {
+                            if (estado.Id == ViewBag.Cidade.IdEstado)
+                            {
+                                <option value="@estado.Id" selected="selected">@estado.Nome</option>
+                            }
+                            else
+                            {
+                                <option value="@estado.Id">@estado.Nome</option>
+                            }
+                        }
+                    </select>
+                </div>
+            </div>
+        </div>
+     
+
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</div>

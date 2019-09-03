@@ -8,7 +8,6 @@ using System.Web.Mvc;
 
 namespace View.Controllers
 {
-    [Route("paciente/")]
     public class PacienteController : Controller
     {
         private PacienteRepository repository;
@@ -23,7 +22,6 @@ namespace View.Controllers
             return View();
         }
 
-        [HttpGet,Route("obterpacientespeloidcidade")]
         public JsonResult ObterPacientesPeloIdCidade(int idCidade)
         {
             var pacientes = repository.ObterPacientesPeloIdCidade(idCidade);
@@ -31,22 +29,26 @@ namespace View.Controllers
             return Json(resultado, JsonRequestBehavior.AllowGet);
         }
 
-        [HttpGet, Route("paciente/")]
         public JsonResult ObterPeloId(int id)
         {
             return Json(repository.ObterPeloId(id), JsonRequestBehavior.AllowGet);
         }
 
-        [HttpPost]
-        public JsonResult Inserir(Paciente paciente)
+        public ActionResult Inserir(Paciente paciente)
         {
-            paciente.RegistroAtivo = true;
-            var id = repository.Inserir(paciente);
-            var resultado = new { id = id };
-            return Json(resultado);
+            int id = repository.Inserir(paciente);
+            return RedirectToAction("Index");
+
+            CidadeRepository cidadeRepository = new CidadeRepository();
+            List<Cidade> cidades = cidadeRepository.ObterTodos();
+            ViewBag.Cidades = cidades;
+
+            return View();
+
         }
 
-        [HttpGet]
+
+
         public JsonResult Apagar(int id)
         {
             var apagou = repository.Apagar(id);
@@ -54,7 +56,6 @@ namespace View.Controllers
             return Json(resultado, JsonRequestBehavior.AllowGet);
         }
 
-        [HttpPost]
         public JsonResult Update(Paciente paciente)
         {
             var alterou = repository.Alterar(paciente);

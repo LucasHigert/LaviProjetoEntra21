@@ -4630,7 +4630,7 @@
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Paciente\Index.cshtml" />
+    <Content Include="Views\Paciente\Cadastro.cshtml" />
     <Content Include="Views\Atendimento\Index.cshtml" />
     <Content Include="Views\Cargo\Index.cshtml" />
     <Content Include="Views\Cidade\Index.cshtml" />

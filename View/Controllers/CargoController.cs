@@ -38,5 +38,48 @@ namespace View.Controllers
         {
             return Json(repository.ObterPeloId(id), JsonRequestBehavior.AllowGet);
         }
+
+        [HttpGet, Route("apagar")]
+        public JsonResult Apagar(int id)
+        {
+            var apagou = repository.Apagar(id);
+            var resultado = new { status = apagou };
+            return Json(resultado, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost, Route("editar")]
+        public JsonResult Update(Cargo cargo)
+        {
+            var alterou = repository.Alterar(cargo);
+            var resultado = new { status = alterou };
+            return Json(resultado);
+        }
+
+        [HttpPost, Route("inserir")]
+        public JsonResult Inserir(Cargo cargo)
+        {
+            cargo.RegistroAtivo = true;
+            var id = repository.Inserir(cargo);
+            var resultado = new { id = id };
+            return Json(resultado);
+        }
+
+        [HttpGet]
+        public ActionResult Alterar(int id)
+        {
+            var cargo = repository.ObterPeloId(id);
+            if(cargo == null)
+            {
+                return RedirectToAction("Index");
+            }
+            ViewBag.Cargo = cargo;
+            return View();
+        }
+
+        public ActionResult Cadastrar()
+        {
+            return View();
+        }
+               
     }
 }

@@ -4,18 +4,29 @@
 }
 
 <h2>Cargos</h2>
-<table class="table table-striped table-bordered table-hover" id="cidades-index">
+
+<a class="btn btn-outline-secondary float-right" style="margin-bottom: 5px" href="/cargo/cadastrar"><i class="fas fa-plus"></i>Novo</a>
+<table class="table table-striped table-bordered table-hover" id="cargos-index">
     <thead>
         <tr>
             <th>Cargos</th>
+            <th width="170px">Ação</th>
         </tr>
     </thead>
     <tbody>
         @foreach (Model.Cargo cargo in ViewBag.Cargos)
         {
             <tr>
-              <td>@cargo.Nome</td>
-          </tr>
+                <td>@cargo.Nome</td>
+                <td>
+                    <a class="btn btn-primary float-right" href="/cargo/alterar?id=@cargo.Id">Editar</a>
+                    <a class="btn btn-danger float-right" style="margin-right: 5px" href="/cargo/apagar?id=@cargo.Id">Apagar</a>
+                </td>
+            </tr>
         }
     </tbody>
 </table>
+<a class="btn btn-outline-secondary float-right" style="margin-top: 5px" href="/funcionario/index">Funcionários</a>
+@section js{
+    <script src="~/Scripts/cargo/cargo.js"></script>
+}

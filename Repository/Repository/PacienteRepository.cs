@@ -52,6 +52,7 @@ namespace Repository.Repository
 
         public int Inserir(Paciente paciente)
         {
+            paciente.RegistroAtivo = true;
             context.Pacientes.Add(paciente);
             context.SaveChanges();
             return paciente.Id;

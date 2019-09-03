@@ -57,6 +57,11 @@
     <Compile Include="Interfaces\IPacienteRepository.cs" />
     <Compile Include="Interfaces\IFuncionarioRepository.cs" />
     <Compile Include="Interfaces\IPostoRepository.cs" />
+    <Compile Include="Migrations\201908291420307_Init.cs" />
+    <Compile Include="Migrations\201908291420307_Init.Designer.cs">
+      <DependentUpon>201908291420307_Init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\AtendimentoParteCorpoSintomaRepository.cs" />
     <Compile Include="Repository\EncaminhamentoRepository.cs" />
@@ -83,6 +88,10 @@
       <Name>Model</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201908291420307_Init.resx">
+      <DependentUpon>201908291420307_Init.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

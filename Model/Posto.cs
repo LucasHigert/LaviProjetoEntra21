@@ -12,10 +12,13 @@ namespace Model
     public class Posto
     {
         [Key, Column("id_posto")]
-        public int IdPosto { get; set; }
+        public int Id { get; set; }
 
         [Column("id_cidade")]
         public int IdCidade { get; set; }
+
+        [ForeignKey("IdCidade")]
+        public Cidade Cidade { get; set; }
 
         [Column("nome")]
         public string Nome { get; set; }

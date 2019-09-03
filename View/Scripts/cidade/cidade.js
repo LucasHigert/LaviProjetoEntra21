@@ -1,7 +1,7 @@
 ﻿$(function () {
     $idAlterar = -1;
 
-    $tabelaCidade = $('#cidade-tabela').DataTable({
+    $tabelaCidade = $('#cidades-index').DataTable({
         ajax: 'http://localhost:49590/Cidade/obtertodos',
         serverSide: true,
         columns: [

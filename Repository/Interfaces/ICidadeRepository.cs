@@ -9,7 +9,7 @@ namespace Repository.Interfaces
 {
     interface ICidadeRepository
     {
-        List<Cidade> ObterCidadesPeloIdEstado(int idEstado);
+       // List<Cidade> ObterCidadesPeloIdEstado(int idEstado);
 
         Cidade ObterPeloId(int id);
 

@@ -38,7 +38,7 @@ namespace View.Controllers
         [HttpPost, Route("editar")]
         public JsonResult Update(ParteCorpo parteCorpo)
         {
-           bool retorno = repositorio.Alterar(parteCorpo);
+            bool retorno = repositorio.Alterar(parteCorpo);
             var resultado = new { status = retorno };
             return Json(resultado, JsonRequestBehavior.AllowGet);
         }
@@ -57,12 +57,12 @@ namespace View.Controllers
             ViewBag.PartesCorpo = parteCorpos;
             return View();
         }
-     
+
         [HttpGet]
         public ActionResult Alterar(int id)
         {
             var partecorpo = repositorio.ObterPeloId(id);
-            if(partecorpo == null)
+            if (partecorpo == null)
             {
                 return RedirectToAction("Index");
             }

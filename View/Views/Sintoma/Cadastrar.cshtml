@@ -3,9 +3,19 @@
     ViewBag.Title = "Cadastrar";
 }
 
-<form action="/partecorpo/inserir" method="post">
+<form action="/sintoma/inserir" method="post">
     <div>
-        <label for="campo-nome">Nome</label>
+        <label for="campo-partecorpo">Partes do Corpo</label>
+        <select name="idParteCorpo" id="campo-partecorpo" class="form-control">
+            @foreach (Model.ParteCorpo partecorpo in ViewBag.PartesCorpo)
+            {
+                <option value="@partecorpo.Id">@partecorpo.Nome</option>
+            }
+        </select>
+    </div>
+
+    <div>
+        <label for="campo-nome">Sintoma</label>
         <input type="text" maxlength="100" name="nome" id="campo-nome" />
     </div>
 

@@ -45,12 +45,24 @@ namespace Repository.Repository
             return quantidadeAfetada == 1;
         }
 
-        public int Inserir(Sintoma sintoma)
+        public bool Inserir(Sintoma sintoma)
         {
-            sintoma.RegistroAtivo = true;
-            context.Sintomas.Add(sintoma);
-            context.SaveChanges();
-            return sintoma.Id;
+           // sintoma.RegistroAtivo = true;
+           // context.Sintomas.Add(sintoma);
+           // context.SaveChanges();
+           // return sintoma.Id;
+
+            var sintomaOriginal = context.Sintomas.Where(x => x.Nome == sintoma.Nome).FirstOrDefault();
+            if (sintomaOriginal == null)
+            {
+                context.Sintomas.Add(sintoma);
+                int rows = context.SaveChanges();
+                return rows == 1;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public Sintoma ObterPeloId(int id)
@@ -60,7 +72,7 @@ namespace Repository.Repository
 
         public List<Sintoma> ObterTodos()
         {
-            return context.Sintomas.Where(x => x.RegistroAtivo).ToList();
+            return context.Sintomas.Include("partecorpo").Where(x => x.RegistroAtivo == true).ToList();
         }
     }
 }

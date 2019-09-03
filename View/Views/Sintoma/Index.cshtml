@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h3 class="text-center mb-3 mt-3 text-info">Lista de Sintomas</h3>
+
+<div class="row">
+    <div class="col-12">
+        <a href="/sintoma/Cadastrar" class="btn btn-dark float-right mb-3"><i class="fas fa-plus"></i>Novo Sintoma</a>
+    </div>
+</div>
+
+<table class="table table-hover table-bordered">
+    <thead>
+        <tr>
+            <th>Código</th>
+            <th>Parte Corpo</th>
+            <th>Sintoma</th>
+            <th>Tradução Crioulo</th>
+            <th>Tradução Francês</th>
+            <th>Ação</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(Model.Sintoma sintoma in ViewBag.Sintomas)
+        {
+            <tr>
+                <td>@sintoma.Id</td>
+                <td>@sintoma.ParteCorpo.Nome</td>
+                <td>@sintoma.Nome</td>
+                <td>@sintoma.TraducaoCriolo</td>
+                <td>@sintoma.TraducaoFrances</td>
+                <td>
+                    <a class="btn btn-primary" href="/sintoma/alterar?id=@sintoma.Id">Editar</a>
+                    <a class="btn btn-danger" href="/sintoma/apagar?id=@sintoma.Id">Apagar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

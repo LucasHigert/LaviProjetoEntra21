@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Repository.Repository
 {
 
-    class EstadoRepository : IEstadoRepository
+    public class EstadoRepository : IEstadoRepository
     {
         private SistemaContext context;
         public EstadoRepository()
@@ -25,7 +25,8 @@ namespace Repository.Repository
 
         public List<Estado> ObterTodos()
         {
-            return context.Estados.Where(x => x.RegistroAtivo == true).OrderBy(x => x.Id).ToList();
+            return context.Estados.Where(x => x.RegistroAtivo == true).
+                OrderBy(x => x.Id).ToList();
         }
     }
 }

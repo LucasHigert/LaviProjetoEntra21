@@ -4624,6 +4624,7 @@
     <Compile Include="Controllers\AtendimentoController.cs" />
     <Compile Include="Controllers\CidadeController.cs" />
     <Compile Include="Controllers\FuncionarioController.cs" />
+    <Compile Include="Controllers\InstrucoesController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PacienteController.cs" />
     <Compile Include="Controllers\PostoController.cs" />
@@ -5672,6 +5673,8 @@
     <Content Include="Scripts\Tema\global\vendor\summernote\summernote.woff" />
     <Content Include="Scripts\Tema\global\vendor\toastr\toastr.js.map" />
     <Content Include="Views\Atendimento\Cadastro.cshtml" />
+    <Content Include="Views\Atendimento\Alterar.cshtml" />
+    <Content Include="Views\Instrucoes\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

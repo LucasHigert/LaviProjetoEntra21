@@ -12,14 +12,16 @@ namespace View.Controllers
     {
         private AtendimentoRepository repositoryAtendimento = new AtendimentoRepository();
         private PacienteRepository repositoryPaciente = new PacienteRepository();
-        // GET: Atendimento
+
+        //Listagem de Atendimentos
         public ActionResult Index()
         {
             ViewBag.Atendimentos = repositoryAtendimento.ObterTodosPeloCargo(1);
             return View();
         }
 
-
+        //Inserir
+        #region
         public ActionResult Cadastro()
         {
             ViewBag.Pacientes = repositoryPaciente.ObterPacientesPeloIdCidade(1);
@@ -46,5 +48,21 @@ namespace View.Controllers
                 return RedirectToAction("Index");
             }
         }
+        #endregion
+
+        //Alterar
+        #region
+        public ActionResult Alterar(int id)
+        {
+            ViewBag.Atendimento = repositoryAtendimento.ObterPeloId(id);
+            return View();
+        }
+
+        public ActionResult Update(Atendimento atendimento)
+        {
+            repositoryAtendimento.Alerar(atendimento);
+            return RedirectToAction("index");
+        }
+        #endregion
     }
 }

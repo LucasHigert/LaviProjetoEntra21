@@ -2,22 +2,17 @@
 @{
     ViewBag.Title = "Index";
 }
-<h2 class="display-4 mt-5 mb-5">Adicionar Atendimento</h2>
+<h2 class="display-4 mt-5 mb-5">Atendendo @ViewBag.Atendimento.Id</h2>
 <form action="" method="post">
     <!--Esta div contera o atendente e o medico, quando o atendente abrir nao tera a opção medico-->
     <!--Quando o medico abrir nao tera o atendente-->
-    
-    @if (ViewBag.Funcionario)
-    {
-
-    }
     <div class="row">
         <div class="col-12">
             <label for="campo-paciente">Paciente</label>
             <select name="paciente" id="campo-paciente" class="form-control border-dark">
                 @foreach (Model.Paciente paciente in ViewBag.Pacientes)
                 {
-                <option value="@paciente.Id">@paciente.Nome</option>
+                    <option value="@paciente.Id">@paciente.Nome</option>
                 }
             </select>
 

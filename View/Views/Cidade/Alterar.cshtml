@@ -36,7 +36,7 @@
                     <label form="campo-estado">Estado</label>
                     <select class="form-control" name="idEstado">
                         <option disabled="disabled" selected="selected">Selecione um estado</option>
-                        @foreach (Model.Estado estado in ViewBag.Estado)
+                        @foreach (Model.Estado estado in ViewBag.Estados)
                         {
                             if (estado.Id == ViewBag.Cidade.IdEstado)
                             {

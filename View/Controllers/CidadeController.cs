@@ -18,7 +18,6 @@ namespace View.Controllers
             repository = new CidadeRepository();
         }
 
-        [HttpGet]
         public ActionResult Index()
         {
             ////var cidades = repository.ObterTodos(cidades);
@@ -30,13 +29,6 @@ namespace View.Controllers
             return View();
         }
 
-        [HttpGet, Route("cidade/")]
-        public ActionResult ObterPeloId(int id)
-        {
-            return Json(repository.ObterPeloId(id), JsonRequestBehavior.AllowGet);
-        }
-
-        //[HttpPost]
         public ActionResult Cadastro()
         {
             //cidade.RegistroAtivo = true;
@@ -59,7 +51,7 @@ namespace View.Controllers
             //, new { id = id });
         }
 
-            public ActionResult Apagar(int id)
+        public ActionResult Apagar(int id)
         {
             repository.Apagar(id);
             return RedirectToAction("Index");
@@ -70,6 +62,7 @@ namespace View.Controllers
             Cidade cidade = new Cidade();
             cidade.Id = id;
             cidade.Nome = nome;
+            cidade.Estado = new Estado();
             cidade.Estado.Id = idEstado;
 
             repository.Alterar(cidade);
@@ -78,24 +71,19 @@ namespace View.Controllers
 
         public ActionResult Alterar(int id)
         {
-            Cidade cidade = repository.ObterPeloId(id);
+            Cidade cidade = new Cidade();
+            cidade = repository.ObterPeloId(id);
             ViewBag.Cidade = cidade;
+            EstadoRepository estadoRepository = new EstadoRepository();
+            ViewBag.Estados = estadoRepository.ObterTodos();
             return View();
         }
 
-
-        //[HttpGet, Route("obtertodos")]
         public ActionResult ObterTodos()
-        //public JsonResult ObterTodos()
         {
             List<Cidade> cidades = repository.ObterTodos();
             ViewBag.Cidades = cidades;
             return View();
-
-            //var cidades = repository.ObterTodos();
-            //var resultado = new { data = cidades };
-            //return Json(resultado,
-            //    JsonRequestBehavior.AllowGet);
         }
     }
 }

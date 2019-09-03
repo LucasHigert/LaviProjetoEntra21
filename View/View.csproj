@@ -96,6 +96,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\SqlServerConnection.mdf" />
+    <Content Include="App_Data\SqlServerConnection_log.ldf">
+      <DependentUpon>SqlServerConnection.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -4621,6 +4625,7 @@
     <Compile Include="Controllers\FuncionarioController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PacienteController.cs" />
+    <Compile Include="Controllers\ParteCorpoController.cs" />
     <Compile Include="Controllers\PostoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -5666,6 +5671,9 @@
     <Content Include="Scripts\Tema\global\vendor\summernote\summernote.ttf" />
     <Content Include="Scripts\Tema\global\vendor\summernote\summernote.woff" />
     <Content Include="Scripts\Tema\global\vendor\toastr\toastr.js.map" />
+    <Content Include="Views\ParteCorpo\Index.cshtml" />
+    <Content Include="Views\ParteCorpo\Alterar.cshtml" />
+    <Content Include="Views\ParteCorpo\Cadastrar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -5674,7 +5682,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Views\Funcionario\" />
     <Folder Include="Views\Posto\" />
   </ItemGroup>

@@ -29,6 +29,7 @@ namespace View.Controllers
         [HttpPost, Route("inserir")]
         public JsonResult Inserir(ParteCorpo parteCorpo)
         {
+            parteCorpo.RegistroAtivo = true;
             bool id = repositorio.Inserir(parteCorpo);
             var resultado = new { status = id };
             return Json(resultado, JsonRequestBehavior.AllowGet);
@@ -42,7 +43,7 @@ namespace View.Controllers
             return Json(resultado, JsonRequestBehavior.AllowGet);
         }
 
-        [HttpPost, Route("apagar")]
+        [HttpGet, Route("apagar")]
         public JsonResult Apagar(int id)
         {
             var apagou = repositorio.Apagar(id);
@@ -52,11 +53,20 @@ namespace View.Controllers
 
         public ActionResult Index()
         {
+            List<ParteCorpo> parteCorpos = repositorio.ObterTodos();
+            ViewBag.PartesCorpo = parteCorpos;
             return View();
         }
      
-        public ActionResult Alterar()
+        [HttpGet]
+        public ActionResult Alterar(int id)
         {
+            var partecorpo = repositorio.ObterPeloId(id);
+            if(partecorpo == null)
+            {
+                return RedirectToAction("Index");
+            }
+            ViewBag.ParteCorpo = partecorpo;
             return View();
         }
 

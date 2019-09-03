@@ -16,5 +16,7 @@ namespace Repository.Interfaces
         bool Apagar(int id);
 
         bool Alterar(Cargo cargo);
+
+        int Inserir(Cargo cargo);
     }
 }

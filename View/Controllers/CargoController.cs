@@ -55,5 +55,31 @@ namespace View.Controllers
             return Json(resultado);
         }
 
+        [HttpPost, Route("inserir")]
+        public JsonResult Inserir(Cargo cargo)
+        {
+            cargo.RegistroAtivo = true;
+            var id = repository.Inserir(cargo);
+            var resultado = new { id = id };
+            return Json(resultado);
+        }
+
+        [HttpGet]
+        public ActionResult Alterar(int id)
+        {
+            var cargo = repository.ObterPeloId(id);
+            if(cargo == null)
+            {
+                return RedirectToAction("Index");
+            }
+            ViewBag.Cargo = cargo;
+            return View();
+        }
+
+        public ActionResult Cadastrar()
+        {
+            return View();
+        }
+               
     }
 }

@@ -96,6 +96,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\SqlServerConnection.mdf" />
+    <Content Include="App_Data\SqlServerConnection_log.ldf">
+      <DependentUpon>SqlServerConnection.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -5666,7 +5670,8 @@
     <Content Include="Scripts\Tema\global\vendor\summernote\summernote.ttf" />
     <Content Include="Scripts\Tema\global\vendor\summernote\summernote.woff" />
     <Content Include="Scripts\Tema\global\vendor\toastr\toastr.js.map" />
-    <Content Include="Views\Funcionario\Index.cshtml" />
+    <Content Include="Views\Cargo\Alterar.cshtml" />
+    <Content Include="Views\Cargo\Cadastrar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -5675,7 +5680,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="Views\Funcionario\" />
     <Folder Include="Views\ParteCorpo\" />
     <Folder Include="Views\Posto\" />
   </ItemGroup>

@@ -18,7 +18,7 @@ namespace Repository.Repository
                 
         public bool Alterar(Cargo cargo)
         {
-            var cargoOriginal = context.Cidades.FirstOrDefault(x => x.Id == cargo.Id);
+            var cargoOriginal = context.Cargos.FirstOrDefault(x => x.Id == cargo.Id);
             if (cargoOriginal == null)
                 return false;
 
@@ -37,6 +37,13 @@ namespace Repository.Repository
             cargo.RegistroAtivo = false;
             int quantidadeAfetada = context.SaveChanges();
             return quantidadeAfetada == 1;
+        }
+
+        public int Inserir(Cargo cargo)
+        {
+            context.Cargos.Add(cargo);
+            context.SaveChanges();
+            return cargo.Id;
         }
 
         public Cargo ObterPeloId(int id)

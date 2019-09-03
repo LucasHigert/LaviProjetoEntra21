@@ -33,8 +33,7 @@ namespace Repository.Repository
             cidadeOriginal.Id = cidade.Id;
             cidadeOriginal.Nome = cidade.Nome;
 
-            cidadeOriginal.Estado = new Estado();
-            cidadeOriginal.Estado.Id = cidade.Estado.Id;
+            cidadeOriginal.IdEstado = cidade.Estado.Id;
 
             int quantidadeAfetada = context.SaveChanges();
             return quantidadeAfetada == 1;

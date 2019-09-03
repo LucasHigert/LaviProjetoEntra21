@@ -17,6 +17,13 @@ namespace View.Controllers
             repository = new FuncionarioRepository();
         }
 
+        [HttpGet]
+        public ActionResult Index()
+        {
+            var cidades = repository.ObterTodos();
+            return View();
+        }
+
         [HttpGet, Route("Obtertodospeloidposto")]
         public JsonResult ObterTodosPeloIdPosto(int idPosto)
         {

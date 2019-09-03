@@ -18,58 +18,72 @@ namespace View.Controllers
             repository = new CidadeRepository();
         }
 
-        [HttpGet]
         public ActionResult Index()
         {
-            var cidades = repository.ObterTodos("");
+            ////var cidades = repository.ObterTodos(cidades);
+            //List<Cidade> cidades = repository.ObterTodos();
+            //return View();
+
+            List<Cidade> cidades = repository.ObterTodos();
+            ViewBag.Cidades = cidades;
             return View();
         }
 
-        //[HttpGet, Route("obtercidadespeloidestado")]
-        //public JsonResult ObterCidadesPeloIdEstado(int idCidade)
-        //{
-        //    var cidades = repository.ObterCidadesPeloIdEstado(idCidade);
-        //    var resultado = new { data = cidades };
-        //    return Json(resultado, JsonRequestBehavior.AllowGet);
-        //}
-
-        [HttpGet, Route("cidade/")]
-        public JsonResult ObterPeloId(int id)
+        public ActionResult Cadastro()
         {
-            return Json(repository.ObterPeloId(id), JsonRequestBehavior.AllowGet);
+            //cidade.RegistroAtivo = true;
+            //var id = repository.Inserir(cidade);
+            //var resultado = new { id = id };
+            //return View("cadastro");
+
+            //Puxa Info dos estados
+            EstadoRepository estadoRepository = new EstadoRepository();
+            List<Estado> estados = estadoRepository.ObterTodos();
+            ViewBag.Estados = estados;
+
+            return View();
         }
 
-        [HttpPost]
-        public JsonResult Inserir(Cidade cidade)
+        public ActionResult Inserir(Cidade cidade)
         {
-            cidade.RegistroAtivo = true;
-            var id = repository.Inserir(cidade);
-            var resultado = new { id = id };
-            return Json(resultado);
+            int id = repository.Inserir(cidade);
+            return RedirectToAction("Index");
+            //, new { id = id });
         }
 
-        [HttpGet, Route ("apagar")]
-        public JsonResult Apagar(int id)
+        public ActionResult Apagar(int id)
         {
-            var apagou = repository.Apagar(id);
-            var resultado = new { status = apagou };
-            return Json(resultado, JsonRequestBehavior.AllowGet);
+            repository.Apagar(id);
+            return RedirectToAction("Index");
         }
 
-        [HttpPost, Route("alterar")]
-        public JsonResult Update(Cidade cidade)
+        public ActionResult Update(int id, int idEstado, string nome)
         {
-            var alterou = repository.Alterar(cidade);
-            var resultado = new { status = alterou };
-            return Json(resultado);
+            Cidade cidade = new Cidade();
+            cidade.Id = id;
+            cidade.Nome = nome;
+            cidade.Estado = new Estado();
+            cidade.Estado.Id = idEstado;
+
+            repository.Alterar(cidade);
+            return RedirectToAction("Index");
         }
 
-        [HttpGet, Route("obtertodos")]
-        public JsonResult ObterTodos(string busca)
+        public ActionResult Alterar(int id)
         {
-            var cidades = repository.ObterTodos(busca);
-            var resultado = new { data = cidades };
-            return Json(resultado, JsonRequestBehavior.AllowGet);
+            Cidade cidade = new Cidade();
+            cidade = repository.ObterPeloId(id);
+            ViewBag.Cidade = cidade;
+            EstadoRepository estadoRepository = new EstadoRepository();
+            ViewBag.Estados = estadoRepository.ObterTodos();
+            return View();
+        }
+
+        public ActionResult ObterTodos()
+        {
+            List<Cidade> cidades = repository.ObterTodos();
+            ViewBag.Cidades = cidades;
+            return View();
         }
     }
 }

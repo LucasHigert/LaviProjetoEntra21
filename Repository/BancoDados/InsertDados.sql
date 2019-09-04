@@ -50,7 +50,7 @@ INSERT INTO pacientes (id_posto,nome,endereco,cep,idade,sexo,altura,peso,registr
 (2,'Pedro Alexandre Madeiro','Rua Curitiba 55','89012-412',42,0,1.82,82,1,'769.127.850-00','R5653971-J','',''),
 (1,'Maiara Ilinoi Cardoso','Rua Noel Rosa 10','89057-420',18,1,1.50,50.2,  0   ,'267.450.960-05','K568371-F','','4799241-5064'),
 (2,'Felipe Marcos Peixoto','Rua das Torres 77','89031-673',22,0,1.75,60.1,1,'126.282.070-79','','','4798822-4565');
-
+SELECT*FROM pacientes;
 INSERT INTO cargos (nome,registro_ativo) VALUES
 ('Atendente',1),
 ('Médico',1),

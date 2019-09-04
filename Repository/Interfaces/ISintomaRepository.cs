@@ -9,7 +9,7 @@ namespace Repository.Interfaces
 {
     public interface ISintomaRepository
     {
-        int Inserir(Sintoma sintoma);
+        bool Inserir(Sintoma sintoma);
 
         bool Alterar(Sintoma sintoma);
 

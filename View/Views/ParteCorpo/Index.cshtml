@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h3 class="text-center mb-3 mt-3 text-info">Lista de Parte do Corpo</h3>
+
+<div class="row">
+    <div class="col-12">
+        <a href="/partecorpo/cadastrar" class="btn btn-dark float-right mb-3"><i class="fas fa-plus"></i>Nova Parte Corpo</a>
+    </div>
+</div>
+
+<table class="table table-hover table-bordered">
+    <thead>
+        <tr>
+            <th>Código</th>
+            <th>Nome</th>
+            <th>Tradução Crioulo</th>
+            <th>Tradução Francês</th>
+            <th>Ação</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(Model.ParteCorpo parteCorpo in ViewBag.PartesCorpo)
+        {
+            <tr>
+                <td>@parteCorpo.Id</td>
+                <td>@parteCorpo.Nome</td>
+                <td>@parteCorpo.TraducaoCriolo</td>
+                <td>@parteCorpo.TraducaoFrances</td>
+                <td>
+                    <a class="btn btn-primary" href="/partecorpo/alterar?id=@parteCorpo.Id">Editar</a>
+                    <a class="btn btn-danger" href="/partecorpo/apagar?id=@parteCorpo.Id">Apagar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

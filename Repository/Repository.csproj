@@ -51,6 +51,7 @@
     <Compile Include="Interfaces\IAtendimentoParteCorpoSintomaRepository.cs" />
     <Compile Include="Interfaces\IAtendimentoRepository.cs" />
     <Compile Include="Interfaces\IEncaminhamentoRepository.cs" />
+    <Compile Include="Interfaces\IParteCorpoRepository.cs" />
     <Compile Include="Interfaces\ISintomaRepository.cs" />
     <Compile Include="Interfaces\ICargoRepository.cs" />
     <Compile Include="Interfaces\ICidadeRepository.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="Repository\AtendimentoParteCorpoSintomaRepository.cs" />
     <Compile Include="Repository\AtendimentoRepository.cs" />
     <Compile Include="Repository\EncaminhamentoRepository.cs" />
+    <Compile Include="Repository\ParteCorpoRepository.cs" />
     <Compile Include="Repository\SintomaRepository.cs" />
     <Compile Include="Repository\CidadeRepository.cs" />
     <Compile Include="Repository\PacienteRepository.cs" />

@@ -96,7 +96,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include=".gitignore" />
     <Content Include="App_Data\SqlServerConnection.mdf" />
     <Content Include="App_Data\SqlServerConnection_log.ldf">
       <DependentUpon>SqlServerConnection.mdf</DependentUpon>
@@ -4621,7 +4620,9 @@
     <Compile Include="Controllers\InstrucoesController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PacienteController.cs" />
+    <Compile Include="Controllers\ParteCorpoController.cs" />
     <Compile Include="Controllers\PostoController.cs" />
+    <Compile Include="Controllers\SintomaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -5666,10 +5667,20 @@
     <Content Include="Scripts\Tema\global\vendor\summernote\summernote.ttf" />
     <Content Include="Scripts\Tema\global\vendor\summernote\summernote.woff" />
     <Content Include="Scripts\Tema\global\vendor\toastr\toastr.js.map" />
-    <Content Include="Views\Atendimento\Cadastro.cshtml" />
+    <Content Include="Views\ParteCorpo\Index.cshtml" />
+    <Content Include="Views\ParteCorpo\Alterar.cshtml" />
+    <Content Include="Views\ParteCorpo\Cadastrar.cshtml" />
+    <Content Include="Views\Sintoma\Index.cshtml" />
+    <Content Include="Views\Sintoma\Cadastrar.cshtml" />
+    <Content Include="Views\Sintoma\Alterar.cshtml" />
+    <Content Include="Views\Cargo\Alterar.cshtml" />
+    <Content Include="Views\Cargo\Cadastrar.cshtml" />
+    <Content Include="Views\Cidade\Alterar.cshtml" />
+	<Content Include="Views\Atendimento\Cadastro.cshtml" />
     <Content Include="Views\Atendimento\Alterar.cshtml" />
     <Content Include="Views\Instrucoes\Index.cshtml" />
-    <None Include="Web.Debug.config">
+    <Content Include="Views\Cidade\Cadastro.cshtml" />
+	<None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">

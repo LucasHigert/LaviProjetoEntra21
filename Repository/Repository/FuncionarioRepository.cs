@@ -64,5 +64,15 @@ namespace Repository.Repository
         {
             return context.Funcionarios.FirstOrDefault(x => x.Id == id);
         }
+
+        public List<Funcionario> ObterTodos()
+        {
+            return context.Funcionarios.Where(x => x.RegistroAtivo == true).OrderBy(x => x.Id).ToList();
+        }
+
+        public List<Funcionario> ObterTodos(string busca)
+        {           
+            return (from funcionario in context.Funcionarios where funcionario.RegistroAtivo == true select funcionario).ToList();
+        }
     }
 }

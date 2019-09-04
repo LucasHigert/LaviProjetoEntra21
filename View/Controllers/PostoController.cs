@@ -76,6 +76,8 @@ namespace View.Controllers
             {
                 return RedirectToAction("Index");
             }
+            CidadeRepository repositoryCidade = new CidadeRepository();
+            ViewBag.Cidades = repositoryCidade.ObterTodos();
             ViewBag.Posto = posto;
             return View();
         }

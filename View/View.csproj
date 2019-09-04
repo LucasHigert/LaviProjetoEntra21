@@ -96,10 +96,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\SqlServerConnection.mdf" />
-    <Content Include="App_Data\SqlServerConnection_log.ldf">
-      <DependentUpon>SqlServerConnection.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -5676,11 +5672,11 @@
     <Content Include="Views\Cargo\Alterar.cshtml" />
     <Content Include="Views\Cargo\Cadastrar.cshtml" />
     <Content Include="Views\Cidade\Alterar.cshtml" />
-	<Content Include="Views\Atendimento\Cadastro.cshtml" />
+    <Content Include="Views\Atendimento\Cadastro.cshtml" />
     <Content Include="Views\Atendimento\Alterar.cshtml" />
     <Content Include="Views\Instrucoes\Index.cshtml" />
     <Content Include="Views\Cidade\Cadastro.cshtml" />
-	<None Include="Web.Debug.config">
+    <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
@@ -5688,8 +5684,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\" />
     <Folder Include="Views\Funcionario\" />
-    <Folder Include="Views\ParteCorpo\" />
     <Folder Include="Views\Posto\" />
   </ItemGroup>
   <ItemGroup />

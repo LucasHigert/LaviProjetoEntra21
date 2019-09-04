@@ -11,7 +11,9 @@ namespace Repository
 {
     public class SistemaContext : DbContext
     {
-        public SistemaContext() : base("SqlServerConnection") { }
+        public SistemaContext() : base("SqlServerConnection") {
+            Database.SetInitializer<SistemaContext>(new SistemaInitializer());
+        }
 
         public DbSet<Paciente> Pacientes { get; set; }
         public DbSet<Estado> Estados { get; set; }

@@ -57,12 +57,13 @@ INSERT INTO cargos (nome,registro_ativo) VALUES
 ('Trigem',1),
 ('Médico',0);
 
+
+
 INSERT INTO funcionarios (id_posto,id_cargo,nome,login,senha,registro_ativo) VALUES 
 (1,1,'Tiffany Carlene','Tiffany Carlene','carlezinha123',1),
 (1,2,'Roberto Francisco Sagaz','Roberto Sagaz','medicotop',1),
 (1,3,'Vanessa Revineia','Revineia','triagemboa',1),
 (1,2,'Roberto Francisco Sagaz','Roberto Sagaz','medicotop',0),
-
 (2,1,'Josefina Carla','Josefa','amomeufilho',1),
 (2,2,'Gabriel Tirone','Tirone','deusefiel',1),
 (2,3,'Marilene Peixes','Marilene Peixe','olamarilene',1),

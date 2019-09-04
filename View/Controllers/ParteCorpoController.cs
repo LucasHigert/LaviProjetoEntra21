@@ -18,53 +18,84 @@ namespace View.Controllers
             repositorio = new ParteCorpoRepository();
         }
 
-        [HttpGet, Route("obtertodos")]
-        public JsonResult ObterTodos()
+        public ActionResult Index()
         {
-            var parteCorpo = repositorio.ObterTodos();
-            var resultado = new { data = parteCorpo };
-            return Json(resultado, JsonRequestBehavior.AllowGet);
+            List<ParteCorpo> parteCorpos = repositorio.ObterTodos();
+            ViewBag.PartesCorpo = parteCorpos;
+            return View();
         }
+
+        //Inserir
+        #region Inserir
 
         [HttpPost, Route("inserir")]
-        public JsonResult Inserir(ParteCorpo parteCorpo)
+
+        public ActionResult Inserir(ParteCorpo parteCorpo)
         {
-            bool id = repositorio.Inserir(parteCorpo);
-            var resultado = new { status = id };
-            return Json(resultado, JsonRequestBehavior.AllowGet);
+            parteCorpo.RegistroAtivo = true;
+            bool cadastrado = repositorio.Inserir(parteCorpo);
+            if (cadastrado == true)
+            {
+                return RedirectToAction("index");
+            }
+            else
+            {
+                return RedirectToAction("Cadastrar");
+            }
         }
+        
+        public ActionResult Cadastrar()
+        {
+            return View();
+        }
+        
+        #endregion
+
+        //Editar
+        #region Editar
 
         [HttpPost, Route("editar")]
-        public JsonResult Update(ParteCorpo parteCorpo)
+        public ActionResult Update(ParteCorpo parteCorpo)
         {
-           bool retorno = repositorio.Alterar(parteCorpo);
-            var resultado = new { status = retorno };
-            return Json(resultado, JsonRequestBehavior.AllowGet);
+            bool retorno = repositorio.Alterar(parteCorpo);
+            if (retorno == true)
+            {
+            return RedirectToAction("index");
+
+            }
+            else
+            {
+                return RedirectToAction("cadastrar");
+            }
         }
 
-        [HttpPost, Route("apagar")]
+        [HttpGet]
+        public ActionResult Alterar(int id)
+        {
+            var partecorpo = repositorio.ObterPeloId(id);
+            if (partecorpo == null)
+            {
+                return RedirectToAction("Index");
+            }
+            ViewBag.ParteCorpo = partecorpo;
+            return View();
+        }
+
+        #endregion
+
+
+        //Apagar
+        #region Apagar
+
+        [HttpGet, Route("apagar")]
         public JsonResult Apagar(int id)
         {
             var apagou = repositorio.Apagar(id);
             var resultado = new { status = apagou };
             return Json(resultado, JsonRequestBehavior.AllowGet);
         }
-
-        public ActionResult Index()
-        {
-            return View();
-        }
-     
-        public ActionResult Alterar()
-        {
-            return View();
-        }
-
-        public ActionResult Cadastrar()
-        {
-            return View();
-        }
-
+        
+        #endregion
 
     }
 }

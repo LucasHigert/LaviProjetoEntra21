@@ -16,6 +16,7 @@ namespace Repository.Repository
         {
             context = new SistemaContext();
         }
+
         public bool Alterar(Paciente paciente)
         {
             var pacienteOriginal = context.Pacientes.FirstOrDefault(x => x.Id == paciente.Id);

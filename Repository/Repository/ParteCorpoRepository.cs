@@ -27,6 +27,8 @@ namespace Repository.Repository
             }
 
             parteCorpoAnterior.Nome = parteCorpo.Nome;
+            parteCorpoAnterior.TraducaoCriolo = parteCorpo.TraducaoCriolo;
+            parteCorpoAnterior.TraducaoFrances = parteCorpo.TraducaoFrances;
             int quantidadeAfetada = context.SaveChanges();
             return quantidadeAfetada == 1;
         }
@@ -53,8 +55,8 @@ namespace Repository.Repository
             if (parteOriginal == null)
             {
                 context.PartesCorpo.Add(parteCorpo);
-                context.SaveChanges();
-                return parteCorpo.Id == 1;
+                int rows = context.SaveChanges();
+                return rows == 1;
             }
             else
             {

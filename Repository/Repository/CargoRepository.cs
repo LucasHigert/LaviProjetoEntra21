@@ -15,6 +15,36 @@ namespace Repository.Repository
         {
             context = new SistemaContext();
         }
+                
+        public bool Alterar(Cargo cargo)
+        {
+            var cargoOriginal = context.Cargos.FirstOrDefault(x => x.Id == cargo.Id);
+            if (cargoOriginal == null)
+                return false;
+
+            cargoOriginal.Nome = cargo.Nome;
+
+            int quantidadeAfetada = context.SaveChanges();
+            return quantidadeAfetada == 1;
+        }
+
+        public bool Apagar(int id)
+        {
+            var cargo = context.Cargos
+                .FirstOrDefault(x => x.Id == id);
+            if (cargo == null)
+                return false;
+            cargo.RegistroAtivo = false;
+            int quantidadeAfetada = context.SaveChanges();
+            return quantidadeAfetada == 1;
+        }
+
+        public int Inserir(Cargo cargo)
+        {
+            context.Cargos.Add(cargo);
+            context.SaveChanges();
+            return cargo.Id;
+        }
 
         public Cargo ObterPeloId(int id)
         {
@@ -24,7 +54,9 @@ namespace Repository.Repository
 
         public List<Cargo> ObterTodos()
         {
-            return context.Cargos.Where(x => x.RegistroAtivo == true).OrderBy(x => x.Id).ToList();
+           // return context.Cargos.Where(x => x.RegistroAtivo == true).OrderBy(x => x.Id).ToList();
+            return (from cargo in context.Cargos where cargo.RegistroAtivo == true select cargo).ToList();
         }
+      
     }
 }

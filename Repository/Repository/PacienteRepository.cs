@@ -60,7 +60,7 @@ namespace Repository.Repository
 
         public List<Paciente> ObterPacientesPeloIdCidade(int idCidade)
         {
-            return context.Pacientes.Where(x => x.IdCidade == idCidade && x.RegistroAtivo).ToList();
+            return context.Pacientes.Where(x => x.IdPosto == idCidade && x.RegistroAtivo).ToList();
         }
 
         public Paciente ObterPeloId(int id)

@@ -14,26 +14,15 @@ namespace Model
         [Key, Column("id")]
         public int Id { get; set; }
 
-        [Column("id_cidade")]
-        public int IdCidade { get; set; }
+        [Column("id_posto")]
+        public int IdPosto { get; set; }
 
-        [ForeignKey("IdCidade")]
-        public Cidade Cidade { get; set; }
+        [ForeignKey("IdPosto")]
+        public Posto Posto { get; set; }
 
+        //parte da recepção
         [Column("nome")]
         public string Nome { get; set; }
-
-        [Column("cep")]
-        public string Cep { get; set; }
-
-        [Column("sexo")]
-        public bool Sexo { get; set; }
-
-        [Column("altura")]
-        public decimal Altura { get; set; }
-
-        [Column("peso")]
-        public decimal Peso { get; set; }
 
         [Column("cpf")]
         public string Cpf { get; set; }
@@ -49,6 +38,22 @@ namespace Model
 
         [Column("telefone")]
         public string Telefone { get; set; }
+
+        [Column("cep")]
+        public string Cep { get; set; }
+
+        //parte triagem
+        [Column("sexo")]
+        public bool Sexo { get; set; }
+
+        [Column("altura")]
+        public decimal Altura { get; set; }
+
+        [Column("peso")]
+        public decimal Peso { get; set; }
+
+        [Column("pressao")]
+        public string Pressao { get; set; }
 
         [Column("registro_ativo")]
         public bool RegistroAtivo { get; set; }

@@ -96,6 +96,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\SqlServerConnection.mdf" />
+    <Content Include="App_Data\SqlServerConnection_log.ldf">
+      <DependentUpon>SqlServerConnection.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\Imagens\Logo Lavi .png" />
     <Content Include="Content\Imagens\Logo Lavi Preto.png" />
     <Content Include="Content\replaces.css" />
@@ -4645,7 +4649,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Views\Funcionario\" />
     <Folder Include="Views\ParteCorpo\" />
     <Folder Include="Views\Posto\" />

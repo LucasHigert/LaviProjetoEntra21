@@ -3,7 +3,7 @@ namespace Repository.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Init : DbMigration
+    public partial class InitialCreate : DbMigration
     {
         public override void Up()
         {
@@ -120,22 +120,23 @@ namespace Repository.Migrations
                 c => new
                     {
                         id = c.Int(nullable: false, identity: true),
-                        id_cidade = c.Int(nullable: false),
+                        id_posto = c.Int(nullable: false),
                         nome = c.String(),
-                        cep = c.String(),
-                        sexo = c.Boolean(nullable: false),
-                        altura = c.Decimal(nullable: false, precision: 18, scale: 2),
-                        peso = c.Decimal(nullable: false, precision: 18, scale: 2),
                         cpf = c.String(),
                         rne = c.String(),
                         passaporte = c.String(),
                         endereco = c.String(),
                         telefone = c.String(),
+                        cep = c.String(),
+                        sexo = c.Boolean(nullable: false),
+                        altura = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        peso = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        pressao = c.String(),
                         registro_ativo = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.id)
-                .ForeignKey("dbo.cidades", t => t.id_cidade)
-                .Index(t => t.id_cidade);
+                .ForeignKey("dbo.postos", t => t.id_posto)
+                .Index(t => t.id_posto);
             
             CreateTable(
                 "dbo.atendimentos_partes_corpo_sintomas",
@@ -205,7 +206,7 @@ namespace Repository.Migrations
             DropForeignKey("dbo.atendimentos_partes_corpo_sintomas", "id_parte_corpo", "dbo.partes_corpo");
             DropForeignKey("dbo.atendimentos_partes_corpo_sintomas", "id_atendimento", "dbo.atendimentos");
             DropForeignKey("dbo.atendimentos", "id_paciente", "dbo.pacientes");
-            DropForeignKey("dbo.pacientes", "id_cidade", "dbo.cidades");
+            DropForeignKey("dbo.pacientes", "id_posto", "dbo.postos");
             DropForeignKey("dbo.atendimentos", "id_funcionario_medico", "dbo.funcionarios");
             DropForeignKey("dbo.atendimentos", "id_funcionario", "dbo.funcionarios");
             DropForeignKey("dbo.funcionarios", "id_posto", "dbo.postos");
@@ -219,7 +220,7 @@ namespace Repository.Migrations
             DropIndex("dbo.partes_corpo_sintomas", new[] { "id_sintomas" });
             DropIndex("dbo.atendimentos_partes_corpo_sintomas", new[] { "id_parte_corpo" });
             DropIndex("dbo.atendimentos_partes_corpo_sintomas", new[] { "id_atendimento" });
-            DropIndex("dbo.pacientes", new[] { "id_cidade" });
+            DropIndex("dbo.pacientes", new[] { "id_posto" });
             DropIndex("dbo.funcionarios", new[] { "id_cargo" });
             DropIndex("dbo.funcionarios", new[] { "id_posto" });
             DropIndex("dbo.cidades", new[] { "id_estado" });

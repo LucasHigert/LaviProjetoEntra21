@@ -20,22 +20,22 @@
                 </select>
             </div>*@
         <div class="col-4">
-            <label for="campo-estado">Estado</label>
-            <select name="idEstado" id="campo-estado" required="" class="form-control">
-                <option selected="" disabled="disabled">Selecione um estado</option>
-                @foreach (Model.Estado Estado in ViewBag.Estados)
+            <label for="campo-estado">Posto</label>
+            <select name="idPosto" id="campo-posto" required="" class="form-control">
+                <option selected="" disabled="disabled">Selecione um posto</option>
+                @foreach (Model.Posto Posto in ViewBag.Postos)
                 {
-                    <option value="@Estado.Id">@Estado.Nome</option>
+                    <option value="@Posto.Id">@Posto.Nome</option>
 
                 }
             </select>
         </div>
-        <div class="col-4">
+        @*<div class="col-4">
             <label for="campo-cidade">Cidade</label>
             <select name="IdCidade" id="campo-cidade" required="" class="form-control">
                 <option value="1">TesteCidade</option>
             </select>
-        </div>
+        </div>*@
     </div>
     <div>
         <label for="campo-endereco">Endereço</label>
@@ -95,8 +95,7 @@
             <input type="tel" id="campo-telefone" name="telefone" maxlength="14" class="form-control" />
         </div>
     </div>
-    <a class="btn btn-primary   float-right mb-3"
-       href="/paciente/cadastro">Nova teste</a>
+    
     <button type="submit" class="btn btn-success mt-3">Salvar</button>
 </form>
 

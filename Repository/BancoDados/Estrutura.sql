@@ -14,6 +14,15 @@ CREATE TABLE cidades(
 	registro_ativo BIT
 );
 
+
+CREATE TABLE postos(
+	id INT PRIMARY KEY IDENTITY(1,1),
+	id_cidade INT, 
+	FOREIGN KEY (id_cidade) REFERENCES cidades(id)  ON DELETE CASCADE ON UPDATE CASCADE,
+	nome VARCHAR(100),
+	cep VARCHAR(9),
+	registro_ativo BIT
+);
 CREATE TABLE pacientes(
 	id INT PRIMARY KEY IDENTITY(1,1),
 	id_cidade INT, 
@@ -30,15 +39,6 @@ CREATE TABLE pacientes(
 	passaporte VARCHAR(16),
 	telefone VARCHAR(14),
 	logradouro VARCHAR(100),
-	registro_ativo BIT
-);
-
-CREATE TABLE postos(
-	id INT PRIMARY KEY IDENTITY(1,1),
-	id_cidade INT, 
-	FOREIGN KEY (id_cidade) REFERENCES cidades(id)  ON DELETE CASCADE ON UPDATE CASCADE,
-	nome VARCHAR(100),
-	cep VARCHAR(9),
 	registro_ativo BIT
 );
 

@@ -16,17 +16,52 @@ namespace Repository.Repository
         {
             context = new SistemaContext();
         }
-                
+
+        public bool Alterar(Posto posto)
+        {
+            var postoOriginal = context.Postos.FirstOrDefault(x => x.Id == posto.Id);
+            if (postoOriginal == null)
+                return false;
+
+            postoOriginal.Id = posto.Id;
+            postoOriginal.Nome = posto.Nome;
+            postoOriginal.IdCidade = posto.Cidade.Id;
+            postoOriginal.Cep = posto.Cep;
+
+            int quantidadeAfetada = context.SaveChanges();
+            return quantidadeAfetada == 1;
+
+
+        }
+
+        public bool Apagar(int id)
+        {
+            var posto = context.Postos
+                .FirstOrDefault(x => x.Id == id);
+            if (posto == null)
+                return false;
+            posto.RegistroAtivo = false;
+            int quantidadeAfetada = context.SaveChanges();
+            return quantidadeAfetada == 1;
+        }
+
+        public int Inserir(Posto posto)
+        {
+            context.Postos.Add(posto);
+            context.SaveChanges();
+            return posto.Id;
+        }
+
         public Posto ObterPeloId(int id)
         {
-            var posto = context.Postos.FirstOrDefault(x => x.Id == id);
+            var posto = context.Postos.Include("cidade").FirstOrDefault(x => x.Id == id);
             return posto;
         }
 
         
         public List<Posto> ObterTodos()
         {
-            return context.Postos.Where(x => x.RegistroAtivo == true).OrderBy(x => x.Id).ToList();
+            return context.Postos.Include("cidade").Where(x => x.RegistroAtivo == true).ToList();
         }
     }
 }

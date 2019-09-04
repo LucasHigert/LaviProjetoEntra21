@@ -5668,6 +5668,9 @@
     <Content Include="Views\Cargo\Cadastrar.cshtml" />
     <Content Include="Views\Cidade\Alterar.cshtml" />
     <Content Include="Views\Cidade\Cadastro.cshtml" />
+    <Content Include="Views\Posto\Index.cshtml" />
+    <Content Include="Views\Posto\Cadastrar.cshtml" />
+    <Content Include="Views\Posto\Alterar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -5678,7 +5681,6 @@
   <ItemGroup>
     <Folder Include="Views\Funcionario\" />
     <Folder Include="Views\ParteCorpo\" />
-    <Folder Include="Views\Posto\" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

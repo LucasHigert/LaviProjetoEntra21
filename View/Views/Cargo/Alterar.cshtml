@@ -7,14 +7,14 @@
 
 
 <div class="row">
-    <div class="col-5">
+    <div class="col-12">
         <form action="/cargo/update" method="post">
             <input type="hidden" name="id" id="id" value="@ViewBag.Cargo.Id" />
             <div class="form-group">
-                <label for="cargo-nome">Nome</label>
-                <input class="form-control" id="cargo-nome" name="nome" maxlength="100" @ViewBag.Cargo.Nome/>
+                <label for="cargo-nome">Cargo</label>
+                <input class="form-control" id="cargo-nome" name="nome" maxlength="100" type="text" value="@ViewBag.Cargo.Nome"/>
             </div>            
-            <button class="btn btn-success" type="submit">Salvar</button>
+            <button class="btn btn-success float-right" type="submit">Salvar</button>
         </form>
     </div>
 </div>

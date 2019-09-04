@@ -57,9 +57,9 @@
     <Compile Include="Interfaces\IPacienteRepository.cs" />
     <Compile Include="Interfaces\IFuncionarioRepository.cs" />
     <Compile Include="Interfaces\IPostoRepository.cs" />
-    <Compile Include="Migrations\201908291420307_Init.cs" />
-    <Compile Include="Migrations\201908291420307_Init.Designer.cs">
-      <DependentUpon>201908291420307_Init.cs</DependentUpon>
+    <Compile Include="Migrations\201909041258291_initial.cs" />
+    <Compile Include="Migrations\201909041258291_initial.Designer.cs">
+      <DependentUpon>201909041258291_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -89,8 +89,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201908291420307_Init.resx">
-      <DependentUpon>201908291420307_Init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201909041258291_initial.resx">
+      <DependentUpon>201909041258291_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

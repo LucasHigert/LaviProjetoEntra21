@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "Alterar";
+}
+
+<h2>Alterar</h2>
+
+<form method="post" action="/posto/update">
+
+    <a href="/posto/index" class="btn btn-danger">Lista de Postos</a>
+
+    <input type="hidden" name="id" value="@ViewBag.Postos.Id" />
+
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <label for="campo-nome">Nome do Posto</label>
+                <input type="text" name="nome" class="form-control" id="campo-nome" value="@ViewBag.Posto.Nome" />
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <label for="campo-cep">CEP</label>
+                <input type="text" name="cep" class="form-control" id="campo-cep" value="@ViewBag.Posto.Cep" />
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <label form="campo-cidade">Cidade</label>
+                <select class="form-control" name="idCidade">
+                    <option disabled="disabled" selected="selected">Selecione uma cidade</option>
+                    @foreach (Model.Cidade cidade in ViewBag.Cidades)
+                    {
+                        if (cidade.Id == ViewBag.Posto.IdCidade)
+                        {
+                            <option value="@cidade.Id" selected="selected">@cidade.Nome</option>
+                        }
+                        else
+                        {
+                            <option value="@cidade.Id">@cidade.Nome</option>
+                        }
+                    }
+                </select>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <button type="submit" class="btn btn-success">Salvar</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+</div>
+

@@ -24,6 +24,9 @@ namespace Model
         [Column("nome")]
         public string Nome { get; set; }
 
+        [Column("idade")]
+        public int Idade { get; set; }
+
         [Column("cpf")]
         public string Cpf { get; set; }
 

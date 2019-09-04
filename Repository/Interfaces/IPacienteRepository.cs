@@ -18,6 +18,9 @@ namespace Repository.Interfaces
 
         bool Apagar(int id);
 
+
+        List<Paciente> ObterTodos();
+
         Paciente ObterPeloId(int id);
     }
 }

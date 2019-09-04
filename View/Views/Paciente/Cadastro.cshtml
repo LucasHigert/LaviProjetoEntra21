@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Cadastro";
 }
 <title>Cadastro de paciente</title>
 <h2 class="display-4 mt-5 mb-5">Cadastro de paciente</h2>
@@ -13,10 +13,21 @@
             <input type="text" id="campo-cep" name="cep" maxlength="9" class="form-control" />
 
         </div>
-        <div class="col-4">
+        @*<div class="col-4">
             <label for="campo-estado">Estado</label>
             <select id="campo-estado" required="" class="form-control">
                 <option value="1">TesteEstado</option>
+            </select>
+        </div>*@
+        <div class="col-4">
+            <label for="campo-estado">Estado</label>
+            <select name="idEstado" id="campo-estado" required="" class="form-control">
+                <option selected="" disabled="disabled">Selecione um estado</option>
+                @foreach (Model.Estado Estado in ViewBag.Estados)
+                {
+                    <option value="@Estado.Id">@Estado.Nome</option>
+
+                }
             </select>
         </div>
         <div class="col-4">

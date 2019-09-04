@@ -10,6 +10,7 @@ namespace View.Controllers
 {
     public class PacienteController : Controller
     {
+
         private PacienteRepository repository;
 
         public PacienteController()
@@ -19,6 +20,8 @@ namespace View.Controllers
 
         public ActionResult Index()
         {
+            List<Paciente> pacientes = repository.ObterTodos();
+            ViewBag.Pacientes = pacientes;
             return View();
         }
 
@@ -37,13 +40,7 @@ namespace View.Controllers
         public ActionResult Inserir(Paciente paciente)
         {
             int id = repository.Inserir(paciente);
-            return RedirectToAction("Index");
-
-            CidadeRepository cidadeRepository = new CidadeRepository();
-            List<Cidade> cidades = cidadeRepository.ObterTodos();
-            ViewBag.Cidades = cidades;
-
-            return View();
+            return RedirectToAction("Cadastro");
 
         }
 
@@ -66,6 +63,13 @@ namespace View.Controllers
         public ActionResult Alterar()
         {
             return View("Alterar");
+        }
+
+        public ActionResult ObterTodos()
+        {
+            List<Paciente> pacientes = repository.ObterTodos();
+            ViewBag.Pacientes = pacientes;
+            return View();
         }
     }
 }

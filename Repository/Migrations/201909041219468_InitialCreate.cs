@@ -122,6 +122,7 @@ namespace Repository.Migrations
                         id = c.Int(nullable: false, identity: true),
                         id_posto = c.Int(nullable: false),
                         nome = c.String(),
+                        idade = c.Int(nullable: false),
                         cpf = c.String(),
                         rne = c.String(),
                         passaporte = c.String(),

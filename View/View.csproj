@@ -4641,6 +4641,7 @@
     <Content Include="Views\Cidade\Alterar.cshtml" />
     <Content Include="Views\Cidade\Cadastro.cshtml" />
     <Content Include="Views\Paciente\Alterar.cshtml" />
+    <Content Include="Views\Paciente\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

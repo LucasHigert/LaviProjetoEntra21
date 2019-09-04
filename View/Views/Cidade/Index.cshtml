@@ -3,30 +3,30 @@
     ViewBag.Title = "Index";
 }
 
-<h2>pacientes</h2>
+<h2>Cidades</h2>
 
 <a class="btn btn-primary   float-right mb-3"
-   href="/paciente/cadastro">Nova paciente</a>
+   href="/cidade/cadastro">Nova cidade</a>
 
-<table class="table table-striped table-bordered table-hover" id="pacientes-index">
+<table class="table table-striped table-bordered table-hover" id="cidades-index">
     <thead>
         <tr>
             <th>Id</th>
-            <th>paciente</th>
+            <th>cidade</th>
             <th>Estado</th>
             <th>Ação</th>
         </tr>
     </thead>
     <tbody>
-        @foreach (Model.Paciente paciente in ViewBag.Pacientes)
+        @foreach (Model.Cidade cidade in ViewBag.Cidades)
         {
             <tr>
-                <td>@paciente.Id</td>
-                <td>@paciente.Nome</td>
-                <td>@paciente.Posto.Nome</td>
+                <td>@cidade.Id</td>
+                <td>@cidade.Nome</td>
+                <td>@cidade.Estado.Nome</td>
                 <td>
-                    <a class="btn btn-outline-info" href="/paciente/alterar?id=@paciente.Id"><i class="fa fa-edit"></i> Alterar</a>
-                    <a class="btn btn-outline-danger" href="/paciente/apagar?id=@paciente.Id"><i class="fa fa-trash"></i> Apagar</a>
+                    <a class="btn btn-outline-info" href="/cidade/alterar?id=@cidade.Id"><i class="fa fa-edit"></i> Alterar</a>
+                    <a class="btn btn-outline-danger" href="/cidade/apagar?id=@cidade.Id"><i class="fa fa-trash"></i> Apagar</a>
                 </td>
             </tr>
         }

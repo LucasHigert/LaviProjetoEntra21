@@ -4641,7 +4641,7 @@
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Paciente\Index.cshtml" />
+    <Content Include="Views\Paciente\Cadastro.cshtml" />
     <Content Include="Views\Atendimento\Index.cshtml" />
     <Content Include="Views\Cargo\Index.cshtml" />
     <Content Include="Views\Cidade\Index.cshtml" />
@@ -5676,6 +5676,8 @@
     <Content Include="Views\Atendimento\Alterar.cshtml" />
     <Content Include="Views\Instrucoes\Index.cshtml" />
     <Content Include="Views\Cidade\Cadastro.cshtml" />
+    <Content Include="Views\Paciente\Alterar.cshtml" />
+    <Content Include="Views\Paciente\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -5684,7 +5686,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Views\Funcionario\" />
     <Folder Include="Views\Posto\" />
   </ItemGroup>

@@ -24,7 +24,7 @@ namespace View.Controllers
         #region
         public ActionResult Cadastro()
         {
-            ViewBag.Pacientes = repositoryPaciente.ObterPacientesPeloIdCidade(1);
+            //ViewBag.Pacientes = repositoryPaciente.ObterPacientesPeloIdCidade(1);
             return View();
         }
 

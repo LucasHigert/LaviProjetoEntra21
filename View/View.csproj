@@ -5686,6 +5686,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\" />
     <Folder Include="Views\Funcionario\" />
     <Folder Include="Views\Posto\" />
   </ItemGroup>

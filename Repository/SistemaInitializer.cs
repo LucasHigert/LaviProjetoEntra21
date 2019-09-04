@@ -4,7 +4,8 @@ using System.Data.Entity;
 
 namespace Repository
 {
-    internal class SistemaInitializer : CreateDatabaseIfNotExists<SistemaContext>
+    //internal class SistemaInitializer : DropCreateDatabaseAlways<SistemaContext>
+    internal class SistemaInitializer : DropCreateDatabaseAlways<SistemaContext>
     {
 
         protected override void Seed(SistemaContext context)
@@ -152,6 +153,8 @@ namespace Repository
             #endregion
             context.Estados.AddRange(estados);
             #endregion
+
+
 
             base.Seed(context);
         }

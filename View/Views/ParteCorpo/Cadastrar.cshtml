@@ -2,23 +2,21 @@
 @{
     ViewBag.Title = "Cadastrar";
 }
-
-<h2>Cadastrar</h2>
-
+<h2 class="display-4">Cadastro de Partes do Corpo</h2>
 <form action="/partecorpo/inserir" method="post">
-    <div>
-        <label for="campo-nome" >Nome</label>
-        <input type="text" maxlength="100" name="nome" id="campo-nome" />
-    </div>
+        <div>
+            <label class="text-dark mt-10" for="campo-nome">Nome</label>
+            <input type="text" maxlength="100" name="nome" id="campo-nome" class="form-control border-info text-dark font-weight-bold"  />
+        </div>
 
-    <button type="submit">Salvar</button>
+        <div>
+            <label class="text-dark mt-20" for="campo-criolo">Tradução Criolo</label>
+            <input type="text" maxlength="100" name="traducaocriolo" id="campo-criolo"class="form-control border-info text-dark font-weight-bold" />
+        </div>
+        <div>
+            <label class="text-dark mt-20" for="campo-frances">Francês</label>
+            <input type="text" maxlength="100" name="traducaofrances" id="campo-frances" class="form-control border-info text-dark font-weight-bold" />
+        </div>
 
-
-
-
-
-
-
-
-
+    <button class="btn btn-success mt-25" type="submit"><i class="fa fa-save"></i>Salvar</button>
 </form>

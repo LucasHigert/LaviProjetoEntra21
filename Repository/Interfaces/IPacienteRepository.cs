@@ -14,9 +14,12 @@ namespace Repository.Interfaces
 
         bool Alterar(Paciente paciente);
 
-        List<Paciente> ObterPacientesPeloIdCidade(int IdCidade);
+        List<Paciente> ObterPacientesPeloIdPosto(int idPosto);
 
         bool Apagar(int id);
+
+
+        List<Paciente> ObterTodos();
 
         Paciente ObterPeloId(int id);
     }

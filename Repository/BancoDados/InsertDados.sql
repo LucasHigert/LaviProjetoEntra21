@@ -44,7 +44,7 @@ INSERT INTO postos (id_cidade,nome,cep,registro_ativo) VALUES
 (2,'Estratégia Saúde da Família Santa Terezinha','89110-974',1),
 (2,'Posto de Saude Teste','89110-976',0);
 
-INSERT INTO pacientes (id_cidade,nome,endereco,cep,idade,sexo,altura,peso,registro_ativo,cpf,rne,passaporte,telefone) VALUES
+INSERT INTO pacientes (id_posto,nome,endereco,cep,idade,sexo,altura,peso,registro_ativo,cpf,rne,passaporte,telefone) VALUES
 (1,'Leticia Rodriguez Garcia','Rua Anna Fischer 80','89068-022'	,35,1, 1.74,63.2,1,'963.842.780-90','V565371-S','','4798856-0458'),
 (1,'Maiara Ilinoi Cardoso','Rua Noel Rosa 10','89057-420',18,1,1.50,50.2,1,'267.450.960-05','K568371-F','','4799241-5064'),
 (2,'Pedro Alexandre Madeiro','Rua Curitiba 55','89012-412',42,0,1.82,82,1,'769.127.850-00','R5653971-J','',''),
@@ -57,12 +57,13 @@ INSERT INTO cargos (nome,registro_ativo) VALUES
 ('Trigem',1),
 ('Médico',0);
 
+
+
 INSERT INTO funcionarios (id_posto,id_cargo,nome,login,senha,registro_ativo) VALUES 
 (1,1,'Tiffany Carlene','Tiffany Carlene','carlezinha123',1),
 (1,2,'Roberto Francisco Sagaz','Roberto Sagaz','medicotop',1),
 (1,3,'Vanessa Revineia','Revineia','triagemboa',1),
 (1,2,'Roberto Francisco Sagaz','Roberto Sagaz','medicotop',0),
-
 (2,1,'Josefina Carla','Josefa','amomeufilho',1),
 (2,2,'Gabriel Tirone','Tirone','deusefiel',1),
 (2,3,'Marilene Peixes','Marilene Peixe','olamarilene',1),

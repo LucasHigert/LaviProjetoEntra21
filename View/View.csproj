@@ -5676,6 +5676,9 @@
     <Content Include="Views\Atendimento\Alterar.cshtml" />
     <Content Include="Views\Instrucoes\Index.cshtml" />
     <Content Include="Views\Cidade\Cadastro.cshtml" />
+    <Content Include="Views\Posto\Index.cshtml" />
+    <Content Include="Views\Posto\Cadastrar.cshtml" />
+    <Content Include="Views\Posto\Alterar.cshtml" />
     <Content Include="Views\Paciente\Alterar.cshtml" />
     <Content Include="Views\Paciente\Index.cshtml" />
     <None Include="Web.Debug.config">
@@ -5688,6 +5691,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Funcionario\" />
+    <Folder Include="Views\ParteCorpo\" />
     <Folder Include="Views\Posto\" />
   </ItemGroup>
   <ItemGroup />

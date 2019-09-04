@@ -58,9 +58,11 @@ namespace Repository.Repository
             return paciente.Id;
         }
 
-        public List<Paciente> ObterPacientesPeloIdCidade(int idCidade)
+    
+
+        public List<Paciente> ObterPacientesPeloIdPosto(int idPosto)
         {
-            return context.Pacientes.Where(x => x.IdPosto == idCidade && x.RegistroAtivo).ToList();
+            return context.Pacientes.Where(x => x.IdPosto == idPosto && x.RegistroAtivo).ToList();
         }
 
         public Paciente ObterPeloId(int id)
@@ -72,7 +74,7 @@ namespace Repository.Repository
         public List<Paciente> ObterTodos()
         {
             return context.Pacientes
-               .Include("Cidade")
+               .Include("Posto")
                .Where(x => x.RegistroAtivo == true)
                .ToList();
         }

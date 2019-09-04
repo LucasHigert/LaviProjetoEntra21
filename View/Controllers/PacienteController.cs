@@ -11,7 +11,8 @@ namespace View.Controllers
     public class PacienteController : Controller
     {
 
-        private PacienteRepository repository;
+        // GET: Cidade
+        public PacienteRepository repository;
 
         public PacienteController()
         {
@@ -20,49 +21,64 @@ namespace View.Controllers
 
         public ActionResult Index()
         {
+            ////var cidades = repository.ObterTodos(cidades);
+            //List<Cidade> cidades = repository.ObterTodos();
+            //return View();
+
             List<Paciente> pacientes = repository.ObterTodos();
             ViewBag.Pacientes = pacientes;
             return View();
+
         }
 
-        public JsonResult ObterPacientesPeloIdCidade(int idCidade)
+        public ActionResult Cadastro()
         {
-            var pacientes = repository.ObterPacientesPeloIdCidade(idCidade);
-            var resultado = new { data = pacientes };
-            return Json(resultado, JsonRequestBehavior.AllowGet);
-        }
+            //cidade.RegistroAtivo = true;
+            //var id = repository.Inserir(cidade);
+            //var resultado = new { id = id };
+            //return View("cadastro");
 
-        public JsonResult ObterPeloId(int id)
-        {
-            return Json(repository.ObterPeloId(id), JsonRequestBehavior.AllowGet);
+            //Puxa Info dos estados
+            PostoRepository postoRepository = new PostoRepository();
+            List<Posto> postos = postoRepository.ObterTodos();
+            ViewBag.Postos = postos;    
+
+            return View();
         }
 
         public ActionResult Inserir(Paciente paciente)
         {
             int id = repository.Inserir(paciente);
-            return RedirectToAction("Cadastro");
-
+            return RedirectToAction("Index");
+            //, new { id = id });
         }
 
-
-
-        public JsonResult Apagar(int id)
+        public ActionResult Apagar(int id)
         {
-            var apagou = repository.Apagar(id);
-            var resultado = new { status = apagou };
-            return Json(resultado, JsonRequestBehavior.AllowGet);
+            repository.Apagar(id);
+            return RedirectToAction("Index");
         }
 
-        public JsonResult Update(Paciente paciente)
+        public ActionResult Update(int id, int idPosto, string nome)
         {
-            var alterou = repository.Alterar(paciente);
-            var resultado = new { status = alterou };
-            return Json(resultado);
+            Paciente paciente = new Paciente();
+            paciente.Id = id;
+            paciente.Nome = nome;
+            paciente.Posto = new Posto();
+            paciente.Posto.Id = idPosto;
+
+            repository.Alterar(paciente);
+            return RedirectToAction("Index");
         }
 
-        public ActionResult Alterar()
+        public ActionResult Alterar(int id)
         {
-            return View("Alterar");
+            Paciente paciente = new Paciente();
+            paciente = repository.ObterPeloId(id);
+            ViewBag.Paciente = paciente;
+            PostoRepository postoRepository = new PostoRepository();
+            ViewBag.Estados = postoRepository.ObterTodos();
+            return View();
         }
 
         public ActionResult ObterTodos()

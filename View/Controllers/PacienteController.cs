@@ -59,7 +59,7 @@ namespace View.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult Update(int id, int idPosto, string nome,int idade,string cpf, string rne,string passaporte, string telefone, string endereco, string cep, bool sexo,decimal altura, decimal peso,string pressao )
+        public ActionResult Update(int id, int idPosto, string nome,int idade,string cpf, string rne,string passaporte, string telefone, string endereco, string cep, bool sexo,double altura, double peso,string pressao )
         {
             Paciente paciente = new Paciente();
             paciente.Id = id;

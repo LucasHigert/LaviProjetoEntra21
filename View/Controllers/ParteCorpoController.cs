@@ -57,15 +57,7 @@ namespace View.Controllers
         public ActionResult Update(ParteCorpo parteCorpo)
         {
             bool retorno = repositorio.Alterar(parteCorpo);
-            if (retorno == true)
-            {
             return RedirectToAction("index");
-
-            }
-            else
-            {
-                return RedirectToAction("cadastrar");
-            }
         }
 
         [HttpGet]

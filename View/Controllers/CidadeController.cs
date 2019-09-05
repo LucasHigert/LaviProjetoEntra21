@@ -34,8 +34,7 @@ namespace View.Controllers
            
             //Puxa Info dos estados
             EstadoRepository estadoRepository = new EstadoRepository();
-            List<Estado> estados = estadoRepository.ObterTodos();
-            ViewBag.Estados = estados;
+            ViewBag.Estados = estadoRepository.ObterTodos(); ;
 
             return View();
         }

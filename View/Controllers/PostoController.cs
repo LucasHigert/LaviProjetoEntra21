@@ -20,7 +20,6 @@ namespace View.Controllers
             repository = new PostoRepository();
         }
 
-        [HttpGet]
         public ActionResult Index()
         {
             List<Posto> postos = repository.ObterTodos();
@@ -28,44 +27,23 @@ namespace View.Controllers
             return View();
         }
 
+        //Apagar
+        #region Apagar
         [HttpGet]
-        public JsonResult ObterTodos()
-        {
-            var postos = repository.ObterTodos();
-            var resultado = new { data = postos };
-            return Json(resultado, JsonRequestBehavior.AllowGet);
-        }
-
-        [HttpGet, Route("posto/")]
-        public JsonResult ObterPeloId(int id)
-        {
-            var posto = repository.ObterPeloId(id);
-            return Json(posto, JsonRequestBehavior.AllowGet);
-        }
-
-        [HttpGet, Route("apagar")]
-        public JsonResult Apagar(int id)
+        public ActionResult Apagar(int id)
         {
             var apagou = repository.Apagar(id);
-            var resultado = new { status = apagou };
-            return Json(resultado, JsonRequestBehavior.AllowGet);
+            return RedirectToAction("index");
         }
-                
-        [HttpPost, Route("editar")]
-        public JsonResult Update(Posto posto)
+        #endregion
+
+        //Alterar
+        #region Alterar
+        [HttpPost]
+        public ActionResult Update(Posto posto)
         {
             var alterou = repository.Alterar(posto);
-            var resultado = new { status = alterou };
-            return Json(resultado);
-        }
-
-        [HttpPost, Route("inserir")]
-        public ActionResult Inserir(Posto posto)
-        {
-            posto.RegistroAtivo = true;
-            var id = repository.Inserir(posto);
-            var resultado = new { id = id };
-            return Json(resultado);
+            return RedirectToAction("index");
         }
 
         [HttpGet]
@@ -82,6 +60,18 @@ namespace View.Controllers
             return View();
         }
 
+        #endregion
+
+
+        //Cadastar
+        #region Cadastrar                
+        [HttpPost]
+        public ActionResult Inserir(Posto posto)
+        {
+            posto.RegistroAtivo = true;
+            var id = repository.Inserir(posto);
+            return RedirectToAction("index");
+        }
 
         public ActionResult Cadastrar()
         {
@@ -89,11 +79,6 @@ namespace View.Controllers
             ViewBag.Cidades = repositoryCidade.ObterTodos();
             return View();
         }
-
-        
-
-        
-
-        
+        #endregion
     }
 }

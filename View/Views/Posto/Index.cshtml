@@ -3,19 +3,24 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Postos</h2>
-
-<a class="btn btn-outline-secondary float-right" style="margin-bottom: 5px" href="/posto/cadastrar"><i class="fas fa-plus"></i>Novo</a>
-<table class="table table-striped table-bordered table-hover" id="postos-index">
-    <thead>
+<div class="row">
+    <div class="col-6">
+        <h2 class="display-4">Postos</h2>
+    </div>
+    <div class="col-6">
+        <a class="btn btn-dark float-right" href="/posto/cadastrar"><i class="fas fa-plus"></i>Novo Posto</a>
+    </div>
+</div>
+<table class="table table-primary table-striped table-hover text-dark" id="postos-index">
+    <thead class="bg-dark">
         <tr>
-            <th>Nome do Posto</th>
-            <th>CEP</th>
-            <th>Cidade</th>
-            <th>Ação</th>
+            <td>Nome do Posto</td>
+            <td>CEP</td>
+            <td>Cidade</td>
+            <td>Ação</td>
         </tr>
     </thead>
-    <tbody>
+    <tbody class="font-weight-bold">
         @foreach (Model.Posto posto in ViewBag.Postos)
         {
             <tr>
@@ -23,10 +28,10 @@
                 <td>@posto.Cep</td>
                 <td>@posto.Cidade.Nome</td>
                 <td>
-                    <a class="btn btn-outline-primary float-right" href="/posto/alterar?id=@posto.Id">Editar</a>
-                    <a class="btn btn-outline-danger float-right" style="margin-right: 5px" href="/posto/apagar?id=@posto.Id">Apagar</a>
+                    <a class="btn btn-primary" href="/posto/alterar?id=@posto.Id">Editar</a>
+                    <a class="btn btn-danger" href="/posto/apagar?id=@posto.Id">Apagar</a>
                 </td>
             </tr>
         }
-    </tbody>   
+    </tbody>
 </table>

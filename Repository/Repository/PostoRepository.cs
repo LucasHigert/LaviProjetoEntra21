@@ -25,7 +25,7 @@ namespace Repository.Repository
 
             postoOriginal.Id = posto.Id;
             postoOriginal.Nome = posto.Nome;
-            postoOriginal.Cidade = posto.Cidade;
+            postoOriginal.IdCidade = posto.IdCidade;
             postoOriginal.Cep = posto.Cep;
 
             int quantidadeAfetada = context.SaveChanges();

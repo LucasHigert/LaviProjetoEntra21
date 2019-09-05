@@ -12,5 +12,11 @@ namespace Repository.Interfaces
         List<Posto> ObterTodos();
 
         Posto ObterPeloId(int id);
+
+        bool Apagar(int id);
+
+        bool Alterar(Posto posto);
+
+        int Inserir(Posto posto);
     }
 }

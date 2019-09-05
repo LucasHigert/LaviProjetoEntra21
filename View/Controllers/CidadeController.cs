@@ -27,6 +27,7 @@ namespace View.Controllers
             List<Cidade> cidades = repository.ObterTodos();
             ViewBag.Cidades = cidades;
             return View();
+
         }
 
         public ActionResult Cadastro()

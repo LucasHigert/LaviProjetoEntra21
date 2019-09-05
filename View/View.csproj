@@ -96,10 +96,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\SqlServerConnection.mdf" />
-    <Content Include="App_Data\SqlServerConnection_log.ldf">
-      <DependentUpon>SqlServerConnection.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -4618,6 +4614,7 @@
     <Compile Include="Controllers\CidadeController.cs" />
     <Compile Include="Controllers\EncaminhamentoController.cs" />
     <Compile Include="Controllers\FuncionarioController.cs" />
+    <Compile Include="Controllers\InstrucoesController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PacienteController.cs" />
     <Compile Include="Controllers\ParteCorpoController.cs" />
@@ -4645,7 +4642,7 @@
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Paciente\Index.cshtml" />
+    <Content Include="Views\Paciente\Cadastro.cshtml" />
     <Content Include="Views\Atendimento\Index.cshtml" />
     <Content Include="Views\Cargo\Index.cshtml" />
     <Content Include="Views\Cidade\Index.cshtml" />
@@ -5676,7 +5673,15 @@
     <Content Include="Views\Cargo\Alterar.cshtml" />
     <Content Include="Views\Cargo\Cadastrar.cshtml" />
     <Content Include="Views\Cidade\Alterar.cshtml" />
+    <Content Include="Views\Atendimento\Cadastro.cshtml" />
+    <Content Include="Views\Atendimento\Alterar.cshtml" />
+    <Content Include="Views\Instrucoes\Index.cshtml" />
     <Content Include="Views\Cidade\Cadastro.cshtml" />
+    <Content Include="Views\Posto\Index.cshtml" />
+    <Content Include="Views\Posto\Cadastrar.cshtml" />
+    <Content Include="Views\Posto\Alterar.cshtml" />
+    <Content Include="Views\Paciente\Alterar.cshtml" />
+    <Content Include="Views\Paciente\Index.cshtml" />
     <Content Include="Views\Encaminhamento\Index.cshtml" />
     <Content Include="Views\Encaminhamento\Cadastrar.cshtml" />
     <Content Include="Views\Encaminhamento\Alterar.cshtml" />
@@ -5688,6 +5693,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\" />
     <Folder Include="Views\Funcionario\" />
     <Folder Include="Views\Posto\" />
   </ItemGroup>

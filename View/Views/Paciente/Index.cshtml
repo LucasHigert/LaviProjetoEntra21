@@ -2,89 +2,33 @@
 @{
     ViewBag.Title = "Index";
 }
-<title>Cadastro de paciente</title>
-<h2 class="display-4 mt-5 mb-5">Cadastro de paciente</h2>
 
-<form action="/paciente/inserir" method="post">
-    <!--Campos relacionados com o  endereço-->
-    <div class="row">
-        <div class="col-4">
-            <label for="campo-cep">CEP</label>
-            <input type="text" id="campo-cep" name="cep" maxlength="9" class="form-control" />
+<h2>Lista dos Pacientes</h2>
 
-        </div>
-        <div class="col-4">
-            <label for="campo-estado">Estado</label>
-            <select id="campo-estado" required="" class="form-control">
-                <option value="1">TesteEstado</option>
-            </select>
-        </div>
-        <div class="col-4">
-            <label for="campo-cidade">Cidade</label>
-            <select name="IdCidade" id="campo-cidade" required="" class="form-control">
-                <option value="1">TesteCidade</option>
-            </select>
-        </div>
-    </div>
-    <div>
-        <label for="campo-endereco">Endereço</label>
-        <input type="text" id="campo-endereco" name="endereco" required="" class="form-control" maxlength="100" />
-    </div>
+<a class="btn btn-primary   float-right mb-3"
+   href="/paciente/cadastro">Novo Paciente</a>
 
-
-    <!--Campos para informações pessoas-->
-    <div>
-        <label for="campo-nome">Nome</label>
-        <input type="text" id="campo-nome" name="nomePaciente" class="form-control" maxlength="100" required="">
-    </div>
-
-    <div class="row">
-        <div class="col-3">
-            <label for="campo-idade">Idade</label>
-            <input type="number" id="campo-idade" name="idade" maxlength="3" class="form-control" />
-        </div>
-        <div class="col-3">
-            <label for="campo-sexo">Sexo</label>
-            <select id="campo-sexo" name="sexo" class="form-control">
-                <option value="true">Feminino</option>
-                <option value="false">Masculino</option>
-            </select>
-        </div>
-
-        <div class="col-3">
-            <label for="campo-altura">Altura</label>
-            <input type="number" id="campo-altura" name="altura" class="form-control" />
-        </div>
-
-        <div class="col-3">
-            <label for="campo-peso">Peso</label>
-            <input type="number" id="campo-peso" name="peso" class="form-control" />
-        </div>
-
-    </div>
-
-    <!-- Campos com informações de identificação (cpf,telefone,rne,...)-->
-    <div class="row">
-        <div class="col-3">
-            <label for="campo-cpf">CPF</label>
-            <input type="text" required="" maxlength="15" id="campo-cpf" name="cpf" class="form-control" />
-        </div>
-        <div class="col-3">
-            <label for="campo-rne">RNE</label>
-            <input type="text" id="campo-rne" name="rne" maxlength="50" class="form-control" />
-        </div>
-            
-        <div class="col-3">
-            <label for="campo-passaporte">Passaporte</label>
-            <input type="text" id="campo-passaporte" name="passaporte" maxlength="50" class="form-control" />
-        </div>
-
-        <div class="col-3">
-            <label for="campo-telefone">Telefone</label>
-            <input type="tel" id="campo-telefone" name="telefone" maxlength="14" class="form-control" />
-        </div>
-    </div>
-
-    <button type="submit" class="btn btn-success mt-3">Salvar</button>
-</form>
-
+<table class="table table-striped table-bordered table-hover" id="pacientes-index">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Paciente</th>
+            <th>Posto</th>
+            <th>Ação</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Model.Paciente paciente in ViewBag.Pacientes)
+        {
+            <tr>
+                <td>@paciente.Id</td>
+                <td>@paciente.Nome</td>
+                <td>@paciente.Posto.Nome</td>
+                <td>
+                    <a class="btn btn-outline-info" href="/paciente/alterar?id=@paciente.Id"><i class="fa fa-edit"></i> Alterar</a>
+                    <a class="btn btn-outline-danger" href="/paciente/apagar?id=@paciente.Id"><i class="fa fa-trash"></i> Apagar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

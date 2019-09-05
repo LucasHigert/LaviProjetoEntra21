@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -14,10 +15,11 @@ namespace View.Controllers
             return View();
         }
 
+        
         public ActionResult VerificaLogin(string login, string senha)
         {
-
-            return Redirect("/telainicial/index");
+            
+            return Redirect("/instrucoes/index");
         }
     }
 }

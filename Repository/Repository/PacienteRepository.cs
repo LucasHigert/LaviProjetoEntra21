@@ -16,6 +16,7 @@ namespace Repository.Repository
         {
             context = new SistemaContext();
         }
+
         public bool Alterar(Paciente paciente)
         {
             var pacienteOriginal = context.Pacientes.FirstOrDefault(x => x.Id == paciente.Id);
@@ -52,20 +53,31 @@ namespace Repository.Repository
 
         public int Inserir(Paciente paciente)
         {
+            //paciente.RegistroAtivo = true;
             context.Pacientes.Add(paciente);
             context.SaveChanges();
             return paciente.Id;
         }
 
-        public List<Paciente> ObterPacientesPeloIdCidade(int idCidade)
+    
+
+        public List<Paciente> ObterPacientesPeloIdPosto(int idPosto)
         {
-            return context.Pacientes.Where(x => x.IdCidade == idCidade && x.RegistroAtivo).ToList();
+            return context.Pacientes.Where(x => x.IdPosto == idPosto && x.RegistroAtivo).ToList();
         }
 
         public Paciente ObterPeloId(int id)
         {
             var paciente = context.Pacientes.FirstOrDefault(x => x.Id == id);
             return paciente;
+        }
+
+        public List<Paciente> ObterTodos()
+        {
+            return context.Pacientes
+               .Include("Posto")
+               .Where(x => x.RegistroAtivo == true)
+               .ToList();
         }
     }
 }

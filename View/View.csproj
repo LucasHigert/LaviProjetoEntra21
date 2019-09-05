@@ -5669,7 +5669,6 @@
     <Content Include="Views\ParteCorpo\Cadastrar.cshtml" />
     <Content Include="Views\Sintoma\Index.cshtml" />
     <Content Include="Views\Sintoma\Cadastrar.cshtml" />
-    <Content Include="Views\Sintoma\Alterar.cshtml" />
     <Content Include="Views\Cargo\Alterar.cshtml" />
     <Content Include="Views\Cargo\Cadastrar.cshtml" />
     <Content Include="Views\Cidade\Alterar.cshtml" />
@@ -5685,6 +5684,7 @@
     <Content Include="Views\Encaminhamento\Index.cshtml" />
     <Content Include="Views\Encaminhamento\Cadastrar.cshtml" />
     <Content Include="Views\Encaminhamento\Alterar.cshtml" />
+    <Content Include="Views\Sintoma\Alterar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -3,15 +3,14 @@
     ViewBag.Title = "Cadastrar";
 }
 
-<h2>Cadastrar</h2>
+<h2 class="display-4">Cadastro de Cargo</h2>
 
-   <div class="row">
-    <div class="col-12">
 <form action="/cargo/inserir" method="post">
+    <div>
         <label for="campo-nome">Nome</label>
         <input type="text" maxlength="100" name="nome" id="campo-nome" style="min-width:900px" />
-    <button type="submit" style="margin-top: 5px" class="btn btn-success float-right">Salvar</button>
+    </div>
+    
+    <button type="submit" style="margin-top: 5px" class="btn btn-success float-left">Salvar</button>
 
 </form>
-    </div>
-   </div>

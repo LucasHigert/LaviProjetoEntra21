@@ -24,7 +24,6 @@ namespace View.Controllers
             ViewBag.PartesCorpo = parteCorpos;
             return View();
         }
-
         //Inserir
         #region Inserir
 
@@ -88,11 +87,10 @@ namespace View.Controllers
         #region Apagar
 
         [HttpGet, Route("apagar")]
-        public JsonResult Apagar(int id)
+        public ActionResult Apagar(int id)
         {
             var apagou = repositorio.Apagar(id);
-            var resultado = new { status = apagou };
-            return Json(resultado, JsonRequestBehavior.AllowGet);
+            return RedirectToAction("index");
         }
         
         #endregion

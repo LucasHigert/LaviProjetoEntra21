@@ -96,6 +96,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\SqlServerConnection.mdf" />
+    <Content Include="App_Data\SqlServerConnection_log.ldf">
+      <DependentUpon>SqlServerConnection.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -5693,9 +5697,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Views\Funcionario\" />
-    <Folder Include="Views\Posto\" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

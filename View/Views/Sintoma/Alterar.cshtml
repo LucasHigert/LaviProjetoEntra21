@@ -9,7 +9,7 @@
             <input type="hidden" name="id" id="id" value="@ViewBag.Sintoma.Id" />
             <div>
                 <label for="campo-partecorpo">Partes do Corpo</label>
-                <select name="partecorpo" id="campo-partecorpo" class="form-control">
+                <select name="idpartecorpo" id="campo-partecorpo" class="form-control">
                     @foreach (Model.ParteCorpo partecorpo in ViewBag.PartesCorpo)
                     {
                         <option value="@partecorpo.Id">@partecorpo.Nome</option>

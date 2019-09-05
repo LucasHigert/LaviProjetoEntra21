@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h3 class="text-center mb-3 mt-3 text-info">Encaminhamentos</h3>
+
+<div class="row">
+    <div class="col-12">
+        <a href="/encaminhamento/Cadastrar" class="btn btn-dark float-right mb-3"><i class="fas fa-plus"></i>Novo Encaminhamento</a>
+    </div>
+</div>
+
+<table class="table table-hover table-bordered">
+    <thead>
+        <tr>
+            <!--aaa-->
+            <th>Código</th>
+            <th>Posto</th>
+            <th>Descrição</th>
+            <th>Tradução em Crioulo</th>
+            <th>Tradução em Francês</th>
+            <th>Local</th>
+            <th>Ação</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(Model.Encaminhamento encaminhamento in ViewBag.Encaminhamentos)
+        {
+        <tr>
+            <td>@encaminhamento.Id</td>
+            <td>@encaminhamento.Posto.Nome</td>
+            <td>@encaminhamento.Descricao</td>
+            <td>@encaminhamento.TraducaoCriolo</td>
+            <td>@encaminhamento.TraducaoFrances</td>
+            <td>@encaminhamento.Local</td>
+            <td>
+                <a class="btn btn-primary" href="/encaminhamento/alterar?id=@encaminhamento.Id">Editar</a>
+                <a class="btn btn-danger" href="/encaminhamento/apagar?id=@encaminhamento.Id">Apagar</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

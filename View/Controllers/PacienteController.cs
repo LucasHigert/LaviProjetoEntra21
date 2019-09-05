@@ -50,11 +50,22 @@ namespace View.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult Update(int id, int idPosto, string nome)
+        public ActionResult Update(int id, int idPosto, string nome,int idade,string cpf, string rne,string passaporte, string telefone, string endereco, string cep, bool sexo,decimal altura, decimal peso,string pressao )
         {
             Paciente paciente = new Paciente();
             paciente.Id = id;
             paciente.Nome = nome;
+            paciente.Idade = idade;
+            paciente.Cpf = cpf;
+            paciente.Rne = rne;
+            paciente.Passaporte = passaporte;
+            paciente.Endereco = endereco;
+            paciente.Telefone = telefone;
+            paciente.Cep = cep;
+            paciente.Sexo = sexo;
+            paciente.Altura = altura;
+            paciente.Peso = peso;
+            paciente.Pressao = pressao;
             paciente.Posto = new Posto();
             paciente.Posto.Id = idPosto;
 

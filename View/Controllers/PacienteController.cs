@@ -40,8 +40,8 @@ namespace View.Controllers
 
             //Puxa Info dos estados
             PostoRepository postoRepository = new PostoRepository();
-            List<Posto> postos = postoRepository.ObterTodos();
-            ViewBag.Postos = postos;    
+            //List<Posto> postos = postoRepository.ObterTodos();
+            ViewBag.Postos = postoRepository.ObterTodos();
 
             return View();
         }

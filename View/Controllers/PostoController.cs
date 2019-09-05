@@ -29,11 +29,11 @@ namespace View.Controllers
         }
 
         [HttpGet]
-        public JsonResult ObterTodos()
+        public ActionResult ObterTodos()
         {
             var postos = repository.ObterTodos();
             var resultado = new { data = postos };
-            return Json(resultado, JsonRequestBehavior.AllowGet);
+            return View();
         }
 
         [HttpGet, Route("posto/")]
@@ -44,56 +44,50 @@ namespace View.Controllers
         }
 
         [HttpGet, Route("apagar")]
-        public JsonResult Apagar(int id)
+        public ActionResult Apagar(int id)
         {
-            var apagou = repository.Apagar(id);
-            var resultado = new { status = apagou };
-            return Json(resultado, JsonRequestBehavior.AllowGet);
+            repository.Apagar(id);
+            return RedirectToAction("Index");            
         }
-                
+
         [HttpPost, Route("editar")]
-        public JsonResult Update(Posto posto)
+        public ActionResult Update(int id, int idCidade, string nome, string cep)
         {
-            var alterou = repository.Alterar(posto);
-            var resultado = new { status = alterou };
-            return Json(resultado);
+            Posto posto = new Posto();
+            posto.Id = id;
+            posto.IdCidade = idCidade;
+            posto.Nome = nome;
+            posto.Cep = cep;
+
+            repository.Alterar(posto);
+            return RedirectToAction("Index");           
         }
 
         [HttpPost, Route("inserir")]
         public ActionResult Inserir(Posto posto)
         {
-            posto.RegistroAtivo = true;
-            var id = repository.Inserir(posto);
-            var resultado = new { id = id };
-            return Json(resultado);
+            int id = repository.Inserir(posto);
+            return RedirectToAction("Index");            
         }
 
         [HttpGet]
         public ActionResult Alterar(int id)
         {
-            var posto = repository.ObterPeloId(id);
-            if (posto == null)
-            {
-                return RedirectToAction("Index");
-            }
+            Posto posto = new Posto();
+            posto = repository.ObterPeloId(id);
+            ViewBag.Posto = posto;
             CidadeRepository repositoryCidade = new CidadeRepository();
             ViewBag.Cidades = repositoryCidade.ObterTodos();
-            ViewBag.Posto = posto;
-            return View();
+            return View();            
         }
 
 
         public ActionResult Cadastrar()
         {
             CidadeRepository repositoryCidade = new CidadeRepository();
-            ViewBag.Cidades = repositoryCidade.ObterTodos();
+            List<Cidade> cidades = repositoryCidade.ObterTodos();
+            ViewBag.Cidades = cidades;
             return View();
         }
-
-        
-
-        
-
-        
     }
 }

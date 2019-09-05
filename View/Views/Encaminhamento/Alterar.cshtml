@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Alterar";
+}
+
+<div class="row">
+    <div class="col-5">
+        <form action="/encaminhamento/update" method="post">
+            <input type="hidden" name="id" id="id" value="@ViewBag.Encaminhamento.Id" />
+            <div>
+                <label for="campo-posto">Postos</label>
+                <select name="idposto" id="campo-posto" class="form-control">
+                    @foreach (Model.Posto posto in ViewBag.Postos)
+                    {
+                        <option value="@posto.Id">@posto.Nome</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="encaminhamento-descricao">Descrição</label>
+                <textarea class="form-control" id="encaminhamento-descricao" name="descricao">@ViewBag.Encaminhamento.Descricao</textarea>
+            </div>
+            <div class="form-group">
+                <label for="encaminhamento-traducaocriolo">Tradução Crioulo</label>
+                <textarea class="form-control" id="encaminhamento-traducaocriolo" name="traducaocriolo">@ViewBag.Encaminhamento.TraducaoCriolo</textarea>
+            </div>
+            <div class="form-group">
+                <label for="encaminhamento-traducaofrances">Tradução Francês</label>
+                <textarea class="form-control" id="encaminhamento-traducaofrances" name="traducaofrances">@ViewBag.Encaminhamento.TraducaoFrances</textarea>
+            </div>
+            <div class="form-group">
+                <label for="encaminhamento-local">Local</label>
+                <textarea class="form-control" id="encaminhamento-local" name="local">@ViewBag.Encaminhamento.Local</textarea>
+            </div>
+            <button type="submit">Salvar</button>
+        </form>
+    </div>
+</div>

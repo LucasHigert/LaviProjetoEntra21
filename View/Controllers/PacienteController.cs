@@ -40,8 +40,8 @@ namespace View.Controllers
 
             //Puxa Info dos estados
             PostoRepository postoRepository = new PostoRepository();
-            List<Posto> postos = postoRepository.ObterTodos();
-            ViewBag.Postos = postos;    
+            //List<Posto> postos = postoRepository.ObterTodos();
+            ViewBag.Postos = postoRepository.ObterTodos();
 
             return View();
         }
@@ -59,11 +59,22 @@ namespace View.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult Update(int id, int idPosto, string nome)
+        public ActionResult Update(int id, int idPosto, string nome,int idade,string cpf, string rne,string passaporte, string telefone, string endereco, string cep, bool sexo,double altura, double peso,string pressao )
         {
             Paciente paciente = new Paciente();
             paciente.Id = id;
             paciente.Nome = nome;
+            paciente.Idade = idade;
+            paciente.Cpf = cpf;
+            paciente.Rne = rne;
+            paciente.Passaporte = passaporte;
+            paciente.Endereco = endereco;
+            paciente.Telefone = telefone;
+            paciente.Cep = cep;
+            paciente.Sexo = sexo;
+            paciente.Altura = altura;
+            paciente.Peso = peso;
+            paciente.Pressao = pressao;
             paciente.Posto = new Posto();
             paciente.Posto.Id = idPosto;
 
@@ -77,7 +88,7 @@ namespace View.Controllers
             paciente = repository.ObterPeloId(id);
             ViewBag.Paciente = paciente;
             PostoRepository postoRepository = new PostoRepository();
-            ViewBag.Estados = postoRepository.ObterTodos();
+            ViewBag.Postos = postoRepository.ObterTodos();
             return View();
         }
 

@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Cadastrar";
+}
+
+<h2>Cadastrar Posto</h2>
+<form action="/posto/inserir" method="post">
+    <div class="row">
+        <div class="container">
+            <div class="col-12">
+                <label for="campo-nome">Nome do Posto</label>
+                <input type="text" name="nome" id="campo-nome" style="min-width:880px"/>
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="container">
+            <div class="col-12">
+                <label for="campo-cep">CEP</label>
+                <input type="text" name="cep" id="campo-cep" style="min-width:880px"/>
+            </div>
+        </div>
+    </div>
+    <div class="col-12">
+        <label for="campo-cidade">Cidade</label>
+        <select name="idCidade" id="campo-cidade" class="form-control">
+            <option selected="" disabled="disabled">Selecione uma cidade</option>
+            @foreach (Model.Cidade Cidade in ViewBag.Cidades)
+            {
+                <option value="@Cidade.Id">@Cidade.Nome</option>
+
+            }
+        </select>
+    </div>
+    <button type="submit" style="margin-top: 5px" class="btn btn-success float-right">Salvar</button>
+</form>

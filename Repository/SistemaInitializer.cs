@@ -4,8 +4,8 @@ using System.Data.Entity;
 
 namespace Repository
 {
-    //internal class SistemaInitializer : DropCreateDatabaseAlways<SistemaContext>
-    internal class SistemaInitializer : CreateDatabaseIfNotExists<SistemaContext>
+    internal class SistemaInitializer : DropCreateDatabaseAlways<SistemaContext>
+    //internal class SistemaInitializer : CreateDatabaseIfNotExists<SistemaContext>
     {
 
         protected override void Seed(SistemaContext context)
@@ -154,6 +154,25 @@ namespace Repository
             context.Estados.AddRange(estados);
             #endregion
 
+            #region cidades
+            var cidades = new List<Cidade>();
+            #region CidadeAdicionar
+            cidades.Add(new Cidade()
+            {
+                IdEstado = 24,
+                Nome = "Blumenau",
+                RegistroAtivo = true
+            });
+            cidades.Add(new Cidade()
+            {
+                IdEstado = 24,
+                Nome = "Gaspar",
+                RegistroAtivo = true
+            });
+            #endregion
+            context.Cidades.AddRange(cidades);
+            #endregion
+
             #region postos
             var postos = new List<Posto>();
             #region PostoAdicionar
@@ -186,6 +205,63 @@ namespace Repository
                 RegistroAtivo = true
             });
             #endregion
+            context.Postos.AddRange(postos);
+            #endregion
+
+            #region pacientes
+            var paciente = new List<Paciente>();
+            #region PacienteAdicionar
+
+            paciente.Add(new Paciente()
+            {
+                IdPosto = 1,
+                Nome = "Leticia Rodriguez Garcia",
+                Endereco = "Rua Anna Fischer 80",
+                Cep = "89068-022",
+                Idade = 35,
+                Sexo = false,
+                Altura = 1.74,
+                Peso = 63.2,
+                Cpf = "963.842.780-90",
+                Rne = "V565371-S",
+                Passaporte = " ",
+                Telefone = "4798856-0458",
+                RegistroAtivo = true
+            });
+            paciente.Add(new Paciente()
+            {
+                IdPosto = 1,
+                Nome = "Maiara Ilinoi Cardoso",
+                Endereco = "Rua Noel Rosa 10",
+                Cep = "89057-420",
+                Idade = 18,
+                Sexo = false,
+                Altura = 1.50,
+                Peso = 50.2,
+                Cpf = "267.450.960-05",
+                Rne = "K568371-F",
+                Passaporte = " ",
+                Telefone = "4799241-5064",
+                RegistroAtivo = true
+            });
+            paciente.Add(new Paciente()
+            {
+                IdPosto = 2,
+                Nome = "Pedro Alexandre Madeiro",
+                Endereco = "Rua Curitiba 55",
+                Cep = "89012-412",
+                Idade = 42,
+                Sexo = true,
+                Altura = 1.82,
+                Peso = 82,
+                Cpf = "769.127.850-00",
+                Rne = "R5653971-J",
+                Passaporte = " ",
+                Telefone = " ",
+                RegistroAtivo = true
+            });
+            #endregion
+            context.Pacientes.AddRange(paciente);
             #endregion
 
             base.Seed(context);

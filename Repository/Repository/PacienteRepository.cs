@@ -73,10 +73,10 @@ namespace Repository.Repository
 
     
 
-        public List<Paciente> ObterPacientesPeloIdPosto(int idPosto)
-        {
-            return context.Pacientes.Where(x => x.IdPosto == idPosto && x.RegistroAtivo).ToList();
-        }
+        //public List<Paciente> ObterPacientesPeloIdPosto(int idPosto)
+        //{
+        //    return context.Pacientes.Where(x => x.IdPosto == idPosto && x.RegistroAtivo).ToList();
+        //}
 
         public Paciente ObterPeloId(int id)
         {

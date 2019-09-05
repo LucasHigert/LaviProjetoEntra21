@@ -3,5 +3,32 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Funcionarios</h2>
+<h2>Funcionários</h2>
 
+<a class="btn btn-outline-secondary float-right" style="margin-bottom: 5px" href="/posto/cadastrar"><i class="fas fa-plus"></i>Novo</a>
+<table class="table table-striped table-bordered table-hover" id="postos-index">
+    <thead>
+        <tr>
+            <th>Nome do Posto</th>
+            <th>Posto</th>
+            <th>Cargo</th>
+            <th>Login</th>
+            <th>Ação</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Model.Funcionario funcionario in ViewBag.Funcionarios)
+        {
+            <tr>
+                <td>@funcionario.Nome</td>
+                <td>@funcionario.Posto.Nome</td>
+                <td>@funcionario.Cargo.Nome</td>
+                <td>@funcionario.Login</td>
+                <td>
+                    <a class="btn btn-outline-primary float-right" href="/posto/alterar?id=@funcionario.Id">Editar</a>
+                    <a class="btn btn-outline-danger float-right" style="margin-right: 5px" href="/posto/apagar?id=@funcionario.Id">Apagar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

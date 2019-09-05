@@ -20,6 +20,7 @@ namespace View.Controllers
         [HttpGet]
         public ActionResult Index()
         {
+            List<Funcionario> funcionarios = repository.ObterTodos();
             var cidades = repository.ObterTodos();
             return View();
         }
@@ -63,6 +64,41 @@ namespace View.Controllers
             var apagou = repository.Apagar(id);
             var resultado = new { status = apagou };
             return Json(resultado, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost, Route("inserir")]
+        public ActionResult Inserir(Funcionario funcionario)
+        {
+            funcionario.RegistroAtivo = true;
+            var id = repository.Inserir(funcionario);
+            var resultado = new { id = id };
+            return Json(resultado);
+        }
+
+        [HttpGet]
+        public ActionResult Alterar(int id)
+        {
+            var funcionario = repository.ObterPeloId(id);
+            if (funcionario == null)
+            {
+                return RedirectToAction("Index");
+            }
+            PostoRepository repositoryPosto = new PostoRepository();
+            ViewBag.Postos = repositoryPosto.ObterTodos();
+            CargoRepository repositoryCargo = new CargoRepository();
+            ViewBag.Cargos = repositoryCargo.ObterTodos();
+            ViewBag.Funcionario = funcionario;
+            return View();
+        }
+
+
+        public ActionResult Cadastrar()
+        {
+            PostoRepository repositoryPosto = new PostoRepository();
+            ViewBag.Postos = repositoryPosto.ObterTodos();
+            CargoRepository repositoryCargo = new CargoRepository();
+            ViewBag.Cargos = repositoryCargo.ObterTodos();
+            return View();
         }
     }
 }

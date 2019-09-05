@@ -47,9 +47,10 @@ namespace Repository.Repository
 
         public int Inserir(Posto posto)
         {
+            posto.RegistroAtivo = true;
             context.Postos.Add(posto);
             context.SaveChanges();
-            return posto.Id;
+            return posto.Id;          
         }
 
         public Posto ObterPeloId(int id)

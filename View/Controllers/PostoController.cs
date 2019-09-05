@@ -75,7 +75,7 @@ namespace View.Controllers
         {
             Posto posto = new Posto();
             posto = repository.ObterPeloId(id);
-            ViewBag.Posto = posto;
+            ViewBag.Postos = posto;
             CidadeRepository repositoryCidade = new CidadeRepository();
             ViewBag.Cidades = repositoryCidade.ObterTodos();
             return View();            

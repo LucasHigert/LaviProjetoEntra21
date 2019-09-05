@@ -154,7 +154,39 @@ namespace Repository
             context.Estados.AddRange(estados);
             #endregion
 
-
+            #region postos
+            var postos = new List<Posto>();
+            #region PostoAdicionar
+            postos.Add(new Posto()
+            {
+                IdCidade = 1,
+                Nome = "Salto do Norte",
+                Cep = "89027-031",
+                RegistroAtivo = true
+            });
+            postos.Add(new Posto()
+            {
+                IdCidade = 1,
+                Nome = "Velha Centro",
+                Cep = "89046-231",
+                RegistroAtivo = true
+            });
+            postos.Add(new Posto()
+            {
+                IdCidade = 2,
+                Nome = "ESF Walter Reiter",
+                Cep = "89095-535",
+                RegistroAtivo = true
+            });
+            postos.Add(new Posto()
+            {
+                IdCidade = 1,
+                Nome = "Garcia",
+                Cep = "89037-690",
+                RegistroAtivo = true
+            });
+            #endregion
+            #endregion
 
             base.Seed(context);
         }

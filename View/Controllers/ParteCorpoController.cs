@@ -24,7 +24,6 @@ namespace View.Controllers
             ViewBag.PartesCorpo = parteCorpos;
             return View();
         }
-
         //Inserir
         #region Inserir
 

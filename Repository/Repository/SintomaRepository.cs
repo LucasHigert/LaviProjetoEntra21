@@ -47,12 +47,7 @@ namespace Repository.Repository
 
         public bool Inserir(Sintoma sintoma)
         {
-           // sintoma.RegistroAtivo = true;
-           // context.Sintomas.Add(sintoma);
-           // context.SaveChanges();
-           // return sintoma.Id;
-
-            var sintomaOriginal = context.Sintomas.Where(x => x.Nome == sintoma.Nome).FirstOrDefault();
+            var sintomaOriginal = context.Sintomas.Where(x => x.Nome == sintoma.Nome && x.RegistroAtivo == true).FirstOrDefault();
             if (sintomaOriginal == null)
             {
                 context.Sintomas.Add(sintoma);

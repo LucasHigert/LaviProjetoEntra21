@@ -4612,6 +4612,7 @@
     <Compile Include="Controllers\CargoController.cs" />
     <Compile Include="Controllers\AtendimentoController.cs" />
     <Compile Include="Controllers\CidadeController.cs" />
+    <Compile Include="Controllers\EncaminhamentoController.cs" />
     <Compile Include="Controllers\FuncionarioController.cs" />
     <Compile Include="Controllers\InstrucoesController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -5676,8 +5677,14 @@
     <Content Include="Views\Atendimento\Alterar.cshtml" />
     <Content Include="Views\Instrucoes\Index.cshtml" />
     <Content Include="Views\Cidade\Cadastro.cshtml" />
+    <Content Include="Views\Posto\Index.cshtml" />
+    <Content Include="Views\Posto\Cadastrar.cshtml" />
+    <Content Include="Views\Posto\Alterar.cshtml" />
     <Content Include="Views\Paciente\Alterar.cshtml" />
     <Content Include="Views\Paciente\Index.cshtml" />
+    <Content Include="Views\Encaminhamento\Index.cshtml" />
+    <Content Include="Views\Encaminhamento\Cadastrar.cshtml" />
+    <Content Include="Views\Encaminhamento\Alterar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

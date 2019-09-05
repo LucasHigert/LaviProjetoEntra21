@@ -78,7 +78,8 @@ namespace View.Controllers
             ViewBag.Postos = posto;
             CidadeRepository repositoryCidade = new CidadeRepository();
             ViewBag.Cidades = repositoryCidade.ObterTodos();
-            return View();            
+            ViewBag.Postos = posto;
+            return View();
         }
 
 

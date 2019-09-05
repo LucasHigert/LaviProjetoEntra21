@@ -36,7 +36,7 @@ namespace View.Controllers
 
         }
 
-        [HttpPost, Route("apagar")]
+        [HttpGet, Route("apagar")]
         public JsonResult Apagar(int id)
         {
             var apagou = repositorio.Apagar(id);
@@ -44,7 +44,7 @@ namespace View.Controllers
             return Json(resultado, JsonRequestBehavior.AllowGet);
         }
 
-        [HttpGet, Route("editar")]
+        [HttpPost, Route("editar")]
         public JsonResult Update(Sintoma sintoma)
         {
             bool retorno = repositorio.Alterar(sintoma);
@@ -76,6 +76,8 @@ namespace View.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.Sintoma = sintoma;
+            ParteCorpoRepository repositorioParteCorpo = new ParteCorpoRepository();
+            ViewBag.PartesCorpo = repositorioParteCorpo.ObterTodos();
             return View();
         }
     }

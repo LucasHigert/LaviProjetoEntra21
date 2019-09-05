@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "Cadastrar";
+}
+
+<form action="/encaminhamento/inserir" method="post">
+    <div>
+        <label for="campo-posto">Postos</label>
+        <select name="idPosto" id="campo-posto" class="form-control">
+            @foreach (Model.Posto posto in ViewBag.Postos)
+            {
+                <option value="@posto.Id">@posto.Nome</option>
+            }
+        </select>
+    </div>
+    <div>
+        <label for="campo-descricao">Descrição</label>
+        <input type="text" name="descricao" id="campo-descricao" />
+    </div>
+    <div>
+        <label for="campo-traducaocriolo">Tradução Crioulo</label>
+        <input type="text" name="traducaocriolo" id="campo-traducaocriolo" />
+    </div>
+    <div>
+        <label for="campo-traducaofrances">Tradução Francês</label>
+        <input type="text" name="traducaofrances" id="campo-traducaofrances" />
+    </div>
+    <div>
+        <label for="campo-local">Local</label>
+        <input type="text" name="local" id="campo-local" />
+    </div>
+    <button type="submit">Salvar</button>
+</form>

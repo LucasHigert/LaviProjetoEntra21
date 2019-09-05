@@ -88,7 +88,7 @@ namespace View.Controllers
             paciente = repository.ObterPeloId(id);
             ViewBag.Paciente = paciente;
             PostoRepository postoRepository = new PostoRepository();
-            ViewBag.Estados = postoRepository.ObterTodos();
+            ViewBag.Postos = postoRepository.ObterTodos();
             return View();
         }
 

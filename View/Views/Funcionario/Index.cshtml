@@ -4,13 +4,24 @@
 }
 
 <h2 class="display-4">Lista de Funcionarios</h2>
-
-<table>
-    <thead>
-
+<a class="btn btn-dark" href="/cadastrar">Adicionar Funcionario</a>
+<table class="table table-primary text-dark">
+    <thead class="bg-dark">
+        <tr>
+            <td>Nome</td>
+            <td>Posto</td>
+            <td>Cargo</td>
+        </tr>
     </thead>
     <tbody>
-
+        @foreach (Model.Funcionario Funcionario in ViewBag.Funcionarios)
+        {
+            <tr>
+                <td>@Funcionario.Nome</td>
+                <td>@Funcionario.Posto.Nome</td>
+                <td>@Funcionario.Cargo.Nome</td>
+            </tr>
+        }
     </tbody>
 </table>
 

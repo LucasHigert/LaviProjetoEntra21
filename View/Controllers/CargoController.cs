@@ -36,6 +36,7 @@ namespace View.Controllers
         [HttpGet, Route("cargo/")]
         public JsonResult ObterPeloId(int id)
         {
+            var cargo = ObterPeloId(id);
             return Json(repository.ObterPeloId(id), JsonRequestBehavior.AllowGet);
         }
 

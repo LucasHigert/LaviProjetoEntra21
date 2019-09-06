@@ -9,10 +9,10 @@
 <div class="row">
     <div class="col-12">
         <form action="/cargo/update" method="post">
-            <input type="hidden" name="id" id="id" value="@ViewBag.Cargo.Id" />
+            <input type="hidden" name="id" id="id" value="@ViewBag.Cargos.Id" />
             <div class="form-group">
                 <label for="cargo-nome">Cargo</label>
-                <input class="form-control" id="cargo-nome" name="nome" maxlength="100" type="text" value="@ViewBag.Cargo.Nome"/>
+                <input class="form-control" id="cargo-nome" name="nome" maxlength="100" type="text" value="@ViewBag.Cargos.Nome"/>
             </div>            
             <button class="btn btn-success float-right" type="submit">Salvar</button>
         </form>

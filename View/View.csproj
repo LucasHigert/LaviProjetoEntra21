@@ -5689,6 +5689,9 @@
     <Content Include="Views\Encaminhamento\Cadastrar.cshtml" />
     <Content Include="Views\Encaminhamento\Alterar.cshtml" />
     <Content Include="Views\Sintoma\Alterar.cshtml" />
+    <Content Include="Views\Funcionario\Index.cshtml" />
+    <Content Include="Views\Funcionario\Alterar.cshtml" />
+    <Content Include="Views\Funcionario\Cadastrar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -5696,9 +5699,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Funcionario\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup />
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />

@@ -27,6 +27,8 @@ namespace Repository.Repository
             }
 
             sintomaAnterior.IdParteCorpo = sintoma.IdParteCorpo;
+            sintomaAnterior.TraducaoCriolo = sintoma.TraducaoCriolo;
+            sintomaAnterior.TraducaoFrances = sintoma.TraducaoFrances;
             sintomaAnterior.Nome = sintoma.Nome;
             int quantidadeAfetada = context.SaveChanges();
             return quantidadeAfetada == 1;

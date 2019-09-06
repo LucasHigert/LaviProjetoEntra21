@@ -11,7 +11,7 @@
         <a class="btn btn-dark float-right mt-40" href="/cargo/cadastrar"><i class="fas fa-plus"></i>Adcionar Cargo</a>
     </div>
 </div>
-<table class="table table-info table-striped table-hover text-dark" id="cargos-index">
+<table class="table table-primary table-striped table-hover text-dark" id="cargos-index">
     <thead class="bg-dark">
         <tr>
             <td>Cargos</td>
@@ -24,8 +24,8 @@
             <tr>
                 <td>@cargo.Nome</td>
                 <td>
-                    <a class="btn btn-primary float-right" href="/cargo/alterar?id=@cargo.Id">Editar</a>
-                    <a class="btn btn-danger float-right" href="/cargo/apagar?id=@cargo.Id">Apagar</a>
+                    <a class="btn btn-primary" href="/cargo/alterar?id=@cargo.Id">Editar</a>
+                    <a class="btn btn-danger" href="/cargo/apagar?id=@cargo.Id">Apagar</a>
                 </td>
             </tr>
         }

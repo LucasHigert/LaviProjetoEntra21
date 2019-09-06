@@ -20,35 +20,10 @@ namespace View.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            List<Funcionario> funcionarios = repository.ObterTodos();
-            var cidades = repository.ObterTodos();
+            ViewBag.Funcioarios = repository.ObterTodos();
             return View();
         }
 
-        [HttpGet, Route("Obtertodospeloidposto")]
-        public JsonResult ObterTodosPeloIdPosto(int idPosto)
-        {
-            var funcionarios = repository.ObterFuncionariosPeloIdPosto(idPosto);
-            var resultado = new { data = funcionarios };
-            return Json(resultado, JsonRequestBehavior.AllowGet);
-        }
-
-        [HttpGet, Route("Obtertodospeloidcargo")]
-        public JsonResult ObterTodosPelIdCargos(int idCargos)
-        {
-            var funcionarios = repository.ObterFuncionarioPeloIdCargo(idCargos);
-            var resultado = new { data = funcionarios };
-            return Json(resultado, JsonRequestBehavior.AllowGet);
-        }
-
-        [HttpGet, Route("obterpeloid")]
-        public ActionResult ObterPeloId(int id)
-        {
-            var funcionario = repository.ObterPeloId(id);
-            if (funcionario == null) return HttpNotFound();
-
-            return Json(funcionario, JsonRequestBehavior.AllowGet);
-        }
 
         [HttpPost, Route("alterar")]
         public JsonResult Alterar(Funcionario funcionario)

@@ -4,91 +4,66 @@
 }
 
 <h2>Alterar</h2>
+<div class="container container-fluid">
 
-<form action="/paciente/alterar" method="post">
-    <!--Campos relacionados com o  endereço-->
+
     <div class="row">
+        <div class="col-12">
+            <div class="bg-light navbar-nav rounded-bottom">
+                <h3 class="align-baseline mb-3 mt-2 p-3 text-info">Editando paciente</h3>
+            </div>
+        </div>
+    </div>
+
+    <form method="post" action="/paciente/update">
+
+        <a href="/paciente/index" class="btn btn-danger">Lista de Pacientes</a>
+
+        <input type="hidden" name="id" value="@ViewBag.Paciente.Id" />
+
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="campo-nome">Nome do Paciente</label>
+                    <input type="text" name="nome" class="form-control" id="campo-nome" value="@ViewBag.Paciente.Nome" />
+                </div>
+            </div>
         <div class="col-4">
             <label for="campo-cep">CEP</label>
-            <input type="text" id="campo-cep" name="cep" maxlength="9" class="form-control" />
-
-        </div>
-        <div class="col-6">
-            <label for="campo-posto">Posto</label>
-            <select id="campo-posto" required="" class="form-control">
-                @foreach (Model.Posto posto in ViewBag.Postos)
-                {
-                    if (posto.Id == ViewBag.Paciente.IdPosto)
-                    {
-                        <option value="@posto.Id" selected="selected">@posto.Nome</option>
-                    }
-                    else
-                    {
-                        <option value="@posto.Id">@posto.Nome</option>
-                    }
-                }
-            </select>
+            <input type="text" id="campo-cep" name="cep" maxlength="9" class="form-control" value="ViewBag.Paciente.Cep" />
         </div>
 
-    </div>
-    <div>
-        <label for="campo-endereco">Endereço</label>
-        <input type="text" id="campo-endereco" name="endereco" required="" class="form-control" maxlength="100" />
-    </div>
-
-
-    <!--Campos para informações pessoas-->
-    <div>
-        <label for="campo-nome">Nome</label>
-        <input type="text" id="campo-nome" name="nomePaciente" class="form-control" maxlength="100" required="">
-    </div>
-
-    <div class="row">
-        <div class="col-3">
-            <label for="campo-idade">Idade</label>
-            <input type="number" id="campo-idade" name="idade" maxlength="3" class="form-control" />
-        </div>
-        <div class="col-3">
-            <label for="campo-sexo">Sexo</label>
-            <select id="campo-sexo" name="sexo" class="form-control">
-                <option value="true">Feminino</option>
-                <option value="false">Masculino</option>
-            </select>
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    <label form="campo-posto">Posto</label>
+                    <select class="form-control" name="idPosto">
+                        <option disabled="disabled" selected="selected">Selecione um posto</option>
+                        @foreach (Model.Posto posto in ViewBag.Postos)
+                        {
+                            if (posto.Id == ViewBag.Paciente.IdPosto)
+                            {
+                                <option value="@posto.Id" selected="selected">@posto.Nome</option>
+                            }
+                            else
+                            {
+                                <option value="@posto.Id">@posto.Nome</option>
+                            }
+                        }
+                    </select>
+                </div>
+            </div>
         </div>
 
-        <div class="col-3">
-            <label for="campo-altura">Altura</label>
-            <input type="number" id="campo-altura" name="altura" class="form-control" />
-        </div>
 
-        <div class="col-3">
-            <label for="campo-peso">Peso</label>
-            <input type="number" id="campo-peso" name="peso" class="form-control" />
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success">Salvar</button>
+                </div>
+            </div>
         </div>
+    </form>
 
-    </div>
+</div>
 
-    <!-- Campos com informações de identificação (cpf,telefone,rne,...)-->
-    <div class="row">
-        <div class="col-3">
-            <label for="campo-cpf">CPF</label>
-            <input type="text" required="" maxlength="15" id="campo-cpf" name="cpf" class="form-control" />
-        </div>
-        <div class="col-3">
-            <label for="campo-rne">RNE</label>
-            <input type="text" id="campo-rne" name="rne" maxlength="50" class="form-control" />
-        </div>
-
-        <div class="col-3">
-            <label for="campo-passaporte">Passaporte</label>
-            <input type="text" id="campo-passaporte" name="passaporte" maxlength="50" class="form-control" />
-        </div>
-
-        <div class="col-3">
-            <label for="campo-telefone">Telefone</label>
-            <input type="tel" id="campo-telefone" name="telefone" maxlength="14" class="form-control" />
-        </div>
-    </div>
-
-    <button type="submit" class="btn btn-success mt-3">Salvar</button>
-</form>

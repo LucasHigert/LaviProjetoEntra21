@@ -41,6 +41,7 @@ namespace Repository.Repository
 
         public int Inserir(Cargo cargo)
         {
+            cargo.RegistroAtivo = true;
             context.Cargos.Add(cargo);
             context.SaveChanges();
             return cargo.Id;

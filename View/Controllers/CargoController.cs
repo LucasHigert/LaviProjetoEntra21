@@ -26,60 +26,58 @@ namespace View.Controllers
         }
 
         [HttpGet]
-        public JsonResult ObterTodos()
+        public ActionResult ObterTodos()
         {
             var cargos = repository.ObterTodos();
             var resultado = new { data = cargos };
-            return Json(resultado, JsonRequestBehavior.AllowGet);
+            return View();
         }
 
         [HttpGet, Route("cargo/")]
         public JsonResult ObterPeloId(int id)
         {
+            var cargo = ObterPeloId(id);
             return Json(repository.ObterPeloId(id), JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet, Route("apagar")]
-        public JsonResult Apagar(int id)
+        public ActionResult Apagar(int id)
         {
-            var apagou = repository.Apagar(id);
-            var resultado = new { status = apagou };
-            return Json(resultado, JsonRequestBehavior.AllowGet);
+            repository.Apagar(id);
+            return RedirectToAction("Index");
         }
 
         [HttpPost, Route("editar")]
-        public JsonResult Update(Cargo cargo)
+        public ActionResult Update(int id, string nome)
         {
-            var alterou = repository.Alterar(cargo);
-            var resultado = new { status = alterou };
-            return Json(resultado);
+            Cargo cargo = new Cargo();
+            cargo.Id = id;           
+            cargo.Nome = nome;
+
+            repository.Alterar(cargo);
+            return RedirectToAction("Index");
         }
 
         [HttpPost, Route("inserir")]
-        public JsonResult Inserir(Cargo cargo)
+        public ActionResult Inserir(Cargo cargo)
         {
-            cargo.RegistroAtivo = true;
-            var id = repository.Inserir(cargo);
-            var resultado = new { id = id };
-            return Json(resultado);
+            int id = repository.Inserir(cargo);
+            return RedirectToAction("Index");
         }
 
         [HttpGet]
         public ActionResult Alterar(int id)
         {
-            var cargo = repository.ObterPeloId(id);
-            if(cargo == null)
-            {
-                return RedirectToAction("Index");
-            }
-            ViewBag.Cargo = cargo;
+            Cargo cargo = new Cargo();
+            cargo = repository.ObterPeloId(id);
+            ViewBag.Cargos = cargo;            
             return View();
         }
 
         public ActionResult Cadastrar()
-        {
+        {           
             return View();
         }
-               
+
     }
 }

@@ -50,10 +50,10 @@ namespace Model
         public bool Sexo { get; set; }
 
         [Column("altura")]
-        public decimal Altura { get; set; }
+        public double Altura { get; set; }
 
         [Column("peso")]
-        public decimal Peso { get; set; }
+        public double Peso { get; set; }
 
         [Column("pressao")]
         public string Pressao { get; set; }

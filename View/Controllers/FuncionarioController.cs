@@ -17,52 +17,65 @@ namespace View.Controllers
             repository = new FuncionarioRepository();
         }
 
-        [HttpGet]
         public ActionResult Index()
         {
-            var cidades = repository.ObterTodos();
+            ViewBag.Funcionarios = repository.ObterTodos();
             return View();
         }
 
-        [HttpGet, Route("Obtertodospeloidposto")]
-        public JsonResult ObterTodosPeloIdPosto(int idPosto)
+        //Alterar
+        #region Alterar
+        public ActionResult Update(Funcionario funcionario)
         {
-            var funcionarios = repository.ObterFuncionariosPeloIdPosto(idPosto);
-            var resultado = new { data = funcionarios };
-            return Json(resultado, JsonRequestBehavior.AllowGet);
+            repository.Alterar(funcionario);
+            return RedirectToAction("index");
         }
 
-        [HttpGet, Route("Obtertodospeloidcargo")]
-        public JsonResult ObterTodosPelIdCargos(int idCargos)
-        {
-            var funcionarios = repository.ObterFuncionarioPeloIdCargo(idCargos);
-            var resultado = new { data = funcionarios };
-            return Json(resultado, JsonRequestBehavior.AllowGet);
-        }
-
-        [HttpGet, Route("obterpeloid")]
-        public ActionResult ObterPeloId(int id)
+        public ActionResult Alterar(int id)
         {
             var funcionario = repository.ObterPeloId(id);
-            if (funcionario == null) return HttpNotFound();
-
-            return Json(funcionario, JsonRequestBehavior.AllowGet);
+            if (funcionario == null)
+            {
+                return RedirectToAction("Index");
+            }
+            PostoRepository repositoryPosto = new PostoRepository();
+            ViewBag.Postos = repositoryPosto.ObterTodos();
+            CargoRepository repositoryCargo = new CargoRepository();
+            ViewBag.Cargos = repositoryCargo.ObterTodos();
+            ViewBag.Funcionario = funcionario;
+            return View();
         }
 
-        [HttpPost, Route("alterar")]
-        public JsonResult Alterar(Funcionario funcionario)
+        #endregion
+
+        //Apagar
+        #region Apagar
+        public ActionResult Apagar(int id)
         {
-            var alterou = repository.Alterar(funcionario);
-            var resultado = new { status = alterou };
-            return Json(resultado, JsonRequestBehavior.AllowGet);
+            repository.Apagar(id);
+            return RedirectToAction("index");
+        }
+        #endregion
+
+        //Inserir
+        #region Cadastro
+        public ActionResult Inserir(Funcionario funcionario)
+        {
+            funcionario.RegistroAtivo = true;
+            repository.Inserir(funcionario);
+            return RedirectToAction("index");
         }
 
-        [HttpGet, Route("apagar")]
-        public JsonResult Apagar(int id)
+
+        public ActionResult Cadastrar()
         {
-            var apagou = repository.Apagar(id);
-            var resultado = new { status = apagou };
-            return Json(resultado, JsonRequestBehavior.AllowGet);
+            PostoRepository repositoryPosto = new PostoRepository();
+            ViewBag.Postos = repositoryPosto.ObterTodos();
+            CargoRepository repositoryCargo = new CargoRepository();
+            ViewBag.Cargos = repositoryCargo.ObterTodos();
+            return View();
         }
+
+        #endregion
     }
 }

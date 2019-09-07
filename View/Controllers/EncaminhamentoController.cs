@@ -18,48 +18,30 @@ namespace View.Controllers
             repository = new EncaminhamentoRepository();
         }
 
-        [HttpGet, Route("obtertodospelostatus")]
-        public JsonResult ObterTodosPeloStatus(int status)
+        public ActionResult Index()
         {
-            var encaminhamento = repository.ObterTodosPeloStatus(status);
-            var resultado = new { data = encaminhamento };
-            return Json(resultado, JsonRequestBehavior.AllowGet);
-        }
-        
-        [HttpPost, Route("inserir")]
-        public JsonResult Inserir(Encaminhamento encaminhamento)
-        {
-            encaminhamento.Status = 0;
-            int id = repository.Inserir(encaminhamento);
-            var resultado = new { status = id };
-            return Json(resultado, JsonRequestBehavior.AllowGet);
-        }
-
-        [HttpGet, Route("apagar")]
-        public JsonResult Apagar(int id)
-        {
-            var apagou = repository.Apagar(id);
-            var resultado = new { status = apagou };
-            return Json(resultado, JsonRequestBehavior.AllowGet);
-
-        }
-
-        [HttpPost, Route("editar")]
-        public JsonResult Update(Encaminhamento encaminhamento)
-        {
-            bool retorno = repository.Alterar(encaminhamento);
-            var resultado = new { status = retorno };
-            return Json(resultado, JsonRequestBehavior.AllowGet);
-        }
-
-        public ActionResult Cadastrar()
-        {
-            PostoRepository repositoryPosto = new PostoRepository();
-            ViewBag.Postos = repositoryPosto.ObterTodos();
+            List<Encaminhamento> encaminhamentos = repository.ObterTodosPeloStatus(0);
+            ViewBag.Encaminhamentos = encaminhamentos;
             return View();
         }
+        
+        //Apagar
+        #region Apagar
+        public ActionResult Apagar(int id)
+        {
+            repository.Apagar(id);
+            return RedirectToAction("index");
+        }
+#endregion
+        
+        //Alterar
+        #region Editar
+        public ActionResult Update(Encaminhamento encaminhamento)
+        {
+            repository.Alterar(encaminhamento);
+            return RedirectToAction("index");
+        }
 
-        [HttpGet]
         public ActionResult Alterar(int id)
         {
             var encaminhamento = repository.ObterPeloId(id);
@@ -74,11 +56,25 @@ namespace View.Controllers
             return View();
         }
 
-        public ActionResult Index()
+        #endregion
+
+        //Inserir
+        #region Inserir
+        public ActionResult Cadastrar()
         {
-            List<Encaminhamento> encaminhamentos = repository.ObterTodosPeloStatus(0);
-            ViewBag.Encaminhamentos = encaminhamentos;
+            PostoRepository repositoryPosto = new PostoRepository();
+            ViewBag.Postos = repositoryPosto.ObterTodos();
             return View();
         }
+
+        public ActionResult Inserir(Encaminhamento encaminhamento)
+        {
+            encaminhamento.Status = 0;
+            int id = repository.Inserir(encaminhamento);
+            return RedirectToAction("index");
+        }
+
+        #endregion
+
     }
 }

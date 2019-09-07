@@ -3,64 +3,47 @@
     ViewBag.Title = "Alterar";
 }
 
-<h2>Alterar</h2>
+<h2 class="display-4">Alterando posto '@ViewBag.Posto.Nome'</h2>
 
 <form method="post" action="/posto/update">
-
-    <a href="/posto/index" class="btn btn-danger">Lista de Postos</a>
 
     <input type="hidden" name="id" value="@ViewBag.Posto.Id" />
 
     <div class="row">
         <div class="col-12">
-            <div class="form-group">
-                <label for="campo-nome">Nome do Posto</label>
-                <input type="text" name="nome" class="form-control" id="campo-nome" value="@ViewBag.Posto.Nome" />
-            </div>
+            <label class="font-weight-bold" for="campo-nome">Nome do Posto</label>
+            <input type="text" name="nome" class="form-control border-info" id="campo-nome" value="@ViewBag.Posto.Nome" />
         </div>
     </div>
 
 
     <div class="row">
-        <div class="col-12">
-            <div class="form-group">
-                <label for="campo-cep">CEP</label>
-                <input type="text" name="cep" class="form-control" id="campo-cep" value="@ViewBag.Posto.Cep" />
-            </div>
+        <div class="col-4">
+            <label class="font-weight-bold" for="campo-cep">CEP</label>
+            <input type="text" name="cep" class="form-control border-info" id="campo-cep" value="@ViewBag.Posto.Cep" />
         </div>
-    </div>
 
-    <div class="row">
-        <div class="col-12">
-            <div class="form-group">
-                <label form="campo-cidade">Cidade</label>
-                <select class="form-control" name="idCidade">
-                    <option disabled="disabled" selected="selected">Selecione uma cidade</option>
-                    @foreach (Model.Cidade cidade in ViewBag.Cidades)
+        <div class="col-8">
+            <label class="font-weight-bold" form="campo-cidade">Cidade</label>
+            <select class="form-control border-info" name="idCidade">
+                <option disabled="disabled" selected="selected">Selecione uma cidade</option>
+                @foreach (Model.Cidade cidade in ViewBag.Cidades)
+                {
+                    if (cidade.Id == ViewBag.Posto.IdCidade)
                     {
-                        if (cidade.Id == ViewBag.Posto.IdCidade)
-                        {
-                            <option value="@cidade.Id" selected="selected">@cidade.Nome</option>
-                        }
-                        else
-                        {
-                            <option value="@cidade.Id">@cidade.Nome</option>
-                        }
+                        <option value="@cidade.Id" selected="selected">@cidade.Nome</option>
                     }
-                </select>
-            </div>
+                    else
+                    {
+                        <option value="@cidade.Id">@cidade.Nome</option>
+                    }
+                }
+            </select>
         </div>
     </div>
 
 
-    <div class="row">
-        <div class="col-12">
-            <div class="form-group">
-                <button type="submit" class="btn btn-success">Salvar</button>
-            </div>
-        </div>
-    </div>
+    <button type="submit" class="btn btn-success mt-15">Salvar</button>
 </form>
 
-</div>
 

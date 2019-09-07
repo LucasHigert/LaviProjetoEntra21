@@ -26,6 +26,18 @@ namespace Repository.Repository
 
             pacienteOriginal.Nome = paciente.Nome;
             pacienteOriginal.Cpf = paciente.Cpf;
+            pacienteOriginal.Pressao = paciente.Pressao;
+            pacienteOriginal.Idade = paciente.Idade;
+            pacienteOriginal.Sexo = paciente.Sexo;
+            pacienteOriginal.Altura = paciente.Altura;
+            pacienteOriginal.Peso = paciente.Peso;
+            pacienteOriginal.Telefone = paciente.Passaporte;
+            pacienteOriginal.Rne = paciente.Rne;
+            pacienteOriginal.Endereco = paciente.Endereco;
+            pacienteOriginal.Posto = paciente.Posto;
+
+
+
             int quantidadeAfetada = context.SaveChanges();
             return quantidadeAfetada == 1;
         }
@@ -53,7 +65,7 @@ namespace Repository.Repository
 
         public int Inserir(Paciente paciente)
         {
-            //paciente.RegistroAtivo = true;
+            paciente.RegistroAtivo = true;
             context.Pacientes.Add(paciente);
             context.SaveChanges();
             return paciente.Id;
@@ -61,10 +73,10 @@ namespace Repository.Repository
 
     
 
-        public List<Paciente> ObterPacientesPeloIdPosto(int idPosto)
-        {
-            return context.Pacientes.Where(x => x.IdPosto == idPosto && x.RegistroAtivo).ToList();
-        }
+        //public List<Paciente> ObterPacientesPeloIdPosto(int idPosto)
+        //{
+        //    return context.Pacientes.Where(x => x.IdPosto == idPosto && x.RegistroAtivo).ToList();
+        //}
 
         public Paciente ObterPeloId(int id)
         {

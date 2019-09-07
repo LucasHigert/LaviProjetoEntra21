@@ -8,20 +8,20 @@
 <a class="btn btn-primary   float-right mb-3"
    href="/paciente/cadastro">Novo Paciente</a>
 
-<table class="table table-striped table-bordered table-hover" id="pacientes-index">
-    <thead>
+<table class="table table-primary table-striped table-bordered table-hover" id="pacientes-index">
+    <thead class="bg-dark">
         <tr>
-            <th>Id</th>
-            <th>Paciente</th>
-            <th>Posto</th>
-            <th>Ação</th>
+            <td hidden>Id</td>
+            <td>Paciente</td>
+            <td>Posto</td>
+            <td>Ação</td>
         </tr>
     </thead>
     <tbody>
         @foreach (Model.Paciente paciente in ViewBag.Pacientes)
         {
             <tr>
-                <td>@paciente.Id</td>
+                <td hidden>@paciente.Id</td>
                 <td>@paciente.Nome</td>
                 <td>@paciente.Posto.Nome</td>
                 <td>

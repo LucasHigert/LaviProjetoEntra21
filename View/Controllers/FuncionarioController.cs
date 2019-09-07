@@ -25,14 +25,12 @@ namespace View.Controllers
 
         //Alterar
         #region Alterar
-        [HttpPost, Route("alterar")]
-        public JsonResult Alterar(Funcionario funcionario)
+        public ActionResult Update(Funcionario funcionario)
         {
-            var alterou = repository.Alterar(funcionario);
-            var resultado = new { status = alterou };
-            return Json(resultado, JsonRequestBehavior.AllowGet);
+            repository.Alterar(funcionario);
+            return RedirectToAction("index");
         }
-        [HttpGet]
+
         public ActionResult Alterar(int id)
         {
             var funcionario = repository.ObterPeloId(id);
@@ -52,24 +50,20 @@ namespace View.Controllers
 
         //Apagar
         #region Apagar
-        [HttpGet, Route("apagar")]
-        public JsonResult Apagar(int id)
+        public ActionResult Apagar(int id)
         {
-            var apagou = repository.Apagar(id);
-            var resultado = new { status = apagou };
-            return Json(resultado, JsonRequestBehavior.AllowGet);
+            repository.Apagar(id);
+            return RedirectToAction("index");
         }
         #endregion
 
         //Inserir
         #region Cadastro
-        [HttpPost, Route("inserir")]
         public ActionResult Inserir(Funcionario funcionario)
         {
             funcionario.RegistroAtivo = true;
-            var id = repository.Inserir(funcionario);
-            var resultado = new { id = id };
-            return Json(resultado);
+            repository.Inserir(funcionario);
+            return RedirectToAction("index");
         }
 
 

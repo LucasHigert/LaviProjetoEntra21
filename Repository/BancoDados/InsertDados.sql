@@ -51,6 +51,7 @@ INSERT INTO pacientes (id_posto,nome,endereco,cep,idade,sexo,altura,peso,registr
 (1,'Maiara Ilinoi Cardoso','Rua Noel Rosa 10','89057-420',18,1,1.50,50.2,  0   ,'267.450.960-05','K568371-F','','4799241-5064'),
 (2,'Felipe Marcos Peixoto','Rua das Torres 77','89031-673',22,0,1.75,60.1,1,'126.282.070-79','','','4798822-4565');
 SELECT*FROM pacientes;
+
 INSERT INTO cargos (nome,registro_ativo) VALUES
 ('Atendente',1),
 ('Médico',1),
@@ -63,7 +64,6 @@ INSERT INTO funcionarios (id_posto,id_cargo,nome,login,senha,registro_ativo) VAL
 (1,1,'Tiffany Carlene','Tiffany Carlene','carlezinha123',1),
 (1,2,'Roberto Francisco Sagaz','Roberto Sagaz','medicotop',1),
 (1,3,'Vanessa Revineia','Revineia','triagemboa',1),
-(1,2,'Roberto Francisco Sagaz','Roberto Sagaz','medicotop',0),
 (2,1,'Josefina Carla','Josefa','amomeufilho',1),
 (2,2,'Gabriel Tirone','Tirone','deusefiel',1),
 (2,3,'Marilene Peixes','Marilene Peixe','olamarilene',1),

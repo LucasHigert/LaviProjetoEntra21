@@ -34,6 +34,11 @@ namespace Repository.Repository
             return quantidadeAfetada == 1;
         }
 
+        public List<Encaminhamento> ObterTodos()
+        {
+            return context.Encaminhamentos.Where(x => x.RegistroAtivo == true).ToList();
+        }
+
         public bool Apagar(int id)
         {
             var encaminhamento = context.Encaminhamentos.FirstOrDefault(x => x.Id == id);

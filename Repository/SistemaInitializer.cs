@@ -264,6 +264,94 @@ namespace Repository
             context.Pacientes.AddRange(paciente);
             #endregion
 
+            #region cargos
+            var cargo = new List<Cargo>();
+            #region CargosAdicionar
+            cargo.Add(new Cargo()
+            {
+                Nome = "Atendente",
+                RegistroAtivo = true
+            });
+            cargo.Add(new Cargo()
+            {
+                Nome = "Médico",
+                RegistroAtivo = true
+            });
+            cargo.Add(new Cargo()
+            {
+                Nome = "Enfermeiro",
+                RegistroAtivo = true
+            });
+            cargo.Add(new Cargo()
+            {
+                Nome = "Administrador",
+                RegistroAtivo = true
+            });
+            #endregion
+            context.Cargos.AddRange(cargo);
+            #endregion
+
+            #region funcionários 
+            var funcionario = new List<Funcionario>();
+            #region FuncionáriosAdicinonar
+            funcionario.Add(new Funcionario()
+            {
+                IdPosto = 1,
+                IdCargo = 1,
+                Nome = "Tiffany Carlene",
+                Login = "TiffanyCarlene",
+                Senha = "carlezinha123",
+                RegistroAtivo = true
+            });
+            funcionario.Add(new Funcionario()
+            {
+                IdPosto = 1,
+                IdCargo = 2,
+                Nome = "Roberto Francisco Sagaz",
+                Login = "RobertoSagaz",
+                Senha = "medicotop",
+                RegistroAtivo = true
+            });
+            funcionario.Add(new Funcionario()
+            {
+                IdPosto = 1,
+                IdCargo = 3,
+                Nome = "Vanessa Revineia",
+                Login = "Revineia",
+                Senha = "triagemboa",
+                RegistroAtivo = true
+            });
+            funcionario.Add(new Funcionario()
+            {
+                IdPosto = 1,
+                IdCargo = 4,
+                Nome = "Josefina Carla",
+                Login = "Josefa",
+                Senha = "amomeufilho",
+                RegistroAtivo = true
+            });
+            funcionario.Add(new Funcionario()
+            {
+                IdPosto = 2,
+                IdCargo = 2,
+                Nome = "Marilene Peixes",
+                Login = "MarilenePeixe",
+                Senha = "olamarilene",
+                RegistroAtivo = true
+            });
+            funcionario.Add(new Funcionario()
+            {
+                IdPosto = 2,
+                IdCargo = 3,
+                Nome = "Gabriel Tirone",
+                Login = "Tirone",
+                Senha = "deusefiel",
+                RegistroAtivo = true
+            });
+            #endregion
+            context.Funcionarios.AddRange(funcionario);
+            #endregion
+
             base.Seed(context);
         }
     }

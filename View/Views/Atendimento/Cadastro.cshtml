@@ -2,35 +2,39 @@
 @{
     ViewBag.Title = "Index";
 }
-<h2 class="display-4 mt-5 mb-5">Adicionar Atendimento</h2>
-<form action="" method="post">
+<h2 class="display-4">Adicionar Atendimento</h2>
+<form action="/atendimento/inserir" method="post">
     <!--Esta div contera o atendente e o medico, quando o atendente abrir nao tera a opção medico-->
     <!--Quando o medico abrir nao tera o atendente-->
     <div class="row">
-        <div class="col-12">
-            <label for="campo-paciente">Paciente</label>
-            <select name="paciente" id="campo-paciente" class="form-control border-dark">
+        <div class="col-10">
+            <label for="campo-paciente" class="font-weight-bold">Paciente</label>
+            <select name="idPaciente" id="campo-paciente" class="form-control border-info">
+                <option selected="selected" disabled="disabled">Selecione um paciente</option>
                 @foreach (Model.Paciente paciente in ViewBag.Pacientes)
                 {
                 <option value="@paciente.Id">@paciente.Nome</option>
                 }
             </select>
-
+        </div>
+        <div class="col-2">
+            <a href="/paciente/cadastro" class="btn btn-primary mt-25"><i class="fa fa-plus"></i> Adicionar Paciente</a>
         </div>
     </div>
 
     <div class="row">
         <div class="col-6">
-            <label for="campo-data">Data</label>
-            <input type="date" name="data" id="campo-data" class="form-control border-dark" />
+            <label class="font-weight-bold" for="campo-data">Data</label>
+            <input type="date" name="DataAtendimento" id="campo-data" class="form-control  border-info" />
         </div>
         <div class="col-6">
             <div>
-                <label for="campo-prioridade">Prioridade</label>
-                <select name="prioridade" id="campo-prioridade" class="form-control border-dark">
-                    <option value="alto">Alto</option>
-                    <option value="medio">Medio</option>
-                    <option value="baixo">Baixo</option>
+                <label class="font-weight-bold" for="campo-prioridade">Prioridade</label>
+                <select name="Prioridade" id="campo-prioridade" class="form-control border-info">
+                    <option selected="selected" disabled="disabled">Selecione a prioridade</option>
+                    <option value="3">Alto</option>
+                    <option value="2">Medio</option>
+                    <option value="1">Baixo</option>
                 </select>
 
             </div>
@@ -39,26 +43,31 @@
 
     <div class="row">
         <div class="col-12">
-            <label for="campo-observacao">Observação</label>
-            <textarea class="form-control border-dark" id="campo-observacao" name="observacao" maxlength="150"></textarea>
+            <label class="font-weight-bold" for="campo-observacao">Observação</label>
+            <input class="form-control border-info" id="campo-observacao" name="observacao" maxlength="150" />
         </div>
     </div>
 
     <div class="row">
         <div class="col-12">
-            <label for="campo-tratamento">Tratamento</label>
-            <textarea class="form-control border-dark" id="campo-tratamento" name="tratamento" maxlength="100"></textarea>
+            <label class="font-weight-bold" for="campo-tratamento">Tratamento</label>
+            <input class="form-control border-info" id="campo-tratamento" name="tratamento" maxlength="100" />
         </div>
     </div>
 
     <div class="row">
         <div class="col-12">
-            <label for="campo-encaminhamento">Encaminhamento</label>
-            <select name="encaminhamento border-dark" id="campo-encaminhamento" class="form-control"></select>
+            <label class="font-weight-bold" for="campo-encaminhamento">Encaminhamento</label>
+            <select name="encaminhamento" id="campo-encaminhamento" class="form-control border-info">
+                @foreach (Model.Encaminhamento Encaminhamento in ViewBag.Encaminhamentos)
+                {
+                    <option value="@Encaminhamento.Id">@Encaminhamento.Descricao</option>
+                }
+            </select>
         </div>
     </div>
 
-    <button class="btn btn-success mt-3" type="submit">Salvar</button>
+    <button class="btn btn-success float-right mt-20" type="submit"><i class="fa fa-save"></i> Salvar</button>
 
 </form>
 

@@ -15,10 +15,11 @@ namespace Model
         public int Id { get; set; }
 
         [Column("id_encaminhamento")]
-        public int IdEncaminhamento { get; set; }
+        public int? IdEncaminhamento { get; set; }
 
+        //Virtual permite que a fk tenha um valor nulo
         [ForeignKey("IdEncaminhamento")]
-        public Encaminhamento Encaminhamento { get; set; }
+        public virtual Encaminhamento Encaminhamento { get; set; }
 
         [Column("id_funcionario")]
         public int IdFuncionario { get; set; }
@@ -33,10 +34,10 @@ namespace Model
         public Paciente Paciente { get; set; }
 
         [Column("id_funcionario_medico")]
-        public int IdMedico { get; set; }
+        public int? IdMedico { get; set; }
 
         [ForeignKey("IdMedico")]
-        public Funcionario Medico { get; set; }
+        public virtual Funcionario Medico { get; set; }
 
         [Column("data_atendimento")]
         public DateTime DataAtendimento { get; set; }

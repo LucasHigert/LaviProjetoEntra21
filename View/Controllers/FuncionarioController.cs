@@ -17,40 +17,20 @@ namespace View.Controllers
             repository = new FuncionarioRepository();
         }
 
-        [HttpGet]
         public ActionResult Index()
         {
-            ViewBag.Funcioarios = repository.ObterTodos();
+            ViewBag.Funcionarios = repository.ObterTodos();
             return View();
         }
 
-
-        [HttpPost, Route("alterar")]
-        public JsonResult Alterar(Funcionario funcionario)
+        //Alterar
+        #region Alterar
+        public ActionResult Update(Funcionario funcionario)
         {
-            var alterou = repository.Alterar(funcionario);
-            var resultado = new { status = alterou };
-            return Json(resultado, JsonRequestBehavior.AllowGet);
+            repository.Alterar(funcionario);
+            return RedirectToAction("index");
         }
 
-        [HttpGet, Route("apagar")]
-        public JsonResult Apagar(int id)
-        {
-            var apagou = repository.Apagar(id);
-            var resultado = new { status = apagou };
-            return Json(resultado, JsonRequestBehavior.AllowGet);
-        }
-
-        [HttpPost, Route("inserir")]
-        public ActionResult Inserir(Funcionario funcionario)
-        {
-            funcionario.RegistroAtivo = true;
-            var id = repository.Inserir(funcionario);
-            var resultado = new { id = id };
-            return Json(resultado);
-        }
-
-        [HttpGet]
         public ActionResult Alterar(int id)
         {
             var funcionario = repository.ObterPeloId(id);
@@ -66,6 +46,26 @@ namespace View.Controllers
             return View();
         }
 
+        #endregion
+
+        //Apagar
+        #region Apagar
+        public ActionResult Apagar(int id)
+        {
+            repository.Apagar(id);
+            return RedirectToAction("index");
+        }
+        #endregion
+
+        //Inserir
+        #region Cadastro
+        public ActionResult Inserir(Funcionario funcionario)
+        {
+            funcionario.RegistroAtivo = true;
+            repository.Inserir(funcionario);
+            return RedirectToAction("index");
+        }
+
 
         public ActionResult Cadastrar()
         {
@@ -75,5 +75,7 @@ namespace View.Controllers
             ViewBag.Cargos = repositoryCargo.ObterTodos();
             return View();
         }
+
+        #endregion
     }
 }

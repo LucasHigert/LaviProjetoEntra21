@@ -67,7 +67,7 @@ namespace Repository.Repository
 
         public List<Funcionario> ObterTodos()
         {
-            return context.Funcionarios.Where(x => x.RegistroAtivo == true).OrderBy(x => x.Id).ToList();
+            return context.Funcionarios.Include("posto").Include("cargo").Where(x => x.RegistroAtivo == true).ToList();
         }
 
         public List<Funcionario> ObterTodos(string busca)

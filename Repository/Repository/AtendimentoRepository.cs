@@ -56,7 +56,9 @@ namespace Repository.Repository
 
         public bool Inserir(Atendimento atendimento)
         {
-            throw new NotImplementedException();
+            context.Atendimentos.Add(atendimento);
+            var rows = context.SaveChanges();
+            return rows == 1;
         }
 
         public Atendimento ObterPeloId(int id)
@@ -68,7 +70,7 @@ namespace Repository.Repository
         public List<Atendimento> ObterTodosPeloCargo(int NumeroCargo)
         {
             //modificar para buscar o atendimento pelo cargo que esta logado
-            return context.Atendimentos.Include("Paciente").Where(x => x.Status != 2).OrderByDescending(x=> x.Prioridade).ToList();
+            return context.Atendimentos.Include("Paciente").Where(x => x.Status != 2).OrderByDescending(x => x.Prioridade).ToList();
         }
     }
 }

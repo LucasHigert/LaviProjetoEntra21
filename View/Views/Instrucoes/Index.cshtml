@@ -4,4 +4,11 @@
 }
 
 <h2>Index</h2>
-    <h1>Funcionario 1</h1>
+@if (Session["usuarioLogadoCargo"].ToString() == "Medico")
+{
+    <h1>@Session["usuarioLogadoCargo"].ToString()</h1>
+}
+else if (Session["usuarioLogadoCargo"].ToString() == "Atendente")
+{
+    <h1>Ola pessoa</h1>
+}

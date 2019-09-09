@@ -653,26 +653,7 @@
     <Content Include="Scripts\Tema\global\js\Plugin\toolbar.js" />
     <Content Include="Scripts\Tema\global\js\Plugin\webui-popover.js" />
     <Content Include="Scripts\Tema\global\photos\placeholder.png" />
-    <Content Include="Scripts\Tema\global\portraits\1.jpg" />
-    <Content Include="Scripts\Tema\global\portraits\10.jpg" />
-    <Content Include="Scripts\Tema\global\portraits\11.jpg" />
-    <Content Include="Scripts\Tema\global\portraits\12.jpg" />
-    <Content Include="Scripts\Tema\global\portraits\13.jpg" />
-    <Content Include="Scripts\Tema\global\portraits\14.jpg" />
-    <Content Include="Scripts\Tema\global\portraits\15.jpg" />
-    <Content Include="Scripts\Tema\global\portraits\16.jpg" />
-    <Content Include="Scripts\Tema\global\portraits\17.jpg" />
-    <Content Include="Scripts\Tema\global\portraits\18.jpg" />
-    <Content Include="Scripts\Tema\global\portraits\19.jpg" />
-    <Content Include="Scripts\Tema\global\portraits\2.jpg" />
-    <Content Include="Scripts\Tema\global\portraits\20.jpg" />
-    <Content Include="Scripts\Tema\global\portraits\3.jpg" />
-    <Content Include="Scripts\Tema\global\portraits\4.jpg" />
-    <Content Include="Scripts\Tema\global\portraits\5.jpg" />
-    <Content Include="Scripts\Tema\global\portraits\6.jpg" />
-    <Content Include="Scripts\Tema\global\portraits\7.jpg" />
-    <Content Include="Scripts\Tema\global\portraits\8.jpg" />
-    <Content Include="Scripts\Tema\global\portraits\9.jpg" />
+    <Content Include="Scripts\Tema\global\portraits\user.png" />
     <Content Include="Scripts\Tema\global\postcss.config.js" />
     <Content Include="Scripts\Tema\global\src\es\Base.js" />
     <Content Include="Scripts\Tema\global\src\es\Component.js" />
@@ -5686,6 +5667,7 @@
     <Content Include="Views\Funcionario\Index.cshtml" />
     <Content Include="Views\Funcionario\Alterar.cshtml" />
     <Content Include="Views\Funcionario\Cadastrar.cshtml" />
+    <Content Include="Views\Login\SemPermissao.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -5693,7 +5675,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
   <ItemGroup />
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />

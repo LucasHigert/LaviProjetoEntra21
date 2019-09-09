@@ -1,4 +1,5 @@
 ﻿using Model;
+using Repository.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,11 +16,32 @@ namespace View.Controllers
             return View();
         }
 
-        
+        public ActionResult Sair()
+        {
+            Session["usuarioLogadoId"] = null;
+            Session["usuarioLogadoCargo"] = null;
+            return RedirectToAction("index");
+        }
+
         public ActionResult VerificaLogin(string login, string senha)
         {
-            
-            return Redirect("/instrucoes/index");
+            FuncionarioRepository repository = new FuncionarioRepository();
+            Funcionario funcionario = repository.BuscarFuncionario(login, senha);
+            if (funcionario != null)
+            {
+                Session["usuarioLogadoId"] = funcionario.Id;
+                Session["usuarioLogadoCargo"] = funcionario.Cargo.Nome;
+                return Redirect("/instrucoes/index");
+            }
+            else
+            {
+               return RedirectToAction("index");
+            }
+        }
+
+        public ActionResult SemPermissao()
+        {
+            return View();
         }
     }
 }

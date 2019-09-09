@@ -117,14 +117,14 @@
                         <a class="nav-link navbar-avatar" data-toggle="dropdown" href="#" aria-expanded="false"
                            data-animation="scale-up" role="button">
                             <span class="avatar avatar-online">
-                                <img src="~/Scripts/Tema/global/portraits/5.jpg" alt="...">
+                                <img src="~/Scripts/Tema/global/portraits/user.png" alt="...">
                                 <i></i>
                             </span>
                         </a>
                         <div class="dropdown-menu" role="menu">
-                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-user" aria-hidden="true"></i> Perfil</a>
+                            <a class="dropdown-item" href="/funcionario/alterar?id=@Session["usuarioLogadoId"]" role="menuitem"><i class="icon wb-user" aria-hidden="true"></i> Perfil</a>
                             <div class="dropdown-divider" role="presentation"></div>
-                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-power" aria-hidden="true"></i> Sair</a>
+                            <a class="dropdown-item" href="/login/sair" role="menuitem"><i class="icon wb-power" aria-hidden="true"></i> Sair</a>
                         </div>
                     </li>
 

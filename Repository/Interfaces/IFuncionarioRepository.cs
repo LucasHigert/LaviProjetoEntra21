@@ -20,5 +20,8 @@ namespace Repository.Interfaces
         bool Alterar(Funcionario funcionario);
 
         bool Apagar(int id);
+
+        Funcionario BuscarFuncionario(string login, string senha);
+        
     }
 }

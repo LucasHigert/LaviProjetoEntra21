@@ -4,7 +4,8 @@
 }
 <h2 class="display-4">Alterando Funcionario '@ViewBag.Funcionario.Nome'</h2>
 
-<form action="/funcionario/inserir" method="post">
+<form action="/funcionario/update" method="post">
+    <input type="text" hidden="hidden" value="@ViewBag.Funcionario.Id" name="Id" />
     <div class="row">
         <div class="col-4">
             <label class="font-weight-bold">Cargo*</label>

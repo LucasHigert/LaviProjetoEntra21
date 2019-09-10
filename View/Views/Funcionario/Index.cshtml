@@ -2,33 +2,36 @@
 @{
     ViewBag.Title = "Index";
 }
-
-<h2>Funcionários</h2>
-
-<a class="btn btn-outline-secondary float-right" style="margin-bottom: 5px" href="/posto/cadastrar"><i class="fas fa-plus"></i>Novo</a>
-<table class="table table-striped table-bordered table-hover" id="postos-index">
-    <thead>
+<div class="row">
+    <div class="col-6">
+        <h2 class="display-4">Lista de Funcionarios</h2>
+    </div>
+    <div class="col-6">
+        <a class="btn btn-dark float-right mt-35" href="/funcionario/cadastrar"><i class="fa fa-plus"></i> Adicionar Funcionario</a>
+    </div>
+</div>
+<table class="table table-primary table-bordered text-dark">
+    <thead class="bg-dark">
         <tr>
-            <th>Nome do Posto</th>
-            <th>Posto</th>
-            <th>Cargo</th>
-            <th>Login</th>
-            <th>Ação</th>
+            <td>Nome</td>
+            <td>Posto</td>
+            <td>Cargo</td>
+            <td>Ação</td>
         </tr>
     </thead>
     <tbody>
-        @foreach (Model.Funcionario funcionario in ViewBag.Funcionarios)
+        @foreach (Model.Funcionario Funcionario in ViewBag.Funcionarios)
         {
             <tr>
-                <td>@funcionario.Nome</td>
-                <td>@funcionario.Posto.Nome</td>
-                <td>@funcionario.Cargo.Nome</td>
-                <td>@funcionario.Login</td>
+                <td>@Funcionario.Nome</td>
+                <td>@Funcionario.Posto.Nome</td>
+                <td>@Funcionario.Cargo.Nome</td>
                 <td>
-                    <a class="btn btn-outline-primary float-right" href="/posto/alterar?id=@funcionario.Id">Editar</a>
-                    <a class="btn btn-outline-danger float-right" style="margin-right: 5px" href="/posto/apagar?id=@funcionario.Id">Apagar</a>
+                    <a href="/funcionario/alterar?id=@Funcionario.Id" class="btn btn-primary ml-30"><i class="fa fa-edit"></i> Editar</a>
+                    <a href="/funcionario/apagar?id=@Funcionario.Id" class="btn btn-danger ml-20"><i class="fa fa-trash"></i> Apagar</a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
+

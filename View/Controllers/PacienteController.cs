@@ -21,22 +21,14 @@ namespace View.Controllers
 
         public ActionResult Index()
         {
-            ////var cidades = repository.ObterTodos(cidades);
-            //List<Cidade> cidades = repository.ObterTodos();
-            //return View();
-
             List<Paciente> pacientes = repository.ObterTodos();
             ViewBag.Pacientes = pacientes;
             return View();
-
         }
 
         public ActionResult Cadastro()
         {
-            //cidade.RegistroAtivo = true;
-            //var id = repository.Inserir(cidade);
-            //var resultado = new { id = id };
-            //return View("cadastro");
+            
 
             //Puxa Info dos estados
             PostoRepository postoRepository = new PostoRepository();
@@ -50,7 +42,6 @@ namespace View.Controllers
         {
             int id = repository.Inserir(paciente);
             return RedirectToAction("Index");
-            //, new { id = id });
         }
 
         public ActionResult Apagar(int id)
@@ -92,11 +83,6 @@ namespace View.Controllers
             return View();
         }
 
-        public ActionResult ObterTodos()
-        {
-            List<Paciente> pacientes = repository.ObterTodos();
-            ViewBag.Pacientes = pacientes;
-            return View();
-        }
+       
     }
 }

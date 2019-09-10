@@ -27,6 +27,8 @@ namespace Repository.Repository
             funcionarioOriginal.Nome = funcionario.Nome;
             funcionarioOriginal.Login = funcionario.Login;
             funcionarioOriginal.Senha = funcionario.Senha;
+            funcionarioOriginal.IdPosto = funcionario.IdPosto;
+            funcionarioOriginal.IdCargo = funcionario.IdCargo;
             int quantidadeAfetada = context.SaveChanges();
             return quantidadeAfetada == 1;
         }
@@ -39,6 +41,11 @@ namespace Repository.Repository
             funcionario.RegistroAtivo = false;
             int quantidadeAfetada = context.SaveChanges();
             return quantidadeAfetada == 1;
+        }
+
+        public Funcionario BuscarFuncionario(string login, string senha)
+        {
+            return context.Funcionarios.Include("cargo").Where(x => x.Login == login && x.Senha == senha).FirstOrDefault();
         }
 
         public int Inserir(Funcionario funcionario)
@@ -67,7 +74,7 @@ namespace Repository.Repository
 
         public List<Funcionario> ObterTodos()
         {
-            return context.Funcionarios.Where(x => x.RegistroAtivo == true).OrderBy(x => x.Id).ToList();
+            return context.Funcionarios.Include("posto").Include("cargo").Where(x => x.RegistroAtivo == true).ToList();
         }
 
         public List<Funcionario> ObterTodos(string busca)

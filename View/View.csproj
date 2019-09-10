@@ -96,12 +96,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-grid.css" />
-    <Content Include="Content\bootstrap-grid.min.css" />
-    <Content Include="Content\bootstrap-reboot.css" />
-    <Content Include="Content\bootstrap-reboot.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="App_Data\SqlServerConnection.mdf" />
+    <Content Include="App_Data\SqlServerConnection_log.ldf">
+      <DependentUpon>SqlServerConnection.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\Imagens\Logo Lavi .png" />
@@ -655,26 +653,7 @@
     <Content Include="Scripts\Tema\global\js\Plugin\toolbar.js" />
     <Content Include="Scripts\Tema\global\js\Plugin\webui-popover.js" />
     <Content Include="Scripts\Tema\global\photos\placeholder.png" />
-    <Content Include="Scripts\Tema\global\portraits\1.jpg" />
-    <Content Include="Scripts\Tema\global\portraits\10.jpg" />
-    <Content Include="Scripts\Tema\global\portraits\11.jpg" />
-    <Content Include="Scripts\Tema\global\portraits\12.jpg" />
-    <Content Include="Scripts\Tema\global\portraits\13.jpg" />
-    <Content Include="Scripts\Tema\global\portraits\14.jpg" />
-    <Content Include="Scripts\Tema\global\portraits\15.jpg" />
-    <Content Include="Scripts\Tema\global\portraits\16.jpg" />
-    <Content Include="Scripts\Tema\global\portraits\17.jpg" />
-    <Content Include="Scripts\Tema\global\portraits\18.jpg" />
-    <Content Include="Scripts\Tema\global\portraits\19.jpg" />
-    <Content Include="Scripts\Tema\global\portraits\2.jpg" />
-    <Content Include="Scripts\Tema\global\portraits\20.jpg" />
-    <Content Include="Scripts\Tema\global\portraits\3.jpg" />
-    <Content Include="Scripts\Tema\global\portraits\4.jpg" />
-    <Content Include="Scripts\Tema\global\portraits\5.jpg" />
-    <Content Include="Scripts\Tema\global\portraits\6.jpg" />
-    <Content Include="Scripts\Tema\global\portraits\7.jpg" />
-    <Content Include="Scripts\Tema\global\portraits\8.jpg" />
-    <Content Include="Scripts\Tema\global\portraits\9.jpg" />
+    <Content Include="Scripts\Tema\global\portraits\user.png" />
     <Content Include="Scripts\Tema\global\postcss.config.js" />
     <Content Include="Scripts\Tema\global\src\es\Base.js" />
     <Content Include="Scripts\Tema\global\src\es\Component.js" />
@@ -5669,7 +5648,6 @@
     <Content Include="Views\ParteCorpo\Cadastrar.cshtml" />
     <Content Include="Views\Sintoma\Index.cshtml" />
     <Content Include="Views\Sintoma\Cadastrar.cshtml" />
-    <Content Include="Views\Sintoma\Alterar.cshtml" />
     <Content Include="Views\Cargo\Alterar.cshtml" />
     <Content Include="Views\Cargo\Cadastrar.cshtml" />
     <Content Include="Views\Cidade\Alterar.cshtml" />
@@ -5685,6 +5663,11 @@
     <Content Include="Views\Encaminhamento\Index.cshtml" />
     <Content Include="Views\Encaminhamento\Cadastrar.cshtml" />
     <Content Include="Views\Encaminhamento\Alterar.cshtml" />
+    <Content Include="Views\Sintoma\Alterar.cshtml" />
+    <Content Include="Views\Funcionario\Index.cshtml" />
+    <Content Include="Views\Funcionario\Alterar.cshtml" />
+    <Content Include="Views\Funcionario\Cadastrar.cshtml" />
+    <Content Include="Views\Login\SemPermissao.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -5692,11 +5675,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-    <Folder Include="Views\Funcionario\" />
-    <Folder Include="Views\Posto\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup />
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />

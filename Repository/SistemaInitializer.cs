@@ -4,8 +4,8 @@ using System.Data.Entity;
 
 namespace Repository
 {
-    //internal class SistemaInitializer : DropCreateDatabaseAlways<SistemaContext>
-    internal class SistemaInitializer : CreateDatabaseIfNotExists<SistemaContext>
+    internal class SistemaInitializer : DropCreateDatabaseAlways<SistemaContext>
+    //internal class SistemaInitializer : CreateDatabaseIfNotExists<SistemaContext>
     {
 
         protected override void Seed(SistemaContext context)
@@ -16,136 +16,163 @@ namespace Repository
             #region EstadosAdicionar
             estados.Add(new Estado()
             {
+                Id = 1,
                 Nome = "Acre",
                 RegistroAtivo = true
             });
             estados.Add(new Estado()
             {
+                Id = 2,
                 Nome = "Alagoas",
                 RegistroAtivo = true
             });
             estados.Add(new Estado()
             {
+                Id = 3,
                 Nome = "Amazonas",
                 RegistroAtivo = true
             });
             estados.Add(new Estado()
             {
+                Id = 4,
                 Nome = "Amapá",
                 RegistroAtivo = true
             });
             estados.Add(new Estado()
             {
+                Id = 5,
                 Nome = "Bahia",
                 RegistroAtivo = true
             });
             estados.Add(new Estado()
             {
+                Id = 6,
                 Nome = "Ceará",
                 RegistroAtivo = true
             });
             estados.Add(new Estado()
             {
+                Id = 7,
                 Nome = "Distrito Federal",
                 RegistroAtivo = true
             });
             estados.Add(new Estado()
             {
+                Id = 8,
                 Nome = "Espírito Santo",
                 RegistroAtivo = true
             });
             estados.Add(new Estado()
             {
+                Id = 9,
                 Nome = "Goiás",
                 RegistroAtivo = true
             });
             estados.Add(new Estado()
             {
+                Id = 10,
                 Nome = "Maranhão",
                 RegistroAtivo = true
             });
             estados.Add(new Estado()
             {
+                Id = 11,
                 Nome = "Minas Gerais",
                 RegistroAtivo = true
             });
             estados.Add(new Estado()
             {
+                Id = 12,
                 Nome = "Mato Grosso do Sul",
                 RegistroAtivo = true
             });
             estados.Add(new Estado()
             {
+                Id = 13,
                 Nome = "Mato Grosso",
                 RegistroAtivo = true
             });
             estados.Add(new Estado()
             {
+                Id = 14,
                 Nome = "Pará",
                 RegistroAtivo = true
             });
             estados.Add(new Estado()
             {
+                Id = 15,
                 Nome = "Paraía",
                 RegistroAtivo = true
             });
             estados.Add(new Estado()
             {
+                Id = 16,
                 Nome = "Pernambuco",
                 RegistroAtivo = true
             });
             estados.Add(new Estado()
             {
+                Id = 17,
                 Nome = "Piauí",
                 RegistroAtivo = true
             });
             estados.Add(new Estado()
             {
+                Id = 18,
                 Nome = "Paraná",
                 RegistroAtivo = true
             });
             estados.Add(new Estado()
             {
+                Id = 19,
                 Nome = "Rio de Janeiro",
                 RegistroAtivo = true
             });
             estados.Add(new Estado()
             {
+                Id = 20,
                 Nome = "Rio Grande",
                 RegistroAtivo = true
             });
             estados.Add(new Estado()
             {
+                Id = 21,
                 Nome = "Rondônia",
                 RegistroAtivo = true
             });
             estados.Add(new Estado()
             {
+                Id = 22,
                 Nome = "Roraima",
                 RegistroAtivo = true
             });
             estados.Add(new Estado()
             {
+                Id = 23,
                 Nome = "Rio Grande",
                 RegistroAtivo = true
             });
             estados.Add(new Estado()
             {
+                Id = 24,
                 Nome = "Santa Catarina",
                 RegistroAtivo = true
             });
             estados.Add(new Estado()
             {
+                Id = 25,
                 Nome = "Sergipe",
                 RegistroAtivo = true
             });
             estados.Add(new Estado()
             {
+                Id = 26,
                 Nome = "São Paulo",
                 RegistroAtivo = true
             });
             estados.Add(new Estado()
             {
+                Id = 27,
                 Nome = "Tocantins",
                 RegistroAtivo = true
             });
@@ -159,12 +186,14 @@ namespace Repository
             #region CidadeAdicionar
             cidades.Add(new Cidade()
             {
+                Id = 1,
                 IdEstado = 24,
                 Nome = "Blumenau",
                 RegistroAtivo = true
             });
             cidades.Add(new Cidade()
             {
+                Id = 2,
                 IdEstado = 24,
                 Nome = "Gaspar",
                 RegistroAtivo = true
@@ -185,6 +214,7 @@ namespace Repository
             });
             postos.Add(new Posto()
             {
+                Id = 1,
                 IdCidade = 1,
                 Nome = "Velha Centro",
                 Cep = "89046-231",
@@ -192,6 +222,7 @@ namespace Repository
             });
             postos.Add(new Posto()
             {
+                Id = 2,
                 IdCidade = 2,
                 Nome = "ESF Walter Reiter",
                 Cep = "89095-535",
@@ -199,6 +230,7 @@ namespace Repository
             });
             postos.Add(new Posto()
             {
+                Id = 3,
                 IdCidade = 1,
                 Nome = "Garcia",
                 Cep = "89037-690",
@@ -214,6 +246,7 @@ namespace Repository
 
             paciente.Add(new Paciente()
             {
+                Id = 1,
                 IdPosto = 1,
                 Nome = "Leticia Rodriguez Garcia",
                 Endereco = "Rua Anna Fischer 80",
@@ -230,6 +263,7 @@ namespace Repository
             });
             paciente.Add(new Paciente()
             {
+                Id = 2,
                 IdPosto = 1,
                 Nome = "Maiara Ilinoi Cardoso",
                 Endereco = "Rua Noel Rosa 10",
@@ -246,6 +280,7 @@ namespace Repository
             });
             paciente.Add(new Paciente()
             {
+                Id = 3,
                 IdPosto = 2,
                 Nome = "Pedro Alexandre Madeiro",
                 Endereco = "Rua Curitiba 55",
@@ -262,6 +297,104 @@ namespace Repository
             });
             #endregion
             context.Pacientes.AddRange(paciente);
+            #endregion
+
+            #region cargos
+            var cargo = new List<Cargo>();
+            #region CargosAdicionar
+            cargo.Add(new Cargo()
+            {
+                Id = 1,
+                Nome = "Atendente",
+                RegistroAtivo = true
+            });
+            cargo.Add(new Cargo()
+            {
+                Id = 2,
+                Nome = "Médico",
+                RegistroAtivo = true
+            });
+            cargo.Add(new Cargo()
+            {
+                Id = 3,
+                Nome = "Enfermeiro",
+                RegistroAtivo = true
+            });
+            cargo.Add(new Cargo()
+            {
+                Id = 4,
+                Nome = "Administrador",
+                RegistroAtivo = true
+            });
+            #endregion
+            context.Cargos.AddRange(cargo);
+            #endregion
+
+            #region funcionários 
+            var funcionario = new List<Funcionario>();
+            #region FuncionáriosAdicinonar
+            funcionario.Add(new Funcionario()
+            {
+                Id = 1,
+                IdPosto = 1,
+                IdCargo = 1,
+                Nome = "Tiffany Carlene",
+                Login = "TiffanyCarlene",
+                Senha = "carlezinha123",
+                RegistroAtivo = true
+            });
+            funcionario.Add(new Funcionario()
+            {
+                Id = 2,
+                IdPosto = 1,
+                IdCargo = 2,
+                Nome = "Roberto Francisco Sagaz",
+                Login = "RobertoSagaz",
+                Senha = "medicotop",
+                RegistroAtivo = true
+            });
+            funcionario.Add(new Funcionario()
+            {
+                Id = 3,
+                IdPosto = 1,
+                IdCargo = 3,
+                Nome = "Vanessa Revineia",
+                Login = "Revineia",
+                Senha = "triagemboa",
+                RegistroAtivo = true
+            });
+            funcionario.Add(new Funcionario()
+            {
+                Id = 4,
+                IdPosto = 1,
+                IdCargo = 4,
+                Nome = "Josefina Carla",
+                Login = "Josefa",
+                Senha = "amomeufilho",
+                RegistroAtivo = true
+            });
+            funcionario.Add(new Funcionario()
+            {
+                Id = 5,
+                IdPosto = 2,
+                IdCargo = 2,
+                Nome = "Marilene Peixes",
+                Login = "MarilenePeixe",
+                Senha = "olamarilene",
+                RegistroAtivo = true
+            });
+            funcionario.Add(new Funcionario()
+            {
+                Id = 6,
+                IdPosto = 2,
+                IdCargo = 3,
+                Nome = "Gabriel Tirone",
+                Login = "Tirone",
+                Senha = "deusefiel",
+                RegistroAtivo = true
+            });
+            #endregion
+            context.Funcionarios.AddRange(funcionario);
             #endregion
 
             base.Seed(context);

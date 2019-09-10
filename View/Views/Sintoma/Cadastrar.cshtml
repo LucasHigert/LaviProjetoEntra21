@@ -3,30 +3,43 @@
     ViewBag.Title = "Cadastrar";
 }
 
+<h2 class="display-4">Cadastro de Sintomas</h2>
+
 <form action="/sintoma/inserir" method="post">
-    <div>
-        <label for="campo-partecorpo">Partes do Corpo</label>
-        <select name="idParteCorpo" id="campo-partecorpo" class="form-control">
-            @foreach (Model.ParteCorpo partecorpo in ViewBag.PartesCorpo)
-            {
-                <option value="@partecorpo.Id">@partecorpo.Nome</option>
-            }
-        </select>
+
+    <div class="row">
+        <div class="col-12">
+            <div>
+                <label class="font-weight-bold text-black-50" for="campo-partecorpo">Partes do Corpo</label>
+                <select name="idParteCorpo" id="campo-partecorpo" class="form-control border-info text-dark">
+                    <option disabled="disabled" selected="selected">Selecione uma parte</option>
+                    @foreach (Model.ParteCorpo partecorpo in ViewBag.PartesCorpo)
+                    {
+                        <option value="@partecorpo.Id">@partecorpo.Nome</option>
+                    }
+                </select>
+            </div>
+        </div>
     </div>
 
-    <div>
-        <label for="campo-nome">Sintoma</label>
-        <input type="text" name="nome" id="campo-nome" />
+
+
+    <div class="row mt-15">
+        <div class="col-4">
+                <label class="font-weight-bold" for="campo-nome">Sintoma</label>
+                <input type="text" maxlength="100" name="nome" id="campo-nome" class="form-control border-info" />
+        </div>
+
+        <div class="col-4">
+            <label class="font-weight-bold" for="campo-criolo">Tradução Criolo</label>
+            <input type="text" maxlength="100" name="traducaocriolo" id="campo-criolo" class="form-control border-info" />
+        </div>
+        <div class="col-4">
+            <label class="font-weight-bold" for="campo-frances">Francês</label>
+            <input type="text" maxlength="100" name="traducaofrances" id="campo-frances" class="form-control border-info" />
+        </div>
     </div>
 
-    <div>
-        <label for="campo-criolo">Tradução Criolo</label>
-        <input type="text" name="traducaocriolo" id="campo-criolo" />
-    </div>
-    <div>
-        <label for="campo-frances">Francês</label>
-        <input type="text" name="traducaofrances" id="campo-frances" />
-    </div>
 
-    <button type="submit">Salvar</button>
+    <button class="btn btn-success mt-15" type="submit"><i class="fa fa-save"></i>Salvar</button>
 </form>

@@ -2,11 +2,11 @@
 @{
     ViewBag.Title = "Cadastrar";
 }
-
+<h2 class="display-4">Cadastro de Encaminhamentos</h2>
 <form action="/encaminhamento/inserir" method="post">
     <div>
-        <label for="campo-posto">Postos</label>
-        <select name="idPosto" id="campo-posto" class="form-control">
+        <label class="font-weight-bold" for="campo-posto">Postos</label>
+        <select name="idPosto" id="campo-posto" class="form-control border-info">
             @foreach (Model.Posto posto in ViewBag.Postos)
             {
                 <option value="@posto.Id">@posto.Nome</option>
@@ -14,20 +14,20 @@
         </select>
     </div>
     <div>
-        <label for="campo-descricao">Descrição</label>
-        <input type="text" name="descricao" id="campo-descricao" />
+        <label class="font-weight-bold" for="campo-descricao">Descrição</label>
+        <input type="text" name="descricao" id="campo-descricao" class="form-control border-info" />
     </div>
     <div>
-        <label for="campo-traducaocriolo">Tradução Crioulo</label>
-        <input type="text" name="traducaocriolo" id="campo-traducaocriolo" />
+        <label class="font-weight-bold" for="campo-traducaocriolo">Tradução Crioulo</label>
+        <input type="text" name="traducaocriolo" id="campo-traducaocriolo" class="form-control border-info" />
     </div>
     <div>
-        <label for="campo-traducaofrances">Tradução Francês</label>
-        <input type="text" name="traducaofrances" id="campo-traducaofrances" />
+        <label class="font-weight-bold" for="campo-traducaofrances">Tradução Francês</label>
+        <input type="text" name="traducaofrances" id="campo-traducaofrances" class="form-control border-info" />
     </div>
     <div>
-        <label for="campo-local">Local</label>
-        <input type="text" name="local" id="campo-local" />
+        <label class="font-weight-bold" for="campo-local">Local</label>
+        <input type="text" name="local" id="campo-local" class="form-control border-info" />
     </div>
-    <button type="submit">Salvar</button>
+    <button type="submit" class="btn btn-success float-right mt-20"><i class="fa fa-save"></i> Salvar</button>
 </form>

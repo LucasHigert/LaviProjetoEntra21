@@ -24,19 +24,19 @@ namespace View.Controllers
         #region
         public ActionResult Cadastro()
         {
-            //ViewBag.Pacientes = repositoryPaciente.ObterPacientesPeloIdCidade(1);
+            EncaminhamentoRepository encaminhamentoRepository = new EncaminhamentoRepository();
+            ViewBag.Encaminhamentos = encaminhamentoRepository.ObterTodos();
+            ViewBag.Pacientes = repositoryPaciente.ObterTodos();
             return View();
         }
 
-        public ActionResult Inserir(int atendendente,int medico,int paciente,DateTime data,int prioridate,string observacao)
+        public ActionResult Inserir(Atendimento atendimento)
         {
-            Atendimento atendimento = new Atendimento();
-            atendimento.IdFuncionario = atendendente;
-            atendimento.IdMedico = medico;
-            atendimento.IdPaciente = paciente;
-            atendimento.DataAtendimento = data;
-            atendimento.Prioridade = prioridate;
-            atendimento.Observacao = observacao;
+            // atendimento.IdFuncionario = atendendente;
+            // atendimento.IdMedico = medico;
+            atendimento.IdFuncionario = 2;
+            atendimento.Status = 1;
+            atendimento.IdMedico = 2;
 
             var inseriu = repositoryAtendimento.Inserir(atendimento);
             if (inseriu == false)

@@ -27,9 +27,16 @@ namespace Repository.Repository
 
             encaminhamentoAnterior.IdPosto = encaminhamento.IdPosto;
             encaminhamentoAnterior.Descricao = encaminhamento.Descricao;
+            encaminhamentoAnterior.TraducaoCriolo = encaminhamento.TraducaoCriolo;
+            encaminhamentoAnterior.TraducaoFrances = encaminhamento.TraducaoFrances;
             encaminhamentoAnterior.Local = encaminhamento.Local;
             int quantidadeAfetada = context.SaveChanges();
             return quantidadeAfetada == 1;
+        }
+
+        public List<Encaminhamento> ObterTodos()
+        {
+            return context.Encaminhamentos.Where(x => x.RegistroAtivo == true).ToList();
         }
 
         public bool Apagar(int id)
@@ -39,9 +46,21 @@ namespace Repository.Repository
             {
                 return false;
             }
-            encaminhamento.RegistroAtivo = false;
+            encaminhamento.Status = 2;
             int quantidadeAfetada = context.SaveChanges();
             return quantidadeAfetada == 1;
+
+          //  var atendimentoOrginal = context.Atendimentos.Where(x => x.Id == id).FirstOrDefault();
+          //  if (atendimentoOrginal == null)
+          //  {
+          //      return false;
+          //  }
+          //  else
+          //  {
+          //      atendimentoOrginal.Status = 2;
+          //      var rowsAffected = context.SaveChanges();
+          //      return rowsAffected == 1;
+          //  }
         }
 
         public int Inserir(Encaminhamento encaminhamento)
@@ -59,7 +78,7 @@ namespace Repository.Repository
 
         public List<Encaminhamento> ObterTodosPeloStatus(int status)
         {
-            return context.Encaminhamentos.Where(x => x.Status == status).ToList();
+            return context.Encaminhamentos.Include("posto").Where(x => x.Status == status).ToList();
         }
     }
 }

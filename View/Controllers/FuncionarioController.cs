@@ -27,6 +27,7 @@ namespace View.Controllers
         #region Alterar
         public ActionResult Update(Funcionario funcionario)
         {
+            funcionario.RegistroAtivo = true;
             repository.Alterar(funcionario);
             return RedirectToAction("index");
         }

@@ -16,6 +16,7 @@ namespace View.Controllers
         public CidadeController()
         {
             repository = new CidadeRepository();
+            
         }
 
         public ActionResult Index()
@@ -23,26 +24,67 @@ namespace View.Controllers
 
             List<Cidade> cidades = repository.ObterTodos();
             ViewBag.Cidades = cidades;
-            return View();
+            if (VerificaLogado() == true)
+            {
+
+                return View();
+            }
+            else
+            {
+                return Redirect("/login");
+            }
 
         }
+
+        //Verificações do login
+        #region Verificações Login
+        private bool VerificaLogado()
+        {
+            if (Session["usuarioLogadoCargo"] == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private ActionResult VerificaPermisssao()
+        {
+            if (VerificaLogado() == false)
+            {
+                return Redirect("/login");
+            }
+
+            if ((Session["usuarioLogadoCargo"].ToString() == "Atendente")||(Session["usuarioLogadoCargo"].ToString() == "Medico"))
+            {
+                return Redirect("/login/sempermissao");
+            }
+            else
+            {
+                return View();
+            }
+        }
+
+        #endregion
+
 
         //Cadastro
         #region Cadastro
         public ActionResult Cadastro()
         {
-           
             //Puxa Info dos estados
             EstadoRepository estadoRepository = new EstadoRepository();
             ViewBag.Estados = estadoRepository.ObterTodos(); ;
 
-            return View();
+            return VerificaPermisssao();
         }
 
         public ActionResult Inserir(Cidade cidade)
         {
             int id = repository.Inserir(cidade);
-            return RedirectToAction("Index");
+            return VerificaPermisssao();
         }
 
         #endregion
@@ -52,7 +94,7 @@ namespace View.Controllers
         public ActionResult Apagar(int id)
         {
             repository.Apagar(id);
-            return RedirectToAction("Index");
+            return VerificaPermisssao();
         }
 
         #endregion
@@ -68,7 +110,7 @@ namespace View.Controllers
             cidade.Estado.Id = idEstado;
 
             repository.Alterar(cidade);
-            return RedirectToAction("Index");
+            return VerificaPermisssao();
         }
 
         public ActionResult Alterar(int id)
@@ -76,7 +118,7 @@ namespace View.Controllers
             ViewBag.Cidade = repository.ObterPeloId(id);
             EstadoRepository estadoRepository = new EstadoRepository();
             ViewBag.Estados = estadoRepository.ObterTodos();
-            return View();
+            return VerificaPermisssao();
         }
         #endregion
     }

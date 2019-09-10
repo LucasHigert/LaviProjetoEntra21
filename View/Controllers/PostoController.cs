@@ -13,6 +13,42 @@ namespace View.Controllers
     {
         // GET: Posto
 
+        //Verificações do login
+        #region Verificações Login
+        private bool VerificaLogado()
+        {
+            if (Session["usuarioLogadoId"] == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private ActionResult VerificaPermisssao()
+        {
+            if (VerificaLogado() == false)
+            {
+                return Redirect("/login");
+            }
+
+            if ((Session["usuarioLogadoPermissao"].ToString() == "1") || (Session["usuarioLogadoPermissao"].ToString() == "2") ||
+                (Session["usuarioLogadoPermissao"].ToString() == "3"))
+            {
+                return Redirect("/login/sempermissao");
+            }
+            else
+            {
+                return View();
+            }
+        }
+
+        #endregion
+
+
+
         private PostoRepository repository;
 
         public PostoController()
@@ -20,52 +56,40 @@ namespace View.Controllers
             repository = new PostoRepository();
         }
 
-        [HttpGet]
         public ActionResult Index()
         {
+            if (VerificaLogado() == false)
+            {
+                return Redirect("/login");
+            }
             List<Posto> postos = repository.ObterTodos();
             ViewBag.Postos = postos;
             return View();
         }
 
-        [HttpGet]
-        public JsonResult ObterTodos()
+        //Apagar
+        #region Apagar
+        public ActionResult Apagar(int id)
         {
-            var postos = repository.ObterTodos();
-            var resultado = new { data = postos };
-            return Json(resultado, JsonRequestBehavior.AllowGet);
-        }
-
-        [HttpGet, Route("posto/")]
-        public JsonResult ObterPeloId(int id)
-        {
-            var posto = repository.ObterPeloId(id);
-            return Json(posto, JsonRequestBehavior.AllowGet);
-        }
-
-        [HttpGet, Route("apagar")]
-        public JsonResult Apagar(int id)
-        {
+            if (Session["usuarioLogadoPermissao"].ToString() == "4")
+            {
             var apagou = repository.Apagar(id);
-            var resultado = new { status = apagou };
-            return Json(resultado, JsonRequestBehavior.AllowGet);
+                return RedirectToAction("index");
+            }
+            else
+            {
+                return Redirect("/login/sempermissao");
+            }
         }
-                
-        [HttpPost, Route("editar")]
-        public JsonResult Update(Posto posto)
+        #endregion
+
+        //Alterar
+        #region Alterar
+        [HttpPost]
+        public ActionResult Update(Posto posto)
         {
             var alterou = repository.Alterar(posto);
-            var resultado = new { status = alterou };
-            return Json(resultado);
-        }
-
-        [HttpPost, Route("inserir")]
-        public ActionResult Inserir(Posto posto)
-        {
-            posto.RegistroAtivo = true;
-            var id = repository.Inserir(posto);
-            var resultado = new { id = id };
-            return Json(resultado);
+            return RedirectToAction("index");
         }
 
         [HttpGet]
@@ -79,21 +103,28 @@ namespace View.Controllers
             CidadeRepository repositoryCidade = new CidadeRepository();
             ViewBag.Cidades = repositoryCidade.ObterTodos();
             ViewBag.Posto = posto;
-            return View();
+            return VerificaPermisssao();
         }
 
+        #endregion
+
+
+        //Cadastar
+        #region Cadastrar                
+        [HttpPost]
+        public ActionResult Inserir(Posto posto)
+        {
+            posto.RegistroAtivo = true;
+            var id = repository.Inserir(posto);
+            return RedirectToAction("index");
+        }
 
         public ActionResult Cadastrar()
         {
             CidadeRepository repositoryCidade = new CidadeRepository();
             ViewBag.Cidades = repositoryCidade.ObterTodos();
-            return View();
+            return VerificaPermisssao();
         }
-
-        
-
-        
-
-        
+        #endregion
     }
 }

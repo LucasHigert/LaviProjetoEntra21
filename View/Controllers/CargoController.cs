@@ -11,6 +11,41 @@ namespace View.Controllers
     public class CargoController : Controller
     {
         // GET: Cargo
+
+        #region Verificações Login
+        private bool VerificaLogado()
+        {
+            if (Session["usuarioLogadoId"] == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private ActionResult VerificaPermisssao()
+        {
+            if (VerificaLogado() == false)
+            {
+                return Redirect("/login");
+            }
+
+            if ((Session["usuarioLogadoPermissao"].ToString() == "1") || (Session["usuarioLogadoPermissao"].ToString() == "2") ||
+                (Session["usuarioLogadoPermissao"].ToString() == "3"))
+            {
+                return Redirect("/login/sempermissao");
+            }
+            else
+            {
+                return View();
+            }
+        }
+
+        #endregion
+
+
         private CargoRepository repository;
 
         public CargoController()
@@ -21,65 +56,91 @@ namespace View.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            ViewBag.Cargos = repository.ObterTodos();
-            return View();
+            if (VerificaLogado() == true)
+            {
+                ViewBag.Cargos = repository.ObterTodos();
+                return View();
+
+            }
+            else
+            {
+                return Redirect("/login");
+            }
         }
 
-        [HttpGet]
-        public JsonResult ObterTodos()
-        {
-            var cargos = repository.ObterTodos();
-            var resultado = new { data = cargos };
-            return Json(resultado, JsonRequestBehavior.AllowGet);
-        }
-
-        [HttpGet, Route("cargo/")]
-        public JsonResult ObterPeloId(int id)
-        {
-            return Json(repository.ObterPeloId(id), JsonRequestBehavior.AllowGet);
-        }
 
         [HttpGet, Route("apagar")]
-        public JsonResult Apagar(int id)
+        public ActionResult Apagar(int id)
         {
-            var apagou = repository.Apagar(id);
-            var resultado = new { status = apagou };
-            return Json(resultado, JsonRequestBehavior.AllowGet);
+            if (VerificaLogado() == true)
+            {
+                if (Session["usuarioLogadoPermissao"].ToString() == "4")
+                {
+                    repository.Apagar(id);
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    return Redirect("/login/sempermissao");
+                }
+            }
+            else
+            {
+                return Redirect("/login");
+            }
         }
 
+        //Editar
+        #region Editar
         [HttpPost, Route("editar")]
-        public JsonResult Update(Cargo cargo)
+        public ActionResult Update(int id, string nome)
         {
-            var alterou = repository.Alterar(cargo);
-            var resultado = new { status = alterou };
-            return Json(resultado);
-        }
+            if (VerificaLogado() == true)
+            {
+                if (Session["usuarioLogadoPermissao"].ToString() == "4")
+                {
+                    Cargo cargo = new Cargo();
+                    cargo.Id = id;
+                    cargo.Nome = nome;
 
-        [HttpPost, Route("inserir")]
-        public JsonResult Inserir(Cargo cargo)
-        {
-            cargo.RegistroAtivo = true;
-            var id = repository.Inserir(cargo);
-            var resultado = new { id = id };
-            return Json(resultado);
+                    repository.Alterar(cargo);
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    return Redirect("/login/sempermissao");
+                }
+
+            }
+            else
+            {
+                return Redirect("/login");
+            }
         }
 
         [HttpGet]
         public ActionResult Alterar(int id)
         {
-            var cargo = repository.ObterPeloId(id);
-            if(cargo == null)
-            {
-                return RedirectToAction("Index");
-            }
-            ViewBag.Cargo = cargo;
-            return View();
+            Cargo cargo = new Cargo();
+            cargo = repository.ObterPeloId(id);
+            ViewBag.Cargos = cargo;
+            return VerificaPermisssao();
+        }
+        #endregion
+
+        //Inserir
+        #region Inserir
+        [HttpPost, Route("inserir")]
+        public ActionResult Inserir(Cargo cargo)
+        {
+            int id = repository.Inserir(cargo);
+            return RedirectToAction("Index");
         }
 
         public ActionResult Cadastrar()
         {
-            return View();
+            return VerificaPermisssao();
         }
-               
+        #endregion
     }
 }

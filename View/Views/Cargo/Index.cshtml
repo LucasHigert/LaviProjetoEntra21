@@ -3,30 +3,33 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Cargos</h2>
-
-<a class="btn btn-outline-secondary float-right" style="margin-bottom: 5px" href="/cargo/cadastrar"><i class="fas fa-plus"></i>Novo</a>
-<table class="table table-striped table-bordered table-hover" id="cargos-index">
-    <thead>
+<div class="row">
+    <div class="col-6">
+        <h2 class="display-4">Lista de cargos</h2>
+    </div>
+    <div class="col-6">
+        <a class="btn btn-dark float-right mt-40" href="/cargo/cadastrar"><i class="fas fa-plus"></i>Adcionar Cargo</a>
+    </div>
+</div>
+<table class="table table-primary table-striped table-hover text-dark" id="cargos-index">
+    <thead class="bg-dark">
         <tr>
-            <th>Cargos</th>
-            <th width="170px">Ação</th>
+            <td>Cargos</td>
+            <td>Nivel Permissão</td>
+            <td>Ação</td>
         </tr>
     </thead>
-    <tbody>
+    <tbody class="font-weight-bold">
         @foreach (Model.Cargo cargo in ViewBag.Cargos)
         {
             <tr>
                 <td>@cargo.Nome</td>
+                <td>@cargo.NivelPermissao</td>
                 <td>
-                    <a class="btn btn-outline-primary float-right" href="/cargo/alterar?id=@cargo.Id">Editar</a>
-                    <a class="btn btn-outline-danger float-right" style="margin-right: 5px" href="/cargo/apagar?id=@cargo.Id">Apagar</a>
+                    <a class="btn btn-primary" href="/cargo/alterar?id=@cargo.Id">Editar</a>
+                    <a class="btn btn-danger" href="/cargo/apagar?id=@cargo.Id">Apagar</a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
-<a class="btn btn-outline-secondary float-right" style="margin-top: 5px" href="/funcionario/index">Funcionários</a>
-@section js{
-    <script src="~/Scripts/cargo/cargo.js"></script>
-}

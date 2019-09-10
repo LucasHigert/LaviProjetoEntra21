@@ -25,8 +25,7 @@ namespace Repository.Repository
 
         public List<Estado> ObterTodos()
         {
-            return context.Estados.Where(x => x.RegistroAtivo == true).
-                OrderBy(x => x.Id).ToList();
+            return context.Estados.Where(x => x.RegistroAtivo == true).ToList();
         }
     }
 }

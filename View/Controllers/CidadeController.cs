@@ -16,48 +16,99 @@ namespace View.Controllers
         public CidadeController()
         {
             repository = new CidadeRepository();
+
         }
 
         public ActionResult Index()
         {
-            ////var cidades = repository.ObterTodos(cidades);
-            //List<Cidade> cidades = repository.ObterTodos();
-            //return View();
 
             List<Cidade> cidades = repository.ObterTodos();
             ViewBag.Cidades = cidades;
-            return View();
+            if (VerificaLogado() == true)
+            {
+
+                return View();
+            }
+            else
+            {
+                return Redirect("/login");
+            }
 
         }
 
+        //Verificações do login
+        #region Verificações Login
+        private bool VerificaLogado()
+        {
+            if (Session["usuarioLogadoId"] == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private ActionResult VerificaPermisssao()
+        {
+            if (VerificaLogado() == false)
+            {
+                return Redirect("/login");
+            }
+
+            if ((Session["usuarioLogadoPermissao"].ToString() == "1") || (Session["usuarioLogadoPermissao"].ToString() == "2") ||
+                (Session["usuarioLogadoPermissao"].ToString() == "3"))
+            {
+                return Redirect("/login/sempermissao");
+            }
+            else
+            {
+                return View();
+            }
+        }
+
+        #endregion
+
+
+        //Cadastro
+        #region Cadastro
         public ActionResult Cadastro()
         {
-            //cidade.RegistroAtivo = true;
-            //var id = repository.Inserir(cidade);
-            //var resultado = new { id = id };
-            //return View("cadastro");
-
             //Puxa Info dos estados
             EstadoRepository estadoRepository = new EstadoRepository();
-            List<Estado> estados = estadoRepository.ObterTodos();
-            ViewBag.Estados = estados;
+            ViewBag.Estados = estadoRepository.ObterTodos(); ;
 
-            return View();
+            return VerificaPermisssao();
         }
 
         public ActionResult Inserir(Cidade cidade)
         {
             int id = repository.Inserir(cidade);
-            return RedirectToAction("Index");
-            //, new { id = id });
+            return VerificaPermisssao();
         }
 
+        #endregion
+
+        //Apagar
+        #region Apagar
         public ActionResult Apagar(int id)
         {
-            repository.Apagar(id);
-            return RedirectToAction("Index");
+            if (Session["usuarioLogadoPermissao"].ToString() == "4")
+            {
+                repository.Apagar(id);
+                return RedirectToAction("index");
+            }
+            else
+            {
+                return Redirect("/login/sempermissao");
+            }
         }
 
+        #endregion
+
+        //Alterar
+        #region Alterar
         public ActionResult Update(int id, int idEstado, string nome)
         {
             Cidade cidade = new Cidade();
@@ -67,24 +118,16 @@ namespace View.Controllers
             cidade.Estado.Id = idEstado;
 
             repository.Alterar(cidade);
-            return RedirectToAction("Index");
+            return VerificaPermisssao();
         }
 
         public ActionResult Alterar(int id)
         {
-            Cidade cidade = new Cidade();
-            cidade = repository.ObterPeloId(id);
-            ViewBag.Cidade = cidade;
+            ViewBag.Cidade = repository.ObterPeloId(id);
             EstadoRepository estadoRepository = new EstadoRepository();
             ViewBag.Estados = estadoRepository.ObterTodos();
-            return View();
+            return VerificaPermisssao();
         }
-
-        public ActionResult ObterTodos()
-        {
-            List<Cidade> cidades = repository.ObterTodos();
-            ViewBag.Cidades = cidades;
-            return View();
-        }
+        #endregion
     }
 }

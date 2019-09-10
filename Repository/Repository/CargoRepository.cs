@@ -15,7 +15,7 @@ namespace Repository.Repository
         {
             context = new SistemaContext();
         }
-                
+
         public bool Alterar(Cargo cargo)
         {
             var cargoOriginal = context.Cargos.FirstOrDefault(x => x.Id == cargo.Id);
@@ -41,6 +41,7 @@ namespace Repository.Repository
 
         public int Inserir(Cargo cargo)
         {
+            cargo.RegistroAtivo = true;
             context.Cargos.Add(cargo);
             context.SaveChanges();
             return cargo.Id;
@@ -54,9 +55,8 @@ namespace Repository.Repository
 
         public List<Cargo> ObterTodos()
         {
-           // return context.Cargos.Where(x => x.RegistroAtivo == true).OrderBy(x => x.Id).ToList();
-            return (from cargo in context.Cargos where cargo.RegistroAtivo == true select cargo).ToList();
+            return context.Cargos.Where(x => x.RegistroAtivo == true).ToList();
         }
-      
+
     }
 }

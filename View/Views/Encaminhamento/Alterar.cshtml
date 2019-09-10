@@ -2,37 +2,38 @@
 @{
     ViewBag.Title = "Alterar";
 }
+<h2 class="display-4">Alterando '@ViewBag.Encaminhamento.Descricao'</h2>
 
-<div class="row">
-    <div class="col-5">
-        <form action="/encaminhamento/update" method="post">
-            <input type="hidden" name="id" id="id" value="@ViewBag.Encaminhamento.Id" />
-            <div>
-                <label for="campo-posto">Postos</label>
-                <select name="idposto" id="campo-posto" class="form-control">
-                    @foreach (Model.Posto posto in ViewBag.Postos)
-                    {
-                        <option value="@posto.Id">@posto.Nome</option>
-                    }
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="encaminhamento-descricao">Descrição</label>
-                <textarea class="form-control" id="encaminhamento-descricao" name="descricao">@ViewBag.Encaminhamento.Descricao</textarea>
-            </div>
-            <div class="form-group">
-                <label for="encaminhamento-traducaocriolo">Tradução Crioulo</label>
-                <textarea class="form-control" id="encaminhamento-traducaocriolo" name="traducaocriolo">@ViewBag.Encaminhamento.TraducaoCriolo</textarea>
-            </div>
-            <div class="form-group">
-                <label for="encaminhamento-traducaofrances">Tradução Francês</label>
-                <textarea class="form-control" id="encaminhamento-traducaofrances" name="traducaofrances">@ViewBag.Encaminhamento.TraducaoFrances</textarea>
-            </div>
-            <div class="form-group">
-                <label for="encaminhamento-local">Local</label>
-                <textarea class="form-control" id="encaminhamento-local" name="local">@ViewBag.Encaminhamento.Local</textarea>
-            </div>
-            <button type="submit">Salvar</button>
-        </form>
-    </div>
-</div>
+<form action="/encaminhamento/update" method="post">
+    <input type="hidden" name="id" id="id" value="@ViewBag.Encaminhamento.Id" />
+
+    <label class="font-weight-bold">Posto</label>
+    <select name="idposto" id="campo-posto" class="form-control border-info">
+        @foreach (Model.Posto posto in ViewBag.Postos)
+        {
+            <option disabled="disabled">Selecione um posto</option>
+            if (posto.Id == ViewBag.Encaminhamento.IdPosto)
+            {
+                <option selected="selected" value="@posto.Id">@posto.Nome</option>
+            }
+            else
+            {
+                <option value="@posto.Id">@posto.Nome</option>
+            }
+        }
+    </select>
+
+        <label class="font-weight-bold" for="encaminhamento-descricao">Descrição</label>
+        <input class="form-control border-info" id="encaminhamento-descricao" name="descricao" value="@ViewBag.Encaminhamento.Descricao" />
+
+        <label class="font-weight-bold" for="encaminhamento-traducaocriolo">Tradução Crioulo</label>
+        <input class="form-control border-info" id="encaminhamento-traducaocriolo" name="traducaocriolo" value="@ViewBag.Encaminhamento.TraducaoCriolo" />
+
+        <label class="font-weight-bold" for="encaminhamento-traducaofrances">Tradução Francês</label>
+        <input class="form-control border-info" id="encaminhamento-traducaofrances" name="traducaofrances" value="@ViewBag.Encaminhamento.TraducaoFrances" />
+
+        <label class="font-weight-bold" for="encaminhamento-local">Local</label>
+        <input class="form-control border-info" id="encaminhamento-local" name="local" value="@ViewBag.Encaminhamento.Local" />
+
+    <button type="submit" class="btn btn-success float-right mt-20"><i class="fa fa-save"></i> Salvar</button>
+</form>

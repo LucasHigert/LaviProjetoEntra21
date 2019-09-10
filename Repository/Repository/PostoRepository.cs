@@ -25,7 +25,7 @@ namespace Repository.Repository
 
             postoOriginal.Id = posto.Id;
             postoOriginal.Nome = posto.Nome;
-            postoOriginal.Cidade = posto.Cidade;
+            postoOriginal.IdCidade = posto.IdCidade;
             postoOriginal.Cep = posto.Cep;
 
             int quantidadeAfetada = context.SaveChanges();
@@ -47,9 +47,10 @@ namespace Repository.Repository
 
         public int Inserir(Posto posto)
         {
+            posto.RegistroAtivo = true;
             context.Postos.Add(posto);
             context.SaveChanges();
-            return posto.Id;
+            return posto.Id;          
         }
 
         public Posto ObterPeloId(int id)

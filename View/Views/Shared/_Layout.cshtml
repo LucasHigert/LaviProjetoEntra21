@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="~/Scripts/Tema/global/css/bootstrap.min.css">
     <link rel="stylesheet" href="~/Scripts/Tema/global/css/bootstrap-extend.min.css">
     <link rel="stylesheet" href="~/Scripts/Tema/assets/css/site.min.css">
+    <link rel="stylesheet" href="~/Content/font-awesome.css" />
 
     <!-- Plugins -->
     <link rel="stylesheet" href="~/Scripts/Tema/global/vendor/animsition/animsition.css">
@@ -55,7 +56,7 @@
                 <i class="icon wb-more-horizontal" aria-hidden="true"></i>
             </button>
             <div class="navbar-brand navbar-brand-center site-gridmenu-toggle" data-toggle="gridmenu">
-                <img class="navbar-brand-logo" src="~/Content/Imagens/Logo Lavi Preto.png" title="Lavi">
+                <img class="navbar-brand-logo" id="logo" src="~/Content/Imagens/Logo Lavi Preto.png" title="Lavi">
                 <span class="navbar-brand-text hidden-xs-down"> Lavi</span>
             </div>
 
@@ -116,14 +117,14 @@
                         <a class="nav-link navbar-avatar" data-toggle="dropdown" href="#" aria-expanded="false"
                            data-animation="scale-up" role="button">
                             <span class="avatar avatar-online">
-                                <img src="~/Scripts/Tema/global/portraits/5.jpg" alt="...">
+                                <img src="~/Scripts/Tema/global/portraits/user.png" alt="...">
                                 <i></i>
                             </span>
                         </a>
                         <div class="dropdown-menu" role="menu">
-                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-user" aria-hidden="true"></i> Perfil</a>
+                            <a class="dropdown-item" href="/funcionario/alterar?id=@Session["usuarioLogadoId"]" role="menuitem"><i class="icon wb-user" aria-hidden="true"></i> Perfil</a>
                             <div class="dropdown-divider" role="presentation"></div>
-                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-power" aria-hidden="true"></i> Sair</a>
+                            <a class="dropdown-item" href="/login/sair" role="menuitem"><i class="icon wb-power" aria-hidden="true"></i> Sair</a>
                         </div>
                     </li>
 
@@ -140,39 +141,163 @@
 
             <!--Opção intruções da sitenav-->
             <li class="site-menu-item has-sub">
-                <a href="http://www.google.com">
-                    <i class="site-menu-icon wb-dashboard" aria-hidden="true"></i>
+                <a href="/instrucoes">
+                    <i class="site-menu-icon wb-help" aria-hidden="true"></i>
                     <span class="site-menu-title">Instruções</span>
                 </a>
             </li>
 
-
+            <!--Cidade-->
+            <li class="site-menu-item has-sub">
+                <a href="javascript:void(0)">
+                    <i class="site-menu-icon fa fa-globe" aria-hidden="true"></i>
+                    <span class="site-menu-title">Cidade</span>
+                    <span class="site-menu-arrow"></span>
+                </a>
+                <ul class="site-menu-sub">
+                    <li class="site-menu-item has-sub">
+                        <a href="/cidade">
+                            <span class="site-menu-title">Lista de Cidades</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a class="animsition-link" href="/cidade/cadastro">
+                            <span class="site-menu-title">Cadastrar cidade</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+           
+            <!--Posto-->
+            <li class="site-menu-item has-sub">
+                <a href="javascript:void(0)">
+                    <i class="site-menu-icon fa fa-building" aria-hidden="true"></i>
+                    <span class="site-menu-title">Posto</span>
+                    <span class="site-menu-arrow"></span>
+                </a>
+                <ul class="site-menu-sub">
+                    <li class="site-menu-item has-sub">
+                        <a href="/posto/Index">
+                            <span class="site-menu-title">Lista de Postos</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a class="animsition-link" href="/posto/cadastrar">
+                            <span class="site-menu-title">Cadastrar posto</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            
+            <!--Cargo-->
+            <li class="site-menu-item has-sub">
+                <a href="javascript:void(0)">
+                    <i class="site-menu-icon fa fa-file" aria-hidden="true"></i>
+                    <span class="site-menu-title">Cargo</span>
+                    <span class="site-menu-arrow"></span>
+                </a>
+                <ul class="site-menu-sub">
+                    <li class="site-menu-item has-sub">
+                        <a href="/cargo/Index">
+                            <span class="site-menu-title">Lista de Cargos</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a class="animsition-link" href="/cargo/cadastrar">
+                            <span class="site-menu-title">Cadastrar Cargo</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            
+            <!--Funcionario-->
+            <li class="site-menu-item has-sub">
+                <a href="javascript:void(0)">
+                    <i class="site-menu-icon fa fa-user-md" aria-hidden="true"></i>
+                    <span class="site-menu-title">Funcionario</span>
+                    <span class="site-menu-arrow"></span>
+                </a>
+                <ul class="site-menu-sub">
+                    <li class="site-menu-item has-sub">
+                        <a href="/funcionario/index">
+                            <span class="site-menu-title">Lista de Funcionarios</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a class="animsition-link" href="/funcionario/cadastrar">
+                            <span class="site-menu-title">Cadastrar funcionario</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            
+            <!--Parte Corpo-->
+            <li class="site-menu-item has-sub">
+                <a href="javascript:void(0)">
+                    <i class="site-menu-icon wb-heart" aria-hidden="true"></i>
+                    <span class="site-menu-title">Parte Corpo</span>
+                    <span class="site-menu-arrow"></span>
+                </a>
+                <ul class="site-menu-sub">
+                    <li class="site-menu-item has-sub">
+                        <a href="/partecorpo">
+                            <span class="site-menu-title">Lista de partes</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a class="animsition-link" href="/partecorpo/cadastrar">
+                            <span class="site-menu-title">Cadastrar parte</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            
+            <!--Sintoma-->
+            <li class="site-menu-item has-sub">
+                <a href="javascript:void(0)">
+                    <i class="site-menu-icon fa fa-medkit" aria-hidden="true"></i>
+                    <span class="site-menu-title">Sintomas</span>
+                    <span class="site-menu-arrow"></span>
+                </a>
+                <ul class="site-menu-sub">
+                    <li class="site-menu-item has-sub">
+                        <a href="/sintoma">
+                            <span class="site-menu-title">Lista de Cidades</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a class="animsition-link" href="/sintoma/cadastrar">
+                            <span class="site-menu-title">Cadastrar cidade</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            
             <!--Opcão pacientes da sidenav-->
             <li class="site-menu-item has-sub">
                 <a href="javascript:void(0)">
-                    <i class="site-menu-icon wb-layout" aria-hidden="true"></i>
+                    <i class="site-menu-icon fa fa-users"></i>
                     <span class="site-menu-title">Pacientes</span>
                     <span class="site-menu-arrow"></span>
                 </a>
                 <ul class="site-menu-sub">
-                    <li class="site-menu-item">
-                        <a class="animsition-link" href="layouts/menu-collapsed.html">
+                    <li class="site-menu-item has-sub">
+                        <a href="/paciente/index">
                             <span class="site-menu-title">Lista de pacientes</span>
                         </a>
                     </li>
                     <li class="site-menu-item">
-                        <a class="animsition-link" href="layouts/menu-expended.html">
+                        <a class="animsition-link" href="/paciente/cadastro">
                             <span class="site-menu-title">Cadastrar paciente</span>
                         </a>
                     </li>
-
                 </ul>
             </li>
 
             <!--Opção atendimento da sidenav-->
             <li class="site-menu-item has-sub">
                 <a href="javascript:void(0)">
-                    <i class="site-menu-icon wb-file" aria-hidden="true"></i>
+                    <i class="site-menu-icon fa fa-ambulance" aria-hidden="true"></i>
                     <span class="site-menu-title">Atendimento</span>
                     <span class="site-menu-arrow"></span>
                 </a>
@@ -199,18 +324,22 @@
                 </a>
                 <ul class="site-menu-sub">
                     <li class="site-menu-item has-sub">
-                        <a href="javascript:void(0)">
+                        <a class="animsition-link" href="/encaminhamento/index">
                             <span class="site-menu-title">Lista de encaminhamentos</span>
                         </a>
                     </li>
                     <li class="site-menu-item">
-                        <a class="animsition-link" href="uikit/buttons.html">
+                        <a class="animsition-link" href="/encaminhamento/cadastrar">
                             <span class="site-menu-title">Cadastrar</span>
                         </a>
                     </li>
 
                 </ul>
             </li>
+
+
+
+
 
         </ul>
     </div>

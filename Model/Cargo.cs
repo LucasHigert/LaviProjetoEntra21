@@ -18,6 +18,9 @@ namespace Model
         [Column("nome")]
         public string Nome { get; set; }
 
+        [Column("nivel_permissao")]
+        public int NivelPermissao { get; set; }
+
         [Column("registro_ativo")]
         public bool RegistroAtivo { get; set; }
     }

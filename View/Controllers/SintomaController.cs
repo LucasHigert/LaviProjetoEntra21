@@ -18,40 +18,40 @@ namespace View.Controllers
             repositorio = new SintomaRepository();
         }
 
-        [HttpGet, Route("obtertodos")]
-        public JsonResult ObterTodos()
+        public ActionResult Index()
         {
-            var sintoma = repositorio.ObterTodos();
-            var resultado = new { data = sintoma };
-            return Json(resultado, JsonRequestBehavior.AllowGet);
+            List<Sintoma> sintomas = repositorio.ObterTodos();
+            ViewBag.Sintomas = sintomas;
+            return View();
         }
 
-        [HttpPost, Route("inserir")]
-        public JsonResult Inserir(Sintoma sintoma)
+        //Apagar
+        #region Apagar
+        public ActionResult Apagar(int id)
+        {
+            var apagou = repositorio.Apagar(id);
+            return RedirectToAction("index");
+        }
+        #endregion
+
+        //Cadastro
+        #region Cadastro
+        [HttpPost]
+        public ActionResult Inserir(Sintoma sintoma)
         {
             sintoma.RegistroAtivo = true;
             bool id = repositorio.Inserir(sintoma);
-            var resultado = new { status = id };
-            return Json(resultado, JsonRequestBehavior.AllowGet);
+            if (id == true)
+            {
+                return RedirectToAction("index");
+            }
+            else
+            {
+                return RedirectToAction("cadastro");
+            }
 
         }
 
-        [HttpGet, Route("apagar")]
-        public JsonResult Apagar(int id)
-        {
-            var apagou = repositorio.Apagar(id);
-            var resultado = new { status = apagou };
-            return Json(resultado, JsonRequestBehavior.AllowGet);
-        }
-
-        [HttpPost, Route("editar")]
-        public JsonResult Update(Sintoma sintoma)
-        {
-            bool retorno = repositorio.Alterar(sintoma);
-            var resultado = new { status = retorno };
-            return Json(resultado, JsonRequestBehavior.AllowGet);
-        }
-        
         public ActionResult Cadastrar()
         {
             ParteCorpoRepository repositorioParteCorpo = new ParteCorpoRepository();
@@ -59,12 +59,14 @@ namespace View.Controllers
             return View();
         }
 
+        #endregion
 
-        public ActionResult Index()
+        //Editar
+        #region Editar
+        public ActionResult Update(Sintoma sintoma)
         {
-            List<Sintoma> sintomas = repositorio.ObterTodos();
-            ViewBag.Sintomas = sintomas;
-            return View();
+            bool retorno = repositorio.Alterar(sintoma);
+            return RedirectToAction("index");
         }
 
         [HttpGet]
@@ -75,10 +77,11 @@ namespace View.Controllers
             {
                 return RedirectToAction("Index");
             }
-            ViewBag.Sintoma = sintoma;
             ParteCorpoRepository repositorioParteCorpo = new ParteCorpoRepository();
             ViewBag.PartesCorpo = repositorioParteCorpo.ObterTodos();
+            ViewBag.Sintoma = sintoma;
             return View();
         }
+        #endregion
     }
 }

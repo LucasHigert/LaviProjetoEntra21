@@ -3,29 +3,23 @@
     ViewBag.Title = "Cadastro";
 }
 
-<h2>Cadastre sua Cidade</h2>
+<h2 class="display-4">Cadastre de Cidade</h2>
 
 <form action="/cidade/inserir" method="post">
-    <div class="container">
-        <div class="row">
-            <div class="form-group col-md-5">
-                <label for="campo-nome">Nome da Cidade</label>
-                <input class="form-control" type="text" name="nome" id="campo-nome" required="" />
-            </div>
-        </div>
+    <div>
+        <label class="font-weight-bold" for="campo-nome">Nome da Cidade</label>
+        <input class="form-control border-info" type="text" name="nome" id="campo-nome" required="" />
     </div>
 
-    <div class="form-group col-md-5">
-        <label for="campo-estado">Estado</label>
-        <select name="idEstado" id="campo-estado" required="" class="form-control">
-            <option selected="" disabled="disabled">Selecione um estado</option>
-            @foreach (Model.Estado Estado in ViewBag.Estados)
-            {
-                <option value="@Estado.Id">@Estado.Nome</option>
+    <label class="font-weight-bold" for="campo-estado">Estado</label>
+    <select name="idEstado" id="campo-estado" required="" class="form-control border-info">
+        <option selected="" disabled="disabled">Selecione um estado</option>
+        @foreach (Model.Estado Estado in ViewBag.Estados)
+        {
+            <option value="@Estado.Id">@Estado.Nome</option>
 
-            }
-        </select>
-    </div>
+        }
+    </select>
 
-    <button class="btn btn-success float-left mt-3" type="submit"><i class="fa fa-save"></i> Salvar</button>
+    <button class="btn btn-success float-left mt-15" type="submit"><i class="fa fa-save"></i> Salvar</button>
 </form>

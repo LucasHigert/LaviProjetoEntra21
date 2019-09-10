@@ -2,13 +2,17 @@
 @{
     ViewBag.Title = "Index";
 }
-
-<h2 class="display-4">Atendimentos Triagem</h2>
-
+<div class="row">
+    <div class="col-6">
+        <h2 class="display-4">Atendimentos Triagem</h2>
+    </div>
+    <div class="col-6">
+        <a href="/atendimento/cadastro" class="btn btn-dark float-right mt-40"><i class="fa fa-plus"></i> Adicionar atendimento</a>
+    </div>
+</div>
 <table class="table table-primary table-hover table-bordered text-dark">
     <thead class="bg-dark">
         <tr>
-            <td hidden>Id</td>
             <td>Paciente</td>
             <td>Prioridade</td>
             <td>Observação</td>
@@ -21,12 +25,11 @@
             if (atendimento.Prioridade == 3)
             {
                 <tr class="bg-red-500">
-                    <td hidden>@atendimento.Id</td>
                     <td>@atendimento.Paciente.Nome</td>
                     <td>@atendimento.Prioridade</td>
                     <td>@atendimento.Observacao </td>
                     <td>
-                        <a class="btn btn-primary" href="/atendimento/alterar?id=@atendimento.Id?carco=2">Atender</a>
+                        <a class="btn btn-primary" href="/atendimento/alterar?id=@atendimento.Id?cargo=2">Atender</a>
                     </td>
                 </tr>
             }
@@ -38,7 +41,7 @@
                     <td>@atendimento.Prioridade</td>
                     <td>@atendimento.Observacao </td>
                     <td>
-                        <a class="btn btn-primary" href="/atendimento/alterar?id=@atendimento.Id?carco=2">Atender</a>
+                        <a class="btn btn-primary" href="/atendimento/alterar?id=@atendimento.Id?cargo=2">Atender</a>
                     </td>
                 </tr>
             }
@@ -50,7 +53,7 @@
                     <td>@atendimento.Prioridade</td>
                     <td>@atendimento.Observacao </td>
                     <td>
-                        <a class="btn btn-primary" href="/atendimento/alterar?id=@atendimento.Id?carco=2">Atender</a>
+                        <a class="btn btn-primary" href="/atendimento/alterar?id=@atendimento.Id?cargo=2">Atender</a>
                     </td>
                 </tr>
 

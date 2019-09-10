@@ -2,24 +2,21 @@
 @{
     ViewBag.Title = "Alterar";
 }
+<h2 class="display-4">Alterando Parte Corpo '@ViewBag.ParteCorpo.Nome'</h2>
 
-<div class="row">
-    <div class="col-5">
-        <form action="/partecorpo/update" method="post">
-            <input type="hidden" name="id" id="id" value="@ViewBag.ParteCorpo.Id" />
-            <div class="form-group">
-                <label for="partecorpo-nome">Nome</label>
-                <textarea class="form-control" id="partecorpo-nome" name="nome">@ViewBag.ParteCorpo.Nome</textarea>
-            </div>
-            <div class="form-group">
-                <label for="partecorpo-traducaocriolo">Tradução Crioulo</label>
-                <textarea class="form-control" id="partecorpo-traducaocriolo" name="traducaocriolo">@ViewBag.ParteCorpo.TraducaoCriolo</textarea>
-            </div>
-            <div class="form-group">
-                <label for="partecorpo-traducaofrances">Tradução Francês</label>
-                <textarea class="form-control" id="partecorpo-traducaofrances" name="traducaofrances">@ViewBag.ParteCorpo.TraducaoFrances</textarea>
-            </div>
-            <button type="submit">Salvar</button>
-        </form>
+<form action="/partecorpo/update" method="post">
+    <input type="hidden" name="id" id="id" value="@ViewBag.ParteCorpo.Id" />
+    <div>
+        <label class="font-weight-bold" for="partecorpo-nome">Nome</label>
+        <input class="form-control border-info" id="partecorpo-nome" name="nome" value=@ViewBag.ParteCorpo.Nome />
     </div>
-</div>
+    <div class="form-group">
+        <label class="font-weight-bold" for="partecorpo-traducaocriolo">Tradução Crioulo</label>
+        <input class="form-control border-info" id="partecorpo-traducaocriolo" name="traducaocriolo" value=@ViewBag.ParteCorpo.TraducaoCriolo />
+    </div>
+    <div class="form-group">
+        <label class="font-weight-bold" for="partecorpo-traducaofrances">Tradução Francês</label>
+        <input class="form-control border-info" id="partecorpo-traducaofrances" name="traducaofrances" value=@ViewBag.ParteCorpo.TraducaoFrances />
+    </div>
+    <button type="submit" class="btn btn-success mt-5">Salvar</button>
+</form>

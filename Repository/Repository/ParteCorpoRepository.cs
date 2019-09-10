@@ -51,7 +51,7 @@ namespace Repository.Repository
         public bool Inserir(ParteCorpo parteCorpo)
         {
             // irá buscar o banco se já tem um registro com aquele nome, caso não irá cadastrar
-            var parteOriginal = context.PartesCorpo.Where(x => x.Nome == parteCorpo.Nome).FirstOrDefault();
+            var parteOriginal = context.PartesCorpo.Where(x => x.Nome == parteCorpo.Nome && x.RegistroAtivo == true).FirstOrDefault();
             if (parteOriginal == null)
             {
                 context.PartesCorpo.Add(parteCorpo);

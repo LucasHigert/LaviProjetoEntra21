@@ -1,34 +1,50 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Alterar";
 }
 
-<div class="row">
-    <div class="col-5">
-        <form action="/sintoma/update" method="post">
-            <input type="hidden" name="id" id="id" value="@ViewBag.Sintoma.Id" />
-            <div>
-                <label for="campo-partecorpo">Partes do Corpo</label>
-                <select name="idpartecorpo" id="campo-partecorpo" class="form-control">
-                    @foreach (Model.ParteCorpo partecorpo in ViewBag.PartesCorpo)
-                    {
-                        <option value="@partecorpo.Id">@partecorpo.Nome</option>
-                    }
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="sintoma-nome">Sintoma</label>
-                <textarea class="form-control" id="sintoma-nome" name="nome">@ViewBag.Sintoma.Nome</textarea>
-            </div>
-            <div class="form-group">
-                <label for="sintoma-traducaocriolo">Sintoma Tradução Crioulo</label>
-                <textarea class="form-control" id="sintoma-traducaocriolo" name="traducaocriolo">@ViewBag.Sintoma.TraducaoCriolo</textarea>
-            </div>
-            <div class="form-group">
-                <label for="sintoma-traducaofrances">Sintoma Tradução Francês</label>
-                <textarea class="form-control" id="sintoma-traducaofrances" name="traducaofrances">@ViewBag.Sintoma.TraducaoFrances</textarea>
-            </div>
-            <button type="submit">Salvar</button>
-        </form>
+<h2 class="display-4">Alterando Sintoma @ViewBag.Sintoma.Nome</h2>
+
+<form action="/sintoma/update" method="post">
+    <input type="hidden" name="id" id="id" value="@ViewBag.Sintoma.Id" />
+    <div>
+        <label class="font-weight-bold" for="campo-partecorpo">Partes do Corpo</label>
+        <select name="idpartecorpo" id="campo-partecorpo" class="form-control border-info">
+            @foreach (Model.ParteCorpo partecorpo in ViewBag.PartesCorpo)
+            {
+                if (partecorpo.Id == ViewBag.Sintoma.IdParteCorpo)
+                {
+                    <option selected="selected" value="@partecorpo.Id">@partecorpo.Nome</option>
+                }
+                else
+                {
+                    <option value="@partecorpo.Id">@partecorpo.Nome</option>
+                }
+            }
+        </select>
     </div>
-</div>
+
+
+    <div class="row">
+
+        <div class="col-4">
+            <label class="font-weight-bold" for="sintoma-nome">Sintoma</label>
+            <input class="form-control border-info" id="sintoma-nome" name="nome"
+                   value=@ViewBag.Sintoma.Nome />
+        </div>
+
+        <div class="col-4">
+            <label class="font-weight-bold" for="sintoma-traducaocriolo">Sintoma Tradução Crioulo</label>
+            <input type="text" class="form-control border-info" id="sintoma-traducaocriolo" name="traducaocriolo"
+                   value=@ViewBag.Sintoma.TraducaoCriolo />
+        </div>
+
+        <div class="col-4">
+            <label class="font-weight-bold" for="sintoma-traducaofrances">Sintoma Tradução Francês</label>
+            <input class="form-control border-info" id="sintoma-traducaofrances" name="traducaofrances"
+                   value=@ViewBag.Sintoma.TraducaoFrances />
+        </div>
+    </div>
+
+
+    <button type="submit" class="btn btn-success mt-10">Salvar</button>
+</form>

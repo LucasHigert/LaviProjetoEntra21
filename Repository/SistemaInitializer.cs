@@ -4,8 +4,8 @@ using System.Data.Entity;
 
 namespace Repository
 {
-    //internal class SistemaInitializer : DropCreateDatabaseAlways<SistemaContext>
-    internal class SistemaInitializer : CreateDatabaseIfNotExists<SistemaContext>
+    internal class SistemaInitializer : DropCreateDatabaseAlways<SistemaContext>
+    //internal class SistemaInitializer : CreateDatabaseIfNotExists<SistemaContext>
     {
 
         protected override void Seed(SistemaContext context)
@@ -16,136 +16,163 @@ namespace Repository
             #region EstadosAdicionar
             estados.Add(new Estado()
             {
+                Id = 1,
                 Nome = "Acre",
                 RegistroAtivo = true
             });
             estados.Add(new Estado()
             {
+                Id = 2,
                 Nome = "Alagoas",
                 RegistroAtivo = true
             });
             estados.Add(new Estado()
             {
+                Id = 3,
                 Nome = "Amazonas",
                 RegistroAtivo = true
             });
             estados.Add(new Estado()
             {
+                Id = 4,
                 Nome = "Amapá",
                 RegistroAtivo = true
             });
             estados.Add(new Estado()
             {
+                Id = 5,
                 Nome = "Bahia",
                 RegistroAtivo = true
             });
             estados.Add(new Estado()
             {
+                Id = 6,
                 Nome = "Ceará",
                 RegistroAtivo = true
             });
             estados.Add(new Estado()
             {
+                Id = 7,
                 Nome = "Distrito Federal",
                 RegistroAtivo = true
             });
             estados.Add(new Estado()
             {
+                Id = 8,
                 Nome = "Espírito Santo",
                 RegistroAtivo = true
             });
             estados.Add(new Estado()
             {
+                Id = 9,
                 Nome = "Goiás",
                 RegistroAtivo = true
             });
             estados.Add(new Estado()
             {
+                Id = 10,
                 Nome = "Maranhão",
                 RegistroAtivo = true
             });
             estados.Add(new Estado()
             {
+                Id = 11,
                 Nome = "Minas Gerais",
                 RegistroAtivo = true
             });
             estados.Add(new Estado()
             {
+                Id = 12,
                 Nome = "Mato Grosso do Sul",
                 RegistroAtivo = true
             });
             estados.Add(new Estado()
             {
+                Id = 13,
                 Nome = "Mato Grosso",
                 RegistroAtivo = true
             });
             estados.Add(new Estado()
             {
+                Id = 14,
                 Nome = "Pará",
                 RegistroAtivo = true
             });
             estados.Add(new Estado()
             {
+                Id = 15,
                 Nome = "Paraía",
                 RegistroAtivo = true
             });
             estados.Add(new Estado()
             {
+                Id = 16,
                 Nome = "Pernambuco",
                 RegistroAtivo = true
             });
             estados.Add(new Estado()
             {
+                Id = 17,
                 Nome = "Piauí",
                 RegistroAtivo = true
             });
             estados.Add(new Estado()
             {
+                Id = 18,
                 Nome = "Paraná",
                 RegistroAtivo = true
             });
             estados.Add(new Estado()
             {
+                Id = 19,
                 Nome = "Rio de Janeiro",
                 RegistroAtivo = true
             });
             estados.Add(new Estado()
             {
+                Id = 20,
                 Nome = "Rio Grande",
                 RegistroAtivo = true
             });
             estados.Add(new Estado()
             {
+                Id = 21,
                 Nome = "Rondônia",
                 RegistroAtivo = true
             });
             estados.Add(new Estado()
             {
+                Id = 22,
                 Nome = "Roraima",
                 RegistroAtivo = true
             });
             estados.Add(new Estado()
             {
+                Id = 23,
                 Nome = "Rio Grande",
                 RegistroAtivo = true
             });
             estados.Add(new Estado()
             {
+                Id = 24,
                 Nome = "Santa Catarina",
                 RegistroAtivo = true
             });
             estados.Add(new Estado()
             {
+                Id = 25,
                 Nome = "Sergipe",
                 RegistroAtivo = true
             });
             estados.Add(new Estado()
             {
+                Id = 26,
                 Nome = "São Paulo",
                 RegistroAtivo = true
             });
             estados.Add(new Estado()
             {
+                Id = 27,
                 Nome = "Tocantins",
                 RegistroAtivo = true
             });
@@ -185,6 +212,7 @@ namespace Repository
             });
             postos.Add(new Posto()
             {
+                Id = 1,
                 IdCidade = 1,
                 Nome = "Velha Centro",
                 Cep = "89046-231",
@@ -192,6 +220,7 @@ namespace Repository
             });
             postos.Add(new Posto()
             {
+                Id = 2,
                 IdCidade = 2,
                 Nome = "ESF Walter Reiter",
                 Cep = "89095-535",
@@ -199,6 +228,7 @@ namespace Repository
             });
             postos.Add(new Posto()
             {
+                Id = 3,
                 IdCidade = 1,
                 Nome = "Garcia",
                 Cep = "89037-690",

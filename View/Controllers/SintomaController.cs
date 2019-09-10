@@ -11,6 +11,39 @@ namespace View.Controllers
     [Route("sintoma/")]
     public class SintomaController : Controller
     {
+
+        #region Verificações Login
+        private bool VerificaLogado()
+        {
+            if (Session["usuarioLogadoId"] == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private bool VerificaPermisssao()
+        {
+            if (VerificaLogado() == false)
+            {
+                return false;
+            }
+
+            if ((Session["usuarioLogadoPermissao"].ToString() == "3") || (Session["usuarioLogadoPermissao"].ToString() == "4"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        #endregion
+
         SintomaRepository repositorio;
 
         public SintomaController()
@@ -20,17 +53,39 @@ namespace View.Controllers
 
         public ActionResult Index()
         {
-            List<Sintoma> sintomas = repositorio.ObterTodos();
-            ViewBag.Sintomas = sintomas;
-            return View();
+            if (VerificaLogado() == true)
+            {
+                List<Sintoma> sintomas = repositorio.ObterTodos();
+                ViewBag.Sintomas = sintomas;
+                return View();
+            }
+            else
+            {
+                return Redirect("/login");
+            }
         }
 
         //Apagar
         #region Apagar
         public ActionResult Apagar(int id)
         {
-            var apagou = repositorio.Apagar(id);
-            return RedirectToAction("index");
+            if (VerificaLogado() == true)
+            {
+                if (VerificaPermisssao() == true)
+                {
+                    var apagou = repositorio.Apagar(id);
+                    return RedirectToAction("index");
+
+                }
+                else
+                {
+                    return Redirect("/login/sempermissao");
+                }
+            }
+            else
+            {
+                return Redirect("/login");
+            }
         }
         #endregion
 
@@ -39,24 +94,54 @@ namespace View.Controllers
         [HttpPost]
         public ActionResult Inserir(Sintoma sintoma)
         {
-            sintoma.RegistroAtivo = true;
-            bool id = repositorio.Inserir(sintoma);
-            if (id == true)
+            if (VerificaLogado() == true)
             {
-                return RedirectToAction("index");
+                if (VerificaPermisssao() == true)
+                {
+                    sintoma.RegistroAtivo = true;
+                    bool id = repositorio.Inserir(sintoma);
+                    if (id == true)
+                    {
+                        return RedirectToAction("index");
+                    }
+                    else
+                    {
+                        return RedirectToAction("cadastro");
+                    }
+
+                }
+                else
+                {
+                    return Redirect("/login/sempermissao");
+                }
             }
             else
             {
-                return RedirectToAction("cadastro");
+                return Redirect("/login");
             }
 
         }
 
         public ActionResult Cadastrar()
         {
-            ParteCorpoRepository repositorioParteCorpo = new ParteCorpoRepository();
-            ViewBag.PartesCorpo = repositorioParteCorpo.ObterTodos();
-            return View();
+            if (VerificaLogado() == true)
+            {
+                if (VerificaPermisssao() == true)
+                {
+
+                    ParteCorpoRepository repositorioParteCorpo = new ParteCorpoRepository();
+                    ViewBag.PartesCorpo = repositorioParteCorpo.ObterTodos();
+                    return View();
+                }
+                else
+                {
+                    return Redirect("/login/sempermissao");
+                }
+            }
+            else
+            {
+                return Redirect("/login");
+            }
         }
 
         #endregion
@@ -65,22 +150,53 @@ namespace View.Controllers
         #region Editar
         public ActionResult Update(Sintoma sintoma)
         {
-            bool retorno = repositorio.Alterar(sintoma);
-            return RedirectToAction("index");
+            if (VerificaLogado() == true)
+            {
+                if ((Session["usuarioLogadoPermissao"].ToString() == "4") || (Session["usuarioLogadoPermissao"].ToString() == "3"))
+                {
+                    bool retorno = repositorio.Alterar(sintoma);
+                    return RedirectToAction("index");
+
+                }
+                else
+                {
+                    return Redirect("/login/sempermissao");
+                }
+            }
+            else
+            {
+                return Redirect("/login");
+            }
         }
 
         [HttpGet]
         public ActionResult Alterar(int id)
         {
-            var sintoma = repositorio.ObterPeloId(id);
-            if (sintoma == null)
+            if (VerificaLogado() == true)
             {
-                return RedirectToAction("Index");
+                if ((Session["usuarioLogadoPermissao"].ToString() == "4") || (Session["usuarioLogadoPermissao"].ToString() == "3"))
+                {
+                    var sintoma = repositorio.ObterPeloId(id);
+                    if (sintoma == null)
+                    {
+                        return RedirectToAction("Index");
+                    }
+                    ParteCorpoRepository repositorioParteCorpo = new ParteCorpoRepository();
+                    ViewBag.PartesCorpo = repositorioParteCorpo.ObterTodos();
+                    ViewBag.Sintoma = sintoma;
+                    return View();
+
+                }
+                else
+                {
+                    return Redirect("/login/sempermissao");
+                }
+
             }
-            ParteCorpoRepository repositorioParteCorpo = new ParteCorpoRepository();
-            ViewBag.PartesCorpo = repositorioParteCorpo.ObterTodos();
-            ViewBag.Sintoma = sintoma;
-            return View();
+            else
+            {
+                return Redirect("/login");
+            }
         }
         #endregion
     }

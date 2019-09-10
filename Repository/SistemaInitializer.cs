@@ -4,8 +4,8 @@ using System.Data.Entity;
 
 namespace Repository
 {
-    internal class SistemaInitializer : DropCreateDatabaseAlways<SistemaContext>
-    //internal class SistemaInitializer : CreateDatabaseIfNotExists<SistemaContext>
+    //internal class SistemaInitializer : DropCreateDatabaseAlways<SistemaContext>
+    internal class SistemaInitializer : CreateDatabaseIfNotExists<SistemaContext>
     {
 
         protected override void Seed(SistemaContext context)
@@ -298,7 +298,8 @@ namespace Repository
             #endregion
             context.Pacientes.AddRange(paciente);
             #endregion
-
+            
+            
             #region cargos
             var cargo = new List<Cargo>();
             #region CargosAdicionar
@@ -396,7 +397,7 @@ namespace Repository
             #endregion
             context.Funcionarios.AddRange(funcionario);
             #endregion
-
+    
             base.Seed(context);
         }
     }

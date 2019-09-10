@@ -16,7 +16,10 @@ namespace View.Controllers
         //Listagem de Atendimentos
         public ActionResult Index()
         {
-            ViewBag.Atendimentos = repositoryAtendimento.ObterTodosPeloCargo(1);
+            FuncionarioRepository funcionarioRepository = new FuncionarioRepository();
+            Funcionario funcionario = funcionarioRepository.ObterPeloId(Convert.ToInt32(Session["usuarioLogadoId"]));
+            ViewBag.Cargo = funcionario.Cargo.Nome;
+            ViewBag.Atendimentos = repositoryAtendimento.ObterTodosPeloCargoPosto(Convert.ToInt32(Session["usuarioLogadoPermissao"]),funcionario.IdPosto);
             return View();
         }
 

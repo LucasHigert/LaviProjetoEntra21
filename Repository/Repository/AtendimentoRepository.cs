@@ -67,10 +67,10 @@ namespace Repository.Repository
         }
 
 
-        public List<Atendimento> ObterTodosPeloCargo(int NumeroCargo)
+        public List<Atendimento> ObterTodosPeloCargoPosto(int NumeroCargo,int IdPosto)
         {
             //modificar para buscar o atendimento pelo cargo que esta logado
-            return context.Atendimentos.Include("Paciente").Where(x => x.Status != 2).OrderByDescending(x => x.Prioridade).ToList();
+            return context.Atendimentos.Include("Paciente").Include("funcionario").Where((x => x.Status == NumeroCargo && x.Funcionario.IdPosto == Posto)).OrderByDescending(x => x.Prioridade).ToList();
         }
     }
 }

@@ -13,6 +13,42 @@ namespace View.Controllers
     {
         // GET: Posto
 
+        //Verificações do login
+        #region Verificações Login
+        private bool VerificaLogado()
+        {
+            if (Session["usuarioLogadoId"] == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private ActionResult VerificaPermisssao()
+        {
+            if (VerificaLogado() == false)
+            {
+                return Redirect("/login");
+            }
+
+            if ((Session["usuarioLogadoPermissao"].ToString() == "1") || (Session["usuarioLogadoPermissao"].ToString() == "2") ||
+                (Session["usuarioLogadoPermissao"].ToString() == "3"))
+            {
+                return Redirect("/login/sempermissao");
+            }
+            else
+            {
+                return View();
+            }
+        }
+
+        #endregion
+
+
+
         private PostoRepository repository;
 
         public PostoController()
@@ -22,6 +58,10 @@ namespace View.Controllers
 
         public ActionResult Index()
         {
+            if (VerificaLogado() == false)
+            {
+                return Redirect("/login");
+            }
             List<Posto> postos = repository.ObterTodos();
             ViewBag.Postos = postos;
             return View();
@@ -29,11 +69,17 @@ namespace View.Controllers
 
         //Apagar
         #region Apagar
-        [HttpGet]
         public ActionResult Apagar(int id)
         {
+            if (Session["usuarioLogadoPermissao"].ToString() == "4")
+            {
             var apagou = repository.Apagar(id);
-            return RedirectToAction("index");
+                return RedirectToAction("index");
+            }
+            else
+            {
+                return Redirect("/login/sempermissao");
+            }
         }
         #endregion
 
@@ -57,7 +103,7 @@ namespace View.Controllers
             CidadeRepository repositoryCidade = new CidadeRepository();
             ViewBag.Cidades = repositoryCidade.ObterTodos();
             ViewBag.Posto = posto;
-            return View();
+            return VerificaPermisssao();
         }
 
         #endregion
@@ -77,7 +123,7 @@ namespace View.Controllers
         {
             CidadeRepository repositoryCidade = new CidadeRepository();
             ViewBag.Cidades = repositoryCidade.ObterTodos();
-            return View();
+            return VerificaPermisssao();
         }
         #endregion
     }

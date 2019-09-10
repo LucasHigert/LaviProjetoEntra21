@@ -10,6 +10,40 @@ namespace View.Controllers
 {
     public class FuncionarioController : Controller
     {
+        #region Verificações Login
+        private bool VerificaLogado()
+        {
+            if (Session["usuarioLogadoId"] == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private ActionResult VerificaPermisssao()
+        {
+            if (VerificaLogado() == false)
+            {
+                return Redirect("/login");
+            }
+
+            if ((Session["usuarioLogadoPermissao"].ToString() == "1") || (Session["usuarioLogadoPermissao"].ToString() == "2") ||
+                (Session["usuarioLogadoPermissao"].ToString() == "3"))
+            {
+                return Redirect("/login/sempermissao");
+            }
+            else
+            {
+                return View();
+            }
+        }
+
+        #endregion
+
+
         private FuncionarioRepository repository;
 
         public FuncionarioController()
@@ -19,32 +53,67 @@ namespace View.Controllers
 
         public ActionResult Index()
         {
-            ViewBag.Funcionarios = repository.ObterTodos();
-            return View();
+            if (VerificaLogado() == true)
+            {
+                ViewBag.Funcionarios = repository.ObterTodos();
+                return View();
+            }
+            else
+            {
+                return Redirect("/login");
+            }
         }
 
         //Alterar
         #region Alterar
         public ActionResult Update(Funcionario funcionario)
         {
-            funcionario.RegistroAtivo = true;
-            repository.Alterar(funcionario);
-            return RedirectToAction("index");
+            if (VerificaLogado() == true)
+            {
+                if (Session["usuarioLogadoPermissao"].ToString() == "4")
+                {
+                    funcionario.RegistroAtivo = true;
+                    repository.Alterar(funcionario);
+                    return RedirectToAction("index");
+                }
+                else
+                {
+                    return Redirect("/login/sempermissao");
+                }
+            }
+            else
+            {
+                return Redirect("/login");
+            }
         }
 
         public ActionResult Alterar(int id)
         {
-            var funcionario = repository.ObterPeloId(id);
-            if (funcionario == null)
+            if (VerificaLogado() == true)
             {
-                return RedirectToAction("Index");
+                if ( (Session["usuarioLogadoPermissao"].ToString() == "4") || (id.ToString() == Session["usuarioLogadoId"].ToString() ))
+                {
+                    var funcionario = repository.ObterPeloId(id);
+                    if (funcionario == null)
+                    {
+                        return RedirectToAction("Index");
+                    }
+                    PostoRepository repositoryPosto = new PostoRepository();
+                    ViewBag.Postos = repositoryPosto.ObterTodos();
+                    CargoRepository repositoryCargo = new CargoRepository();
+                    ViewBag.Cargos = repositoryCargo.ObterTodos();
+                    ViewBag.Funcionario = funcionario;
+                    return View();
+                }
+                else
+                {
+                    return Redirect("/login/sempermissao");
+                }
             }
-            PostoRepository repositoryPosto = new PostoRepository();
-            ViewBag.Postos = repositoryPosto.ObterTodos();
-            CargoRepository repositoryCargo = new CargoRepository();
-            ViewBag.Cargos = repositoryCargo.ObterTodos();
-            ViewBag.Funcionario = funcionario;
-            return View();
+            else
+            {
+                return Redirect("/login");
+            }
         }
 
         #endregion
@@ -53,8 +122,23 @@ namespace View.Controllers
         #region Apagar
         public ActionResult Apagar(int id)
         {
-            repository.Apagar(id);
-            return RedirectToAction("index");
+            if (VerificaLogado() == true)
+            {
+                if (Session["usuarioLogadoPermissao"].ToString() == "4")
+                {
+                    repository.Apagar(id);
+                    return RedirectToAction("index");
+
+                }
+                else
+                {
+                    return Redirect("/login/sempermissao");
+                }
+            }
+            else
+            {
+                return Redirect("/login");
+            }
         }
         #endregion
 
@@ -62,9 +146,24 @@ namespace View.Controllers
         #region Cadastro
         public ActionResult Inserir(Funcionario funcionario)
         {
-            funcionario.RegistroAtivo = true;
-            repository.Inserir(funcionario);
-            return RedirectToAction("index");
+            if (VerificaLogado() == true)
+            {
+                if (Session["usuarioLogadoPermissao"].ToString() == "4")
+                {
+                    funcionario.RegistroAtivo = true;
+                    repository.Inserir(funcionario);
+                    return RedirectToAction("index");
+
+                }
+                else
+                {
+                    return Redirect("/login/sempermissao");
+                }
+            }
+            else
+            {
+                return Redirect("/login");
+            }
         }
 
 
@@ -74,7 +173,7 @@ namespace View.Controllers
             ViewBag.Postos = repositoryPosto.ObterTodos();
             CargoRepository repositoryCargo = new CargoRepository();
             ViewBag.Cargos = repositoryCargo.ObterTodos();
-            return View();
+            return VerificaPermisssao();
         }
 
         #endregion

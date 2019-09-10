@@ -3,12 +3,18 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-@if (Session["usuarioLogadoCargo"].ToString() == "Medico")
-{
-    <h1>@Session["usuarioLogadoCargo"].ToString()</h1>
-}
-else if (Session["usuarioLogadoCargo"].ToString() == "Atendente")
-{
-    <h1>Ola pessoa</h1>
-}
+<h2>Olá @ViewBag.Funcionario.Nome</h2>
+<br />
+<h1 class="display-4 text-danger font-weight-bold"><i class="fa fa-info-circle"></i> Instruções</h1>
+<p class="lead text-justify">
+    O sistema é construído de forma a ser o facilitador entre o profissional da saúde e o paciente, para isso auxilie o paciente durante o uso. É sugerido mostrar a tela do computador e acompanhá-lo nas respostas.
+</p>
+<br />
+<p class="lead text-justify">
+    Caso necessite de informações adicionais  não disponíveis no site, e demais casos emergenciais, use o Google e ferramentas de tradução , escrever/digitar para o paciente é fundamental, e por favor, posteriormente, mande-nos suas maiores dificuldades e sugestões para podermos implementar no site.
+
+</p>
+<br/>
+<p class="lead text-justify">
+    Em caso de dúvida, entrar em contato pelo e-mail: laviprojeto@gmail.com
+</p>

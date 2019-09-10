@@ -15,6 +15,7 @@
     <thead class="bg-dark">
         <tr>
             <td>Cargos</td>
+            <td>Nivel Permissão</td>
             <td>Ação</td>
         </tr>
     </thead>
@@ -23,6 +24,7 @@
         {
             <tr>
                 <td>@cargo.Nome</td>
+                <td>@cargo.NivelPermissao</td>
                 <td>
                     <a class="btn btn-primary" href="/cargo/alterar?id=@cargo.Id">Editar</a>
                     <a class="btn btn-danger" href="/cargo/apagar?id=@cargo.Id">Apagar</a>

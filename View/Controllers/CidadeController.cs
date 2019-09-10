@@ -16,7 +16,7 @@ namespace View.Controllers
         public CidadeController()
         {
             repository = new CidadeRepository();
-            
+
         }
 
         public ActionResult Index()
@@ -40,7 +40,7 @@ namespace View.Controllers
         #region Verificações Login
         private bool VerificaLogado()
         {
-            if (Session["usuarioLogadoCargo"] == null)
+            if (Session["usuarioLogadoId"] == null)
             {
                 return false;
             }
@@ -57,7 +57,8 @@ namespace View.Controllers
                 return Redirect("/login");
             }
 
-            if ((Session["usuarioLogadoCargo"].ToString() == "Atendente")||(Session["usuarioLogadoCargo"].ToString() == "Medico"))
+            if ((Session["usuarioLogadoPermissao"].ToString() == "1") || (Session["usuarioLogadoPermissao"].ToString() == "2") ||
+                (Session["usuarioLogadoPermissao"].ToString() == "3"))
             {
                 return Redirect("/login/sempermissao");
             }
@@ -93,8 +94,15 @@ namespace View.Controllers
         #region Apagar
         public ActionResult Apagar(int id)
         {
-            repository.Apagar(id);
-            return VerificaPermisssao();
+            if (Session["usuarioLogadoPermissao"].ToString() == "4")
+            {
+                repository.Apagar(id);
+                return RedirectToAction("index");
+            }
+            else
+            {
+                return Redirect("/login/sempermissao");
+            }
         }
 
         #endregion

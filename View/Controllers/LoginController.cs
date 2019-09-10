@@ -30,7 +30,8 @@ namespace View.Controllers
             if (funcionario != null)
             {
                 Session["usuarioLogadoId"] = funcionario.Id;
-                Session["usuarioLogadoCargo"] = funcionario.Cargo.Nome;
+                Session["usuarioLogadoNome"] = funcionario.Nome;
+                Session["usuarioLogadoPermissao"] = funcionario.Cargo.NivelPermissao;
                 return Redirect("/instrucoes/index");
             }
             else

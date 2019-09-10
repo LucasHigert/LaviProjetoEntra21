@@ -9,6 +9,14 @@
     <label class="font-weight-bold" for="campo-nome">Nome</label>
     <input type="text" maxlength="100" name="nome" id="campo-nome" class="form-control border-info" />
 
+    <label class="font-weight-bold" for="campo-nivel">Nivel de Permissão</label>
+    <select name="NivelPermissao" id="campo-nivel" class="form-control">
+        <option selected="selected" hidden="hidden">Selecione um nivel</option>
+        <option value="1">Baixo</option>
+        <option value="2">Medio</option>
+        <option value="3">Alto</option>
+        <option value="4">Administrador</option>
+    </select>
     <button type="submit" style="margin-top: 5px" class="btn btn-success">Salvar</button>
 
 </form>

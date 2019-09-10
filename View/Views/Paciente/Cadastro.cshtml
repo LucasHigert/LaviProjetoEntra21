@@ -7,16 +7,70 @@
 
 <form action="/paciente/inserir" method="post">
     <!--Campos relacionados com o  endereço-->
+
     <div class="row">
         <div class="col-4">
-            <label class="font-weight-bold" for="campo-cep">CEP</label>
-            <input type="text" id="campo-cep" name="cep" maxlength="9" class="form-control border-info" />
+            <label class="font-weight-bold" for="campo-nome">Nome</label>
+            <input type="text" id="campo-nome" name="nomePaciente" class="form-control border-info" maxlength="100" required="">
         </div>
-       
+
         <div class="col-4">
-            <label class="font-weight-bold" for="campo-estado">Estado</label>
-            <select name="idEstado" id="campo-estado" required="" class="form-control border-info">
-                <option selected="" disabled="disabled">Selecione um estado</option>
+            <label class="font-weight-bold" for="campo-idade">Idade</label>
+            <input type="number" id="campo-idade" name="idade" maxlength="3" class="form-control border-info" />
+        </div>
+
+        <div class="col-4">
+            <label class="font-weight-bold" for="campo-cpf">CPF</label>
+            <input type="text" required="" maxlength="15" id="campo-cpf" name="cpf" class="form-control border-info" />
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-4">
+            <label class="font-weight-bold" for="campo-rne">RNE</label>
+            <input type="text" id="campo-rne" name="rne" maxlength="50" class="form-control border-info" />
+        </div>
+
+        <div class="col-4">
+            <label class="font-weight-bold" for="campo-passaporte">Passaporte</label>
+            <input type="text" id="campo-passaporte" name="passaporte" maxlength="50" class="form-control border-info" />
+        </div>
+
+        <div class="col-4">
+            <label class="font-weight-bold" for="campo-telefone">Telefone</label>
+            <input type="tel" id="campo-telefone" name="telefone" maxlength="14" class="form-control border-info" />
+        </div>
+
+    </div>
+    <!--Campo posto, não usar aqui-->
+    @*<div class="col-4">
+            <label class="font-weight-bold" for="campo-posto">Posto</label>
+            <select name="idPosto" id="campo-posto" required="" class="form-control border-info">
+                <option value="1">Postos</option>
+            </select>
+        </div>*@
+
+    <!--Campos para informações pessoas-->
+    <!--Usar altura na triagem-->
+    @*<div class="col-3">
+            <label class="font-weight-bold" for="campo-altura">Altura</label>
+            <input type="number" id="campo-altura" name="altura" class="form-control border-info" />
+        </div>*@
+
+    <!--Usar peso na triagem-->
+    @*<div class="col-3">
+            <label class="font-weight-bold" for="campo-peso">Peso</label>
+            <input type="number" id="campo-peso" name="peso" class="form-control border-info" />
+        </div>*@
+
+
+    <!-- Campos com informações de identificação (cpf,telefone,rne,...)-->
+    <div class="row">
+        <div class="col-4">
+            <label class="font-weight-bold" for="campo-posto">Posto</label>
+            <select name="idPosto" id="campo-posto" required="" class="form-control border-info">
+                <option selected="" disabled="disabled">Selecione um posto</option>
                 @foreach (Model.Posto Posto in ViewBag.Postos)
                 {
                     <option value="@Posto.Id">@Posto.Nome</option>
@@ -24,73 +78,18 @@
                 }
             </select>
         </div>
+
         <div class="col-4">
-            <label class="font-weight-bold" for="campo-cidade">Cidade</label>
-            <select name="IdCidade" id="campo-cidade" required="" class="form-control border-info">
-                <option value="1">TesteCidade</option>
-            </select>
-        </div>
-    </div>
-    
-    <div>
-        <label class="font-weight-bold" for="campo-endereco">Endereço</label>
-        <input type="text" id="campo-endereco" name="endereco" required="" class="form-control border-info" maxlength="100" />
-    </div>
-
-
-    <!--Campos para informações pessoas-->
-    <div>
-        <label class="font-weight-bold" for="campo-nome">Nome</label>
-        <input type="text" id="campo-nome" name="nomePaciente" class="form-control border-info" maxlength="100" required="">
-    </div>
-
-    <div class="row">
-        <div class="col-3">
-            <label class="font-weight-bold" for="campo-idade">Idade</label>
-            <input type="number" id="campo-idade" name="idade" maxlength="3" class="form-control border-info" />
-        </div>
-        <div class="col-3">
-            <label class="font-weight-bold" for="campo-sexo">Sexo</label>
-            <select id="campo-sexo" name="sexo" class="form-control border-info">
-                <option disabled="disabled" selected="selected">Selecione um sexo</option>
-                <option value="true">Feminino</option>
-                <option value="false">Masculino</option>
-            </select>
+            <label class="font-weight-bold" for="campo-endereco">Endereço</label>
+            <input type="text" id="campo-endereco" name="endereco" required="" class="form-control border-info" maxlength="100" />
         </div>
 
-        <div class="col-3">
-            <label class="font-weight-bold" for="campo-altura">Altura</label>
-            <input type="number" id="campo-altura" name="altura" class="form-control border-info" />
-        </div>
-
-        <div class="col-3">
-            <label class="font-weight-bold" for="campo-peso">Peso</label>
-            <input type="number" id="campo-peso" name="peso" class="form-control border-info" />
+        <div class="col-4">
+            <label class="font-weight-bold" for="campo-cep">CEP</label>
+            <input type="text" id="campo-cep" name="cep" maxlength="9" class="form-control border-info" />
         </div>
 
     </div>
-
-    <!-- Campos com informações de identificação (cpf,telefone,rne,...)-->
-    <div class="row">
-        <div class="col-3">
-            <label class="font-weight-bold" for="campo-cpf">CPF</label>
-            <input type="text" required="" maxlength="15" id="campo-cpf" name="cpf" class="form-control border-info" />
-        </div>
-        <div class="col-3">
-            <label class="font-weight-bold" for="campo-rne">RNE</label>
-            <input type="text" id="campo-rne" name="rne" maxlength="50" class="form-control border-info" />
-        </div>
-
-        <div class="col-3">
-            <label class="font-weight-bold" for="campo-passaporte">Passaporte</label>
-            <input type="text" id="campo-passaporte" name="passaporte" maxlength="50" class="form-control border-info" />
-        </div>
-
-        <div class="col-3">
-            <label class="font-weight-bold" for="campo-telefone">Telefone</label>
-            <input type="tel" id="campo-telefone" name="telefone" maxlength="14" class="form-control border-info" />
-        </div>
-    </div>
-     <button type="submit" class="btn btn-success mt-15">Salvar</button>
+    <button type="submit" class="btn btn-success mt-15">Salvar</button>
 </form>
 

@@ -4,8 +4,8 @@ using System.Data.Entity;
 
 namespace Repository
 {
-    //internal class SistemaInitializer : DropCreateDatabaseAlways<SistemaContext>
-    internal class SistemaInitializer : CreateDatabaseIfNotExists<SistemaContext>
+    internal class SistemaInitializer : DropCreateDatabaseAlways<SistemaContext>
+    //internal class SistemaInitializer : CreateDatabaseIfNotExists<SistemaContext>
     {
 
         protected override void Seed(SistemaContext context)
@@ -159,12 +159,14 @@ namespace Repository
             #region CidadeAdicionar
             cidades.Add(new Cidade()
             {
+                Id = 1,
                 IdEstado = 24,
                 Nome = "Blumenau",
                 RegistroAtivo = true
             });
             cidades.Add(new Cidade()
             {
+                Id = 2,
                 IdEstado = 24,
                 Nome = "Gaspar",
                 RegistroAtivo = true
@@ -214,6 +216,7 @@ namespace Repository
 
             paciente.Add(new Paciente()
             {
+                Id = 1,
                 IdPosto = 1,
                 Nome = "Leticia Rodriguez Garcia",
                 Endereco = "Rua Anna Fischer 80",
@@ -230,6 +233,7 @@ namespace Repository
             });
             paciente.Add(new Paciente()
             {
+                Id = 2,
                 IdPosto = 1,
                 Nome = "Maiara Ilinoi Cardoso",
                 Endereco = "Rua Noel Rosa 10",
@@ -246,6 +250,7 @@ namespace Repository
             });
             paciente.Add(new Paciente()
             {
+                Id = 3,
                 IdPosto = 2,
                 Nome = "Pedro Alexandre Madeiro",
                 Endereco = "Rua Curitiba 55",
@@ -269,21 +274,25 @@ namespace Repository
             #region CargosAdicionar
             cargo.Add(new Cargo()
             {
+                Id = 1,
                 Nome = "Atendente",
                 RegistroAtivo = true
             });
             cargo.Add(new Cargo()
             {
+                Id = 2,
                 Nome = "Médico",
                 RegistroAtivo = true
             });
             cargo.Add(new Cargo()
             {
+                Id = 3,
                 Nome = "Enfermeiro",
                 RegistroAtivo = true
             });
             cargo.Add(new Cargo()
             {
+                Id = 4,
                 Nome = "Administrador",
                 RegistroAtivo = true
             });
@@ -296,6 +305,7 @@ namespace Repository
             #region FuncionáriosAdicinonar
             funcionario.Add(new Funcionario()
             {
+                Id = 1,
                 IdPosto = 1,
                 IdCargo = 1,
                 Nome = "Tiffany Carlene",
@@ -305,6 +315,7 @@ namespace Repository
             });
             funcionario.Add(new Funcionario()
             {
+                Id = 2,
                 IdPosto = 1,
                 IdCargo = 2,
                 Nome = "Roberto Francisco Sagaz",
@@ -314,6 +325,7 @@ namespace Repository
             });
             funcionario.Add(new Funcionario()
             {
+                Id = 3,
                 IdPosto = 1,
                 IdCargo = 3,
                 Nome = "Vanessa Revineia",
@@ -323,6 +335,7 @@ namespace Repository
             });
             funcionario.Add(new Funcionario()
             {
+                Id = 4,
                 IdPosto = 1,
                 IdCargo = 4,
                 Nome = "Josefina Carla",
@@ -332,6 +345,7 @@ namespace Repository
             });
             funcionario.Add(new Funcionario()
             {
+                Id = 5,
                 IdPosto = 2,
                 IdCargo = 2,
                 Nome = "Marilene Peixes",
@@ -341,6 +355,7 @@ namespace Repository
             });
             funcionario.Add(new Funcionario()
             {
+                Id = 6,
                 IdPosto = 2,
                 IdCargo = 3,
                 Nome = "Gabriel Tirone",

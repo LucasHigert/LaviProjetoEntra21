@@ -45,7 +45,6 @@ namespace View.Controllers
 
         #endregion
 
-
         private CargoRepository repository;
 
         public CargoController()
@@ -53,6 +52,8 @@ namespace View.Controllers
             repository = new CargoRepository();
         }
 
+        //Index
+        #region Index
         [HttpGet]
         public ActionResult Index()
         {
@@ -67,8 +68,10 @@ namespace View.Controllers
                 return Redirect("/login");
             }
         }
+        #endregion
 
-
+        //Apagar
+        #region Apagar
         [HttpGet, Route("apagar")]
         public ActionResult Apagar(int id)
         {
@@ -89,6 +92,7 @@ namespace View.Controllers
                 return Redirect("/login");
             }
         }
+        #endregion
 
         //Editar
         #region Editar

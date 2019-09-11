@@ -18,5 +18,7 @@ namespace Repository.Interfaces
         List<Atendimento> ObterTodosPeloCargoPosto(int NumeroCargo,int IdPosto);
 
        Atendimento ObterPeloId(int id);
+
+        List<Atendimento> ObterTodosPosto(int posto);
     }
 }

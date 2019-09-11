@@ -70,7 +70,12 @@ namespace Repository.Repository
         public List<Atendimento> ObterTodosPeloCargoPosto(int NumeroCargo,int IdPosto)
         {
             //modificar para buscar o atendimento pelo cargo que esta logado
-            return context.Atendimentos.Include("Paciente").Include("funcionario").Where((x => x.Status == NumeroCargo && x.Funcionario.IdPosto == Posto)).OrderByDescending(x => x.Prioridade).ToList();
+            return context.Atendimentos.Include("Paciente").Include("funcionario").Where((x => x.Status == NumeroCargo && x.IdPosto == IdPosto)).OrderByDescending(x => x.Prioridade).ToList();
+        }
+
+        public List<Atendimento> ObterTodosPosto(int posto)
+        {
+            return context.Atendimentos.Include("Paciente").Include("funcionario").Where(x=> x.IdPosto == posto).OrderByDescending(x => x.Prioridade).ToList();
         }
     }
 }

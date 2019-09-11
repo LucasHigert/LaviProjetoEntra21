@@ -39,6 +39,12 @@ namespace Model
         [ForeignKey("IdMedico")]
         public virtual Funcionario Medico { get; set; }
 
+        [Column("id_posto")]
+        public int IdPosto { get; set; }
+
+        [ForeignKey("IdPosto")]
+        public Posto Posto { get; set; }
+
         [Column("data_atendimento")]
         public DateTime DataAtendimento { get; set; }
 

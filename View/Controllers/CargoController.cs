@@ -93,7 +93,7 @@ namespace View.Controllers
         //Editar
         #region Editar
         [HttpPost, Route("editar")]
-        public ActionResult Update(int id, string nome)
+        public ActionResult Update(int id, string nome, int nivelpermissao)
         {
             if (VerificaLogado() == true)
             {
@@ -102,6 +102,7 @@ namespace View.Controllers
                     Cargo cargo = new Cargo();
                     cargo.Id = id;
                     cargo.Nome = nome;
+                    cargo.NivelPermissao = nivelpermissao;
 
                     repository.Alterar(cargo);
                     return RedirectToAction("Index");

@@ -4588,6 +4588,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AtendimentoEspecialController.cs" />
     <Compile Include="Controllers\CargoController.cs" />
     <Compile Include="Controllers\AtendimentoController.cs" />
     <Compile Include="Controllers\CidadeController.cs" />
@@ -5668,6 +5669,8 @@
     <Content Include="Views\Funcionario\Alterar.cshtml" />
     <Content Include="Views\Funcionario\Cadastrar.cshtml" />
     <Content Include="Views\Login\SemPermissao.cshtml" />
+    <Content Include="Views\AtendimentoEspecial\Index.cshtml" />
+    <Content Include="Views\AtendimentoEspecial\ParteCorpoEspecial.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

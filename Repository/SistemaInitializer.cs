@@ -306,7 +306,6 @@ namespace Repository
             cargo.Add(new Cargo()
             {
                 Id = 1,
-                NivelPermissao = 1,
                 Nome = "Atendente",
                 RegistroAtivo = true,
                 NivelPermissao = 1
@@ -314,7 +313,6 @@ namespace Repository
             cargo.Add(new Cargo()
             {
                 Id = 2,
-                NivelPermissao = 2,
                 Nome = "Médico",
                 RegistroAtivo = true,
                 NivelPermissao = 3
@@ -322,7 +320,6 @@ namespace Repository
             cargo.Add(new Cargo()
             {
                 Id = 3,
-                NivelPermissao = 3,
                 Nome = "Enfermeiro",
                 RegistroAtivo = true,
                 NivelPermissao = 2
@@ -330,7 +327,6 @@ namespace Repository
             cargo.Add(new Cargo()
             {
                 Id = 4,
-                NivelPermissao = 4,
                 Nome = "Administrador",
                 RegistroAtivo = true,
                 NivelPermissao = 4

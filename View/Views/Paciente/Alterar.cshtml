@@ -3,8 +3,7 @@
     ViewBag.Title = "Alterar";
 }
 
-<h2>Alterar</h2>
-<div class="container container-fluid">
+@*<div class="container container-fluid">
 
 
     <div class="row">
@@ -34,7 +33,7 @@
 
             </div>
 
-            <div class="col-8">
+            <div class="col-8">e
                 <label for="campo-posto">Posto</label>
                 <select name="idPosto" id="campo-posto" required="" class="form-control">
                     <option selected="" disabled="disabled">Selecione um posto</option>
@@ -56,7 +55,7 @@
 
         <div>
             <label for="campo-endereco">Endereço</label>
-            <input type="text" id="campo-endereco" name="endereco" required="" class="form-control" maxlength="100" value="@ViewBag.Paciente.Edereco" />
+            <input type="text" id="campo-endereco" name="endereco" required="" class="form-control" maxlength="100" value="@ViewBag.Paciente.Endereco" />
         </div>
 
         <!-- Campos com informações de identificação (cpf,telefone,rne,...)-->
@@ -72,12 +71,12 @@
 
             <div class="col-3">
                 <label for="campo-passaporte">Passaporte</label>
-                <input type="text" id="campo-passaporte" name="passaporte" maxlength="50" class="form-control" value="@ViewBag.Paciente.Passaporte"/>
+                <input type="text" id="campo-passaporte" name="passaporte" maxlength="50" class="form-control" value="@ViewBag.Paciente.Passaporte" />
             </div>
 
             <div class="col-3">
                 <label for="campo-telefone">Telefone</label>
-                <input type="tel" id="campo-telefone" name="telefone" maxlength="14" class="form-control" value="@ViewBag.Paciente.Telefone"/>
+                <input type="tel" id="campo-telefone" name="telefone" maxlength="14" class="form-control" value="@ViewBag.Paciente.Telefone" />
             </div>
         </div>
 
@@ -85,27 +84,135 @@
         <div class="row">
             <div class="col-2">
                 <label for="campo-idade">Idade</label>
-                <input type="number" id="campo-idade" name="idade" maxlength="3" class="form-control" value="@ViewBag.Paciente.Idade"/>
+                <input type="number" id="campo-idade" name="idade" maxlength="3" class="form-control" value="@ViewBag.Paciente.Idade" />
+            </div>
+            @*<div class="col-2">
+                    <label for="campo-sexo">Sexo</label>
+                    <select id="campo-sexo" name="sexo" class="form-control">
+                        <option value="true">Feminino</option>
+                        <option value="false">Masculino</option>
+                    </select>
+                </div>*@
+@*<div class="col-2">
+        <label for="campo-pressao">Pressão</label>
+        <input type="text" id="campo-pressao" name="pressao" class="form-control" value="@ViewBag.Paciente.Pressao"/>
+    </div>*@
+@*<div class="col-3">
+        <label for="campo-altura">Altura</label>
+        <input type="text" id="campo-altura" name="altura" class="form-control" value="@ViewBag.Paciente.Altura" />
+    </div>*@
+
+@*<div class="col-3">
+            <label for="campo-peso">Peso</label>
+            <input type="text" id="campo-peso" name="peso" class="form-control" value="@ViewBag.Paciente.Peso" />
+        </div>
+    </div>*@
+
+@*<div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success">Salvar</button>
+                        </div>
+                    </div>
+                </div>
+        </form>
+
+    </div>*@
+
+    <!------------------->
+
+
+
+    <form action="/paciente/update" method="post">
+
+        <h2 class="display-4">Alterando paciente '@ViewBag.Paciente.Nome'</h2>
+
+        <input type="text" hidden="hidden" value="@ViewBag.Paciente.Id" name="Id" />
+        <div>
+            <label for="campo-nome">Nome</label>
+            <input type="text" id="campo-nome" name="nome" class="form-control  border-info" maxlength="100" required="" value="@ViewBag.Paciente.Nome">
+        </div>
+
+        <!--Campos relacionados com o  endereço-->
+        <div class="row">
+            <div class="col-4">
+                <label for="campo-cep">CEP</label>
+                <input type="text" id="campo-cep" name="cep" maxlength="9" class="form-control border-info" value="@ViewBag.Paciente.Cep" />
+
+            </div>
+
+            <div class="col-8">
+                <label for="campo-posto">Posto</label>
+                <select name="idPosto" id="campo-posto" required="" class="form-control  border-info">
+                    <option selected="" disabled="disabled">Selecione um posto</option>
+                    @foreach (Model.Posto posto in ViewBag.Postos)
+                    {
+                        if (posto.Id == ViewBag.Paciente.IdPosto)
+                        {
+                            <option value="@posto.Id" selected="selected">@posto.Nome</option>
+                        }
+                        else
+                        {
+                            <option value="@posto.Id">@posto.Nome</option>
+                        }
+                    }
+                </select>
+            </div>
+
+        </div>
+
+        <div>
+            <label for="campo-endereco">Endereço</label>
+            <input type="text" id="campo-endereco" name="endereco" required="" class="form-control  border-info" maxlength="100" value="@ViewBag.Paciente.Endereco" />
+        </div>
+
+        <!-- Campos com informações de identificação (cpf,telefone,rne,...)-->
+        <div class="row">
+            <div class="col-3">
+                <label for="campo-cpf">CPF</label>
+                <input type="text" required="" maxlength="15" id="campo-cpf" name="cpf" class="form-control  border-info" value="@ViewBag.Paciente.Cpf" />
+            </div>
+            <div class="col-3">
+                <label for="campo-rne">RNE</label>
+                <input type="text" id="campo-rne" name="rne" maxlength="50" class="form-control  border-info" value="@ViewBag.Paciente.Rne" />
+            </div>
+
+            <div class="col-3">
+                <label for="campo-passaporte">Passaporte</label>
+                <input type="text" id="campo-passaporte" name="passaporte" maxlength="50" class="form-control  border-info" value="@ViewBag.Paciente.Passaporte" />
+            </div>
+
+            <div class="col-3">
+                <label for="campo-telefone">Telefone</label>
+                <input type="tel" id="campo-telefone" name="telefone" maxlength="14" class="form-control  border-info" value="@ViewBag.Paciente.Telefone" />
+            </div>
+        </div>
+
+        <!--Campos para informações triagem-->
+        <div class="row">
+            <div class="col-2">
+                <label for="campo-idade">Idade</label>
+                <input type="number" id="campo-idade" name="idade" maxlength="3" class="form-control  border-info" value="@ViewBag.Paciente.Idade" />
             </div>
             <div class="col-2">
                 <label for="campo-sexo">Sexo</label>
-                <select id="campo-sexo" name="sexo" class="form-control">
+                <select id="campo-sexo" name="sexo" class="form-control  border-info">
                     <option value="true">Feminino</option>
                     <option value="false">Masculino</option>
                 </select>
             </div>
             <div class="col-2">
                 <label for="campo-pressao">Pressão</label>
-                <input type="text" id="campo-pressao" name="pressao" class="form-control" value="@ViewBag.Paciente.Pressao"/>
+                <input type="text" id="campo-pressao" name="pressao" class="form-control  border-info" value="@ViewBag.Paciente.Pressao" />
             </div>
             <div class="col-3">
                 <label for="campo-altura">Altura</label>
-                <input type="text" id="campo-altura" name="altura" class="form-control" value="@ViewBag.Paciente.Altura" />
+                <input type="text" id="campo-altura" name="altura" class="form-control  border-info" value="@ViewBag.Paciente.Altura" />
             </div>
 
             <div class="col-3">
                 <label for="campo-peso">Peso</label>
-                <input type="text" id="campo-peso" name="peso" class="form-control" value="@ViewBag.Paciente.Peso" />
+                <input type="text" id="campo-peso" name="peso" class="form-control  border-info" value="@ViewBag.Paciente.Peso" />
             </div>
         </div>
 
@@ -116,7 +223,7 @@
                 </div>
             </div>
         </div>
-    </form>
 
-</div>
+        
+    </form>
 

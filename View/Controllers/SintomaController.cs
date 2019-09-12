@@ -32,7 +32,7 @@ namespace View.Controllers
                 return false;
             }
 
-            if ((Session["usuarioLogadoPermissao"].ToString() == "3") || (Session["usuarioLogadoPermissao"].ToString() == "4"))
+            if ((Session["usuarioLogadoPermissao"].ToString() == "3") || (Session["usuarioLogadoPermissao"].ToString() == "4") || (Session["usuarioLogadoPermissao"].ToString() == "2"))
             {
                 return true;
             }

@@ -111,6 +111,9 @@
     <Content Include="Content\Imagens\CardsTelaInicial\pacientes-em-medicos-sala-de-espera-no-hospital_53562-2402.jpg" />
     <Content Include="Content\Imagens\CardsTelaInicial\preview_73810.jpg" />
     <Content Include="Content\Imagens\CardsTelaInicial\vector-cartoon-illustration-banner-fundo-urbano-com-modernos-edificios-da-cidade-grande_1441-586.jpg" />
+    <Content Include="Content\Imagens\icones\favicon %281%29.ico" />
+    <Content Include="Content\Imagens\icones\favicon %282%29.ico" />
+    <Content Include="Content\Imagens\icones\favicon.ico" />
     <Content Include="Content\Imagens\Logo Lavi .png" />
     <Content Include="Content\Imagens\Logo Lavi Preto.png" />
     <Content Include="Content\replaces.css" />
@@ -5679,6 +5682,9 @@
     <Content Include="Views\Funcionario\Cadastrar.cshtml" />
     <Content Include="Views\Login\SemPermissao.cshtml" />
     <Content Include="Views\Instrucoes\InstrucaoHaitiano.cshtml" />
+    <Content Include="Views\AtendimentoEspecial\Index.cshtml" />
+    <Content Include="Views\AtendimentoEspecial\ParteCorpoEspecial.cshtml" />
+    <Content Include="Views\Instrucoes\SelecionarIdioma.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

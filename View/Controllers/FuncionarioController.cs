@@ -70,7 +70,8 @@ namespace View.Controllers
         {
             if (VerificaLogado() == true)
             {
-                if (Session["usuarioLogadoPermissao"].ToString() == "4")
+
+                if ((Session["usuarioLogadoPermissao"].ToString() == "4")||(Session["usuarioLogadoId"].ToString() == funcionario.Id.ToString() ))
                 {
                     funcionario.RegistroAtivo = true;
                     repository.Alterar(funcionario);

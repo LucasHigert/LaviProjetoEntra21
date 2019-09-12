@@ -4597,6 +4597,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AtendimentoEspecialController.cs" />
     <Compile Include="Controllers\CargoController.cs" />
     <Compile Include="Controllers\AtendimentoController.cs" />
     <Compile Include="Controllers\CidadeController.cs" />

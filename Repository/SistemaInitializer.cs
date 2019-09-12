@@ -298,37 +298,38 @@ namespace Repository
             #endregion
             context.Pacientes.AddRange(paciente);
             #endregion
-
+            
+            
             #region cargos
             var cargo = new List<Cargo>();
             #region CargosAdicionar
             cargo.Add(new Cargo()
             {
                 Id = 1,
-                NivelPermissao = 1,
                 Nome = "Atendente",
-                RegistroAtivo = true
+                RegistroAtivo = true,
+                NivelPermissao = 1
             });
             cargo.Add(new Cargo()
             {
                 Id = 2,
-                NivelPermissao = 2,
                 Nome = "Médico",
-                RegistroAtivo = true
+                RegistroAtivo = true,
+                NivelPermissao = 3
             });
             cargo.Add(new Cargo()
             {
                 Id = 3,
-                NivelPermissao = 3,
                 Nome = "Enfermeiro",
-                RegistroAtivo = true
+                RegistroAtivo = true,
+                NivelPermissao = 2
             });
             cargo.Add(new Cargo()
             {
                 Id = 4,
-                NivelPermissao = 4,
                 Nome = "Administrador",
-                RegistroAtivo = true
+                RegistroAtivo = true,
+                NivelPermissao = 4
             });
             #endregion
             context.Cargos.AddRange(cargo);

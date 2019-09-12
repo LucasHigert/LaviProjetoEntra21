@@ -4,7 +4,7 @@
 }
 <div class="row">
     <div class="col-6">
-        <h2 class="display-4">Lista de Funcionarios</h2>
+        <h2 class="h2">Lista de Funcionarios</h2>
     </div>
     <div class="col-6">
         <a class="btn btn-dark float-right mt-35" href="/funcionario/cadastrar"><i class="fa fa-plus"></i> Adicionar Funcionario</a>
@@ -27,8 +27,8 @@
                 <td>@Funcionario.Posto.Nome</td>
                 <td>@Funcionario.Cargo.Nome</td>
                 <td>
-                    <a href="/funcionario/alterar?id=@Funcionario.Id" class="btn btn-primary ml-30"><i class="fa fa-edit"></i> Editar</a>
-                    <a href="/funcionario/apagar?id=@Funcionario.Id" class="btn btn-danger ml-20"><i class="fa fa-trash"></i> Apagar</a>
+                    <a href="/funcionario/alterar?id=@Funcionario.Id" class="btn btn-primary ml-10"><i class="fa fa-edit"></i> Editar</a>
+                    <a href="/funcionario/apagar?id=@Funcionario.Id" class="btn btn-danger ml-10"><i class="fa fa-trash"></i> Apagar</a>
                 </td>
             </tr>
         }

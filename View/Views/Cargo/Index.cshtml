@@ -5,7 +5,7 @@
 
 <div class="row">
     <div class="col-6">
-        <h2 class="display-4">Lista de cargos</h2>
+        <h2 class="h2">Lista de cargos</h2>
     </div>
     <div class="col-6">
         <a class="btn btn-dark float-right mt-40" href="/cargo/cadastrar"><i class="fa fa-plus"></i> Adicionar Cargo</a>
@@ -26,8 +26,8 @@
                 <td>@cargo.Nome</td>
                 <td>@cargo.NivelPermissao</td>
                 <td>
-                    <a class="btn btn-primary" href="/cargo/alterar?id=@cargo.Id"><i class="fa fa-edit"></i> Editar</a>
-                    <a class="btn btn-danger" href="/cargo/apagar?id=@cargo.Id"><i class="fa fa-trash"></i> Apagar</a>
+                    <a class="btn btn-primary ml-10" href="/cargo/alterar?id=@cargo.Id">Editar</a>
+                    <a class="btn btn-danger ml-10" href="/cargo/apagar?id=@cargo.Id">Apagar</a>
                 </td>
             </tr>
         }

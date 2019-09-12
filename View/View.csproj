@@ -4616,6 +4616,21 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Resource.fr-FR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.fr-FR.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Resource.fr-HT.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.fr-HT.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -5684,7 +5699,7 @@
     <Content Include="Views\Instrucoes\InstrucaoHaitiano.cshtml" />
     <Content Include="Views\AtendimentoEspecial\Index.cshtml" />
     <Content Include="Views\AtendimentoEspecial\ParteCorpoEspecial.cshtml" />
-    <Content Include="Views\Instrucoes\SelecionarIdioma.cshtml" />
+    <Content Include="Views\AtendimentoEspecial\InstrucoesEspecial.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -5692,7 +5707,20 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Resource.fr-FR.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.fr-FR.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Resource.fr-HT.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.fr-HT.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Resource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup />
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />

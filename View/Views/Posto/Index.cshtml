@@ -5,7 +5,7 @@
 
 <div class="row">
     <div class="col-6">
-        <h2 class="display-4">Postos</h2>
+        <h2 class="h2">Postos</h2>
     </div>
     <div class="col-6">
         <a class="btn btn-dark float-right" href="/posto/cadastrar"><i class="fa fa-plus"></i> Novo Posto</a>
@@ -28,8 +28,8 @@
                 <td>@posto.Cep</td>
                 <td>@posto.Cidade.Nome</td>
                 <td>
-                    <a class="btn btn-primary" href="/posto/alterar?id=@posto.Id"><i class="fa fa-edit"></i> Editar</a>
-                    <a class="btn btn-danger" href="/posto/apagar?id=@posto.Id"><i class="fa fa-trash"></i> Apagar</a>
+                    <a class="btn btn-primary ml-10" href="/posto/alterar?id=@posto.Id">Editar</a>
+                    <a class="btn btn-danger ml-10" href="/posto/apagar?id=@posto.Id">Apagar</a>
                 </td>
             </tr>
         }

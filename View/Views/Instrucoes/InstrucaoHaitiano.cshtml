@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "InstrucaoHaitiano";
+}
+
+
+    <form action="" method="post">
+       
+        <h2 class="display-4"><i class="fa fa-warning"></i> Selecione uma linguagem</h2>
+        <div class="row">
+            <div class="col-6">
+                <a href="/atendimentoespecial/partecorpoespecial?lang=criolo" class="btn btn-primary"> Criolo</a>
+            </div>
+            <div class="col-6">
+                <a href="/atendimentoespecial/partecorpoespecial?lang=fr-FR" class="btn btn-primary"> Francês</a>
+            </div>
+
+        </div>
+        <div>
+            <h1 class="display-4 text-danger font-weight-bold"><i class="fa fa-info-circle"></i>Instruções</h1>
+            <p class="lead text-justify">
+                Olá, você chegou esta unidade de saúde, @ViewBag.Funcionario.Posto.Nome. Meu nome é @ViewBag.Funcionario.Nome e estou aqui para te ajudar.
+            </p>
+            <p class="lead text-justify">
+                Para começar, por favor, pegue a senha que será dada pelo recepcionista e aguarde ser chamado pelo número.
+            </p>
+            <p class="lead text-justify">
+                Depois de ser chamado, você será acompanhado e receberá mais instruções durante a consulta por esse sistema.
+            </p>
+        </div>
+
+        <!--                                    Haitiano
+        Enstriksyon
+
+    Bonjou, ou te rive inite sa a sante, VIEWBAG. Non mwen se VIEWBAG ak mwen isit la ede ou.
+
+    Pou kòmanse, tanpri pran modpas la ki pral bay pa resepsyonis la epi rete tann yo dwe rele nan nimewo la.
+
+    Yon fwa yo rele, ou pral akonpaye ak bay enstriksyon pli lwen pandan konsiltasyon ak sistèm sa a.
+        -->
+        <!--                                    Francês
+    Les instructions
+
+    Bonjour, vous êtes arrivé dans cette unité de santé, VIEWBAG. Je m'appelle VIEBAG et je suis là pour vous aider.
+
+    Pour commencer, veuillez prendre le mot de passe qui sera donné par la réceptionniste et attendez que le numéro vous appelle.
+
+    Une fois appelé, vous serez accompagné et recevrez des instructions supplémentaires lors de la consultation avec ce système.
+    -->
+    </form>

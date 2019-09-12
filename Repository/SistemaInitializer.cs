@@ -4,8 +4,8 @@ using System.Data.Entity;
 
 namespace Repository
 {
-    //internal class SistemaInitializer : DropCreateDatabaseAlways<SistemaContext>
-    internal class SistemaInitializer : CreateDatabaseIfNotExists<SistemaContext>
+    internal class SistemaInitializer : DropCreateDatabaseAlways<SistemaContext>
+    //internal class SistemaInitializer : CreateDatabaseIfNotExists<SistemaContext>
     {
 
         protected override void Seed(SistemaContext context)

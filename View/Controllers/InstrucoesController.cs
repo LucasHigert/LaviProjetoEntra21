@@ -35,8 +35,30 @@ namespace View.Controllers
             ViewBag.Funcionario = repository.ObterPeloId(Convert.ToInt32(Session["usuarioLogadoId"]));
             return View();
         }
+
+        public ActionResult InstrucaoHaitiano()
+        {
+            if (VerificaLogado() == false)
+            {
+                return Redirect("/login");
+            }
+            FuncionarioRepository repository = new FuncionarioRepository();
+            ViewBag.Funcionario = repository.ObterPeloId(Convert.ToInt32(Session["usuarioLogadoId"]));
+            return View();
+        }
+
+        public ActionResult SelecionarIdioma()
+        {
+            if (VerificaLogado() == false)
+            {
+                return Redirect("/login");
+            }
+
+            FuncionarioRepository repository = new FuncionarioRepository();
+            return View();
+        }
+
     }
-
-
-
 }
+
+

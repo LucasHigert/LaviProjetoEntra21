@@ -5687,6 +5687,8 @@
     <Content Include="Views\AtendimentoEspecial\Index.cshtml" />
     <Content Include="Views\AtendimentoEspecial\ParteCorpoEspecial.cshtml" />
     <Content Include="Views\AtendimentoEspecial\InstrucoesEspecial.cshtml" />
+    <Content Include="Views\AtendimentoEspecial\CadastroPacienteEspecial.cshtml" />
+    <Content Include="Views\AtendimentoEspecial\BuscaPaciente.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

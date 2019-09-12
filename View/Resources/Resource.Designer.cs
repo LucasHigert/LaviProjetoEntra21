@@ -77,5 +77,14 @@ namespace View.Resources {
                 return ResourceManager.GetString("Ola", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .
+        /// </summary>
+        public static string Proximo {
+            get {
+                return ResourceManager.GetString("Proximo", resourceCulture);
+            }
+        }
     }
 }

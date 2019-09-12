@@ -123,4 +123,7 @@
   <data name="Ola" xml:space="preserve">
     <value>Bonjour</value>
   </data>
+  <data name="Proximo" xml:space="preserve">
+    <value>Suivant</value>
+  </data>
 </root>

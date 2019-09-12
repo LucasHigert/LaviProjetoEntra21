@@ -79,5 +79,29 @@ namespace View.Controllers
                 return Redirect("/login");
             }
         }
+
+        public ActionResult BuscaPaciente()
+        {
+            if (VerificaLogado() == true)
+            {
+                return View();
+            }
+            else
+            {
+                return Redirect("/login");
+            }
+        }
+
+        public ActionResult CadastroPacienteEspecial()
+        {
+            if (VerificaLogado() == true)
+            {
+                return View();
+            }
+            else
+            {
+                return Redirect("/login");
+            }
+        }
     }
 }

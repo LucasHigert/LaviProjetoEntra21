@@ -23,6 +23,7 @@ namespace Repository.Repository
                 return false;
 
             cargoOriginal.Nome = cargo.Nome;
+            cargoOriginal.NivelPermissao = cargo.NivelPermissao;
 
             int quantidadeAfetada = context.SaveChanges();
             return quantidadeAfetada == 1;

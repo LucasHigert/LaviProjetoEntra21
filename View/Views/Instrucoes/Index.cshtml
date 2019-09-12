@@ -4,17 +4,131 @@
 }
 
 <h2>Olá @ViewBag.Funcionario.Nome</h2>
-<br />
-<h1 class="display-4 text-danger font-weight-bold"><i class="fa fa-info-circle"></i> Instruções</h1>
-<p class="lead text-justify">
-    O sistema é construído de forma a ser o facilitador entre o profissional da saúde e o paciente, para isso auxilie o paciente durante o uso. É sugerido mostrar a tela do computador e acompanhá-lo nas respostas.
-</p>
-<br />
-<p class="lead text-justify">
-    Caso necessite de informações adicionais  não disponíveis no site, e demais casos emergenciais, use o Google e ferramentas de tradução , escrever/digitar para o paciente é fundamental, e por favor, posteriormente, mande-nos suas maiores dificuldades e sugestões para podermos implementar no site.
+<div>
 
-</p>
-<br/>
-<p class="lead text-justify">
-    Em caso de dúvida, entrar em contato pelo e-mail: laviprojeto@gmail.com
-</p>
+    <br />
+    <h1 class="display-4 text-danger font-weight-bold"><i class="fa fa-info-circle"></i> Instruções</h1>
+    <p class="lead text-justify">
+        O sistema é construído de forma a ser o facilitador entre o profissional da saúde e o paciente, para isso auxilie o paciente durante o uso. É sugerido mostrar a tela do computador e acompanhá-lo nas respostas.
+    </p>
+    <br />
+    <p class="lead text-justify">
+        Caso necessite de informações adicionais  não disponíveis no site, e demais casos emergenciais, use o Google e ferramentas de tradução , escrever/digitar para o paciente é fundamental, e por favor, posteriormente, mande-nos suas maiores dificuldades e sugestões para podermos implementar no site.
+
+    </p>
+    <br />
+    <p class="lead text-justify">
+        Em caso de dúvida, entrar em contato pelo e-mail: laviprojeto@gmail.com
+    </p>
+</div>
+
+<h2>Para seguir o fluxo de nossos sistema, você precisa apenas seguir a ordem abaixo!</h2>
+
+
+<div class="row">
+
+    <div class="col-sm">
+        <div class="card" style="width: 18rem;">
+            <img src="~/Content/Imagens/CardsTelaInicial/vector-cartoon-illustration-banner-fundo-urbano-com-modernos-edificios-da-cidade-grande_1441-586.jpg" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">Cidades</h5>
+                <p class="card-text">Aqui você precisa apenas cadastrar a cidade em que você está!</p>
+                <a href="/cidade/cadastro" class="btn btn-primary">Cadastrar cidade</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm">
+        <div class="card" style="width: 18rem;">
+            <img src="~/Content/Imagens/CardsTelaInicial/preview_73810.jpg" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">Postos</h5>
+                <p class="card-text">Aqui você irá cadastrar o posto em que você trabalha!</p>
+                <a href="/posto/cadastro" class="btn btn-primary">Cadastrar posto</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm">
+        <div class="card" style="width: 18rem;">
+            <img src="~/Content/Imagens/CardsTelaInicial/cultura-1050x600.jpg" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">Cargos</h5>
+                <p class="card-text">Nesta parte você irá precisar cadastrar os cargos de seus colaboradores!</p>
+                <a href="/cargo/cadastro" class="btn btn-primary">Cadastrar cargos</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-sm">
+        <div class="card" style="width: 18rem;">
+            <img src="~/Content/Imagens/CardsTelaInicial/5caracteristicasbomfuncionarioexemplar.jpg" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">Funcionários</h5>
+                <p class="card-text">Você só vai precisar cadastrar seus funcionários nessa parte!</p>
+                <a href="/funcionario/cadastro" class="btn btn-primary">Cadastrar funcionário</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm">
+        <div class="card" style="width: 18rem;">
+            <img src="~/Content/Imagens/CardsTelaInicial/depositphotos_63546445-stock-photo-organ-donation.jpg" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">Partes do Corpo</h5>
+                <p class="card-text">Nessa fase, as partes do corpo humano já estão cadastradas!</p>
+                <a href="/partecorpo/cadastro" class="btn btn-primary">Partes do Corpo</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm">
+        <div class="card" style="width: 18rem;">
+            <img src="~/Content/Imagens/CardsTelaInicial/gripa.jpg" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">Sintomas</h5>
+                <p class="card-text">Nessa fase, os sinstomas do paciente serão cadastrados!</p>
+                <a href="/sintoma/cadastro" class="btn btn-primary">Sintomas</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm">
+        <div class="card" style="width: 18rem;">
+            <img src="~/Content/Imagens/CardsTelaInicial/pacientes-em-medicos-sala-de-espera-no-hospital_53562-2402.jpg" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">Pacientes</h5>
+                <p class="card-text">Agora você só precisa cadastrar o paciente!</p>
+                <a href="/paciente/cadastro" class="btn btn-primary">Cadastrar paciente</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm">
+        <div class="card" style="width: 18rem;">
+            <img src="~/Content/Imagens/CardsTelaInicial/atendimento.jpg" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">Atendimento</h5>
+                <p class="card-text">Aqui você apenas vai atender seu paciente!</p>
+                <a href="/atendimento/index" class="btn btn-primary">Antender pacientes</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm">
+        <div class="card" style="width: 18rem;">
+            <img src="~/Content/Imagens/CardsTelaInicial/114740112-city-hospital-modern-building-vector-flat-illustration-clinic-medical-center-ambulance-car-and-helic.jpg" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">Encaminhamento</h5>
+                <p class="card-text">Nessa parte você irá encaminhar o paciente para o lugar necessário!</p>
+                <a href="/encaminhamento/index" class="btn btn-primary">Encaminhar</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+

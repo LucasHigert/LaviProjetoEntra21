@@ -180,9 +180,23 @@ namespace View.Controllers
             {
                 return Redirect("/login");
             }
-
-            #endregion
-
         }
+        #endregion
+
+        #region PartesCorpo
+       
+        public ActionResult CorpoMasculino()
+        {
+            if (VerificaLogado() == true)
+            {
+                return View();
+            }
+            else
+            {
+                return Redirect("/login");
+            }
+        }
+
+        #endregion
     }
 }

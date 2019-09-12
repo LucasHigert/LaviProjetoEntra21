@@ -27,7 +27,7 @@ namespace View.Controllers
         #endregion
 
         //Método que irá mudar a lingua do sistema
-        private ActionResult Change(String lang)
+        public void Change(String lang)
         {
             if (lang != null)
             {
@@ -37,7 +37,7 @@ namespace View.Controllers
                 cookie.Value = lang;
                 Response.Cookies.Add(cookie);
             }
-            return Redirect(Request.UrlReferrer.ToString());
+
         }
 
         public ActionResult Index()

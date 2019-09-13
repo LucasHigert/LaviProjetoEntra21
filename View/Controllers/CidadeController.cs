@@ -155,7 +155,7 @@ namespace View.Controllers
                     cidade.Estado.Id = idEstado;
 
                     repository.Alterar(cidade);
-                    return RedirectToAction("Index");
+                    return RedirectToAction("index");
                 }
                 else
                 {
@@ -177,7 +177,8 @@ namespace View.Controllers
                     ViewBag.Cidade = repository.ObterPeloId(id);
                     EstadoRepository estadoRepository = new EstadoRepository();
                     ViewBag.Estados = estadoRepository.ObterTodos();
-                    return RedirectToAction("index");
+
+                    return View();
                 }
                 else
                 {

@@ -50,21 +50,15 @@ namespace View.Controllers
             }
         }
 
-        private ActionResult VerificaPermisssao()
+        private bool VerificaPermisssao()
         {
-            if (VerificaLogado() == false)
+            if ((Session["usuarioLogadoPermissao"].ToString() == "4"))
             {
-                return Redirect("/login");
-            }
-
-            if ((Session["usuarioLogadoPermissao"].ToString() == "1") || (Session["usuarioLogadoPermissao"].ToString() == "2") ||
-                (Session["usuarioLogadoPermissao"].ToString() == "3"))
-            {
-                return Redirect("/login/sempermissao");
+                return true;
             }
             else
             {
-                return View();
+                return false;
             }
         }
 
@@ -75,17 +69,48 @@ namespace View.Controllers
         #region Cadastro
         public ActionResult Cadastro()
         {
-            //Puxa Info dos estados
-            EstadoRepository estadoRepository = new EstadoRepository();
-            ViewBag.Estados = estadoRepository.ObterTodos(); ;
+            if (VerificaLogado() == true)
+            {
+                if (VerificaPermisssao() == true)
+                {
+                    //Puxa Info dos estados
+                    EstadoRepository estadoRepository = new EstadoRepository();
+                    ViewBag.Estados = estadoRepository.ObterTodos(); ;
 
-            return VerificaPermisssao();
+                    return View();
+
+                }
+                else
+                {
+                    return Redirect("/login/sempermissao");
+                }
+
+            }
+            else
+            {
+                return Redirect("/login");
+            }
         }
 
         public ActionResult Inserir(Cidade cidade)
         {
-            int id = repository.Inserir(cidade);
-            return VerificaPermisssao();
+            if (VerificaLogado() == true)
+            {
+                if (VerificaPermisssao() == true)
+                {
+                    int id = repository.Inserir(cidade);
+
+                    return RedirectToAction("index");
+                }
+                else
+                {
+                    return Redirect("/login/sempermissao");
+                }
+            }
+            else
+            {
+                return Redirect("/login");
+            }
         }
 
         #endregion
@@ -94,14 +119,22 @@ namespace View.Controllers
         #region Apagar
         public ActionResult Apagar(int id)
         {
-            if (Session["usuarioLogadoPermissao"].ToString() == "4")
+            if (VerificaLogado() == true)
             {
-                repository.Apagar(id);
-                return RedirectToAction("index");
+                if (VerificaPermisssao() == true)
+                {
+                    repository.Apagar(id);
+
+                    return RedirectToAction("index");
+                }
+                else
+                {
+                    return Redirect("/login/sempermissao");
+                }
             }
             else
             {
-                return Redirect("/login/sempermissao");
+                return Redirect("/login");
             }
         }
 
@@ -111,22 +144,51 @@ namespace View.Controllers
         #region Alterar
         public ActionResult Update(int id, int idEstado, string nome)
         {
-            Cidade cidade = new Cidade();
-            cidade.Id = id;
-            cidade.Nome = nome;
-            cidade.Estado = new Estado();
-            cidade.Estado.Id = idEstado;
+            if (VerificaLogado() == true)
+            {
+                if (VerificaPermisssao() == true)
+                {
+                    Cidade cidade = new Cidade();
+                    cidade.Id = id;
+                    cidade.Nome = nome;
+                    cidade.Estado = new Estado();
+                    cidade.Estado.Id = idEstado;
 
-            repository.Alterar(cidade);
-            return VerificaPermisssao();
+                    repository.Alterar(cidade);
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    return Redirect("/login/sempermissao");
+                }
+            }
+            else
+            {
+                return Redirect("/login");
+            }
         }
 
         public ActionResult Alterar(int id)
         {
-            ViewBag.Cidade = repository.ObterPeloId(id);
-            EstadoRepository estadoRepository = new EstadoRepository();
-            ViewBag.Estados = estadoRepository.ObterTodos();
-            return VerificaPermisssao();
+            if (VerificaLogado() == true)
+            {
+                if(VerificaPermisssao() == true)
+                {
+                    ViewBag.Cidade = repository.ObterPeloId(id);
+                    EstadoRepository estadoRepository = new EstadoRepository();
+                    ViewBag.Estados = estadoRepository.ObterTodos();
+                    return RedirectToAction("index");
+                }
+                else
+                {
+                    return Redirect("/login/sempermissao");
+                }
+            }
+            else
+            {
+                return Redirect("/login");
+            }
+            
         }
         #endregion
     }

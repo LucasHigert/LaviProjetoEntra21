@@ -117,13 +117,85 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Acao" xml:space="preserve">
+    <value>Aksyon</value>
+  </data>
+  <data name="Altura" xml:space="preserve">
+    <value>Wotè</value>
+  </data>
+  <data name="CEP" xml:space="preserve">
+    <value>Kòd postal</value>
+  </data>
+  <data name="Cpf" xml:space="preserve">
+    <value>Cpf</value>
+  </data>
+  <data name="DigiteSeuNomePesquisar" xml:space="preserve">
+    <value>Antre nan mwen rele nan rechèch la</value>
+  </data>
+  <data name="Endereço" xml:space="preserve">
+    <value>Adrès</value>
+  </data>
+  <data name="EsteSouEu" xml:space="preserve">
+    <value>Sa a se mwen</value>
+  </data>
+  <data name="Feminino" xml:space="preserve">
+    <value>Fi</value>
+  </data>
+  <data name="Idade" xml:space="preserve">
+    <value>Laj</value>
+  </data>
+  <data name="InformacaoCadastro" xml:space="preserve">
+    <value>Ak enfòmasyon ou ki pi ba a anrejistre sou sante ou reponn</value>
+  </data>
+  <data name="InformacaoParteCorpo" xml:space="preserve">
+    <value>Bonjou, nan kesyonè sa a ou pral evalye selon enfòmasyon ou genyen sou sentòm ou yo. Make sentòm ou yo kòmsadwa epi ou dwe onèt, paske repons ou ap enfliyanse tretman ou.</value>
+  </data>
+  <data name="InformacaoParteCorpo2" xml:space="preserve">
+    <value>Chwazi pati yo nan kò kote ou santi ou kèk kalite sentòm. Pou egzanp, si ou gen doulè nan je, chwazi tèt la. Si li senyen nan zòrèy la, chwazi tèt la.</value>
+  </data>
   <data name="Instrucoes" xml:space="preserve">
     <value>Nan kesyonè sa a ou pral evalye selon enfòmasyon ou genyen sou sentòm ou yo. Make sentòm ou yo kòmsadwa epi ou dwe onèt, paske repons ou ap enfliyanse tretman ou</value>
   </data>
+  <data name="Masculino" xml:space="preserve">
+    <value>Maskil</value>
+  </data>
+  <data name="NaoTenho" xml:space="preserve">
+    <value>Mwen pa genyen</value>
+  </data>
+  <data name="Nome" xml:space="preserve">
+    <value>Premye non</value>
+  </data>
   <data name="Ola" xml:space="preserve">
-    <value>Bonjou</value>
+    <value>Alo</value>
+  </data>
+  <data name="Passaporte" xml:space="preserve">
+    <value>Paspò</value>
+  </data>
+  <data name="Peso" xml:space="preserve">
+    <value>Pwa</value>
+  </data>
+  <data name="Pressao" xml:space="preserve">
+    <value>Presyon</value>
   </data>
   <data name="Proximo" xml:space="preserve">
-    <value>Pwochen</value>
+    <value>Next</value>
+  </data>
+  <data name="Rne" xml:space="preserve">
+    <value>Rne</value>
+  </data>
+  <data name="SeusDados" xml:space="preserve">
+    <value>Done ou</value>
+  </data>
+  <data name="Sexo" xml:space="preserve">
+    <value>Sèks</value>
+  </data>
+  <data name="Telefone" xml:space="preserve">
+    <value>Nimewo telefòn</value>
+  </data>
+  <data name="Temperatura" xml:space="preserve">
+    <value>Tanperati</value>
+  </data>
+  <data name="VocêPossuiCadastro" xml:space="preserve">
+    <value>Ou gen enskripsyon?</value>
   </data>
 </root>

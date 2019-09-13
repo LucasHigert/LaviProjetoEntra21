@@ -111,6 +111,7 @@
     <Content Include="Content\Imagens\CardsTelaInicial\parte do corpo esse.jpg" />
     <Content Include="Content\Imagens\CardsTelaInicial\postos.jpg" />
     <Content Include="Content\Imagens\CardsTelaInicial\vector-cartoon-illustration-banner-fundo-urbano-com-modernos-edificios-da-cidade-grande_1441-586.jpg" />
+    <Content Include="Content\Imagens\Corpos\parte corpo humano.png" />
     <Content Include="Content\Imagens\icones\favicon %281%29.ico" />
     <Content Include="Content\Imagens\icones\favicon %282%29.ico" />
     <Content Include="Content\Imagens\icones\favicon.ico" />
@@ -124,6 +125,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\cidade\cidade.js" />
+    <Content Include="Scripts\Corpos\CorpoMasculino.css" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
     <Content Include="Scripts\esm\popper.js" />

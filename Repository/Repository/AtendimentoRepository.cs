@@ -63,7 +63,7 @@ namespace Repository.Repository
 
         public Atendimento ObterPeloId(int id)
         {
-            return context.Atendimentos.Where(x => x.Id == id && x.Status != 2).FirstOrDefault();
+            return context.Atendimentos.Where(x => x.Id == id).FirstOrDefault();
         }
 
 

@@ -3,13 +3,14 @@
     ViewBag.Title = "Index";
 }
 <h2 class="h2 mt-5 mb-5">Atendendo @ViewBag.Atendimento.Id</h2>
-<form action="" method="post">
+<form action="/atendimento/update" method="post">
     <!--Esta div contera o atendente e o medico, quando o atendente abrir nao tera a opção medico-->
     <!--Quando o medico abrir nao tera o atendente-->
+    <input type="text" name="id" value="@ViewBag.Atendimento.Id" hidden="hidden" />
     <div class="row">
         <div class="col-12">
             <label for="campo-paciente">Paciente</label>
-            <select name="paciente" id="campo-paciente" class="form-control border-dark">
+            <select name="idPaciente" id="campo-paciente" class="form-control border-dark">
                 @foreach (Model.Paciente paciente in ViewBag.Pacientes)
                 {
                     <option value="@paciente.Id">@paciente.Nome</option>
@@ -22,15 +23,15 @@
     <div class="row">
         <div class="col-6">
             <label for="campo-data">Data</label>
-            <input type="date" name="data" id="campo-data" class="form-control border-dark" />
+            <input type="date" name="DataAtendimento" id="campo-data" class="form-control border-dark" />
         </div>
         <div class="col-6">
             <div>
                 <label for="campo-prioridade">Prioridade</label>
-                <select name="prioridade" id="campo-prioridade" class="form-control border-dark">
-                    <option value="alto">Alto</option>
-                    <option value="medio">Medio</option>
-                    <option value="baixo">Baixo</option>
+                <select name="Prioridade" id="campo-prioridade" class="form-control border-dark">
+                    <option value="3">Alto</option>
+                    <option value="2">Medio</option>
+                    <option value="1">Baixo</option>
                 </select>
 
             </div>

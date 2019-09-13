@@ -52,6 +52,11 @@ namespace View.Controllers
             ViewBag.Encaminhamentos = encaminhamentos;
             return View();
         }
+        public ActionResult Escolha()
+        {
+            
+            return View();
+        }
 
         //Apagar
         #region Apagar

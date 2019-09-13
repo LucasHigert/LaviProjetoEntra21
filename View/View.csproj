@@ -5704,6 +5704,7 @@
     <Content Include="Views\AtendimentoEspecial\InstrucoesEspecial.cshtml" />
     <Content Include="Views\AtendimentoEspecial\CadastroPacienteEspecial.cshtml" />
     <Content Include="Views\AtendimentoEspecial\BuscaPaciente.cshtml" />
+    <Content Include="Views\Encaminhamento\Escolha.cshtml" />
     <Content Include="Views\Instrucoes\Imigrante.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

@@ -100,30 +100,33 @@ namespace View.Controllers
 
         //Aletar
         #region Alterar
-        public ActionResult Update(int id, int idPosto, string nome, int idade, string cpf, string rne, string passaporte, string telefone, string endereco, string cep, bool sexo, double altura, double peso, string pressao, double temperatura)
+        //public ActionResult Update(int id, int idPosto, string nome, int idade, string cpf, string rne, string passaporte, string telefone, string endereco, string cep, bool sexo, double altura, double peso, string pressao, double temperatura)
+        public ActionResult Update(Paciente paciente)
         {
             if (VerificaLogado() == true)
             {
-                Paciente paciente = new Paciente();
-                paciente.Id = id;
-                paciente.Nome = nome;
-                paciente.Idade = idade;
-                paciente.Cpf = cpf;
-                paciente.Rne = rne;
-                paciente.Passaporte = passaporte;
-                paciente.Endereco = endereco;
-                paciente.Telefone = telefone;
-                paciente.Cep = cep;
-                paciente.Sexo = sexo;
-                paciente.Altura = altura;
-                paciente.Peso = peso;
-                paciente.Pressao = pressao;
-                paciente.Posto = new Posto();
-                paciente.Posto.Id = idPosto;
-                paciente.Temperatura = temperatura;
+                var alterou = repository.Alterar(paciente);
+                return RedirectToAction("index");
+                //Paciente paciente = new Paciente();
+                //paciente.Id = id;
+                //paciente.Nome = nome;
+                //paciente.Idade = idade;
+                //paciente.Cpf = cpf;
+                //paciente.Rne = rne;
+                //paciente.Passaporte = passaporte;
+                //paciente.Endereco = endereco;
+                //paciente.Telefone = telefone;
+                //paciente.Cep = cep;
+                //paciente.Sexo = sexo;
+                //paciente.Altura = altura;
+                //paciente.Peso = peso;
+                //paciente.Pressao = pressao;
+                //paciente.Posto = new Posto();
+                //paciente.Posto.Id = idPosto;
+                //paciente.Temperatura = temperatura;
 
-                repository.Alterar(paciente);
-                return RedirectToAction("Index");
+                //repository.Alterar(paciente);
+                //return RedirectToAction("Index");
             }
             else
             {

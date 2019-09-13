@@ -1,4 +1,5 @@
-﻿using Repository.Repository;
+﻿using Model;
+using Repository.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,11 +33,30 @@ namespace View.Controllers
                 return Redirect("/login");
             }
             FuncionarioRepository repository = new FuncionarioRepository();
+
+            CargoRepository cargoRepository = new CargoRepository();
+
+            Funcionario funcionario = repository.ObterPeloId(Convert.ToInt32(Session["usuarioLogadoId"]));
+
+            ViewBag.Cargo = cargoRepository.ObterPeloId(funcionario.IdCargo);
+
+            ViewBag.Funcionario = funcionario;
+            return View();
+        }
+
+        public ActionResult Imigrante()
+        {
+            if (VerificaLogado() == false)
+            {
+                return Redirect("/login");
+            }
+            FuncionarioRepository repository = new FuncionarioRepository();
             ViewBag.Funcionario = repository.ObterPeloId(Convert.ToInt32(Session["usuarioLogadoId"]));
             return View();
         }
+
+
     }
-
-
-
 }
+
+

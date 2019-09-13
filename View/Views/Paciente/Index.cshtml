@@ -6,7 +6,7 @@
 <h2>Lista dos Pacientes</h2>
 
 <a class="btn btn-primary   float-right mb-3"
-   href="/paciente/cadastro">Novo Paciente</a>
+   href="/paciente/cadastro"><i class="fa fa-plus"></i> Novo Paciente</a>
 
 <table class="table table-primary table-striped table-bordered table-hover" id="pacientes-index">
     <thead class="bg-dark">
@@ -14,7 +14,7 @@
             <td hidden>Id</td>
             <td>Paciente</td>
             <td>Posto</td>
-            <td>Ação</td>
+            <td width="200px">Ação</td>
         </tr>
     </thead>
     <tbody>
@@ -25,8 +25,8 @@
                 <td>@paciente.Nome</td>
                 <td>@paciente.Posto.Nome</td>
                 <td>
-                    <a class="btn btn-outline-info" href="/paciente/alterar?id=@paciente.Id"><i class="fa fa-edit"></i> Alterar</a>
-                    <a class="btn btn-outline-danger" href="/paciente/apagar?id=@paciente.Id"><i class="fa fa-trash"></i> Apagar</a>
+                    <a class="btn btn-primary ml-10" href="/paciente/alterar?id=@paciente.Id"><i class="fa fa-edit"></i> Alterar</a>
+                    <a class="btn btn-danger ml-10" href="/paciente/apagar?id=@paciente.Id"><i class="fa fa-trash"></i> Apagar</a>
                 </td>
             </tr>
         }

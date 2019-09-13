@@ -69,7 +69,7 @@ namespace Repository.Repository
 
         public Funcionario ObterPeloId(int id)
         {
-            return context.Funcionarios.FirstOrDefault(x => x.Id == id);
+            return context.Funcionarios.Include("Posto").Include("cargo").FirstOrDefault(x => x.Id == id);
         }
 
         public List<Funcionario> ObterTodos()

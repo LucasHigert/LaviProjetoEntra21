@@ -2,21 +2,21 @@
 @{
     ViewBag.Title = "Alterar";
 }
-<h2 class="display-4">Alterando Parte Corpo '@ViewBag.ParteCorpo.Nome'</h2>
+<h2 class="h2">Alterando Parte Corpo '@ViewBag.ParteCorpo.Nome'</h2>
 
 <form action="/partecorpo/update" method="post">
     <input type="hidden" name="id" id="id" value="@ViewBag.ParteCorpo.Id" />
     <div>
-        <label class="font-weight-bold" for="partecorpo-nome">Nome</label>
-        <input class="form-control border-info" id="partecorpo-nome" name="nome" value=@ViewBag.ParteCorpo.Nome />
+        <label class="font-weight-bold" for="partecorpo-nome">Nome<a class="text-danger">*</a></label>
+        <input class="form-control border-info" id="partecorpo-nome" name="nome" value=@ViewBag.ParteCorpo.Nome required=""/>
     </div>
     <div class="form-group">
-        <label class="font-weight-bold" for="partecorpo-traducaocriolo">Tradução Crioulo</label>
-        <input class="form-control border-info" id="partecorpo-traducaocriolo" name="traducaocriolo" value=@ViewBag.ParteCorpo.TraducaoCriolo />
+        <label class="font-weight-bold" for="partecorpo-traducaocriolo">Tradução em Crioulo<a class="text-danger">*</a></label>
+        <input class="form-control border-info" id="partecorpo-traducaocriolo" name="traducaocriolo" value=@ViewBag.ParteCorpo.TraducaoCriolo required=""/>
     </div>
     <div class="form-group">
-        <label class="font-weight-bold" for="partecorpo-traducaofrances">Tradução Francês</label>
-        <input class="form-control border-info" id="partecorpo-traducaofrances" name="traducaofrances" value=@ViewBag.ParteCorpo.TraducaoFrances />
+        <label class="font-weight-bold" for="partecorpo-traducaofrances">Tradução em Francês<a class="text-danger">*</a></label>
+        <input class="form-control border-info" id="partecorpo-traducaofrances" name="traducaofrances" value=@ViewBag.ParteCorpo.TraducaoFrances required=""/>
     </div>
-    <button type="submit" class="btn btn-success mt-5">Salvar</button>
+    <button type="submit" class="btn btn-success mt-5"><i class="fa fa-save"></i> Salvar</button>
 </form>

@@ -102,6 +102,19 @@
     </Content>
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\Imagens\CardsTelaInicial\5caracteristicasbomfuncionarioexemplar.jpg" />
+    <Content Include="Content\Imagens\CardsTelaInicial\atendimento.jpg" />
+    <Content Include="Content\Imagens\CardsTelaInicial\cultura-1050x600.jpg" />
+    <Content Include="Content\Imagens\CardsTelaInicial\customer-at-reception-concept-in-flat-vector-8959632.jpg" />
+    <Content Include="Content\Imagens\CardsTelaInicial\encaminhamento.png" />
+    <Content Include="Content\Imagens\CardsTelaInicial\gripa.jpg" />
+    <Content Include="Content\Imagens\CardsTelaInicial\parte do corpo esse.jpg" />
+    <Content Include="Content\Imagens\CardsTelaInicial\postos.jpg" />
+    <Content Include="Content\Imagens\CardsTelaInicial\vector-cartoon-illustration-banner-fundo-urbano-com-modernos-edificios-da-cidade-grande_1441-586.jpg" />
+    <Content Include="Content\Imagens\Corpos\parte corpo humano.png" />
+    <Content Include="Content\Imagens\icones\favicon %281%29.ico" />
+    <Content Include="Content\Imagens\icones\favicon %282%29.ico" />
+    <Content Include="Content\Imagens\icones\favicon.ico" />
     <Content Include="Content\Imagens\Logo Lavi .png" />
     <Content Include="Content\Imagens\Logo Lavi Preto.png" />
     <Content Include="Content\replaces.css" />
@@ -112,6 +125,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\cidade\cidade.js" />
+    <Content Include="Scripts\Corpos\CorpoMasculino.css" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
     <Content Include="Scripts\esm\popper.js" />
@@ -135,6 +149,7 @@
     <Content Include="Scripts\jquery-3.0.0.slim.js" />
     <Content Include="Scripts\jquery-3.0.0.slim.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\Paciente\PacienteSript.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
@@ -4588,6 +4603,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AtendimentoEspecialController.cs" />
     <Compile Include="Controllers\CargoController.cs" />
     <Compile Include="Controllers\AtendimentoController.cs" />
     <Compile Include="Controllers\CidadeController.cs" />
@@ -4603,6 +4619,21 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Resource.fr-FR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.fr-FR.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Resource.fr-HT.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.fr-HT.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -5668,6 +5699,12 @@
     <Content Include="Views\Funcionario\Alterar.cshtml" />
     <Content Include="Views\Funcionario\Cadastrar.cshtml" />
     <Content Include="Views\Login\SemPermissao.cshtml" />
+    <Content Include="Views\AtendimentoEspecial\Index.cshtml" />
+    <Content Include="Views\AtendimentoEspecial\ParteCorpoEspecial.cshtml" />
+    <Content Include="Views\AtendimentoEspecial\InstrucoesEspecial.cshtml" />
+    <Content Include="Views\AtendimentoEspecial\CadastroPacienteEspecial.cshtml" />
+    <Content Include="Views\AtendimentoEspecial\BuscaPaciente.cshtml" />
+    <Content Include="Views\Instrucoes\Imigrante.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -5675,7 +5712,20 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Resource.fr-FR.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.fr-FR.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Resource.fr-HT.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.fr-HT.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Resource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup />
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />

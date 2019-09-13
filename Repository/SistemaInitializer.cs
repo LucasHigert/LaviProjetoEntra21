@@ -298,7 +298,8 @@ namespace Repository
             #endregion
             context.Pacientes.AddRange(paciente);
             #endregion
-
+            
+            
             #region cargos
             var cargo = new List<Cargo>();
             #region CargosAdicionar
@@ -306,25 +307,29 @@ namespace Repository
             {
                 Id = 1,
                 Nome = "Atendente",
-                RegistroAtivo = true
+                RegistroAtivo = true,
+                NivelPermissao = 1
             });
             cargo.Add(new Cargo()
             {
                 Id = 2,
                 Nome = "Médico",
-                RegistroAtivo = true
+                RegistroAtivo = true,
+                NivelPermissao = 3
             });
             cargo.Add(new Cargo()
             {
                 Id = 3,
                 Nome = "Enfermeiro",
-                RegistroAtivo = true
+                RegistroAtivo = true,
+                NivelPermissao = 2
             });
             cargo.Add(new Cargo()
             {
                 Id = 4,
                 Nome = "Administrador",
-                RegistroAtivo = true
+                RegistroAtivo = true,
+                NivelPermissao = 4
             });
             #endregion
             context.Cargos.AddRange(cargo);
@@ -393,8 +398,67 @@ namespace Repository
                 Senha = "deusefiel",
                 RegistroAtivo = true
             });
+            funcionario.Add(new Funcionario()
+            {
+                Id = 7,
+                IdPosto = 2,
+                IdCargo = 4,
+                Nome = "Lavi Adm",
+                Login = "Lavi",
+                Senha = "entra21",
+                RegistroAtivo = true
+            });
             #endregion
             context.Funcionarios.AddRange(funcionario);
+            #endregion
+
+            #region partesCorpo
+            var parteCorpo = new List<ParteCorpo>();
+            #region PartesCorpoAdicionar
+            parteCorpo.Add(new ParteCorpo()
+            {
+                Id = 1,
+                Nome = "Cabeça",
+                RegistroAtivo = true
+            });
+            parteCorpo.Add(new ParteCorpo()
+            {
+                Id = 2,
+                Nome = "Braço Esquerdo",
+                RegistroAtivo = true
+            });
+            parteCorpo.Add(new ParteCorpo()
+            {
+                Id = 3,
+                Nome = "Braço Direito",
+                RegistroAtivo = true
+            });
+            parteCorpo.Add(new ParteCorpo()
+            {
+                Id = 4,
+                Nome = "Tronco",
+                RegistroAtivo = true
+            });
+            parteCorpo.Add(new ParteCorpo()
+            {
+                Id = 5,
+                Nome = "Região Pélvica",
+                RegistroAtivo = true
+            });
+            parteCorpo.Add(new ParteCorpo()
+            {
+                Id = 6,
+                Nome = "Perna Esquerda",
+                RegistroAtivo = true
+            });
+            parteCorpo.Add(new ParteCorpo()
+            {
+                Id = 7,
+                Nome = "Pera Direita",
+                RegistroAtivo = true
+            });
+            #endregion
+            context.PartesCorpo.AddRange(parteCorpo);
             #endregion
 
             base.Seed(context);

@@ -7,7 +7,7 @@
 
 <form action="/paciente/update" method="post">
 
-    <h2 class="display-4">Alterando paciente '@ViewBag.Paciente.Nome'</h2>
+    <h2 class="h2 mt-5 mb-5">Alterando paciente '@ViewBag.Paciente.Nome'</h2>
 
     <input type="text" hidden="hidden" value="@ViewBag.Paciente.Id" name="Id" />
 
@@ -19,7 +19,7 @@
         </div>
 
         <div class="col-3">
-            <label for="campo-sexo">Sexo<a class="text-danger">*</a></label>
+            <label for="campo-sexo">Sexo</label>
             <select id="campo-sexo" name="sexo" class="form-control border-info">
                 <option value="true">Feminino</option>
                 <option value="false">Masculino</option>

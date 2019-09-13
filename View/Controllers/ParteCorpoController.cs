@@ -164,7 +164,7 @@ namespace View.Controllers
         [HttpGet, Route("apagar")]
         public ActionResult Apagar(int id)
         {
-            if (VerificaLogado() == false)
+            if (VerificaLogado() == true)
             {
                 if (Session["usuarioLogadoPermissao"].ToString() == "4")
                 {

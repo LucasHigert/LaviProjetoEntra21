@@ -7,8 +7,8 @@
 <form action="/posto/inserir" method="post">
     <div class="row">
         <div class="col-12">
-            <label class="font-weight-bold" for="campo-nome">Nome do Posto</label>
-            <input type="text" name="nome" id="campo-nome" class="form-control border-info" />
+            <label class="font-weight-bold" for="campo-nome">Nome do Posto<a class="text-danger">*</a></label>
+            <input type="text" name="nome" id="campo-nome" class="form-control border-info" required="" />
 
         </div>
     </div>
@@ -18,7 +18,7 @@
             <input type="text" name="cep" id="campo-cep" class="form-control border-info" />
         </div>
         <div class="col-8">
-            <label class="font-weight-bold" for="campo-cidade">Cidade</label>
+            <label class="font-weight-bold" for="campo-cidade">Cidade<a class="text-danger">*</a></label>
             <select name="idCidade" id="campo-cidade" class="form-control border-info">
                 <option selected="" disabled="disabled">Selecione uma cidade</option>
                 @foreach (Model.Cidade Cidade in ViewBag.Cidades)

@@ -35,7 +35,7 @@ namespace Repository.Repository
             pacienteOriginal.Rne = paciente.Rne;
             pacienteOriginal.Endereco = paciente.Endereco;
             pacienteOriginal.Posto = paciente.Posto;
-
+            pacienteOriginal.Temperatura = paciente.Temperatura;
 
 
             int quantidadeAfetada = context.SaveChanges();

@@ -126,6 +126,7 @@ namespace View.Controllers
             {
 
             ViewBag.Atendimento = repositoryAtendimento.ObterPeloId(id);
+                ViewBag.Pacientes = repositoryPaciente.ObterTodos();
             return View();
             }
             else

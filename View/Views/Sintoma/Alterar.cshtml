@@ -7,7 +7,7 @@
 <form action="/sintoma/update" method="post">
     <input type="hidden" name="id" id="id" value="@ViewBag.Sintoma.Id" />
     <div>
-        <label class="font-weight-bold" for="campo-partecorpo">Partes do Corpo</label>
+        <label class="font-weight-bold" for="campo-partecorpo">Partes do Corpo<a class="text-danger">*</a></label>
         <select name="idpartecorpo" id="campo-partecorpo" class="form-control border-info">
             @foreach (Model.ParteCorpo partecorpo in ViewBag.PartesCorpo)
             {
@@ -27,20 +27,20 @@
     <div class="row">
 
         <div class="col-4">
-            <label class="font-weight-bold" for="sintoma-nome">Sintoma</label>
-            <input class="form-control border-info" id="sintoma-nome" name="nome"
+            <label class="font-weight-bold" for="sintoma-nome">Sintoma<a class="text-danger">*</a></label>
+            <input class="form-control border-info" id="sintoma-nome" name="nome" required=""
                    value=@ViewBag.Sintoma.Nome />
         </div>
 
         <div class="col-4">
-            <label class="font-weight-bold" for="sintoma-traducaocriolo">Sintoma Tradução Crioulo</label>
-            <input type="text" class="form-control border-info" id="sintoma-traducaocriolo" name="traducaocriolo"
+            <label class="font-weight-bold" for="sintoma-traducaocriolo">Sintoma Tradução em Crioulo<a class="text-danger">*</a></label>
+            <input type="text" class="form-control border-info" id="sintoma-traducaocriolo" name="traducaocriolo" required=""
                    value=@ViewBag.Sintoma.TraducaoCriolo />
         </div>
 
         <div class="col-4">
-            <label class="font-weight-bold" for="sintoma-traducaofrances">Sintoma Tradução Francês</label>
-            <input class="form-control border-info" id="sintoma-traducaofrances" name="traducaofrances"
+            <label class="font-weight-bold" for="sintoma-traducaofrances">Tradução em Francês<a class="text-danger">*</a></label>
+            <input class="form-control border-info" id="sintoma-traducaofrances" name="traducaofrances" required=""
                    value=@ViewBag.Sintoma.TraducaoFrances />
         </div>
     </div>

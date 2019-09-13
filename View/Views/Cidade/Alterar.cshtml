@@ -8,10 +8,10 @@
 <form method="post" action="/cidade/update">
     <input type="hidden" name="id" value="@ViewBag.Cidade.Id" />
 
-    <label class="font-weight-bold" for="campo-nome">Nome da Cidade</label>
-    <input type="text" name="nome" class="form-control border-info" id="campo-nome" value="@ViewBag.Cidade.Nome" />
+    <label class="font-weight-bold" for="campo-nome">Nome da Cidade<a class="text-danger">*</a></label>
+    <input type="text" name="nome" class="form-control border-info" id="campo-nome" value="@ViewBag.Cidade.Nome" required=""/>
 
-    <label class="font-weight-bold" form="campo-estado">Estado</label>
+    <label class="font-weight-bold" form="campo-estado">Estado<a class="text-danger">*</a></label>
     <select class="form-control border-info" name="idEstado">
         <option disabled="disabled" selected="selected">Selecione um estado</option>
         @foreach (Model.Estado estado in ViewBag.Estados)

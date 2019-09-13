@@ -1,0 +1,64 @@
+﻿@charset "UTF-8";
+.content {
+    margin: 30px;
+}
+
+.botao01 {
+    background: -webkit-linear-gradient(bottom, #E0E0E0, #F9F9F9 70%);
+    background: -moz-linear-gradient(bottom, #E0E0E0, #F9F9F9 70%);
+    background: -o-linear-gradient(bottom, #E0E0E0, #F9F9F9 70%);
+    /*background: -ms-linear-gradient(bottom, #E0E0E0, #F9F9F9 70%);*/
+    background: linear-gradient(bottom, #E0E0E0, #F9F9F9 70%);
+    border: 1px solid #CCCCCE;
+    border-radius: 3px;
+    box-shadow: 0 3px 0 rgba(0, 0, 0, .3), 0 2px 7px rgba(0, 0, 0, 0.2);
+    color: #616165;
+    display: block;
+    font-family: "Trebuchet MS";
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 25px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0 #FFF;
+    padding: 5px 15px;
+    position: relative;
+    width: 80px;
+}
+
+    .botao01:before {
+        border: 1px solid #FFF;
+        border-radius: 3px;
+        box-shadow: inset 0 -2px 12px -4px rgba(70, 70, 70, .2), inset 0 3px 2px -1px rgba(255, 255, 255, 1);
+        content: "";
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+        padding: 5px;
+        position: absolute;
+    }
+
+    .botao01:after {
+        background: rgba(255, 255, 255, .4);
+        border-radius: 2px;
+        content: "";
+        bottom: 15px;
+        left: 0px;
+        right: 0px;
+        top: 0px;
+        position: absolute;
+    }
+
+    .botao01:active {
+        box-shadow: inset 0 0 7px rgba(0, 0, 0, .2);
+        top: 4px;
+    }
+
+        .botao01:active:before {
+            border: none;
+            box-shadow: none;
+        }
+
+

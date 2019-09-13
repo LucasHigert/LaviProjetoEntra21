@@ -164,7 +164,7 @@ namespace View.Controllers
         [HttpGet, Route("apagar")]
         public ActionResult Apagar(int id)
         {
-            if (VerificaLogado() == false)
+            if (VerificaLogado() == true)
             {
                 if (Session["usuarioLogadoPermissao"].ToString() == "4")
                 {
@@ -180,9 +180,23 @@ namespace View.Controllers
             {
                 return Redirect("/login");
             }
-
-            #endregion
-
         }
+        #endregion
+
+        #region PartesCorpo
+       
+        public ActionResult CorpoMasculino()
+        {
+            if (VerificaLogado() == true)
+            {
+                return View();
+            }
+            else
+            {
+                return Redirect("/login");
+            }
+        }
+
+        #endregion
     }
 }

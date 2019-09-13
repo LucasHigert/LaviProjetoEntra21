@@ -100,7 +100,7 @@ namespace View.Controllers
 
         //Aletar
         #region Alterar
-        public ActionResult Update(int id, int idPosto, string nome, int idade, string cpf, string rne, string passaporte, string telefone, string endereco, string cep, bool sexo, double altura, double peso, string pressao)
+        public ActionResult Update(int id, int idPosto, string nome, int idade, string cpf, string rne, string passaporte, string telefone, string endereco, string cep, bool sexo, double altura, double peso, string pressao, double temperatura)
         {
             if (VerificaLogado() == true)
             {
@@ -120,6 +120,7 @@ namespace View.Controllers
                 paciente.Pressao = pressao;
                 paciente.Posto = new Posto();
                 paciente.Posto.Id = idPosto;
+                paciente.Temperatura = temperatura;
 
                 repository.Alterar(paciente);
                 return RedirectToAction("Index");

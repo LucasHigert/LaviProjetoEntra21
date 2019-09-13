@@ -144,6 +144,18 @@
   <data name="Idade" xml:space="preserve">
     <value>l'âge</value>
   </data>
+  <data name="InformacaoCadastro" xml:space="preserve">
+    <value>Répondez aux informations suivantes pour votre dossier médical:</value>
+  </data>
+  <data name="InformacaoParteCorpo" xml:space="preserve">
+    <value>Bonjour, dans ce questionnaire, vous serez évalué en fonction des
+informations dont vous disposez sur vos symptômes. Marquez vos
+symptômes en conséquence et soyez honnête, vos réponses influenceront
+votre traitement.</value>
+  </data>
+  <data name="InformacaoParteCorpo2" xml:space="preserve">
+    <value>Sélectionnez les parties du corps où vous ressentez une sorte de symptôme. Par exemple, si vous avez mal aux yeux, sélectionnez la tête. S'il saigne dans l'oreille, sélectionnez la tête.</value>
+  </data>
   <data name="Instrucoes" xml:space="preserve">
     <value>Dans ce questionnaire, vous serez évalué en fonction des informations dont vous disposez sur vos symptômes. Marquez vos symptômes en conséquence et soyez honnête, vos réponses influenceront votre traitement.</value>
   </data>

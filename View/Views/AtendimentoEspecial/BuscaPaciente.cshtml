@@ -16,25 +16,25 @@
 <body>
 
     <div class="container">
-        <h1 class="h1">Você ja possui cadastro?</h1>
+        <h1 class="h1">@View.Resources.Resource.VocêPossuiCadastro</h1>
         <div>
-            <label>Digite seu nome para pesquisar</label>
-            <input type="text" />
+            <label for="campo-nome" class="font-weight-bold">@View.Resources.Resource.DigiteSeuNomePesquisar</label>
+            <input id="campo-nome" name="nome" class="form-control border-info" type="text" />
 
         </div>
         <div>
-            <table class="table table-hover table-info table-bordered">
+            <table class="table table-hover table-info table-bordered mt-20">
                 <thead class="bg-dark text-white">
                     <tr>
-                        <td>Nome</td>
-                        <td>Ação</td>
+                        <td>@View.Resources.Resource.Nome</td>
+                        <td>@View.Resources.Resource.Acao</td>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>Wallace</td>
                         <td>
-                            <a class="btn btn-primary btn-sm text-white"> Este sou eu</a>
+                            <a class="btn btn-primary btn-sm text-white">@View.Resources.Resource.EsteSouEu</a>
                         </td>
                     </tr>
                 </tbody>
@@ -43,7 +43,7 @@
 
 
 
-        <a class="btn btn-primary text-white">Não, não tenho</a>
+        <a href="/atendimentoespecial/cadastropacienteespecial" class="btn btn-primary text-white">@View.Resources.Resource.NaoTenho</a>
     </div>
 
     <script src="~/Scripts/Tema/global/vendor/bootstrap/bootstrap.min.js"></script>

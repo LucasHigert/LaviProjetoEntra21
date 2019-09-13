@@ -3,15 +3,15 @@
     ViewBag.Title = "Cadastro";
 }
 
-<h2 class="display-4">Cadastre de Cidade</h2>
+<h2 class="h2">Cadastre de Cidade</h2>
 
 <form action="/cidade/inserir" method="post">
     <div>
-        <label class="font-weight-bold" for="campo-nome">Nome da Cidade</label>
+        <label class="font-weight-bold" for="campo-nome">Nome da Cidade<a class="text-danger">*</a></label>
         <input class="form-control border-info" type="text" name="nome" id="campo-nome" required="" />
     </div>
 
-    <label class="font-weight-bold" for="campo-estado">Estado</label>
+    <label class="font-weight-bold" for="campo-estado">Estado<a class="text-danger">*</a></label>
     <select name="idEstado" id="campo-estado" required="" class="form-control border-info">
         <option selected="" disabled="disabled">Selecione um estado</option>
         @foreach (Model.Estado Estado in ViewBag.Estados)

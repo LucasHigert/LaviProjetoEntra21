@@ -2,7 +2,7 @@
 @{
     ViewBag.Title = "Alterar";
 }
-<h2 class="display-4">Alterando Funcionario '@ViewBag.Funcionario.Nome'</h2>
+<h2 class="h2">Alterando Funcionario '@ViewBag.Funcionario.Nome'</h2>
 
 <form action="/funcionario/update" method="post">
     <input type="text" hidden="hidden" value="@ViewBag.Funcionario.Id" name="Id" />

@@ -2,34 +2,36 @@
 @{
     ViewBag.Title = "Index";
 }
-<h2 class="display-4">Adicionar Atendimento</h2>
+<h2 class="h2">Adicionar Atendimento</h2>
 <form action="/atendimento/inserir" method="post">
     <!--Esta div contera o atendente e o medico, quando o atendente abrir nao tera a opção medico-->
     <!--Quando o medico abrir nao tera o atendente-->
     <div class="row">
-        <div class="col-10">
-            <label for="campo-paciente" class="font-weight-bold">Paciente</label>
+        <div class="col-12">
+            <a href="/paciente/cadastro" class="btn btn-primary float-right mt-25"><i class="fa fa-plus"></i> Adicionar Paciente</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <label for="campo-paciente" class="font-weight-bold">Paciente<a class="text-danger">*</a></label>
             <select name="idPaciente" id="campo-paciente" class="form-control border-info">
                 <option selected="selected" disabled="disabled">Selecione um paciente</option>
                 @foreach (Model.Paciente paciente in ViewBag.Pacientes)
                 {
-                <option value="@paciente.Id">@paciente.Nome</option>
+                    <option value="@paciente.Id">@paciente.Nome</option>
                 }
             </select>
-        </div>
-        <div class="col-2">
-            <a href="/paciente/cadastro" class="btn btn-primary mt-25"><i class="fa fa-plus"></i> Adicionar Paciente</a>
         </div>
     </div>
 
     <div class="row">
         <div class="col-6">
-            <label class="font-weight-bold" for="campo-data">Data</label>
+            <label class="font-weight-bold" for="campo-data">Data<a class="text-danger">*</a></label>
             <input type="date" name="DataAtendimento" id="campo-data" class="form-control  border-info" />
         </div>
         <div class="col-6">
             <div>
-                <label class="font-weight-bold" for="campo-prioridade">Prioridade</label>
+                <label class="font-weight-bold" for="campo-prioridade">Prioridade<a class="text-danger">*</a></label>
                 <select name="Prioridade" id="campo-prioridade" class="form-control border-info">
                     <option selected="selected" disabled="disabled">Selecione a prioridade</option>
                     <option value="3">Alto</option>
@@ -68,6 +70,7 @@
     </div>
 
     <button class="btn btn-success float-right mt-20" type="submit"><i class="fa fa-save"></i> Salvar</button>
+    <a class="btn btn-secondary mt-20" href="/atendimentoespecial"><i class="fa fa-language"></i> Atendimento Especial</a>
 
 </form>
 

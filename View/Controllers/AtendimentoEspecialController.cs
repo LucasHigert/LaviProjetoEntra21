@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Model;
+using Repository.Repository;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -26,6 +28,8 @@ namespace View.Controllers
 
         #endregion
 
+
+        #region Mudança de Lingua
         //Método que irá mudar a lingua do sistema
         public void Change(String lang)
         {
@@ -39,7 +43,9 @@ namespace View.Controllers
             }
 
         }
+        #endregion
 
+        #region Index e Repository
         public ActionResult Index()
         {
             if (VerificaLogado() == true)
@@ -52,6 +58,10 @@ namespace View.Controllers
                 return Redirect("/login");
             }
         }
+
+        private PacienteRepository pacienteRepository = new PacienteRepository();
+        #endregion
+
 
         public ActionResult InstrucoesEspecial(string lang)
         {
@@ -68,7 +78,21 @@ namespace View.Controllers
 
         }
 
-        public ActionResult ParteCorpoEspecial()
+        public ActionResult ParteCorpoEspecial(string idPaciente)
+        {
+            if (VerificaLogado() == true)
+            {
+                ViewBag.Paciente = pacienteRepository.ObterPeloId(Convert.ToInt32(idPaciente));
+                return View();
+            }
+            else
+            {
+                return Redirect("/login");
+            }
+        }
+
+        #region Paciente
+        public ActionResult BuscaPaciente()
         {
             if (VerificaLogado() == true)
             {
@@ -79,5 +103,37 @@ namespace View.Controllers
                 return Redirect("/login");
             }
         }
+
+        public ActionResult CadastroPacienteEspecial()
+        {
+            if (VerificaLogado() == true)
+            {
+                return View();
+            }
+            else
+            {
+                return Redirect("/login");
+            }
+        }
+
+        public ActionResult InserirPaciente(Paciente paciente)
+        {
+            if (VerificaLogado() == true)
+            {
+                FuncionarioRepository funcionarioRepository = new FuncionarioRepository();
+                Funcionario funcionario = funcionarioRepository.ObterPeloId(Convert.ToInt32(Session["usuarioLogadoId"]));
+                paciente.IdPosto = funcionario.IdPosto;
+                paciente.RegistroAtivo = true;
+                int id = pacienteRepository.Inserir(paciente);
+                return Redirect("/atendimentoespecial/ParteCorpoEspecial?idPaciente="+paciente.Id);
+            }
+            else
+            {
+                return Redirect("/login");
+
+            }
+        }
+        #endregion
+
     }
 }

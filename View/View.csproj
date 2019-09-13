@@ -102,14 +102,14 @@
     </Content>
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
-    <Content Include="Content\Imagens\CardsTelaInicial\114740112-city-hospital-modern-building-vector-flat-illustration-clinic-medical-center-ambulance-car-and-helic.jpg" />
     <Content Include="Content\Imagens\CardsTelaInicial\5caracteristicasbomfuncionarioexemplar.jpg" />
     <Content Include="Content\Imagens\CardsTelaInicial\atendimento.jpg" />
     <Content Include="Content\Imagens\CardsTelaInicial\cultura-1050x600.jpg" />
-    <Content Include="Content\Imagens\CardsTelaInicial\depositphotos_63546445-stock-photo-organ-donation.jpg" />
+    <Content Include="Content\Imagens\CardsTelaInicial\customer-at-reception-concept-in-flat-vector-8959632.jpg" />
+    <Content Include="Content\Imagens\CardsTelaInicial\encaminhamento.png" />
     <Content Include="Content\Imagens\CardsTelaInicial\gripa.jpg" />
-    <Content Include="Content\Imagens\CardsTelaInicial\pacientes-em-medicos-sala-de-espera-no-hospital_53562-2402.jpg" />
-    <Content Include="Content\Imagens\CardsTelaInicial\preview_73810.jpg" />
+    <Content Include="Content\Imagens\CardsTelaInicial\parte do corpo.jpg" />
+    <Content Include="Content\Imagens\CardsTelaInicial\postos.jpg" />
     <Content Include="Content\Imagens\CardsTelaInicial\vector-cartoon-illustration-banner-fundo-urbano-com-modernos-edificios-da-cidade-grande_1441-586.jpg" />
     <Content Include="Content\Imagens\Corpos\parte corpo humano.png" />
     <Content Include="Content\Imagens\icones\favicon %281%29.ico" />
@@ -5702,7 +5702,8 @@
     <Content Include="Views\AtendimentoEspecial\Index.cshtml" />
     <Content Include="Views\AtendimentoEspecial\ParteCorpoEspecial.cshtml" />
     <Content Include="Views\AtendimentoEspecial\InstrucoesEspecial.cshtml" />
-    <Content Include="Views\ParteCorpo\CorpoMasculino.cshtml" />
+    <Content Include="Views\AtendimentoEspecial\CadastroPacienteEspecial.cshtml" />
+    <Content Include="Views\AtendimentoEspecial\BuscaPaciente.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

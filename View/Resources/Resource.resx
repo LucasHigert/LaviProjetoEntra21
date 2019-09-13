@@ -117,13 +117,82 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Acao" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Altura" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CEP" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Cpf" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DigiteSeuNomePesquisar" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Endereço" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EsteSouEu" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Feminino" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Idade" xml:space="preserve">
+    <value />
+  </data>
+  <data name="InformacaoCadastro" xml:space="preserve">
+    <value />
+  </data>
+  <data name="InformacaoParteCorpo2" xml:space="preserve">
+    <value />
+  </data>
   <data name="Instrucoes" xml:space="preserve">
     <value>Neste questionário você será avaliado de acordo com as informações colocadas por você com relação aos seus sintomas. Marque de acordo seus sintomas e seja sincero, pois suas respostas influenciarão no seu tratamento.</value>
+  </data>
+  <data name="Masculino" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NaoTenho" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Nome" xml:space="preserve">
+    <value />
   </data>
   <data name="Ola" xml:space="preserve">
     <value />
   </data>
+  <data name="Passaporte" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Peso" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Pressao" xml:space="preserve">
+    <value />
+  </data>
   <data name="Proximo" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Rne" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SeusDados" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Sexo" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Telefone" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Temperatura" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VocêPossuiCadastro" xml:space="preserve">
     <value />
   </data>
 </root>

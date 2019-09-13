@@ -117,13 +117,88 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Acao" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="Altura" xml:space="preserve">
+    <value>Hauteur</value>
+  </data>
+  <data name="CEP" xml:space="preserve">
+    <value>CEP</value>
+  </data>
+  <data name="Cpf" xml:space="preserve">
+    <value>CPF</value>
+  </data>
+  <data name="DigiteSeuNomePesquisar" xml:space="preserve">
+    <value>Entrez votre nom pour la recherche</value>
+  </data>
+  <data name="Endereço" xml:space="preserve">
+    <value>Adresse</value>
+  </data>
+  <data name="EsteSouEu" xml:space="preserve">
+    <value>C'est moi</value>
+  </data>
+  <data name="Feminino" xml:space="preserve">
+    <value>Femme</value>
+  </data>
+  <data name="Idade" xml:space="preserve">
+    <value>l'âge</value>
+  </data>
+  <data name="InformacaoCadastro" xml:space="preserve">
+    <value>Répondez aux informations suivantes pour votre dossier médical:</value>
+  </data>
+  <data name="InformacaoParteCorpo" xml:space="preserve">
+    <value>Bonjour, dans ce questionnaire, vous serez évalué en fonction des
+informations dont vous disposez sur vos symptômes. Marquez vos
+symptômes en conséquence et soyez honnête, vos réponses influenceront
+votre traitement.</value>
+  </data>
+  <data name="InformacaoParteCorpo2" xml:space="preserve">
+    <value>Sélectionnez les parties du corps où vous ressentez une sorte de symptôme. Par exemple, si vous avez mal aux yeux, sélectionnez la tête. S'il saigne dans l'oreille, sélectionnez la tête.</value>
+  </data>
   <data name="Instrucoes" xml:space="preserve">
     <value>Dans ce questionnaire, vous serez évalué en fonction des informations dont vous disposez sur vos symptômes. Marquez vos symptômes en conséquence et soyez honnête, vos réponses influenceront votre traitement.</value>
+  </data>
+  <data name="Masculino" xml:space="preserve">
+    <value>Mâle</value>
+  </data>
+  <data name="NaoTenho" xml:space="preserve">
+    <value>Non, je n'ai pas</value>
+  </data>
+  <data name="Nome" xml:space="preserve">
+    <value>Prénom</value>
   </data>
   <data name="Ola" xml:space="preserve">
     <value>Bonjour</value>
   </data>
+  <data name="Passaporte" xml:space="preserve">
+    <value>Passeport</value>
+  </data>
+  <data name="Peso" xml:space="preserve">
+    <value>Poids</value>
+  </data>
+  <data name="Pressao" xml:space="preserve">
+    <value>La pression</value>
+  </data>
   <data name="Proximo" xml:space="preserve">
     <value>Suivant</value>
+  </data>
+  <data name="Rne" xml:space="preserve">
+    <value>RNE</value>
+  </data>
+  <data name="SeusDados" xml:space="preserve">
+    <value>Vos données</value>
+  </data>
+  <data name="Sexo" xml:space="preserve">
+    <value>Le sexe</value>
+  </data>
+  <data name="Telefone" xml:space="preserve">
+    <value>Téléphone</value>
+  </data>
+  <data name="Temperatura" xml:space="preserve">
+    <value>Température</value>
+  </data>
+  <data name="VocêPossuiCadastro" xml:space="preserve">
+    <value>Avez-vous déjà une inscription?</value>
   </data>
 </root>

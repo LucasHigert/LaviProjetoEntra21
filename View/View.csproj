@@ -117,6 +117,7 @@
     <Content Include="Content\Imagens\icones\favicon.ico" />
     <Content Include="Content\Imagens\Logo Lavi .png" />
     <Content Include="Content\Imagens\Logo Lavi Preto.png" />
+    <Content Include="Content\Imagens\Logo Lavi SideBar.png" />
     <Content Include="Content\replaces.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />

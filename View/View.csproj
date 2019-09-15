@@ -150,6 +150,7 @@
     <Content Include="Scripts\jquery-3.0.0.slim.js" />
     <Content Include="Scripts\jquery-3.0.0.slim.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\Paciente\PacienteSript.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
@@ -5699,12 +5700,13 @@
     <Content Include="Views\Funcionario\Alterar.cshtml" />
     <Content Include="Views\Funcionario\Cadastrar.cshtml" />
     <Content Include="Views\Login\SemPermissao.cshtml" />
-    <Content Include="Views\Instrucoes\InstrucaoHaitiano.cshtml" />
     <Content Include="Views\AtendimentoEspecial\Index.cshtml" />
     <Content Include="Views\AtendimentoEspecial\ParteCorpoEspecial.cshtml" />
     <Content Include="Views\AtendimentoEspecial\InstrucoesEspecial.cshtml" />
     <Content Include="Views\AtendimentoEspecial\CadastroPacienteEspecial.cshtml" />
     <Content Include="Views\AtendimentoEspecial\BuscaPaciente.cshtml" />
+    <Content Include="Views\Encaminhamento\Escolha.cshtml" />
+    <Content Include="Views\Instrucoes\Imigrante.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

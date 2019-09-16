@@ -62,6 +62,14 @@ namespace View.Controllers
         private PacienteRepository pacienteRepository = new PacienteRepository();
         #endregion
 
+        public JsonResult ObterPeloNome(string nome)
+        {
+            PacienteRepository pacienteRepository = new PacienteRepository();
+            var pessoas = pacienteRepository.ObterPeloNome(nome);
+            var result = new { data = pessoas };
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+
 
         public ActionResult InstrucoesEspecial(string lang)
         {
@@ -124,7 +132,7 @@ namespace View.Controllers
                 Funcionario funcionario = funcionarioRepository.ObterPeloId(Convert.ToInt32(Session["usuarioLogadoId"]));
                 paciente.IdPosto = funcionario.IdPosto;
                 paciente.RegistroAtivo = true;
-                int id = pacienteRepository.Inserir(paciente);
+                pacienteRepository.Inserir(paciente);
                 return Redirect("/atendimentoespecial/ParteCorpoEspecial?idPaciente="+paciente.Id);
             }
             else

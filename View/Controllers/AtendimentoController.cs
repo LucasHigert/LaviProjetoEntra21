@@ -64,6 +64,13 @@ namespace View.Controllers
             }
         }
 
+        #region
+        public ActionResult Escolha()
+        {
+            return View();
+
+        }
+        #endregion
         //Inserir
         #region
         public ActionResult Cadastro()

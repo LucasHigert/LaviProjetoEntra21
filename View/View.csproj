@@ -102,6 +102,9 @@
     </Content>
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\Imagens\Bandeiras\Bandeira do Haiti2.png" />
+    <Content Include="Content\Imagens\Bandeiras\BandeiraDaFranca.jpg" />
+    <Content Include="Content\Imagens\Bandeiras\BandeiraDoBrasil2.png" />
     <Content Include="Content\Imagens\CardsTelaInicial\5caracteristicasbomfuncionarioexemplar.jpg" />
     <Content Include="Content\Imagens\CardsTelaInicial\atendimento.jpg" />
     <Content Include="Content\Imagens\CardsTelaInicial\cultura-1050x600.jpg" />
@@ -127,6 +130,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\cidade\cidade.js" />
     <Content Include="Scripts\Corpos\CorpoMasculino.css" />
+    <Content Include="Scripts\Escolha\CardAltura.css" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
     <Content Include="Scripts\esm\popper.js" />
@@ -5707,6 +5711,7 @@
     <Content Include="Views\AtendimentoEspecial\BuscaPaciente.cshtml" />
     <Content Include="Views\Encaminhamento\Escolha.cshtml" />
     <Content Include="Views\Instrucoes\Imigrante.cshtml" />
+    <Content Include="Views\Atendimento\Escolha.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

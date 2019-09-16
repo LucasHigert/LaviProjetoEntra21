@@ -79,8 +79,8 @@ namespace Repository.Repository
 
         public List<Paciente> ObterPeloNome(string nome)
         {
-            return context.Pacientes.Where(x => x.Nome == nome && x.RegistroAtivo == true).ToList();
-
+            List<Paciente> lista = context.Pacientes.ToList();
+            return lista;
         }
 
         public List<Paciente> ObterTodos()

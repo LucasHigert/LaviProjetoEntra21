@@ -62,6 +62,7 @@ namespace View.Controllers
         private PacienteRepository pacienteRepository = new PacienteRepository();
         #endregion
 
+        [HttpGet]
         public JsonResult ObterPeloNome(string nome)
         {
             PacienteRepository pacienteRepository = new PacienteRepository();

@@ -1,33 +1,36 @@
 ﻿$(function () {
-
-    $nome = $("#campo-nome").val();
-
-    $tabelaPaciente = $('#tabela').DataTable({
-            ajax: "/atendimentoespecial/ObterPeloNome?nome="+ $nome,
-            serverSide: true,
-            columns: [
-            {'data': 'id'},
-            {'data': 'Nome'},
+$variavel = 0;
+    
+    function AtualizaTabela($nome){
+    if($variavel == 0){
+        
+    
+        $tabelaPaciente = $('#tabela').DataTable({
+        ajax: "/atendimentoespecial/ObterPeloNome?nome='"+ $nome + "'",
+        method: "GET",
+        serverSide: true,
+        columns: [
+        {'data': 'Nome'},
             {
                 render: function(data,type,row){
-                    return '<button class="btn btn-primary" href="/atendimentoespecial/ParteCorpoEspecial?idPaciente=' + row.Id + '">@View.Resources.Resource.EsteSouEu</button>'
+                    return '<a class="btn btn-primary" href="/atendimentoespecial/ParteCorpoEspecial?idPaciente=' + row.Id + '"><i class="fa fa-user"></i></a>'
 
                 }
             }
 
         ]
 
+  
     });
+    }else{
+        $tabelaPaciente.ajax.reload();
+    }
+}
     
     $("#botao").on("click",function(){
-        $tabelaPaciente.ajax.reload();
+        AtualizaTabela($("#campo-nome").val());
     })
     
-    $("#campo-nome").on("keypress",function(evt){
-        
-        $tabelaPaciente.ajax.reload();
-        
-    });
-    
+  
     
 });

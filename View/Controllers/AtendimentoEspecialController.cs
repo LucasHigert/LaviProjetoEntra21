@@ -116,6 +116,8 @@ namespace View.Controllers
             }
         }
 
+       
+
         public ActionResult InserirPaciente(Paciente paciente)
         {
             if (VerificaLogado() == true)

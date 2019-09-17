@@ -63,7 +63,7 @@ namespace View.Controllers
                 return Redirect("/login");
             }
         }
-
+        //Escolher o tipo de atendimento
         #region
         public ActionResult Escolha()
         {

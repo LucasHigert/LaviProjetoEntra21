@@ -123,6 +123,9 @@
   <data name="Altura" xml:space="preserve">
     <value />
   </data>
+  <data name="Cancelar" xml:space="preserve">
+    <value />
+  </data>
   <data name="CEP" xml:space="preserve">
     <value />
   </data>
@@ -184,6 +187,9 @@
     <value />
   </data>
   <data name="Sexo" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Sintoma" xml:space="preserve">
     <value />
   </data>
   <data name="Telefone" xml:space="preserve">

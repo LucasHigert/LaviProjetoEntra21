@@ -81,6 +81,15 @@ namespace View.Resources {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a .
         /// </summary>
+        public static string Cancelar {
+            get {
+                return ResourceManager.GetString("Cancelar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .
+        /// </summary>
         public static string CEP {
             get {
                 return ResourceManager.GetString("CEP", resourceCulture);
@@ -264,6 +273,15 @@ namespace View.Resources {
         public static string Sexo {
             get {
                 return ResourceManager.GetString("Sexo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .
+        /// </summary>
+        public static string Sintoma {
+            get {
+                return ResourceManager.GetString("Sintoma", resourceCulture);
             }
         }
         

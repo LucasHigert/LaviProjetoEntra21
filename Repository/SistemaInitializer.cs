@@ -299,7 +299,6 @@ namespace Repository
             context.Pacientes.AddRange(paciente);
             #endregion
             
-            
             #region cargos
             var cargo = new List<Cargo>();
             #region CargosAdicionar

@@ -104,7 +104,7 @@
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\Imagens\Atendimento\atendimento.png" />
     <Content Include="Content\Imagens\Atendimento\atendimentoEspecial.png" />
-    <Content Include="Content\Imagens\Bandeiras\Bandeira do Haiti2.png" />
+    <Content Include="Content\Imagens\Bandeiras\bandeira-do-haiti.png" />
     <Content Include="Content\Imagens\Bandeiras\BandeiraDaFranca.jpg" />
     <Content Include="Content\Imagens\Bandeiras\BandeiraDoBrasil2.png" />
     <Content Include="Content\Imagens\CardsTelaInicial\atendimento.jpg" />

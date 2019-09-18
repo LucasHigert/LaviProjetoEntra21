@@ -1,4 +1,7 @@
-﻿
+﻿<head>
+    <link rel="stylesheet" href="~/Content/TesteEncaminhamento.css" />
+</head>
+
 <div id="printThis">
     <div id="farmaciaModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 
@@ -17,7 +20,11 @@
                 <div class="modal-body printSection">
                     <div class="body-message">
                         <h4>Encaminhamento</h4>
-                        <p>Farmacia brow else...</p>
+                        <p>Você deve se dirigir até uma farmácia e comprar os seguintes remédios:</p>
+                        <p>Nome do remédio		Quantidade por dia		Total de dias que deverá usar</p>
+                        <p>
+                            ______________		_______________		_______________________
+                        </p>
                     </div>
                 </div>
 
@@ -32,7 +39,7 @@
     </div>
 </div>
 
-</div>
+
 @section js{
     <script src="~/Content/TesteEncaminhamento.js"></script>
 }

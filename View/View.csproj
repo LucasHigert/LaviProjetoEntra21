@@ -5714,6 +5714,8 @@
     <Content Include="Views\Encaminhamento\Escolha.cshtml" />
     <Content Include="Views\Instrucoes\Imigrante.cshtml" />
     <Content Include="Views\Atendimento\Escolha.cshtml" />
+    <Content Include="Views\Encaminhamento\PostoEncaminhar.cshtml" />
+    <Content Include="Views\Encaminhamento\PostoModal.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

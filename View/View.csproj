@@ -117,6 +117,8 @@
     <Content Include="Content\Imagens\CardsTelaInicial\postos.jpg" />
     <Content Include="Content\Imagens\CardsTelaInicial\vector-cartoon-illustration-banner-fundo-urbano-com-modernos-edificios-da-cidade-grande_1441-586.jpg" />
     <Content Include="Content\Imagens\Corpos\parte corpo humano.png" />
+    <Content Include="Content\Imagens\Encaminhamento\farmácia1.jpg" />
+    <Content Include="Content\Imagens\Encaminhamento\POSTO.jpg" />
     <Content Include="Content\Imagens\icones\favicon %281%29.ico" />
     <Content Include="Content\Imagens\icones\favicon %282%29.ico" />
     <Content Include="Content\Imagens\icones\favicon.ico" />

@@ -54,10 +54,14 @@ namespace View.Controllers
         }
         public ActionResult Escolha()
         {
-            
+
             return View();
         }
 
+        public ActionResult PostoEncaminhar()
+        {
+            return View();
+        }
         //Apagar
         #region Apagar
         public ActionResult Apagar(int id)

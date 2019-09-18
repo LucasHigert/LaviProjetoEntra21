@@ -1,4 +1,6 @@
-﻿
+﻿<head>
+    <link rel="stylesheet" href="~/Scripts/Encaminhamento/ModalPosto.js" />
+</head>
 <div id="printThis2">
     <div id="postoModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 
@@ -10,17 +12,23 @@
                 <!-- Modal Header -->
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="gridSystemModalLabel">Farmácia</h4>
+                    <h4 class="modal-title" id="gridSystemModalLabel">Policlínica</h4>
                 </div>
 
                 <!-- Modal Body -->
                 <div class="modal-body printSection">
-                    <div class="body-message">
-                        <h4>Encaminhamento</h4>
-                        <p>Posto bro else...</p>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="body-message">
+                                <div id="inline">
+                                    Você será direcionado para o endereço: <input type="text"  placeholder="Local"  required="" />De telefone:<input type="text" @*id="campo-local"*@ name="local" placeholder="Local" @*class="form-control border-info" maxlength="100" required=""*@>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
 
+                </div>
+                @*Você será direcionado para um atendimento especializado na Policlínica de CIDADE, ENDEREÇO, TELEFONE.*@
                 <!-- Modal Footer -->
                 <div class="modal-footer">
                     <button class="btn" data-dismiss="modal" aria-hidden="true">Fechar</button>

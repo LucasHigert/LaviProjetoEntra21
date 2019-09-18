@@ -23,12 +23,6 @@ namespace Model
         [Column("nome")]
         public string Nome { get; set; }
 
-        [Column("traducao_criolo")]
-        public string TraducaoCriolo { get; set; }
-
-        [Column("traducao_frances")]
-        public string TraducaoFrances { get; set; }
-
         [Column("registro_ativo")]
         public bool RegistroAtivo { get; set; }
     }

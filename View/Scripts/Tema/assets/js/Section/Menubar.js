@@ -129,10 +129,10 @@
         if (typeof _jquery.default.fn.mmenu !== 'undefined') {
           this.$el.mmenu({
             offCanvas: false,
-            navbars: [{
-              position: 'bottom',
-              content: ["<div class=\"site-menubar-footer\">\n              <a href=\"javascript: void(0);\" class=\"fold-show\" data-placement=\"top\" data-toggle=\"tooltip\" data-original-title=\"Settings\">\n                <span class=\"icon wb-settings\" aria-hidden=\"true\"></span>\n              </a>\n              <a href=\"javascript: void(0);\" data-placement=\"top\" data-toggle=\"tooltip\" data-original-title=\"Lock\">\n                <span class=\"icon wb-eye-close\" aria-hidden=\"true\"></span>\n              </a>\n              <a href=\"javascript: void(0);\" data-placement=\"top\" data-toggle=\"tooltip\" data-original-title=\"Logout\">\n                <span class=\"icon wb-power\" aria-hidden=\"true\"></span>\n              </a>\n            </div>"]
-            }]
+            //navbars: [{
+            //  position: 'bottom',
+            //  content: ["<div class=\"site-menubar-footer\">\n              <a href=\"javascript: void(0);\" class=\"fold-show\" data-placement=\"top\" data-toggle=\"tooltip\" data-original-title=\"Settings\">\n                <span class=\"icon wb-settings\" aria-hidden=\"true\"></span>\n              </a>\n              <a href=\"javascript: void(0);\" data-placement=\"top\" data-toggle=\"tooltip\" data-original-title=\"Lock\">\n                <span class=\"icon wb-eye-close\" aria-hidden=\"true\"></span>\n              </a>\n              <a href=\"javascript: void(0);\" data-placement=\"top\" data-toggle=\"tooltip\" data-original-title=\"Logout\">\n                <span class=\"icon wb-power\" aria-hidden=\"true\"></span>\n              </a>\n            </div>"]
+            //}]
           });
         }
       }

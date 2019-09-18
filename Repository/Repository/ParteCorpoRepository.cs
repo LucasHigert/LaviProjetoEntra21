@@ -27,8 +27,8 @@ namespace Repository.Repository
             }
 
             parteCorpoAnterior.Nome = parteCorpo.Nome;
-            parteCorpoAnterior.TraducaoCriolo = parteCorpo.TraducaoCriolo;
-            parteCorpoAnterior.TraducaoFrances = parteCorpo.TraducaoFrances;
+            //parteCorpoAnterior.TraducaoCriolo = parteCorpo.TraducaoCriolo;
+            //parteCorpoAnterior.TraducaoFrances = parteCorpo.TraducaoFrances;
             int quantidadeAfetada = context.SaveChanges();
             return quantidadeAfetada == 1;
         }

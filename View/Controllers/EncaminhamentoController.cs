@@ -62,6 +62,14 @@ namespace View.Controllers
         {
             return View();
         }
+        public ActionResult FarmaciaEncaminhar()
+        {
+            return View();
+        }
+        public ActionResult HospitalEncaminhar()
+        {
+            return View();
+        }
         //Apagar
         #region Apagar
         public ActionResult Apagar(int id)

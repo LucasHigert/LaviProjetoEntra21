@@ -17,8 +17,10 @@
                 <h5 class="card-title">Farmácia</h5>
                 <p class="card-text">Aqui você irá encaminhar o paciente para uma farmácia, incluir medicamentos, e designar demais atividades.</p>
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalFarmacia">
-                    Encaminhar
+                <button class="btn btn-primary float-right mb-2"
+                        data-toggle="modal"
+                        data-target="#farmaciaModal">
+                    Ecaminhar
                 </button>
 
                 <!-- Modal -->
@@ -64,7 +66,9 @@
                 <h5 class="card-title">Policlínica</h5>
                 <p class="card-text">Aqui você irá encaminhar para uma policlínica que contenha os recursos necessários para atende-lo.</p>
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalPoliclinica">
+                <button class="btn btn-primary float-right mb-2"
+                        data-toggle="modal"
+                        data-target="#postoModal">
                     Encaminhar
                 </button>
 
@@ -111,7 +115,9 @@
                 <p class="card-text">Aqui você irá encaminhar para um Hospital, e enviar uma breve descrição sobre a necessidade do paciente.</p>
 
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalHospital">
+                <button class="btn btn-primary float-right mb-2"
+                        data-toggle="modal"
+                        data-target="#hospitalModal">
                     Encaminhar
                 </button>
 
@@ -154,4 +160,6 @@
     <script src="~/Content/TesteEncaminhamento.js"></script>
 }
 
-@RenderPage("PostoModal.cshtml")
+@RenderPage("PostoEncaminhar.cshtml")
+@RenderPage("FarmaciaEncaminhar.cshtml")
+@RenderPage("HospitalEncaminhar.cshtml")

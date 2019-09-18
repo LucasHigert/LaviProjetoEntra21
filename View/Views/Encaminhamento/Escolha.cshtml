@@ -24,7 +24,9 @@
             <div class="card-body">
                 <h5 class="card-title">Policlínica</h5>
                 <p class="card-text">Aqui você irá encaminhar para uma policlínica que contenha os recursos necessários para atende-lo.</p>
-                <a href="/posto/cadastrar" class="btn btn-primary mt-4">Encaminhar</a>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#farmaciaModal">
+                    Large modal
+                </button>
             </div>
         </div>
 
@@ -107,3 +109,5 @@
 @section js{
     <script src="~/Content/TesteEncaminhamento.js"></script>
 }
+
+@RenderPage("PostoModal.cshtml")

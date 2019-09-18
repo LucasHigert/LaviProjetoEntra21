@@ -11,24 +11,30 @@
     <title></title>
     <link rel="stylesheet" href="~/Scripts/Tema/global/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/Scripts/Tema/global/fonts/font-awesome/font-awesome.min.css" />
+    <link rel="stylesheet" href="~/Content/css/select2.min.css" />
 </head>
 
 <body class="container">
-    <input type="text" name="id" data-id="@ViewBag.Paciente.Id" hidden="hidden" />
+    <input type="text" name="idPaciente" data-id="@ViewBag.Paciente.Id" hidden="hidden" />
+    <input type="text" name="idAtendimento" data-id="@ViewBag.Atendimento.Id" hidden="hidden" />
 
     <h2 class="display-4">@View.Resources.Resource.Ola '@ViewBag.Paciente.Nome'</h2>
     <div class="row">
         <div class="col-6">
-            <button data-toggle="#modal-sintoma" data-target="#modal-sintoma" data-id="1"> Cabeça</button>
+
+            <button class="botao" data-toggle="modal" data-target="#modal-sintoma" data-id="1"> Cabeça</button>
+            <button class="botao" data-toggle="modal" data-target="#modal-sintoma" data-id="2"> Cabeça</button>
+
         </div>
         <div class="col-6">
         </div>
 
     </div>
 
-    <script src="~/Scripts/Tema/global/vendor/bootstrap/bootstrap.min.js"></script>
-    <script href="~/Scripts/Tema/global/vendor/jquery/jquery.min.js"></script>
     @RenderPage("ModalSintoma.cshtml")
-
+    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
+    <script src="~/Scripts/Tema/global/vendor/bootstrap/bootstrap.min.js"></script>
+    <script src="~/Scripts/AtendimentoEspecial/ParteCorpoSintoma.js"></script>
+    <script src="~/Scripts/select2.min.js"></script>
 </body>
 </html>

@@ -65,7 +65,7 @@ namespace View.Controllers
         }
 
         //Inserir
-        #region
+        #region Inserir
         public ActionResult Cadastro()
         {
             if (VerificaLogado() == true)

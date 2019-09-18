@@ -207,4 +207,7 @@ votre traitement.</value>
   <data name="VocêPossuiCadastro" xml:space="preserve">
     <value>Avez-vous déjà une inscription?</value>
   </data>
+  <data name="SelecioneSintoma" xml:space="preserve">
+    <value>Sélectionnez un symptôme</value>
+  </data>
 </root>

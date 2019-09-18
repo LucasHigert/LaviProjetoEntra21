@@ -67,9 +67,15 @@ namespace Repository.Repository
             return context.Sintomas.Include("ParteCorpo").FirstOrDefault(x => x.Id == id);
         }
 
+
         public List<Sintoma> ObterTodos()
         {
             return context.Sintomas.Include("partecorpo").Where(x => x.RegistroAtivo == true).ToList();
+        }
+
+        public List<Sintoma> ObterTodosPeloCorpo(int id)
+        {
+            return context.Sintomas.Where(x => x.IdParteCorpo == id && x.RegistroAtivo == true).ToList();
         }
     }
 }

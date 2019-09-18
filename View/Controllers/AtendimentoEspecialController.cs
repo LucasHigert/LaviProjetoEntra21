@@ -87,6 +87,7 @@ namespace View.Controllers
 
         }
 
+        #region Parte Corpo
         public ActionResult ParteCorpoEspecial(string idPaciente)
         {
             if (VerificaLogado() == true)
@@ -99,6 +100,32 @@ namespace View.Controllers
                 return Redirect("/login");
             }
         }
+
+
+        //Obtem os sintomas para preencher na modal
+        [HttpGet]
+        public JsonResult ObterSintomaParte(int id)
+        {
+            SintomaRepository sintomaRepository = new SintomaRepository();
+            List<Sintoma> ListaSelect = sintomaRepository.ObterTodosPeloCorpo(id);
+            List<object> ListaRetorno = new List<object>();
+            foreach (Sintoma sintoma in ListaSelect)
+            {
+                ListaRetorno.Add( new
+                {
+                    id = sintoma.Id,
+                    text = sintoma.Nome,
+                });
+            }
+            var resultado = new
+            {
+                results = ListaRetorno
+            };
+            
+            return Json(resultado, JsonRequestBehavior.AllowGet);
+        }
+
+        #endregion
 
         #region Paciente
         public ActionResult BuscaPaciente()

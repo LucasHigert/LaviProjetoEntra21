@@ -132,6 +132,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\cidade\cidade.js" />
     <Content Include="Scripts\Corpos\CorpoMasculino.css" />
+    <Content Include="Scripts\Encaminhamento\ModalPosto.js" />
     <Content Include="Scripts\Escolha\CardAltura.css" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />

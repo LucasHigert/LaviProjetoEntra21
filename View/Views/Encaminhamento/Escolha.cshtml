@@ -16,7 +16,43 @@
             <div class="card-body">
                 <h5 class="card-title">Farmácia</h5>
                 <p class="card-text">Aqui você irá encaminhar o paciente para uma farmácia, incluir medicamentos, e designar demais atividades.</p>
-                <a href="/posto/cadastrar" style="margin:0 auto;" class="btn btn-primary mt-4 ">Encaminhar</a>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalFarmacia">
+                    Encaminhar
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="ModalFarmacia" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+
+                    <!-- Modal Content: begins -->
+                    <div class="modal-dialog modal-dialog-scrollable" role="document">
+                        <div class="modal-content">
+
+                            <!-- Modal Header -->
+                            <div id="printThis3">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalScrollableTitle">
+                                        Modal title
+                                    </h5>
+
+                                </div>
+
+                                <!-- Modal Body -->
+                                <div class="modal-body">
+                                    AQUI VAI O TEXTO da farmácia
+                                </div>
+
+                            </div>
+
+                            <!-- Modal Footer -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button id="btnPrint3" type="button" class="btn btn-default">Print</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Button trigger modal -->
             </div>
         </div>
         <div class="card" style="width: 30rem;height: 360px">
@@ -24,9 +60,43 @@
             <div class="card-body">
                 <h5 class="card-title">Policlínica</h5>
                 <p class="card-text">Aqui você irá encaminhar para uma policlínica que contenha os recursos necessários para atende-lo.</p>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#farmaciaModal">
-                    Large modal
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalPoliclinica">
+                    Encaminhar
                 </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="ModalPoliclinica" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+
+                    <!-- Modal Content: begins -->
+                    <div class="modal-dialog modal-dialog-scrollable" role="document">
+                        <div class="modal-content">
+
+                            <!-- Modal Header -->
+                            <div id="printThis2">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalScrollableTitle">
+                                        Modal title
+                                    </h5>
+
+                                </div>
+
+                                <!-- Modal Body -->
+                                <div class="modal-body">
+                                    AQUI VAI O TEXTO da Policlínica
+                                </div>
+
+                            </div>
+
+                            <!-- Modal Footer -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button id="btnPrint2" type="button" class="btn btn-default">Print</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Button trigger modal -->
             </div>
         </div>
 
@@ -36,28 +106,39 @@
             <div class="card-body">
                 <h5 class="card-title">Hospital</h5>
                 <p class="card-text">Aqui você irá encaminhar para um Hospital, e enviar uma breve descrição sobre a necessidade do paciente.</p>
+
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalHospital">
                     Encaminhar
                 </button>
 
                 <!-- Modal -->
-                <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal fade" id="ModalHospital" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+
+                    <!-- Modal Content: begins -->
                     <div class="modal-dialog modal-dialog-scrollable" role="document">
                         <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalScrollableTitle">Modal title</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
+
+                            <!-- Modal Header -->
+                            <div id="printThis">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalScrollableTitle">
+                                        Modal title
+                                    </h5>
+
+                                </div>
+
+                                <!-- Modal Body -->
+                                <div class="modal-body">
+                                    AQUI VAI O TEXTO
+                                </div>
+
                             </div>
-                            <!--TEXTO-->
-                            <div class="modal-body">
-                                AQUI VAI O TEXTO
-                            </div>
+
+                            <!-- Modal Footer -->
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Imprimir</button>
+                                <button id="btnPrint" type="button" class="btn btn-default">Print</button>
                             </div>
                         </div>
                     </div>
@@ -65,46 +146,6 @@
             </div>
         </div>
     </div>
-
-    <div class="wrap">
-        <h1>Bootstrap Modal Example</h1>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#MyModal">
-            Large modal
-        </button>
-    </div>
-    <div id="printThis">
-        <div id="MyModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-
-            <div class="modal-dialog modal-lg">
-
-                <!-- Modal Content: begins -->
-                <div class="modal-content">
-
-                    <!-- Modal Header -->
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="gridSystemModalLabel">Your Headings</h4>
-                    </div>
-
-                    <!-- Modal Body -->
-                    <div class="modal-body printSection">
-                        <div class="body-message">
-                            <h4>Any Heading</h4>
-                            <p>And a paragraph with a full sentence or something else...</p>
-                        </div>
-                    </div>
-
-                    <!-- Modal Footer -->
-                    <div class="modal-footer">
-                        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-                        <button id="btnPrint" type="button" class="btn btn-default">Print</button>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
 </div>
 @section js{
     <script src="~/Content/TesteEncaminhamento.js"></script>

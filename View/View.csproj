@@ -5718,7 +5718,8 @@
     <Content Include="Views\Instrucoes\Imigrante.cshtml" />
     <Content Include="Views\Atendimento\Escolha.cshtml" />
     <Content Include="Views\Encaminhamento\PostoEncaminhar.cshtml" />
-    <Content Include="Views\Encaminhamento\PostoModal.cshtml" />
+    <Content Include="Views\Encaminhamento\FarmaciaEncaminhar.cshtml" />
+    <Content Include="Views\Encaminhamento\HospitalEncaminhar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

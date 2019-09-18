@@ -127,6 +127,8 @@
     <Content Include="Content\Imagens\Logo Lavi Preto.png" />
     <Content Include="Content\Imagens\Logo Lavi SideBar.png" />
     <Content Include="Content\replaces.css" />
+    <Content Include="Content\TesteEncaminhamento.css" />
+    <Content Include="Content\TesteEncaminhamento.js" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -135,6 +137,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\cidade\cidade.js" />
     <Content Include="Scripts\Corpos\CorpoMasculino.css" />
+    <Content Include="Scripts\Encaminhamento\ModalPosto.js" />
     <Content Include="Scripts\Escolha\CardAltura.css" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
@@ -5717,6 +5720,9 @@
     <Content Include="Views\Encaminhamento\Escolha.cshtml" />
     <Content Include="Views\Instrucoes\Imigrante.cshtml" />
     <Content Include="Views\Atendimento\Escolha.cshtml" />
+    <Content Include="Views\Encaminhamento\PostoEncaminhar.cshtml" />
+    <Content Include="Views\Encaminhamento\FarmaciaEncaminhar.cshtml" />
+    <Content Include="Views\Encaminhamento\HospitalEncaminhar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

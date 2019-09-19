@@ -22,9 +22,7 @@ namespace Repository.Repository
             else
             {
                 atendimentoOriginal.IdEncaminhamento = atendimento.IdEncaminhamento;
-                atendimentoOriginal.IdFuncionario = atendimento.IdFuncionario;
                 atendimentoOriginal.IdMedico = atendimento.IdMedico;
-                atendimentoOriginal.DataAtendimento = atendimento.DataAtendimento;
                 atendimentoOriginal.Tratamento = atendimento.Tratamento;
                 atendimentoOriginal.Prioridade = atendimento.Prioridade;
                 atendimentoOriginal.Status = atendimento.Status;

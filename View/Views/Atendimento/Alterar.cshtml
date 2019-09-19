@@ -10,7 +10,7 @@
     <div class="row">
         <div class="col-12">
             <label for="campo-paciente">Paciente</label>
-            <select name="idPaciente" id="campo-paciente" class="form-control border-dark">
+            <select name="idPaciente" id="campo-paciente" disabled class="form-control border-info">
                 @foreach (Model.Paciente paciente in ViewBag.Pacientes)
                 {
                     <option value="@paciente.Id">@paciente.Nome</option>
@@ -23,12 +23,12 @@
     <div class="row">
         <div class="col-6">
             <label for="campo-data">Data</label>
-            <input type="date" name="DataAtendimento" id="campo-data" class="form-control border-dark" />
+            <input type="text" value="@ViewBag.Atendimento.DataAtendimento" disabled name="DataAtendimento" id="campo-data" class="form-control border-info" />
         </div>
         <div class="col-6">
             <div>
                 <label for="campo-prioridade">Prioridade</label>
-                <select name="Prioridade" id="campo-prioridade" class="form-control border-dark">
+                <select name="Prioridade" id="campo-prioridade" class="form-control border-info">
                     <option value="3">Alto</option>
                     <option value="2">Medio</option>
                     <option value="1">Baixo</option>
@@ -37,29 +37,32 @@
             </div>
         </div>
     </div>
-
     <div class="row">
         <div class="col-12">
             <label for="campo-observacao">Observação</label>
-            <textarea class="form-control border-dark" id="campo-observacao" name="observacao" maxlength="150"></textarea>
+            <textarea class="form-control border-info" id="campo-observacao" name="observacao" maxlength="150"></textarea>
         </div>
     </div>
+    @if ((Session["usuarioLogadoPermissao"].ToString() == "3") || (Session["usuarioLogadoPermissao"].ToString() == "4"))
+    {
 
-    <div class="row">
-        <div class="col-12">
-            <label for="campo-tratamento">Tratamento</label>
-            <textarea class="form-control border-dark" id="campo-tratamento" name="tratamento" maxlength="100"></textarea>
+        <div class="row">
+            <div class="col-12">
+                <label for="campo-tratamento">Tratamento</label>
+                <textarea class="form-control border-info" id="campo-tratamento" name="tratamento" maxlength="100"></textarea>
+            </div>
         </div>
-    </div>
 
-    <div class="row">
-        <div class="col-12">
-            <label for="campo-encaminhamento">Encaminhamento</label>
-            <select name="encaminhamento border-dark" id="campo-encaminhamento" class="form-control"></select>
+        <div class="row">
+            <div class="col-12">
+                <label for="campo-encaminhamento">Encaminhamento</label>
+                <select name="encaminhamento border-info" id="campo-encaminhamento" class="form-control"></select>
+            </div>
         </div>
-    </div>
+    }
 
-    <button class="btn btn-success mt-3" type="submit"><i class="fa fa-save"></i>Salvar</button>
+
+    <button class="btn btn-success mt-5" type="submit"><i class="fa fa-save"></i>Salvar</button>
 
 </form>
 

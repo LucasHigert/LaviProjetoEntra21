@@ -6008,6 +6008,7 @@
     <Content Include="Views\AtendimentoEspecial\BuscaPaciente.cshtml" />
     <Content Include="Views\Instrucoes\Imigrante.cshtml" />
     <Content Include="Views\AtendimentoEspecial\ModalSintoma.cshtml" />
+    <Content Include="Views\AtendimentoEspecial\FinalizaCadastro.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

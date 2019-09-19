@@ -77,6 +77,15 @@ namespace View.Controllers
         #endregion
 
         #region Parte Corpo
+
+        [HttpPost]
+        public JsonResult Apagar(int idSintoma,int idAtendimento) {
+            AtendimentoParteCorpoSintomaRepository repository = new AtendimentoParteCorpoSintomaRepository();
+            var resultado = repository.Apagar(idSintoma, idAtendimento);
+            var retorno = new { results = resultado };
+            return Json(retorno, JsonRequestBehavior.AllowGet);
+        }
+
         public ActionResult ParteCorpoEspecial(int idAtendimento)
         {
             if (VerificaLogado() == true)
@@ -89,6 +98,21 @@ namespace View.Controllers
             {
                 return Redirect("/login");
             }
+        }
+
+        [HttpGet]
+        public JsonResult ObterSintomaAtendimento(int idAtendimento)
+        {
+            AtendimentoParteCorpoSintomaRepository repository = new AtendimentoParteCorpoSintomaRepository();
+            List<AtendimentoParteCorpoSintoma> listaRepository = repository.ObterPeloIdAtentimento(idAtendimento);
+            List<object> listaSintoma = new List<object>();
+            for (int i = 0; i < listaRepository.Count; i++)
+            {
+                listaSintoma.Add(new { Nome = listaRepository[i].Sintoma.Nome, id = listaRepository[i].IdSintoma });
+            }
+
+            var result = new { data = listaSintoma };
+            return Json(result, JsonRequestBehavior.AllowGet);
         }
 
         //Obtem os sintomas para preencher na modal
@@ -114,9 +138,18 @@ namespace View.Controllers
             return Json(resultado, JsonRequestBehavior.AllowGet);
         }
 
-        public JsonResult InserirSintoma(int idSintoma)
+        [HttpPost]
+        public JsonResult InserirSintoma(int idAtendimento,int idSintoma,int nivelDor)
         {
-            return null;
+            AtendimentoParteCorpoSintomaRepository repository = new AtendimentoParteCorpoSintomaRepository();
+            AtendimentoParteCorpoSintoma sintoma = new AtendimentoParteCorpoSintoma();
+            sintoma.IdAtendimento = idAtendimento;
+            sintoma.IdSintoma = idSintoma;
+            sintoma.NiverDor = nivelDor;
+            int id = repository.Inserir(sintoma);
+            var resultado = new { id = id };
+            return Json(resultado, JsonRequestBehavior.AllowGet);
+
         }
 
         #endregion
@@ -145,11 +178,12 @@ namespace View.Controllers
                 atendimento.IdFuncionario = Convert.ToInt32(Session["usuarioLogadoId"]);
                 atendimento.IdPaciente = idPaciente;
                 atendimento.DataAtendimento = DateTime.Now;
+                atendimento.Status = 1;
                 FuncionarioRepository funcionarioRepository = new FuncionarioRepository();
                 Funcionario funcionario = funcionarioRepository.ObterPeloId(Convert.ToInt32(Session["usuarioLogadoId"]));
                 atendimento.IdPosto = funcionario.IdPosto;
                 atendimentoRepository.Inserir(atendimento);
-                return RedirectToAction("ParteCorpoEspecial");
+                return RedirectToAction("FinalizaCadastro");
             }
             else
             {
@@ -209,6 +243,10 @@ namespace View.Controllers
             }
         }
 
+        public ActionResult FinalizaCadastro()
+        {
+            return View();
+        }
         #endregion
 
         #endregion

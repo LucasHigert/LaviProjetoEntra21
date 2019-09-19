@@ -109,7 +109,7 @@ $(function () {
                 i18n.translator.add(data);
                 //  Translate away
 
-                $("#farmacia-encaminhar-texto-redirecionar").text(i18n("farmaciaEncaminharTextoRedirecionar"));
+                $("#farmacia-encaminhar").text(i18n("farmaciaEncaminhar"));
             }
         })
     }

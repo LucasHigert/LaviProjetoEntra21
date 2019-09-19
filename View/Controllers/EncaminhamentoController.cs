@@ -54,10 +54,22 @@ namespace View.Controllers
         }
         public ActionResult Escolha()
         {
-            
+
             return View();
         }
 
+        public ActionResult PostoEncaminhar()
+        {
+            return View();
+        }
+        public ActionResult FarmaciaEncaminhar()
+        {
+            return View();
+        }
+        public ActionResult HospitalEncaminhar()
+        {
+            return View();
+        }
         //Apagar
         #region Apagar
         public ActionResult Apagar(int id)

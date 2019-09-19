@@ -1,0 +1,3 @@
+﻿#inline {
+    display: inline;
+}

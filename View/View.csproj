@@ -5726,7 +5726,8 @@
     <Content Include="Views\Encaminhamento\FarmaciaEncaminhar.cshtml" />
     <Content Include="Views\Encaminhamento\HospitalEncaminhar.cshtml" />
     <Content Include="Scripts\Traducao\pt.json" />
-    <Content Include="Scripts\Traducao\en.json" />
+    <Content Include="Scripts\Traducao\fr.json" />
+    <Content Include="Scripts\Traducao\ht.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

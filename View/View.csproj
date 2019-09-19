@@ -161,6 +161,7 @@
     <Content Include="Scripts\jquery-3.0.0.min.js" />
     <Content Include="Scripts\jquery-3.0.0.slim.js" />
     <Content Include="Scripts\jquery-3.0.0.slim.min.js" />
+    <Content Include="Scripts\lib\i18n\i18n.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\Paciente\PacienteSript.js" />
     <Content Include="Scripts\popper-utils.js" />
@@ -4623,6 +4624,7 @@
     <Compile Include="Controllers\EncaminhamentoController.cs" />
     <Compile Include="Controllers\FuncionarioController.cs" />
     <Compile Include="Controllers\InstrucoesController.cs" />
+    <Compile Include="Controllers\LanguageController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PacienteController.cs" />
     <Compile Include="Controllers\ParteCorpoController.cs" />
@@ -5723,6 +5725,8 @@
     <Content Include="Views\Encaminhamento\PostoEncaminhar.cshtml" />
     <Content Include="Views\Encaminhamento\FarmaciaEncaminhar.cshtml" />
     <Content Include="Views\Encaminhamento\HospitalEncaminhar.cshtml" />
+    <Content Include="Scripts\Traducao\pt.json" />
+    <Content Include="Scripts\Traducao\en.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -5744,7 +5748,9 @@
       <LastGenOutput>Resource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\Language\" />
+  </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>

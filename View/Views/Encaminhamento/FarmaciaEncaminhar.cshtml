@@ -19,7 +19,7 @@
                 </div>
                 <div class="col-5 mt-5">
                     <div class="container body-content">
-                        <a  href="/Language/Change?lang=pt-BR">
+                        <a href="/Language/Change?lang=pt-BR">
 
                             <span class="mt-5 flag-icon flag-icon-fr"></span> Francês
                         </a>
@@ -66,18 +66,20 @@
                         </div>
                         <div id="destino">
                         </div>
-                        <div>
-                            <button class="btn-success botao" onclick="duplicarCampos()"> + </button>
-                            <button class="btn-danger botao" onclick="removerCampos(this)"> - </button>
-                        </div>
                     </div>
                 </div>
             </div>
 
             <!-- Modal Footer -->
             <div class="modal-footer">
-                <button class="btn" data-dismiss="modal" aria-hidden="true">Fechar</button>
-                <button id="btnPrint" type="button" class="btn btn-default">Imprimir</button>
+                <div class="col-6">
+                    <button class="btn-success botao" onclick="duplicarCampos()"> + </button>
+                    <button class="btn-danger botao" onclick="removerCampos(this)"> - </button>
+                </div>
+                <div class="col-6">
+                    <button id="btnPrint" type="button" class="btn btn-info float-right">Imprimir</button>
+                    @*<button class="btn float-right" data-dismiss="modal" aria-hidden="true">Fechar</button>*@
+                </div>
             </div>
 
         </div>

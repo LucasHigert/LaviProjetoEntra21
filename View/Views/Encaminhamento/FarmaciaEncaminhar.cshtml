@@ -5,15 +5,32 @@
 
 <div id="farmaciaModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
 
         <!-- Modal Content: begins -->
         <div class="modal-content">
 
             <!-- Modal Header -->
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="gridSystemModalLabel">Farmácia</h4>
+
+                <div class="col-7">
+
+                    <h3 class="modal-title" id="gridSystemModalLabel">Farmácia</h3>
+                </div>
+                <div class="col-5 mt-5">
+                    <div class="container body-content">
+                        <a  href="/Language/Change?lang=pt-BR">
+
+                            <span class="mt-5 flag-icon flag-icon-fr"></span> Francês
+                        </a>
+                        <a href="/Language/Change?lang=en-US">
+
+                            <span class="mt-5 flag-icon flag-icon-ht"></span> Crioulo
+                        </a>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                </div>
+
             </div>
             <div id="printThis">
                 <!-- Modal Body -->
@@ -22,26 +39,34 @@
                         <h4>Encaminhamento</h4>
                         <p>Você deve se dirigir até uma farmácia e comprar os seguintes remédios:</p>
                         <div class="row">
-                            <div class="text-center col-3">
+                            <div class="text-left col-4">
                                 Nome do remédio
                             </div>
-                            <div class="text-right col-4">
+                            <div class="text-left col-2">
                                 Quantidade por dia
                             </div>
-                            <div class="text-center col-5">
+                            <div class="text-left col-3">
                                 Dias que deverá usar
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-4">
-                                <input class="col-12" type="text" />
+                        <div id="origem">
+                            <div class="row">
+                                <div class="col-4">
+                                    <input class="col-12" type="text" />
+                                </div>
+                                <div class="col-2">
+                                    <input class="col-12" type="text" />
+                                </div>
+                                <div class="col-2">
+                                    <input class="col-12" type="number" />
+                                </div>
+                                <div class="col-4">
+                                    <button class="btn-success botao" onclick="duplicarCampos()"> + </button>
+                                    <button class="btn-danger botao" onclick="removerCampos(this)"> - </button>
+                                </div>
                             </div>
-                            <div class="col-4">
-                                <input clas="col-12" type="text" />
-                            </div>
-                            <div class="col-3">
-                                <input class="col-12" type="number" />
-                            </div>
+                        </div>
+                        <div id="destino">
                         </div>
                     </div>
                 </div>

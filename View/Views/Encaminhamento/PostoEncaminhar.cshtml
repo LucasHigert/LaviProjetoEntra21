@@ -11,21 +11,24 @@
 
             <!-- Modal Header -->
             <div class="modal-header">
-                <div class="row">
-                    <div class="col-6">
-                        <div class="container body-content">
-                            <a href="/Language/Change?lang=pt-BR">
 
-                                <span class="flag-icon flag-icon-gb"></span> English
-                            </a>
-                            <a href="/Language/Change?lang=en-US">
+                <div class="col-7">
 
-                                <span class="flag-icon flag-icon-gb"></span> Franch
-                            </a>
-                        </div>
-                    </div>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title" id="gridSystemModalLabel">Policlínica</h4>
+                </div>
+
+                <div class="col-5">
+                    <div class="container body-content">
+                        <a href="/Language/Change?lang=fr-FR">
+
+                            <span class="flag-icon flag-icon-gb"></span> English
+                        </a>
+                        <a href="/Language/Change?lang=fr-HT">
+
+                            <span class="flag-icon flag-icon-gb"></span> Franch
+                        </a>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
                 </div>
             </div>
             <div id="printThis2">
@@ -40,8 +43,9 @@
                         <div class="col-12">
                             <div class="body-message">
                                 <div id="inline">
-                                    Você será direcionado ao endereço: <input type="text" placeholder="Endereço" required="" /> Telefone :<input type="text" @*id="campo-local"*@ placeholder="Número" @*class="form-control border-info" maxlength="100" required=""*@>
-                                </div>
+                                   
+                                                                Você será direcionado ao endereço: <input type="text" placeholder="Endereço" required="" /> Telefone :<input type="text" @*id="campo-local"*@ placeholder="Número" @*class="form-control border-info" maxlength="100" required=""*@>
+                                                            </div>
                             </div>
                         </div>
                     </div>
@@ -54,12 +58,10 @@
                 <button class="btn" data-dismiss="modal" aria-hidden="true">Fechar</button>
                 <button id="btnPrint2" type="button" class="btn btn-default">Imprimir</button>
             </div>
-
         </div>
     </div>
 </div>
 
-</div>
 @section js{
     <script src="~/Content/TesteEncaminhamento.js"></script>
 }

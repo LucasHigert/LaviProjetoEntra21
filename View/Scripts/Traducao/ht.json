@@ -1,6 +1,7 @@
 {
   "values": {
     "policlinica": "Policlínica",
-    "postoEncaminharTextoRedirecionar": "Você será direcionado ao endereço: "
+    "postoEncaminharTextoRedirecionar": "Em crioulo o endereço: ",
+    "postoEncaminharTelefone": "Em crioulo o telefone"
   }
 }

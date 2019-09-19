@@ -13,7 +13,7 @@ $variavel = 0;
         {'data': 'Nome'},
             {
                 render: function(data,type,row){
-                    return '<a class="btn btn-primary" href="/atendimentoespecial/ParteCorpoEspecial?idPaciente=' + row.Id + '"><i class="fa fa-user"></i></a>'
+                    return '<a class="btn btn-primary" href="/atendimentoespecial/InserirAtendimento?idPaciente=' + row.Id + '"><i class="fa fa-user"></i></a>'
 
                 }
             }

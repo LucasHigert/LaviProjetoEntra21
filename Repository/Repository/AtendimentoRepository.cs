@@ -63,7 +63,7 @@ namespace Repository.Repository
 
         public Atendimento ObterPeloId(int id)
         {
-            return context.Atendimentos.Where(x => x.Id == id).FirstOrDefault();
+            return context.Atendimentos.Include("Paciente").Where(x => x.Id == id).FirstOrDefault();
         }
 
 

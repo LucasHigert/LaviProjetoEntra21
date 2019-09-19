@@ -14,7 +14,16 @@
     });
 
     $("#botao-salvar").on("click", function () {
-        
+        $.ajax({
+            url: "http://localhost:53131/pessoa/inserir",
+            method: "post",
+            data: {
+                Nome: $nome,
+                CPF: $cpf
+            },
+            success: function (data) { $("#modal-categoria").modal('hide'); $tabelaPessoa.ajax.reload() },
+            error: function (err) { alert("Erro") }
+        })
 
     })
 })

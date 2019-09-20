@@ -92,6 +92,16 @@ namespace View.Controllers
             {
                 AtendimentoRepository atendimentoRepository = new AtendimentoRepository();
                 ViewBag.Atendimento = atendimentoRepository.ObterPeloId(idAtendimento);
+                PacienteRepository pacienteRepository = new PacienteRepository();
+                Paciente paciente = pacienteRepository.ObterPeloId(idAtendimento);
+                if (paciente.Lingua == 2)
+                {
+                    Change("fr-HT");
+                }
+                else
+                {
+                    Change("fr-FR");
+                }
                 return View();
             }
             else

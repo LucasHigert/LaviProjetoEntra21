@@ -13,7 +13,14 @@
     <link rel="stylesheet" href="~/Scripts/Tema/global/fonts/font-awesome/font-awesome.min.css" />
 </head>
 
-<body class="container">
+<body>
+    <div class="bg-dark d-flex p-3 px-md-4 mb-3">
+        <div class="col-12 text-center">
+            <img src="~/Content/Imagens/Logo Lavi.png" width="50" height="50" />
+
+        </div>
+    </div>
+    <div class="container">
     <div class="pt-100">
         <h1 class="h1">@View.Resources.Resource.SeusDados</h1>
         <p class="lead">@View.Resources.Resource.InformacaoCadastro/</p>
@@ -88,12 +95,13 @@
 
 
 
-        <button type="submit" class="btn btn-success mt-15 float-right"><i class="fa fa-save"></i> @View.Resources.Resource.Proximo</button>
+        <button type="submit" class="btn btn-success mt-15 float-right" style="margin-top: 5px"><i class="fa fa-save"></i> @View.Resources.Resource.Proximo</button>
     </form>
 
 
     <script src="~/Scripts/Tema/global/vendor/bootstrap/bootstrap.min.js"></script>
     <script href="~/Scripts/Tema/global/vendor/jquery/jquery.min.js"></script>
+        </div>
 </body>
 
 </html>

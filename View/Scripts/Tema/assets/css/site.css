@@ -1,6 +1,7 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 .site-navbar {
-  background-color: #3e8ef7; }
+    background-color: #65b58f;
+}
   .site-navbar .navbar-header {
     width: 260px;
     height: inherit;

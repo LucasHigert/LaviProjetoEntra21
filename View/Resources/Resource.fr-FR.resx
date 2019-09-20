@@ -123,6 +123,9 @@
   <data name="Altura" xml:space="preserve">
     <value>Hauteur</value>
   </data>
+  <data name="Cancelar" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
   <data name="CEP" xml:space="preserve">
     <value>CEP</value>
   </data>
@@ -192,6 +195,9 @@ votre traitement.</value>
   <data name="Sexo" xml:space="preserve">
     <value>Le sexe</value>
   </data>
+  <data name="Sintoma" xml:space="preserve">
+    <value>Symptôme</value>
+  </data>
   <data name="Telefone" xml:space="preserve">
     <value>Téléphone</value>
   </data>
@@ -200,5 +206,8 @@ votre traitement.</value>
   </data>
   <data name="VocêPossuiCadastro" xml:space="preserve">
     <value>Avez-vous déjà une inscription?</value>
+  </data>
+  <data name="SelecioneSintoma" xml:space="preserve">
+    <value>Sélectionnez un symptôme</value>
   </data>
 </root>

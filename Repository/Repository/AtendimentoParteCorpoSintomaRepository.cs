@@ -26,15 +26,14 @@ namespace Repository.Repository
             }
 
             atendimentoParteCorpoSintomaAnterior.IdAtendimento = atendimentoParteCorpoSintoma.IdAtendimento;
-            atendimentoParteCorpoSintomaAnterior.IdParteCorpo = atendimentoParteCorpoSintoma.IdParteCorpo;
             atendimentoParteCorpoSintomaAnterior.NiverDor = atendimentoParteCorpoSintoma.NiverDor;
             int quantidadeAfetada = context.SaveChanges();
             return quantidadeAfetada == 1;
         }
 
-        public bool Apagar(int id)
+        public bool Apagar(int idSintoma,int idAtendimento)
         {
-            var atendimentoParteCorpoSintoma = context.AtendimentosPartesCorpoSintomas.FirstOrDefault(x => x.Id == id);
+            var atendimentoParteCorpoSintoma = context.AtendimentosPartesCorpoSintomas.FirstOrDefault(x => x.IdAtendimento == idAtendimento && x.IdSintoma == idSintoma && x.RegistroAtivo == true);
             if (atendimentoParteCorpoSintoma == null)
             {
                 return false;
@@ -53,14 +52,14 @@ namespace Repository.Repository
             return atendimentoParteCorpoSintoma.Id;
         }
 
-        public AtendimentoParteCorpoSintoma ObterPeloIdAtentimento(int id)
+        public List<AtendimentoParteCorpoSintoma> ObterPeloIdAtentimento(int id)
         {
-            return context.AtendimentosPartesCorpoSintomas.Include("Atendimento").FirstOrDefault(x => x.Id == id);
+            return context.AtendimentosPartesCorpoSintomas.Include("Sintoma").Where(x=>x.IdAtendimento == id && x.RegistroAtivo == true).ToList();
         }
 
         public AtendimentoParteCorpoSintoma ObterPeloIdParteCorpo(int id)
         {
-            return context.AtendimentosPartesCorpoSintomas.Include("ParteCorpo").FirstOrDefault(x => x.Id == id);
+            return context.AtendimentosPartesCorpoSintomas.Include("ParteCorpo").FirstOrDefault(x => x.Id == id && x.RegistroAtivo == true);
         }
 
         public List<AtendimentoParteCorpoSintoma> ObterTodos()

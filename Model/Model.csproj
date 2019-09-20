@@ -57,7 +57,6 @@
     <Compile Include="Funcionario.cs" />
     <Compile Include="Paciente.cs" />
     <Compile Include="ParteCorpo.cs" />
-    <Compile Include="ParteCorpoSintoma.cs" />
     <Compile Include="Posto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sintoma.cs" />

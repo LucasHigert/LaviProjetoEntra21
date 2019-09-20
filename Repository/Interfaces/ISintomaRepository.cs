@@ -15,6 +15,8 @@ namespace Repository.Interfaces
 
         List<Sintoma> ObterTodos();
 
+        List<Sintoma> ObterTodosPeloCorpo(int id);
+
         bool Apagar(int id);
 
         Sintoma ObterPeloId(int id);

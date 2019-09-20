@@ -420,44 +420,76 @@ namespace Repository
                 Nome = "Cabeça",
                 RegistroAtivo = true
             });
+
             parteCorpo.Add(new ParteCorpo()
             {
                 Id = 2,
-                Nome = "Braço Esquerdo",
+                Nome = "Rosto",
                 RegistroAtivo = true
             });
+
             parteCorpo.Add(new ParteCorpo()
             {
                 Id = 3,
-                Nome = "Braço Direito",
+                Nome = "Dedo",
                 RegistroAtivo = true
             });
             parteCorpo.Add(new ParteCorpo()
             {
                 Id = 4,
-                Nome = "Tronco",
+                Nome = "Braço",
+                RegistroAtivo = true
+            });
+
+            parteCorpo.Add(new ParteCorpo()
+            {
+                Id = 5,
+                Nome = "Estomago",
                 RegistroAtivo = true
             });
             parteCorpo.Add(new ParteCorpo()
             {
                 Id = 5,
-                Nome = "Região Pélvica",
+                Nome = "Barriga",
+                RegistroAtivo = true
+            });
+
+            parteCorpo.Add(new ParteCorpo()
+            {
+                Id = 5,
+                Nome = "Estomago",
                 RegistroAtivo = true
             });
             parteCorpo.Add(new ParteCorpo()
             {
-                Id = 6,
-                Nome = "Perna Esquerda",
+                Id = 5,
+                Nome = "Perna",
                 RegistroAtivo = true
             });
             parteCorpo.Add(new ParteCorpo()
             {
-                Id = 7,
-                Nome = "Pera Direita",
+                Id = 5,
+                Nome = "Genitalia",
                 RegistroAtivo = true
             });
-            #endregion
+
+            parteCorpo.Add(new ParteCorpo()
+            {
+                Id = 5,
+                Nome = "Pé",
+                RegistroAtivo = true
+            });
+
+            parteCorpo.Add(new ParteCorpo()
+            {
+                Id = 5,
+                Nome = "Dedo Pé",
+                RegistroAtivo = true
+            });
+
             context.PartesCorpo.AddRange(parteCorpo);
+            #endregion
+
             #endregion
 
             base.Seed(context);

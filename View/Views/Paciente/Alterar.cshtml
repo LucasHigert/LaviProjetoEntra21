@@ -19,22 +19,27 @@
         </div>
 
         <div class="col-3">
-            <label for="campo-sexo">Sexo</label>
+            <label class="font-weight-bold" for="campo-sexo">Sexo</label>
             <select id="campo-sexo" name="sexo" class="form-control border-info">
                 @if (ViewBag.Paciente.Sexo == true)
                 {
-                    <option selected>Feminino</option>
+                    <option value="true" selected="selected">Feminino</option>
                     <option value="false">Masculino</option>
+
                 }
                 else
                 {
                     <option value="true">Feminino</option>
-                    <option selected>Masculino</option>
+                    <option value="false" selected="selected">Masculino</option>
+
                 }
             </select>
         </div>
 
-        <div class="col-3">
+       
+    </div>
+    <div class="row">
+        <div class="col-12">
             <label class="font-weight-bold" for="campo-posto">Posto<a class="text-danger">*</a></label>
             <select name="idPosto" id="campo-posto" required="" class="form-control border-info">
                 <option selected="" disabled="disabled">Selecione o posto onde está</option>
@@ -100,33 +105,31 @@
 
     </div>
 
+    @if (Session["usuarioLogadoPermissao"].ToString() != "1")
+    {
+        <div class="row">
+            <div class="col-3">
+                <label class="font-weight-bold" for="campo-pressao">Pressão</label>
+                <input type="text" id="campo-pressao" name="pressao" class="form-control border-info" maxlength="100" value="@ViewBag.Paciente.Pressao" />
+            </div>
 
-    <!-- Campos com informações de identificação (cpf,telefone,rne,...)-->
-    <div class="row">
+            <div class="col-3">
+                <label class="font-weight-bold" for="campo-peso">Peso</label>
+                <input type="text" id="campo-peso" name="peso" class="form-control border-info" value="@ViewBag.Paciente.Peso" />
+            </div>
 
+            <div class="col-3">
+                <label class="font-weight-bold" for="campo-altura">Altura</label>
+                <input type="text" id="campo-altura" name="altura" class="form-control border-info" value="@ViewBag.Paciente.Altura" />
+            </div>
 
+            <div class="col-3">
+                <label class="font-weight-bold" for="campo-altura">Temperatura</label>
+                <input type="text" id="campo-altura" name="temperatura" class="form-control border-info" value="@ViewBag.Paciente.Temperatura" />
+            </div>
 
-        <div class="col-3">
-            <label class="font-weight-bold" for="campo-pressao">Pressão</label>
-            <input type="text" id="campo-pressao" name="pressao" class="form-control border-info" maxlength="100" value="@ViewBag.Paciente.Pressao" />
         </div>
-
-        <div class="col-3">
-            <label class="font-weight-bold" for="campo-peso">Peso</label>
-            <input type="text" id="campo-peso" name="peso" class="form-control border-info" value="@ViewBag.Paciente.Peso" />
-        </div>
-
-        <div class="col-3">
-            <label class="font-weight-bold" for="campo-altura">Altura</label>
-            <input type="text" id="campo-altura" name="altura" class="form-control border-info" value="@ViewBag.Paciente.Altura" />
-        </div>
-
-        <div class="col-3">
-            <label class="font-weight-bold" for="campo-altura">Temperatura</label>
-            <input type="text" id="campo-altura" name="temperatura" class="form-control border-info" value="@ViewBag.Paciente.Temperatura" />
-        </div>
-
-    </div>
+    }
     <button type="submit" class="btn btn-success mt-15"><i class="fa fa-save"></i> Salvar</button>
 </form>
 

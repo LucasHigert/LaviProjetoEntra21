@@ -33,6 +33,22 @@
     });
     //farmácia
 
+    //hospital
+    $("#hospital-encaminhar-frances").on("click", function () {
+        var idioma = "fr";
+        obterTraducao(idioma);
+    });
+
+
+    $("#hospital-encaminhar-criolo").on("click", function () {
+        var idioma = "ht";
+        obterTraducao(idioma);
+    });
+
+    $("#hospitalModal").on('show.bs.modal', function (e) {
+        obterTraducao('pt');
+    });
+    //hospital
     function obterTraducao(idioma) {
         $.ajax({
             url: "/language/index?idioma=" + idioma,
@@ -52,6 +68,8 @@
                 $("#posto-encaminhar-texto-redirecionar").text(i18n("postoEncaminharTextoRedirecionar"));
                 $("#posto-endereco").text(i18n("postoEndereco"));
                 $("#posto-telefone").text(i18n("postoTelefone"));
+
+                $("#hospital-encaminhar-texto-redirecionar").text(i18n("hospitalEncaminharTextoRedirecionar"));
             }
         })
     }

@@ -8,6 +8,8 @@
 
     "postoEncaminharTextoRedirecionar": "Você será direcionado para um atendimento especializado da Policlínica ENDEREÇO, TELEFONE. Lá você deverá apresentar este documento e será atendido por um médico que auxiliará na resolução de seu problema.",
     "postoEndereco": "",
-    "postoTelefone": ""
+    "postoTelefone": "",
+
+    "hospitalEncaminharTextoRedirecionar": "Você deverá se dirigir a um Hospital pois seu caso é mais complexo e precisa de uma atendimento especializado imediato. Para chegar utilize essas informações. "
   }
 }

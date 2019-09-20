@@ -60,6 +60,10 @@
                 i18n.translator.add(data);
                 //  Translate away
 
+                $("#encaminhamento-posto").text(i18n("encaminhamentoPosto"));
+                $("#encaminhamento-hospital").text(i18n("encaminhamentoHospital"));
+                $("#encaminhamento-farmacia").text(i18n("encaminhamentoFarmacia"));
+
                 $("#farmacia-encaminhar").text(i18n("farmaciaEncaminhar"));
                 $("#remedio-encaminhar").text(i18n("remedioEncaminhar"));
                 $("#quantidade-encaminhar").text(i18n("quantidadeEncaminhar"));
@@ -70,6 +74,9 @@
                 $("#posto-telefone").text(i18n("postoTelefone"));
 
                 $("#hospital-encaminhar-texto-redirecionar").text(i18n("hospitalEncaminharTextoRedirecionar"));
+                $("#hospital-fim").text(i18n("hospitalFim"));
+                $("#hospital-endereco").text(i18n("hospitalEndereco"));
+                $("#hospital-nome").text(i18n("hospitalNome"));
             }
         })
     }

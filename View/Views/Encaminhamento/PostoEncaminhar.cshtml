@@ -19,14 +19,12 @@
 
                 <div class="col-5">
                     <div class="container body-content">
-                        <a href="/Language/Change?lang=fr-FR">
-
-                            <span class="flag-icon flag-icon-gb"></span> English
-                        </a>
-                        <a href="/Language/Change?lang=fr-HT">
-
-                            <span class="flag-icon flag-icon-gb"></span> Franch
-                        </a>
+                        <button id="posto-encaminhar-frances">
+                            <span class="mt-5 flag-icon flag-icon-fr"></span> Francês
+                        </button>
+                        <button id="posto-encaminhar-criolo">
+                            <span class="mt-5 flag-icon flag-icon-ht"></span> Crioulo
+                        </button>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     </div>
                 </div>
@@ -36,16 +34,29 @@
                 <div class="modal-body printSection">
                     <div class=" row">
                         <div class="col-12">
-                            <p>Você será direcionado para um atendimento especializado na Policlínica, lá você deverá apresentar este documento e e um médico o auxiliará na resolução de seu problema.</p>
+                            <p>...</p>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-12">
                             <div class="body-message">
-                                <div id="inline">
-                                   
-                                                                Você será direcionado ao endereço: <input type="text" placeholder="Endereço" required="" /> Telefone :<input type="text" @*id="campo-local"*@ placeholder="Número" @*class="form-control border-info" maxlength="100" required=""*@>
-                                                            </div>
+                                <span id="posto-encaminhar-texto-redirecionar" class="text-danger font-weight-bold"></span>
+                                <div class="row">
+
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label>Endereço</label>
+                                            <input type="text" placeholder="Endereço" required="" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <span id="posto-encaminhar-telefone" class="text-danger font-weight-bold"></span>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label>Telefone</label>
+                                            <input type="text" placeholder="Telefone" required="" class="form-control" />
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

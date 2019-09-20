@@ -16,7 +16,7 @@
         <tr>
             <td>Cargos</td>
             <td>Nivel Permissão</td>
-            <td width="200px">Ação</td>
+            <td width="220px">Ação</td>
         </tr>
     </thead>
     <tbody class="font-weight-bold">
@@ -26,8 +26,8 @@
                 <td>@cargo.Nome</td>
                 <td>@cargo.NivelPermissao</td>
                 <td>
-                    <a class="btn btn-info ml-10" href="/cargo/alterar?id=@cargo.Id">Editar</a>
-                    <a class="btn btn-danger ml-10" href="/cargo/apagar?id=@cargo.Id">Apagar</a>
+                    <a class="btn btn-info ml-10" href="/cargo/alterar?id=@cargo.Id"><i class="fa fa-edit"></i> Editar</a>
+                    <a class="btn btn-danger ml-10" href="/cargo/apagar?id=@cargo.Id"><i class="fa fa-trash"></i> Apagar</a>
                 </td>
             </tr>
         }

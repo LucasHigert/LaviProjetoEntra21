@@ -16,7 +16,7 @@
 
                     <div class="col-5">
                         <div class="container body-content">
-                            <button id="hospital-encaminhar-crioulo">
+                            <button id="hospital-encaminhar-criolo">
                                 <span class="mt-5 flag-icon flag-icon-ht"></span> Crioulo
                             </button>
                             <button id="hospital-encaminhar-frances">
@@ -31,58 +31,67 @@
                 <!-- Modal Body -->
                 <div class="modal-body printSection">
                     <div class="body-message">
-                        <h3 class="text-dark">Encaminhamento</h3>
+                        <h3 class="text-dark">Encaminhamento<span id="encaminhamento-hospital"></span></h3>
                         <div class="row">
                             <div class="col-12">
                                 <div class="body-message">
-                                    <span id="hospital-encaminhar-texto-redirecionar" class="font-weight-bold"></span>
                                     <div>
-                                        <div class="col">
-                                            <div class="form-group">
-                                                <label>Cidade</label>
-                                                <input type="text" placeholder="Cidade" required="" class="form-control" />
+                                        <div>
+                                            <span id="hospital-encaminhar-texto-redirecionar" class="font-weight-bold"></span>
+                                        </div>
+                                        <div class="row mt-10">
+                                            <div class="col-6">
+                                                Nome do Hospital
+                                            </div>
+                                            <div class="col-6">
+                                                Endereço do Hospital
                                             </div>
                                         </div>
-
-                                        <div class="col">
-                                            <div class="form-group">
-                                                <label>Endereço</label>
+                                    </div>
+                                    <div>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <span id="hospital-nome" class="text-danger font-weight-bold"></span>
+                                            </div>
+                                            <div class="col-6">
+                                                <span id="hospital-endereco" class="text-danger font-weight-bold"></span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <input type="text" placeholder="Cidade" required="" class="form-control" />
+                                            </div>
+                                            <div class="col-6">
                                                 <input type="text" placeholder="Endereço" required="" class="form-control" />
                                             </div>
                                         </div>
 
-                                        <div class="col">
-                                            <div class="form-group">
-                                                <label>Telefone</label>
+                                        <div class="row">
+                                            <div class="col">
                                                 <input type="text" placeholder="Telefone" required="" class="form-control" />
                                             </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="form-group">
-                                                <label>No setor</label>
+                                            <div class="col">
                                                 <input type="text" placeholder="Setor" required="" class="form-control" />
                                             </div>
                                         </div>
 
-                                        <div class="col">
-                                            <div class="form-group">
-                                                <label>O ônibus</label>
+                                        <div class="row">
+                                            <div class="col">
                                                 <input type="text" placeholder="Ônibus" required="" class="form-control" />
                                             </div>
-                                        </div>
-
-                                        <div class="col">
-                                            <div class="form-group">
-                                                <label>No ponto de ônibus</label>
+                                            <div class="col">
                                                 <input type="text" placeholder="Ponto de ônibus" required="" class="form-control" />
                                             </div>
                                         </div>
                                     </div>
+                                    <div>
+                                        <span id="hospital-fim" class="font-weight-bold"></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-
                     </div>
+
                 </div>
 
                 <!-- Modal Footer -->
@@ -90,10 +99,11 @@
                     <button class="btn" data-dismiss="modal" aria-hidden="true">Fechar</button>
                     <button id="btnPrint3" type="button" class="btn btn-default">Imprimir</button>
                 </div>
-
             </div>
+
         </div>
     </div>
+</div>
 </div>
 
 </div>

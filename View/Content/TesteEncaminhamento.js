@@ -39,6 +39,6 @@ function duplicarCampos() {
 
 function removerCampos(id) {
     var node1 = document.getElementById('destino');
-    node1.removeChild(node1.childNodes[0]);
+    node1.removeChild(node1.lastChild);
 }
  

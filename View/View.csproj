@@ -375,6 +375,7 @@
     <Content Include="Scripts\DataTables\responsive.semanticui.js" />
     <Content Include="Scripts\DataTables\responsive.semanticui.min.js" />
     <Content Include="Scripts\Encaminhamento\ModalPosto.js" />
+    <Content Include="Scripts\Encaminhamento\TraducaoJavaScript.js" />
     <Content Include="Scripts\Escolha\CardAltura.css" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
@@ -6030,7 +6031,8 @@
     <Content Include="Views\Encaminhamento\FarmaciaEncaminhar.cshtml" />
     <Content Include="Views\Encaminhamento\HospitalEncaminhar.cshtml" />
     <Content Include="Scripts\Traducao\pt.json" />
-    <Content Include="Scripts\Traducao\en.json" />
+    <Content Include="Scripts\Traducao\fr.json" />
+    <Content Include="Scripts\Traducao\ht.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

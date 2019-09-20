@@ -39,8 +39,7 @@
                 <div class="modal-body printSection">
                     <div class="body-message">
                         <h4>Encaminhamento</h4>
-                        <p>Você deve se dirigir até uma farmácia e comprar os seguintes remédios:</p>
-                        <span id="farmacia-encaminhar"></span>
+                        <span id="farmacia-encaminhar"><strong></strong></span>
                         <div class="row">
                             <div class="text-left col-5">
                                 Nome do remédio
@@ -76,7 +75,7 @@
                 <div class="col-6">
                     <button class="btn-success botao" onclick="duplicarCampos()"> + </button>
                     <button class="btn-danger botao" onclick="removerCampos(this)"> - </button>
-                </div> 
+                </div>
                 <div class="col-6">
                     <button id="btnPrint" type="button" class="btn btn-info float-right">Imprimir</button>
                     @*<button class="btn float-right" data-dismiss="modal" aria-hidden="true">Fechar</button>*@
@@ -86,7 +85,6 @@
         </div>
     </div>
 </div>
-
 
 @section js{
     <script src="~/Content/TesteEncaminhamento.js"></script>

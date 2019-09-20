@@ -2,8 +2,9 @@
   "values": {
     "policlinica": "Policlínica",
     "postoEncaminharTextoRedirecionar": "Você será direcionado ao endereço: ",
+    "postoEncaminharTelefone": "Pode comunicar-se através do telefone: ",
 
-    "postoEncaminharTelefone": "Pode comunicar-se através do telefone: "
 
+    "farmaciaEncaminhar": "Você deve se dirigir até uma farmácia e comprar os seguintes remédios:"
   }
 }

@@ -1,12 +1,12 @@
-﻿document.getElementById("btnPrint").onclick = function () {
+﻿document.getElementById("#btnPrint").onclick = function () {
     printElement(document.getElementById("printThis"));
 }
 
-document.getElementById("btnPrint2").onclick = function () {
+document.getElementById("#btnPrint2").onclick = function () {
     printElement(document.getElementById("printThis2"));
 }
 
-document.getElementById("btnPrint3").onclick = function () {
+document.getElementById("#btnPrint3").onclick = function () {
     printElement(document.getElementById("printThis3"));
 }
 function printElement(elem) {

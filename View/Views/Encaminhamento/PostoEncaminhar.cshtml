@@ -1,5 +1,5 @@
 ﻿<head>
-    <link rel="stylesheet" href="~/Scripts/Encaminhamento/ModalPosto.js" />
+    <link rel="stylesheet" href="~/Content/TesteEncaminhamento.css" />
 </head>
 
 <div id="postoModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -32,35 +32,38 @@
             <div id="printThis2">
                 <!-- Modal Body -->
                 <div class="modal-body printSection">
-                    <div class=" row">
-                        <div class="col-12">
-                        </div>
-                    </div>
-                    <div class=" row">
-                        <div class="col-6">
-                            <span id="posto-encaminhar-texto-redirecionar" class="text-danger font-weight-bold"></span>
-
-                        </div>
-                        <div class="col-6">
-
-                            <span id="posto-encaminhar-telefone" class="text-danger font-weight-bold"></span>
-                        </div>
-                    </div>
                     <div class="row">
                         <div class="col-12">
                             <div class="body-message">
+                                <h3 class="text-dark">Encaminhamento</h3>
+                                <span id="posto-encaminhar-texto-redirecionar" class="font-weight-bold"></span>
+                                <div class="row mt-10">
+                                    <div class="col-6">
+                                        Endereço
+                                    </div>
+                                    <div class="col-6">
+                                        Telefone
+                                    </div>
+                                </div>
+                                <!--tradução-->
                                 <div class="row">
-
+                                    <div class="col-6">
+                                        <span id="posto-endereco" class="text-danger font-weight-bold"></span>
+                                    </div>
+                                    <div class="col-6">
+                                        <span id="posto-telefone" class="text-danger font-weight-bold"></span>
+                                    </div>
+                                </div>
+                                <!--fim tradução-->
+                                <div class="row">
                                     <div class="col">
                                         <div class="form-group">
-                                            <label>Endereço</label>
-                                            <input type="text" placeholder="Endereço" required="" class="form-control" />
+                                            <input type="text" required="" class="form-control" />
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-group">
-                                            <label>Telefone</label>
-                                            <input type="text" placeholder="Telefone" required="" class="form-control" />
+                                            <input type="text" required="" class="form-control" />
                                         </div>
                                     </div>
                                 </div>

@@ -1,9 +1,13 @@
 {
   "values": {
-    "policlinica": "Policlínica",
-    "postoEncaminharTextoRedirecionar": "Você será direcionado ao endereço: ",
+    "farmaciaEncaminhar": "Você deve se dirigir até uma farmácia e comprar os seguintes remédios:",
+    "remedioEncaminhar": "",
+    "quantidadeEncaminhar": "",
+    "diasEncaminhar": "",
 
-    "postoEncaminharTelefone": "Pode comunicar-se através do telefone: "
 
+    "postoEncaminharTextoRedirecionar": "Você será direcionado para um atendimento especializado da Policlínica ENDEREÇO, TELEFONE. Lá você deverá apresentar este documento e será atendido por um médico que auxiliará na resolução de seu problema.",
+    "postoEndereco": "",
+    "postoTelefone": ""
   }
 }

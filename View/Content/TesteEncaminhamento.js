@@ -82,40 +82,40 @@ $(function () {
 })
 
 ////farmácia
-//$(function () {
+$(function () {
 
 
-//    $("#farmacia-encaminhar-frances").on("click", function () {
-//        var idioma = "fr";
-//        obterTraducao(idioma);
-//    });
+    $("#farmacia-encaminhar-frances").on("click", function () {
+        var idioma = "fr";
+        obterTraducao(idioma);
+    });
 
 
-//    $("#farmacia-encaminhar-criolo").on("click", function () {
-//        var idioma = "pt";
-//        obterTraducao(idioma);
-//    });
+    $("#farmacia-encaminhar-criolo").on("click", function () {
+        var idioma = "ht";
+        obterTraducao(idioma);
+    });
 
-//    $("#postoModal").on('show.bs.modal', function (e) {
-//        obterTraducao('pt');
-//    });
+    $("#postoModal").on('show.bs.modal', function (e) {
+        obterTraducao('pt');
+    });
 
-//    function obterTraducao(idioma) {
-//        $.ajax({
-//            url: "/language/index?idioma=" + idioma,
-//            method: "get",
-//            success: function (data) {
-//                //  Parse it
-//                data = JSON.parse(data);
-//                //  Set the data
-//                i18n.translator.add(data);
-//                //  Translate away
+    function obterTraducao(idioma) {
+        $.ajax({
+            url: "/language/index?idioma=" + idioma,
+            method: "get",
+            success: function (data) {
+                //  Parse it
+                data = JSON.parse(data);
+                //  Set the data
+                i18n.translator.add(data);
+                //  Translate away
 
-//                $("#farmacia-encaminhar").text(i18n("farmaciaEncaminhar"));
-//            }
-//        })
-//    }
+                $("#farmacia-encaminhar").text(i18n("aqui"));
+            }
+        })
+    }
 
 
-//})
+})
 //fimFarmácia

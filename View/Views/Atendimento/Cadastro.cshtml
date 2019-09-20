@@ -4,7 +4,7 @@
 }
 <h2 class="h2">Adicionar Atendimento</h2>
 
-@*<form action="/atendimento/inserir" method="post">
+<form action="/atendimento/inserir" method="post">
     <!--Esta div contera o atendente e o medico, quando o atendente abrir nao tera a opção medico-->
     <!--Quando o medico abrir nao tera o atendente-->
     <div class="row">
@@ -27,11 +27,11 @@
 
     <div class="row">
         <!-- A data n deve conter, pode caracterizar alguma fraude, deve ser automática-->
-        @*<div class="col-6">
+        <div class="col-6">
             <label class="font-weight-bold" for="campo-data">Data<a class="text-danger">*</a></label>
             <input type="date" name="DataAtendimento" id="campo-data" class="form-control  border-info" />
-        </div>*@
-        @*<div class="col-12">
+        </div>
+       <div class="col-12">
             <div>
                 <label class="font-weight-bold" for="campo-prioridade">Prioridade<a class="text-danger">*</a></label>
                 <select name="Prioridade" id="campo-prioridade" class="form-control border-info">
@@ -50,16 +50,16 @@
             <label class="font-weight-bold" for="campo-observacao">Observação</label>
             <input class="form-control border-info" id="campo-observacao" name="observacao" maxlength="150" />
         </div>
-    </div>*@
+    </div>
     <!-- O tratamento não irá no atendimento-->
-    @*<div class="row">
+    <div class="row">
         <div class="col-12">
             <label class="font-weight-bold" for="campo-tratamento">Tratamento</label>
             <input class="form-control border-info" id="campo-tratamento" name="tratamento" maxlength="100" />
         </div>
-    </div>*@
+    </div>
 
-    @*<div class="row">
+    <div class="row">
         <div class="col-12">
             <label class="font-weight-bold" for="campo-encaminhamento">Encaminhamento</label>
             <select name="encaminhamento" id="campo-encaminhamento" class="form-control border-info">
@@ -69,12 +69,12 @@
                 }
             </select>
         </div>
-    </div>*@
+    </div>
 
     <!-- Tela alterada-->
-    @*<button class="btn btn-success float-right mt-20" type="submit"><i class="fa fa-save"></i> Salvar</button>
-    <a class="btn btn-secondary mt-20" href="/atendimentoespecial"><i class="fa fa-language"></i> Atendimento Especial</a>*@*@
+    <button class="btn btn-success float-right mt-20" type="submit"><i class="fa fa-save"></i> Salvar</button>
+    <a class="btn btn-secondary mt-20" href="/atendimentoespecial"><i class="fa fa-language"></i> Atendimento Especial</a>m
 
-@*</form>*@
+</form>
 
 

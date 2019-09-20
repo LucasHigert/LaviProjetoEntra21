@@ -17,57 +17,65 @@
 
 </head>
 
-<body class="container">
-    <input type="text" id="idPaciente" data-id="@ViewBag.Atendimento.Paciente.Id" hidden="hidden" />
-    <input type="text" id="idAtendimento" data-id="@ViewBag.Atendimento.Id" hidden="hidden" />
-
-    <h2 class="display-4">@View.Resources.Resource.Ola '@ViewBag.Atendimento.Paciente.Nome'</h2>
-    <div class="row">
-        <div class="col-6">
-
-            <button class="botao" data-toggle="modal" data-target="#modal-sintoma" data-id="1">Cabeça</button>
-            <button class="botao" data-toggle="modal" data-target="#modal-sintoma" data-id="2"> Rosto</button>
-            <button class="botao" data-toggle="modal" data-target="#modal-sintoma" data-id="3">Dedo </button>
-            <button class="botao" data-toggle="modal" data-target="#modal-sintoma" data-id="4">Braço</button>
-
-            <button class="botao" data-toggle="modal" data-target="#modal-sintoma" data-id="5">Estomago</button>
-            <button class="botao" data-toggle="modal" data-target="#modal-sintoma" data-id="6">Barriga</button>
-
-            <button class="botao" data-toggle="modal" data-target="#modal-sintoma" data-id="7">Perna</button>
-            <button class="botao" data-toggle="modal" data-target="#modal-sintoma" data-id="8">Genitalia</button>
-
-            <button class="botao" data-toggle="modal" data-target="#modal-sintoma" data-id="9">Pé</button>
-            <button class="botao" data-toggle="modal" data-target="#modal-sintoma" data-id="10">Dedo Pé</button>
-
+<body>
+    <div class="bg-dark d-flex p-3 px-md-4 mb-3">
+        <div class="col-12 text-center">
+            <img src="~/Content/Imagens/Logo Lavi.png" width="50" height="50" />
 
         </div>
-        <div class="col-6">
+    </div>
+    <div class="container">
+        <input type="text" id="idPaciente" data-id="@ViewBag.Atendimento.Paciente.Id" hidden="hidden" />
+        <input type="text" id="idAtendimento" data-id="@ViewBag.Atendimento.Id" hidden="hidden" />
+
+        <h2 class="display-4">@View.Resources.Resource.Ola '@ViewBag.Atendimento.Paciente.Nome'</h2>
+        <div class="row">
+            <div class="col-6">
+
+                <button class="botao" data-toggle="modal" data-target="#modal-sintoma" data-id="1">Cabeça</button>
+                <button class="botao" data-toggle="modal" data-target="#modal-sintoma" data-id="2"> Rosto</button>
+                <button class="botao" data-toggle="modal" data-target="#modal-sintoma" data-id="3">Dedo </button>
+                <button class="botao" data-toggle="modal" data-target="#modal-sintoma" data-id="4">Braço</button>
+
+                <button class="botao" data-toggle="modal" data-target="#modal-sintoma" data-id="5">Estomago</button>
+                <button class="botao" data-toggle="modal" data-target="#modal-sintoma" data-id="6">Barriga</button>
+
+                <button class="botao" data-toggle="modal" data-target="#modal-sintoma" data-id="7">Perna</button>
+                <button class="botao" data-toggle="modal" data-target="#modal-sintoma" data-id="8">Genitalia</button>
+
+                <button class="botao" data-toggle="modal" data-target="#modal-sintoma" data-id="9">Pé</button>
+                <button class="botao" data-toggle="modal" data-target="#modal-sintoma" data-id="10">Dedo Pé</button>
+
+
+            </div>
+            <div class="col-6">
+            </div>
+
         </div>
 
+
+        <div class="mt-5">
+            <table class="table table-primary table-bordered text-dark" id="tabela-sintoma">
+                <thead>
+                    <tr class="bg-dark text-white">
+                        <td>@View.Resources.Resource.Sintoma</td>
+                        <td>@View.Resources.Resource.Acao</td>
+                    </tr>
+                </thead>
+
+            </table>
+
+        </div>
+
+
+        <a class="btn btn-primary text-white"><i class="fa fa-arrow-right"></i> @View.Resources.Resource.Proximo</a>
+
+        @RenderPage("ModalSintoma.cshtml")
+        <script src="~/Scripts/jquery-3.0.0.min.js"></script>
+        <script src="~/Scripts/Tema/global/vendor/bootstrap/bootstrap.min.js"></script>
+        <script src="~/Scripts/AtendimentoEspecial/ParteCorpoSintoma.js"></script>
+        <script src="~/Scripts/select2.min.js"></script>
+        <script src="~/Scripts/DataTables/jquery.dataTables.js"></script>
     </div>
-
-
-    <div class="mt-5">
-        <table class="table table-primary table-bordered text-dark" id="tabela-sintoma">
-            <thead>
-                <tr class="bg-dark text-white">
-                    <td>@View.Resources.Resource.Sintoma</td>
-                    <td>@View.Resources.Resource.Acao</td>
-                </tr>
-            </thead>
-
-        </table>
-
-    </div>
-
-
-    <a class="btn btn-primary text-white" href="/atendimentoespecial/finalizacadastro"><i class="fa fa-arrow-right"></i> @View.Resources.Resource.Proximo</a>
-
-    @RenderPage("ModalSintoma.cshtml")
-    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
-    <script src="~/Scripts/Tema/global/vendor/bootstrap/bootstrap.min.js"></script>
-    <script src="~/Scripts/AtendimentoEspecial/ParteCorpoSintoma.js"></script>
-    <script src="~/Scripts/select2.min.js"></script>
-    <script src="~/Scripts/DataTables/jquery.dataTables.js"></script>
 </body>
 </html>

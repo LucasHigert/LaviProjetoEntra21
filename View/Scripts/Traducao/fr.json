@@ -1,8 +1,13 @@
 {
   "values": {
-    "policlinica": "Polyclinic",
-    "postoEncaminharTextoRedirecionar": "You wiil be redirected to this adress: ",
-    "postoEncaminharTelefone": "You redirecionsss",
-    "farmaciaEncaminhar": "aqui"
+    "farmaciaEncaminhar": "Vous devriez aller dans une pharmacie et acheter les médicaments suivants:",
+    "remedioEncaminhar": "Nom du médicament",
+    "quantidadeEncaminhar": "Quantité par jour",
+    "diasEncaminhar": "Nombre total de jours que vous devriez utiliser",
+
+
+    "postoEncaminharTextoRedirecionar": "Vous serez dirigé vers un service spécialisé dans une polyclinique. Là, vous devrez présenter ce document et vous serez assisté par un médecin qui vous aidera à résoudre votre problème.",
+    "postoEndereco": "Adresse",
+    "postoTelefone": "Téléphone"
   }
 }

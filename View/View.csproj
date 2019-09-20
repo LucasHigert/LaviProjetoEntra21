@@ -123,9 +123,9 @@
     <Content Include="Content\Imagens\icones\favicon %281%29.ico" />
     <Content Include="Content\Imagens\icones\favicon %282%29.ico" />
     <Content Include="Content\Imagens\icones\favicon.ico" />
-    <Content Include="Content\Imagens\Logo Lavi .png" />
-    <Content Include="Content\Imagens\Logo Lavi Preto.png" />
-    <Content Include="Content\Imagens\Logo Lavi SideBar.png" />
+    <Content Include="Content\Imagens\icones\Logo Lavi sem nome .png" />
+    <Content Include="Content\Imagens\Logo Lavi  Preto.png" />
+    <Content Include="Content\Imagens\Logo Lavi.png" />
     <Content Include="Content\replaces.css" />
     <Content Include="Content\TesteEncaminhamento.css" />
     <Content Include="Content\TesteEncaminhamento.js" />

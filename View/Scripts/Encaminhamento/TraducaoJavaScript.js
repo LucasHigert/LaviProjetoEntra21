@@ -77,6 +77,10 @@
                 $("#hospital-fim").text(i18n("hospitalFim"));
                 $("#hospital-endereco").text(i18n("hospitalEndereco"));
                 $("#hospital-nome").text(i18n("hospitalNome"));
+                $("#hospital-telefone").text(i18n("hospitalTelefone"));
+                $("#hospital-setor").text(i18n("hospitalSetor"));
+                $("#hospital-onibus").text(i18n("hospitalOnibus"));
+                $("#hospital-terminal").text(i18n("hospitalTerminal"));
             }
         })
     }

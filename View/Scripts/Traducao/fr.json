@@ -17,6 +17,10 @@
     "hospitalEncaminharTextoRedirecionar": "Vous devriez aller à l'hôpital car votre cas est plus complexe et nécessite des soins immédiats de spécialistes. Pour arriver, utilisez cette information.",
     "hospitalFim": "Là, vous devrez présenter ce document et vous serez assisté par un médecin qui vous aidera à résoudre votre problème.",
     "hospitalNome": "Nom de l'hôpital",
-    "hospitalEndereco": "Adresse de l'hôpital"
+    "hospitalEndereco": "Adresse de l'hôpital",
+    "hospitalTelefone": "Téléphone",
+    "hospitalSetor": "Secteur",
+    "hospitalOnibus": "Bus",
+    "hospitalTerminal": "Gare routière"
   }
 }

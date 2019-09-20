@@ -63,7 +63,14 @@ namespace View.Controllers
                 return Redirect("/login");
             }
         }
+        //Escolher o tipo de atendimento
+        #region
+        public ActionResult Escolha()
+        {
+            return View();
 
+        }
+        #endregion
         //Inserir
         #region Inserir
         public ActionResult Cadastro()

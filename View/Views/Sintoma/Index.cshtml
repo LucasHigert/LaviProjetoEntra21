@@ -19,9 +19,7 @@
             <td hidden>Código</td>
             <td>Sintoma</td>
             <td>Parte Corpo</td>
-            <td>Tradução Crioulo</td>
-            <td>Tradução Francês</td>
-            <td width="200px">Ação</td >
+            <td width="220px">Ação</td >
         </tr>
     </thead>
     <tbody class="font-weight-bold">
@@ -31,11 +29,9 @@
                 <td hidden>@sintoma.Id</td>
                 <td>@sintoma.Nome</td>
                 <td>@sintoma.ParteCorpo.Nome</td>
-                <td>@sintoma.TraducaoCriolo</td>
-                <td>@sintoma.TraducaoFrances</td>
                 <td>
-                    <a class="btn btn-primary ml-10" href="/sintoma/alterar?id=@sintoma.Id">Editar</a>
-                    <a class="btn btn-danger ml-10" href="/sintoma/apagar?id=@sintoma.Id">Apagar</a>
+                    <a class="btn btn-info ml-10" href="/sintoma/alterar?id=@sintoma.Id"><i class="fa fa-edit"></i> Editar</a>
+                    <a class="btn btn-danger ml-10" href="/sintoma/apagar?id=@sintoma.Id"><i class="fa fa-trash"></i> Apagar</a>
                 </td>
             </tr>
         }

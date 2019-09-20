@@ -7,7 +7,7 @@
         <h2 class="h2">Atendimentos abertos: @ViewBag.Cargo</h2>
     </div>
     <div class="col-3">
-        <a href="/atendimento/cadastro" class="btn btn-dark float-right mt-40"><i class="fa fa-plus"></i> Adicionar atendimento</a>
+        <a href="/atendimento/escolha" class="btn btn-dark float-right mt-30"><i class="fa fa-plus"></i> Adicionar atendimento</a>
     </div>
 </div>
 <table class="table table-primary table-hover table-bordered text-dark">
@@ -16,7 +16,7 @@
             <td>Paciente</td>
             <td>Prioridade</td>
             <td>Observação</td>
-            <td width="100px">Ação</td>
+            <td width="220px">Ação</td>
         </tr>
     </thead>
     <tbody class="font-weight-bold">
@@ -29,7 +29,7 @@
                     <td>@atendimento.Prioridade</td>
                     <td>@atendimento.Observacao </td>
                     <td>
-                        <a class="btn btn-primary" href="/atendimento/alterar?id=@atendimento.Id"><i class="fa fa-bookmark"></i> Atender</a>
+                        <a class="btn btn-info" href="/atendimento/alterar?id=@atendimento.Id"><i class="fa fa-bookmark"></i> Atender</a>
                     </td>
                 </tr>
             }
@@ -41,7 +41,7 @@
                     <td>@atendimento.Prioridade</td>
                     <td>@atendimento.Observacao </td>
                     <td>
-                        <a class="btn btn-primary" href="/atendimento/alterar?id=@atendimento.Id"><i class="fa fa-bookmark"></i> Atender</a>
+                        <a class="btn btn-info" href="/atendimento/alterar?id=@atendimento.Id"><i class="fa fa-bookmark"></i> Atender</a>
                     </td>
                 </tr>
             }
@@ -53,7 +53,7 @@
                     <td>@atendimento.Prioridade</td>
                     <td>@atendimento.Observacao </td>
                     <td>
-                        <a class="btn btn-primary" href="/atendimento/alterar?id=@atendimento.Id"><i class="fa fa-bookmark"></i> Atender</a>
+                        <a class="btn btn-info" href="/atendimento/alterar?id=@atendimento.Id"><i class="fa fa-bookmark"></i> Atender</a>
                     </td>
                 </tr>
 

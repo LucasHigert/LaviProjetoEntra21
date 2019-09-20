@@ -17,7 +17,7 @@
             <td>Nome do Posto</td>
             <td>CEP</td>
             <td>Cidade</td>
-            <td width="200px">Ação</td>
+            <td width="220px">Ação</td>
         </tr>
     </thead>
     <tbody class="font-weight-bold">
@@ -28,8 +28,8 @@
                 <td>@posto.Cep</td>
                 <td>@posto.Cidade.Nome</td>
                 <td>
-                    <a class="btn btn-primary ml-10" href="/posto/alterar?id=@posto.Id">Editar</a>
-                    <a class="btn btn-danger ml-10" href="/posto/apagar?id=@posto.Id">Apagar</a>
+                    <a class="btn btn-info ml-10" href="/posto/alterar?id=@posto.Id"><i class="fa fa-edit"></i> Editar</a>
+                    <a class="btn btn-danger ml-10" href="/posto/apagar?id=@posto.Id"><i class="fa fa-trash"></i> Apagar</a>
                 </td>
             </tr>
         }

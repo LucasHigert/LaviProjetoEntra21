@@ -261,22 +261,33 @@
     <Content Include="Content\DataTables\swf\flashExport.swf" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
-    <Content Include="Content\Imagens\CardsTelaInicial\5caracteristicasbomfuncionarioexemplar.jpg" />
+    <Content Include="Content\Imagens\Atendimento\atendimento.png" />
+    <Content Include="Content\Imagens\Atendimento\atendimentoEspecial.png" />
+    <Content Include="Content\Imagens\Bandeiras\bandeira-do-haiti.png" />
+    <Content Include="Content\Imagens\Bandeiras\BandeiraDaFranca.jpg" />
+    <Content Include="Content\Imagens\Bandeiras\BandeiraDoBrasil2.png" />
     <Content Include="Content\Imagens\CardsTelaInicial\atendimento.jpg" />
+    <Content Include="Content\Imagens\CardsTelaInicial\cidade.jpg" />
     <Content Include="Content\Imagens\CardsTelaInicial\cultura-1050x600.jpg" />
     <Content Include="Content\Imagens\CardsTelaInicial\customer-at-reception-concept-in-flat-vector-8959632.jpg" />
     <Content Include="Content\Imagens\CardsTelaInicial\encaminhamento.png" />
+    <Content Include="Content\Imagens\CardsTelaInicial\funcionario.jpg" />
     <Content Include="Content\Imagens\CardsTelaInicial\gripa.jpg" />
     <Content Include="Content\Imagens\CardsTelaInicial\parte do corpo esse.jpg" />
-    <Content Include="Content\Imagens\CardsTelaInicial\postos.jpg" />
-    <Content Include="Content\Imagens\CardsTelaInicial\vector-cartoon-illustration-banner-fundo-urbano-com-modernos-edificios-da-cidade-grande_1441-586.jpg" />
+    <Content Include="Content\Imagens\CardsTelaInicial\posto.jpg" />
+    <Content Include="Content\Imagens\CardsTelaInicial\prancheta.jpg" />
     <Content Include="Content\Imagens\Corpos\parte corpo humano.png" />
+    <Content Include="Content\Imagens\Encaminhamento\farmácia1.jpg" />
+    <Content Include="Content\Imagens\Encaminhamento\POSTO.jpg" />
     <Content Include="Content\Imagens\icones\favicon %281%29.ico" />
     <Content Include="Content\Imagens\icones\favicon %282%29.ico" />
     <Content Include="Content\Imagens\icones\favicon.ico" />
-    <Content Include="Content\Imagens\Logo Lavi .png" />
-    <Content Include="Content\Imagens\Logo Lavi Preto.png" />
+    <Content Include="Content\Imagens\icones\Logo Lavi sem nome .png" />
+    <Content Include="Content\Imagens\Logo Lavi  Preto.png" />
+    <Content Include="Content\Imagens\Logo Lavi.png" />
     <Content Include="Content\replaces.css" />
+    <Content Include="Content\TesteEncaminhamento.css" />
+    <Content Include="Content\TesteEncaminhamento.js" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\AtendimentoEspecial\ParteCorpoSintoma.js" />
@@ -363,6 +374,8 @@
     <Content Include="Scripts\DataTables\responsive.jqueryui.min.js" />
     <Content Include="Scripts\DataTables\responsive.semanticui.js" />
     <Content Include="Scripts\DataTables\responsive.semanticui.min.js" />
+    <Content Include="Scripts\Encaminhamento\ModalPosto.js" />
+    <Content Include="Scripts\Escolha\CardAltura.css" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
     <Content Include="Scripts\esm\popper.js" />
@@ -447,6 +460,7 @@
     <Content Include="Scripts\jquery-3.0.0.min.js" />
     <Content Include="Scripts\jquery-3.0.0.slim.js" />
     <Content Include="Scripts\jquery-3.0.0.slim.min.js" />
+    <Content Include="Scripts\lib\i18n\i18n.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\Paciente\PacienteSript.js" />
     <Content Include="Scripts\ParteCorpoSintoma.js" />
@@ -4912,6 +4926,7 @@
     <Compile Include="Controllers\EncaminhamentoController.cs" />
     <Compile Include="Controllers\FuncionarioController.cs" />
     <Compile Include="Controllers\InstrucoesController.cs" />
+    <Compile Include="Controllers\LanguageController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PacienteController.cs" />
     <Compile Include="Controllers\ParteCorpoController.cs" />
@@ -6006,9 +6021,17 @@
     <Content Include="Views\AtendimentoEspecial\InstrucoesEspecial.cshtml" />
     <Content Include="Views\AtendimentoEspecial\CadastroPacienteEspecial.cshtml" />
     <Content Include="Views\AtendimentoEspecial\BuscaPaciente.cshtml" />
+    <Content Include="Views\Encaminhamento\Escolha.cshtml" />
     <Content Include="Views\Instrucoes\Imigrante.cshtml" />
     <Content Include="Views\AtendimentoEspecial\ModalSintoma.cshtml" />
+    <Content Include="Views\Atendimento\Escolha.cshtml" />
     <Content Include="Views\AtendimentoEspecial\FinalizaCadastro.cshtml" />
+    <Content Include="Views\Encaminhamento\PostoEncaminhar.cshtml" />
+    <Content Include="Views\Encaminhamento\FarmaciaEncaminhar.cshtml" />
+    <Content Include="Views\Encaminhamento\HospitalEncaminhar.cshtml" />
+    <Content Include="Scripts\Traducao\pt.json" />
+    <Content Include="Scripts\Traducao\fr.json" />
+    <Content Include="Scripts\Traducao\ht.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -6030,7 +6053,9 @@
       <LastGenOutput>Resource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\Language\" />
+  </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>

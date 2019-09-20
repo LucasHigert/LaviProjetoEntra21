@@ -1,0 +1,63 @@
+﻿
+<div id="printThis3">
+    <div id="hospitalModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+
+        <div class="modal-dialog modal-lg">
+
+            <!-- Modal Content: begins -->
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    
+                        <div class="col-7">
+                            <h4 class="modal-title" id="gridSystemModalLabel">Hospital</h4>
+                        </div>
+
+                        <div class="col-5">
+                            <div class="container body-content">
+                                <button id="hospital-encaminhar-crioulo">
+                                    <span class="mt-5 flag-icon flag-icon-ht"></span> Crioulo
+                                </button>
+                                <button id="hospital-encaminhar-frances">
+                                    <span class="mt-5 flag-icon flag-icon-fr"></span> Francês
+                                </button>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            </div>
+                        </div>   
+                    
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body printSection">
+                    <div class="body-message">
+                        <h4 class="text-center">Encaminhamento</h4>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="body-message ml-25 mr-25">
+                                    <div id="inline">
+                                        <br />
+                                        <p class="text-left">Você deverá se dirigir ao Hospital Municipal de: <input type="text" class="border-light rounded" placeholder="Cidade" required="" />, <input type="text" class="border-light rounded" placeholder="Endereço" required="" />, <input type="text" class="border-light rounded" placeholder="Telefone" required="" /> no setor <input type="text" class="border-light rounded" placeholder="Setor" required="" />, pois seu caso é mais complexo e precisa de uma atendimento especializado imediato. Para chegar lá pegue o ônibus <input type="text" class="border-light rounded" placeholder="Ônibus" required="" /> no ponto de ônibus <input type="text" class="border-light rounded" placeholder="Ponto de Ônibus" required="" />. Lá você deverá apresentar este documento e será atendido por um médico que auxiliará na resolução de seu problema.</p>               
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                    <button class="btn" data-dismiss="modal" aria-hidden="true">Fechar</button>
+                    <button id="btnPrint3" type="button" class="btn btn-default">Imprimir</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+@section js{
+    <script src="~/Content/TesteEncaminhamento.js"></script>
+}

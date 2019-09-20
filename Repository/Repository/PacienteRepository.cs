@@ -27,6 +27,7 @@ namespace Repository.Repository
             pacienteOriginal.Nome = paciente.Nome;
             pacienteOriginal.Cpf = paciente.Cpf;
             pacienteOriginal.Pressao = paciente.Pressao;
+            pacienteOriginal.Cep = paciente.Cep;
             pacienteOriginal.Idade = paciente.Idade;
             pacienteOriginal.Sexo = paciente.Sexo;
             pacienteOriginal.Altura = paciente.Altura;
@@ -34,7 +35,7 @@ namespace Repository.Repository
             pacienteOriginal.Telefone = paciente.Passaporte;
             pacienteOriginal.Rne = paciente.Rne;
             pacienteOriginal.Endereco = paciente.Endereco;
-            pacienteOriginal.Posto = paciente.Posto;
+            pacienteOriginal.IdPosto = paciente.IdPosto;
             pacienteOriginal.Temperatura = paciente.Temperatura;
 
 

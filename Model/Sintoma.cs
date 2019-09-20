@@ -20,6 +20,12 @@ namespace Model
         [ForeignKey("IdParteCorpo")]
         public ParteCorpo ParteCorpo { get; set; }
 
+        [Column("traducao_criolo")]
+        public string TraducaoCriolo { get; set; }
+
+        [Column("traduco_frances")]
+        public string TraducaoFrances { get; set; }
+
         [Column("nome")]
         public string Nome { get; set; }
 

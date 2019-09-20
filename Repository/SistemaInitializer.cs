@@ -493,6 +493,30 @@ namespace Repository
 
             #endregion
 
+            #region Sintomas
+            var sintomas = new List<Sintoma>();
+            sintomas.Add(new Sintoma()
+            {
+                IdParteCorpo = 1,
+                Nome = "Dor de cabeça",
+                TraducaoCriolo = "Maltèt",
+                TraducaoFrances = "Mal de tête",
+                RegistroAtivo = true
+
+
+            });
+            sintomas.Add(new Sintoma()
+            {
+                IdParteCorpo = 2,
+                Nome = "Dor nos olhos",
+                TraducaoCriolo = "Doulè nan je",
+                TraducaoFrances = "Douleur oculaire",
+                RegistroAtivo = true
+
+            });
+            context.Sintomas.AddRange(sintomas);
+            context.Sintomas.AddRange(sintomas);
+            #endregion
             base.Seed(context);
         }
     }

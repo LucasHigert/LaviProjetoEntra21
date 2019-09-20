@@ -72,7 +72,7 @@ namespace View.Controllers
         }
         #endregion
         //Inserir
-        #region
+        #region Inserir
         public ActionResult Cadastro()
         {
             if (VerificaLogado() == true)
@@ -109,13 +109,15 @@ namespace View.Controllers
                 }
 
                 var inseriu = repositoryAtendimento.Inserir(atendimento);
-                if (inseriu == false)
+                PacienteRepository pacienteRepository = new PacienteRepository();
+                Paciente paciente = pacienteRepository.ObterPeloId(atendimento.IdPaciente);
+                if (paciente.Lingua != 0)
                 {
-                    return RedirectToAction("Cadastro");
+                    return Redirect("/atendimentoespecial/ParteCorpoEspecial?idAtendimento=" + atendimento.Id);
                 }
                 else
                 {
-                    return RedirectToAction("Index");
+                    return RedirectToAction("index");
                 }
             }
             else

@@ -204,4 +204,7 @@
   <data name="VocêPossuiCadastro" xml:space="preserve">
     <value>Ou gen enskripsyon?</value>
   </data>
+  <data name="SelecioneSintoma" xml:space="preserve">
+    <value>Chwazi yon sentòm</value>
+  </data>
 </root>

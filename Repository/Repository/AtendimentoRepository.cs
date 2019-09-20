@@ -22,9 +22,7 @@ namespace Repository.Repository
             else
             {
                 atendimentoOriginal.IdEncaminhamento = atendimento.IdEncaminhamento;
-                atendimentoOriginal.IdFuncionario = atendimento.IdFuncionario;
                 atendimentoOriginal.IdMedico = atendimento.IdMedico;
-                atendimentoOriginal.DataAtendimento = atendimento.DataAtendimento;
                 atendimentoOriginal.Tratamento = atendimento.Tratamento;
                 atendimentoOriginal.Prioridade = atendimento.Prioridade;
                 atendimentoOriginal.Status = atendimento.Status;
@@ -63,7 +61,7 @@ namespace Repository.Repository
 
         public Atendimento ObterPeloId(int id)
         {
-            return context.Atendimentos.Where(x => x.Id == id).FirstOrDefault();
+            return context.Atendimentos.Include("Paciente").Where(x => x.Id == id).FirstOrDefault();
         }
 
 

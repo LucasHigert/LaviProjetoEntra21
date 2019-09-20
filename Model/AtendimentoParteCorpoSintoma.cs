@@ -20,11 +20,11 @@ namespace Model
         [ForeignKey ("IdAtendimento")]
         public Atendimento Atendimento { get; set; }
 
-        [Column ("id_parte_corpo")]
-        public int IdParteCorpo { get; set; }
+        [Column("id_sintoma")]
+        public int IdSintoma { get; set; }
 
-        [ForeignKey ("IdParteCorpo")]
-        public ParteCorpo ParteCorpo { get; set; }
+        [ForeignKey("IdSintoma")]
+        public Sintoma Sintoma { get; set; }
 
         [Column ("nivel_dor")]
         public int NiverDor { get; set; }

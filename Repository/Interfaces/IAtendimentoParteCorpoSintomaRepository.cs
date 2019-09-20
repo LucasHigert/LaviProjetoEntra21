@@ -15,9 +15,9 @@ namespace Repository.Interfaces
 
         List<AtendimentoParteCorpoSintoma> ObterTodos();
 
-        bool Apagar(int id);
+        bool Apagar(int idSintoma,int idAtendimento);
 
-        AtendimentoParteCorpoSintoma ObterPeloIdAtentimento(int id);
+        List<AtendimentoParteCorpoSintoma> ObterPeloIdAtentimento(int id);
 
         AtendimentoParteCorpoSintoma ObterPeloIdParteCorpo(int id);
     }

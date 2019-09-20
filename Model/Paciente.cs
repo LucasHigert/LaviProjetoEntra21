@@ -45,6 +45,9 @@ namespace Model
         [Column("cep")]
         public string Cep { get; set; }
 
+        [Column("lingua")]
+        public int Lingua { get; set; }
+
         //parte triagem
         [Column("sexo")]
         public bool Sexo { get; set; }

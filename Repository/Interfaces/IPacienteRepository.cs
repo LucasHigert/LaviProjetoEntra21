@@ -10,7 +10,7 @@ namespace Repository.Interfaces
     public interface IPacienteRepository
     {
 
-        int Inserir(Paciente paciente);
+        bool Inserir(Paciente paciente);
 
         bool Alterar(Paciente paciente);
 
@@ -18,6 +18,7 @@ namespace Repository.Interfaces
 
         bool Apagar(int id);
 
+        List<Paciente> ObterPeloNome(string nome);
 
         List<Paciente> ObterTodos();
 

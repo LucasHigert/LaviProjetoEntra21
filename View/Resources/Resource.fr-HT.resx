@@ -123,6 +123,9 @@
   <data name="Altura" xml:space="preserve">
     <value>Wotè</value>
   </data>
+  <data name="Cancelar" xml:space="preserve">
+    <value>Anile</value>
+  </data>
   <data name="CEP" xml:space="preserve">
     <value>Kòd postal</value>
   </data>
@@ -189,6 +192,9 @@
   <data name="Sexo" xml:space="preserve">
     <value>Sèks</value>
   </data>
+  <data name="Sintoma" xml:space="preserve">
+    <value>Sentòm</value>
+  </data>
   <data name="Telefone" xml:space="preserve">
     <value>Nimewo telefòn</value>
   </data>
@@ -197,5 +203,8 @@
   </data>
   <data name="VocêPossuiCadastro" xml:space="preserve">
     <value>Ou gen enskripsyon?</value>
+  </data>
+  <data name="SelecioneSintoma" xml:space="preserve">
+    <value>Chwazi yon sentòm</value>
   </data>
 </root>

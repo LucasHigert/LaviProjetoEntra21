@@ -64,25 +64,24 @@ namespace Repository.Repository
             return quantidadeAfetada == 1;
         }
 
-        public int Inserir(Paciente paciente)
+        public bool Inserir(Paciente paciente)
         {
             paciente.RegistroAtivo = true;
             context.Pacientes.Add(paciente);
-            context.SaveChanges();
-            return paciente.Id;
+            int rows = context.SaveChanges();
+            return rows == 1;
         }
-
-    
-
-        //public List<Paciente> ObterPacientesPeloIdPosto(int idPosto)
-        //{
-        //    return context.Pacientes.Where(x => x.IdPosto == idPosto && x.RegistroAtivo).ToList();
-        //}
 
         public Paciente ObterPeloId(int id)
         {
             var paciente = context.Pacientes.FirstOrDefault(x => x.Id == id);
             return paciente;
+        }
+
+        public List<Paciente> ObterPeloNome(string nome)
+        {
+            List<Paciente> lista = context.Pacientes.ToList();
+            return lista;
         }
 
         public List<Paciente> ObterTodos()

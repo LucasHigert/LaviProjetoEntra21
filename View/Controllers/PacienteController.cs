@@ -71,7 +71,10 @@ namespace View.Controllers
         {
             if (VerificaLogado() == true)
             {
-                int id = repository.Inserir(paciente);
+                FuncionarioRepository funcionarioRepository = new FuncionarioRepository();
+                Funcionario funcionario = funcionarioRepository.ObterPeloId(Convert.ToInt32(Session["usuarioLogadoID"]));
+                paciente.IdPosto = funcionario.IdPosto;
+                repository.Inserir(paciente);
                 return RedirectToAction("Index");
             }
             else
@@ -133,19 +136,19 @@ namespace View.Controllers
                 return Redirect("/login");
 
             }
-            
+
         }
 
         public ActionResult Alterar(int id)
         {
             if (VerificaLogado() == true)
             {
-            Paciente paciente = new Paciente();
-            paciente = repository.ObterPeloId(id);
-            ViewBag.Paciente = paciente;
-            PostoRepository postoRepository = new PostoRepository();
-            ViewBag.Postos = postoRepository.ObterTodos();
-            return View();
+                Paciente paciente = new Paciente();
+                paciente = repository.ObterPeloId(id);
+                ViewBag.Paciente = paciente;
+                PostoRepository postoRepository = new PostoRepository();
+                ViewBag.Postos = postoRepository.ObterTodos();
+                return View();
 
             }
             else

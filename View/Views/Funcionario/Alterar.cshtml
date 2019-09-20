@@ -6,42 +6,45 @@
 
 <form action="/funcionario/update" method="post">
     <input type="text" hidden="hidden" value="@ViewBag.Funcionario.Id" name="Id" />
-    <div class="row">
-        <div class="col-4">
-            <label class="font-weight-bold">Cargo*</label>
-            <select name="idcargo" class="form-control border-info">
-                <option disabled="disabled">Selecione um cargo</option>
-                @foreach (Model.Cargo Cargo in ViewBag.Cargos)
-                {
-                    if (Cargo.Id == ViewBag.Funcionario.IdCargo)
+    @if (Session["usuarioLogadoPermissao"].ToString() == "4")
+    {
+        <div class="row">
+            <div class="col-4">
+                <label class="font-weight-bold">Cargo*</label>
+                <select name="idcargo" class="form-control border-info">
+                    <option disabled="disabled">Selecione um cargo</option>
+                    @foreach (Model.Cargo Cargo in ViewBag.Cargos)
                     {
-                        <option selected="selected" value="@Cargo.Id">@Cargo.Nome</option>
+                        if (Cargo.Id == ViewBag.Funcionario.IdCargo)
+                        {
+                            <option selected="selected" value="@Cargo.Id">@Cargo.Nome</option>
+                        }
+                        else
+                        {
+                            <option value="@Cargo.Id">@Cargo.Nome</option>
+                        }
                     }
-                    else
+                </select>
+            </div>
+            <div class="col-8">
+                <label class="font-weight-bold">Posto*</label>
+                <select name="idPosto" class="form-control border-info mb-20">
+                    <option disabled="disabled" selected="selected">Selecione um posto</option>
+                    @foreach (Model.Posto Posto in ViewBag.Postos)
                     {
-                        <option value="@Cargo.Id">@Cargo.Nome</option>
+                        if (Posto.Id == ViewBag.Funcionario.IdPosto)
+                        {
+                            <option selected="selected" value="@Posto.Id">@Posto.Nome</option>
+                        }
+                        else
+                        {
+                            <option value="@Posto.Id">@Posto.Nome</option>
+                        }
                     }
-                }
-            </select>
+                </select>
+            </div>
         </div>
-        <div class="col-8">
-            <label class="font-weight-bold">Posto*</label>
-            <select name="idPosto" class="form-control border-info mb-20">
-                <option disabled="disabled" selected="selected">Selecione um posto</option>
-                @foreach (Model.Posto Posto in ViewBag.Postos)
-                {
-                    if (Posto.Id == ViewBag.Funcionario.IdPosto)
-                    {
-                        <option selected="selected" value="@Posto.Id">@Posto.Nome</option>
-                    }
-                    else
-                    {
-                        <option value="@Posto.Id">@Posto.Nome</option>
-                    }
-                }
-            </select>
-        </div>
-    </div>
+    }
 
     <label for="campo-nome" class="font-weight-bold">Nome*</label>
     <input type="text" name="nome" id="campo-nome" class="form-control border-info mb-20" value="@ViewBag.Funcionario.Nome" />

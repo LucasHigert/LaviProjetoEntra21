@@ -12,31 +12,40 @@
     <link rel="shortcut icon" href="~/Content/Imagens/Logo Lavi Preto.png" />
     <link rel="stylesheet" href="~/Scripts/Tema/global/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/Scripts/Tema/global/fonts/font-awesome/font-awesome.min.css" />
+
+
+    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
+    <script src="~/Scripts/DataTables/jquery.dataTables.js"></script>
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <link rel="stylesheet" href="~/Content/DataTables/css/jquery.dataTables.min.css" />
+    <script src="~/Scripts/AtendimentoEspecial/TelaBuscaPaciente.js"></script>
+
 </head>
 <body>
+    <div class="bg-dark d-flex p-3 px-md-4 mb-3">
+        <div class="col-12 text-center">
+            <img src="~/Content/Imagens/Logo Lavi.png" width="50" height="50" />
 
+        </div>
+    </div>
     <div class="container">
         <h1 class="h1">@View.Resources.Resource.VocêPossuiCadastro</h1>
         <div>
             <label for="campo-nome" class="font-weight-bold">@View.Resources.Resource.DigiteSeuNomePesquisar</label>
             <input id="campo-nome" name="nome" class="form-control border-info" type="text" />
+            <button id="botao">Aqui</button>
 
         </div>
         <div>
-            <table class="table table-hover table-info table-bordered mt-20">
+            <table id="tabela" class="table table-hover table-info table-bordered mt-20">
                 <thead class="bg-dark text-white">
                     <tr>
                         <td>@View.Resources.Resource.Nome</td>
-                        <td>@View.Resources.Resource.Acao</td>
+                        <td width="5    0px">@View.Resources.Resource.Acao</td>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Wallace</td>
-                        <td>
-                            <a class="btn btn-primary btn-sm text-white">@View.Resources.Resource.EsteSouEu</a>
-                        </td>
-                    </tr>
+                    
                 </tbody>
             </table>
         </div>

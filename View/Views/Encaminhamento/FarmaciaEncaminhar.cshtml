@@ -14,18 +14,18 @@
 
                 <div class="col-7">
 
-                    <h3 class="modal-title" id="gridSystemModalLabel">Farmácia</h3>
+                    <h4 class="modal-title" id="gridSystemModalLabel">Farmácia</h4>
                 </div>
 
                 <div class="col-5 mt-5">
                     <div class="container body-content">
                         <button id="farmacia-encaminhar-frances">
                             <span class="mt-5 flag-icon flag-icon-fr"></span>
-                            Francais
+                            Francês
                         </button>
                         <button id="farmacia-encaminhar-criolo">
                             <span class="mt-5 flag-icon flag-icon-ht"></span>
-                            Kreyòl
+                            Crioulo
                         </button>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     </div>
@@ -37,35 +37,53 @@
                 <!-- Modal Body -->
 
                 <div class="modal-body printSection">
-                    <div class="body-message">
-                        <h4>Encaminhamento</h4>
-                        <p>Você deve se dirigir até uma farmácia e comprar os seguintes remédios:</p>
-                        <span id="farmacia-encaminhar"></span>
-                        <div class="row">
-                            <div class="text-left col-5">
-                                Nome do remédio
-                            </div>
-                            <div class="text-left col-3">
-                                Quantidade por dia
-                            </div>
-                            <div class="text-left col-3">
-                                Dias que deverá usar
-                            </div>
-                        </div>
-                        <div id="origem">
-                            <div class="row">
-                                <div class="col-5">
-                                    <input class="col-12" type="text" />
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="body-message">
+                                <h3 class="text-dark">Encaminhamento<span id="encaminhamento-farmacia"></span></h3>
+                                <div>
+                                    <span id="farmacia-encaminhar" class="font-weight-bold"></span>
                                 </div>
-                                <div class="col-3">
-                                    <input class="col-12" type="text" />
+                                <div class="row mt-10">
+                                    <div class="text-left col-5">
+                                        Nome do remédio
+                                    </div>
+                                    <div class="text-left col-3">
+                                        Quantidade por dia
+                                    </div>
+                                    <div class="text-left col-3">
+                                        Dias que deverá usar
+                                    </div>
                                 </div>
-                                <div class="col-3">
-                                    <input class="col-12" type="number" />
+                                <!--tradução-->
+                                <div class="row">
+                                    <div class="text-left col-5">
+                                        <span id="remedio-encaminhar" class="text-danger font-weight-bold"></span>
+                                    </div>
+                                    <div class="text-left col-3">
+                                        <span id="quantidade-encaminhar" class="text-danger font-weight-bold"></span>
+                                    </div>
+                                    <div class="text-left col-3">
+                                        <span id="dias-encaminhar" class="text-danger font-weight-bold"></span>
+                                    </div>
+                                </div>
+                                <!--fim tradução-->
+                                <div id="origem">
+                                    <div class="row">
+                                        <div class="col-5">
+                                            <input class="col-12" type="text" />
+                                        </div>
+                                        <div class="col-3">
+                                            <input class="col-12" type="text" />
+                                        </div>
+                                        <div class="col-3">
+                                            <input class="col-12" type="number" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="destino">
                                 </div>
                             </div>
-                        </div>
-                        <div id="destino">
                         </div>
                     </div>
                 </div>
@@ -76,7 +94,7 @@
                 <div class="col-6">
                     <button class="btn-success botao" onclick="duplicarCampos()"> + </button>
                     <button class="btn-danger botao" onclick="removerCampos(this)"> - </button>
-                </div> 
+                </div>
                 <div class="col-6">
                     <button id="btnPrint" type="button" class="btn btn-info float-right">Imprimir</button>
                     @*<button class="btn float-right" data-dismiss="modal" aria-hidden="true">Fechar</button>*@
@@ -86,7 +104,6 @@
         </div>
     </div>
 </div>
-
 
 @section js{
     <script src="~/Content/TesteEncaminhamento.js"></script>

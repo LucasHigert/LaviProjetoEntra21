@@ -26,8 +26,7 @@ namespace View.Controllers
 
         private bool VerificaPermisssao()
         {
-            if ((Session["usuarioLogadoPermissao"].ToString() == "1") || (Session["usuarioLogadoPermissao"].ToString() == "2") ||
-                (Session["usuarioLogadoPermissao"].ToString() == "3"))
+            if ((Session["usuarioLogadoPermissao"].ToString() == "1") || (Session["usuarioLogadoPermissao"].ToString() == "2"))
             {
                 return false;
             }
@@ -52,10 +51,24 @@ namespace View.Controllers
             ViewBag.Encaminhamentos = encaminhamentos;
             return View();
         }
-        public ActionResult Escolha()
+        public ActionResult Escolha(int idAtendimento)
         {
+            if (VerificaLogado() == true)
+            {
+                if (VerificaPermisssao() == true)
+                {
+                    return View();
 
-            return View();
+                }
+                else
+                {
+                    return Redirect("/login/sempermissao");
+                }
+            }
+            else
+            {
+                return Redirect("/login");
+            }
         }
 
         public ActionResult PostoEncaminhar()

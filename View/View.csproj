@@ -6009,6 +6009,9 @@
     <Content Include="Views\Posto\Alterar.cshtml" />
     <Content Include="Views\Paciente\Alterar.cshtml" />
     <Content Include="Views\Paciente\Index.cshtml" />
+    <Content Include="Views\Encaminhamento\Index.cshtml" />
+    <Content Include="Views\Encaminhamento\Cadastrar.cshtml" />
+    <Content Include="Views\Encaminhamento\Alterar.cshtml" />
     <Content Include="Views\Sintoma\Alterar.cshtml" />
     <Content Include="Views\Funcionario\Index.cshtml" />
     <Content Include="Views\Funcionario\Alterar.cshtml" />

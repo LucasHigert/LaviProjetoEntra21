@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace View.Controllers
 {
-    public class AtendimentoController : Controller
+    public class AtendimentoController : BaseController
     {
 
         #region Verificação login

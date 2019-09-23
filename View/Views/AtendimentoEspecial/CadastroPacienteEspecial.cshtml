@@ -21,87 +21,87 @@
         </div>
     </div>
     <div class="container">
-    <div class="pt-100">
-        <h1 class="h1">@View.Resources.Resource.SeusDados</h1>
-        <p class="lead">@View.Resources.Resource.InformacaoCadastro/</p>
+        <div class="pt-100">
+            <h1 class="h1">@View.Resources.Resource.SeusDados</h1>
+            <p class="lead">@View.Resources.Resource.InformacaoCadastro/</p>
+        </div>
+
+        <form action="/atendimentoespecial/inserirpaciente" method="post" class="form-group mt-20">
+            <div class="row">
+                <div class="col-6">
+                    <label class="font-weight-bold" for="campo-nome">@View.Resources.Resource.Nome</label>
+                    <input type="text" id="campo-nome" name="nome" class="form-control border-info" maxlength="100" required="">
+                </div>
+
+                <div class="col-3">
+                    <label class="font-weight-bold" for="campo-sexo">@View.Resources.Resource.Sexo</label>
+                    <select id="campo-sexo" name="sexo" class="form-control border-info">
+                        <option value="true">@View.Resources.Resource.Feminino</option>
+                        <option value="false">@View.Resources.Resource.Masculino</option>
+                    </select>
+                </div>
+
+                <div class="col-3">
+                    <label class="font-weight-bold" for="campo-idade">@View.Resources.Resource.Idade</label>
+                    <input type="number" id="campo-idade" name="idade" maxlength="3" class="form-control border-info" />
+
+                </div>
+            </div>
+
+
+            <!------------------------------>
+            <div class="row">
+
+                <div class="col-4">
+                    <label class="font-weight-bold" for="campo-telefone">@View.Resources.Resource.Telefone</label>
+                    <input type="tel" id="campo-telefone" name="telefone" maxlength="14" class="form-control border-info" />
+                </div>
+
+                <div class="col-4">
+                    <label class="font-weight-bold" for="campo-passaporte">@View.Resources.Resource.Passaporte</label>
+                    <input type="text" id="campo-passaporte" name="passaporte" maxlength="50" class="form-control border-info" />
+                </div>
+
+                <div class="col-4">
+                    <label class="font-weight-bold" for="campo-cpf">@View.Resources.Resource.Cpf</label>
+                    <input type="text" required="" maxlength="15" id="campo-cpf" name="cpf" class="form-control border-info" />
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-4">
+                    <label class="font-weight-bold" for="campo-rne">@View.Resources.Resource.Rne</label>
+                    <input type="text" id="campo-rne" name="rne" maxlength="50" class="form-control border-info" />
+                </div>
+
+                <div class="col-4">
+                    <label class="font-weight-bold" for="campo-cep">@View.Resources.Resource.CEP</label>
+                    <input type="text" id="campo-cep" name="cep" maxlength="9" class="form-control border-info" />
+                </div>
+
+
+                <div class="col-4">
+                    <label class="font-weight-bold" for="campo-endereco">@View.Resources.Resource.Endereço</label>
+                    <input type="text" id="campo-endereco" name="endereco" required="" class="form-control border-info" maxlength="100" />
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+            <button type="submit" class="btn btn-success mt-15 float-right" style="margin-top: 5px"><i class="fa fa-save"></i> @View.Resources.Resource.Proximo</button>
+        </form>
+
+
+        <script src="~/Scripts/Tema/global/vendor/bootstrap/bootstrap.min.js"></script>
+        <script href="~/Scripts/Tema/global/vendor/jquery/jquery.min.js"></script>
     </div>
-
-    <form action="/atendimentoespecial/inserirpaciente" method="post" class="form-group mt-20">
-        <div class="row">
-            <div class="col-6">
-                <label class="font-weight-bold" for="campo-nome">@View.Resources.Resource.Nome</label>
-                <input type="text" id="campo-nome" name="nome" class="form-control border-info" maxlength="100" required="">
-            </div>
-
-            <div class="col-3">
-                <label class="font-weight-bold" for="campo-sexo">@View.Resources.Resource.Sexo</label>
-                <select id="campo-sexo" name="sexo" class="form-control border-info">
-                    <option value="true">@View.Resources.Resource.Feminino</option>
-                    <option value="false">@View.Resources.Resource.Masculino</option>
-                </select>
-            </div>
-
-            <div class="col-3">
-                <label class="font-weight-bold" for="campo-idade">@View.Resources.Resource.Idade</label>
-                <input type="number" id="campo-idade" name="idade" maxlength="3" class="form-control border-info" />
-
-            </div>
-        </div>
-
-
-        <!------------------------------>
-        <div class="row">
-
-            <div class="col-4">
-                <label class="font-weight-bold" for="campo-telefone">@View.Resources.Resource.Telefone</label>
-                <input type="tel" id="campo-telefone" name="telefone" maxlength="14" class="form-control border-info" />
-            </div>
-
-            <div class="col-4">
-                <label class="font-weight-bold" for="campo-passaporte">@View.Resources.Resource.Passaporte</label>
-                <input type="text" id="campo-passaporte" name="passaporte" maxlength="50" class="form-control border-info" />
-            </div>
-
-            <div class="col-4">
-                <label class="font-weight-bold" for="campo-cpf">@View.Resources.Resource.Cpf</label>
-                <input type="text" required="" maxlength="15" id="campo-cpf" name="cpf" class="form-control border-info" />
-            </div>
-
-        </div>
-
-        <div class="row">
-
-            <div class="col-4">
-                <label class="font-weight-bold" for="campo-rne">@View.Resources.Resource.Rne</label>
-                <input type="text" id="campo-rne" name="rne" maxlength="50" class="form-control border-info" />
-            </div>
-
-            <div class="col-4">
-                <label class="font-weight-bold" for="campo-cep">@View.Resources.Resource.CEP</label>
-                <input type="text" id="campo-cep" name="cep" maxlength="9" class="form-control border-info" />
-            </div>
-
-
-            <div class="col-4">
-                <label class="font-weight-bold" for="campo-endereco">@View.Resources.Resource.Endereço</label>
-                <input type="text" id="campo-endereco" name="endereco" required="" class="form-control border-info" maxlength="100" />
-            </div>
-
-
-        </div>
-
-
-
-
-
-
-        <button type="submit" class="btn btn-success mt-15 float-right" style="margin-top: 5px"><i class="fa fa-save"></i> @View.Resources.Resource.Proximo</button>
-    </form>
-
-
-    <script src="~/Scripts/Tema/global/vendor/bootstrap/bootstrap.min.js"></script>
-    <script href="~/Scripts/Tema/global/vendor/jquery/jquery.min.js"></script>
-        </div>
 </body>
 
 </html>

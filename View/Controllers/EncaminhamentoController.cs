@@ -51,7 +51,7 @@ namespace View.Controllers
             ViewBag.Encaminhamentos = encaminhamentos;
             return View();
         }
-        public ActionResult Escolha()
+        public ActionResult Escolha(int idAtendimento)
         {
             if (VerificaLogado() == true)
             {

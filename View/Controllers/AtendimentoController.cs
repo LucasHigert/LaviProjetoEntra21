@@ -229,7 +229,7 @@ namespace View.Controllers
                 atendimentoOriginal.IdPosto = funcionario.IdPosto;
                 if (Session["usuarioLogadoPermissao"].ToString() == "3")
                 {
-                    atendimento.Status = 3;
+
                     atendimento.IdMedico = funcionario.Id;
                 }
                 else
@@ -238,11 +238,14 @@ namespace View.Controllers
 
                 }
                 repositoryAtendimento.Alerar(atendimento);
-                if (Session["usuarioLogadoPermissao"].ToString() == "3")
+                if ((Session["usuarioLogadoPermissao"].ToString() == "3") || (Session["usuarioLogadoPermissao"].ToString() == "4"))
                 {
                     return Redirect("/encaminhamento/escolha?idAtendimento" + atendimento.Id);
                 }
-                return RedirectToAction("index");
+                else
+                {
+                    return RedirectToAction("index");
+                }
             }
             else
             {

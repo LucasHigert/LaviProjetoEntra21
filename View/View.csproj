@@ -375,6 +375,7 @@
     <Content Include="Scripts\DataTables\responsive.semanticui.js" />
     <Content Include="Scripts\DataTables\responsive.semanticui.min.js" />
     <Content Include="Scripts\Encaminhamento\ModalPosto.js" />
+    <Content Include="Scripts\Encaminhamento\TraducaoJavaScript.js" />
     <Content Include="Scripts\Escolha\CardAltura.css" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
@@ -6008,9 +6009,6 @@
     <Content Include="Views\Posto\Alterar.cshtml" />
     <Content Include="Views\Paciente\Alterar.cshtml" />
     <Content Include="Views\Paciente\Index.cshtml" />
-    <Content Include="Views\Encaminhamento\Index.cshtml" />
-    <Content Include="Views\Encaminhamento\Cadastrar.cshtml" />
-    <Content Include="Views\Encaminhamento\Alterar.cshtml" />
     <Content Include="Views\Sintoma\Alterar.cshtml" />
     <Content Include="Views\Funcionario\Index.cshtml" />
     <Content Include="Views\Funcionario\Alterar.cshtml" />

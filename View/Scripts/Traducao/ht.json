@@ -1,7 +1,26 @@
 {
   "values": {
-    "policlinica": "Policlínica",
-    "postoEncaminharTextoRedirecionar": "Em crioulo o endereço: ",
-    "postoEncaminharTelefone": "Em crioulo o telefone"
+    "encaminhamentoPosto": " / Rekòmandasyon medikal.",
+    "encaminhamentoHospital": " / Rekòmandasyon medikal.",
+    "encaminhamentoFarmacia": " / Rekòmandasyon medikal.",
+
+    "farmaciaEncaminhar": "Ou ta dwe ale nan yon famasi ak achte medikaman sa yo:",
+    "remedioEncaminhar": "Non medikaman an",
+    "quantidadeEncaminhar": "Kantite pa jou.",
+    "diasEncaminhar": "Total jou ou ta dwe itilize",
+
+
+    "postoEncaminharTextoRedirecionar": "Ou pral adrese nan yon sèvis polyclinic espesyalize. Genyen ou pral oblije prezante dokiman sa a epi w ap jwenn èd nan men yon doktè ki pral ede nan rezoud pwoblèm ou an.",
+    "postoEndereco": "Adrès",
+    "postoTelefone": "Telefòn",
+
+    "hospitalEncaminharTextoRedirecionar": "Ou ta dwe ale nan yon lopital paske ka ou a se pi konplèks ak bezwen swen espesyalis imedya. Pou rive itilize enfòmasyon sa a.",
+    "hospitalFim": "Genyen ou pral oblije prezante dokiman sa a epi w ap jwenn èd nan men yon doktè ki pral ede nan rezoud pwoblèm ou an.",
+    "hospitalNome": "Non lopital la",
+    "hospitalEndereco": "Adrès Lopital",
+    "hospitalTelefone": "Telefòn",
+    "hospitalSetor": "Sektè",
+    "hospitalOnibus": "Otobis",
+    "hospitalTerminal": "Tèminal otobis la"
   }
 }

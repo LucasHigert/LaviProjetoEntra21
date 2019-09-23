@@ -1,13 +1,26 @@
 {
   "values": {
-    "policlinica": "Polyclinic",
-    "postoEncaminharTextoRedirecionar": "You wiil be redirected to this adress: ",
+    "encaminhamentoPosto": " / Référence médicale.",
+    "encaminhamentoHospital": " / Référence médicale.",
+    "encaminhamentoFarmacia": "/ Référence médicale.",
+
+    "farmaciaEncaminhar": "Vous devriez aller dans une pharmacie et acheter les médicaments suivants:",
+    "remedioEncaminhar": "Nom du médicament",
+    "quantidadeEncaminhar": "Quantité par jour",
+    "diasEncaminhar": "Nombre total de jours que vous devriez utiliser",
 
 
-    //Posto
-    "postoEncaminharTelefone": "You redirecionsss",
+    "postoEncaminharTextoRedirecionar": "Vous serez dirigé vers un service spécialisé dans une polyclinique. Là, vous devrez présenter ce document et vous serez assisté par un médecin qui vous aidera à résoudre votre problème.",
+    "postoEndereco": "Adresse",
+    "postoTelefone": "Téléphone",
 
-    //farmácia
-    "farmaciaEncaminhar": "aqui"
+    "hospitalEncaminharTextoRedirecionar": "Vous devriez aller à l'hôpital car votre cas est plus complexe et nécessite des soins immédiats de spécialistes. Pour arriver, utilisez cette information.",
+    "hospitalFim": "Là, vous devrez présenter ce document et vous serez assisté par un médecin qui vous aidera à résoudre votre problème.",
+    "hospitalNome": "Nom de l'hôpital",
+    "hospitalEndereco": "Adresse de l'hôpital",
+    "hospitalTelefone": "Téléphone",
+    "hospitalSetor": "Secteur",
+    "hospitalOnibus": "Bus",
+    "hospitalTerminal": "Gare routière"
   }
 }

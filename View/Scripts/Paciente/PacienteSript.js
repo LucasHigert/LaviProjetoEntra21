@@ -69,3 +69,29 @@ $(function () {
             return false;
     }
 });
+
+$(function () {
+    $("#campo-nome").focusout(function () {
+        $nome = $("#campo-nome").val();
+        $sexo = $("#campo-sexo").val();
+        $lingua = $("#campo-lingua").val();
+
+        $resultado = validar();
+        if ($resultado == false) {
+            var campo = document.getElementById('campo-nome');
+            campo.classList.add('border-danger');
+        }
+    });
+    function validar() {
+        var nome = form1.nome.value;
+        var sexo = form1.sexo.value;
+        var lingua = form1.lingua.value;
+
+        if (nome == "") {
+            alert('Preencha o campo com seu nome');
+            form1.nome.focus();
+            return false;
+        }
+    }
+    }
+})

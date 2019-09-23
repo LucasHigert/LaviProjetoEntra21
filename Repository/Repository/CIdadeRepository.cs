@@ -18,10 +18,14 @@ namespace Repository.Repository
 
         public int Inserir(Cidade cidade)
         {
+
             cidade.RegistroAtivo = true;
             context.Cidades.Add(cidade);
             context.SaveChanges();
             return cidade.Id;
+
+
+
         }
 
         public bool Alterar(Cidade cidade)

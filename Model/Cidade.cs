@@ -14,6 +14,7 @@ namespace Model
         [Key, Column("id")]
         public int Id { get; set; }
 
+        [StringLength(22, ErrorMessage = "O nome deve ser menor que {12} caracteres.")]
         [Column("nome")]
         public string Nome { get; set; }
 

@@ -6030,9 +6030,9 @@
     <Content Include="Views\Encaminhamento\PostoEncaminhar.cshtml" />
     <Content Include="Views\Encaminhamento\FarmaciaEncaminhar.cshtml" />
     <Content Include="Views\Encaminhamento\HospitalEncaminhar.cshtml" />
-    <Content Include="Scripts\Traducao\pt.json" />
     <Content Include="Scripts\Traducao\fr.json" />
     <Content Include="Scripts\Traducao\ht.json" />
+    <Content Include="Scripts\Traducao\pt.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

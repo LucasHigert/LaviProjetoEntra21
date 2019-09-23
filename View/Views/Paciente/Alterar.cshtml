@@ -9,6 +9,25 @@
 
     <h2 class="h2 mt-5 mb-5">Alterando paciente '@ViewBag.Paciente.Nome'</h2>
 
+    <div class="row">
+        <div class="col-12">
+            <label class="font-weight-bold" for="campo-posto">Posto<a class="text-danger">*</a></label>
+            <select name="idPosto" id="campo-posto" required="" class="form-control border-info">
+                <option selected="" disabled="disabled">Selecione o posto onde está</option>
+                @foreach (Model.Posto posto in ViewBag.Postos)
+                {
+                    if (posto.Id == ViewBag.Paciente.IdPosto)
+                    {
+                        <option value="@posto.Id" selected="selected">@posto.Nome</option>
+                    }
+                    else
+                    {
+                        <option value="@posto.Id">@posto.Nome</option>
+                    }
+                }
+            </select>
+        </div>
+    </div>
     <input type="text" hidden="hidden" value="@ViewBag.Paciente.Id" name="Id" />
 
     <div class="row">
@@ -19,7 +38,7 @@
         </div>
 
         <div class="col-3">
-            <label class="font-weight-bold" for="campo-sexo">Sexo<a class="text-danger"></a></label>
+            <label class="font-weight-bold" for="campo-sexo">Sexo<a class="text-danger">*</a></label>
             <select id="campo-sexo" name="sexo" class="form-control border-info">
                 @if (ViewBag.Paciente.Sexo == true)
                 {
@@ -62,25 +81,6 @@
 
 
     </div>
-    <div class="row">
-        <div class="col-12">
-            <label class="font-weight-bold" for="campo-posto">Posto<a class="text-danger">*</a></label>
-            <select name="idPosto" id="campo-posto" required="" class="form-control border-info">
-                <option selected="" disabled="disabled">Selecione o posto onde está</option>
-                @foreach (Model.Posto posto in ViewBag.Postos)
-                {
-                    if (posto.Id == ViewBag.Paciente.IdPosto)
-                    {
-                        <option value="@posto.Id" selected="selected">@posto.Nome</option>
-                    }
-                    else
-                    {
-                        <option value="@posto.Id">@posto.Nome</option>
-                    }
-                }
-            </select>
-        </div>
-    </div>
 
     <div class="row">
 
@@ -107,7 +107,7 @@
 
 
         <div class="col-3">
-            <label class="font-weight-bold" for="campo-idade">Idade</label>
+            <label class="font-weight-bold" for="campo-idade">Idade<a class="text-danger">*</a></label>
             <input type="number" id="campo-idade" name="idade" maxlength="3" class="form-control border-info" value="@ViewBag.Paciente.Idade" />
         </div>
 

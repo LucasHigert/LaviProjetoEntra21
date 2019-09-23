@@ -1,6 +1,5 @@
 ﻿$(function () {
 
-
     $("#posto-encaminhar-frances").on("click", function () {
         var idioma = "fr";
         obterTraducao(idioma);
@@ -11,8 +10,12 @@
         var idioma = "ht";
         obterTraducao(idioma);
     });
+    $("#posto-encaminhar-portugues").on("click", function () {
+        var idioma = "pt";
+        obterTraducao(idioma);
+    });
 
-    $("#postoModal").on('show.bs.modal', function (e) {
+    $("#postoModal").on('shown.bs.modal', function () {
         obterTraducao('pt');
     });
 
@@ -28,10 +31,13 @@
         obterTraducao(idioma);
     });
 
+    $("#farmacia-encaminhar-portugues").on("click", function () {
+        var idioma = "pt";
+        obterTraducao(idioma);
+    });
     $("#farmaciaModal").on('show.bs.modal', function (e) {
         obterTraducao('pt');
     });
-    //farmácia
 
     //hospital
     $("#hospital-encaminhar-frances").on("click", function () {
@@ -45,6 +51,11 @@
         obterTraducao(idioma);
     });
 
+    $("#hospital-encaminhar-portugues").on("click", function () {
+        var idioma = "pt";
+        obterTraducao(idioma);
+    });
+
     $("#hospitalModal").on('show.bs.modal', function (e) {
         obterTraducao('pt');
     });
@@ -54,7 +65,6 @@
             url: "/language/index?idioma=" + idioma,
             method: "get",
             success: function (data) {
-                //  Parse it
                 data = JSON.parse(data);
                 //  Set the data
                 i18n.translator.add(data);

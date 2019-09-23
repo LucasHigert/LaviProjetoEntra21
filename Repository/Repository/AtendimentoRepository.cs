@@ -14,7 +14,7 @@ namespace Repository.Repository
 
         public bool Alerar(Atendimento atendimento)
         {
-            var atendimentoOriginal = context.Atendimentos.Where(x => x.Id == atendimento.Id && x.Status != 2).FirstOrDefault();
+            var atendimentoOriginal = context.Atendimentos.Where(x => x.Id == atendimento.Id && x.Status != 3).FirstOrDefault();
             if (atendimentoOriginal == null)
             {
                 return false;

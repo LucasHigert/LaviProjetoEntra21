@@ -214,16 +214,15 @@ namespace View.Controllers
         //        paciente.RegistroAtivo = true;
         //        pacienteRepository.Inserir(paciente);
 
-        //        AtendimentoRepository atendimentoRepository = new AtendimentoRepository();
-        //        Atendimento atendimento = new Atendimento();
-        //        atendimento.IdFuncionario = Convert.ToInt32(Session["usuarioLogadoId"]);
-        //        atendimento.IdPaciente = paciente.Id;
-        //        atendimento.DataAtendimento = DateTime.Now;
-        //        atendimento.IdPosto = funcionario.IdPosto;
-        //        atendimentoRepository.Inserir(atendimento);
-        //        if (Session["usuarioLogadoPermissao"].ToString() == "1")
-        //        {
-        //            atendimento.Status = 1;
+                AtendimentoRepository atendimentoRepository = new AtendimentoRepository();
+                Atendimento atendimento = new Atendimento();
+                atendimento.IdFuncionario = Convert.ToInt32(Session["usuarioLogadoId"]);
+                atendimento.IdPaciente = paciente.Id;
+                atendimento.DataAtendimento = DateTime.Now;
+                atendimento.IdPosto = funcionario.IdPosto;
+                if (Session["usuarioLogadoPermissao"].ToString() == "1")
+                {
+                    atendimento.Status = 1;
 
         //        }
         //        else
@@ -231,12 +230,14 @@ namespace View.Controllers
         //            atendimento.Status = (Convert.ToInt32(Session["usuarioLogadoPermissao"]) - 1);
         //        }
 
-        //        if (Session["usuarioLogadoPermissao"].ToString() == "1")
-        //        {
-        //            return RedirectToAction("FinalizaCadastro");
-        //        }
-        //        else
-        //        {
+                atendimentoRepository.Inserir(atendimento);
+
+                if (Session["usuarioLogadoPermissao"].ToString() == "1")
+                {
+                    return RedirectToAction("FinalizaCadastro");
+                }
+                else
+                {
 
         //            return Redirect("/atendimentoespecial/ParteCorpoEspecial?idAtendimento=" + atendimento.Id);
         //        }

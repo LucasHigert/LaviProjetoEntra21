@@ -3,6 +3,7 @@
     $idAtendimento = 0
     $idPaciente =  0
     $idSintoma = 0
+    $nivelDor = 0
 
     $(".botao").on("click", function () {
         $idCorpo = $(this).data("id");
@@ -22,12 +23,14 @@
         $idAtendimento = $("#idAtendimento").data("id");
         $idPaciente = $("#idPaciente").data("id");
         $idSintoma = $("#sintoma").val();
+        $nivelDor = $("#nivelDor").val();
         $.ajax({
             url: "/atendimentoespecial/InserirSintoma",
             method: "post",
             data: {
                 idAtendimento: $idAtendimento,
-                nivelDor: $idPaciente,
+                idPaciente : $idPaciente,
+                nivelDor: $nivelDor,
                 idSintoma: $idSintoma
             },
             success: function (data) { $("#modal-sintoma").modal('hide'); $tabela.ajax.reload(); },

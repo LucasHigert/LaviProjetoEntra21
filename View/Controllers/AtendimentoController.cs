@@ -193,8 +193,9 @@ namespace View.Controllers
                     List<AtendimentoParteCorpoSintoma> AtendimentoSintoma = atendimentoParteCorpoSintoma.ObterPeloIdAtentimento(atendimento.Id);
                     for (int i = 0; i < AtendimentoSintoma.Count; i++)
                     {
-                        sintomas.Add(new Sintoma { Nome = AtendimentoSintoma[i].Sintoma.Nome });
+                        sintomas.Add(new Sintoma { Nome = AtendimentoSintoma[i].Sintoma.Nome  });
                     }
+                    ViewBag.NivelDor = AtendimentoSintoma;
                     ViewBag.Sintomas = sintomas;
                 }
                 return View();
@@ -229,7 +230,7 @@ namespace View.Controllers
                 atendimentoOriginal.IdPosto = funcionario.IdPosto;
                 if (Session["usuarioLogadoPermissao"].ToString() == "3")
                 {
-
+                    atendimento.Status = (Convert.ToInt32(Session["usuarioLogadoPermissao"]));
                     atendimento.IdMedico = funcionario.Id;
                 }
                 else
@@ -240,7 +241,7 @@ namespace View.Controllers
                 repositoryAtendimento.Alerar(atendimento);
                 if ((Session["usuarioLogadoPermissao"].ToString() == "3") || (Session["usuarioLogadoPermissao"].ToString() == "4"))
                 {
-                    return Redirect("/encaminhamento/escolha?idAtendimento" + atendimento.Id);
+                    return Redirect("/encaminhamento/escolha?idAtendimento=" + atendimento.Id);
                 }
                 else
                 {

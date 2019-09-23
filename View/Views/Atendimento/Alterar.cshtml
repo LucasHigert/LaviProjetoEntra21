@@ -11,10 +11,7 @@
         <div class="col-12">
             <label for="campo-paciente">Paciente</label>
             <select name="idPaciente" id="campo-paciente" disabled class="form-control border-info">
-                @foreach (Model.Paciente paciente in ViewBag.Pacientes)
-                {
-                    <option value="@paciente.Id">@paciente.Nome</option>
-                }
+                <option selected="selected" disabled="disabled" value="@ViewBag.Paciente.Id">@ViewBag.Paciente.Nome</option>
             </select>
 
         </div>
@@ -45,6 +42,29 @@
     </div>
     @if ((Session["usuarioLogadoPermissao"].ToString() == "3") || (Session["usuarioLogadoPermissao"].ToString() == "4"))
     {
+        if (ViewBag.Paciente.Lingua != 0)
+        {
+            <a class="btn btn-primary float-right" href="/atendimentoespecial/partecorpoespecial?idAtendimento=@ViewBag.Atendimento.Id"><i class="fa fa-plus"></i> Adicionar Sintomas</a>
+            <div class="row">
+                <div class="col-12">
+            <table class="table table-primary table-hover table-bordered text-dark mt-4">
+                <thead class="bg-dark">
+                    <tr>
+                        <td>Sintoma</td>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+                @foreach (Model.Sintoma Sintoma in ViewBag.Sintomas)
+                {
+                    <tr>
+                        <td>@Sintoma.Nome</td>
+                    </tr>
+                }
+            </table>
+
+                </div>
+            </div>
+        }
 
         <div class="row">
             <div class="col-12">
@@ -53,13 +73,10 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-12">
-                <label for="campo-encaminhamento">Encaminhamento</label>
-                <select name="encaminhamento border-info" id="campo-encaminhamento" class="form-control"></select>
-            </div>
-        </div>
     }
+
+
+
 
 
     <button class="btn btn-success mt-5" type="submit"><i class="fa fa-save"></i>Salvar</button>

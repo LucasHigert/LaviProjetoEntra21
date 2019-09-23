@@ -181,7 +181,22 @@ namespace View.Controllers
         {
             if (VerificaLogado() == true)
             {
-
+                Atendimento atendimento = repositoryAtendimento.ObterPeloId(id);
+                ViewBag.Atendimento = atendimento;
+                Paciente paciente = repositoryPaciente.ObterPeloId(atendimento.IdPaciente);
+                ViewBag.Paciente = paciente;
+                //Se o paciente for estrangeiro ele irá ter uma lista de sintomas que este selecionou
+                if (paciente.Lingua != 0)
+                {
+                    AtendimentoParteCorpoSintomaRepository atendimentoParteCorpoSintoma = new AtendimentoParteCorpoSintomaRepository();
+                    List<Sintoma> sintomas = new List<Sintoma>();
+                    List<AtendimentoParteCorpoSintoma> AtendimentoSintoma = atendimentoParteCorpoSintoma.ObterPeloIdAtentimento(atendimento.Id);
+                    for (int i = 0; i < AtendimentoSintoma.Count; i++)
+                    {
+                        sintomas.Add(new Sintoma { Nome = AtendimentoSintoma[i].Sintoma.Nome });
+                    }
+                    ViewBag.Sintomas = sintomas;
+                }
                 return View();
 
 
@@ -207,10 +222,30 @@ namespace View.Controllers
         {
             if (VerificaLogado() == true)
             {
+                FuncionarioRepository funcionarioRepository = new FuncionarioRepository();
+                Funcionario funcionario = funcionarioRepository.ObterPeloId(Convert.ToInt32(Session["usuarioLogadoId"]));
+                Atendimento atendimentoOriginal = repositoryAtendimento.ObterPeloId(atendimento.Id);
+                atendimentoOriginal.IdFuncionario = funcionario.Id;
+                atendimentoOriginal.IdPosto = funcionario.IdPosto;
+                if (Session["usuarioLogadoPermissao"].ToString() == "3")
+                {
 
-                return View();
+                    atendimento.IdMedico = funcionario.Id;
+                }
+                else
+                {
+                    atendimento.Status = (Convert.ToInt32(Session["usuarioLogadoPermissao"]));
 
-
+                }
+                repositoryAtendimento.Alerar(atendimento);
+                if ((Session["usuarioLogadoPermissao"].ToString() == "3") || (Session["usuarioLogadoPermissao"].ToString() == "4"))
+                {
+                    return Redirect("/encaminhamento/escolha?idAtendimento" + atendimento.Id);
+                }
+                else
+                {
+                    return RedirectToAction("index");
+                }
             }
             else
             {

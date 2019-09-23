@@ -4923,6 +4923,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AtendimentoEspecialController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CargoController.cs" />
     <Compile Include="Controllers\AtendimentoController.cs" />
     <Compile Include="Controllers\CidadeController.cs" />
@@ -6056,6 +6057,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Views\Base\" />
     <Folder Include="Views\Language\" />
   </ItemGroup>
   <ItemGroup>

@@ -1,5 +1,5 @@
 ﻿<head>
-    <link rel="stylesheet" href="~/Scripts/Encaminhamento/ModalPosto.js" />
+    <link rel="stylesheet" href="~/Scripts/Encaminhamento/TesteEncaminhamento.css" />
 </head>
 
 <div id="postoModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -12,18 +12,21 @@
             <!-- Modal Header -->
             <div class="modal-header">
 
-                <div class="col-7">
+                <div class="col-5">
 
                     <h4 class="modal-title" id="gridSystemModalLabel">Policlínica</h4>
                 </div>
 
-                <div class="col-5">
+                <div class="col-7">
                     <div class="container body-content">
-                        <button id="posto-encaminhar-frances">
+                        <button id="posto-encaminhar-frances" class="btn btn-default">
                             <span class="mt-5 flag-icon flag-icon-fr"></span> Francês
                         </button>
-                        <button id="posto-encaminhar-criolo">
+                        <button id="posto-encaminhar-criolo" class="btn btn-default">
                             <span class="mt-5 flag-icon flag-icon-ht"></span> Crioulo
+                        </button>
+                        <button id="posto-encaminhar-portugues" class="btn btn-default">
+                            <span class="mt-5 flag-icon flag-icon-br"></span> Português
                         </button>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     </div>
@@ -32,28 +35,38 @@
             <div id="printThis2">
                 <!-- Modal Body -->
                 <div class="modal-body printSection">
-                    <div class=" row">
-                        <div class="col-12">
-                            <p>...</p>
-                        </div>
-                    </div>
                     <div class="row">
                         <div class="col-12">
                             <div class="body-message">
-                                <span id="posto-encaminhar-texto-redirecionar" class="text-danger font-weight-bold"></span>
+                                <h3 class="text-dark">Encaminhamento<span id="encaminhamento-posto"></span></h3>
+                                <span id="posto-encaminhar-texto-redirecionar" class="font-weight-bold"></span>
+                                <div class="row mt-10">
+                                    <div class="col-6">
+                                        Endereço
+                                    </div>
+                                    <div class="col-6">
+                                        Telefone
+                                    </div>
+                                </div>
+                                <!--tradução-->
                                 <div class="row">
-
+                                    <div class="col-6">
+                                        <span id="posto-endereco" class="text-danger font-weight-bold"></span>
+                                    </div>
+                                    <div class="col-6">
+                                        <span id="posto-telefone" class="text-danger font-weight-bold"></span>
+                                    </div>
+                                </div>
+                                <!--fim tradução-->
+                                <div class="row">
                                     <div class="col">
                                         <div class="form-group">
-                                            <label>Endereço</label>
-                                            <input type="text" placeholder="Endereço" required="" class="form-control" />
+                                            <input type="text" required="" class="form-control" />
                                         </div>
                                     </div>
-                                    <span id="posto-encaminhar-telefone" class="text-danger font-weight-bold"></span>
                                     <div class="col">
                                         <div class="form-group">
-                                            <label>Telefone</label>
-                                            <input type="text" placeholder="Telefone" required="" class="form-control" />
+                                            <input type="text" required="" class="form-control" />
                                         </div>
                                     </div>
                                 </div>
@@ -62,17 +75,16 @@
                     </div>
 
                 </div>
-                @*Você será direcionado para um atendimento especializado na Policlínica de CIDADE, ENDEREÇO, TELEFONE.*@
-                <!-- Modal Footer -->
+
             </div>
             <div class="modal-footer">
-                <button class="btn" data-dismiss="modal" aria-hidden="true">Fechar</button>
-                <button id="btnPrint2" type="button" class="btn btn-default">Imprimir</button>
+                <button id="btnPrint2" type="button" class="btn btn-info float-right">Imprimir</button>
+                @*<button class="btn float-right" data-dismiss="modal" aria-hidden="true">Fechar</button>*@
             </div>
         </div>
     </div>
 </div>
 
 @section js{
-    <script src="~/Content/TesteEncaminhamento.js"></script>
+    <script src="~/Scripts/Encaminhamento/TesteEncaminhamento.js"></script>
 }

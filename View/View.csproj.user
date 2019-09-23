@@ -21,13 +21,15 @@
     <ActiveDebugTarget />
     <ProjectView>ProjectFiles</ProjectView>
     <WebStackScaffolding_DbContextTypeFullName>Repository.SistemaContext</WebStackScaffolding_DbContextTypeFullName>
+    <NameOfLastUsedPublishProfile>lavi-system - Web Deploy</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <StartPageUrl>/login</StartPageUrl>
-          <StartAction>NoStartPage</StartAction>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
           <AspNetDebugging>True</AspNetDebugging>
           <SilverlightDebugging>False</SilverlightDebugging>
           <NativeDebugging>False</NativeDebugging>

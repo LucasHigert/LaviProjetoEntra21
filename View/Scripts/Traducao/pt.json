@@ -1,8 +1,26 @@
 {
   "values": {
-    "policlinica": "Policlínica",
-    "postoEncaminharTextoRedirecionar": "Você será direcionado ao endereço: ",
+    "encaminhamentoPosto": "",
+    "encaminhamentoHospital": "",
+    "encaminhamentoFarmacia": "",
 
-    "postoEncaminharTelefone": "Pode comunicar-se através do telefone: "
+    "farmaciaEncaminhar": "Você deve se dirigir até uma farmácia e comprar os seguintes remédios:",
+    "remedioEncaminhar": "",
+    "quantidadeEncaminhar": "",
+    "diasEncaminhar": "",
+
+
+    "postoEncaminharTextoRedirecionar": "Você será direcionado para um atendimento especializado de uma Policlínica. Lá você deverá apresentar este documento e será atendido por um médico que auxiliará na resolução de seu problema.",
+    "postoEndereco": "",
+    "postoTelefone": "",
+
+    "hospitalEncaminharTextoRedirecionar": "Você deverá se dirigir a um Hospital pois seu caso é mais complexo e precisa de uma atendimento especializado imediato. Para chegar utilize essas informações. ",
+    "hospitalFim": "Lá você deverá apresentar este documento e será atendido por um médico que auxiliará na resolução de seu problema.",
+    "hospitalNome": "",
+    "hospitalEndereco": "",
+    "hospitalTelefone": "",
+    "hospitalSetor": "",
+    "hospitalOnibus": "",
+    "hospitalTerminal": ""
   }
 }

@@ -247,7 +247,6 @@ namespace View.Controllers
                 atendimento.IdPaciente = paciente.Id;
                 atendimento.DataAtendimento = DateTime.Now;
                 atendimento.IdPosto = funcionario.IdPosto;
-                atendimentoRepository.Inserir(atendimento);
                 if (Session["usuarioLogadoPermissao"].ToString() == "1")
                 {
                     atendimento.Status = 1;
@@ -257,6 +256,8 @@ namespace View.Controllers
                 {
                     atendimento.Status = (Convert.ToInt32(Session["usuarioLogadoPermissao"]) - 1);
                 }
+
+                atendimentoRepository.Inserir(atendimento);
 
                 if (Session["usuarioLogadoPermissao"].ToString() == "1")
                 {

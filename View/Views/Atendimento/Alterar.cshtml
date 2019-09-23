@@ -2,14 +2,14 @@
 @{
     ViewBag.Title = "Index";
 }
-<h2 class="h2 mt-5 mb-5">Atendendo @ViewBag.Atendimento.Id</h2>
+<h2 class="h2 mt-5 mb-5">Atendimento N°  @ViewBag.Atendimento.Id</h2>
 <form action="/atendimento/update" method="post">
     <!--Esta div contera o atendente e o medico, quando o atendente abrir nao tera a opção medico-->
     <!--Quando o medico abrir nao tera o atendente-->
     <input type="text" name="id" value="@ViewBag.Atendimento.Id" hidden="hidden" />
     <div class="row">
         <div class="col-12">
-            <label for="campo-paciente">Paciente</label>
+            <label class="font-weight-bold" for="campo-paciente">Paciente</label>
             <select name="idPaciente" id="campo-paciente" disabled class="form-control border-info">
                 <option selected="selected" disabled="disabled" value="@ViewBag.Paciente.Id">@ViewBag.Paciente.Nome</option>
             </select>
@@ -19,16 +19,31 @@
 
     <div class="row">
         <div class="col-6">
-            <label for="campo-data">Data</label>
+            <label class="font-weight-bold" for="campo-data">Data</label>
             <input type="text" value="@ViewBag.Atendimento.DataAtendimento" disabled name="DataAtendimento" id="campo-data" class="form-control border-info" />
         </div>
         <div class="col-6">
             <div>
-                <label for="campo-prioridade">Prioridade</label>
+                <label class="font-weight-bold" for="campo-prioridade">Prioridade</label>
                 <select name="Prioridade" id="campo-prioridade" class="form-control border-info">
-                    <option value="3">Alto</option>
-                    <option value="2">Medio</option>
-                    <option value="1">Baixo</option>
+                    @if (ViewBag.Atendimento.Prioridade == 3)
+                    {
+                        <option value="3" selected="selected">Alto</option>
+                        <option value="2">Medio</option>
+                        <option value="1">Baixo</option>
+                    }
+                    else if (ViewBag.Atendimento.Prioridade == 2)
+                    {
+                        <option value="3">Alto</option>
+                        <option value="2" selected="selected">Medio</option>
+                        <option value="1">Baixo</option>
+                    }
+                    else
+                    {
+                        <option value="3" selected="selected">Alto</option>
+                        <option value="2">Medio</option>
+                        <option value="1" selected="selected">Baixo</option>
+                    }
                 </select>
 
             </div>
@@ -36,7 +51,7 @@
     </div>
     <div class="row">
         <div class="col-12">
-            <label for="campo-observacao">Observação</label>
+            <label class="font-weight-bold" for="campo-observacao">Observação</label>
             <textarea class="form-control border-info" id="campo-observacao" name="observacao" maxlength="150"></textarea>
         </div>
     </div>
@@ -44,23 +59,40 @@
     {
         if (ViewBag.Paciente.Lingua != 0)
         {
-            <a class="btn btn-primary float-right" href="/atendimentoespecial/partecorpoespecial?idAtendimento=@ViewBag.Atendimento.Id"><i class="fa fa-plus"></i> Adicionar Sintomas</a>
+                <a class="btn btn-primary pull-right mt-4" href="/atendimentoespecial/partecorpoespecial?idAtendimento=@ViewBag.Atendimento.Id"><i class="fa fa-plus"></i> Adicionar Sintomas</a>
+
             <div class="row">
                 <div class="col-12">
-            <table class="table table-primary table-hover table-bordered text-dark mt-4">
-                <thead class="bg-dark">
-                    <tr>
-                        <td>Sintoma</td>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-                @foreach (Model.Sintoma Sintoma in ViewBag.Sintomas)
-                {
-                    <tr>
-                        <td>@Sintoma.Nome</td>
-                    </tr>
-                }
-            </table>
+                    <table class="table table-primary table-hover table-bordered text-dark mt-4">
+                        <thead class="bg-dark">
+                            <tr>
+                                <td>Sintoma</td>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+
+                        @for (int i = 0; i < ViewBag.Sintomas.Count; i++)
+                        {
+                            if (ViewBag.NivelDor[i].NiverDor == 2)
+                            {
+                                <tr class="bg-yellow-900 text-white">
+                                    <td>@ViewBag.Sintomas[i].Nome</td>
+                                </tr>
+                            }
+                            else if (ViewBag.NivelDor[i].NiverDor == 3)
+                            {
+                                <tr class="bg-red-900 text-white">
+                                    <td>@ViewBag.Sintomas[i].Nome</td>
+                                </tr>
+                            }
+                            else
+                            {
+                                <tr>
+                                    <td>@ViewBag.Sintomas[i].Nome</td>
+                                </tr>
+                            }
+                        }
+                    </table>
 
                 </div>
             </div>
@@ -68,7 +100,7 @@
 
         <div class="row">
             <div class="col-12">
-                <label for="campo-tratamento">Tratamento</label>
+                <label class="font-weight-bold" for="campo-tratamento">Tratamento</label>
                 <textarea class="form-control border-info" id="campo-tratamento" name="tratamento" maxlength="100"></textarea>
             </div>
         </div>
@@ -79,7 +111,7 @@
 
 
 
-    <button class="btn btn-success mt-5" type="submit"><i class="fa fa-save"></i>Salvar</button>
+    <button class="btn btn-success mt-5" type="submit"><i class="fa fa-save"></i> Salvar</button>
 
 </form>
 

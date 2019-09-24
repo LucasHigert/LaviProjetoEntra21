@@ -207,4 +207,16 @@
   <data name="SelecioneSintoma" xml:space="preserve">
     <value>Chwazi yon sentòm</value>
   </data>
+  <data name="Forte" xml:space="preserve">
+    <value>Bonjan</value>
+  </data>
+  <data name="NivelDor" xml:space="preserve">
+    <value>Nivo doulè</value>
+  </data>
+  <data name="Pouco" xml:space="preserve">
+    <value>Little</value>
+  </data>
+  <data name="Suportavel" xml:space="preserve">
+    <value>Fasil pou moun</value>
+  </data>
 </root>

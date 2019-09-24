@@ -204,4 +204,16 @@
   <data name="SelecioneSintoma" xml:space="preserve">
     <value />
   </data>
+  <data name="Forte" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NivelDor" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Pouco" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Suportavel" xml:space="preserve">
+    <value />
+  </data>
 </root>

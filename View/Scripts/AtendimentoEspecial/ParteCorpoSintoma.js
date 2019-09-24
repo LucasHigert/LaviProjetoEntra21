@@ -1,39 +1,47 @@
 ﻿$(function () {
-    $idCorpo = 0
-    $idAtendimento = 0
-    $idPaciente =  0
-    $idSintoma = 0
-    $nivelDor = 0
+    $idCorpo = 0;
+    $idAtendimento = 0;
+    $idPaciente = 0;
+    $idSintoma = 0;
+    $nivelDor = 0;
 
     $(".botao").on("click", function () {
         $idCorpo = $(this).data("id");
+        AtualizaSintoma($idCorpo);
+    })
 
-        $("#sintoma").select2({
-            dropdownParent: $('#modal-sintoma'),
-            ajax: {
-                url: "/atendimentoespecial/ObterSintomaParte?id=" + $idCorpo,
-                dataType: "json"
-            }
 
-        })
+    function AtualizaSintoma($idCorpo) {
+
+    $sintoma = $("#sintoma").select2({
+        dropdownParent: $('#modal-sintoma'),
+        ajax: {
+            url: "/atendimentoespecial/ObterSintomaParte?id=" + $idCorpo,
+            dataType: "json"
+        }
 
     });
+    };
+
 
     $("#botao-salvar").on("click", function () {
         $idAtendimento = $("#idAtendimento").data("id");
         $idPaciente = $("#idPaciente").data("id");
         $idSintoma = $("#sintoma").val();
         $nivelDor = $("#nivelDor").val();
+        if ($idSintoma == null) {
+            return;
+        }
         $.ajax({
             url: "/atendimentoespecial/InserirSintoma",
             method: "post",
             data: {
                 idAtendimento: $idAtendimento,
-                idPaciente : $idPaciente,
+                idPaciente: $idPaciente,
                 nivelDor: $nivelDor,
                 idSintoma: $idSintoma
             },
-            success: function (data) { $("#modal-sintoma").modal('hide'); $tabela.ajax.reload(); },
+            success: function (data) { $("#sintoma").val(null); $("#nivelDor").val(0); $("#modal-sintoma").modal('hide'); $tabela.ajax.reload(); },
             error: function (err) { alert("Não foi possivel inserir, por favor entre em contato com o suporte") }
         })
 

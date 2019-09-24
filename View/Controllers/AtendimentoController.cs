@@ -34,50 +34,37 @@ namespace View.Controllers
         //Listagem de Atendimentos
         public ActionResult Index()
         {
-
             if (VerificaLogado() == true)
             {
 
-                return View();
 
+                FuncionarioRepository funcionarioRepository = new FuncionarioRepository();
+                Funcionario funcionario = funcionarioRepository.ObterPeloId(Convert.ToInt32(Session["usuarioLogadoId"]));
+                if (Session["usuarioLogadoPermissao"].ToString() == "4")
+                {
+                    ViewBag.Cargo = "Administrador";
+                    ViewBag.Atendimentos = repositoryAtendimento.ObterTodosPosto(funcionario.IdPosto);
+                    return View();
+                }
+                else if (Session["usuarioLogadoPermissao"].ToString() == "1")
+                {
+                    ViewBag.Cargo = funcionario.Cargo.Nome;
+                    ViewBag.Atendimentos = repositoryAtendimento.ObterTodosPeloCargoPosto(1, funcionario.IdPosto);
+                    return View();
+                }
+                else
+                {
 
+                    ViewBag.Cargo = funcionario.Cargo.Nome;
+
+                    ViewBag.Atendimentos = repositoryAtendimento.ObterTodosPeloCargoPosto(Convert.ToInt32(Session["usuarioLogadoPermissao"]) - 1, funcionario.IdPosto);
+                    return View();
+                }
             }
             else
             {
                 return Redirect("/login");
             }
-
-            //if (VerificaLogado() == true)
-            //{
-
-
-            //    FuncionarioRepository funcionarioRepository = new FuncionarioRepository();
-            //    Funcionario funcionario = funcionarioRepository.ObterPeloId(Convert.ToInt32(Session["usuarioLogadoId"]));
-            //    if (Session["usuarioLogadoPermissao"].ToString() == "4")
-            //    {
-            //        ViewBag.Cargo = "Administrador";
-            //        ViewBag.Atendimentos = repositoryAtendimento.ObterTodosPosto(funcionario.IdPosto);
-            //        return View();
-            //    }
-            //    else if (Session["usuarioLogadoPermissao"].ToString() == "1")
-            //    {
-            //        ViewBag.Cargo = funcionario.Cargo.Nome;
-            //        ViewBag.Atendimentos = repositoryAtendimento.ObterTodosPeloCargoPosto(1, funcionario.IdPosto);
-            //        return View();
-            //    }
-            //    else
-            //    {
-
-            //        ViewBag.Cargo = funcionario.Cargo.Nome;
-
-            //        ViewBag.Atendimentos = repositoryAtendimento.ObterTodosPeloCargoPosto(Convert.ToInt32(Session["usuarioLogadoPermissao"]) - 1, funcionario.IdPosto);
-            //        return View();
-            //    }
-            //}
-            //else
-            //{
-            //    return Redirect("/login");
-            //}
         }
         //Escolher o tipo de atendimento
         #region
@@ -104,26 +91,15 @@ namespace View.Controllers
             if (VerificaLogado() == true)
             {
 
+                EncaminhamentoRepository encaminhamentoRepository = new EncaminhamentoRepository();
+                ViewBag.Encaminhamentos = encaminhamentoRepository.ObterTodos();
+                ViewBag.Pacientes = repositoryPaciente.ObterTodos();
                 return View();
-
-
             }
             else
             {
                 return Redirect("/login");
             }
-            //if (VerificaLogado() == true)
-            //{
-
-            //    EncaminhamentoRepository encaminhamentoRepository = new EncaminhamentoRepository();
-            //    ViewBag.Encaminhamentos = encaminhamentoRepository.ObterTodos();
-            //    ViewBag.Pacientes = repositoryPaciente.ObterTodos();
-            //    return View();
-            //}
-            //else
-            //{
-            //    return Redirect("/login");
-            //}
         }
 
         public ActionResult Inserir(Atendimento atendimento)
@@ -131,47 +107,36 @@ namespace View.Controllers
             if (VerificaLogado() == true)
             {
 
-                return View();
+                FuncionarioRepository funcionarioRepository = new FuncionarioRepository();
+                Funcionario funcionario = funcionarioRepository.ObterPeloId(Convert.ToInt32(Session["usuarioLogadoId"]));
+                atendimento.IdFuncionario = funcionario.Id;
+                atendimento.IdPosto = funcionario.IdPosto;
 
+                if (Session["usuarioLogadoPermissao"].ToString() == "1")
+                {
+                    atendimento.Status = 1;
+                }
+                else
+                {
+                    atendimento.Status = Convert.ToInt32(Session["usuarioLogadoPermissao"]);
+                }
 
+                var inseriu = repositoryAtendimento.Inserir(atendimento);
+                PacienteRepository pacienteRepository = new PacienteRepository();
+                Paciente paciente = pacienteRepository.ObterPeloId(atendimento.IdPaciente);
+                if (paciente.Lingua != 0)
+                {
+                    return Redirect("/atendimentoespecial/ParteCorpoEspecial?idAtendimento=" + atendimento.Id);
+                }
+                else
+                {
+                    return RedirectToAction("index");
+                }
             }
             else
             {
                 return Redirect("/login");
             }
-            //if (VerificaLogado() == true)
-            //{
-
-            //    FuncionarioRepository funcionarioRepository = new FuncionarioRepository();
-            //    Funcionario funcionario = funcionarioRepository.ObterPeloId(Convert.ToInt32(Session["usuarioLogadoId"]));
-            //    atendimento.IdFuncionario = funcionario.Id;
-            //    atendimento.IdPosto = funcionario.IdPosto;
-
-            //    if (Session["usuarioLogadoPermissao"].ToString() == "1")
-            //    {
-            //        atendimento.Status = 1;
-            //    }
-            //    else
-            //    {
-            //        atendimento.Status = Convert.ToInt32(Session["usuarioLogadoPermissao"]);
-            //    }
-
-            //    var inseriu = repositoryAtendimento.Inserir(atendimento);
-            //    PacienteRepository pacienteRepository = new PacienteRepository();
-            //    Paciente paciente = pacienteRepository.ObterPeloId(atendimento.IdPaciente);
-            //    if (paciente.Lingua != 0)
-            //    {
-            //        return Redirect("/atendimentoespecial/ParteCorpoEspecial?idAtendimento=" + atendimento.Id);
-            //    }
-            //    else
-            //    {
-            //        return RedirectToAction("index");
-            //    }
-            //}
-            //else
-            //{
-            //    return Redirect("/login");
-            //}
         }
         #endregion
 
@@ -206,17 +171,7 @@ namespace View.Controllers
             {
                 return Redirect("/login");
             }
-            //if (VerificaLogado() == true)
-            //{
-
-            //    ViewBag.Atendimento = repositoryAtendimento.ObterPeloId(id);
-            //    ViewBag.Pacientes = repositoryPaciente.ObterTodos();
-            //    return View();
-            //}
-            //else
-            //{
-            //    return Redirect("/login");
-            //}
+           
         }
 
         public ActionResult Update(Atendimento atendimento)
@@ -252,30 +207,6 @@ namespace View.Controllers
             {
                 return Redirect("/login");
             }
-            //if (VerificaLogado() == true)
-            //{
-            //    FuncionarioRepository funcionarioRepository = new FuncionarioRepository();
-            //    Funcionario funcionario = funcionarioRepository.ObterPeloId(Convert.ToInt32(Session["usuarioLogadoId"]));
-            //    Atendimento atendimentoOriginal = repositoryAtendimento.ObterPeloId(atendimento.Id);
-            //    atendimentoOriginal.IdFuncionario = funcionario.Id;
-            //    atendimentoOriginal.IdPosto = funcionario.IdPosto;
-            //    if (Session["usuarioLogadoPermissao"].ToString() == "3")
-            //    {
-            //        atendimento.Status = 3;
-            //        atendimento.IdMedico = funcionario.Id;
-            //    }
-            //    else
-            //    {
-            //        atendimento.Status = (Convert.ToInt32(Session["usuarioLogadoPermissao"]));
-
-            //    }
-            //    repositoryAtendimento.Alerar(atendimento);
-            //    return RedirectToAction("index");
-            //}
-            //else
-            //{
-            //    return Redirect("/login");
-            //}
         }
         #endregion
     }

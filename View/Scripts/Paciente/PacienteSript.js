@@ -1,26 +1,26 @@
 ﻿$(function () {
 
-    $("#campo-cep").focusout(function() {
-        
-            buscarCEP();
-        
+    $("#campo-cep").focusout(function () {
+
+        buscarCEP();
+
     });
     function buscarCEP() {
 
         $cep = $("#campo-cep").val().replace('-', '');
-      
+
         $.ajax({
             url: 'https://viacep.com.br/ws/' + $cep + '/json/',
             method: 'get',
             success: function (data) {
                 $logradouro = data.logradouro;
-              
+
 
                 $("#campo-endereco").val($logradouro);
-               
+
             },
             error: function (err) {
-        }
+            }
 
         });
     }
@@ -33,7 +33,7 @@ $(function () {
         if ($resultado == false) {
             var campo = document.getElementById('campo-cpf');
             campo.classList.add('border-danger');
-            
+
         }
 
     });
@@ -73,25 +73,33 @@ $(function () {
 $(function () {
     $("#campo-nome").focusout(function () {
         $nome = $("#campo-nome").val();
-        $sexo = $("#campo-sexo").val();
-        $lingua = $("#campo-lingua").val();
-
         $resultado = validar();
         if ($resultado == false) {
             var campo = document.getElementById('campo-nome');
             campo.classList.add('border-danger');
         }
     });
-    function validar() {
-        var nome = form1.nome.value;
-        var sexo = form1.sexo.value;
-        var lingua = form1.lingua.value;
 
-        if (nome == "") {
-            alert('Preencha o campo com seu nome');
-            form1.nome.focus();
+    $("#campo-endereco").focusout(function () {
+        $endereco = $("#campo-endereco").val();
+        $resultado = validar();
+        if ($resultado == false) {
+            var campo = document.getElementById('campo-endereco');
+            campo.classList.add('border-danger');
+        }
+    });
+
+    function validar() {
+        if (document.getElementById('campo-nome').value == "" || document.getElementById('campo-nome').value.length <= 2) {
             return false;
         }
+        if (document.getElementById('campo-endereco').value == "") {
+            return false;
+        }
+        else {
+            return true;
+        }
+
+
     }
-    }
-})
+});

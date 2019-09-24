@@ -10,12 +10,12 @@
     <div class="row">
         <div class="col-6">
             <label class="font-weight-bold" for="campo-nome">Nome<a class="text-danger">*</a></label>
-            <input type="text" id="campo-nome" name="nome" class="form-control border-info" maxlength="100" required="required">
+            <input type="text" id="campo-nome" name="nome" class="form-control border-info" maxlength="100" required>
         </div>
 
         <div class="col-3">
             <label class="font-weight-bold" for="campo-sexo">Sexo<a class="text-danger">*</a></label>
-            <select id="campo-sexo" name="sexo" class="form-control border-info" required="required">
+            <select id="campo-sexo" name="sexo" class="form-control border-info">
                 <option selected="selected" hidden="hidden">Selecione o sexo</option>
                 <option value="true">Feminino</option>
                 <option value="false">Masculino</option>
@@ -24,7 +24,7 @@
 
         <div class="col-3">
             <label class="font-weight-bold" for="campo-lingua">Lingua<a class="text-danger">*</a></label>
-            <select class="form-control border-info" name="lingua" required="required">
+            <select class="form-control border-info" name="lingua">
                 <option value="0" selected="selected">Português Brasileiro</option>
                 <option value="1">Haitiano</option>
                 <option value="2">Francês</option>
@@ -47,7 +47,7 @@
 
         <div class="col-4">
             <label class="font-weight-bold" for="campo-endereco">Endereço<a class="text-danger">*</a></label>
-            <input type="text" id="campo-endereco" name="endereco" class="form-control border-info" maxlength="100" />
+            <input type="text" id="campo-endereco" name="endereco" class="form-control border-info" maxlength="100" required />
         </div>
 
 
@@ -74,7 +74,7 @@
 
         <div class="col-3">
             <label class="font-weight-bold" for="campo-cpf">CPF<a class="text-danger">*</a></label>
-            <input type="text" maxlength="15" id="campo-cpf" name="cpf" class="form-control border-info" />
+            <input type="text" maxlength="15" id="campo-cpf" name="cpf" class="form-control border-info" required/>
         </div>
 
     </div>

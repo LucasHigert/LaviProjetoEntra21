@@ -270,7 +270,7 @@
     <Content Include="Content\Imagens\CardsTelaInicial\cidade.jpg" />
     <Content Include="Content\Imagens\CardsTelaInicial\cultura-1050x600.jpg" />
     <Content Include="Content\Imagens\CardsTelaInicial\customer-at-reception-concept-in-flat-vector-8959632.jpg" />
-    <Content Include="Content\Imagens\CardsTelaInicial\encaminhamento.png" />
+    <Content Include="Content\Imagens\CardsTelaInicial\encaminhamento esse.png" />
     <Content Include="Content\Imagens\CardsTelaInicial\funcionario.jpg" />
     <Content Include="Content\Imagens\CardsTelaInicial\gripa.jpg" />
     <Content Include="Content\Imagens\CardsTelaInicial\parte do corpo esse.jpg" />
@@ -309,8 +309,9 @@
     <Content Include="Content\Imagens\Logo Lavi  Preto.png" />
     <Content Include="Content\Imagens\Logo Lavi.png" />
     <Content Include="Content\replaces.css" />
-    <Content Include="Content\TesteEncaminhamento.css" />
-    <Content Include="Content\TesteEncaminhamento.js" />
+    <Content Include="Scripts\AtendimentoEspecial\BotoesCorpoHover.css" />
+    <Content Include="Scripts\Encaminhamento\TesteEncaminhamento.css" />
+    <Content Include="Scripts\Encaminhamento\TesteEncaminhamento.js" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\AtendimentoEspecial\ParteCorpoSintoma.js" />
@@ -420,6 +421,8 @@
     <Content Include="Content\DataTables\css\semanticui.scss" />
     <Content Include="Content\DataTables\css\mixins.scss" />
     <Content Include="Content\DataTables\css\common.scss" />
+    <None Include="Properties\PublishProfiles\lavi-system - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\lavi-system - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\i18n\af.js" />
     <Content Include="Scripts\i18n\ar.js" />
@@ -4945,11 +4948,13 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AtendimentoEspecialController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CargoController.cs" />
     <Compile Include="Controllers\AtendimentoController.cs" />
     <Compile Include="Controllers\CidadeController.cs" />
     <Compile Include="Controllers\EncaminhamentoController.cs" />
     <Compile Include="Controllers\FuncionarioController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InstrucoesController.cs" />
     <Compile Include="Controllers\LanguageController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -6051,9 +6056,10 @@
     <Content Include="Views\Encaminhamento\PostoEncaminhar.cshtml" />
     <Content Include="Views\Encaminhamento\FarmaciaEncaminhar.cshtml" />
     <Content Include="Views\Encaminhamento\HospitalEncaminhar.cshtml" />
-    <Content Include="Scripts\Traducao\pt.json" />
     <Content Include="Scripts\Traducao\fr.json" />
     <Content Include="Scripts\Traducao\ht.json" />
+    <Content Include="Scripts\Traducao\pt.json" />
+    <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -6076,6 +6082,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Views\Base\" />
     <Folder Include="Views\Language\" />
   </ItemGroup>
   <ItemGroup>

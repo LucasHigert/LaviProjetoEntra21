@@ -1,4 +1,6 @@
-﻿
+﻿<head>
+    <link rel="stylesheet" href="~/Scripts/Encaminhamento/TesteEncaminhamento.css" />
+</head>
 
 <div id="hospitalModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 
@@ -10,17 +12,20 @@
             <!-- Modal Header -->
             <div class="modal-header">
 
-                <div class="col-7">
+                <div class="col-5">
                     <h4 class="modal-title" id="gridSystemModalLabel">Hospital</h4>
                 </div>
 
-                <div class="col-5">
+                <div class="col-7">
                     <div class="container body-content">
-                        <button id="hospital-encaminhar-criolo">
+                        <button id="hospital-encaminhar-frances" class="btn btn-default">
+                            <span class="mt-5 flag-icon flag-icon-fr"></span> Francês
+                        </button>
+                        <button id="hospital-encaminhar-criolo" class="btn btn-default">
                             <span class="mt-5 flag-icon flag-icon-ht"></span> Crioulo
                         </button>
-                        <button id="hospital-encaminhar-frances">
-                            <span class="mt-5 flag-icon flag-icon-fr"></span> Francês
+                        <button id="hospital-encaminhar-portugues" class="btn btn-default">
+                            <span class="mt-5 flag-icon flag-icon-br"></span> Português
                         </button>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     </div>
@@ -127,22 +132,19 @@
                                 </div>
                             </div>
                         </div>
-
-
-                        <!-- Modal Footer -->
-                        <div class="modal-footer col-12">
-                            <button id="btnPrint" type="button" class="btn btn-info float-right">Imprimir</button>
-                            @*<button class="btn float-right" data-dismiss="modal" aria-hidden="true">Fechar</button>*@
-                        </div>
                     </div>
                 </div>
-
             </div>
-</div>
-</div>
+            <!-- Modal Footer -->
+            <div class="modal-footer col-12">
+                <button id="btnPrint3" type="button" class="btn btn-info float-right">Imprimir</button>
+                @*<button class="btn float-right" data-dismiss="modal" aria-hidden="true">Fechar</button>*@
+            </div>
+        </div>
+    </div>
 </div>
 
-</div>
+
 @section js{
-    <script src="~/Content/TesteEncaminhamento.js"></script>
+    <script src="~/Scripts/Encaminhamento/TesteEncaminhamento.js"></script>
 }

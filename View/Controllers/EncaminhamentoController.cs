@@ -47,11 +47,9 @@ namespace View.Controllers
 
         public ActionResult Index()
         {
-            List<Encaminhamento> encaminhamentos = repository.ObterTodosPeloStatus(0);
-            ViewBag.Encaminhamentos = encaminhamentos;
             return View();
         }
-        public ActionResult Escolha(int idAtendimento)
+        public ActionResult Escolha(/*int idAtendimento*/)
         {
             if (VerificaLogado() == true)
             {
@@ -83,131 +81,6 @@ namespace View.Controllers
         {
             return View();
         }
-        //Apagar
-        #region Apagar
-        public ActionResult Apagar(int id)
-        {
-            if (VerificaLogado() == true)
-            {
-                if (VerificaPermisssao() == true)
-                {
-
-                    repository.Apagar(id);
-                    return RedirectToAction("index");
-                }
-                else
-                {
-                    return Redirect("/login/sempermissao");
-                }
-            }
-            else
-            {
-                return Redirect("/login");
-            }
-        }
-        #endregion
-
-        //Alterar
-        #region Editar
-        public ActionResult Update(Encaminhamento encaminhamento)
-        {
-            if (VerificaLogado() == true)
-            {
-                if (VerificaPermisssao() == true)
-                {
-
-                    repository.Alterar(encaminhamento);
-                    return RedirectToAction("index");
-                }
-                else
-                {
-                    return Redirect("/login/sempermissao");
-                }
-            }
-            else
-            {
-                return Redirect("/login");
-            }
-        }
-
-        public ActionResult Alterar(int id)
-        {
-            if (VerificaLogado() == true)
-            {
-                if (VerificaPermisssao() == true)
-                {
-
-                    var encaminhamento = repository.ObterPeloId(id);
-                    if (encaminhamento == null)
-                    {
-                        return RedirectToAction("Index");
-                    }
-
-                    ViewBag.Encaminhamento = encaminhamento;
-                    PostoRepository repositoryPosto = new PostoRepository();
-                    ViewBag.Postos = repositoryPosto.ObterTodos();
-                    return View();
-                }
-                else
-                {
-                    return Redirect("/login/sempermisssao");
-                }
-            }
-            else
-            {
-                return Redirect("/login");
-            }
-        }
-
-        #endregion
-
-        //Inserir
-        #region Inserir
-        public ActionResult Cadastrar()
-        {
-            if (VerificaLogado() == true)
-            {
-                if (VerificaPermisssao() == true)
-                {
-
-                    PostoRepository repositoryPosto = new PostoRepository();
-                    ViewBag.Postos = repositoryPosto.ObterTodos();
-                    return View();
-                }
-                else
-                {
-                    return Redirect("/login/sempermissao");
-                }
-            }
-            else
-            {
-                return Redirect("/login");
-            }
-        }
-
-        public ActionResult Inserir(Encaminhamento encaminhamento)
-        {
-            if (VerificaLogado() == true)
-            {
-                if (VerificaPermisssao() == true)
-                {
-
-                    encaminhamento.Status = 0;
-                    int id = repository.Inserir(encaminhamento);
-                    return RedirectToAction("index");
-                }
-                else
-                {
-                    return Redirect("/login/sempermissao");
-                }
-            }
-            else
-            {
-                return Redirect("/login");
-            }
-        }
-
-        #endregion
 
     }
 }

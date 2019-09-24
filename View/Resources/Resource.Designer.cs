@@ -19,7 +19,7 @@ namespace View.Resources {
     // através de uma ferramenta como ResGen ou Visual Studio.
     // Para adicionar ou remover um associado, edite o arquivo .ResX e execute ResGen novamente
     // com a opção /str, ou recrie o projeto do VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Resource {
@@ -144,6 +144,15 @@ namespace View.Resources {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a .
         /// </summary>
+        public static string Forte {
+            get {
+                return ResourceManager.GetString("Forte", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .
+        /// </summary>
         public static string Idade {
             get {
                 return ResourceManager.GetString("Idade", resourceCulture);
@@ -198,6 +207,15 @@ namespace View.Resources {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a .
         /// </summary>
+        public static string NivelDor {
+            get {
+                return ResourceManager.GetString("NivelDor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .
+        /// </summary>
         public static string Nome {
             get {
                 return ResourceManager.GetString("Nome", resourceCulture);
@@ -228,6 +246,15 @@ namespace View.Resources {
         public static string Peso {
             get {
                 return ResourceManager.GetString("Peso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .
+        /// </summary>
+        public static string Pouco {
+            get {
+                return ResourceManager.GetString("Pouco", resourceCulture);
             }
         }
         
@@ -291,6 +318,15 @@ namespace View.Resources {
         public static string Sintoma {
             get {
                 return ResourceManager.GetString("Sintoma", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .
+        /// </summary>
+        public static string Suportavel {
+            get {
+                return ResourceManager.GetString("Suportavel", resourceCulture);
             }
         }
         

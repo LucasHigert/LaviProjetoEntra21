@@ -12,20 +12,24 @@
 
             <div class="modal-body">
                 <input type="text" hidden="hidden" name="id" />
-                <div class="form-group">
-                    <select name="idSintoma" id="sintoma">
-                        <option disabled="disabled" selected="selected">@View.Resources.Resource.SelecioneSintoma</option> 
-                    </select>
-              
+                <div>
+                    <label for="sintoma" class="font-weight-bold">@View.Resources.Resource.SelecioneSintoma</label>
+                    <div class="col-12">
+
+                        <select class="js-example-responsive text-dark"  style="width: 50%" name="idSintoma" id="sintoma">
+                            <option disabled="disabled" selected="selected">@View.Resources.Resource.SelecioneSintoma</option>
+                        </select>
+                    </div>
+
                 </div>
 
                 <div>
-                    <label>Nivel de Dor</label>
-                    <select required="" name="nivelDor">
-                        <option selected="selected" disabled="disabled">Selecione um nivel de dor</option>
-                        <option value="1">Baixo/Pouco</option>
-                        <option value="2">Medio/Suportavel</option>
-                        <option value="3">Alto/Forte</option>
+                    <label class="font-weight-bold">@View.Resources.Resource.NivelDor</label>
+                    <select class="form-control text-dark" id="nivelDor" required="" name="nivelDor">
+                        <option selected="selected" disabled="disabled">@View.Resources.Resource.NivelDor</option>
+                        <option value="1">@View.Resources.Resource.Pouco</option>
+                        <option value="2">@View.Resources.Resource.Suportavel</option>
+                        <option value="3">@View.Resources.Resource.Forte</option>
                     </select>
                 </div>
             </div>

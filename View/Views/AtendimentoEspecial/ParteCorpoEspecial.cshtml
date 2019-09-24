@@ -8,13 +8,15 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title></title>
+    <title>Inserindo Sintomas Estrangeiro</title>
+    <link rel="shortcut icon" href="~/Content/Imagens/Logo Lavi.png">
     <link rel="stylesheet" href="~/Scripts/Tema/global/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/Scripts/Tema/global/fonts/font-awesome/font-awesome.min.css" />
     <link rel="stylesheet" href="~/Content/css/select2.min.css" />
-   
+
     <link rel="stylesheet" href="~/Content/DataTables/css/jquery.dataTables.min.css" />
 
+    <link href="~/Scripts/AtendimentoEspecial/BotoesCorpoHover.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -24,7 +26,7 @@
 
         </div>
     </div>
-    <div class="container">
+    <div class="container text-center">
         <input type="text" id="idPaciente" data-id="@ViewBag.Atendimento.Paciente.Id" hidden="hidden" />
         <input type="text" id="idAtendimento" data-id="@ViewBag.Atendimento.Id" hidden="hidden" />
 
@@ -78,19 +80,19 @@
                     </tr>
                 </thead>
 
-            </table>
+        </table>
 
-        </div>
-
-
-        <a href="/atendimentoespecial/finalizacadastro" class="btn btn-primary text-white"><i class="fa fa-arrow-right"></i> @View.Resources.Resource.Proximo</a>
-
-        @RenderPage("ModalSintoma.cshtml")
-        <script src="~/Scripts/jquery-3.0.0.min.js"></script>
-        <script src="~/Scripts/Tema/global/vendor/bootstrap/bootstrap.min.js"></script>
-        <script src="~/Scripts/AtendimentoEspecial/ParteCorpoSintoma.js"></script>
-        <script src="~/Scripts/select2.min.js"></script>
-        <script src="~/Scripts/DataTables/jquery.dataTables.js"></script>
     </div>
+
+
+    <a href="/atendimentoespecial/finalizacadastro" class="btn btn-primary text-white"><i class="fa fa-arrow-right"></i> @View.Resources.Resource.Proximo</a>
+
+    @RenderPage("ModalSintoma.cshtml")
+    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
+    <script src="~/Scripts/Tema/global/vendor/bootstrap/bootstrap.min.js"></script>
+    <script src="~/Scripts/AtendimentoEspecial/ParteCorpoSintoma.js"></script>
+    <script src="~/Scripts/select2.min.js"></script>
+    <script src="~/Scripts/DataTables/jquery.dataTables.js"></script>
+
 </body>
 </html>

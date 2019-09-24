@@ -22,7 +22,18 @@
     <tbody class="font-weight-bold">
         @foreach (Model.Atendimento atendimento in ViewBag.Atendimentos)
         {
-            if (atendimento.Prioridade == 3)
+            if (atendimento.Paciente.Lingua != 0)
+            {
+                <tr class="bg-indigo-500">
+                    <td>@atendimento.Paciente.Nome</td>
+                    <td>@atendimento.Prioridade</td>
+                    <td>@atendimento.Observacao </td>
+                    <td>
+                        <a class="btn btn-info" href="/atendimento/alterar?id=@atendimento.Id"><i class="fa fa-bookmark"></i> Atender</a>
+                    </td>
+                </tr>
+            }
+            else if (atendimento.Prioridade == 3)
             {
                 <tr class="bg-red-500">
                     <td>@atendimento.Paciente.Nome</td>

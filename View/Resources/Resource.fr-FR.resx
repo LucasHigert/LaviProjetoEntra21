@@ -210,4 +210,16 @@ votre traitement.</value>
   <data name="SelecioneSintoma" xml:space="preserve">
     <value>Sélectionnez un symptôme</value>
   </data>
+  <data name="Forte" xml:space="preserve">
+    <value>Forte</value>
+  </data>
+  <data name="NivelDor" xml:space="preserve">
+    <value>Niveau de douleur</value>
+  </data>
+  <data name="Pouco" xml:space="preserve">
+    <value>Peu</value>
+  </data>
+  <data name="Suportavel" xml:space="preserve">
+    <value>Supportable</value>
+  </data>
 </root>

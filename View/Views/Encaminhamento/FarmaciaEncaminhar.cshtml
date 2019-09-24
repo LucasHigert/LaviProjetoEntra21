@@ -1,5 +1,5 @@
 ﻿<head>
-    <link rel="stylesheet" href="~/Content/TesteEncaminhamento.css" />
+    <link rel="stylesheet" href="~/Scripts/Encaminhamento/TesteEncaminhamento.css" />
 </head>
 
 <div id="farmaciaModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -12,20 +12,24 @@
             <!-- Modal Header -->
             <div class="modal-header">
 
-                <div class="col-7">
+                <div class="col-5">
 
                     <h4 class="modal-title" id="gridSystemModalLabel">Farmácia</h4>
                 </div>
 
-                <div class="col-5 mt-5">
+                <div class="col-7 mt-5">
                     <div class="container body-content">
-                        <button id="farmacia-encaminhar-frances">
+                        <button id="farmacia-encaminhar-frances" class="btn btn-default">
                             <span class="mt-5 flag-icon flag-icon-fr"></span>
                             Francês
                         </button>
-                        <button id="farmacia-encaminhar-criolo">
+                        <button id="farmacia-encaminhar-criolo" class="btn btn-default">
                             <span class="mt-5 flag-icon flag-icon-ht"></span>
                             Crioulo
+                        </button>
+                        <button id="farmacia-encaminhar-portugues" class="btn btn-default">
+                            <span class="mt-5 flag-icon flag-icon-br"></span> 
+                            Português
                         </button>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     </div>
@@ -92,8 +96,8 @@
             <!-- Modal Footer -->
             <div class="modal-footer">
                 <div class="col-6">
-                    <button class="btn-success botao" onclick="duplicarCampos()"> + </button>
-                    <button class="btn-danger botao" onclick="removerCampos(this)"> - </button>
+                    <button class="btn btn-success botao" onclick="duplicarCampos()">+</button>
+                    <button class="btn btn-danger botao" onclick="removerCampos(this)">-</button>
                 </div>
                 <div class="col-6">
                     <button id="btnPrint" type="button" class="btn btn-info float-right">Imprimir</button>
@@ -106,5 +110,5 @@
 </div>
 
 @section js{
-    <script src="~/Content/TesteEncaminhamento.js"></script>
-}
+<script src="~/Scripts/Encaminhamento/TesteEncaminhamento.js"></script>
+    }

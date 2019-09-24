@@ -2,7 +2,7 @@
 @{
     ViewBag.Title = "Alterar";
 }
-<h2 class="h2">Alterando Funcionario '@ViewBag.Funcionario.Nome'</h2>
+<h2 class="h2">Alterando Funcionário '@ViewBag.Funcionario.Nome'</h2>
 
 <form action="/funcionario/update" method="post">
     <input type="text" hidden="hidden" value="@ViewBag.Funcionario.Id" name="Id" />
@@ -56,7 +56,7 @@
         </div>
         <div class="col-6">
             <label for="campo-senha" class="font-weight-bold">Senha*</label>
-            <input type="password" name="senha" id="campo-senha" class="form-control border-info" value="@ViewBag.Funcionario.Senha" />
+            <input type="password" name="senha" id="campo-senha" class="form-control border-info" />
         </div>
     </div>
     <button type="submit" class="btn btn-success float-right mt-20"><i class="fa fa-save"></i> Salvar</button>

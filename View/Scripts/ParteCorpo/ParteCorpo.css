@@ -1,0 +1,47 @@
+﻿a.cabeca:hover {
+    background-image: url('../../Content/Imagens/CorpoVermelho/cabeça vermelha.png');
+}
+
+a.pescoco:hover {
+    background-image: url('../../Content/Imagens/CorpoVermelho/pescoço vermelho.png');
+}
+
+a.braco-direito:hover{
+    background-image: url('../../Content/Imagens/CorpoVermelho/braço direito vermelho.png');
+}
+
+a.braco-esquerdo:hover{
+    background-image: url('../../Content/Imagens/CorpoVermelho/braço esquerdo vermelho.png');
+}
+
+a.barriga:hover{
+    background-image: url('../../Content/Imagens/CorpoVermelho/barriga vermelha.png');
+}
+
+a.mao-direita:hover{
+    background-image: url('/Content/Imagens/CorpoVermelho/mao direita veremelha.png');
+}
+
+a.mao-esquerda:hover{
+    background-image: url('/Content/Imagens/CorpoVermelho/mao esquerda veremelha.png');
+}
+
+a.genitalia:hover{
+    background-image: url('/Content/Imagens/CorpoVermelho/genitalias veremlho.png');
+}
+
+a.perna-direita:hover{
+    background-image: url('/Content/Imagens/CorpoVermelho/perna direita vermelha.png');
+}
+
+a.perna-esquerda:hover{
+    background-image: url('/Content/Imagens/CorpoVermelho/perna esquerda vermelha.png');
+}
+
+a.pe-direito:hover{
+    background-image: url('/Content/Imagens/CorpoVermelho/pé direito vermelho.png');
+}
+
+a.pe-esquerdo:hover{
+    background-image: url('/Content/Imagens/CorpoVermelho/pé esquerdo veremelho.png');
+}

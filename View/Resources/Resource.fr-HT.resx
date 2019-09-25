@@ -219,4 +219,12 @@
   <data name="Suportavel" xml:space="preserve">
     <value>Fasil pou moun</value>
   </data>
+  <data name="InformacaoSintoma" xml:space="preserve">
+    <value>Pou kòmanse, tou senpleman klike sou kote ou santi doulè oswa sentòm yo.
+Lè sa a, tou senpleman chwazi sentòm ou a nan kote a chwazi ak entansite li yo.
+Finalman, repete pwosesis la jiskaske ou chwazi tout bagay ou santi.</value>
+  </data>
+  <data name="LeiaIsso" xml:space="preserve">
+    <value>Li sa anvan ou kòmanse</value>
+  </data>
 </root>

@@ -78,6 +78,9 @@
     $tabela = $("#tabela-sintoma").DataTable({
         ajax: "/atendimentoespecial/obtersintomaatendimento?idAtendimento=" + $("#idAtendimento").data("id"),
         serverSide: true,
+        searching: false,
+        info: false,
+        paging: false,
         columns: [
             { "data": "Nome" },
             {

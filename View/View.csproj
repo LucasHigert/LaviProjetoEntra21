@@ -302,8 +302,15 @@
     <Content Include="Content\Imagens\CorpoVermelho\pé esquerdo veremelho.png" />
     <Content Include="Content\Imagens\Encaminhamento\farmácia1.jpg" />
     <Content Include="Content\Imagens\Encaminhamento\POSTO.jpg" />
+    <Content Include="Content\Imagens\Home\PessoasNaMesa.jpg" />
+    <Content Include="Content\Imagens\Home\haiti-kids.jpg" />
     <Content Include="Content\Imagens\Home\medico.jpg" />
     <Content Include="Content\Imagens\Home\parallax1.jpg" />
+    <Content Include="Content\Imagens\Home\Team\Ariadne.png" />
+    <Content Include="Content\Imagens\Home\Team\Elian.png" />
+    <Content Include="Content\Imagens\Home\Team\Heloisa.png" />
+    <Content Include="Content\Imagens\Home\Team\Lucas.png" />
+    <Content Include="Content\Imagens\Home\Team\Mirian.png" />
     <Content Include="Content\Imagens\icones\favicon %281%29.ico" />
     <Content Include="Content\Imagens\icones\favicon %282%29.ico" />
     <Content Include="Content\Imagens\icones\favicon.ico" />
@@ -474,6 +481,7 @@
     <None Include="Properties\PublishProfiles\lavi-system - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\lavi-system - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
+    <Content Include="Scripts\Home\Home.js" />
     <Content Include="Scripts\i18n\af.js" />
     <Content Include="Scripts\i18n\ar.js" />
     <Content Include="Scripts\i18n\az.js" />

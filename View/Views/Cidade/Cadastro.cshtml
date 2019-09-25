@@ -4,7 +4,11 @@
 }
 
 <h2 class="h2">Cadastre de Cidade</h2>
-
+<head>
+    <script src="~/Scripts/cidade/cidade.js"></script>
+    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
+    <script src="~/Scripts/jquery-3.0.0.slim.min.js"></script>
+</head>
 <form action="/cidade/inserir" method="post">
 
     <label class="font-weight-bold" for="campo-estado">Estado<a class="text-danger">*</a></label>
@@ -17,8 +21,8 @@
         }
     </select>
     <div>
-        <label class="font-weight-bold" for="campo-nome">Nome da Cidade<a class="text-danger">*</a></label>
-        <input class="form-control border-info" type="text" name="nome" id="campo-nome" required="" />
+        <label class="font-weight-bold" for="nome">Nome da Cidade<a class="text-danger">*</a></label>
+        <input class="form-control border-info" type="text" name="nome" id="nome" required="" />
     </div>
 
     <button class="btn btn-success float-right mt-15" type="submit"><i class="fa fa-save"></i> Salvar</button>

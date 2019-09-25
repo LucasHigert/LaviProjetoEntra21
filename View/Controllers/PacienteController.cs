@@ -53,6 +53,7 @@ namespace View.Controllers
         #region Inserir
         public ActionResult Cadastro()
         {
+
             if (VerificaLogado() == true)
             {
                 //Puxa Info dos estados
@@ -71,6 +72,7 @@ namespace View.Controllers
         {
             if (VerificaLogado() == true)
             {
+
                 FuncionarioRepository funcionarioRepository = new FuncionarioRepository();
                 Funcionario funcionario = funcionarioRepository.ObterPeloId(Convert.ToInt32(Session["usuarioLogadoID"]));
                 paciente.IdPosto = funcionario.IdPosto;
@@ -84,7 +86,13 @@ namespace View.Controllers
             }
         }
         #endregion
-
+        public ActionResult Documento()
+        {
+            PacienteRepository pacienteRepository = new 
+PacienteRepository();
+            ViewBag.Pacientes = pacienteRepository.ObterTodos();
+            return View();
+        }
         //Apagar
         #region Apagar
         public ActionResult Apagar(int id)

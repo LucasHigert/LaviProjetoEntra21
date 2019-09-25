@@ -6112,6 +6112,7 @@
     <Content Include="Scripts\Traducao\ht.json" />
     <Content Include="Scripts\Traducao\pt.json" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Paciente\Documento.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

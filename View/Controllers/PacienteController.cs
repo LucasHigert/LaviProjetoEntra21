@@ -1,8 +1,10 @@
 ﻿using Model;
+using Repository;
 using Repository.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Web;
 using System.Web.Mvc;
 
@@ -86,13 +88,34 @@ namespace View.Controllers
             }
         }
         #endregion
+        #region Documentos
         public ActionResult Documento()
         {
-            PacienteRepository pacienteRepository = new 
+            PacienteRepository pacienteRepository = new
 PacienteRepository();
             ViewBag.Pacientes = pacienteRepository.ObterTodos();
             return View();
         }
+        private SistemaContext context;
+
+      
+        //public JsonResult PacienteObterPorId(int id)
+        //{
+
+        //    //ViewBag para listar todos os pacientes
+
+        //    PacienteRepository pacienteRepository = new PacienteRepository();
+        //    ViewBag.Pacientes = context.Pacientes.ToList()
+        //                   .Select(x => new SelectListItem
+        //                   {
+        //                       Value = x.PacienteId.ToString(),
+        //                       Text = x.Nome,
+        //                   });
+        //    var pacientes = context.pacientes.where(x => x.id == id).FirstOrDefault();
+
+        //    return Json(pacientes, JsonRequestBehavior.AllowGet);
+        //}
+        #endregion
         //Apagar
         #region Apagar
         public ActionResult Apagar(int id)

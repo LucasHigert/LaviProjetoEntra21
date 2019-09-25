@@ -34,6 +34,11 @@ $(function () {
             var campo = document.getElementById('campo-cpf');
             campo.classList.add('border-danger');
 
+        } else {
+            var campo = document.getElementById('campo-cpf');
+            campo.classList.remove('border-info');
+            campo.classList.remove('border-danger');
+            campo.classList.add('border-success');
         }
 
     });
@@ -73,33 +78,58 @@ $(function () {
 $(function () {
     $("#campo-nome").focusout(function () {
         $nome = $("#campo-nome").val();
-        $resultado = validar();
+        $resultado = submete();
         if ($resultado == false) {
             var campo = document.getElementById('campo-nome');
             campo.classList.add('border-danger');
+        } else {
+            var campo = document.getElementById('campo-nome');
+            campo.classList.remove('border-info');
+            campo.classList.remove('border-danger');
+            campo.classList.add('border-success');
         }
     });
 
     $("#campo-endereco").focusout(function () {
         $endereco = $("#campo-endereco").val();
-        $resultado = validar();
+        $resultado = submete();
         if ($resultado == false) {
             var campo = document.getElementById('campo-endereco');
             campo.classList.add('border-danger');
+        } else {
+            var campo = document.getElementById('campo-endereco');
+            campo.classList.remove('border-info');
+            campo.classList.remove('border-danger');
+            campo.classList.add('border-success');
         }
     });
 
-    function validar() {
+    $("#campo-sexo").focusout(function () {
+        $endereco = $("#campo-sexo").val();
+        $resultado = submete();
+        if ($resultado == false) {
+            var campo = document.getElementById('campo-sexo');
+            campo.classList.add('border-danger');
+        } else {
+            var campo = document.getElementById('campo-sexo');
+            campo.classList.remove('border-info');
+            campo.classList.remove('border-danger');
+            campo.classList.add('border-success');
+        }
+    });
+
+    function submete() {
         if (document.getElementById('campo-nome').value == "" || document.getElementById('campo-nome').value.length <= 2) {
             return false;
         }
         if (document.getElementById('campo-endereco').value == "") {
             return false;
         }
-        else {
+        if (document.getElementById('campo-sexo').value == "") {
+            return false;
+        } else {
             return true;
         }
-
 
     }
 });

@@ -6,7 +6,7 @@
 <title>Cadastro de paciente</title>
 <h2 class="h2 mt-5 mb-5">Cadastro de paciente</h2>
 
-<form action="/paciente/inserir" method="post">
+<form action="/paciente/inserir" method="post" onsubmit="return submete()">
     <div class="row">
         <div class="col-6">
             <label class="font-weight-bold" for="campo-nome">Nome<a class="text-danger">*</a></label>
@@ -47,7 +47,7 @@
 
         <div class="col-4">
             <label class="font-weight-bold" for="campo-endereco">Endereço<a class="text-danger">*</a></label>
-            <input type="text" id="campo-endereco" name="endereco" class="form-control border-info" maxlength="100" required />
+            <input type="text" id="campo-endereco" name="endereco" class="form-control border-info" maxlength="100" />
         </div>
 
 

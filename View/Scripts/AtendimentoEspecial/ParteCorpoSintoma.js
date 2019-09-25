@@ -13,22 +13,36 @@
 
     function AtualizaSintoma($idCorpo) {
 
-    $sintoma = $("#sintoma").select2({
-        dropdownParent: $('#modal-sintoma'),
-        ajax: {
-            url: "/atendimentoespecial/ObterSintomaParte?id=" + $idCorpo,
-            dataType: "json"
-        }
+        $sintoma = $("#sintoma").select2({
+            dropdownParent: $('#modal-sintoma'),
+            ajax: {
+                url: "/atendimentoespecial/ObterSintomaParte?id=" + $idCorpo,
+                dataType: "json"
+            }
 
-    });
+        });
     };
 
+    var $niveldedor = 0;
+
+    $("#pouco").click(function () {
+        $niveldedor = $(this).val(1)
+    });
+
+    $("#medio").click(function () {
+        $niveldedor = $(this).val(2);
+    });
+
+    $("#alto").click(function () {
+        $niveldedor = $(this).val(3);
+    });
 
     $("#botao-salvar").on("click", function () {
         $idAtendimento = $("#idAtendimento").data("id");
         $idPaciente = $("#idPaciente").data("id");
         $idSintoma = $("#sintoma").val();
-        $nivelDor = $("#nivelDor").val();
+        $nivelDor = $($niveldedor).val();
+
         if ($idSintoma == null) {
             return;
         }

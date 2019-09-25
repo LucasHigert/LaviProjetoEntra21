@@ -115,6 +115,7 @@ $(function () {
             campo.classList.remove('border-info');
             campo.classList.remove('border-danger');
             campo.classList.add('border-success');
+            //document.getElementById('campo-sexo').style.border = "border-success";
         }
     });
 

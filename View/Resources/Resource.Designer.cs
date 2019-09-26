@@ -72,6 +72,15 @@ namespace View.Resources {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a .
         /// </summary>
+        public static string AguardeOMedicoAvaliar {
+            get {
+                return ResourceManager.GetString("AguardeOMedicoAvaliar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .
+        /// </summary>
         public static string Altura {
             get {
                 return ResourceManager.GetString("Altura", resourceCulture);
@@ -171,6 +180,15 @@ namespace View.Resources {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a .
         /// </summary>
+        public static string InfoEspere {
+            get {
+                return ResourceManager.GetString("InfoEspere", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .
+        /// </summary>
         public static string Informacao {
             get {
                 return ResourceManager.GetString("Informacao", resourceCulture);
@@ -205,6 +223,15 @@ namespace View.Resources {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .
+        /// </summary>
+        public static string Inforodape {
+            get {
+                return ResourceManager.GetString("Inforodape", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Neste questionário você será avaliado de acordo com as informações colocadas por você com relação aos seus sintomas. Marque de acordo seus sintomas e seja sincero, pois suas respostas influenciarão no seu tratamento..
         /// </summary>
         public static string Instrucoes {
@@ -228,6 +255,15 @@ namespace View.Resources {
         public static string Masculino {
             get {
                 return ResourceManager.GetString("Masculino", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .
+        /// </summary>
+        public static string MuitoBem {
+            get {
+                return ResourceManager.GetString("MuitoBem", resourceCulture);
             }
         }
         

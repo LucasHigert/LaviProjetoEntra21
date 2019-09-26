@@ -231,4 +231,16 @@
   <data name="Informacao" xml:space="preserve">
     <value />
   </data>
+  <data name="AguardeOMedicoAvaliar" xml:space="preserve">
+    <value />
+  </data>
+  <data name="InfoEspere" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Inforodape" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MuitoBem" xml:space="preserve">
+    <value />
+  </data>
 </root>

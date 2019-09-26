@@ -32,8 +32,8 @@
         <h1 class="h1">@View.Resources.Resource.VocêPossuiCadastro</h1>
         <!--início info verde-->
         <div class="alert alert-info" role="alert">
-            <h4 class="alert-heading">@View.Resources.Resource.Informacao</h4>
-            <p>@View.Resources.Resource.InfoBusca</p>
+            <h4 class="alert-heading text-center">@View.Resources.Resource.Informacao</h4>
+            <p class="text-center">@View.Resources.Resource.InfoBusca</p>
             <hr>
         </div>
         <!--fim info verde-->
@@ -62,30 +62,6 @@
             </thead>
             <tbody id="corpinho"></tbody>
         </table>
-
-        @*<table id="tabela2">
-                <thead>
-                    <tr>
-                        <th>@View.Resources.Resource.Nome</th>
-                        <th>@View.Resources.Resource.Acao</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (Model.Paciente paciente in ViewBag.Pacientes)
-                    {
-                        <tr>
-                            <td>@paciente.Nome</td>
-                            <td>
-                                <a class="btn btn-info" href="/atendimentoespecial/InserirAtendimento?idPaciente=' + row.Id + '"><i class="fa fa-user"></i> </a>
-
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>*@
-
-
-
 
         <a href="/atendimentoespecial/cadastropacienteespecial" class="btn btn-info text-white float-right mt-3 mb-5"><i class="fa fa-exclamation-circle"></i> @View.Resources.Resource.NaoTenho</a>
     </div>

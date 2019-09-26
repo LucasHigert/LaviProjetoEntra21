@@ -15,17 +15,18 @@
 
         <div class="col-3">
             <label class="font-weight-bold" for="campo-sexo">Sexo<a class="text-danger">*</a></label>
-            <select id="campo-sexo" name="sexo" class="form-control border-info">
+            <select id="campo-sexo" name="sexo" class="form-control border-info" required>
                 <option selected="selected" hidden="hidden">Selecione o sexo</option>
-                <option value="true">Feminino</option>
-                <option value="false">Masculino</option>
+                <option value="0">Feminino</option>
+                <option value="1">Masculino</option>
             </select>
         </div>
 
         <div class="col-3">
             <label class="font-weight-bold" for="campo-lingua">Lingua<a class="text-danger">*</a></label>
-            <select class="form-control border-info" name="lingua">
-                <option value="0" selected="selected">Português Brasileiro</option>
+            <select class="form-control border-info" name="lingua" id="campo-lingua" required>
+                <option selected="selected" hidden="hidden">Selecione o idioma</option>
+                <option value="0">Português Brasileiro</option>
                 <option value="1">Haitiano</option>
                 <option value="2">Francês</option>
             </select>
@@ -101,7 +102,7 @@
 
             <div class="col-3">
                 <label class="font-weight-bold" for="campo-altura">Temperatura</label>
-                <input type="text" id="campo-altura" name="temperatura" class="form-control border-info" />
+                <input type="text" id="campo-temperatura" name="temperatura" class="form-control border-info" />
             </div>
 
         </div>

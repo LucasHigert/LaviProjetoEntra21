@@ -72,6 +72,15 @@ namespace View.Resources {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a .
         /// </summary>
+        public static string AguardeOMedicoAvaliar {
+            get {
+                return ResourceManager.GetString("AguardeOMedicoAvaliar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .
+        /// </summary>
         public static string Altura {
             get {
                 return ResourceManager.GetString("Altura", resourceCulture);
@@ -162,6 +171,33 @@ namespace View.Resources {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a .
         /// </summary>
+        public static string InfoBusca {
+            get {
+                return ResourceManager.GetString("InfoBusca", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .
+        /// </summary>
+        public static string InfoEspere {
+            get {
+                return ResourceManager.GetString("InfoEspere", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .
+        /// </summary>
+        public static string Informacao {
+            get {
+                return ResourceManager.GetString("Informacao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .
+        /// </summary>
         public static string InformacaoCadastro {
             get {
                 return ResourceManager.GetString("InformacaoCadastro", resourceCulture);
@@ -183,6 +219,15 @@ namespace View.Resources {
         public static string InformacaoSintoma {
             get {
                 return ResourceManager.GetString("InformacaoSintoma", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .
+        /// </summary>
+        public static string Inforodape {
+            get {
+                return ResourceManager.GetString("Inforodape", resourceCulture);
             }
         }
         
@@ -210,6 +255,15 @@ namespace View.Resources {
         public static string Masculino {
             get {
                 return ResourceManager.GetString("Masculino", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .
+        /// </summary>
+        public static string MuitoBem {
+            get {
+                return ResourceManager.GetString("MuitoBem", resourceCulture);
             }
         }
         

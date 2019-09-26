@@ -227,4 +227,22 @@ Finalman, repete pwosesis la jiskaske ou chwazi tout bagay ou santi.</value>
   <data name="LeiaIsso" xml:space="preserve">
     <value>Li sa anvan ou kòmanse</value>
   </data>
+  <data name="InfoBusca" xml:space="preserve">
+    <value>Koulye a, gade pou non ou nan lis ki anba a. Lè ou jwenn li, klike sou bouton ble a pou konfime.</value>
+  </data>
+  <data name="Informacao" xml:space="preserve">
+    <value>Enfòmasyon</value>
+  </data>
+  <data name="AguardeOMedicoAvaliar" xml:space="preserve">
+    <value>Doktè a pral kounye a evalye sentòm ou a fè yon pi bon dyagnostik.</value>
+  </data>
+  <data name="InfoEspere" xml:space="preserve">
+    <value>Tanpri tann yon ti moman.</value>
+  </data>
+  <data name="Inforodape" xml:space="preserve">
+    <value>Si ou bezwen plis èd, di doktè a ke li pral ede</value>
+  </data>
+  <data name="MuitoBem" xml:space="preserve">
+    <value>Trè bon !!</value>
+  </data>
 </root>

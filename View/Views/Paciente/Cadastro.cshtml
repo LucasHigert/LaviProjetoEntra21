@@ -6,11 +6,11 @@
 <title>Cadastro de paciente</title>
 <h2 class="h2 mt-5 mb-5">Cadastro de paciente</h2>
 
-<form action="/paciente/inserir" method="post">
+<form action="/paciente/inserir" method="post" onsubmit="return submete()">
     <div class="row">
         <div class="col-6">
             <label class="font-weight-bold" for="campo-nome">Nome<a class="text-danger">*</a></label>
-            <input type="text" id="campo-nome" name="nome" class="form-control border-info" maxlength="100" required="">
+            <input type="text" id="campo-nome" name="nome" class="form-control border-info" maxlength="100" required>
         </div>
 
         <div class="col-3">
@@ -23,7 +23,7 @@
         </div>
 
         <div class="col-3">
-            <label class="font-weight-bold" for="campo-posto">Lingua<a class="text-danger">*</a></label>
+            <label class="font-weight-bold" for="campo-lingua">Lingua<a class="text-danger">*</a></label>
             <select class="form-control border-info" name="lingua">
                 <option value="0" selected="selected">Português Brasileiro</option>
                 <option value="1">Haitiano</option>
@@ -73,8 +73,8 @@
         </div>
 
         <div class="col-3">
-            <label class="font-weight-bold" for="campo-cpf">CPF</label>
-            <input type="text" maxlength="15" id="campo-cpf" name="cpf" class="form-control border-info" />
+            <label class="font-weight-bold" for="campo-cpf">CPF<a class="text-danger">*</a></label>
+            <input type="text" maxlength="15" id="campo-cpf" name="cpf" class="form-control border-info" required/>
         </div>
 
     </div>
@@ -108,5 +108,5 @@
     }
     <button id="botao-salvar" type="submit" class="btn btn-success float-right mt-15"><i class="fa fa-save"></i> Salvar</button>
 </form>
-
+<script src="~/Scripts/Paciente/PacienteSript.js"></script>
 

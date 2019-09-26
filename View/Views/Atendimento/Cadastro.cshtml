@@ -6,16 +6,9 @@
 
 <form action="/atendimento/inserir" method="post">
 
-    <!--Botao cadastrar paciente-->
-    <div class="row">
-        <div class="col-12">
-            <a href="/paciente/cadastro" class="btn btn-primary float-right mt-25"><i class="fa fa-plus"></i> Cadastrar Paciente</a>
-        </div>
-    </div>
-
     <!--Selecionar o paciente-->
     <div class="row">
-        <div class="col-12">
+        <div class="col-10 pr-0">
             <label for="campo-paciente" class="font-weight-bold">Paciente<a class="text-danger">*</a></label>
             <select name="idPaciente" id="campo-paciente" class="form-control border-info">
                 <option selected="selected" disabled="disabled">Selecione um paciente</option>
@@ -24,6 +17,10 @@
                     <option value="@paciente.Id">@paciente.Nome</option>
                 }
             </select>
+        </div>
+        <div class="col-2 pl-0">
+                <a data-toggle="modal" data-target="#modal-paciente" class="btn btn-primary float-right mt-25 text-white ml-0"><i class="fa fa-search"></i> Paciente</a>
+
         </div>
     </div>
 
@@ -68,9 +65,10 @@
     }
 
 
-    <!-- Tela alterada-->
     <button class="btn btn-success float-right mt-20" type="submit"><i class="fa fa-save"></i> Salvar</button>
     <a class="btn btn-secondary mt-20" href="/atendimentoespecial"><i class="fa fa-language"></i> Atendimento Especial</a>
+
+    @RenderPage("ModalPaciente.cshtml")
 
 </form>
 

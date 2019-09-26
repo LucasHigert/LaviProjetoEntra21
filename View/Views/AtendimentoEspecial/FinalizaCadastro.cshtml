@@ -19,9 +19,25 @@
 
         </div>
     </div>
-    <div style="margin-top: 250px">
-        <a class="btn btn-info text-white" style="margin-left: 460px" href="/atendimento"> <i class="fa fa-arrow-right"> Próximo</i></a>
+    <div class="container">
+
+        <div class="alert alert-info">
+            <h2>Aqui vai as intruções pedindo pra se retirar do computador</h2>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <form method="post" action="/atendimentoespecial/InserirObservacao">
+            <input type="text" name="id" value="@ViewBag.Atendimento" hidden="hidden" />
+            <label class="font-weight-bold text-dark" for="campo-obserccao">Observações do paciente</label>
+            <input class="form-control border-info" type="text" id="campo-observacao" name="observacao" />
+            <button class="btn btn-success mt-1" type="submit"><i class="fa fa-arrow-right"></i> Proximo</button>
+        </form>
     </div>
+
+
     <script src="~/Scripts/Tema/global/vendor/bootstrap/bootstrap.min.js"></script>
     <script href="~/Scripts/Tema/global/vendor/jquery/jquery.min.js"></script>
 </body>

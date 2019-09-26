@@ -91,7 +91,7 @@
             </table>
         </div>
 
-        <a href="/atendimentoespecial/finalizacadastro" class="btn btn-info float-right text-white mt-3 mb-5">@View.Resources.Resource.Proximo <i class="fa fa-forward "></i> </a>
+        <a href="/atendimentoespecial/finalizacadastro?id=@ViewBag.Atendimento.Id" class="btn btn-info float-right text-white mt-3 mb-5">@View.Resources.Resource.Proximo <i class="fa fa-forward "></i> </a>
 
 
         @RenderPage("ModalSintoma.cshtml")

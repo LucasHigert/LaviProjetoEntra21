@@ -125,7 +125,7 @@ namespace View.Controllers
                 if (lingua == "fr-HT")
                 {
 
-                listaSintoma.Add(new { Nome = listaRepository[i].Sintoma.TraducaoCriolo, id = listaRepository[i].IdSintoma });
+                    listaSintoma.Add(new { Nome = listaRepository[i].Sintoma.TraducaoCriolo, id = listaRepository[i].IdSintoma });
                 }
                 else
                 {
@@ -217,6 +217,10 @@ namespace View.Controllers
                     atendimento.Status = 1;
 
                 }
+                else if (Session["usuarioLogadoPermissao"].ToString() == "4")
+                {
+                    atendimento.Status = 2;
+                }
                 else
                 {
                     atendimento.Status = (Convert.ToInt32(Session["usuarioLogadoPermissao"]) - 1);
@@ -275,7 +279,10 @@ namespace View.Controllers
                     atendimento.Status = 1;
 
                 }
-                else
+                else if(Session["usuarioLogadoPermissao"].ToString() == "4")
+                {
+                    atendimento.Status = 2;
+                }else
                 {
                     atendimento.Status = (Convert.ToInt32(Session["usuarioLogadoPermissao"]) - 1);
                 }
@@ -324,9 +331,20 @@ namespace View.Controllers
             }
         }
 
-        public ActionResult FinalizaCadastro()
+        public ActionResult FinalizaCadastro(int id)
         {
+            ViewBag.Atendimento = id;
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult InserirObservacao(int id, string observacao)
+        {
+            AtendimentoRepository atendimentoRepository = new AtendimentoRepository();
+            Atendimento atendimentoOriginal = atendimentoRepository.ObterPeloId(id);
+            atendimentoOriginal.Observacao = observacao;
+            atendimentoRepository.Alerar(atendimentoOriginal);
+            return Redirect("/atendimento");
         }
         #endregion
 

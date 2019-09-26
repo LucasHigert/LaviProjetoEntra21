@@ -1,0 +1,47 @@
+﻿<div id="modal-paciente" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <!--Titulo da modal-->
+            <div class="modal-header">
+                <h2>Pacientes</h2>
+                <button type="button" class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <div class="row">
+                    <div class="col-6">
+                        <h4>Lista de paciente</h4>
+                        <table id="tabela" class="table table-striped">
+                            <thead class="class=" bg-dark text-white">
+                                <tr>
+                                    <td>Nome</td>
+                                    <td>Ação</td>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <div class="col-6">
+                        <h4>Cadastro de paciente</h4>
+                        <label for="campo-nome">Nome</label>
+                        <input type="text" />
+                        <label for="campo-sexo">Sexo</label>
+                        <select id="campo-sexo">
+                            <option selected="selected" disabled="disabled">Selecione um sexo</option>
+                            <option value="1">Feminino</option>
+                            <option value="0">Masculino</option>
+                        </select>
+                        <label for="campo-idade">Idade</label>
+                        <input type="number" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary float-left" data-dismiss="modal">Fechar <i class="fa fa-close"></i></button>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -53,31 +53,9 @@
                     <th>@View.Resources.Resource.Acao</th>
                 </tr>
             </thead>
-            <tbody id="corpinho"></tbody>
+            <tbody></tbody>
         </table>
 
-        @*<table id="tabela2">
-            <thead>
-                <tr>
-                    <th>@View.Resources.Resource.Nome</th>
-                    <th>@View.Resources.Resource.Acao</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (Model.Paciente paciente in ViewBag.Pacientes)
-                {
-                    <tr>
-                        <td>@paciente.Nome</td>
-                        <td>
-                            <a class="btn btn-info" href="/atendimentoespecial/InserirAtendimento?idPaciente=' + row.Id + '"><i class="fa fa-user"></i> </a>
-                            
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>*@
-
-        
 
 
         <a href="/atendimentoespecial/cadastropacienteespecial" class="btn btn-info text-white float-right mt-3">@View.Resources.Resource.NaoTenho</a>

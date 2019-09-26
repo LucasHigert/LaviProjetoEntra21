@@ -3,31 +3,33 @@
     ViewBag.Title = "Cadastrar";
 }
 
+
 <h2 class="h2">Cadastro de Posto</h2>
 <form action="/posto/inserir" method="post">
-    <div class="row">
-        <div class="col-4">
-            <label class="font-weight-bold" for="campo-cep">CEP</label>
-            <input type="text" name="cep" id="campo-cep" class="form-control border-info" />
-        </div>
-        <div class="col-8">
-            <label class="font-weight-bold" for="campo-cidade">Cidade<a class="text-danger">*</a></label>
-            <select name="idCidade" id="campo-cidade" class="form-control border-info">
-                <option selected="" disabled="disabled">Selecione uma cidade</option>
-                @foreach (Model.Cidade Cidade in ViewBag.Cidades)
-                {
-                    <option value="@Cidade.Id">@Cidade.Nome</option>
-
-                }
-            </select>
-        </div>
-    </div>
     <div class="row">
         <div class="col-12">
             <label class="font-weight-bold" for="campo-nome">Nome do Posto<a class="text-danger">*</a></label>
             <input type="text" name="nome" id="campo-nome" class="form-control border-info" required="" />
 
         </div>
+        <div class="row">
+            <div class="col-5" style="margin-left:15px">
+                <label class="font-weight-bold" for="campo-cep">CEP</label>
+                <input type="text" name="cep" id="campo-cep" class="form-control border-info" placeholder="Ex.: 00000-000" maxlength="9" autocomplete="off" />
+            </div>
+            <div class="col-6">
+                <label class="font-weight-bold" for="campo-cidade">Cidade<a class="text-danger">*</a></label>
+                <select name="idCidade" id="campo-cidade" class="form-control border-info">
+                    <option selected="" disabled="disabled">Selecione uma cidade</option>
+                    @foreach (Model.Cidade Cidade in ViewBag.Cidades)
+                    {
+                        <option value="@Cidade.Id">@Cidade.Nome</option>
+
+                    }
+                </select>
+            </div>
+        </div>
+
     </div>
-    <button type="submit" class="btn btn-success mt-15"><i class="fa fa-save"></i> Salvar</button>
+    <button type="submit" class="btn btn-success mt-15" style="margin-left:810px"><i class="fa fa-save"></i> Salvar</button>
 </form>

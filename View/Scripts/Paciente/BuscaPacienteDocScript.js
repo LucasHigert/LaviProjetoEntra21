@@ -1,7 +1,7 @@
 ﻿$(function () {
-    $tabelaPaciente = $('#tabela').DataTable({
+    $tabelaPaciente = $('#tabelad').DataTable({
         ajax: {
-            url: "/documento/ObterPeloNome",
+            url: "/Paciente/ObterPeloNome",
             data: function (d) {
                 d.nome = $("#campo-nome").val()
             }

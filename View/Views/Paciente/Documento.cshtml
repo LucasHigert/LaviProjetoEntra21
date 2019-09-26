@@ -14,10 +14,10 @@
     <script src="~/Scripts/DataTables/jquery.dataTables.js"></script>
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
     <link rel="stylesheet" href="~/Content/DataTables/css/jquery.dataTables.min.css" />
-    <script src="~/Scripts/AtendimentoEspecial/TelaBuscaPaciente.js"></script>
+    <script src="~/Scripts/Paciente/BuscaPacienteDocScript.js"></script>
 </head>
 <body>
-  
+
     <br />
     <div class="row pl-3">
 
@@ -31,10 +31,10 @@
 
     <br />
 
-    <table id="tabela" class="table">
+    <table id="tabelad" class="table">
         <thead class="bg-dark text-white">
             <tr>
-                <td>Nome</td>
+                <td>@View.Resources.Resource.Nome</td>
                 <td>Ação</td>
             </tr>
         </thead>

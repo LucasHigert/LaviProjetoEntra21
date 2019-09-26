@@ -76,231 +76,93 @@ $(function () {
 });
 
 $(function () {
+    //validação de borda funcionando apenas em campo-pressao e campo-cpf
+
     $("#campo-nome").focusout(function () {
         $nome = $("#campo-nome").val();
-        $resultado = validaCampos();
-        if ($resultado == false) {
-            var campo = document.getElementById('campo-nome');
-            campo.classList.add('border-danger');
+        if ($nome.length > 2) {
+            $resultado = true;
         } else {
-            var campo = document.getElementById('campo-nome');
-            campo.classList.remove('border-info');
-            campo.classList.remove('border-danger');
-            campo.classList.add('border-success');
+            $resultado = false;
         }
     });
 
     $("#campo-sexo").focusout(function () {
-        $endereco = $("#campo-sexo").val();
+        $nome = $("#campo-sexo").val();
         $resultado = validaCampos();
-        if ($resultado == false) {
-            var campo = document.getElementById('campo-sexo');
-            campo.classList.add('border-danger');
+        if ($nome.val = '2') {
+            $resultado = true;
         } else {
-            var campo = document.getElementById('campo-sexo');
-            campo.classList.remove('border-info');
-            campo.classList.remove('border-danger');
-            campo.classList.add('border-success');
+            $resultado = false;
         }
     });
 
     $("#campo-lingua").focusout(function () {
-        $endereco = $("#campo-lingua").val();
-        $resultado = validaCampos();
-        if ($resultado == false) {
-            var campo = document.getElementById('campo-lingua');
-            campo.classList.add('border-danger');
+        $nome = $("#campo-lingua").val();
+        if ($nome.val = '3') {
+            $resultado = true;
         } else {
-            var campo = document.getElementById('campo-lingua');
-            campo.classList.remove('border-info');
-            campo.classList.remove('border-danger');
-            campo.classList.add('border-success');
-        }
-    });
-
-    $("#campo-rne").focusout(function () {
-        $nome = $("#campo-rne").val();
-        $resultado = validaCampos();
-        if ($resultado == false) {
-            var campo = document.getElementById('campo-rne');
-            campo.classList.add('border-danger');
-        } else {
-            var campo = document.getElementById('campo-rne');
-            campo.classList.remove('border-info');
-            campo.classList.remove('border-danger');
-            campo.classList.add('border-success');
-        }
-    });
-
-    $("#campo-cep").focusout(function () {
-        $nome = $("#campo-cep").val();
-        $resultado = validaCampos();
-        if ($resultado == false) {
-            var campo = document.getElementById('campo-cep');
-            campo.classList.add('border-danger');
-        } else {
-            var campo = document.getElementById('campo-cep');
-            campo.classList.remove('border-info');
-            campo.classList.remove('border-danger');
-            campo.classList.add('border-success');
-        }
-    });
-
-    $("#campo-endereco").focusout(function () {
-        $nome = $("#campo-endereco").val();
-        $resultado = validaCampos();
-        if ($resultado == false) {
-            var campo = document.getElementById('campo-endereco');
-            campo.classList.add('border-danger');
-        } else {
-            var campo = document.getElementById('campo-endereco');
-            campo.classList.remove('border-info');
-            campo.classList.remove('border-danger');
-            campo.classList.add('border-success');
+            $resultado = false;
         }
     });
 
     $("#campo-idade").focusout(function () {
         $nome = $("#campo-idade").val();
-        $resultado = validaCampos();
-        if ($resultado == false) {
-            var campo = document.getElementById('campo-idade');
-            campo.classList.add('border-danger');
+        if ($nome.length > 2) {
+            $resultado = true;
         } else {
-            var campo = document.getElementById('campo-idade');
-            campo.classList.remove('border-info');
-            campo.classList.remove('border-danger');
-            campo.classList.add('border-success');
-        }
-    });
-
-    $("#campo-telefone").focusout(function () {
-        $nome = $("#campo-telefone").val();
-        $resultado = validaCampos();
-        if ($resultado == false) {
-            var campo = document.getElementById('campo-telefone');
-            campo.classList.add('border-danger');
-        } else {
-            var campo = document.getElementById('campo-telefone');
-            campo.classList.remove('border-info');
-            campo.classList.remove('border-danger');
-            campo.classList.add('border-success');
-        }
-    });
-
-    $("#campo-passaporte").focusout(function () {
-        $nome = $("#campo-passaporte").val();
-        $resultado = validaCampos();
-        if ($resultado == false) {
-            var campo = document.getElementById('campo-passaporte');
-            campo.classList.add('border-danger');
-        } else {
-            var campo = document.getElementById('campo-passaporte');
-            campo.classList.remove('border-info');
-            campo.classList.remove('border-danger');
-            campo.classList.add('border-success');
+            $resultado = false;
         }
     });
 
     $("#campo-pressao").focusout(function () {
         $nome = $("#campo-pressao").val();
-        $resultado = validaCampos();
-        if ($resultado == false) {
-            var campo = document.getElementById('campo-pressao');
-            campo.classList.add('border-danger');
+        if ($nome.length == 5) {
+            $resultado = true;
         } else {
-            var campo = document.getElementById('campo-pressao');
-            campo.classList.remove('border-info');
-            campo.classList.remove('border-danger');
-            campo.classList.add('border-success');
+            $resultado = false;
         }
+        Cor("campo-pressao", $resultado);
     });
+
+    function Cor($campo, $bool) {
+
+    if ($bool == false) {
+        var campo = document.getElementById($campo);
+        campo.classList.add('border-danger');
+    } else {
+        var campo = document.getElementById($campo);
+        campo.classList.remove('border-info');
+        campo.classList.remove('border-danger');
+        campo.classList.add('border-success');
+    }
+
+    }
 
     $("#campo-peso").focusout(function () {
         $nome = $("#campo-peso").val();
-        $resultado = validaCampos();
-        if ($resultado == false) {
-            var campo = document.getElementById('campo-peso');
-            campo.classList.add('border-danger');
+        if ($nome.length > 2) {
+            $resultado = true;
         } else {
-            var campo = document.getElementById('campo-peso');
-            campo.classList.remove('border-info');
-            campo.classList.remove('border-danger');
-            campo.classList.add('border-success');
+            $resultado = false;
         }
     });
 
     $("#campo-altura").focusout(function () {
         $nome = $("#campo-altura").val();
-        $resultado = validaCampos();
-        if ($resultado == false) {
-            var campo = document.getElementById('campo-altura');
-            campo.classList.add('border-danger');
+        if ($nome.length > 2 && $nome.length < 4) {
+            $resultado = true;
         } else {
-            var campo = document.getElementById('campo-altura');
-            campo.classList.remove('border-info');
-            campo.classList.remove('border-danger');
-            campo.classList.add('border-success');
+            $resultado = false;
         }
     });
 
     $("#campo-temperatura").focusout(function () {
         $nome = $("#campo-temperatura").val();
-        $resultado = validaCampos();
-        if ($resultado == false) {
-            var campo = document.getElementById('campo-temperatura');
-            campo.classList.add('border-danger');
+        if ($nome.length < 2) {
+            $resultado = true;
         } else {
-            var campo = document.getElementById('campo-temperatura');
-            campo.classList.remove('border-info');
-            campo.classList.remove('border-danger');
-            campo.classList.add('border-success');
+            $resultado = false;
         }
     });
-
-
-    function validaCampos() {
-        if (document.getElementById('campo-nome').value == "" || document.getElementById('campo-nome').value.length <= 2) {
-            return false;
-        }
-        if (document.getElementById('campo-lingua').value == "") {
-            return false;
-        }
-        if (document.getElementById('campo-sexo').value == "") {
-            return false;
-        }
-        if (document.getElementById('campo-rne').value == "") {
-            return false;
-        }
-        if (document.getElementById('campo-cep').value == "") {
-            return false;
-        }
-        if (document.getElementById('campo-endereco').value == "") {
-            return false;
-        }
-        if (document.getElementById('campo-idade').value == "") {
-            return false;
-        }
-        if (document.getElementById('campo-telefone').value == "") {
-            return false;
-        }
-        if (document.getElementById('campo-passaporte').value == "") {
-            return false;
-        }
-        if (document.getElementById('campo-pressao').value == "") {
-            return false;
-        }
-        if (document.getElementById('campo-peso').value == "") {
-            return false;
-        }
-        if (document.getElementById('campo-altura').value == "") {
-            return false;
-        }
-        if (document.getElementById('campo-temperatura').value == "") {
-            return false;
-        } else {
-            return true;
-        }
-
-    }
 });

@@ -474,6 +474,7 @@
     <None Include="Properties\PublishProfiles\lavi-system - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\lavi-system - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
+    <Content Include="Scripts\Funcionarios\Funcionario.js" />
     <Content Include="Scripts\i18n\af.js" />
     <Content Include="Scripts\i18n\ar.js" />
     <Content Include="Scripts\i18n\az.js" />

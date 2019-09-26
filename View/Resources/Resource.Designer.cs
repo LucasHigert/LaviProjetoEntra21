@@ -162,6 +162,24 @@ namespace View.Resources {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a .
         /// </summary>
+        public static string InfoBusca {
+            get {
+                return ResourceManager.GetString("InfoBusca", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .
+        /// </summary>
+        public static string Informacao {
+            get {
+                return ResourceManager.GetString("Informacao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .
+        /// </summary>
         public static string InformacaoCadastro {
             get {
                 return ResourceManager.GetString("InformacaoCadastro", resourceCulture);

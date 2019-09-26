@@ -233,4 +233,10 @@ Enfin, répétez le processus jusqu'à ce que vous sélectionniez tout ce que vo
   <data name="LeiaIsso" xml:space="preserve">
     <value>Lisez ceci avant de commencer</value>
   </data>
+  <data name="InfoBusca" xml:space="preserve">
+    <value>Maintenant, cherchez votre nom dans la liste ci-dessous. Lorsque vous le trouvez, cliquez sur le bouton bleu pour confirmer.</value>
+  </data>
+  <data name="Informacao" xml:space="preserve">
+    <value>Les informations</value>
+  </data>
 </root>

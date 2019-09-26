@@ -172,9 +172,8 @@ namespace View.Controllers
                     }
                     else
                     {
-                        return RedirectToAction("Index");
+                        return View();
                     }
-
                 }
                 else
                 {

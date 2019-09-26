@@ -216,4 +216,13 @@
   <data name="Suportavel" xml:space="preserve">
     <value />
   </data>
+  <data name="InformacaoSintoma" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SouEu" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LeiaIsso" xml:space="preserve">
+    <value />
+  </data>
 </root>

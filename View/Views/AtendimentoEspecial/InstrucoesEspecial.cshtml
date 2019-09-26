@@ -9,7 +9,7 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Atendimento estrangeiro</title>
-    <link rel="shortcut icon" href="~/Content/Imagens/Logo Lavi Preto.png" />
+    <link rel="shortcut icon" href="~/Content/Imagens/Logo Lavi.png">
     <link rel="stylesheet" href="~/Scripts/Tema/global/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/Scripts/Tema/global/fonts/font-awesome/font-awesome.min.css" />
 </head>
@@ -21,14 +21,17 @@
         </div>
     </div>
 
-    <div class="container" style="margin-top: 100px">
-        <h1 class="display-4">@View.Resources.Resource.Ola</h1>
-        <p class="font-weight-bold">@View.Resources.Resource.Instrucoes</p>
-    </div>
     <div class="container">
-    <a href="/atendimentoespecial/buscapaciente" class="btn btn-primary"><i class="fa fa-forward"></i> @View.Resources.Resource.Proximo</a>
+        <div class="container" style="margin-top: 100px">
+            <h1 class="display-4">@View.Resources.Resource.Ola</h1>
+            <p class="font-weight-bold">@View.Resources.Resource.Instrucoes</p>
+        </div>
+        <div class="container">
+            <a href="/atendimentoespecial/buscapaciente" class="btn btn-info float-right mt-20"> @View.Resources.Resource.Proximo <i class="fa fa-forward "></i></a>
+        </div>
     </div>
 
+    
 
     <script src="~/Scripts/Tema/global/vendor/bootstrap/bootstrap.min.js"></script>
     <script href="~/Scripts/Tema/global/vendor/jquery/jquery.min.js"></script>

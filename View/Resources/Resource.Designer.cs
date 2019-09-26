@@ -144,6 +144,15 @@ namespace View.Resources {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a .
         /// </summary>
+        public static string Forte {
+            get {
+                return ResourceManager.GetString("Forte", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .
+        /// </summary>
         public static string Idade {
             get {
                 return ResourceManager.GetString("Idade", resourceCulture);
@@ -169,11 +178,29 @@ namespace View.Resources {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .
+        /// </summary>
+        public static string InformacaoSintoma {
+            get {
+                return ResourceManager.GetString("InformacaoSintoma", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Neste questionário você será avaliado de acordo com as informações colocadas por você com relação aos seus sintomas. Marque de acordo seus sintomas e seja sincero, pois suas respostas influenciarão no seu tratamento..
         /// </summary>
         public static string Instrucoes {
             get {
                 return ResourceManager.GetString("Instrucoes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .
+        /// </summary>
+        public static string LeiaIsso {
+            get {
+                return ResourceManager.GetString("LeiaIsso", resourceCulture);
             }
         }
         
@@ -192,6 +219,15 @@ namespace View.Resources {
         public static string NaoTenho {
             get {
                 return ResourceManager.GetString("NaoTenho", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .
+        /// </summary>
+        public static string NivelDor {
+            get {
+                return ResourceManager.GetString("NivelDor", resourceCulture);
             }
         }
         
@@ -228,6 +264,15 @@ namespace View.Resources {
         public static string Peso {
             get {
                 return ResourceManager.GetString("Peso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .
+        /// </summary>
+        public static string Pouco {
+            get {
+                return ResourceManager.GetString("Pouco", resourceCulture);
             }
         }
         
@@ -291,6 +336,24 @@ namespace View.Resources {
         public static string Sintoma {
             get {
                 return ResourceManager.GetString("Sintoma", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .
+        /// </summary>
+        public static string SouEu {
+            get {
+                return ResourceManager.GetString("SouEu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .
+        /// </summary>
+        public static string Suportavel {
+            get {
+                return ResourceManager.GetString("Suportavel", resourceCulture);
             }
         }
         

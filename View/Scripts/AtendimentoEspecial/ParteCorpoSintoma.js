@@ -1,36 +1,61 @@
 ﻿$(function () {
-    $idCorpo = 0
-    $idAtendimento = 0
-    $idPaciente =  0
-    $idSintoma = 0
+    $idCorpo = 0;
+    $idAtendimento = 0;
+    $idPaciente = 0;
+    $idSintoma = 0;
+    $nivelDor = 0;
 
     $(".botao").on("click", function () {
         $idCorpo = $(this).data("id");
+        AtualizaSintoma($idCorpo);
+    })
 
-        $("#sintoma").select2({
+
+    function AtualizaSintoma($idCorpo) {
+
+        $sintoma = $("#sintoma").select2({
             dropdownParent: $('#modal-sintoma'),
             ajax: {
                 url: "/atendimentoespecial/ObterSintomaParte?id=" + $idCorpo,
                 dataType: "json"
             }
 
-        })
+        });
+    };
 
+    var $niveldedor = 0;
+
+    $("#pouco").click(function () {
+        $niveldedor = $(this).val(1)
+    });
+
+    $("#medio").click(function () {
+        $niveldedor = $(this).val(2);
+    });
+
+    $("#alto").click(function () {
+        $niveldedor = $(this).val(3);
     });
 
     $("#botao-salvar").on("click", function () {
         $idAtendimento = $("#idAtendimento").data("id");
         $idPaciente = $("#idPaciente").data("id");
         $idSintoma = $("#sintoma").val();
+        $nivelDor = $($niveldedor).val();
+
+        if ($idSintoma == null) {
+            return;
+        }
         $.ajax({
             url: "/atendimentoespecial/InserirSintoma",
             method: "post",
             data: {
                 idAtendimento: $idAtendimento,
-                nivelDor: $idPaciente,
+                idPaciente: $idPaciente,
+                nivelDor: $nivelDor,
                 idSintoma: $idSintoma
             },
-            success: function (data) { $("#modal-sintoma").modal('hide'); $tabela.ajax.reload(); },
+            success: function (data) { $("#sintoma").val(null); $("#nivelDor").val(0); $("#modal-sintoma").modal('hide'); $tabela.ajax.reload(); },
             error: function (err) { alert("Não foi possivel inserir, por favor entre em contato com o suporte") }
         })
 
@@ -53,6 +78,9 @@
     $tabela = $("#tabela-sintoma").DataTable({
         ajax: "/atendimentoespecial/obtersintomaatendimento?idAtendimento=" + $("#idAtendimento").data("id"),
         serverSide: true,
+        searching: false,
+        info: false,
+        paging: false,
         columns: [
             { "data": "Nome" },
             {
@@ -62,4 +90,5 @@
             }
         ]
     });
+
 })

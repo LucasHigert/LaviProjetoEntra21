@@ -60,10 +60,13 @@ namespace View.Controllers
 
         private PacienteRepository pacienteRepository = new PacienteRepository();
 
+        static string lingua = "";
+
         public ActionResult InstrucoesEspecial(string lang)
         {
             if (VerificaLogado() == true)
             {
+                lingua = lang;
                 Change(lang);
                 return View();
 
@@ -119,7 +122,15 @@ namespace View.Controllers
             List<object> listaSintoma = new List<object>();
             for (int i = 0; i < listaRepository.Count; i++)
             {
-                listaSintoma.Add(new { Nome = listaRepository[i].Sintoma.Nome, id = listaRepository[i].IdSintoma });
+                if (lingua == "fr-HT")
+                {
+
+                listaSintoma.Add(new { Nome = listaRepository[i].Sintoma.TraducaoCriolo, id = listaRepository[i].IdSintoma });
+                }
+                else
+                {
+                    listaSintoma.Add(new { Nome = listaRepository[i].Sintoma.TraducaoFrances, id = listaRepository[i].IdSintoma });
+                }
             }
 
             var result = new { data = listaSintoma };
@@ -135,11 +146,23 @@ namespace View.Controllers
             List<object> ListaRetorno = new List<object>();
             foreach (Sintoma sintoma in ListaSelect)
             {
-                ListaRetorno.Add(new
+                if (lingua == "fr-HT")
                 {
-                    id = sintoma.Id,
-                    text = sintoma.Nome,
-                });
+
+                    ListaRetorno.Add(new
+                    {
+                        id = sintoma.Id,
+                        text = sintoma.TraducaoCriolo,
+                    });
+                }
+                else
+                {
+                    ListaRetorno.Add(new
+                    {
+                        id = sintoma.Id,
+                        text = sintoma.TraducaoFrances,
+                    });
+                }
             }
             var resultado = new
             {
@@ -247,7 +270,6 @@ namespace View.Controllers
                 atendimento.IdPaciente = paciente.Id;
                 atendimento.DataAtendimento = DateTime.Now;
                 atendimento.IdPosto = funcionario.IdPosto;
-                atendimentoRepository.Inserir(atendimento);
                 if (Session["usuarioLogadoPermissao"].ToString() == "1")
                 {
                     atendimento.Status = 1;
@@ -257,6 +279,8 @@ namespace View.Controllers
                 {
                     atendimento.Status = (Convert.ToInt32(Session["usuarioLogadoPermissao"]) - 1);
                 }
+
+                atendimentoRepository.Inserir(atendimento);
 
                 if (Session["usuarioLogadoPermissao"].ToString() == "1")
                 {

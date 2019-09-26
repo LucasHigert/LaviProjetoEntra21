@@ -92,18 +92,36 @@ namespace View.Controllers
             }
         }
 
-        public ActionResult Inserir(Cidade cidade)
+        public ActionResult Inserir(Cidade cidade, Cidade model)
         {
             if (VerificaLogado() == true)
             {
                 if (VerificaPermisssao() == true)
                 {
-                    int id = repository.Inserir(cidade);
+                    //if (ModelState.IsValid)
+                    //{
+                        try
+                        {
 
-                    return RedirectToAction("index");
+                            int id = repository.Inserir(cidade);
+                            return RedirectToAction("index");
+                        }
+                        catch (Exception)
+                        {
+
+                            return Content("<script language='javascript' type='text/javascript'>alert('Quantidade de caracteres não suportado');</script>");
+
+
+                        }
+                    //}
+                    //ModelState.AddModelError("", "Error");
+                    //return View();
+
+
                 }
                 else
                 {
+
                     return Redirect("/login/sempermissao");
                 }
             }
@@ -148,17 +166,30 @@ namespace View.Controllers
             {
                 if (VerificaPermisssao() == true)
                 {
-                    Cidade cidade = new Cidade();
-                    cidade.Id = id;
-                    cidade.Nome = nome;
-                    cidade.Estado = new Estado();
-                    cidade.Estado.Id = idEstado;
+                    if (ModelState.IsValid)
+                    {
+                        try
+                        {
+                            Cidade cidade = new Cidade();
+                            cidade.Id = id;
+                            cidade.Nome = nome;
+                            cidade.Estado = new Estado();
+                            cidade.Estado.Id = idEstado;
 
-                    repository.Alterar(cidade);
-                    return RedirectToAction("index");
+                            repository.Alterar(cidade);
+                            return RedirectToAction("index");
+                        }
+                        catch (Exception ex)
+                        {
+                            return View(ex.Message);
+                        }
+                    }
+                    ModelState.AddModelError("", "Error");
+                    return View();
                 }
                 else
                 {
+
                     return Redirect("/login/sempermissao");
                 }
             }
@@ -172,7 +203,7 @@ namespace View.Controllers
         {
             if (VerificaLogado() == true)
             {
-                if(VerificaPermisssao() == true)
+                if (VerificaPermisssao() == true)
                 {
                     ViewBag.Cidade = repository.ObterPeloId(id);
                     EstadoRepository estadoRepository = new EstadoRepository();
@@ -189,8 +220,9 @@ namespace View.Controllers
             {
                 return Redirect("/login");
             }
-            
+
         }
         #endregion
+
     }
 }

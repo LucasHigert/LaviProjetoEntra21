@@ -148,7 +148,7 @@
     <value>l'âge</value>
   </data>
   <data name="InformacaoCadastro" xml:space="preserve">
-    <value>Répondez aux informations suivantes pour votre dossier médical:</value>
+    <value>Répondez aux informations suivantes pour votre dossier médical</value>
   </data>
   <data name="InformacaoParteCorpo" xml:space="preserve">
     <value>Bonjour, dans ce questionnaire, vous serez évalué en fonction des
@@ -209,5 +209,28 @@ votre traitement.</value>
   </data>
   <data name="SelecioneSintoma" xml:space="preserve">
     <value>Sélectionnez un symptôme</value>
+  </data>
+  <data name="Forte" xml:space="preserve">
+    <value>Forte</value>
+  </data>
+  <data name="NivelDor" xml:space="preserve">
+    <value>Niveau de douleur</value>
+  </data>
+  <data name="Pouco" xml:space="preserve">
+    <value>Peu</value>
+  </data>
+  <data name="Suportavel" xml:space="preserve">
+    <value>Supportable</value>
+  </data>
+  <data name="InformacaoSintoma" xml:space="preserve">
+    <value>Pour commencer, cliquez simplement là où vous ressentez une douleur ou des symptômes.
+Ensuite, sélectionnez simplement votre symptôme à l’emplacement choisi et son intensité.
+Enfin, répétez le processus jusqu'à ce que vous sélectionniez tout ce que vous ressentez.</value>
+  </data>
+  <data name="SouEu" xml:space="preserve">
+    <value>C'est moi</value>
+  </data>
+  <data name="LeiaIsso" xml:space="preserve">
+    <value>Lisez ceci avant de commencer</value>
   </data>
 </root>

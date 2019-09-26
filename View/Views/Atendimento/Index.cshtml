@@ -27,7 +27,14 @@
                 <tr class="bg-indigo-500">
                     <td>@atendimento.Paciente.Nome</td>
                     <td>@atendimento.Prioridade</td>
-                    <td>@atendimento.Observacao </td>
+                    @if (atendimento.Observacao.Length <= 41)
+                    {
+                        <td>@atendimento.Observacao </td>
+                    }
+                    else
+                    {
+                        <td>A observação atingiu o limite maximo</td>
+                    }
                     <td>
                         <a class="btn btn-info" href="/atendimento/alterar?id=@atendimento.Id"><i class="fa fa-bookmark"></i> Atender</a>
                     </td>
@@ -38,7 +45,15 @@
                 <tr class="bg-red-500">
                     <td>@atendimento.Paciente.Nome</td>
                     <td>@atendimento.Prioridade</td>
-                    <td>@atendimento.Observacao </td>
+                    @if (atendimento.Observacao.Length <= 40)
+                    {
+
+                        <td>@atendimento.Observacao </td>
+                    }
+                    else
+                    {
+                        <td>A observação atingiu o limite maximo</td>
+                    }
                     <td>
                         <a class="btn btn-info" href="/atendimento/alterar?id=@atendimento.Id"><i class="fa fa-bookmark"></i> Atender</a>
                     </td>
@@ -50,19 +65,56 @@
                     <td hidden>@atendimento.Id</td>
                     <td>@atendimento.Paciente.Nome</td>
                     <td>@atendimento.Prioridade</td>
-                    <td>@atendimento.Observacao </td>
+                    @if (atendimento.Observacao.Length <= 40)
+                    {
+
+                        <td>@atendimento.Observacao </td>
+                    }
+                    else
+                    {
+                        <td>A observação atingiu o limite maximo</td>
+                    }
                     <td>
                         <a class="btn btn-info" href="/atendimento/alterar?id=@atendimento.Id"><i class="fa fa-bookmark"></i> Atender</a>
                     </td>
                 </tr>
             }
-            else
+            else if (atendimento.Prioridade == 1)
             {
                 <tr>
                     <td hidden>@atendimento.Id</td>
                     <td>@atendimento.Paciente.Nome</td>
                     <td>@atendimento.Prioridade</td>
-                    <td>@atendimento.Observacao </td>
+                    @if (atendimento.Observacao.Length <= 40)
+                    {
+
+                        <td>@atendimento.Observacao </td>
+                    }
+                    else
+                    {
+                        <td>A observação atingiu o limite maximo</td>
+                    }n
+                    <td>
+                        <a class="btn btn-info" href="/atendimento/alterar?id=@atendimento.Id"><i class="fa fa-bookmark"></i> Atender</a>
+                    </td>
+                </tr>
+
+            }
+            else if (atendimento.Prioridade == 0)
+            {
+                <tr>
+                    <td hidden>@atendimento.Id</td>
+                    <td>@atendimento.Paciente.Nome</td>
+                    <td>Não Definido</td>
+                    @if (atendimento.Observacao.Length <= 40)
+                    {
+
+                        <td>@atendimento.Observacao </td>
+                    }
+                    else
+                    {
+                        <td>A observação atingiu o limite maximo</td>
+                    }
                     <td>
                         <a class="btn btn-info" href="/atendimento/alterar?id=@atendimento.Id"><i class="fa fa-bookmark"></i> Atender</a>
                     </td>

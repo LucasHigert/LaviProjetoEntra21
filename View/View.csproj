@@ -541,6 +541,7 @@
     <Content Include="Scripts\materialize\materialize.js" />
     <Content Include="Scripts\materialize\materialize.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\Paciente\BuscaPacienteDocScript.js" />
     <Content Include="Scripts\Paciente\PacienteSript.js" />
     <Content Include="Scripts\ParteCorpoSintoma.js" />
     <Content Include="Scripts\ParteCorpo\ParteCorpo.css" />

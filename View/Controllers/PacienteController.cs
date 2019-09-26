@@ -91,30 +91,24 @@ namespace View.Controllers
         #region Documentos
         public ActionResult Documento()
         {
-            PacienteRepository pacienteRepository = new
-PacienteRepository();
-            ViewBag.Pacientes = pacienteRepository.ObterTodos();
+            
+//            PacienteRepository pacienteRepository = new
+//PacienteRepository();
+//            ViewBag.Pacientes = pacienteRepository.ObterTodos();
             return View();
+
         }
-        private SistemaContext context;
+        [HttpGet]
+        public JsonResult ObterPeloNome(string nome)
+        {
+            PacienteRepository pacienteRepository = new PacienteRepository();
+            var pessoas = pacienteRepository.ObterPeloNome(nome);
+            var result = new { data = pessoas };
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
 
-      
-        //public JsonResult PacienteObterPorId(int id)
-        //{
+    
 
-        //    //ViewBag para listar todos os pacientes
-
-        //    PacienteRepository pacienteRepository = new PacienteRepository();
-        //    ViewBag.Pacientes = context.Pacientes.ToList()
-        //                   .Select(x => new SelectListItem
-        //                   {
-        //                       Value = x.PacienteId.ToString(),
-        //                       Text = x.Nome,
-        //                   });
-        //    var pacientes = context.pacientes.where(x => x.id == id).FirstOrDefault();
-
-        //    return Json(pacientes, JsonRequestBehavior.AllowGet);
-        //}
         #endregion
         //Apagar
         #region Apagar

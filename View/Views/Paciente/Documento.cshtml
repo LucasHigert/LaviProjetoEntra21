@@ -5,25 +5,40 @@
 
 <h2>Documentos</h2>
 <head>
+
+
+    <link rel="shortcut icon" href="~/Content/Imagens/Logo Lavi.png">
+
+
     <script src="~/Scripts/jquery-3.0.0.min.js"></script>
     <script src="~/Scripts/DataTables/jquery.dataTables.js"></script>
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <link rel="stylesheet" href="~/Content/DataTables/css/jquery.dataTables.min.css" />
+    <script src="~/Scripts/AtendimentoEspecial/TelaBuscaPaciente.js"></script>
 </head>
 <body>
-    <select name="idPaciente" id="campo-paciente" required="" class="form-control border-info">
-        <option selected="" disabled="disabled">Selecione um paciente</option>
-        @foreach (Model.Paciente Paciente in ViewBag.Pacientes)
-        {
-            <option value="@Paciente.Id">@Paciente.Nome</option>
+  
+    <br />
+    <div class="row pl-3">
 
-        }
-    </select>
-    <div class="container">
-        <div class="row pl-3">
-            <label for="campo-nome" class="font-weight-bold">Digite o nome do paciente</label>
-        </div>
-        <div class="row pl-3">
-            <input id="campo-nome" name="nome" class="form-control border-info col-11" type="text" />
-        </div>
+        <label for="campo-nome" class="font-weight-bold">Nome do paciente</label>
     </div>
+    <div class="row pl-3">
+        <input id="campo-nome" name="nome" class="form-control border-info col-11" type="text" />
+        <button class="btn btn-primary col-1" id="botao">Próximo</button>
+
+    </div>
+
+    <br />
+
+    <table id="tabela" class="table">
+        <thead class="bg-dark text-white">
+            <tr>
+                <td>Nome</td>
+                <td>Ação</td>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
 </body>

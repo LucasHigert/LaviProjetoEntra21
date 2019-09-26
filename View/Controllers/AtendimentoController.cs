@@ -66,6 +66,7 @@ namespace View.Controllers
                 return Redirect("/login");
             }
         }
+
         //Escolher o tipo de atendimento
         #region
         public ActionResult Escolha()
@@ -84,6 +85,7 @@ namespace View.Controllers
 
         }
         #endregion
+
         //Inserir
         #region Inserir
         public ActionResult Cadastro()
@@ -111,6 +113,7 @@ namespace View.Controllers
                 Funcionario funcionario = funcionarioRepository.ObterPeloId(Convert.ToInt32(Session["usuarioLogadoId"]));
                 atendimento.IdFuncionario = funcionario.Id;
                 atendimento.IdPosto = funcionario.IdPosto;
+                atendimento.DataAtendimento = DateTime.Now;
 
                 if (Session["usuarioLogadoPermissao"].ToString() == "1")
                 {
@@ -146,24 +149,37 @@ namespace View.Controllers
         {
             if (VerificaLogado() == true)
             {
-                Atendimento atendimento = repositoryAtendimento.ObterPeloId(id);
-                ViewBag.Atendimento = atendimento;
-                Paciente paciente = repositoryPaciente.ObterPeloId(atendimento.IdPaciente);
-                ViewBag.Paciente = paciente;
-                //Se o paciente for estrangeiro ele irá ter uma lista de sintomas que este selecionou
-                if (paciente.Lingua != 0)
+                if (Session["usuarioLogadoPermissao"].ToString() != "1")
                 {
-                    AtendimentoParteCorpoSintomaRepository atendimentoParteCorpoSintoma = new AtendimentoParteCorpoSintomaRepository();
-                    List<Sintoma> sintomas = new List<Sintoma>();
-                    List<AtendimentoParteCorpoSintoma> AtendimentoSintoma = atendimentoParteCorpoSintoma.ObterPeloIdAtentimento(atendimento.Id);
-                    for (int i = 0; i < AtendimentoSintoma.Count; i++)
+
+                    Atendimento atendimento = repositoryAtendimento.ObterPeloId(id);
+                    ViewBag.Atendimento = atendimento;
+                    Paciente paciente = repositoryPaciente.ObterPeloId(atendimento.IdPaciente);
+                    ViewBag.Paciente = paciente;
+                    //Se o paciente for estrangeiro ele irá ter uma lista de sintomas que este selecionou
+                    if (paciente.Lingua != 0)
                     {
-                        sintomas.Add(new Sintoma { Nome = AtendimentoSintoma[i].Sintoma.Nome  });
+                        AtendimentoParteCorpoSintomaRepository atendimentoParteCorpoSintoma = new AtendimentoParteCorpoSintomaRepository();
+                        List<Sintoma> sintomas = new List<Sintoma>();
+                        List<AtendimentoParteCorpoSintoma> AtendimentoSintoma = atendimentoParteCorpoSintoma.ObterPeloIdAtentimento(atendimento.Id);
+                        for (int i = 0; i < AtendimentoSintoma.Count; i++)
+                        {
+                            sintomas.Add(new Sintoma { Nome = AtendimentoSintoma[i].Sintoma.Nome });
+                        }
+                        ViewBag.NivelDor = AtendimentoSintoma;
+                        ViewBag.Sintomas = sintomas;
+                        return View();
                     }
-                    ViewBag.NivelDor = AtendimentoSintoma;
-                    ViewBag.Sintomas = sintomas;
+                    else
+                    {
+                        return View();
+                    }
                 }
-                return View();
+                else
+                {
+                    return Redirect("/login/sempermissao");
+
+                }
 
 
             }
@@ -171,7 +187,7 @@ namespace View.Controllers
             {
                 return Redirect("/login");
             }
-           
+
         }
 
         public ActionResult Update(Atendimento atendimento)
@@ -180,6 +196,10 @@ namespace View.Controllers
             {
                 FuncionarioRepository funcionarioRepository = new FuncionarioRepository();
                 Funcionario funcionario = funcionarioRepository.ObterPeloId(Convert.ToInt32(Session["usuarioLogadoId"]));
+
+                //Obtemos o atendimento original pois assim não é necessario preencher todos os campos, apenas o que 
+                //desejamos alterar
+
                 Atendimento atendimentoOriginal = repositoryAtendimento.ObterPeloId(atendimento.Id);
                 atendimentoOriginal.IdFuncionario = funcionario.Id;
                 atendimentoOriginal.IdPosto = funcionario.IdPosto;
@@ -193,7 +213,9 @@ namespace View.Controllers
                     atendimento.Status = (Convert.ToInt32(Session["usuarioLogadoPermissao"]));
 
                 }
+
                 repositoryAtendimento.Alerar(atendimento);
+
                 if ((Session["usuarioLogadoPermissao"].ToString() == "3") || (Session["usuarioLogadoPermissao"].ToString() == "4"))
                 {
                     return Redirect("/encaminhamento/escolha?idAtendimento=" + atendimento.Id);

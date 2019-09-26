@@ -234,13 +234,37 @@
   <data name="AguardeOMedicoAvaliar" xml:space="preserve">
     <value />
   </data>
+  <data name="Braco" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Cabeca" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Genital" xml:space="preserve">
+    <value />
+  </data>
   <data name="InfoEspere" xml:space="preserve">
     <value />
   </data>
   <data name="Inforodape" xml:space="preserve">
     <value />
   </data>
+  <data name="Mao" xml:space="preserve">
+    <value />
+  </data>
   <data name="MuitoBem" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Pe" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Perna" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Pescoco" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Tronco" xml:space="preserve">
     <value />
   </data>
 </root>

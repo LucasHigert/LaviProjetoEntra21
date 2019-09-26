@@ -90,6 +90,24 @@ namespace View.Resources {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a .
         /// </summary>
+        public static string Braco {
+            get {
+                return ResourceManager.GetString("Braco", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .
+        /// </summary>
+        public static string Cabeca {
+            get {
+                return ResourceManager.GetString("Cabeca", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .
+        /// </summary>
         public static string Cancelar {
             get {
                 return ResourceManager.GetString("Cancelar", resourceCulture);
@@ -156,6 +174,15 @@ namespace View.Resources {
         public static string Forte {
             get {
                 return ResourceManager.GetString("Forte", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .
+        /// </summary>
+        public static string Genital {
+            get {
+                return ResourceManager.GetString("Genital", resourceCulture);
             }
         }
         
@@ -252,6 +279,15 @@ namespace View.Resources {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a .
         /// </summary>
+        public static string Mao {
+            get {
+                return ResourceManager.GetString("Mao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .
+        /// </summary>
         public static string Masculino {
             get {
                 return ResourceManager.GetString("Masculino", resourceCulture);
@@ -309,6 +345,33 @@ namespace View.Resources {
         public static string Passaporte {
             get {
                 return ResourceManager.GetString("Passaporte", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .
+        /// </summary>
+        public static string Pe {
+            get {
+                return ResourceManager.GetString("Pe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .
+        /// </summary>
+        public static string Perna {
+            get {
+                return ResourceManager.GetString("Perna", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .
+        /// </summary>
+        public static string Pescoco {
+            get {
+                return ResourceManager.GetString("Pescoco", resourceCulture);
             }
         }
         
@@ -426,6 +489,15 @@ namespace View.Resources {
         public static string Temperatura {
             get {
                 return ResourceManager.GetString("Temperatura", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .
+        /// </summary>
+        public static string Tronco {
+            get {
+                return ResourceManager.GetString("Tronco", resourceCulture);
             }
         }
         

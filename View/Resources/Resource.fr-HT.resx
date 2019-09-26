@@ -236,13 +236,37 @@ Finalman, repete pwosesis la jiskaske ou chwazi tout bagay ou santi.</value>
   <data name="AguardeOMedicoAvaliar" xml:space="preserve">
     <value>Doktè a pral kounye a evalye sentòm ou a fè yon pi bon dyagnostik.</value>
   </data>
+  <data name="Braco" xml:space="preserve">
+    <value>Bra</value>
+  </data>
+  <data name="Cabeca" xml:space="preserve">
+    <value>Tèt</value>
+  </data>
+  <data name="Genital" xml:space="preserve">
+    <value>Rejyon jenital</value>
+  </data>
   <data name="InfoEspere" xml:space="preserve">
     <value>Tanpri tann yon ti moman.</value>
   </data>
   <data name="Inforodape" xml:space="preserve">
     <value>Si ou bezwen plis èd, di doktè a ke li pral ede</value>
   </data>
+  <data name="Mao" xml:space="preserve">
+    <value>Men</value>
+  </data>
   <data name="MuitoBem" xml:space="preserve">
     <value>Trè bon !!</value>
+  </data>
+  <data name="Pe" xml:space="preserve">
+    <value>Pye</value>
+  </data>
+  <data name="Perna" xml:space="preserve">
+    <value>Janm</value>
+  </data>
+  <data name="Pescoco" xml:space="preserve">
+    <value>Neck</value>
+  </data>
+  <data name="Tronco" xml:space="preserve">
+    <value>Tron</value>
   </data>
 </root>

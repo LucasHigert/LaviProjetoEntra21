@@ -26,7 +26,13 @@ namespace View.Controllers
 
         #endregion
 
-
+        public JsonResult ObterPeloNome(string nome)
+        {
+            PacienteRepository pacienteRepository = new PacienteRepository();
+            var resultado = pacienteRepository.ObterPeloNome(nome);
+            var result = new { data = resultado };
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
         // GET: Cidade
         public PacienteRepository repository;
 

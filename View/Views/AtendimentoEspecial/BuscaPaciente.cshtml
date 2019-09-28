@@ -30,33 +30,40 @@
     </div>
     <div class="container">
         <h1 class="h1">@View.Resources.Resource.VocêPossuiCadastro</h1>
-        <br/>
+        <!--início info verde-->
+        <div class="alert alert-info" role="alert">
+            <h4 class="alert-heading text-center">@View.Resources.Resource.Informacao</h4>
+            <p class="text-center">@View.Resources.Resource.InfoBusca</p>
+            <hr>
+        </div>
+        <!--fim info verde-->
+        <br />
         <div class="row pl-3">
 
             <label for="campo-nome" class="font-weight-bold">@View.Resources.Resource.DigiteSeuNomePesquisar</label>
         </div>
-        <div class="row pl-3">
-            <input id="campo-nome" name="nome" class="form-control border-info col-11" type="text" />
-            <button class="btn btn-primary col-1" id="botao">@View.Resources.Resource.Proximo</button>
-
+        <div class="row">
+            <div class="col-10">
+                <input id="campo-nome" name="nome" class="form-control border-info" type="text" />
+            </div>
+            <div class="col-2">
+                <button class="btn btn-info float-right" id="botao">@View.Resources.Resource.Proximo <i class="fa fa-forward "></i></button>
+            </div>
         </div>
 
-        <br/>
-        
-            <table id="tabela" class="table">
-                <thead class="bg-dark text-white">
-                    <tr>
-                        <td>@View.Resources.Resource.Nome</td>
-                        <td>@View.Resources.Resource.Acao</td>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
-        
+        <br />
 
+        <table id="tabela" class="table table-striped">
+            <thead class="bg-dark text-white">
+                <tr>
+                    <th>@View.Resources.Resource.Nome</th>
+                    <th>@View.Resources.Resource.Acao</th>
+                </tr>
+            </thead>
+            <tbody id="corpinho"></tbody>
+        </table>
 
-
-        <a href="/atendimentoespecial/cadastropacienteespecial" class="btn btn-primary text-white float-right">@View.Resources.Resource.NaoTenho</a>
+        <a href="/atendimentoespecial/cadastropacienteespecial" class="btn btn-info text-white float-right mt-3 mb-5"><i class="fa fa-exclamation-circle"></i> @View.Resources.Resource.NaoTenho</a>
     </div>
 
     <script src="~/Scripts/Tema/global/vendor/bootstrap/bootstrap.min.js"></script>

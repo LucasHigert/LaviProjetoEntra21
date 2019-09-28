@@ -32,67 +32,86 @@
 
         <h2 class="display-4">@View.Resources.Resource.Ola '@ViewBag.Atendimento.Paciente.Nome'</h2>
 
+        <!--Texto informativo-->
+        <div class="alert alert-info" role="alert">
+            <h4 class="alert-heading">@View.Resources.Resource.LeiaIsso</h4>
+            <p>@View.Resources.Resource.InformacaoSintoma</p>
+            <hr>
+            <p class="mb-0">@View.Resources.Resource.Inforodape</p>
+        </div>
+        <!--fim do texto informativo-->
 
+        <div class="row">
             <div class="row" style="margin-left: 420px">
-                <a class="botao cabeca" data-toggle="modal" data-target="#modal-sintoma" data-id="1"><img class="image" src="~/Content/Imagens/Corpos/cabeça.png" /></a>
+                <div data-toggle="tooltip" data-placement="top" title="@View.Resources.Resource.Cabeca">
+                    <a class="botao" data-toggle="modal" data-target="#modal-sintoma" data-id="1"><img class="image" src="~/Content/Imagens/Corpos/cabeça.png" /></a>
+                </div>
             </div>
             <div class="row" style="margin-left:420px">
-                <a class="botao pescoco" data-toggle="modal" data-target="#modal-sintoma" data-id="2"><img class="image" src="~/Content/Imagens/Corpos/pescoço.png" /></a>
+                <div data-toggle="tooltip" data-placement="top" title="@View.Resources.Resource.Pescoco">
+                    <a class="botao" data-toggle="modal" data-target="#modal-sintoma" data-id="2"><img class="image" src="~/Content/Imagens/Corpos/pescoço.png" /></a>
+                </div>
             </div>
             <div class="row" style="margin-left:230px">
-                <div style="margin-top: 35px">
-                    <a class="botao braco-direito" data-toggle="modal" data-target="#modal-sintoma" data-id="4"><img class="image" src="~/Content/Imagens/Corpos/braço direito.png" /></a>
+                <div style="margin-top: 35px" data-toggle="tooltip" data-placement="top" title="@View.Resources.Resource.Braco">
+                    <a class="botao" data-toggle="modal" data-target="#modal-sintoma" data-id="4"><img class="image" src="~/Content/Imagens/Corpos/braço direito.png" /></a>
                 </div>
-                <a class="barriga" data-toggle="modal" data-target="#modal-sintoma" data-id="3"><img class="image" src="~/Content/Imagens/Corpos/barriga.png" /></a>
-                <div style="margin-top:35px">
-                    <a class="botao braco-esquerdo" data-toggle="modal" data-target="#modal-sintoma" data-id="5"><img class="image" src="~/Content/Imagens/Corpos/braço esquerdo.png" /></a>
+                <div data-toggle="tooltip" data-placement="top" title="@View.Resources.Resource.Tronco">
+                    <a class="barriga" data-toggle="modal" data-target="#modal-sintoma" data-id="3"><img class="image" src="~/Content/Imagens/Corpos/barriga.png" /></a>
+                </div>
+                <div style="margin-top:35px" data-toggle="tooltip" data-placement="top" title="@View.Resources.Resource.Braco">
+                    <a class="botao" data-toggle="modal" data-target="#modal-sintoma" data-id="5"><img class="image" src="~/Content/Imagens/Corpos/braço esquerdo.png" /></a>
                 </div>
             </div>
             <div class="row" style="margin-left:160px">
-                <div style="margin-right: 110px">
-                    <a class=" botao mao-direita" data-toggle="modal" data-target="#modal-sintoma" data-id="6"><img class="image" src="~/Content/Imagens/Corpos/mao direita.png" /></a>
+                <div style="margin-right: 110px" data-toggle="tooltip" data-placement="top" title="@View.Resources.Resource.Mao">
+                    <a class=" botao" data-toggle="modal" data-target="#modal-sintoma" data-id="6"><img class="image" src="~/Content/Imagens/Corpos/mao direita.png" /></a>
                 </div>
-                <a class="botao genitalia" data-toggle="modal" data-target="#modal-sintoma" data-id="7"><img class="image" src="~/Content/Imagens/Corpos/genitalias.png"></a>
-                <div style="margin-left: 90px">
+                <div data-toggle="tooltip" data-placement="top" title="@View.Resources.Resource.Genital">
+                    <a class="botao" data-toggle="modal" data-target="#modal-sintoma" data-id="7"><img class="image" src="~/Content/Imagens/Corpos/genitalias.png"></a>
+                </div>
+                <div style="margin-left: 90px" data-toggle="tooltip" data-placement="top" title="@View.Resources.Resource.Mao">
                     <a class="botao mao-esquerda" data-toggle="modal" data-target="#modal-sintoma" data-id="8"><img class="image" src="~/Content/Imagens/Corpos/mao esquerda.png" /></a>
                 </div>
             </div>
             <div class="row" style="margin-left: 350px">
-                <a class="botao perna-direita" data-toggle="modal" data-target="#modal-sintoma" data-id="9"><img class="image" src="~/Content/Imagens/Corpos/perna direita.png" /></a>
-                <div style="margin-left:30px">
-                    <a class="botao perna-esquerda" data-toggle="modal" data-target="#modal-sintoma" data-id="10"><img class="image" src="~/Content/Imagens/Corpos/perna esquerda.png" /></a>
+                <div data-toggle="tooltip" data-placement="top" title="@View.Resources.Resource.Perna">
+                    <a class="botao" data-toggle="modal" data-target="#modal-sintoma" data-id="9"><img class="image" src="~/Content/Imagens/Corpos/perna direita.png" /></a>
+                </div>
+                <div style="margin-left:30px" data-toggle="tooltip" data-placement="top" title="@View.Resources.Resource.Perna">
+                    <a class="botao" data-toggle="modal" data-target="#modal-sintoma" data-id="10"><img class="image" src="~/Content/Imagens/Corpos/perna esquerda.png" /></a>
                 </div>
             </div>
             <div class="row" style="margin-left:370px">
-                <a class="bota o pe-direito" data-toggle="modal" data-target="#modal-sintoma" data-id="11"><img class="image" src="~/Content/Imagens/Corpos/pé direito.png" /></a>
-                <div style="margin-left:46px">
-                    <a class="pe-esquerdo" data-toggle="modal" data-target="#modal-sintoma" data-id="12"><img class="image" src="~/Content/Imagens/Corpos/pé esquerdo.png" /></a>
+                <div data-toggle="tooltip" data-placement="top" title="@View.Resources.Resource.Pe">
+                    <a class="botao " data-toggle="modal" data-target="#modal-sintoma" data-id="11"><img class="image" src="~/Content/Imagens/Corpos/pé direito.png" /></a>
+                </div>
+                <div style="margin-left:46px" data-toggle="tooltip" data-placement="top" title="@View.Resources.Resource.Pe">
+                    <a class="botao" data-toggle="modal" data-target="#modal-sintoma" data-id="12"><img class="image" src="~/Content/Imagens/Corpos/pé esquerdo.png" /></a>
                 </div>
             </div>
         </div>
+        <div class="mt-5">
+            <table class="table table-hover text-dark" id="tabela-sintoma">
+                <thead>
+                    <tr class="bg-dark text-white">
+                        <td>@View.Resources.Resource.Sintoma</td>
+                        <td>@View.Resources.Resource.Acao</td>
+                    </tr>
+                </thead>
 
-    <div class="mt-5">
-        <table class="table table-primary table-bordered text-dark" id="tabela-sintoma">
-            <thead>
-                <tr class="bg-dark text-white">
-                    <td>@View.Resources.Resource.Sintoma</td>
-                    <td>@View.Resources.Resource.Acao</td>
-                </tr>
-            </thead>
+            </table>
+        </div>
 
-        </table>
+        <a href="/atendimentoespecial/finalizacadastro" class="btn btn-info float-right text-white mt-3 mb-5">@View.Resources.Resource.Proximo <i class="fa fa-forward "></i> </a>
 
+
+        @RenderPage("ModalSintoma.cshtml")
+        <script src="~/Scripts/jquery-3.0.0.min.js"></script>
+        <script src="~/Scripts/Tema/global/vendor/bootstrap/bootstrap.min.js"></script>
+        <script src="~/Scripts/AtendimentoEspecial/ParteCorpoSintoma.js"></script>
+        <script src="~/Scripts/select2.min.js"></script>
+        <script src="~/Scripts/DataTables/jquery.dataTables.js"></script>
     </div>
-
-
-    <a href="/atendimentoespecial/finalizacadastro" class="btn btn-primary text-white"><i class="fa fa-arrow-right"></i> @View.Resources.Resource.Proximo</a>
-
-    @RenderPage("ModalSintoma.cshtml")
-    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
-    <script src="~/Scripts/Tema/global/vendor/bootstrap/bootstrap.min.js"></script>
-    <script src="~/Scripts/AtendimentoEspecial/ParteCorpoSintoma.js"></script>
-    <script src="~/Scripts/select2.min.js"></script>
-    <script src="~/Scripts/DataTables/jquery.dataTables.js"></script>
-
 </body>
 </html>

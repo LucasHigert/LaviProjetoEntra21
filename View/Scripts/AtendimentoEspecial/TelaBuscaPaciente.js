@@ -1,36 +1,40 @@
 ﻿$(function () {
-$variavel = 0;
-    
-    function AtualizaTabela($nome){
-    if($variavel == 0){
-        
-    
-        $tabelaPaciente = $('#tabela').DataTable({
-        ajax: "/atendimentoespecial/ObterPeloNome?nome='"+ $nome + "'",
+
+    $tabelaPaciente = $('#tabela').DataTable({
+        ajax: {
+            url: "/atendimentoespecial/ObterPeloNome",
+            data: function (d) {
+                d.nome= $("#campo-nome").val()
+            }
+        },
         method: "GET",
         serverSide: true,
+        searching: false,
+        info: false,
+        paging: false,
         columns: [
-        {'data': 'Nome'},
+            { 'data': 'Nome' },
             {
-                render: function(data,type,row){
-                    return '<a class="btn btn-primary" href="/atendimentoespecial/InserirAtendimento?idPaciente=' + row.Id + '"><i class="fa fa-user"></i></a>'
-
+                render: function (data, type, row) {
+                    return '<a class="btn btn-info" href="/atendimentoespecial/InserirAtendimento?idPaciente=' + row.Id + '"><i class="fa fa-user"></i></a>'
                 }
             }
 
         ]
-
-  
     });
-    }else{
+
+    $("#campo-nome").keypress(function (e) {
+        if (e.keyCode == 13) {
+            AtualizaTabela();
+        }
+    });
+
+    function AtualizaTabela() {
         $tabelaPaciente.ajax.reload();
     }
-}
-    
-    $("#botao").on("click",function(){
-        AtualizaTabela($("#campo-nome").val());
+
+    $("#botao").on("click", function () {
+        AtualizaTabela();
     })
-    
-  
-    
+
 });

@@ -80,7 +80,9 @@ namespace Repository.Repository
 
         public List<Paciente> ObterPeloNome(string nome)
         {
-            List<Paciente> lista = context.Pacientes.ToList();
+            List<Paciente> lista = context.Pacientes
+                .Where(x=> x.Nome.Contains(nome))
+                .ToList();
             return lista;
         }
 

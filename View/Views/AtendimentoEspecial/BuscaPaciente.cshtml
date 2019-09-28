@@ -32,6 +32,13 @@
     </div>
     <div class="container">
         <h1 class="h1">@View.Resources.Resource.VocêPossuiCadastro</h1>
+        <!--início info verde-->
+        <div class="alert alert-info" role="alert">
+            <h4 class="alert-heading text-center">@View.Resources.Resource.Informacao</h4>
+            <p class="text-center">@View.Resources.Resource.InfoBusca</p>
+            <hr>
+        </div>
+        <!--fim info verde-->
         <br />
         <div class="row pl-3">
 
@@ -58,9 +65,7 @@
             <tbody></tbody>
         </table>
 
-
-
-        <a href="/atendimentoespecial/cadastropacienteespecial" class="btn btn-info text-white float-right mt-3">@View.Resources.Resource.NaoTenho</a>
+        <a href="/atendimentoespecial/cadastropacienteespecial" class="btn btn-info text-white float-right mt-3 mb-5"><i class="fa fa-exclamation-circle"></i> @View.Resources.Resource.NaoTenho</a>
     </div>
 
     <script src="~/Scripts/Tema/global/vendor/bootstrap/bootstrap.min.js"></script>

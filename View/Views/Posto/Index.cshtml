@@ -11,11 +11,11 @@
         <a class="btn btn-dark float-right mt-30" href="/posto/cadastrar"><i class="fa fa-plus"></i> Novo Posto</a>
     </div>
 </div>
-<table class="table table-primary table-striped table-hover text-dark" id="postos-index">
+<table class="table table-primary table-bordered table-hover text-dark" id="postos-index">
     <thead class="bg-dark">
         <tr>
             <td>Nome do Posto</td>
-            <td>CEP</td>
+            <td>Endereco</td>
             <td>Cidade</td>
             <td width="220px">Ação</td>
         </tr>
@@ -25,7 +25,7 @@
         {
             <tr>
                 <td>@posto.Nome</td>
-                <td>@posto.Cep</td>
+                <td>@posto.Endereco</td>
                 <td>@posto.Cidade.Nome</td>
                 <td>
                     <a class="btn btn-info ml-10" href="/posto/alterar?id=@posto.Id"><i class="fa fa-edit"></i> Editar</a>

@@ -10,7 +10,7 @@
     {
         <div class="row">
             <div class="col-4">
-                <label class="font-weight-bold">Cargo*</label>
+                <label class="font-weight-bold">Cargo<a class="text-danger">*</a></label>
                 <select name="idcargo" class="form-control border-info">
                     <option disabled="disabled">Selecione um cargo</option>
                     @foreach (Model.Cargo Cargo in ViewBag.Cargos)
@@ -27,7 +27,7 @@
                 </select>
             </div>
             <div class="col-8">
-                <label class="font-weight-bold">Posto*</label>
+                <label class="font-weight-bold">Posto<a class="text-danger">*</a></label>
                 <select name="idPosto" class="form-control border-info mb-20">
                     <option disabled="disabled" selected="selected">Selecione um posto</option>
                     @foreach (Model.Posto Posto in ViewBag.Postos)
@@ -46,16 +46,16 @@
         </div>
     }
 
-    <label for="campo-nome" class="font-weight-bold">Nome*</label>
+    <label for="campo-nome" class="font-weight-bold">Nome<a class="text-danger">*</a></label>
     <input type="text" name="nome" id="campo-nome" class="form-control border-info mb-20" value="@ViewBag.Funcionario.Nome" />
 
     <div class="row">
         <div class="col-6">
-            <label for="campo-login" class="font-weight-bold">Login*</label>
+            <label for="campo-login" class="font-weight-bold">Login<a class="text-danger">*</a></label>
             <input type="text" name="login" id="campo-login" class="form-control border-info" value="@ViewBag.Funcionario.Login" />
         </div>
         <div class="col-6">
-            <label for="campo-senha" class="font-weight-bold">Senha*</label>
+            <label for="campo-senha" class="font-weight-bold">Senha<a class="text-danger">*</a></label>
             <input type="password" name="senha" id="campo-senha" class="form-control border-info" />
         </div>
     </div>

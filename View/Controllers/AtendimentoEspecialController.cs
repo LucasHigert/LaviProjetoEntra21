@@ -195,7 +195,9 @@ namespace View.Controllers
         public JsonResult ObterPeloNome(string nome)
         {
             PacienteRepository pacienteRepository = new PacienteRepository();
-            var pessoas = pacienteRepository.ObterPeloNome(nome);
+            FuncionarioRepository funcionarioRepository = new FuncionarioRepository();
+            Funcionario funcionario = funcionarioRepository.ObterPeloId(Convert.ToInt32(Session["usuarioLogadoId"]));
+            var pessoas = pacienteRepository.ObterPeloNome(nome,funcionario.IdPosto);
             var result = new { data = pessoas };
             return Json(result, JsonRequestBehavior.AllowGet);
         }

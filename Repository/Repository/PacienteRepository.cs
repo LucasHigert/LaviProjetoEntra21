@@ -78,10 +78,10 @@ namespace Repository.Repository
             return paciente;
         }
 
-        public List<Paciente> ObterPeloNome(string nome)
+        public List<Paciente> ObterPeloNome(string nome, int posto)
         {
             List<Paciente> lista = context.Pacientes
-                .Where(x=> x.Nome.Contains(nome))
+                .Where(x=> x.Nome.Contains(nome) && x.IdPosto == posto)
                 .ToList();
             return lista;
         }

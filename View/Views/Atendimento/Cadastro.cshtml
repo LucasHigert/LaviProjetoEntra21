@@ -2,6 +2,8 @@
 @{
     ViewBag.Title = "Index";
 }
+
+
 <h2 class="h2">Adicionar Atendimento</h2>
 
 <form action="/atendimento/inserir" method="post">
@@ -10,13 +12,8 @@
     <div class="row">
         <div class="col-10 pr-0">
             <label for="campo-paciente" class="font-weight-bold">Paciente<a class="text-danger">*</a></label>
-            <select name="idPaciente" id="campo-paciente" class="form-control border-info">
-                <option selected="selected" disabled="disabled">Selecione um paciente</option>
-                @foreach (Model.Paciente paciente in ViewBag.Pacientes)
-                {
-                    <option value="@paciente.Id">@paciente.Nome</option>
-                }
-            </select>
+            <input type="text" name="nomePaciente" id="campo-paciente" class="form-control border-info" value="">
+            <input type="text" name="idPaciente" id="id-paciente" hidden="hidden">
         </div>
         <div class="col-2 pl-0">
             <a data-toggle="modal" data-target="#modal-paciente" class="btn btn-primary float-right mt-25 text-white ml-0"><i class="fa fa-search"></i> Paciente</a>
@@ -70,6 +67,11 @@
         -->
     <!--Botao retirado pois da conflito com a modal-->
     @RenderPage("ModalPaciente.cshtml")
+    <script src="~/Scripts/DataTables/jquery.dataTables.js"></script>
+    <link rel="stylesheet" href="~/Content/DataTables/css/jquery.dataTables.min.css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+
+    <script src="~/Scripts/Atendimento/atendimento-paciente.js"></script>
 
 
 </form>

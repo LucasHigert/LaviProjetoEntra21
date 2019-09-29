@@ -58,6 +58,7 @@ namespace View.Controllers
 
             if (VerificaLogado() == true)
             {
+
                 //Puxa Info dos estados
                 PostoRepository postoRepository = new PostoRepository();
                 //List<Posto> postos = postoRepository.ObterTodos();
@@ -91,10 +92,10 @@ namespace View.Controllers
         #region Documentos
         public ActionResult Documento()
         {
-            
-//            PacienteRepository pacienteRepository = new
-//PacienteRepository();
-//            ViewBag.Pacientes = pacienteRepository.ObterTodos();
+
+            PacienteRepository pacienteRepository = new
+PacienteRepository();
+            ViewBag.Pacientes = pacienteRepository.ObterTodos();
             return View();
 
         }
@@ -107,7 +108,40 @@ namespace View.Controllers
             return Json(result, JsonRequestBehavior.AllowGet);
         }
 
-    
+        [HttpGet]
+        public JsonResult ObterPeloAtendimento(string nome,int id)
+        {
+            SistemaContext context = new SistemaContext();
+            AtendimentoRepository atendimentoRepository = new AtendimentoRepository();
+            PacienteRepository pacienteRepository = new PacienteRepository();
+            var pessoas = pacienteRepository.ObterPeloNome(nome);
+            var atendimentos = atendimentoRepository.ObterPeloId(id);
+            var atendimento = context.Atendimentos.Include("paciente").FirstOrDefault(x=>x.Id==id);
+            var result = new { data = atendimento};
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+        public JsonResult GetSearchValue(string search)
+        {
+            SistemaContext db = new SistemaContext();
+            List<Paciente> allsearch = db.Pacientes.Where(x => x.Nome.Contains(search)).Select(x => new Paciente
+            {
+                Id = x.Id,
+                Nome = x.Nome
+            }).ToList();
+            return new JsonResult { Data = allsearch, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+        }
+
+        //[HttpGet]
+        //public JsonResult ObterPeloNome(string nome)
+        //{
+        //    PacienteRepository pacienteRepository = new PacienteRepository();
+        //    FuncionarioRepository funcionarioRepository = new FuncionarioRepository();
+        //    Funcionario funcionario = funcionarioRepository.ObterPeloId(Convert.ToInt32(Session["usuarioLogadoId"]));
+        //    var resultado = pacienteRepository.ObterPeloNome(nome);
+        //    var result = new { data = resultado };
+        //    return Json(result, JsonRequestBehavior.AllowGet);
+        //}
+
 
         #endregion
         //Apagar

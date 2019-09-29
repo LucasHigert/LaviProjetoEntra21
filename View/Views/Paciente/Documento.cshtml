@@ -5,42 +5,49 @@
 
 <h2>Documentos</h2>
 <head>
-
-
     <link rel="shortcut icon" href="~/Content/Imagens/Logo Lavi.png">
-
-
     <script src="~/Scripts/jquery-3.0.0.min.js"></script>
     <script src="~/Scripts/DataTables/jquery.dataTables.js"></script>
-    <script src="~/Scripts/modernizr-2.6.2.js"></script>
     <link rel="stylesheet" href="~/Content/DataTables/css/jquery.dataTables.min.css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
     <script src="~/Scripts/Paciente/BuscaPacienteDocScript.js"></script>
-    <script>
-        $.noConflict();
-        jQuery(document).ready(function ($) {
-            $('#tabelad').DataTable();
-        });
-    </script>
 </head>
 <body>
-
+ 
     <br />
-    <div class="row pl-3">
+    <div class="row pl-3 ">
 
-        <label for="campo-nome" class="font-weight-bold">Nome do paciente</label>
+        <label for="campo-paciente" class="font-weight-bold">Buscar Paciente</label>
     </div>
     <div class="row pl-3">
+        <button class="btn btn-info col-1" id="paciente"
+                data-toggle="modal"
+                data-target="#documentoModal">
+            <i class="fa fa-search"></i>
+            paciente
+        </button>
+    </div>
+
+    <div class="row pl-3">
+        <label for="campo-paciente" class="font-weight-bold">Atendimentos do paciente</label>
+    </div>
+    <div class="row pl-3">
+
         <input id="campo-nome" name="nome" class="form-control border-info col-11" type="text" />
-        <button class="btn btn-primary col-1" id="botao">Próximo</button>
+        <button class="btn btn-info col-1" id="botao">
+            <i class="fa fa-search"></i>
+            Buscar
+        </button>
+
 
     </div>
 
     <br />
-
+    
     <table id="tabelad" class="table">
         <thead class="bg-dark text-white">
             <tr>
-                <td>@View.Resources.Resource.Nome</td>
+                <td>Atendimentos</td>
                 <td>Ação</td>
             </tr>
         </thead>
@@ -48,3 +55,4 @@
     </table>
 
 </body>
+@RenderPage("DocumentoModal.cshtml")

@@ -16,8 +16,10 @@
 
     <script src="~/Scripts/jquery-3.0.0.min.js"></script>
     <script src="~/Scripts/DataTables/jquery.dataTables.js"></script>
-    <script src="~/Scripts/modernizr-2.6.2.js"></script>
     <link rel="stylesheet" href="~/Content/DataTables/css/jquery.dataTables.min.css" />
+
+
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
     <script src="~/Scripts/AtendimentoEspecial/TelaBuscaPaciente.js"></script>
 
 </head>
@@ -30,6 +32,13 @@
     </div>
     <div class="container">
         <h1 class="h1">@View.Resources.Resource.VocêPossuiCadastro</h1>
+        <!--início info verde-->
+        <div class="alert alert-info" role="alert">
+            <h4 class="alert-heading text-center">@View.Resources.Resource.Informacao</h4>
+            <p class="text-center">@View.Resources.Resource.InfoBusca</p>
+            <hr>
+        </div>
+        <!--fim info verde-->
         <br />
         <div class="row pl-3">
 
@@ -53,34 +62,10 @@
                     <th>@View.Resources.Resource.Acao</th>
                 </tr>
             </thead>
-            <tbody id="corpinho"></tbody>
+            <tbody></tbody>
         </table>
 
-        @*<table id="tabela2">
-            <thead>
-                <tr>
-                    <th>@View.Resources.Resource.Nome</th>
-                    <th>@View.Resources.Resource.Acao</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (Model.Paciente paciente in ViewBag.Pacientes)
-                {
-                    <tr>
-                        <td>@paciente.Nome</td>
-                        <td>
-                            <a class="btn btn-info" href="/atendimentoespecial/InserirAtendimento?idPaciente=' + row.Id + '"><i class="fa fa-user"></i> </a>
-                            
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>*@
-
-        
-
-
-        <a href="/atendimentoespecial/cadastropacienteespecial" class="btn btn-info text-white float-right mt-3">@View.Resources.Resource.NaoTenho</a>
+        <a href="/atendimentoespecial/cadastropacienteespecial" class="btn btn-info text-white float-right mt-3 mb-5"><i class="fa fa-exclamation-circle"></i> @View.Resources.Resource.NaoTenho</a>
     </div>
 
     <script src="~/Scripts/Tema/global/vendor/bootstrap/bootstrap.min.js"></script>

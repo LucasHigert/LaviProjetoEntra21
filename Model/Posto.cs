@@ -20,6 +20,9 @@ namespace Model
         [ForeignKey("IdCidade")]
         public Cidade Cidade { get; set; }
 
+        [Column("endereco")]
+        public string Endereco { get; set; }
+
         [Column("nome")]
         public string Nome { get; set; }
 

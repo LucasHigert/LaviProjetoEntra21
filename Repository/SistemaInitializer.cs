@@ -514,7 +514,6 @@ namespace Repository
 
             });
             context.Sintomas.AddRange(sintomas);
-            context.Sintomas.AddRange(sintomas);
             #endregion
             base.Seed(context);
         }

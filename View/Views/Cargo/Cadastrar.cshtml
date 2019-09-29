@@ -6,15 +6,15 @@
 <h2 class="h2">Cadastro de Cargo</h2>
 
 <form action="/cargo/inserir" method="post">
-    <label class="font-weight-bold" for="campo-nivel">Nivel de Permissão</label>
-    <select name="NivelPermissao" id="campo-nivel" class="form-control">
+    <label class="font-weight-bold" for="campo-nivel">Nivel de Permissão <a class="text-danger">*</a></label>
+    <select name="NivelPermissao" id="campo-nivel" class="form-control border-info">
         <option selected="selected" hidden="hidden">Selecione um nivel</option>
         <option value="1">Baixo</option>
         <option value="2">Medio</option>
         <option value="3">Alto</option>
         <option value="4">Administrador</option>
     </select>
-    <label class="font-weight-bold" for="campo-nome">Nome</label>
+    <label class="font-weight-bold" for="campo-nome">Cargo <a class="text-danger">*</a></label>
     <input type="text" maxlength="100" name="nome" id="campo-nome" class="form-control border-info" />
 
     <button type="submit" style="margin-top: 10px" class="btn btn-success float-right mt-20"><i class="fa fa-save"></i> Salvar</button>

@@ -1,4 +1,7 @@
-﻿a.cabeca:hover {
+﻿#cabeca{
+    background-image: url('/Content/Imagens/Corpos/cabeça.png');
+}
+#cabeca:hover {
     background-image: url('../../Content/Imagens/CorpoVermelho/cabeça vermelha.png');
 }
 

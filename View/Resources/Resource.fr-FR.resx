@@ -233,4 +233,46 @@ Enfin, répétez le processus jusqu'à ce que vous sélectionniez tout ce que vo
   <data name="LeiaIsso" xml:space="preserve">
     <value>Lisez ceci avant de commencer</value>
   </data>
+  <data name="InfoBusca" xml:space="preserve">
+    <value>Maintenant, cherchez votre nom dans la liste ci-dessous. Lorsque vous le trouvez, cliquez sur le bouton bleu pour confirmer.</value>
+  </data>
+  <data name="Informacao" xml:space="preserve">
+    <value>Les informations</value>
+  </data>
+  <data name="AguardeOMedicoAvaliar" xml:space="preserve">
+    <value>Le médecin va maintenant évaluer vos symptômes pour faire un meilleur diagnostic.</value>
+  </data>
+  <data name="Braco" xml:space="preserve">
+    <value>Bras</value>
+  </data>
+  <data name="Cabeca" xml:space="preserve">
+    <value>La tête</value>
+  </data>
+  <data name="Genital" xml:space="preserve">
+    <value>Région génitale</value>
+  </data>
+  <data name="InfoEspere" xml:space="preserve">
+    <value>S'il vous plaît attendez un moment.</value>
+  </data>
+  <data name="Inforodape" xml:space="preserve">
+    <value>Si vous avez besoin de plus d’aide, dites au médecin qu’il vous aidera</value>
+  </data>
+  <data name="Mao" xml:space="preserve">
+    <value>Main</value>
+  </data>
+  <data name="MuitoBem" xml:space="preserve">
+    <value>Très bien !!</value>
+  </data>
+  <data name="Pe" xml:space="preserve">
+    <value>Pied</value>
+  </data>
+  <data name="Perna" xml:space="preserve">
+    <value>Jambe</value>
+  </data>
+  <data name="Pescoco" xml:space="preserve">
+    <value>Cou</value>
+  </data>
+  <data name="Tronco" xml:space="preserve">
+    <value>Coffre</value>
+  </data>
 </root>

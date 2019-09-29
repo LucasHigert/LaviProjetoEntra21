@@ -18,7 +18,7 @@ namespace Repository.Interfaces
 
         bool Apagar(int id);
 
-        List<Paciente> ObterPeloNome(string nome);
+        List<Paciente> ObterPeloNome(string nome,int posto);
 
         List<Paciente> ObterTodos();
 

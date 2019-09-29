@@ -72,9 +72,36 @@ namespace View.Resources {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a .
         /// </summary>
+        public static string AguardeOMedicoAvaliar {
+            get {
+                return ResourceManager.GetString("AguardeOMedicoAvaliar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .
+        /// </summary>
         public static string Altura {
             get {
                 return ResourceManager.GetString("Altura", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .
+        /// </summary>
+        public static string Braco {
+            get {
+                return ResourceManager.GetString("Braco", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .
+        /// </summary>
+        public static string Cabeca {
+            get {
+                return ResourceManager.GetString("Cabeca", resourceCulture);
             }
         }
         
@@ -153,9 +180,45 @@ namespace View.Resources {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a .
         /// </summary>
+        public static string Genital {
+            get {
+                return ResourceManager.GetString("Genital", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .
+        /// </summary>
         public static string Idade {
             get {
                 return ResourceManager.GetString("Idade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .
+        /// </summary>
+        public static string InfoBusca {
+            get {
+                return ResourceManager.GetString("InfoBusca", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .
+        /// </summary>
+        public static string InfoEspere {
+            get {
+                return ResourceManager.GetString("InfoEspere", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .
+        /// </summary>
+        public static string Informacao {
+            get {
+                return ResourceManager.GetString("Informacao", resourceCulture);
             }
         }
         
@@ -187,6 +250,15 @@ namespace View.Resources {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .
+        /// </summary>
+        public static string Inforodape {
+            get {
+                return ResourceManager.GetString("Inforodape", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Neste questionário você será avaliado de acordo com as informações colocadas por você com relação aos seus sintomas. Marque de acordo seus sintomas e seja sincero, pois suas respostas influenciarão no seu tratamento..
         /// </summary>
         public static string Instrucoes {
@@ -207,9 +279,27 @@ namespace View.Resources {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a .
         /// </summary>
+        public static string Mao {
+            get {
+                return ResourceManager.GetString("Mao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .
+        /// </summary>
         public static string Masculino {
             get {
                 return ResourceManager.GetString("Masculino", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .
+        /// </summary>
+        public static string MuitoBem {
+            get {
+                return ResourceManager.GetString("MuitoBem", resourceCulture);
             }
         }
         
@@ -255,6 +345,33 @@ namespace View.Resources {
         public static string Passaporte {
             get {
                 return ResourceManager.GetString("Passaporte", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .
+        /// </summary>
+        public static string Pe {
+            get {
+                return ResourceManager.GetString("Pe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .
+        /// </summary>
+        public static string Perna {
+            get {
+                return ResourceManager.GetString("Perna", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .
+        /// </summary>
+        public static string Pescoco {
+            get {
+                return ResourceManager.GetString("Pescoco", resourceCulture);
             }
         }
         
@@ -372,6 +489,15 @@ namespace View.Resources {
         public static string Temperatura {
             get {
                 return ResourceManager.GetString("Temperatura", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a .
+        /// </summary>
+        public static string Tronco {
+            get {
+                return ResourceManager.GetString("Tronco", resourceCulture);
             }
         }
         

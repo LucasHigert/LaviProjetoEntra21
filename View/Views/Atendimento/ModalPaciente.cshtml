@@ -1,0 +1,50 @@
+﻿<div id="modal-paciente" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <!--Titulo da modal-->
+            <div class="modal-header mt-0">
+                <h2>Pacientes</h2>
+                <button type="button" class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-6">
+                        <h4>Lista de paciente</h4>
+                        <label for="campo-pesquisa">Pesquisar Nome</label>
+                        <input id="campo-pesquisa" name="nome" class="form-control border-info" type="text" />
+                        <table id="tabela" class="table table-striped">
+                            <thead class="class=" bg-dark text-white">
+                                <tr>
+                                    <td>Nome</td>
+                                    <td>Ação</td>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <div class="col-6">
+                        <h4>Cadastro de paciente</h4>
+                        <label for="campo-nome">Nome</label>
+                        <input class="form-control" type="text" id="campo-nome" />
+                        <label for="campo-sexo">Sexo</label>
+                        <select class="form-control" id="campo-sexo">
+                            <option selected="selected" disabled="disabled">Selecione um sexo</option>
+                            <option value="1">Feminino</option>
+                            <option value="0">Masculino</option>
+                        </select>
+                        <label for="campo-idade">Idade</label>
+                        <input class="form-control" type="number" id="campo-idade" />
+                        <a id="botao-salvar" class="btn btn-success">Salvar <i class="fa fa-save"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary float-left" data-dismiss="modal">Fechar <i class="fa fa-close"></i></button>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/Atendimento/atendimento-paciente.js"></script>

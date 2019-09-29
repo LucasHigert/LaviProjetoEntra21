@@ -1,0 +1,48 @@
+Cidade:
+	Alterando cidade - Estado deve ficar acima da cidade
+	Alterando cidade - Botão salvar a direita
+Posto: 
+	Cadastro de Posto - mascára de cep
+	Cadastro de Posto - Nome do posto deveria ser na 1ª linha
+	Alterando posto - Botão salvar a direita
+	Cadastro de Posto - Botão salvar a direita
+	Cadastro e Editar Posto - verificar se precisa de endereço
+Cargo:
+	Cadastro de Cargo - *
+	Alterar Cargo - falta o nome do cargo no título
+	Alterar Cargo - Campo chamado nome e no cadastro do cargo campo chamado de cargo
+	Alterar Cargo - Campo chamado nome sem negrito
+	Alterar Cargo - Falta *
+
+Funcionário:
+	Alterando Funcionário - Falta cor nos *
+
+
+Paciente:
+	Lista dos Pacientes - Botão Novo Paciente não está na mesma linha do título
+	Lista dos Pacientes
+	Cadastro de paciente - Não deve ser obrigatório
+	Alterando paciente - 
+	Cadastro de paciente - Idade deve ser obrigatório
+Atendimento: 
+	Criar modal para buscar ou cadastrar paciente
+	Adicionar Atendimento - remover botão de Atendimento Especial
+	Adicionar Atendimento - Campo de observação deve ser um textarea
+	Adicionar Atendimento - Campo de Tratamento deve ser um textarea
+	Atendimentos abertos - Filtro de 
+
+atendimentoespecial
+	buscapaciente - filtar somente pessoas de fora do brasil
+
+Atender - de todos
+
+
+Cadastro de Partes do Corpo - Apagar
+Editar Partes do Corpo - Apagar
+
+
+Sistema Initializer - Seed para sintomas
+Sistema Initializer - Seed para atendimento para brasileiros
+Sistema Initializer - Seed para atendimento especiais
+
+Alterar a cor da nav de acordo com o privilégio

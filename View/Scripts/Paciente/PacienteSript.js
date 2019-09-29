@@ -80,39 +80,42 @@ $(function () {
 
     $("#campo-nome").focusout(function () {
         $nome = $("#campo-nome").val();
-        if ($nome.length > 2) {
+        if ($nome.length >= 3) {
             $resultado = true;
         } else {
             $resultado = false;
         }
+        Cor("campo-nome", $resultado);
     });
 
     $("#campo-sexo").focusout(function () {
         $nome = $("#campo-sexo").val();
-        $resultado = validaCampos();
-        if ($nome.val = '2') {
+        if ($nome != "0") {
             $resultado = true;
         } else {
             $resultado = false;
         }
+        Cor("campo-sexo", $resultado);
     });
 
     $("#campo-lingua").focusout(function () {
         $nome = $("#campo-lingua").val();
-        if ($nome.val = '3') {
+        if ($nome != "0") {
             $resultado = true;
         } else {
             $resultado = false;
         }
+        Cor("campo-lingua", $resultado);
     });
 
     $("#campo-idade").focusout(function () {
         $nome = $("#campo-idade").val();
-        if ($nome.length > 2) {
+        if ($nome != "") {
             $resultado = true;
         } else {
             $resultado = false;
         }
+        Cor("campo-idade", $resultado);
     });
 
     $("#campo-pressao").focusout(function () {
@@ -141,28 +144,31 @@ $(function () {
 
     $("#campo-peso").focusout(function () {
         $nome = $("#campo-peso").val();
-        if ($nome.length > 2) {
+        if ($nome > 1) {
             $resultado = true;
         } else {
             $resultado = false;
         }
+        Cor("campo-peso", $resultado);
     });
 
     $("#campo-altura").focusout(function () {
         $nome = $("#campo-altura").val();
-        if ($nome.length > 2 && $nome.length < 4) {
+        if ($nome.length >= 3) {
             $resultado = true;
         } else {
             $resultado = false;
         }
+        Cor("campo-altura", $resultado);
     });
 
     $("#campo-temperatura").focusout(function () {
         $nome = $("#campo-temperatura").val();
-        if ($nome.length < 2) {
+        if ($nome.length >= 2) {
             $resultado = true;
         } else {
             $resultado = false;
         }
+        Cor("campo-temperatura", $resultado);
     });
 });

@@ -55,7 +55,7 @@
 - Ifsc Campus Gaspar.
 # Diagrama do BD
  
-# Estrutra 
+# Estrutura 
 [Model](Model) 
 
 - Ele é responsável pela leitura e escrita de dados, e também de suas validações.

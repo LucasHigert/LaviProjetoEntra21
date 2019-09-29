@@ -1,7 +1,7 @@
-﻿$(function () {
+﻿$(function ($) {
     $tabelaPaciente = $('#tabelad').DataTable({
         ajax: {
-            url: "/Atendimentoespecial/ObterPeloNome",
+            url: "/Paciente/ObterPeloAtendimento",
             data: function (d) {
                 d.nome = $("#campo-nome").val()
             }
@@ -12,7 +12,7 @@
         info: false,
         paging: false,
         columns: [
-            { 'data': 'Nome' },
+            { 'data': 'Atendimento' },
             {
                 render: function (data, type, row) {
                     return '<a class="btn btn-info" href="/atendimentoespecial/InserirAtendimento?idPaciente=' + row.Id + '"><i class="fa fa-user"></i></a>'

@@ -11,9 +11,9 @@
     <!--Selecionar o paciente-->
     <div class="row">
         <div class="col-10 pr-0">
+            <input type="hidden" id="campo-paciente-id" name="idPaciente" value="" />
             <label for="campo-paciente" class="font-weight-bold">Paciente<a class="text-danger">*</a></label>
-            <input type="text" name="nomePaciente" id="campo-paciente" class="form-control border-info" value="">
-            <input type="text" name="idPaciente" id="id-paciente" hidden="hidden">
+            <input type="text" name="nomePaciente" id="campo-paciente" class="form-control border-info" disabled="disabled" />
         </div>
         <div class="col-2 pl-0">
             <a data-toggle="modal" data-target="#modal-paciente" class="btn btn-primary float-right mt-25 text-white ml-0"><i class="fa fa-search"></i> Paciente</a>
@@ -62,18 +62,21 @@
     }
 
 
-    <!--
     <button class="btn btn-success float-right mt-20" type="submit"><i class="fa fa-save"></i> Salvar</button>
+    <!--
         -->
     <!--Botao retirado pois da conflito com a modal-->
-    @RenderPage("ModalPaciente.cshtml")
-    <script src="~/Scripts/DataTables/jquery.dataTables.js"></script>
-    <link rel="stylesheet" href="~/Content/DataTables/css/jquery.dataTables.min.css" />
-    <script src="~/Scripts/modernizr-2.6.2.js"></script>
 
-    <script src="~/Scripts/Atendimento/atendimento-paciente.js"></script>
 
 
 </form>
 
 
+@RenderPage("ModalPaciente.cshtml")
+
+<script src="~/Scripts/jquery-3.0.0.min.js"></script>
+<script src="~/Scripts/DataTables/jquery.dataTables.js"></script>
+<link rel="stylesheet" href="~/Content/DataTables/css/jquery.dataTables.min.css" />
+<script src="~/Scripts/modernizr-2.6.2.js"></script>
+
+<script src="~/Scripts/Atendimento/atendimento-paciente.js"></script>

@@ -1,4 +1,40 @@
-﻿$(function () {
+﻿$(function ($) {
+
+    $tabela = $('#tabela').DataTable({
+        ajax: {
+            url: "/paciente/ObterPeloNome",
+            data: function (d) {
+                d.nome = $("#campo-pesquisa").val()
+            }
+        },
+        method: "GET",
+        serverSide: true,
+        searching: false,
+        info: false,
+        paging: false,
+        columns: [
+            { 'data': 'Nome' },
+            {
+                render: function (data, type, row) {
+                    return '<a id="' + row.Id + '" class="selecionar btn btn-success text-white" data-dismiss="modal" \
+                    data-id="' + row.Id + '"\
+                    data-nome="' + row.Nome + '"> <i class="fa fa-check"></i></a > '
+                }
+            }
+
+        ]
+    });
+
+    $("#tabela").on("click", ".selecionar", function () {
+        //var tr = document.getElementById($(this).Id);
+        //var td = tr.
+        $id = $(this).data("id");
+        $nome = $(this).data("nome");
+        
+        $("#campo-paciente-id").val($id);
+        $("#campo-paciente").val($nome);
+
+    });
 
     $("#botao-salvar").on("click", function () {
         $nome = $("#campo-nome").val();
@@ -19,33 +55,16 @@
 
     });
 
-    $tabela = $('#tabela').DataTable({
-        ajax: {
-            url: "/paciente/ObterPeloNome",
-            data: function (d) {
-                d.nome = $("#campo-pesquisa").val()
-            }
-        },
-        method: "GET",
-        serverSide: true,
-        searching: false,
-        info: false,
-        paging: false,
-        columns: [
-            { 'data': 'Nome' },
-            {
-                render: function (data, type, row) {
-                    return '<a class="botao-selecionar btn btn-info" data-dismiss="modal" data-id=' + row.Id + '"><i class="fa fa-plus"></i></a>'
-                }
-            }
-
-        ]
-    });
 
     $("#campo-pesquisa").keypress(function (e) {
         if (e.keyCode == 13) {
             AtualizaTabela();
         }
+    });
+
+    $("#botao-pesquisar").on("click", function () {
+        alert("ola");
+        AtualizaTabela();
     });
 
     function AtualizaTabela() {

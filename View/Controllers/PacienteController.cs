@@ -26,6 +26,8 @@ namespace View.Controllers
 
         #endregion
 
+
+        #region JQuery
         public JsonResult ObterPeloNome(string nome)
         {
             PacienteRepository pacienteRepository = new PacienteRepository();
@@ -36,6 +38,15 @@ namespace View.Controllers
             return Json(result, JsonRequestBehavior.AllowGet);
         }
         // GET: Cidade
+        public JsonResult ObterPeloId(int id)
+        {
+            PacienteRepository pacienteRepository = new PacienteRepository();
+            Paciente paciente = pacienteRepository.ObterPeloId(id);
+            var result = new { data = paciente.Nome };
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+
+        #endregion
         public PacienteRepository repository;
 
         public PacienteController()

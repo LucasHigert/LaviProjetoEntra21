@@ -97,16 +97,6 @@ $(function () {
         Cor("campo-sexo", $resultado);
     });
 
-    $("#campo-lingua").focusout(function () {
-        $nome = $("#campo-lingua").val();
-        if ($nome != "0") {
-            $resultado = true;
-        } else {
-            $resultado = false;
-        }
-        Cor("campo-lingua", $resultado);
-    });
-
     $("#campo-idade").focusout(function () {
         $nome = $("#campo-idade").val();
         if ($nome != "") {
@@ -117,57 +107,17 @@ $(function () {
         Cor("campo-idade", $resultado);
     });
 
-    $("#campo-pressao").focusout(function () {
-        $nome = $("#campo-pressao").val();
-        if ($nome.length == 5) {
-            $resultado = true;
-        } else {
-            $resultado = false;
-        }
-        Cor("campo-pressao", $resultado);
-    });
-
     function Cor($campo, $bool) {
 
-    if ($bool == false) {
-        var campo = document.getElementById($campo);
-        campo.classList.add('border-danger');
-    } else {
-        var campo = document.getElementById($campo);
-        campo.classList.remove('border-info');
-        campo.classList.remove('border-danger');
-        campo.classList.add('border-success');
+        if ($bool == false) {
+            var campo = document.getElementById($campo);
+            campo.classList.add('border-danger');
+        } else {
+            var campo = document.getElementById($campo);
+            campo.classList.remove('border-info');
+            campo.classList.remove('border-danger');
+            campo.classList.add('border-success');
+        }
+
     }
-
-    }
-
-    $("#campo-peso").focusout(function () {
-        $nome = $("#campo-peso").val();
-        if ($nome > 1) {
-            $resultado = true;
-        } else {
-            $resultado = false;
-        }
-        Cor("campo-peso", $resultado);
-    });
-
-    $("#campo-altura").focusout(function () {
-        $nome = $("#campo-altura").val();
-        if ($nome.length >= 3) {
-            $resultado = true;
-        } else {
-            $resultado = false;
-        }
-        Cor("campo-altura", $resultado);
-    });
-
-    $("#campo-temperatura").focusout(function () {
-        $nome = $("#campo-temperatura").val();
-        if ($nome.length >= 2) {
-            $resultado = true;
-        } else {
-            $resultado = false;
-        }
-        Cor("campo-temperatura", $resultado);
-    });
 });

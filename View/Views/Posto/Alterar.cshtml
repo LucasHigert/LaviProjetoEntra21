@@ -2,28 +2,22 @@
 @{
     ViewBag.Title = "Alterar";
 }
-
+<head>
+    <script type="text/javascript" src="~/Scripts/Posto/posto.js"></script>
+    <script type="text/javascript" src="~/Scripts/Mask/jquery.mask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
+</head>
 <h2 class="h2">Alterando posto '@ViewBag.Posto.Nome'</h2>
 
 <form method="post" action="/posto/update">
 
     <input type="hidden" name="id" value="@ViewBag.Posto.Id" />
-
     <div class="row">
-        <div class="col-12">
+        <div class="col-6">
             <label class="font-weight-bold" for="campo-nome">Nome do Posto<a class="text-danger">*</a></label>
-            <input type="text" name="nome" class="form-control border-info" id="campo-nome" value="@ViewBag.Posto.Nome" required=""/>
+            <input type="text" name="nome" class="form-control border-info" id="campo-nome" value="@ViewBag.Posto.Nome" required="" />
         </div>
-    </div>
-
-
-    <div class="row">
-        <div class="col-4">
-            <label class="font-weight-bold" for="campo-cep">CEP</label>
-            <input type="text" name="cep" class="form-control border-info" id="campo-cep" value="@ViewBag.Posto.Cep" />
-        </div>
-
-        <div class="col-8">
+        <div class="col-6">
             <label class="font-weight-bold" form="campo-cidade">Cidade<a class="text-danger">*</a></label>
             <select class="form-control border-info" name="idCidade">
                 <option disabled="disabled" selected="selected">Selecione uma cidade</option>
@@ -42,14 +36,21 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-12">
+
+
+    <div class="row mt-2">
+        <div class="col-5">
+            <label class="font-weight-bold" for="campo-cep">CEP</label>
+            <input type="text" name="cep" class="form-control border-info" id="campo-cep"  placeholder="Ex.: 00000-000" maxlength="9" autocomplete="off" value="@ViewBag.Posto.Cep" />
+        </div>
+        <div class="col-7">
             <label class="font-weight-bold" for="campo-endereco">Endereço <a class="text-danger">*</a></label>
-            <input type="text" id="campo-endereco" class="form-control border-info" value="@ViewBag.Posto.Endereco" />
+            <input type="text" name="endereco" required="" id="campo-endereco" class="form-control border-info" value="@ViewBag.Posto.Endereco" />
         </div>
     </div>
 
-    <button type="submit" class="btn btn-success mt-15" style="margin-left:810px"><i class="fa fa-save"></i> Salvar</button>
+
+    <button type="submit" class="btn btn-success mt-15 float-right" style="margin-left:810px"><i class="fa fa-save"></i> Salvar</button>
 </form>
 
 

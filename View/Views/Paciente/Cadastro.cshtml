@@ -15,19 +15,20 @@
 
         <div class="col-3">
             <label class="font-weight-bold" for="campo-sexo">Sexo<a class="text-danger">*</a></label>
-            <select id="campo-sexo" name="sexo" class="form-control border-info">
-                <option selected="selected" hidden="hidden">Selecione o sexo</option>
-                <option value="true">Feminino</option>
-                <option value="false">Masculino</option>
+            <select id="campo-sexo" name="sexo" class="form-control border-info" required>
+                <option value="0" selected="selected" hidden="hidden">Selecione o sexo</option>
+                <option value="1">Feminino</option>
+                <option value="2">Masculino</option>
             </select>
         </div>
 
         <div class="col-3">
             <label class="font-weight-bold" for="campo-lingua">Lingua<a class="text-danger">*</a></label>
-            <select class="form-control border-info" name="lingua">
-                <option value="0" selected="selected">Português Brasileiro</option>
-                <option value="1">Haitiano</option>
-                <option value="2">Francês</option>
+            <select class="form-control border-info" name="lingua" id="campo-lingua" required>
+                <option value="0" selected="selected" hidden="hidden">Selecione o idioma</option>
+                <option value="1">Português Brasileiro</option>
+                <option value="2">Haitiano</option>
+                <option value="3">Francês</option>
             </select>
         </div>
     </div>
@@ -57,8 +58,8 @@
 
 
         <div class="col-3">
-            <label class="font-weight-bold" for="campo-idade">Idade</label>
-            <input type="number" id="campo-idade" name="idade" maxlength="3" class="form-control border-info" />
+            <label class="font-weight-bold" for="campo-idade">Idade<a class="text-danger">*</a></class></label>
+            <input type="number" id="campo-idade" name="idade" maxlength="3" class="form-control border-info" required />
         </div>
 
 
@@ -73,8 +74,8 @@
         </div>
 
         <div class="col-3">
-            <label class="font-weight-bold" for="campo-cpf">CPF<a class="text-danger">*</a></label>
-            <input type="text" maxlength="15" id="campo-cpf" name="cpf" class="form-control border-info" required/>
+            <label class="font-weight-bold" for="campo-cpf">CPF</label>
+            <input type="text" maxlength="15" id="campo-cpf" name="cpf" class="form-control border-info"/>
         </div>
 
     </div>
@@ -101,7 +102,7 @@
 
             <div class="col-3">
                 <label class="font-weight-bold" for="campo-altura">Temperatura</label>
-                <input type="text" id="campo-altura" name="temperatura" class="form-control border-info" />
+                <input type="text" id="campo-temperatura" name="temperatura" class="form-control border-info" />
             </div>
 
         </div>

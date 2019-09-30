@@ -76,61 +76,99 @@ $(function () {
 });
 
 $(function () {
+    //validação de borda funcionando apenas em campo-pressao e campo-cpf
+
     $("#campo-nome").focusout(function () {
         $nome = $("#campo-nome").val();
-        $resultado = submete();
-        if ($resultado == false) {
-            var campo = document.getElementById('campo-nome');
-            campo.classList.add('border-danger');
+        if ($nome.length >= 3) {
+            $resultado = true;
         } else {
-            var campo = document.getElementById('campo-nome');
-            campo.classList.remove('border-info');
-            campo.classList.remove('border-danger');
-            campo.classList.add('border-success');
+            $resultado = false;
         }
-    });
-
-    $("#campo-endereco").focusout(function () {
-        $endereco = $("#campo-endereco").val();
-        $resultado = submete();
-        if ($resultado == false) {
-            var campo = document.getElementById('campo-endereco');
-            campo.classList.add('border-danger');
-        } else {
-            var campo = document.getElementById('campo-endereco');
-            campo.classList.remove('border-info');
-            campo.classList.remove('border-danger');
-            campo.classList.add('border-success');
-        }
+        Cor("campo-nome", $resultado);
     });
 
     $("#campo-sexo").focusout(function () {
-        $endereco = $("#campo-sexo").val();
-        $resultado = submete();
-        if ($resultado == false) {
-            var campo = document.getElementById('campo-sexo');
-            campo.classList.add('border-danger');
+        $nome = $("#campo-sexo").val();
+        if ($nome != "0") {
+            $resultado = true;
         } else {
-            var campo = document.getElementById('campo-sexo');
-            campo.classList.remove('border-info');
-            campo.classList.remove('border-danger');
-            campo.classList.add('border-success');
-            //document.getElementById('campo-sexo').style.border = "border-success";
+            $resultado = false;
         }
+        Cor("campo-sexo", $resultado);
     });
 
-    function submete() {
-        if (document.getElementById('campo-nome').value == "" || document.getElementById('campo-nome').value.length <= 2) {
-            return false;
-        }
-        if (document.getElementById('campo-endereco').value == "") {
-            return false;
-        }
-        if (document.getElementById('campo-sexo').value == "") {
-            return false;
+    $("#campo-lingua").focusout(function () {
+        $nome = $("#campo-lingua").val();
+        if ($nome != "0") {
+            $resultado = true;
         } else {
-            return true;
+            $resultado = false;
         }
+        Cor("campo-lingua", $resultado);
+    });
+
+    $("#campo-idade").focusout(function () {
+        $nome = $("#campo-idade").val();
+        if ($nome != "") {
+            $resultado = true;
+        } else {
+            $resultado = false;
+        }
+        Cor("campo-idade", $resultado);
+    });
+
+    $("#campo-pressao").focusout(function () {
+        $nome = $("#campo-pressao").val();
+        if ($nome.length == 5) {
+            $resultado = true;
+        } else {
+            $resultado = false;
+        }
+        Cor("campo-pressao", $resultado);
+    });
+
+    function Cor($campo, $bool) {
+
+    if ($bool == false) {
+        var campo = document.getElementById($campo);
+        campo.classList.add('border-danger');
+    } else {
+        var campo = document.getElementById($campo);
+        campo.classList.remove('border-info');
+        campo.classList.remove('border-danger');
+        campo.classList.add('border-success');
+    }
 
     }
+
+    $("#campo-peso").focusout(function () {
+        $nome = $("#campo-peso").val();
+        if ($nome > 1) {
+            $resultado = true;
+        } else {
+            $resultado = false;
+        }
+        Cor("campo-peso", $resultado);
+    });
+
+    $("#campo-altura").focusout(function () {
+        $nome = $("#campo-altura").val();
+        if ($nome.length >= 3) {
+            $resultado = true;
+        } else {
+            $resultado = false;
+        }
+        Cor("campo-altura", $resultado);
+    });
+
+    $("#campo-temperatura").focusout(function () {
+        $nome = $("#campo-temperatura").val();
+        if ($nome.length >= 2) {
+            $resultado = true;
+        } else {
+            $resultado = false;
+        }
+        Cor("campo-temperatura", $resultado);
+    });
 });

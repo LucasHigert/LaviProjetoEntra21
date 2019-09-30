@@ -548,6 +548,7 @@
     <Content Include="Scripts\jquery-3.0.0.slim.js" />
     <Content Include="Scripts\jquery-3.0.0.slim.min.js" />
     <Content Include="Scripts\lib\i18n\i18n.js" />
+    <Content Include="Scripts\Mask\jquery.mask.min.js" />
     <Content Include="Scripts\materialize\materialize.js" />
     <Content Include="Scripts\materialize\materialize.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
@@ -558,6 +559,7 @@
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
     <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\Posto\posto.js" />
     <Content Include="Scripts\select2.js" />
     <Content Include="Scripts\select2.min.js" />
     <Content Include="Scripts\Tema\assets\css\site.css" />
@@ -6145,6 +6147,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Content\Imagens\Readme\" />
     <Folder Include="Views\Base\" />
     <Folder Include="Views\Language\" />
   </ItemGroup>

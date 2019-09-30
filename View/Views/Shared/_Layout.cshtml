@@ -33,7 +33,7 @@
     <link rel="stylesheet" href="~/Scripts/Tema/global/fonts/web-icons/web-icons.min.css">
     <link rel="stylesheet" href="~/Scripts/Tema/global/fonts/brand-icons/brand-icons.min.css">
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
-
+    <link rel="stylesheet" href="~/Content/DataTables/css/jquery.dataTables.min.css" />
     @RenderSection("css", false)
     <!-- Scripts -->
     <script src="~/Scripts/Tema/global/vendor/breakpoints/breakpoints.js"></script>
@@ -246,45 +246,45 @@
 
             <!--Parte Corpo-->
             @*<li class="site-menu-item has-sub">
-                <a href="javascript:void(0)">
-                    <i class="site-menu-icon wb-heart" aria-hidden="true"></i>
-                    <span class="site-menu-title">Parte Corpo</span>
-                    <span class="site-menu-arrow"></span>
-                </a>
-                <ul class="site-menu-sub">
-                    <li class="site-menu-item has-sub">
-                        <a href="/partecorpo">
-                            <span class="site-menu-title">Lista de partes</span>
-                        </a>
-                    </li>
-                    <li class="site-menu-item">
-                        <a class="animsition-link" href="/partecorpo/cadastrar">
-                            <span class="site-menu-title">Cadastrar parte</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>*@
+                    <a href="javascript:void(0)">
+                        <i class="site-menu-icon wb-heart" aria-hidden="true"></i>
+                        <span class="site-menu-title">Parte Corpo</span>
+                        <span class="site-menu-arrow"></span>
+                    </a>
+                    <ul class="site-menu-sub">
+                        <li class="site-menu-item has-sub">
+                            <a href="/partecorpo">
+                                <span class="site-menu-title">Lista de partes</span>
+                            </a>
+                        </li>
+                        <li class="site-menu-item">
+                            <a class="animsition-link" href="/partecorpo/cadastrar">
+                                <span class="site-menu-title">Cadastrar parte</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>*@
 
             <!--Sintoma-->
             @*<li class="site-menu-item has-sub">
-                <a href="javascript:void(0)">
-                    <i class="site-menu-icon fa fa-medkit" aria-hidden="true"></i>
-                    <span class="site-menu-title">Sintomas</span>
-                    <span class="site-menu-arrow"></span>
-                </a>
-                <ul class="site-menu-sub">
-                    <li class="site-menu-item has-sub">
-                        <a href="/sintoma">
-                            <span class="site-menu-title">Lista de Sintomas</span>
-                        </a>
-                    </li>
-                    <li class="site-menu-item">
-                        <a class="animsition-link" href="/sintoma/cadastrar">
-                            <span class="site-menu-title">Cadastrar Sintoma</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>*@
+                    <a href="javascript:void(0)">
+                        <i class="site-menu-icon fa fa-medkit" aria-hidden="true"></i>
+                        <span class="site-menu-title">Sintomas</span>
+                        <span class="site-menu-arrow"></span>
+                    </a>
+                    <ul class="site-menu-sub">
+                        <li class="site-menu-item has-sub">
+                            <a href="/sintoma">
+                                <span class="site-menu-title">Lista de Sintomas</span>
+                            </a>
+                        </li>
+                        <li class="site-menu-item">
+                            <a class="animsition-link" href="/sintoma/cadastrar">
+                                <span class="site-menu-title">Cadastrar Sintoma</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>*@
 
             <!--Opcão pacientes da sidenav-->
             <li class="site-menu-item has-sub">
@@ -408,7 +408,7 @@
     <script src="~/Scripts/Tema/global/js/Plugin/jvectormap.js"></script>
 
     <script src="~/Scripts/Tema/assets/examples/js/dashboard/v1.js"></script>
-
+    <script src="~/Scripts/DataTables/jquery.dataTables.js"></script>
     <script src="~/Scripts/lib/i18n/i18n.js"></script>
     @RenderSection("js", false)
 

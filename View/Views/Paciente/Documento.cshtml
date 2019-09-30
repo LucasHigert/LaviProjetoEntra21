@@ -3,56 +3,42 @@
     ViewBag.Title = "Documento";
 }
 
-<h2>Documentos</h2>
-<head>
-    <link rel="shortcut icon" href="~/Content/Imagens/Logo Lavi.png">
-    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
-    <script src="~/Scripts/DataTables/jquery.dataTables.js"></script>
-    <link rel="stylesheet" href="~/Content/DataTables/css/jquery.dataTables.min.css" />
-    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+
+
+
+
+<div class="row ">
+
+</div>
+
+<label for="campo-paciente" class="font-weight-bold">Atendimentos do paciente</label>
+<div class="row">
+    <div class="col-8">
+        <input type="text" hidden="hidden" id="campo-id" />
+        <input id="campo-nome" disabled="disabled" name="nome" class="form-control border-info" type="text" />
+    </div>
+    <div class="col-4 pl-0 ml-0">
+
+        <button class="btn btn-info " id="paciente" data-toggle="modal" data-target="#documentoModal"><i class="fa fa-search"></i>Selecionar Paciente</button>
+        <button class="btn btn-info" id="botao"><i class="fa fa-search"></i>Pesquisar</button>
+    </div>
+
+</div>
+
+
+
+<table id="tabelaAtendimento" class="table mt-4">
+    <thead class="bg-dark text-white">
+        <tr>
+            <td>Entrada</td>
+            <td>Saida</td>
+            <td>Ação</td>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
     <script src="~/Scripts/Paciente/BuscaPacienteDocScript.js"></script>
-</head>
-<body>
- 
-    <br />
-    <div class="row pl-3 ">
-
-        <label for="campo-paciente" class="font-weight-bold">Buscar Paciente</label>
-    </div>
-    <div class="row pl-3">
-        <button class="btn btn-info col-1" id="paciente"
-                data-toggle="modal"
-                data-target="#documentoModal">
-            <i class="fa fa-search"></i>
-            paciente
-        </button>
-    </div>
-
-    <div class="row pl-3">
-        <label for="campo-paciente" class="font-weight-bold">Atendimentos do paciente</label>
-    </div>
-    <div class="row pl-3">
-
-        <input id="campo-nome" name="nome" class="form-control border-info col-11" type="text" />
-        <button class="btn btn-info col-1" id="botao">
-            <i class="fa fa-search"></i>
-            Buscar
-        </button>
 
 
-    </div>
-
-    <br />
-    
-    <table id="tabelad" class="table">
-        <thead class="bg-dark text-white">
-            <tr>
-                <td>Atendimentos</td>
-                <td>Ação</td>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
-
-</body>
 @RenderPage("DocumentoModal.cshtml")

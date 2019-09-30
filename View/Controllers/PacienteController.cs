@@ -89,16 +89,16 @@ namespace View.Controllers
             }
         }
         #endregion
+
+
         #region Documentos
         public ActionResult Documento()
         {
-
-            PacienteRepository pacienteRepository = new
-PacienteRepository();
-            ViewBag.Pacientes = pacienteRepository.ObterTodos();
             return View();
 
         }
+
+        //obtem o paciente pelo nome
         [HttpGet]
         public JsonResult ObterPeloNome(string nome)
         {
@@ -109,27 +109,15 @@ PacienteRepository();
         }
 
         [HttpGet]
-        public JsonResult ObterPeloAtendimento(string nome,int id)
+        public JsonResult ObterPeloPaciente(int id)
         {
-            SistemaContext context = new SistemaContext();
             AtendimentoRepository atendimentoRepository = new AtendimentoRepository();
-            PacienteRepository pacienteRepository = new PacienteRepository();
-            var pessoas = pacienteRepository.ObterPeloNome(nome);
-            var atendimentos = atendimentoRepository.ObterPeloId(id);
-            var atendimento = context.Atendimentos.Include("paciente").FirstOrDefault(x=>x.Id==id);
-            var result = new { data = atendimento};
+            List<Atendimento> lista = atendimentoRepository.ObterTodosPaciente(id);
+            var result = new { data = lista};
             return Json(result, JsonRequestBehavior.AllowGet);
         }
-        public JsonResult GetSearchValue(string search)
-        {
-            SistemaContext db = new SistemaContext();
-            List<Paciente> allsearch = db.Pacientes.Where(x => x.Nome.Contains(search)).Select(x => new Paciente
-            {
-                Id = x.Id,
-                Nome = x.Nome
-            }).ToList();
-            return new JsonResult { Data = allsearch, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
-        }
+
+
 
         //[HttpGet]
         //public JsonResult ObterPeloNome(string nome)

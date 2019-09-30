@@ -12,8 +12,9 @@
                 <div class="row">
                     <div class="col-6">
                         <h4>Lista de paciente</h4>
-                        <label for="campo-pesquisa">Pesquisar Nome</label>
+                        <label class="font-weight-bold" for="campo-pesquisa">Pesquisar Nome</label>
                         <input id="campo-pesquisa" name="nome" class="form-control border-info" type="text" />
+                        <button type="button" id="botao-pesquisar">Pesquisar</button>
                         <table id="tabela" class="table table-striped">
                             <thead class="class=" bg-dark text-white">
                                 <tr>
@@ -25,17 +26,17 @@
                     </div>
                     <div class="col-6">
                         <h4>Cadastro de paciente</h4>
-                        <label for="campo-nome">Nome</label>
-                        <input class="form-control" type="text" id="campo-nome" />
-                        <label for="campo-sexo">Sexo</label>
-                        <select class="form-control" id="campo-sexo">
+                        <label class="font-weight-bold" for="campo-nome">Nome</label>
+                        <input class="form-control border-info" type="text" id="campo-nome" />
+                        <label class="font-weight-bold" for="campo-sexo">Sexo</label>
+                        <select class="form-control border-info" id="campo-sexo">
                             <option selected="selected" disabled="disabled">Selecione um sexo</option>
                             <option value="1">Feminino</option>
                             <option value="0">Masculino</option>
                         </select>
-                        <label for="campo-idade">Idade</label>
-                        <input class="form-control" type="number" id="campo-idade" />
-                        <a id="botao-salvar" class="btn btn-success">Salvar <i class="fa fa-save"></i></a>
+                        <label class="font-weight-bold" for="campo-idade">Idade</label>
+                        <input class="form-control border-info" type="number" id="campo-idade" />
+                        <a id="botao-salvar" class="btn btn-success text-white mt-3">Salvar <i class="fa fa-save"></i></a>
                     </div>
                 </div>
             </div>

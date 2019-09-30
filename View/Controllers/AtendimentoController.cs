@@ -108,7 +108,6 @@ namespace View.Controllers
         {
             if (VerificaLogado() == true)
             {
-
                 FuncionarioRepository funcionarioRepository = new FuncionarioRepository();
                 Funcionario funcionario = funcionarioRepository.ObterPeloId(Convert.ToInt32(Session["usuarioLogadoId"]));
                 atendimento.IdFuncionario = funcionario.Id;

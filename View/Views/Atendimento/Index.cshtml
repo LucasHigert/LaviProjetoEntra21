@@ -32,7 +32,23 @@
                     }
                     else
                     {
-                        <td>@atendimento.Prioridade</td>
+                        if (atendimento.Prioridade == 3)
+                        {
+                            <td>Alto</td>
+
+                        }
+                        else
+                        if (atendimento.Prioridade == 2)
+                        {
+                            <td>Medio</td>
+
+                        }
+                        else
+                        if (atendimento.Prioridade == 1)
+                        {
+                            <td>Baixo</td>
+
+                        }
                     }
 
                     @if (atendimento.Observacao.Length <= 41)
@@ -52,7 +68,7 @@
             {
                 <tr class="bg-red-500">
                     <td>@atendimento.Paciente.Nome</td>
-                    <td>@atendimento.Prioridade</td>
+                    <td>Alto</td>
                     @if (atendimento.Observacao.Length <= 40)
                     {
 
@@ -72,7 +88,7 @@
                 <tr class="bg-yellow-500">
                     <td hidden>@atendimento.Id</td>
                     <td>@atendimento.Paciente.Nome</td>
-                    <td>@atendimento.Prioridade</td>
+                    <td>Medio</td>
                     @if (atendimento.Observacao.Length <= 40)
                     {
 
@@ -92,7 +108,7 @@
                 <tr>
                     <td hidden>@atendimento.Id</td>
                     <td>@atendimento.Paciente.Nome</td>
-                    <td>@atendimento.Prioridade</td>
+                    <td>Baixo</td>
                     @if (atendimento.Observacao.Length <= 40)
                     {
 

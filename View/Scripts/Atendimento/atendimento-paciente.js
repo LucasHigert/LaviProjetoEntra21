@@ -1,4 +1,4 @@
-﻿$(function () {
+﻿$(function ($) {
 
     $tabela = $('#tabela').DataTable({
         ajax: {
@@ -16,11 +16,24 @@
             { 'data': 'Nome' },
             {
                 render: function (data, type, row) {
-                    return '<a class="botao-selecionar btn btn-info" data-dismiss="modal" data-id=' + row.Id + '"><i class="fa fa-plus"></i></a>'
+                    return '<a id="' + row.Id + '" class="selecionar btn btn-success text-white" data-dismiss="modal" \
+                    data-id="' + row.Id + '"\
+                    data-nome="' + row.Nome + '"> <i class="fa fa-check"></i></a > '
                 }
             }
 
         ]
+    });
+
+    $("#tabela").on("click", ".selecionar", function () {
+        //var tr = document.getElementById($(this).Id);
+        //var td = tr.
+        $id = $(this).data("id");
+        $nome = $(this).data("nome");
+        
+        $("#campo-paciente-id").val($id);
+        $("#campo-paciente").val($nome);
+
     });
 
     $("#botao-salvar").on("click", function () {

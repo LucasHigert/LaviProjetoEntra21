@@ -1,5 +1,5 @@
 ﻿<div id="modal-paciente" class="modal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <!--Titulo da modal-->
             <div class="modal-header mt-0">
@@ -14,35 +14,53 @@
                         <h4>Lista de paciente</h4>
                         <label class="font-weight-bold" for="campo-pesquisa">Pesquisar Nome</label>
                         <input id="campo-pesquisa" name="nome" class="form-control border-info" type="text" />
-                        <button type="button" id="botao-pesquisar">Pesquisar</button>
-                        <table id="tabela" class="table table-striped">
-                            <thead class="class=" bg-dark text-white">
-                                <tr>
-                                    <td>Nome</td>
-                                    <td>Ação</td>
-                                </tr>
-                            </thead>
-                        </table>
+                        <div class="form-group mt-5">
+
+                            <table id="tabela" class="table table-striped">
+                                <thead class="bg-dark" bg-dark text-white">
+                                    <tr>
+                                        <td>Nome</td>
+                                        <td>Ação</td>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
                     </div>
+
                     <div class="col-6">
                         <h4>Cadastro de paciente</h4>
-                        <label class="font-weight-bold" for="campo-nome">Nome</label>
-                        <input class="form-control border-info" type="text" id="campo-nome" />
-                        <label class="font-weight-bold" for="campo-sexo">Sexo</label>
-                        <select class="form-control border-info" id="campo-sexo">
-                            <option selected="selected" disabled="disabled">Selecione um sexo</option>
-                            <option value="1">Feminino</option>
-                            <option value="0">Masculino</option>
-                        </select>
-                        <label class="font-weight-bold" for="campo-idade">Idade</label>
-                        <input class="form-control border-info" type="number" id="campo-idade" />
-                        <a id="botao-salvar" class="btn btn-success text-white mt-3">Salvar <i class="fa fa-save"></i></a>
+                        <div class="form-group">
+
+                            <label class="font-weight-bold" for="campo-nome">Nome</label>
+                            <input class="form-control border-info" type="text" id="campo-nome" />
+                        </div>
+                        <div class="form-group">
+                            <label class="font-weight-bold" for="campo-sexo">Sexo</label>
+                            <select class="form-control border-info" id="campo-sexo">
+                                <option selected="selected" disabled="disabled">Selecione um sexo</option>
+                                <option value="1">Feminino</option>
+                                <option value="0">Masculino</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="font-weight-bold" for="campo-idade">Idade</label>
+                            <input class="form-control border-info" type="number" id="campo-idade" />
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <a id="botao-salvar" class="btn btn-success text-white mt-3 float-right">
+                                    <i class="fa fa-save"></i> Salvar
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary float-left" data-dismiss="modal">Fechar <i class="fa fa-close"></i></button>
+                <button type="button" class="btn btn-secondary float-left" data-dismiss="modal">
+                    <i class="fa fa-close"></i> Fechar
+                </button>
 
             </div>
         </div>

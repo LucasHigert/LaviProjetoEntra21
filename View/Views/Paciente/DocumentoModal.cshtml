@@ -1,0 +1,43 @@
+﻿<div id="documentoModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <!-- Modal Content: begins -->
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title" id="gridSystemModalLabel">Busca de pacientes</h4>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <div class="row">
+                        <label class="font-weight-bold" for="campo-nome ">Pesquisar paciente</label>
+                        <input id="campo-nome" name="nome" class="form-control border-info" type="text" />
+                    </div>
+
+                    <table id="tabela" class="mt-4 table table-striped">
+                        <thead class="bg-dark text-white">
+                            <tr>
+                                <td>Nome</td>
+                                <td>Ação</td>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+
+            </div>
+
+
+            <div class="modal-footer">
+                <button class="btn float-right" data-dismiss="modal" aria-hidden="true">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="~/Scripts/Paciente/BuscaDocumentoModal.js"></script>

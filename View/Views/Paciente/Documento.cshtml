@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Documento";
+}
+
+
+
+
+
+<div class="row ">
+
+</div>
+
+<label for="campo-paciente" class="font-weight-bold">Atendimentos do paciente</label>
+<div class="row">
+    <div class="col-8">
+        <input type="text" hidden="hidden" id="campo-id" />
+        <input id="campo-nome" disabled="disabled" name="nome" class="form-control border-info" type="text" />
+    </div>
+    <div class="col-4 pl-0 ml-0">
+
+        <button class="btn btn-info " id="paciente" data-toggle="modal" data-target="#documentoModal"><i class="fa fa-search"></i>Selecionar Paciente</button>
+        <button class="btn btn-info" id="botao"><i class="fa fa-search"></i>Pesquisar</button>
+    </div>
+
+</div>
+
+
+
+<table id="tabelaAtendimento" class="table mt-4">
+    <thead class="bg-dark text-white">
+        <tr>
+            <td>Entrada</td>
+            <td>Saida</td>
+            <td>Ação</td>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+    <script src="~/Scripts/Paciente/BuscaPacienteDocScript.js"></script>
+
+
+@RenderPage("DocumentoModal.cshtml")

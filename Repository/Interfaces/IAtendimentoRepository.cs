@@ -20,5 +20,7 @@ namespace Repository.Interfaces
        Atendimento ObterPeloId(int id);
 
         List<Atendimento> ObterTodosPosto(int posto);
+
+        List<Atendimento> ObterTodosPaciente(int id);
     }
 }

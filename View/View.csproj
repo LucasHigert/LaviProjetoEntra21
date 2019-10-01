@@ -5003,6 +5003,7 @@
     <Content Include="Scripts\Tema\global\vendor\webui-popover\webui-popover.min.css" />
     <Content Include="Scripts\Tema\global\vendor\x-editable\bootstrap-editable.js" />
     <Content Include="Scripts\Tema\global\vendor\x-editable\bootstrap-editable.min.js" />
+    <Content Include="Scripts\Tema\TemaPersonalizado.css" />
     <Content Include="Scripts\umd\popper-utils.js" />
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />

@@ -554,6 +554,8 @@
     <Content Include="Scripts\materialize\materialize.js" />
     <Content Include="Scripts\materialize\materialize.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\Paciente\BuscaDocumentoModal.js" />
+    <Content Include="Scripts\Paciente\BuscaPacienteDocScript.js" />
     <Content Include="Scripts\Paciente\PacienteSript.js" />
     <Content Include="Scripts\ParteCorpoSintoma.js" />
     <Content Include="Scripts\ParteCorpo\ParteCorpo.css" />
@@ -5005,6 +5007,7 @@
     <Content Include="Scripts\Tema\global\vendor\webui-popover\webui-popover.min.css" />
     <Content Include="Scripts\Tema\global\vendor\x-editable\bootstrap-editable.js" />
     <Content Include="Scripts\Tema\global\vendor\x-editable\bootstrap-editable.min.js" />
+    <Content Include="Scripts\Tema\TemaPersonalizado.css" />
     <Content Include="Scripts\umd\popper-utils.js" />
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
@@ -6127,6 +6130,8 @@
     <Content Include="Scripts\Traducao\pt.json" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Atendimento\ModalPaciente.cshtml" />
+    <Content Include="Views\Paciente\Documento.cshtml" />
+    <Content Include="Views\Paciente\DocumentoModal.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

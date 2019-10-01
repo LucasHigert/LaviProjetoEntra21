@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="~/Scripts/Tema/global/css/bootstrap-extend.min.css">
     <link rel="stylesheet" href="~/Scripts/Tema/assets/css/site.min.css">
     <link rel="stylesheet" href="~/Content/font-awesome.css" />
-
+    <link rel="stylesheet" href="~/Scripts/Tema/TemaPersonalizado.css" />
 
     <!-- Plugins -->
     <link rel="stylesheet" href="~/Scripts/Tema/global/vendor/animsition/animsition.css">
@@ -34,7 +34,7 @@
     <link rel="stylesheet" href="~/Scripts/Tema/global/fonts/web-icons/web-icons.min.css">
     <link rel="stylesheet" href="~/Scripts/Tema/global/fonts/brand-icons/brand-icons.min.css">
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
-
+    <link rel="stylesheet" href="~/Content/DataTables/css/jquery.dataTables.min.css" />
     @RenderSection("css", false)
     <!-- Scripts -->
     <script src="~/Scripts/Tema/global/vendor/breakpoints/breakpoints.js"></script>
@@ -48,7 +48,7 @@
 <body class="animsition site-navbar-small dashboard">
 
 
-    <nav class="site-navbar navbar navbar-default navbar-fixed-top navbar-mega" role="navigation">
+    <nav class="site-navbar fundo navbar navbar-default navbar-fixed-top navbar-mega" role="navigation">
 
         <!--Sidenav logo-->
         <div class="navbar-header">
@@ -68,9 +68,9 @@
 
         </div>
 
-        <div class="navbar-container container-fluid">
+        <div class=" container-fluid">
             <!-- Navbar Collapse -->
-            <div class="collapse navbar-collapse navbar-collapse-toolbar" id="site-navbar-collapse">
+            <div class="collapse navbar-collapse navbar-collapse-toolbar row" id="site-navbar-collapse">
                 <!-- Navbar Toolbar -->
                 <!--Navbar top, superior, fullscreen, perfil-->
                 <ul class="nav navbar-toolbar">
@@ -83,7 +83,7 @@
                         </a>
                     </li>
                     <li class="nav-item hidden-sm-down" id="toggleFullscreen">
-                        <a class="nav-link icon icon-fullscreen" data-toggle="fullscreen" href="#" role="button">
+                        <a class="nav-link icon icon-fullscreen branco" data-toggle="fullscreen" href="#" role="button">
                             <span class="sr-only">Tela Cheia</span>
                         </a>
                     </li>
@@ -251,46 +251,46 @@
             </li>
 
             <!--Parte Corpo-->
-            <li class="site-menu-item has-sub">
-                <a href="javascript:void(0)">
-                    <i class="site-menu-icon wb-heart" aria-hidden="true"></i>
-                    <span class="site-menu-title">Parte Corpo</span>
-                    <span class="site-menu-arrow"></span>
-                </a>
-                <ul class="site-menu-sub">
-                    <li class="site-menu-item has-sub">
-                        <a href="/partecorpo">
-                            <span class="site-menu-title">Lista de partes</span>
-                        </a>
-                    </li>
-                    <li class="site-menu-item">
-                        <a class="animsition-link" href="/partecorpo/cadastrar">
-                            <span class="site-menu-title">Cadastrar parte</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
+            @*<li class="site-menu-item has-sub">
+                    <a href="javascript:void(0)">
+                        <i class="site-menu-icon wb-heart" aria-hidden="true"></i>
+                        <span class="site-menu-title">Parte Corpo</span>
+                        <span class="site-menu-arrow"></span>
+                    </a>
+                    <ul class="site-menu-sub">
+                        <li class="site-menu-item has-sub">
+                            <a href="/partecorpo">
+                                <span class="site-menu-title">Lista de partes</span>
+                            </a>
+                        </li>
+                        <li class="site-menu-item">
+                            <a class="animsition-link" href="/partecorpo/cadastrar">
+                                <span class="site-menu-title">Cadastrar parte</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>*@
 
             <!--Sintoma-->
-            <li class="site-menu-item has-sub">
-                <a href="javascript:void(0)">
-                    <i class="site-menu-icon fa fa-medkit" aria-hidden="true"></i>
-                    <span class="site-menu-title">Sintomas</span>
-                    <span class="site-menu-arrow"></span>
-                </a>
-                <ul class="site-menu-sub">
-                    <li class="site-menu-item has-sub">
-                        <a href="/sintoma">
-                            <span class="site-menu-title">Lista de Sintomas</span>
-                        </a>
-                    </li>
-                    <li class="site-menu-item">
-                        <a class="animsition-link" href="/sintoma/cadastrar">
-                            <span class="site-menu-title">Cadastrar Sintoma</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
+            @*<li class="site-menu-item has-sub">
+                    <a href="javascript:void(0)">
+                        <i class="site-menu-icon fa fa-medkit" aria-hidden="true"></i>
+                        <span class="site-menu-title">Sintomas</span>
+                        <span class="site-menu-arrow"></span>
+                    </a>
+                    <ul class="site-menu-sub">
+                        <li class="site-menu-item has-sub">
+                            <a href="/sintoma">
+                                <span class="site-menu-title">Lista de Sintomas</span>
+                            </a>
+                        </li>
+                        <li class="site-menu-item">
+                            <a class="animsition-link" href="/sintoma/cadastrar">
+                                <span class="site-menu-title">Cadastrar Sintoma</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>*@
 
             <!--Opcão pacientes da sidenav-->
             <li class="site-menu-item has-sub">
@@ -308,6 +308,11 @@
                     <li class="site-menu-item">
                         <a class="animsition-link" href="/paciente/cadastro">
                             <span class="site-menu-title">Cadastrar paciente</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a class="animsition-link" href="/paciente/documento">
+                            <span class="site-menu-title">Documentos</span>
                         </a>
                     </li>
                 </ul>
@@ -409,7 +414,7 @@
     <script src="~/Scripts/Tema/global/js/Plugin/jvectormap.js"></script>
 
     <script src="~/Scripts/Tema/assets/examples/js/dashboard/v1.js"></script>
-
+    <script src="~/Scripts/DataTables/jquery.dataTables.js"></script>
     <script src="~/Scripts/lib/i18n/i18n.js"></script>
     @RenderSection("js", false)
 

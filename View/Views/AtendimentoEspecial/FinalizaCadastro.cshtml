@@ -19,9 +19,27 @@
 
         </div>
     </div>
-    <div style="margin-top: 250px">
-        <a class="btn btn-info text-white" style="margin-left: 460px" href="/atendimento"> <i class="fa fa-arrow-right"> Próximo</i></a>
+    <div class="container">
+
+        <div class="alert alert-info"  style="margin-top: 70px">
+            <h2>
+                Prezans ou fini, retounen òdinatè a moun kap rele a, epi tann pou enstriksyon yo!
+            </h2>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <form method="post" action="/atendimentoespecial/InserirObservacao">
+            <input type="text" name="id" value="@ViewBag.Atendimento" hidden="hidden" />
+            <label class="font-weight-bold text-dark" for="campo-obserccao">Observações do paciente</label>
+            <textarea class="form-control border-info" id="campo-observacao" name="observacao"></textarea> />
+            <button class="btn btn-success mt-1 float-right" type="submit"><i class="fa fa-arrow-right"></i> Proximo</button>
+        </form>
     </div>
+
+
     <script src="~/Scripts/Tema/global/vendor/bootstrap/bootstrap.min.js"></script>
     <script href="~/Scripts/Tema/global/vendor/jquery/jquery.min.js"></script>
 </body>

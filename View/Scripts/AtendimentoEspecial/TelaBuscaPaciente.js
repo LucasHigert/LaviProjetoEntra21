@@ -1,9 +1,10 @@
 ﻿$(function () {
+
     $tabelaPaciente = $('#tabela').DataTable({
         ajax: {
             url: "/atendimentoespecial/ObterPeloNome",
             data: function (d) {
-                d.nome = $("#campo-nome").val()
+                d.nome= $("#campo-nome").val()
             }
         },
         method: "GET",
@@ -21,9 +22,9 @@
 
         ]
     });
+
     $("#campo-nome").keypress(function (e) {
         if (e.keyCode == 13) {
-            $tabelaPaciente.ajax.reload();
             AtualizaTabela();
         }
     });
@@ -31,8 +32,9 @@
     function AtualizaTabela() {
         $tabelaPaciente.ajax.reload();
     }
-    $("#botao").on("click", function () {
 
+    $("#botao").on("click", function () {
         AtualizaTabela();
     })
-}); 
+
+});

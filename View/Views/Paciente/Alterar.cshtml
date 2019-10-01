@@ -4,6 +4,11 @@
 
     ViewBag.Title = "Alterar";
 }
+<head>
+    <script type="text/javascript" src="~/Scripts/Mask/Mascaras.js"></script>
+    <script type="text/javascript" src="~/Scripts/Mask/jquery.mask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
+</head>
 
 <form action="/paciente/update" method="post">
 
@@ -12,7 +17,7 @@
     <div class="row">
         <div class="col-12">
             <label class="font-weight-bold" for="campo-posto">Posto<a class="text-danger">*</a></label>
-            <select name="idPosto" id="campo-posto" required="" class="form-control border-info">
+            <select name="idPosto" id="campo-posto" required class="form-control border-info">
                 <option selected="" disabled="disabled">Selecione o posto onde está</option>
                 @foreach (Model.Posto posto in ViewBag.Postos)
                 {
@@ -34,12 +39,12 @@
         <!-- AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII-->
         <div class="col-6">
             <label class="font-weight-bold" for="campo-nome">Nome<a class="text-danger">*</a></label>
-            <input type="text" id="campo-nome" name="nome" class="form-control border-info" maxlength="100" required="" value="@ViewBag.Paciente.Nome">
+            <input type="text" id="campo-nome" name="nome" class="form-control border-info" maxlength="100" required value="@ViewBag.Paciente.Nome">
         </div>
 
         <div class="col-3">
             <label class="font-weight-bold" for="campo-sexo">Sexo<a class="text-danger">*</a></label>
-            <select id="campo-sexo" name="sexo" class="form-control border-info">
+            <select id="campo-sexo" name="sexo" class="form-control border-info" required>
                 @if (ViewBag.Paciente.Sexo == true)
                 {
                     <option value="true" selected="selected">Feminino</option>
@@ -56,7 +61,7 @@
         </div>
         <div class="col-3">
             <label class="font-weight-bold" for="campo-posto">Lingua<a class="text-danger">*</a></label>
-            <select class="form-control border-info" name="lingua">
+            <select class="form-control border-info" name="lingua" required>
                 @if (ViewBag.Paciente.Lingua == 0)
                 {
                     <option value="0" selected="selected">Português Brasileiro</option>
@@ -86,7 +91,7 @@
 
         <div class="col-4">
             <label class="font-weight-bold" for="campo-rne">RNE</label>
-            <input type="text" id="campo-rne" name="rne" maxlength="50" class="form-control border-info" value="@ViewBag.Paciente.Rne" />
+            <input type="text" id="campo-rne" name="rne" class="form-control border-info" value="@ViewBag.Paciente.Rne" />
         </div>
 
         <div class="col-4">
@@ -108,7 +113,7 @@
 
         <div class="col-3">
             <label class="font-weight-bold" for="campo-idade">Idade<a class="text-danger">*</a></label>
-            <input type="number" id="campo-idade" name="idade" maxlength="3" class="form-control border-info" value="@ViewBag.Paciente.Idade" />
+            <input type="number" id="campo-idade" min="0" name="idade" maxlength="3" required class="form-control border-info" value="@ViewBag.Paciente.Idade" />
         </div>
 
 
@@ -148,15 +153,15 @@
             </div>
 
             <div class="col-3">
-                <label class="font-weight-bold" for="campo-altura">Temperatura</label>
-                <input type="text" id="campo-altura" name="temperatura" class="form-control border-info" value="@ViewBag.Paciente.Temperatura" />
+                <label class="font-weight-bold" for="campo-temperatura">Temperatura</label>
+                <input type="text" id="campo-temperatura" name="temperatura" class="form-control border-info" value="@ViewBag.Paciente.Temperatura" />
             </div>
 
         </div>
     }
-    <button type="submit" class="btn btn-success float right mt-20"><i class="fa fa-save"></i> Salvar</button>
+    <button type="submit" class="btn btn-success float-right mt-20"><i class="fa fa-save"></i> Salvar</button>
 </form>
 
-
+@*<script src="~/Scripts/Paciente/PacienteSript.js"></script>*@
 
 

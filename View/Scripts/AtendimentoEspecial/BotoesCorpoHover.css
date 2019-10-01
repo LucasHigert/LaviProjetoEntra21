@@ -1,4 +1,10 @@
 ﻿.image:hover {
-    background: #DC143C;
+    background: rgba(255, 0, 0, .5);
+}
+
+
+
+.click:focus {
+    border: 2px solid rgba(0, 0, 0, .4);
 }
 

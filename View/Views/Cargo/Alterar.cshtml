@@ -3,20 +3,15 @@
     ViewBag.Title = "Alterar";
 }
 
-<h2>Alterar</h2>
+<h2>Alterarando cargo '@ViewBag.Cargos.Nome'</h2>
 
 
 <div class="row">
     <div class="col-12">
         <form action="/cargo/update" method="post">
-            <input type="hidden" name="id" id="id" value="@ViewBag.Cargos.Id" />
-            <div class="form-group">
-                <label for="cargo-nome">Cargo</label>
-                <input class="form-control" id="cargo-nome" name="nome" maxlength="100" type="text" value="@ViewBag.Cargos.Nome" />
-            </div>
             <div>
-                <label class="font-weight-bold" for="campo-nivel">Nivel de Permissão</label>
-                <select name="nivelpermissao" id="campo-nivel" class="form-control">
+                <label class="font-weight-bold" for="campo-nivel">Nivel de Permissão <a class="text-danger">*</a></label>
+                <select name="nivelpermissao" id="campo-nivel" class="form-control border-info"s>
                     @if (@ViewBag.Cargos.NivelPermissao == 1)
                     {
                         <option selected>Baixo</option>
@@ -49,7 +44,14 @@
                     }
                 </select>
             </div>
-            <button class="btn btn-success float-right" type="submit"><i class="fa fa-save"></i>Salvar</button>
+           
+            <input type="hidden" name="id" id="id" value="@ViewBag.Cargos.Id" />
+            <div class="form-group">
+                <label class="font-weight-bold" for="cargo-nome">Cargo <a class="text-danger">*</a> </label>
+                <input class="form-control border-info" id="cargo-nome" name="nome" maxlength="100" type="text" value="@ViewBag.Cargos.Nome" />
+            </div>
+           
+            <button class="btn btn-success float-right" type="submit"><i class="fa fa-save"></i> Salvar</button>
         </form>
     </div>
 </div>

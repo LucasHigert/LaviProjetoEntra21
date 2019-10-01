@@ -62,5 +62,8 @@ namespace Model
 
         [Column("pressao")]
         public string Pressao { get; set; }
+
+        [Column("data_criacao")]
+        public DateTime DataCriacao { get; set; }
     }
 }

@@ -2,15 +2,21 @@
 @{
     ViewBag.Title = "Cadastrar";
 }
+<head>
+    <script type="text/javascript" src="~/Scripts/Posto/posto.js"></script>
+    <script type="text/javascript" src="~/Scripts/Mask/jquery.mask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
+</head>
 
 <h2 class="h2">Cadastro de Posto</h2>
 <form action="/posto/inserir" method="post">
+
     <div class="row">
-        <div class="col-4">
-            <label class="font-weight-bold" for="campo-cep">CEP</label>
-            <input type="text" name="cep" id="campo-cep" class="form-control border-info" />
+        <div class="col-6">
+            <label class="font-weight-bold" for="campo-nome">Nome do Posto<a class="text-danger">*</a></label>
+            <input type="text" name="nome" id="campo-nome" class="form-control border-info" required="" />
         </div>
-        <div class="col-8">
+        <div class="col-6">
             <label class="font-weight-bold" for="campo-cidade">Cidade<a class="text-danger">*</a></label>
             <select name="idCidade" id="campo-cidade" class="form-control border-info">
                 <option selected="" disabled="disabled">Selecione uma cidade</option>
@@ -22,12 +28,20 @@
             </select>
         </div>
     </div>
-    <div class="row">
-        <div class="col-12">
-            <label class="font-weight-bold" for="campo-nome">Nome do Posto<a class="text-danger">*</a></label>
-            <input type="text" name="nome" id="campo-nome" class="form-control border-info" required="" />
 
+    <div class="row mt-2">
+        <div class="col-5">
+            <label class="font-weight-bold" for="campo-cep">CEP</label>
+            <input type="text" name="cep" id="campo-cep" class="form-control border-info" placeholder="Ex.: 00000-000" maxlength="9" autocomplete="off" />
+        </div>
+        <div class="col-7">
+            <label class="font-weight-bold" for="campo-endereco">Endereço <a class="text-danger">*</a></label>
+            <input type="text" name="endereco" id="campo-endereco" class="form-control border-info" required="" />
         </div>
     </div>
-    <button type="submit" class="btn btn-success mt-15"><i class="fa fa-save"></i> Salvar</button>
+    <div>
+        <button type="submit" class="btn btn-success float-right mt-15"><i class="fa fa-save"></i> Salvar</button>
+    </div>
+
 </form>
+

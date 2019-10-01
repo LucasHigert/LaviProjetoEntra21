@@ -14,7 +14,7 @@ namespace Repository.Repository
 
         public bool Alerar(Atendimento atendimento)
         {
-            var atendimentoOriginal = context.Atendimentos.Where(x => x.Id == atendimento.Id && x.Status != 3).FirstOrDefault();
+            var atendimentoOriginal = context.Atendimentos.Where(x => x.Id == atendimento.Id).FirstOrDefault();
             if (atendimentoOriginal == null)
             {
                 return false;
@@ -54,6 +54,7 @@ namespace Repository.Repository
 
         public bool Inserir(Atendimento atendimento)
         {
+            atendimento.DataCriacao = DateTime.Now;
             context.Atendimentos.Add(atendimento);
             var rows = context.SaveChanges();
             return rows == 1;
@@ -73,7 +74,10 @@ namespace Repository.Repository
         public List<Atendimento> ObterTodosPeloCargoPosto(int NumeroCargo,int IdPosto)
         {
             //modificar para buscar o atendimento pelo cargo que esta logado
-            return context.Atendimentos.Include("Paciente").Include("funcionario").Where((x => x.Status == NumeroCargo && x.IdPosto == IdPosto)).OrderByDescending(x => x.Prioridade).ToList();
+            return context.Atendimentos.Include("Paciente").Include("funcionario")
+                .Where((x => x.Status == NumeroCargo && x.IdPosto == IdPosto))
+                .OrderByDescending(x => x.Prioridade)
+                .OrderBy(x => x.DataCriacao).ToList();
         }
 
         public List<Atendimento> ObterTodosPosto(int posto)

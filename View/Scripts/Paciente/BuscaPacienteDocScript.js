@@ -24,15 +24,21 @@
             paging: false,
             columns: [
                 { 'data': 'DataAtendimento' },
-                { 'data': 'depois tem q mudar' },
                 {
                     render: function (data, type, row) {
-                        return '<a class="btn btn-info" href="/atendimentoespecial/InserirAtendimento?idPaciente=' + row.Id + '"><i class="fa fa-user"></i></a>'
+
+                        return '<a class="botao-atendimento btn btn-info" id=' + row.Id + '"><i class="fa fa-user"></i></a>'
                     }
                 }
 
             ]
-        });    }
+        });
+    }
+    
+    $("#tabelaAtendimento").on("click", ".botao-atendimento", function () {
+        $('#documentoFormularioModal').modal('show');
+
+    })
     $("#botao").on("click", function () {
         $idPaciente = $("#campo-id").val();
         AtualizaTabela();

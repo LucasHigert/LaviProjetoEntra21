@@ -6129,6 +6129,7 @@
     <Content Include="Views\Atendimento\ModalPaciente.cshtml" />
     <Content Include="Views\Paciente\Documento.cshtml" />
     <Content Include="Views\Paciente\DocumentoModal.cshtml" />
+    <Content Include="Views\Paciente\DocumentoFormularioModal.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

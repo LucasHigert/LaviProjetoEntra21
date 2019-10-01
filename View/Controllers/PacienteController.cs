@@ -118,14 +118,14 @@ namespace View.Controllers
         }
 
         //obtem o paciente pelo nome
-        [HttpGet]
-        public JsonResult ObterPeloNome(string nome)
-        {
-            PacienteRepository pacienteRepository = new PacienteRepository();
-            var pessoas = pacienteRepository.ObterPeloNome(nome);
-            var result = new { data = pessoas };
-            return Json(result, JsonRequestBehavior.AllowGet);
-        }
+        //[HttpGet]
+        //public JsonResult ObterPeloNome(string nome)
+        //{
+        //    PacienteRepository pacienteRepository = new PacienteRepository();
+        //    var pessoas = pacienteRepository.ObterPeloNome(nome);
+        //    var result = new { data = pessoas };
+        //    return Json(result, JsonRequestBehavior.AllowGet);
+        //}
 
         [HttpGet]
         public JsonResult ObterPeloPaciente(int id)

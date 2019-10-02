@@ -9,7 +9,7 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Login Lavi</title>
-    <link rel="icon" href="~/Content/Imagens/Logo Lavi  Preto.png"/>
+    <link rel="icon" href="~/Content/Imagens/Logo Lavi  Preto.png" />
     <link rel="stylesheet" href="~/Scripts/Tema/global/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/Content/font-awesome.min.css" />
 </head>
@@ -17,30 +17,40 @@
 
     <!--Classe container é uma parte do site que fica mais centralizada -->
     <form action="/login/VerificaLogin" method="post">
-        <div class="row">
+        <div class="container verde">
             <div class="col-sm">
 
             </div>
-            <div class="col-sm position-sticky" style="margin-top:90px">
-                <img src="~/Content/Imagens/Logo Lavi  Preto.png" />
-                <div style="margin-top: 20px">
-                    <!--<label class="font-weight-bold" for="campo-login">Login</label>-->
-                    <input type="text" id="campo-login" name="login" class="form-control" 
-                           maxlength="45" placeholder="Login"/>
-                </div>
-                <div>
-                    <!--<label class="font-weight-bold" for="campo-senha">Senha</label>-->
-                    <input type="password" id="campo-senha" name="senha" class="form-control mt-3"
-                           maxlength="45" placeholder="Senha" />
-                </div>
+            <div class="d-flex justify-content-center h-100" style="margin-top:90px; margin-left: 300px">
+                <div class="card" style="width: 500px">
+                    <div class="card-header">
+                        <div>
+                            <img src="~/Content/Imagens/Logo Lavi  Preto.png" />
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="container" style="margin-top: 20px">
+                            <!--<label class="font-weight-bold" for="campo-login">Login</label>-->
+                            <input type="text" id="campo-login" name="login" class="form-control"
+                                   maxlength="45" placeholder="Login" />
+                            <input type="password" id="campo-senha" name="senha" class="form-control mt-3"
+                                   maxlength="45" placeholder="Senha" />
+                        </div>
+                    </div>
+                    <div class="card-footer">
 
-                <button class="btn btn-info mt-3 " type="submit"><i class="fa fa-sign-in"></i> Entrar</button>
-            </div>
-            <div class="col-sm">
+                        <div class="container">
+                            <button class="btn btn-info " type="submit"><i class="fa fa-sign-in"></i> Entrar</button>
+                            <!--<label class="font-weight-bold" for="campo-senha">Senha</label>-->
+                        </div>
+                    </div>
 
+                </div>
+                <div class="col-sm">
+
+                </div>
             </div>
         </div>
-
     </form>
 
 

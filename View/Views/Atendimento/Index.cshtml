@@ -24,7 +24,7 @@
         {
             if (atendimento.Paciente.Lingua != 0)
             {
-                <tr class="bg-indigo-500">
+                <tr>
                     <td>@atendimento.Paciente.Nome</td>
                     @if (atendimento.Prioridade == 0)
                     {
@@ -32,7 +32,23 @@
                     }
                     else
                     {
-                        <td>@atendimento.Prioridade</td>
+                        if (atendimento.Prioridade == 3)
+                        {
+                            <td>Alto</td>
+
+                        }
+                        else
+                        if (atendimento.Prioridade == 2)
+                        {
+                            <td>Medio</td>
+
+                        }
+                        else
+                        if (atendimento.Prioridade == 1)
+                        {
+                            <td>Baixo</td>
+
+                        }
                     }
 
                     @if (atendimento.Observacao.Length <= 41)
@@ -52,7 +68,7 @@
             {
                 <tr class="bg-red-500">
                     <td>@atendimento.Paciente.Nome</td>
-                    <td>@atendimento.Prioridade</td>
+                    <td>Alto</td>
                     @if (atendimento.Observacao.Length <= 40)
                     {
 
@@ -72,7 +88,7 @@
                 <tr class="bg-yellow-500">
                     <td hidden>@atendimento.Id</td>
                     <td>@atendimento.Paciente.Nome</td>
-                    <td>@atendimento.Prioridade</td>
+                    <td>Medio</td>
                     @if (atendimento.Observacao.Length <= 40)
                     {
 
@@ -92,7 +108,7 @@
                 <tr>
                     <td hidden>@atendimento.Id</td>
                     <td>@atendimento.Paciente.Nome</td>
-                    <td>@atendimento.Prioridade</td>
+                    <td>Baixo</td>
                     @if (atendimento.Observacao.Length <= 40)
                     {
 
@@ -101,7 +117,7 @@
                     else
                     {
                         <td>A observação atingiu o limite maximo</td>
-                    }n
+                    }
                     <td>
                         <a class="btn btn-info" href="/atendimento/alterar?id=@atendimento.Id"><i class="fa fa-bookmark"></i> Atender</a>
                     </td>

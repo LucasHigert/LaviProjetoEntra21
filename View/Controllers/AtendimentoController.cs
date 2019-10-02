@@ -108,12 +108,15 @@ namespace View.Controllers
         {
             if (VerificaLogado() == true)
             {
-
                 FuncionarioRepository funcionarioRepository = new FuncionarioRepository();
                 Funcionario funcionario = funcionarioRepository.ObterPeloId(Convert.ToInt32(Session["usuarioLogadoId"]));
                 atendimento.IdFuncionario = funcionario.Id;
                 atendimento.IdPosto = funcionario.IdPosto;
                 atendimento.DataAtendimento = DateTime.Now;
+                if(atendimento.Observacao == null)
+                {
+                    atendimento.Observacao = " ";
+                }
 
                 if (Session["usuarioLogadoPermissao"].ToString() == "1")
                 {
@@ -142,7 +145,27 @@ namespace View.Controllers
             }
         }
         #endregion
+        public ActionResult PreencherDocumento(int id)
+        {
 
+            Atendimento atendimento = repositoryAtendimento.ObterPeloId(id);
+            ViewBag.Atendimento = atendimento;
+            Paciente paciente = repositoryPaciente.ObterPeloId(atendimento.IdPaciente);
+            ViewBag.Paciente = paciente;
+            //Se o paciente for estrangeiro ele irá ter uma lista de sintomas que este selecionou
+
+            AtendimentoParteCorpoSintomaRepository atendimentoParteCorpoSintoma = new AtendimentoParteCorpoSintomaRepository();
+            List<Sintoma> sintomas = new List<Sintoma>();
+            List<AtendimentoParteCorpoSintoma> AtendimentoSintoma = atendimentoParteCorpoSintoma.ObterPeloIdAtentimento(atendimento.Id);
+            for (int i = 0; i < AtendimentoSintoma.Count; i++)
+            {
+                sintomas.Add(new Sintoma { Nome = AtendimentoSintoma[i].Sintoma.Nome });
+            }
+            
+            ViewBag.NivelDor = AtendimentoSintoma;
+            ViewBag.Sintomas = sintomas;
+            return View();
+        }
         //Alterar
         #region
         public ActionResult Alterar(int id)

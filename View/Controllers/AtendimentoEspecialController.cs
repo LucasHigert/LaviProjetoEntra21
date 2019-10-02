@@ -342,6 +342,10 @@ namespace View.Controllers
         [HttpPost]
         public ActionResult InserirObservacao(int id, string observacao)
         {
+            if (observacao == null)
+            {
+                observacao = "";
+            }
             AtendimentoRepository atendimentoRepository = new AtendimentoRepository();
             Atendimento atendimentoOriginal = atendimentoRepository.ObterPeloId(id);
             atendimentoOriginal.Observacao = observacao;

@@ -1,8 +1,10 @@
 ﻿using Model;
+using Repository;
 using Repository.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Web;
 using System.Web.Mvc;
 
@@ -10,32 +12,6 @@ namespace View.Controllers
 {
     public class PacienteController : Controller
     {
-        #region Verificações Login
-        private bool VerificaLogado()
-        {
-            if (Session["usuarioLogadoId"] == null)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
-
-
-        #endregion
-
-        public JsonResult ObterPeloNome(string nome)
-        {
-            PacienteRepository pacienteRepository = new PacienteRepository();
-            FuncionarioRepository funcionarioRepository = new FuncionarioRepository();
-            Funcionario funcionario = funcionarioRepository.ObterPeloId(Convert.ToInt32(Session["usuarioLogadoId"]));
-            var resultado = pacienteRepository.ObterPeloNome(nome,funcionario.IdPosto);
-            var result = new { data = resultado };
-            return Json(result, JsonRequestBehavior.AllowGet);
-        }
-        // GET: Cidade
         public PacienteRepository repository;
 
         public PacienteController()
@@ -56,13 +32,56 @@ namespace View.Controllers
                 return Redirect("/login");
             }
         }
+        
+        #region Verificações Login
+
+        private bool VerificaLogado()
+        {
+            if (Session["usuarioLogadoId"] == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+
+        #endregion
+
+
+        #region JQuery
+        public JsonResult ObterPeloNome(string nome)
+        {
+            PacienteRepository pacienteRepository = new PacienteRepository();
+            FuncionarioRepository funcionarioRepository = new FuncionarioRepository();
+            Funcionario funcionario = funcionarioRepository.ObterPeloId(Convert.ToInt32(Session["usuarioLogadoId"]));
+            var resultado = pacienteRepository.ObterPeloNome(nome,funcionario.IdPosto);
+            var result = new { data = resultado };
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+     
+        
+        // GET: Cidade
+        public JsonResult ObterPeloId(int id)
+        {
+            PacienteRepository pacienteRepository = new PacienteRepository();
+            Paciente paciente = pacienteRepository.ObterPeloId(id);
+            var result = new { data = paciente.Nome };
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+
+        #endregion
 
         //Inserir
         #region Inserir
         public ActionResult Cadastro()
         {
+
             if (VerificaLogado() == true)
             {
+
                 //Puxa Info dos estados
                 PostoRepository postoRepository = new PostoRepository();
                 //List<Posto> postos = postoRepository.ObterTodos();
@@ -79,6 +98,7 @@ namespace View.Controllers
         {
             if (VerificaLogado() == true)
             {
+
                 FuncionarioRepository funcionarioRepository = new FuncionarioRepository();
                 Funcionario funcionario = funcionarioRepository.ObterPeloId(Convert.ToInt32(Session["usuarioLogadoID"]));
                 paciente.IdPosto = funcionario.IdPosto;
@@ -93,6 +113,34 @@ namespace View.Controllers
         }
         #endregion
 
+
+        #region Documentos
+        public ActionResult Documento()
+        {
+            return View();
+
+        }
+
+        //obtem o paciente pelo nome
+        //[HttpGet]
+        //public JsonResult ObterPeloNome(string nome)
+        //{
+        //    PacienteRepository pacienteRepository = new PacienteRepository();
+        //    var pessoas = pacienteRepository.ObterPeloNome(nome);
+        //    var result = new { data = pessoas };
+        //    return Json(result, JsonRequestBehavior.AllowGet);
+        //}
+
+        [HttpGet]
+        public JsonResult ObterPeloPaciente(int id)
+        {
+            AtendimentoRepository atendimentoRepository = new AtendimentoRepository();
+            List<Atendimento> lista = atendimentoRepository.ObterTodosPaciente(id);
+            var result = new { data = lista};
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+        #endregion
+        
         //Apagar
         #region Apagar
         public ActionResult Apagar(int id)
@@ -109,7 +157,7 @@ namespace View.Controllers
         }
         #endregion
 
-        //Aletar
+        //Alterar
         #region Alterar
         //public ActionResult Update(int id, int idPosto, string nome, int idade, string cpf, string rne, string passaporte, string telefone, string endereco, string cep, bool sexo, double altura, double peso, string pressao, double temperatura)
         public ActionResult Update(Paciente paciente)

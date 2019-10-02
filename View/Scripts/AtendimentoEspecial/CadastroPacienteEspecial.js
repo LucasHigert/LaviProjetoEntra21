@@ -1,10 +1,51 @@
 ﻿$(function () {
 
+    function Cor($campo, $bool) {
+
+        if ($bool == false) {
+            var campo = document.getElementById($campo);
+            campo.classList.remove("border-success");
+            campo.classList.add('border-danger');
+        } else {
+            var campo = document.getElementById($campo);
+            campo.classList.remove('border-info');
+            campo.classList.remove('border-danger');
+            campo.classList.add('border-success');
+        }
+        VerificaParaSalvar();
+    }
+
+    function VerificaParaSalvar() {
+        $nome = document.getElementById("campo-nome").classList.contains("border-success");
+        $sexo = document.getElementById("campo-sexo").classList.contains('border-success');
+        $idade = document.getElementById("campo-idade").classList.contains('border-success');
+
+        $rne = document.getElementById("campo-rne").classList.contains("border-danger");
+        $cep = document.getElementById("campo-cep").classList.contains("border-danger");
+        $telefone = document.getElementById("campo-telefone").classList.contains("border-danger");
+        $passaporte = document.getElementById("campo-passaporte").classList.contains("border-danger");
+
+
+        $botao = document.getElementById("botao-salvar");
+
+        if (($nome) && ($sexo) && ($idade) &&
+            ($rne == false) && ($cep == false) && ($telefone == false) && ($passaporte == false)) {
+            $botao.classList.remove("disabled");
+        } else {
+            $botao.classList.add("disabled");
+        }
+
+    };
+
+
+    //#region Cep
     $("#campo-cep").focusout(function () {
 
-        buscarCEP();
+        var retorno = buscarCEP();
+        Cor("campo-cep", retorno);
 
     });
+
     function buscarCEP() {
 
         $cep = $("#campo-cep").val().replace('-', '');
@@ -17,16 +58,58 @@
 
 
                 $("#campo-endereco").val($logradouro);
-
+                Cor("campo-endereco", true);
+                return true;
             },
-            error: function (err) {
-            }
+            error: function (err) { Cor("campo-cep", false); Cor("campo-endereco", false); return false; }
 
         });
     }
-});
 
-$(function () {
+    //#endregion
+
+    //#region Validação Campos Obrigatorios
+    $("#campo-nome").focusout(function () {
+        $campo = $("#campo-nome").val();
+        if ($campo.length >= 3) {
+            $resultado = true;
+        } else {
+            $resultado = false;
+        }
+        Cor("campo-nome", $resultado);
+        VerificaParaSalvar();
+    });
+
+    $("#campo-sexo").focusout(function () {
+        $campo = $("#campo-sexo").val();
+        if ($campo != "0") {
+            $resultado = true;
+        } else {
+            $resultado = false;
+        }
+        Cor("campo-sexo", $resultado);
+    });
+
+  
+
+    $("#campo-idade").focusout(function () {
+        $campo = $("#campo-idade").val();
+        if ($campo == "") {
+            $resultado = false;
+        } else if ($campo == "0") {
+            $resultado = false;
+        }
+        else {
+            $resultado = true;
+        }
+
+        Cor("campo-idade", $resultado);
+        VerificaParaSalvar();
+    });
+
+    //#endregion
+
+    //#region CPF
     $("#campo-cpf").focusout(function () {
         $cpf = $("#campo-cpf").val();
         $resultado = validaCPF($cpf);
@@ -42,6 +125,7 @@ $(function () {
         }
 
     });
+
     function validaCPF(cpf) {
         var numeros, digitos, soma, i, resultado, digitos_iguais;
         digitos_iguais = 1;
@@ -73,51 +157,38 @@ $(function () {
         else
             return false;
     }
-});
 
-$(function () {
+    //#endregion
 
-    $("#campo-nome").focusout(function () {
-        $nome = $("#campo-nome").val();
-        if ($nome.length >= 3) {
-            $resultado = true;
-        } else {
+    //#region Validação outros campos
+    $("#campo-rne").focusout(function () {
+        $campo = $("#campo-rne").val();
+        if ($campo.length <= 9) {
             $resultado = false;
+        } else {
+            $resultado = true;
         }
-        Cor("campo-nome", $resultado);
+        Cor("campo-rne", $resultado);
     });
 
-    $("#campo-sexo").focusout(function () {
-        $nome = $("#campo-sexo").val();
-        if ($nome != "0") {
-            $resultado = true;
-        } else {
+    $("#campo-telefone").focusout(function () {
+        $campo = $("#campo-telefone").val();
+        if ($campo.length < 14) {
             $resultado = false;
+        } else {
+            $resultado = true;
         }
-        Cor("campo-sexo", $resultado);
+        Cor("campo-telefone", $resultado);
     });
 
-    $("#campo-idade").focusout(function () {
-        $nome = $("#campo-idade").val();
-        if ($nome != "") {
-            $resultado = true;
-        } else {
+    $("#campo-passaporte").focusout(function () {
+        $campo = $("#campo-passaporte").val();
+        if ($campo.length < 8) {
             $resultado = false;
-        }
-        Cor("campo-idade", $resultado);
-    });
-
-    function Cor($campo, $bool) {
-
-        if ($bool == false) {
-            var campo = document.getElementById($campo);
-            campo.classList.add('border-danger');
         } else {
-            var campo = document.getElementById($campo);
-            campo.classList.remove('border-info');
-            campo.classList.remove('border-danger');
-            campo.classList.add('border-success');
+            $resultado = true;
         }
-
-    }
+        Cor("campo-passaporte", $resultado);
+    });
+    //#endregion
 });

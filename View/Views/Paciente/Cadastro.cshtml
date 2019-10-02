@@ -2,8 +2,14 @@
 @{
     ViewBag.Title = "Cadastro";
 }
-<script src="~/Scripts/Paciente/PacienteSript.js"></script>
-<title>Cadastro de paciente</title>
+
+<head>
+    <script type="text/javascript" src="~/Scripts/Mask/Mascaras.js" ></script>
+    <script type="text/javascript" src="~/Scripts/Mask/jquery.mask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
+    <script src="~/Scripts/Paciente/PacienteSript.js"></script>
+    <title>Cadastro de paciente</title>
+</head>
 <h2 class="h2 mt-5 mb-5">Cadastro de paciente</h2>
 
 <form action="/paciente/inserir" method="post" onsubmit="return submete()">
@@ -36,13 +42,14 @@
     <div class="row mt-2">
 
         <div class="col-4">
-            <label class="font-weight-bold" for="campo-rne">RNE</label>
-            <input type="text" id="campo-rne" name="rne" maxlength="50" class="form-control border-info" />
+            <label class="font-weight-bold" for="campo-idade">Idade<a class="text-danger">*</a></label>
+            <input type="number" id="campo-idade" name="idade" min="0" maxlength="3" class="form-control border-info" required="" />
         </div>
+        
 
         <div class="col-4">
             <label class="font-weight-bold" for="campo-cep">CEP</label>
-            <input type="text" id="campo-cep" name="cep" maxlength="9" class="form-control border-info" />
+            <input type="text" id="campo-cep" placeholder="00000-000" name="cep" maxlength="9" class="form-control border-info" />
         </div>
 
         <div class="col-4">
@@ -52,56 +59,55 @@
 
     </div>
     <!------------------------------>
-    <div class="row">
+    <div class="row mt-2">
 
         <div class="col-3">
-            <label class="font-weight-bold" for="campo-idade">Idade<a class="text-danger">*</a></class></label>
-            <input type="number" id="campo-idade" name="idade" maxlength="3" class="form-control border-info" required />
+            <label class="font-weight-bold" for="campo-cpf">CPF</label>
+            <input type="text" maxlength="15" id="campo-cpf" placeholder="000.000.000-00" name="cpf" class="form-control border-info"/>
         </div>
-
         <div class="col-3">
-            <label class="font-weight-bold" for="campo-telefone">Telefone</label>
-            <input type="tel" id="campo-telefone" name="telefone" maxlength="14" class="form-control border-info" />
+            <label class="font-weight-bold" for="campo-rne">RNE</label>
+            <input type="text" id="campo-rne" placeholder="Ex: A000000-A" name="rne" maxlength="50" class="form-control border-info" />
         </div>
 
         <div class="col-3">
             <label class="font-weight-bold" for="campo-passaporte">Passaporte</label>
-            <input type="text" id="campo-passaporte" name="passaporte" maxlength="50" class="form-control border-info" />
+            <input type="text" id="campo-passaporte" name="passaporte" maxlength="50" class="form-control border-info" placeholder="AA000000" />
         </div>
+
 
         <div class="col-3">
-            <label class="font-weight-bold" for="campo-cpf">CPF</label>
-            <input type="text" maxlength="15" id="campo-cpf" name="cpf" class="form-control border-info"/>
+            <label class="font-weight-bold" for="campo-telefone">Telefone</label>
+            <input type="tel" id="campo-telefone" name="telefone" maxlength="14" class="form-control border-info" placeholder="(00)00000-0000"/>
         </div>
-
     </div>
 
     @if (Session["usuarioLogadoPermissao"].ToString() != "1")
     {
 
-        <div class="row">
+        <div class="row mt-2">
             <div class="col-3">
                 <label class="font-weight-bold" for="campo-pressao">Pressão</label>
-                <input type="text" id="campo-pressao" name="pressao" class="form-control border-info" maxlength="100" />
+                <input type="text" id="campo-pressao" name="pressao" class="form-control border-info" placeholder="000/00" maxlength="100" />
             </div>
 
             <div class="col-3">
                 <label class="font-weight-bold" for="campo-peso">Peso</label>
-                <input type="text" id="campo-peso" name="peso" class="form-control border-info" />
+                <input type="text" id="campo-peso" name="peso" placeholder="000.000" maxlength="7" class="form-control border-info" />
             </div>
 
             <div class="col-3">
                 <label class="font-weight-bold" for="campo-altura">Altura</label>
-                <input type="text" id="campo-altura" name="altura" class="form-control border-info" />
+                <input type="text" id="campo-altura" placeholder="0.00"  maxlength="4" name="altura" class="form-control border-info" />
             </div>
 
             <div class="col-3">
                 <label class="font-weight-bold" for="campo-altura">Temperatura</label>
-                <input type="text" id="campo-temperatura" name="temperatura" class="form-control border-info" />
+                <input type="text" id="campo-temperatura" name="temperatura" class="form-control border-info" placeholder="00.0"/>
             </div>
 
         </div>
     }
-    <button id="botao-salvar" type="submit" class="btn btn-success float-right mt-15"><i class="fa fa-save"></i> Salvar</button>
+    <button id="botao-salvar" type="submit" class="btn btn-success disabled float-right mt-15"><i class="fa fa-save"></i> Salvar</button>
 </form>
 <script src="~/Scripts/Paciente/PacienteSript.js"></script>

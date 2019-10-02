@@ -1,10 +1,59 @@
 ﻿$(function () {
 
+    //Função que irá receber o campo e se este esta preenchido corretamente
+    // e entao mudar a cor da borda
+    function Cor($campo, $bool) {
+
+        if ($bool == false) {
+            var campo = document.getElementById($campo);
+            campo.classList.remove("border-success");
+            campo.classList.add('border-danger');
+        } else {
+            var campo = document.getElementById($campo);
+            campo.classList.remove('border-info');
+            campo.classList.remove('border-danger');
+            campo.classList.add('border-success');
+        }
+        VerificaParaSalvar();
+    }
+
+    function VerificaParaSalvar() {
+        $nome = document.getElementById("campo-nome").classList.contains("border-success");
+        $sexo = document.getElementById("campo-sexo").classList.contains('border-success');
+        $lingua = document.getElementById("campo-lingua").classList.contains('border-success');
+        $idade = document.getElementById("campo-idade").classList.contains('border-success');
+
+        $pressao = document.getElementById("campo-pressao").classList.contains("border-danger");
+        $peso = document.getElementById("campo-peso").classList.contains("border-danger");
+        $altura = document.getElementById("campo-altura").classList.contains("border-danger");
+        $temperatura = document.getElementById("campo-temperatura").classList.contains("border-danger");
+
+        $rne = document.getElementById("campo-rne").classList.contains("border-danger");
+        $cep = document.getElementById("campo-cep").classList.contains("border-danger");
+        $telefone = document.getElementById("campo-telefone").classList.contains("border-danger");
+        $passaporte = document.getElementById("campo-passaporte").classList.contains("border-danger");
+
+
+        $botao = document.getElementById("botao-salvar");
+
+        if (($nome) && ($sexo) && ($lingua) && ($idade) &&
+            ($pressao == false) && ($peso == false) && ($altura == false) && ($temperatura == false) &&
+            ($rne == false) && ($cep == false) && ($telefone == false) && ($passaporte == false)) {
+            $botao.classList.remove("disabled");
+        } else {
+            $botao.classList.add("disabled");
+        }
+
+    };
+
+    //#region Cep
     $("#campo-cep").focusout(function () {
 
-        buscarCEP();
+        var retorno = buscarCEP();
+        Cor("campo-cep", retorno);
 
     });
+
     function buscarCEP() {
 
         $cep = $("#campo-cep").val().replace('-', '');
@@ -17,18 +66,22 @@
 
 
                 $("#campo-endereco").val($logradouro);
-
+                Cor("campo-endereco",true);
+                return true; 
             },
-            error: function (err) {
-            }
+            error: function (err) { Cor("campo-cep",false); Cor("campo-endereco", false); return false; }
 
         });
     }
-});
 
-$(function () {
+    //#endregion
+
+    //#region CPF
     $("#campo-cpf").focusout(function () {
         $cpf = $("#campo-cpf").val();
+        $cpf = $cpf.replace(".", "");
+        $cpf = $cpf.replace(".", "");
+        $cpf = $cpf.replace("-", "");
         $resultado = validaCPF($cpf);
         if ($resultado == false) {
             var campo = document.getElementById('campo-cpf');
@@ -42,6 +95,7 @@ $(function () {
         }
 
     });
+
     function validaCPF(cpf) {
         var numeros, digitos, soma, i, resultado, digitos_iguais;
         digitos_iguais = 1;
@@ -73,23 +127,24 @@ $(function () {
         else
             return false;
     }
-});
 
-$(function () {
+    //#endregion
 
+    //#region Validação Campos Obrigatorios
     $("#campo-nome").focusout(function () {
-        $nome = $("#campo-nome").val();
-        if ($nome.length >= 3) {
+        $campo = $("#campo-nome").val();
+        if ($campo.length >= 3) {
             $resultado = true;
         } else {
             $resultado = false;
         }
         Cor("campo-nome", $resultado);
+        VerificaParaSalvar();
     });
 
     $("#campo-sexo").focusout(function () {
-        $nome = $("#campo-sexo").val();
-        if ($nome != "0") {
+        $campo = $("#campo-sexo").val();
+        if ($campo != "0") {
             $resultado = true;
         } else {
             $resultado = false;
@@ -98,8 +153,8 @@ $(function () {
     });
 
     $("#campo-lingua").focusout(function () {
-        $nome = $("#campo-lingua").val();
-        if ($nome != "0") {
+        $campo = $("#campo-lingua").val();
+        if ($campo != "0") {
             $resultado = true;
         } else {
             $resultado = false;
@@ -108,18 +163,26 @@ $(function () {
     });
 
     $("#campo-idade").focusout(function () {
-        $nome = $("#campo-idade").val();
-        if ($nome != "") {
-            $resultado = true;
-        } else {
+        $campo = $("#campo-idade").val();
+        if ($campo == "") {
+            $resultado = false;
+        } else if ($campo == "0") {
             $resultado = false;
         }
+        else {
+            $resultado = true;
+        }
+
         Cor("campo-idade", $resultado);
+        VerificaParaSalvar();
     });
 
+    //#endregion
+
+    //#region Validações outros campos
     $("#campo-pressao").focusout(function () {
         $nome = $("#campo-pressao").val();
-        if ($nome.length == 5) {
+        if ($nome.length == 6) {
             $resultado = true;
         } else {
             $resultado = false;
@@ -127,23 +190,10 @@ $(function () {
         Cor("campo-pressao", $resultado);
     });
 
-    function Cor($campo, $bool) {
-
-    if ($bool == false) {
-        var campo = document.getElementById($campo);
-        campo.classList.add('border-danger');
-    } else {
-        var campo = document.getElementById($campo);
-        campo.classList.remove('border-info');
-        campo.classList.remove('border-danger');
-        campo.classList.add('border-success');
-    }
-
-    }
 
     $("#campo-peso").focusout(function () {
         $nome = $("#campo-peso").val();
-        if ($nome > 1) {
+        if ($nome > 7) {
             $resultado = true;
         } else {
             $resultado = false;
@@ -153,7 +203,7 @@ $(function () {
 
     $("#campo-altura").focusout(function () {
         $nome = $("#campo-altura").val();
-        if ($nome.length >= 3) {
+        if ($nome.length >= 4) {
             $resultado = true;
         } else {
             $resultado = false;
@@ -163,11 +213,42 @@ $(function () {
 
     $("#campo-temperatura").focusout(function () {
         $nome = $("#campo-temperatura").val();
-        if ($nome.length >= 2) {
+        if ($nome.length >= 4) {
             $resultado = true;
         } else {
             $resultado = false;
         }
         Cor("campo-temperatura", $resultado);
     });
+
+    $("#campo-rne").focusout(function () {
+        $campo = $("#campo-rne").val();
+        if ($campo.length < 9) {
+            $resultado = false;
+        } else {
+            $resultado = true;
+        }
+        Cor("campo-rne", $resultado);
+    });
+
+    $("#campo-telefone").focusout(function () {
+        $campo = $("#campo-telefone").val();
+        if ($campo.length < 14) {
+            $resultado = false;
+        } else {
+            $resultado = true;
+        }
+        Cor("campo-telefone", $resultado);
+    });
+
+    $("#campo-passaporte").focusout(function () {
+        $campo = $("#campo-telefone").val();
+        if ($campo.length < 8) {
+            $resultado = false;
+        } else {
+            $resultado = true;
+        }
+        Cor("campo-passaporte", $resultado);
+    });
+    //#endregion
 });

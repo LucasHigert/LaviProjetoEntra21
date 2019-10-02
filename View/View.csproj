@@ -300,6 +300,15 @@
     <Content Include="Content\Imagens\CorpoVermelho\pescoço vermelho.png" />
     <Content Include="Content\Imagens\CorpoVermelho\pé direito vermelho.png" />
     <Content Include="Content\Imagens\CorpoVermelho\pé esquerdo veremelho.png" />
+    <Content Include="Content\Imagens\Corpo\b-adult-masc.png" />
+    <Content Include="Content\Imagens\Corpo\masc-adult-arms.png" />
+    <Content Include="Content\Imagens\Corpo\masc-adult-back.png" />
+    <Content Include="Content\Imagens\Corpo\masc-adult-foot.png" />
+    <Content Include="Content\Imagens\Corpo\masc-adult-hands.png" />
+    <Content Include="Content\Imagens\Corpo\masc-adult-head.png" />
+    <Content Include="Content\Imagens\Corpo\masc-adult-hip.png" />
+    <Content Include="Content\Imagens\Corpo\masc-adult-leg.png" />
+    <Content Include="Content\Imagens\Corpo\masc-adult-neck.png" />
     <Content Include="Content\Imagens\Encaminhamento\farmácia1.jpg" />
     <Content Include="Content\Imagens\Encaminhamento\POSTO.jpg" />
     <Content Include="Content\Imagens\Home\PessoasNaMesa.jpg" />
@@ -319,6 +328,7 @@
     <Content Include="Content\Imagens\icones\Logo Lavi sem nome .png" />
     <Content Include="Content\Imagens\Logo Lavi  Preto.png" />
     <Content Include="Content\Imagens\Logo Lavi.png" />
+    <Content Include="Content\masc-adult-hands.png" />
     <Content Include="Content\materialize\css\materialize.css" />
     <Content Include="Content\materialize\css\materialize.min.css" />
     <Content Include="Content\materialize\font\material-design-icons\LICENSE.txt" />
@@ -328,6 +338,7 @@
     <Content Include="Scripts\AtendimentoEspecial\CadastroPacienteEspecial.js" />
     <Content Include="Scripts\Atendimento\atendimento-paciente.js" />
     <Content Include="Scripts\Atendimento\CadastroAtendimento.js" />
+    <Content Include="Scripts\Corpo\Corpo.css" />
     <Content Include="Scripts\Encaminhamento\TesteEncaminhamento.css" />
     <Content Include="Scripts\Encaminhamento\TesteEncaminhamento.js" />
     <Content Include="fonts\fontawesome-webfont.svg" />

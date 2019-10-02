@@ -206,7 +206,7 @@ a.gd-remake {
         margin: 0px 0 0 -2px;
     }
 
-.masc-adult-foot-left {
+.masc-adult-foot {
     width: 47px;
     height: 150px;
     top: 240px;
@@ -215,7 +215,7 @@ a.gd-remake {
     z-index: 30;
 }
 
-    .masc-adult-foot-left img {
+    .masc-adult-foot img {
         margin: 1px 0 0 0px;
     }
 }

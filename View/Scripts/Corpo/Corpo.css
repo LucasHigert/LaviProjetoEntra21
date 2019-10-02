@@ -121,9 +121,9 @@ a.gd-remake {
     z-index: 30;
 }
 
-    .masc-adult-head img {
-        margin: 9px 0 0 8px;
-    }
+.masc-adult-head img {
+    margin: 9px 0 0 8px;
+}
 
 .masc-adult-neck {
     width: 39px;

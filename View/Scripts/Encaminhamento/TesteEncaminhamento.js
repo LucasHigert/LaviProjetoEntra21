@@ -35,6 +35,8 @@ function duplicarCampos() {
     for (i = 0; i < camposClonados.length; i++) {
         camposClonados[i].value = '';
     }
+    var node1 = document.getElementById('destino').lastChild;
+    node1.classList.add("mt-4");
 }
 
 function removerCampos(id) {

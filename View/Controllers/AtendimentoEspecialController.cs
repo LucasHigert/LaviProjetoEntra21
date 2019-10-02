@@ -197,7 +197,7 @@ namespace View.Controllers
             PacienteRepository pacienteRepository = new PacienteRepository();
             FuncionarioRepository funcionarioRepository = new FuncionarioRepository();
             Funcionario funcionario = funcionarioRepository.ObterPeloId(Convert.ToInt32(Session["usuarioLogadoId"]));
-            var pessoas = pacienteRepository.ObterPeloNome(nome,funcionario.IdPosto);
+            var pessoas = pacienteRepository.ObterEstrangeiroNome(nome,funcionario.IdPosto);
             var result = new { data = pessoas };
             return Json(result, JsonRequestBehavior.AllowGet);
         }

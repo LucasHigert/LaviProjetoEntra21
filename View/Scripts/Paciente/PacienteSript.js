@@ -79,6 +79,9 @@
     //#region CPF
     $("#campo-cpf").focusout(function () {
         $cpf = $("#campo-cpf").val();
+        $cpf = $cpf.replace(".", "");
+        $cpf = $cpf.replace(".", "");
+        $cpf = $cpf.replace("-", "");
         $resultado = validaCPF($cpf);
         if ($resultado == false) {
             var campo = document.getElementById('campo-cpf');
@@ -220,7 +223,7 @@
 
     $("#campo-rne").focusout(function () {
         $campo = $("#campo-rne").val();
-        if ($campo.length <= 9) {
+        if ($campo.length < 9) {
             $resultado = false;
         } else {
             $resultado = true;

@@ -61,25 +61,28 @@
         </div>
         <div class="col-3">
             <label class="font-weight-bold" for="campo-posto">Lingua<a class="text-danger">*</a></label>
-            <select class="form-control border-info" name="lingua" required>
-                @if (ViewBag.Paciente.Lingua == 0)
+            <select id="campo-lingua" class="form-control border-info" name="lingua" required>
+                @if (ViewBag.Paciente.Lingua == 1)
                 {
-                    <option value="0" selected="selected">Português Brasileiro</option>
-                    <option value="1">Haitiano</option>
-                    <option value="2">Francês</option>
+                    <option value="0" hidden="hidden">Selecione o idioma</option>
+                    <option value="1" selected="selected">Português Brasileiro</option>
+                    <option value="2">Haitiano</option>
+                    <option value="3">Francês</option>
 
                 }
-                else if (ViewBag.Paciente.Lingua == 1)
+                else if (ViewBag.Paciente.Lingua == 2)
                 {
-                    <option value="0">Português Brasileiro</option>
-                    <option value="1" selected="selected">Haitiano</option>
-                    <option value="2">Francês</option>
+                    <option value="0" hidden="hidden">Selecione o idioma</option>
+                    <option value="1">Português Brasileiro</option>
+                    <option value="2" selected="selected">Haitiano</option>
+                    <option value="3">Francês</option>
                 }
                 else
                 {
-                    <option value="0">Português Brasileiro</option>
-                    <option value="1">Haitiano</option>
-                    <option value="2" selected="selected">Francês</option>
+                    <option value="0" hidden="hidden">Selecione o idioma</option>
+                    <option value="1">Português Brasileiro</option>
+                    <option value="2">Haitiano</option>
+                    <option value="3" selected="selected">Francês</option>
                 }
             </select>
         </div>
@@ -159,9 +162,9 @@
 
         </div>
     }
-    <button type="submit" class="btn btn-success float-right mt-20"><i class="fa fa-save"></i> Salvar</button>
+    <button type="submit" class="btn btn-success disabled float-right mt-20"><i class="fa fa-save"></i> Salvar</button>
 </form>
 
-@*<script src="~/Scripts/Paciente/PacienteSript.js"></script>*@
+<script src="~/Scripts/Paciente/PacienteSript.js"></script>
 
 

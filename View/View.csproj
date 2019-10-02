@@ -338,6 +338,7 @@
     <Content Include="Scripts\AtendimentoEspecial\CadastroPacienteEspecial.js" />
     <Content Include="Scripts\Atendimento\atendimento-paciente.js" />
     <Content Include="Scripts\Atendimento\CadastroAtendimento.js" />
+    <Content Include="Scripts\Corpo\Corpo.css" />
     <Content Include="Scripts\Encaminhamento\TesteEncaminhamento.css" />
     <Content Include="Scripts\Encaminhamento\TesteEncaminhamento.js" />
     <Content Include="fonts\fontawesome-webfont.svg" />

@@ -1,0 +1,221 @@
+﻿body {
+}
+.gd-ondeDoi h3 {
+    color: #98b239;
+    text-transform: uppercase;
+    margin-top: 80px;
+    margin-bottom: 8px;
+    font-family: HelvetivaNeueLTStd-97Black;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.gd-ondeDoi-result div.gd-bodies {
+    overflow: hidden;
+}
+
+.gd-bodies .gd-bodyImg {
+    position: relative;
+    display: block;
+    width: 140px;
+    height: 270px;
+    border: 2px solid #98b239;
+    float: left;
+    margin-right: 22px;
+    transition: all 0.15s linear;
+}
+
+    .gd-bodies .gd-bodyImg:hover {
+        background: #d1dca6;
+    }
+
+.floatingThing {
+    height: 60px;
+    width: 6px;
+    background: #98b239;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -30px;
+}
+
+.gd-bodyParts .gd-bodyImg {
+    position: relative;
+    float: left;
+}
+
+.gd-bodyParts .gd-sep {
+    height: 201px;
+    width: 1px;
+    background: #98b239;
+    margin: 35px 0 35px 20px;
+    float: left;
+}
+
+.gd-bpart {
+    position: absolute;
+    box-sizing: border-box;
+    transition: all 0.3s linear;
+    opacity: 0;
+}
+
+    .gd-bpart:hover, .gd-bpart.active {
+        opacity: 1;
+    }
+
+.gd-bodyType {
+    float: left;
+}
+
+.gd-diseases {
+    padding: 30px;
+    float: left;
+    width: 290px;
+}
+
+a.gd-remake {
+    display: block;
+    float: left;
+    height: 20px;
+    padding: 0 0 0 20px;
+    color: #98b239;
+    font-weight: bold;
+    line-height: 20px;
+    text-decoration: none;
+    font-size: 14px;
+    margin-top: 15px;
+    background: transparent url(../Images/guiadoenca/refazer-icon.png) no-repeat top left;
+}
+
+.gd-selectedPart {
+    font-size: 20px;
+    font-weight: bold;
+    color: #797979;
+    margin: 3px 0 10px 0;
+    display: block;
+}
+
+.gd-diseases a {
+    display: block;
+    text-decoration: none;
+    color: #797979;
+    font-size: 15px;
+    line-height: 22px;
+}
+
+    .gd-diseases a:hover {
+        text-decoration: underline;
+    }
+
+    .gd-diseases a.gd-seeAll {
+        color: #98b239;
+    }
+
+/*COR DO CORPO*/
+
+.masc-adult-head {
+    width: 39px;
+    height: 40px;
+    top: 6px;
+    left: 46px;
+    z-index: 30;
+}
+
+    .masc-adult-head img {
+        margin: 9px 0 0 8px;
+    }
+
+.masc-adult-neck {
+    width: 39px;
+    height: 20px;
+    top: 35px;
+    left: 50px;
+    z-index: 60;
+}
+
+.masc-adult-hands {
+    width: 72px;
+    height: 105px;
+    top: 135px;
+    top: 135px;
+    left: 33px;
+    z-index: 10;
+}
+
+    .masc-adult-hands img {
+        margin: 0px 0 0 3px;
+    }
+
+.masc-adult-arms {
+    width: 72px;
+    height: 105px;
+    top: 55px;
+    left: 33px;
+    z-index: 10;
+}
+
+    .masc-adult-arms img {
+        margin: 1px 0 0 3px;
+    }
+
+.masc-adult-chest {
+    width: 41px;
+    height: 29px;
+    top: 58px;
+    left: 49px;
+    z-index: 40;
+}
+
+    .masc-adult-chest img {
+        margin: -5px 0 0 -1px;
+    }
+
+.masc-adult-hip {
+    width: 47px;
+    height: 23px;
+    top: 125px;
+    left: 46px;
+    z-index: 50;
+}
+
+    .masc-adult-hip img {
+        margin: -1px 0 0 1px;
+    }
+
+.masc-adult-leg {
+    width: 47px;
+    height: 123px;
+    top: 139px;
+    left: 46px;
+    z-index: 30;
+}
+
+    .masc-adult-leg img {
+        margin: 1px 0 0 0px;
+    }
+
+.masc-adult-back {
+    width: 43px;
+    height: 77px;
+    top: 50px;
+    left: 48px;
+    z-index: 30;
+}
+
+    .masc-adult-back img {
+        margin: 0px 0 0 -2px;
+    }
+
+.masc-adult-foot-left {
+    width: 47px;
+    height: 150px;
+    top: 240px;
+    top: 240px;
+    left: 46px;
+    z-index: 30;
+}
+
+    .masc-adult-foot-left img {
+        margin: 1px 0 0 0px;
+    }
+}

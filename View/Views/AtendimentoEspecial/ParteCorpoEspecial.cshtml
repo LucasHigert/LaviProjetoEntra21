@@ -16,7 +16,7 @@
 
     <link rel="stylesheet" href="~/Content/DataTables/css/jquery.dataTables.min.css" />
 
-    <link href="~/Scripts/AtendimentoEspecial/BotoesCorpoHover.css" rel="stylesheet" />
+    <link href="~/Scripts/Corpo/Corpo.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -41,7 +41,60 @@
         </div>
         <!--fim do texto informativo-->
 
-        <div class="row">
+        <!--CORPO-->
+        <div class="container" style="margin-left: 450px">
+            <div class="fluidContent">
+                <div class="gd-ondeDoi-result">
+                    <div class="gd-bodyParts">
+                        <div class="gd-bodyType gd-adult-masc">
+                            <div class="gd-bodyImg">
+                                <img src="~/Content/Imagens/Corpo/b-adult-masc.png">
+                                <a href="javascript:{};" class="gd-bpart masc-adult-head" data-toggle="modal" data-target="#modal-sintoma" data-id="1" title="@View.Resources.Resource.Cabeca">
+                                    <img src="~/Content/Imagens/Corpo/masc-adult-head.png">
+                                </a>
+                                <a href="javascript:{};" class="gd-bpart masc-adult-neck" data-toggle="modal" data-target="#modal-sintoma" data-id="2" title="@View.Resources.Resource.Pescoco">
+                                    <img src="~/Content/Imagens/Corpo/masc-adult-neck.png">
+                                </a>
+                                <a href="javascript:{};" class="gd-bpart masc-adult-arms" data-toggle="modal" data-target="#modal-sintoma" data-id="4" title="@View.Resources.Resource.Braco">
+                                    <img src="~/Content/Imagens/Corpo/masc-adult-arms-left.png">
+                                </a>
+                                <a href="javascript:{};" class="gd-bpart masc-adult-arms" data-toggle="modal" data-target="#modal-sintoma" data-id="4" title="@View.Resources.Resource.Braco">
+                                    <img src="~/Content/Imagens/Corpo/masc-adult-arms-right.png">
+                                </a>
+                                <a href="javascript:{};" class="gd-bpart masc-adult-hands" data-toggle="modal" data-target="#modal-sintoma" data-id="5" title="@View.Resources.Resource.Mao">
+                                    <img src="~/Content/Imagens/Corpo/masc-adult-hand-left (2).png" />
+                                </a>
+                                <a href="javascript:{};" class="gd-bpart masc-adult-hands" data-toggle="modal" data-target="#modal-sintoma" data-id="5" title="@View.Resources.Resource.Mao">
+                                    <img src="~/Content/Imagens/Corpo/masc-adult-hand-right.png" />
+                                </a>
+                                <a href="javascript:{};" class="gd-bpart masc-adult-back" data-toggle="modal" data-target="#modal-sintoma" data-id="3" title="@View.Resources.Resource.Tronco">
+                                    <img src="~/Content/Imagens/Corpo/masc-adult-back.png">
+                                </a>
+                                <a href="javascript:{};" class="gd-bpart masc-adult-hip" data-toggle="modal" data-target="#modal-sintoma" data-id="6" title="@View.Resources.Resource.Genital">
+                                    <img src="~/Content/Imagens/Corpo/masc-adult-hip.png">
+                                </a>
+                                <a href="javascript:{};" class="gd-bpart masc-adult-leg" data-toggle="modal" data-target="#modal-sintoma" data-id="7" title="@View.Resources.Resource.Perna">
+                                    <img src="~/Content/Imagens/Corpo/masc-adult-leg-left (2).png">
+                                </a>
+                                <a href="javascript:{};" class="gd-bpart masc-adult-leg" data-toggle="modal" data-target="#modal-sintoma" data-id="7" title="@View.Resources.Resource.Perna">
+                                    <img src="~/Content/Imagens/Corpo/masc-adult-leg-right.png">
+                                </a>
+                                <a href="javascript:{};" class="gd-bpart masc-adult-foot" data-toggle="modal" data-target="#modal-sintoma" data-id="8" title="@View.Resources.Resource.Pe">
+                                    <img src="~/Content/Imagens/Corpo/masc-adult-foot-left (2).png" />
+                                </a>
+                                <a href="javascript:{};" class="gd-bpart masc-adult-foot" data-toggle="modal" data-target="#modal-sintoma" data-id="8" title="@View.Resources.Resource.Pe">
+                                    <img src="~/Content/Imagens/Corpo/masc-adult-foot-left.png" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--FIM CORPO-->
+
+        @*<div class="row">
             <div class="row" style="margin-left: 420px">
                 <div data-toggle="tooltip" data-placement="top" title="@View.Resources.Resource.Cabeca">
                     <a class="botao" data-toggle="modal" data-target="#modal-sintoma" data-id="1"><img class="image" src="~/Content/Imagens/Corpos/cabeça.png" /></a>
@@ -101,7 +154,7 @@
                 </thead>
 
             </table>
-        </div>
+        </div>*@
 
         <a href="/atendimentoespecial/finalizacadastro?id=@ViewBag.Atendimento.Id" class="btn btn-info float-right text-white mt-3 mb-5">@View.Resources.Resource.Proximo <i class="fa fa-forward "></i> </a>
 

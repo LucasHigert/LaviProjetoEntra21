@@ -24,15 +24,29 @@
             paging: false,
             columns: [
                 { 'data': 'DataAtendimento' },
-                { 'data': 'depois tem q mudar' },
+                {'data':'Nome'},
+           
                 {
                     render: function (data, type, row) {
-                        return '<a class="btn btn-info" href="/atendimentoespecial/InserirAtendimento?idPaciente=' + row.Id + '"><i class="fa fa-user"></i></a>'
+
+                        return '<a class="botao-atendimento btn btn-info" id=' + row.Id + '"\   data-id="' + row.Id + '"\
+                    data-nome="' + row.Nome +'"><i class="fa fa-user"></i></a>'
                     }
                 }
-
             ]
-        });    }
+        });
+    }
+    
+    $("#tabelaAtendimento").on("click", ".botao-atendimento", function () {
+        $('#documentoFormularioModal').modal('show');
+               $id = $(this).data("id");
+        $nome = $(this).data("nome");
+        
+        $("#campo-cidade").val($id);
+        $("#campo-posto").val($nome);
+
+
+    })
     $("#botao").on("click", function () {
         $idPaciente = $("#campo-id").val();
         AtualizaTabela();

@@ -554,6 +554,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\Paciente\BuscaDocumentoModal.js" />
     <Content Include="Scripts\Paciente\BuscaPacienteDocScript.js" />
+    <Content Include="Scripts\Paciente\Imprimir.js" />
     <Content Include="Scripts\Paciente\PacienteSript.js" />
     <Content Include="Scripts\ParteCorpoSintoma.js" />
     <Content Include="Scripts\ParteCorpo\ParteCorpo.css" />

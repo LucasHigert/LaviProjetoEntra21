@@ -113,6 +113,10 @@ namespace View.Controllers
                 atendimento.IdFuncionario = funcionario.Id;
                 atendimento.IdPosto = funcionario.IdPosto;
                 atendimento.DataAtendimento = DateTime.Now;
+                if(atendimento.Observacao == null)
+                {
+                    atendimento.Observacao = " ";
+                }
 
                 if (Session["usuarioLogadoPermissao"].ToString() == "1")
                 {

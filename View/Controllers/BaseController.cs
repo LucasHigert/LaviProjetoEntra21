@@ -15,7 +15,7 @@ namespace View.Controllers
             if (Session["usuarioLogadoId"] == null)
             {
                 UrlHelper urlHelper = new UrlHelper(filterContext.RequestContext);
-                filterContext.Result = new RedirectResult(urlHelper.Action("Index","Login"));
+                filterContext.Result = new RedirectResult(urlHelper.Action("Index","Home"));
 
             }
 

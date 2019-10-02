@@ -311,6 +311,8 @@
     <Content Include="Content\Imagens\Home\Team\Heloisa.png" />
     <Content Include="Content\Imagens\Home\Team\Lucas.png" />
     <Content Include="Content\Imagens\Home\Team\Mirian.png" />
+    <Content Include="Content\Imagens\Home\Team\Herculano.png" />
+    <Content Include="Content\Imagens\Home\Team\Manoela.png" />
     <Content Include="Content\Imagens\icones\favicon %281%29.ico" />
     <Content Include="Content\Imagens\icones\favicon %282%29.ico" />
     <Content Include="Content\Imagens\icones\favicon.ico" />
@@ -323,7 +325,9 @@
     <Content Include="Content\materialize\font\material-design-icons\Material-Design-Icons.svg" />
     <Content Include="Content\replaces.css" />
     <Content Include="Scripts\AtendimentoEspecial\BotoesCorpoHover.css" />
+    <Content Include="Scripts\AtendimentoEspecial\CadastroPacienteEspecial.js" />
     <Content Include="Scripts\Atendimento\atendimento-paciente.js" />
+    <Content Include="Scripts\Atendimento\CadastroAtendimento.js" />
     <Content Include="Scripts\Encaminhamento\TesteEncaminhamento.css" />
     <Content Include="Scripts\Encaminhamento\TesteEncaminhamento.js" />
     <Content Include="fonts\fontawesome-webfont.svg" />
@@ -5006,6 +5010,7 @@
     <Content Include="Scripts\Tema\global\vendor\webui-popover\webui-popover.min.css" />
     <Content Include="Scripts\Tema\global\vendor\x-editable\bootstrap-editable.js" />
     <Content Include="Scripts\Tema\global\vendor\x-editable\bootstrap-editable.min.js" />
+    <Content Include="Scripts\Tema\TemaPersonalizado.css" />
     <Content Include="Scripts\umd\popper-utils.js" />
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />

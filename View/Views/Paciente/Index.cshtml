@@ -24,9 +24,9 @@
     <tbody>
         @foreach (Model.Paciente paciente in ViewBag.Pacientes)
         {
-            if (paciente.Lingua != 0)
+            if (paciente.Lingua == 0)
             {
-                <tr class="bg-indigo-500">
+                <tr class="bg-indigo-400 text-dark">
                     <td hidden>@paciente.Id</td>
                     <td>@paciente.Nome</td>
                     <td>@paciente.Posto.Nome</td>
@@ -36,7 +36,18 @@
                     </td>
                 </tr>
             }
-
+            else
+            {
+                <tr>
+                    <td hidden>@paciente.Id</td>
+                    <td>@paciente.Nome</td>
+                    <td>@paciente.Posto.Nome</td>
+                    <td>
+                        <a class="btn btn-info ml-10" href="/paciente/alterar?id=@paciente.Id"><i class="fa fa-edit"></i> Alterar</a>
+                        <a class="btn btn-danger ml-10" href="/paciente/apagar?id=@paciente.Id"><i class="fa fa-trash"></i> Apagar</a>
+                    </td>
+                </tr>
+            }
         }
-    </tbody>
-</table>
+        </tbody>
+    </table>

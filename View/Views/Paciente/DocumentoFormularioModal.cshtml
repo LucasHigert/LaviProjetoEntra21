@@ -1,7 +1,7 @@
 ﻿<head>
     <link rel="stylesheet" href="~/Scripts/Encaminhamento/TesteEncaminhamento.css" />
 </head>
-                         @*'<a class="btn btn-info" href="/atendimentoespecial/InserirAtendimento?idPaciente=' + row.Id + '"><i class="fa fa-user"></i></a>'*@
+@*'<a class="btn btn-info" href="/atendimentoespecial/InserirAtendimento?idPaciente=' + row.Id + '"><i class="fa fa-user"></i></a>'*@
 
 <div id="documentoFormularioModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 
@@ -14,10 +14,8 @@
             <div class="modal-header">
 
                 <div class="col-5">
-                    <h4 class="modal-title" id="gridSystemModalLabel">Documentos</h4>
+                    <h4 class="modal-title" id="gridSystemModalLabel">Documento </h4>
                 </div>
-
-               
             </div>
             <div id="printThis4">
                 <!-- Modal Body -->
@@ -28,28 +26,19 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="body-message">
-                                            <div>
-                                                <span id="hospital-encaminhar-texto-redirecionar" class="font-weight-bold"></span>
-                                            </div>
+                                            <h3 class="text-dark">Paciente</h3>
+
                                             <div>
                                                 <div class="row mt-10">
                                                     <div class="col-6">
-                                                        Nome 
+                                                        Cidade
                                                     </div>
                                                     <div class="col-6">
-                                                        Endereço do Hospital
+                                                        Posto
                                                     </div>
                                                 </div>
                                             </div>
                                             <div>
-                                                <div class="row">
-                                                    <div class="col-6">
-                                                        <span id="hospital-nome" class="text-danger font-weight-bold"></span>
-                                                    </div>
-                                                    <div class="col-6">
-                                                        <span id="hospital-endereco" class="text-danger font-weight-bold"></span>
-                                                    </div>
-                                                </div>
                                                 <div class="row">
                                                     <div class="col-6">
                                                         <input type="text" required="" class="form-control" />
@@ -61,19 +50,11 @@
                                                 <div>
                                                     <div class="row mt-10">
                                                         <div class="col-6">
-                                                            Telefone
+                                                            Nome
                                                         </div>
                                                         <div class="col-6">
-                                                            Setor
+                                                            Língua
                                                         </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-6">
-                                                        <span id="hospital-telefone" class="text-danger font-weight-bold"></span>
-                                                    </div>
-                                                    <div class="col-6">
-                                                        <span id="hospital-setor" class="text-danger font-weight-bold"></span>
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -87,44 +68,122 @@
 
                                                 <div class="row mt-10">
                                                     <div class="col-6">
-                                                        Terminal
+                                                        Idade
                                                     </div>
                                                     <div class="col-6">
-                                                        Ônibus
+                                                        Sexo
                                                     </div>
                                                 </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <input type="text" required="" class="form-control" />
+                                                    </div>
+                                                    <div class="col">
+                                                        <input type="text" required="" class="form-control" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="row mt-10">
+                                                    <div class="col-6">
+                                                        CPF
+                                                    </div>
+                                                    <div class="col-6">
+                                                        RNE
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <input type="text" required="" class="form-control" />
+                                                    </div>
+                                                    <div class="col">
+                                                        <input type="text" required="" class="form-control" />
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-10">
+                                                    <div class="col-6">
+                                                        CEP
+                                                    </div>
+                                                    <div class="col-6">
+                                                        Endereço
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <input type="text" required="" class="form-control" />
+                                                    </div>
+                                                    <div class="col">
+                                                        <input type="text" required="" class="form-control" />
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-10">
+                                                    <div class="col-6">
+                                                        Passaporte
+                                                    </div>
+                                                    <div class="col-6">
+                                                        Telefone
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <input type="text" required="" class="form-control" />
+                                                    </div>
+                                                    <div class="col">
+                                                        <input type="text" required="" class="form-control" />
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-10">
+                                                    <div class="col-6">
+                                                        Pressão
+                                                    </div>
+                                                    <div class="col-6">
+                                                        Peso
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <input type="text" required="" class="form-control" />
+                                                    </div>
+                                                    <div class="col">
+                                                        <input type="text" required="" class="form-control" />
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-10">
+                                                    <div class="col-6">
+                                                        Altura
+                                                    </div>
+                                                    <div class="col-6">
+                                                        Temperatura
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <input type="text" required="" class="form-control" />
+                                                    </div>
+                                                    <div class="col">
+                                                        <input type="text" required="" class="form-control" />
+                                                    </div>
+                                                </div>
+                                                <table id="tabeladoc" class="mt-4 table table-striped">
+                                                    <thead class="bg-dark text-white">
+                                                        <tr>
+                                                            <td>Partes do corpo</td>
+                                                            <td>Sintomas</td>
+                                                        </tr>
+                                                    </thead>
+                                                </table>
                                             </div>
-                                            <div class="row">
-                                                <div class="col-6">
-                                                    <span id="hospital-terminal" class="text-danger font-weight-bold"></span>
-                                                </div>
-                                                <div class="col-6">
-                                                    <span id="hospital-onibus" class="text-danger font-weight-bold"></span>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col">
-                                                    <input type="text" required="" class="form-control" />
-                                                </div>
-                                                <div class="col">
-                                                    <input type="text" required="" class="form-control" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="mt-10">
-                                            <span id="hospital-fim" class="font-weight-bold"></span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <!-- Modal Footer -->
+                    <div class="modal-footer col-12">
+                        <button id="btnPrint4" type="button" class="btn btn-info float-right">Imprimir</button>
+                        @*<button class="btn float-right" data-dismiss="modal" aria-hidden="true">Fechar</button>*@
+                    </div>
                 </div>
-            </div>
-            <!-- Modal Footer -->
-            <div class="modal-footer col-12">
-                <button id="btnPrint4" type="button" class="btn btn-info float-right">Imprimir</button>
-                @*<button class="btn float-right" data-dismiss="modal" aria-hidden="true">Fechar</button>*@
             </div>
         </div>
     </div>

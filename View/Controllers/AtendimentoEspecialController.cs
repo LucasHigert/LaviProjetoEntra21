@@ -233,7 +233,7 @@ namespace View.Controllers
                 atendimentoRepository.Inserir(atendimento);
                 if (Session["usuarioLogadoPermissao"].ToString() == "1")
                 {
-                    return RedirectToAction("FinalizaCadastro");
+                    return Redirect("/atendimentoespecial/FinalizaCadastro?id=" + idPaciente);
                 }
                 else
                 {
@@ -293,7 +293,7 @@ namespace View.Controllers
 
                 if (Session["usuarioLogadoPermissao"].ToString() == "1")
                 {
-                    return RedirectToAction("FinalizaCadastro");
+                    return Redirect("/atendimentoespecial/FinalizaCadastro?id=" + paciente.Id);
                 }
                 else
                 {

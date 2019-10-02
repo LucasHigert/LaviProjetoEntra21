@@ -431,38 +431,66 @@ namespace Repository
             parteCorpo.Add(new ParteCorpo()
             {
                 Id = 3,
-                Nome = "Tronco",
-                RegistroAtivo = true
-            });          
-            parteCorpo.Add(new ParteCorpo()
-            {
-                Id = 4, 
-                Nome = "Braço",
+                Nome = "Barriga",
                 RegistroAtivo = true
             });
             parteCorpo.Add(new ParteCorpo()
             {
-                Id = 5,
-                Nome = "Mão",
+                Id = 4,
+                Nome = "Braço Direito",
                 RegistroAtivo = true
             });
 
             parteCorpo.Add(new ParteCorpo()
             {
-                Id = 6,
-                Nome = "Genital",
+                Id = 5, 
+                Nome = "Braço Esquerdo",
                 RegistroAtivo = true
             });
             parteCorpo.Add(new ParteCorpo()
             {
+                Id = 6,
+                Nome = "Mão Direita",
+                RegistroAtivo = true
+            });
+
+            parteCorpo.Add(new ParteCorpo()
+            {
                 Id = 7,
-                Nome = "Perna",
+                Nome = "Genitalia",
                 RegistroAtivo = true
             });
             parteCorpo.Add(new ParteCorpo()
             {
                 Id = 8,
-                Nome = "Pé",
+                Nome = "Mão Esquerda",
+                RegistroAtivo = true
+            });
+            parteCorpo.Add(new ParteCorpo()
+            {
+                Id = 9,
+                Nome = "Perna Direita",
+                RegistroAtivo = true
+            });
+
+            parteCorpo.Add(new ParteCorpo()
+            {
+                Id = 10,
+                Nome = "Perna Esquerda",
+                RegistroAtivo = true
+            });
+
+            parteCorpo.Add(new ParteCorpo()
+            {
+                Id = 11,
+                Nome = "Pé Direito",
+                RegistroAtivo = true
+            });
+
+            parteCorpo.Add(new ParteCorpo()
+            {
+                Id = 12,
+                Nome = "Pé Esquerdo",
                 RegistroAtivo = true
             });
 
@@ -941,7 +969,72 @@ namespace Repository
                 TraducaoFrances = "Engourdissement",
                 RegistroAtivo = true
 
-            });           
+            });
+            sintomas.Add(new Sintoma()
+            {
+                IdParteCorpo = 5,
+                Nome = "Dor no osso",
+                TraducaoCriolo = "doulè nan zo yo",
+                TraducaoFrances = "douleur osseuse",
+                RegistroAtivo = true
+            });
+            sintomas.Add(new Sintoma()
+            {
+                IdParteCorpo = 5,
+                Nome = "Alergia",
+                TraducaoCriolo = "alèji",
+                TraducaoFrances = "allergie",
+                RegistroAtivo = true
+            });
+            sintomas.Add(new Sintoma()
+            {
+                IdParteCorpo = 5,
+                Nome = "Braço quebrado",
+                TraducaoCriolo = "Broken bra",
+                TraducaoFrances = "Bras cassé",
+                RegistroAtivo = true
+            });
+            sintomas.Add(new Sintoma()
+            {
+                IdParteCorpo = 5,
+                Nome = "Dor muscular",
+                TraducaoCriolo = "Doulè nan misk",
+                TraducaoFrances = "Douleur musculaire",
+                RegistroAtivo = true
+            });
+            sintomas.Add(new Sintoma()
+            {
+                IdParteCorpo = 5,
+                Nome = "Manchas vermelhas",
+                TraducaoCriolo = "tach wouj",
+                TraducaoFrances = "taches rouges",
+                RegistroAtivo = true
+            });
+            sintomas.Add(new Sintoma()
+            {
+                IdParteCorpo = 5,
+                Nome = "Ardência",
+                TraducaoCriolo = "Boule",
+                TraducaoFrances = "Brûlant",
+                RegistroAtivo = true
+            });
+            sintomas.Add(new Sintoma()
+            {
+                IdParteCorpo = 5,
+                Nome = "Formigamento",
+                TraducaoCriolo = "Pikotman",
+                TraducaoFrances = "Picotement",
+                RegistroAtivo = true
+            });
+            sintomas.Add(new Sintoma()
+            {
+                IdParteCorpo = 5,
+                Nome = "Dormência",
+                TraducaoCriolo = "Pèt sansasyon",
+                TraducaoFrances = "Engourdissement",
+                RegistroAtivo = true
+
+            });
             sintomas.Add(new Sintoma()
             {
                 IdParteCorpo = 4,
@@ -952,7 +1045,7 @@ namespace Repository
             });
             sintomas.Add(new Sintoma()
             {
-                IdParteCorpo = 6,
+                IdParteCorpo = 7,
                 Nome = "Sangramento",
                 TraducaoCriolo = "Senyen",
                 TraducaoFrances = "Ssaignements",
@@ -960,7 +1053,7 @@ namespace Repository
             });
             sintomas.Add(new Sintoma()
             {
-                IdParteCorpo = 6,
+                IdParteCorpo = 7,
                 Nome = "Ardência",
                 TraducaoCriolo = "Boule",
                 TraducaoFrances = "Brûlant",
@@ -968,7 +1061,7 @@ namespace Repository
             });
             sintomas.Add(new Sintoma()
             {
-                IdParteCorpo = 6,
+                IdParteCorpo = 7,
                 Nome = "Formigamento",
                 TraducaoCriolo = "Pikotman",
                 TraducaoFrances = "Picotement",
@@ -976,7 +1069,7 @@ namespace Repository
             });
             sintomas.Add(new Sintoma()
             {
-                IdParteCorpo = 5,
+                IdParteCorpo = 7,
                 Nome = "Dormência",
                 TraducaoCriolo = "Pèt sansasyon",
                 TraducaoFrances = "Engourdissement",
@@ -993,7 +1086,7 @@ namespace Repository
             });
             sintomas.Add(new Sintoma()
             {
-                IdParteCorpo = 5,
+                IdParteCorpo = 6,
                 Nome = "Sangramento na mão",
                 TraducaoCriolo = "Senyen nan men ou",
                 TraducaoFrances = "Saignement à la main",
@@ -1001,7 +1094,7 @@ namespace Repository
             });
             sintomas.Add(new Sintoma()
             {
-                IdParteCorpo = 5,
+                IdParteCorpo = 6,
                 Nome = "Dor na mão	",
                 TraducaoCriolo = "Doulè nan men",
                 TraducaoFrances = "Douleur à la main",
@@ -1009,7 +1102,7 @@ namespace Repository
             });
             sintomas.Add(new Sintoma()
             {
-                IdParteCorpo = 5,
+                IdParteCorpo = 6,
                 Nome = "Coceira na mão",
                 TraducaoCriolo = "Demanjezon nan men an",
                 TraducaoFrances = "Démangeaisons á la main",
@@ -1017,7 +1110,7 @@ namespace Repository
             });
             sintomas.Add(new Sintoma()
             {
-                IdParteCorpo = 5,
+                IdParteCorpo = 6,
                 Nome = "Ardência",
                 TraducaoCriolo = "Boule",
                 TraducaoFrances = "Brûlant",
@@ -1025,55 +1118,7 @@ namespace Repository
             });
             sintomas.Add(new Sintoma()
             {
-                IdParteCorpo = 5,
-                Nome = "Formigamento",
-                TraducaoCriolo = "Pikotman",
-                TraducaoFrances = "Picotement",
-                RegistroAtivo = true
-            });                       
-            sintomas.Add(new Sintoma()
-            {
-                IdParteCorpo = 7,
-                Nome = "Dor na perna",
-                TraducaoCriolo = "Doulè nan janm",
-                TraducaoFrances = "Douleur à la jambe",
-                RegistroAtivo = true
-            });
-            sintomas.Add(new Sintoma()
-            {
-                IdParteCorpo = 7,
-                Nome = "Dor na panturrilha",
-                TraducaoCriolo = "Doulè ti bèf",
-                TraducaoFrances = "Douleur au mollet",
-                RegistroAtivo = true
-            });
-            sintomas.Add(new Sintoma()
-            {
-                IdParteCorpo = 7,
-                Nome = "Sangramento na perna",
-                TraducaoCriolo = "Senyen nan janm la",
-                TraducaoFrances = "Saignement à la jambe",
-                RegistroAtivo = true
-            });
-            sintomas.Add(new Sintoma()
-            {
-                IdParteCorpo = 7,
-                Nome = "Coceira na perna",
-                TraducaoCriolo = "Demanjezon nan janm la",
-                TraducaoFrances = "Démangeaisons à la jambe",
-                RegistroAtivo = true
-            });
-            sintomas.Add(new Sintoma()
-            {
-                IdParteCorpo = 7,
-                Nome = "Ardência",
-                TraducaoCriolo = "Boule",
-                TraducaoFrances = "Brûlant",
-                RegistroAtivo = true
-            });
-            sintomas.Add(new Sintoma()
-            {
-                IdParteCorpo = 7,
+                IdParteCorpo = 6,
                 Nome = "Formigamento",
                 TraducaoCriolo = "Pikotman",
                 TraducaoFrances = "Picotement",
@@ -1081,26 +1126,35 @@ namespace Repository
             });
             sintomas.Add(new Sintoma()
             {
-                IdParteCorpo = 7,
+                IdParteCorpo = 6,
                 Nome = "Dormência",
                 TraducaoCriolo = "Pèt sansasyon",
                 TraducaoFrances = "Engourdissement",
                 RegistroAtivo = true
-            });            
+
+            });
             sintomas.Add(new Sintoma()
             {
                 IdParteCorpo = 8,
-                Nome = "Pé quebrado",
-                TraducaoCriolo = "Pye kase",
-                TraducaoFrances = "Pied cassé",
+                Nome = "Sangramento na mão",
+                TraducaoCriolo = "Senyen nan men ou",
+                TraducaoFrances = "Saignement à la main",
                 RegistroAtivo = true
             });
             sintomas.Add(new Sintoma()
             {
                 IdParteCorpo = 8,
-                Nome = "Coceira no pé",
-                TraducaoCriolo = "Pe grate",
-                TraducaoFrances = "Pied qui pique",
+                Nome = "Dor na mão	",
+                TraducaoCriolo = "Doulè nan men",
+                TraducaoFrances = "Douleur à la main",
+                RegistroAtivo = true
+            });
+            sintomas.Add(new Sintoma()
+            {
+                IdParteCorpo = 8,
+                Nome = "Coceira na mão",
+                TraducaoCriolo = "Demanjezon nan men an",
+                TraducaoFrances = "Démangeaisons á la main",
                 RegistroAtivo = true
             });
             sintomas.Add(new Sintoma()
@@ -1128,7 +1182,203 @@ namespace Repository
                 RegistroAtivo = true
 
             });
-            
+            sintomas.Add(new Sintoma()
+            {
+                IdParteCorpo = 9,
+                Nome = "Dor na perna",
+                TraducaoCriolo = "Doulè nan janm",
+                TraducaoFrances = "Douleur à la jambe",
+                RegistroAtivo = true
+            });
+            sintomas.Add(new Sintoma()
+            {
+                IdParteCorpo = 9,
+                Nome = "Dor na panturrilha",
+                TraducaoCriolo = "Doulè ti bèf",
+                TraducaoFrances = "Douleur au mollet",
+                RegistroAtivo = true
+            });
+            sintomas.Add(new Sintoma()
+            {
+                IdParteCorpo = 9,
+                Nome = "Sangramento na perna",
+                TraducaoCriolo = "Senyen nan janm la",
+                TraducaoFrances = "Saignement à la jambe",
+                RegistroAtivo = true
+            });
+            sintomas.Add(new Sintoma()
+            {
+                IdParteCorpo = 9,
+                Nome = "Coceira na perna",
+                TraducaoCriolo = "Demanjezon nan janm la",
+                TraducaoFrances = "Démangeaisons à la jambe",
+                RegistroAtivo = true
+            });
+            sintomas.Add(new Sintoma()
+            {
+                IdParteCorpo = 9,
+                Nome = "Ardência",
+                TraducaoCriolo = "Boule",
+                TraducaoFrances = "Brûlant",
+                RegistroAtivo = true
+            });
+            sintomas.Add(new Sintoma()
+            {
+                IdParteCorpo = 9,
+                Nome = "Formigamento",
+                TraducaoCriolo = "Pikotman",
+                TraducaoFrances = "Picotement",
+                RegistroAtivo = true
+            });
+            sintomas.Add(new Sintoma()
+            {
+                IdParteCorpo = 9,
+                Nome = "Dormência",
+                TraducaoCriolo = "Pèt sansasyon",
+                TraducaoFrances = "Engourdissement",
+                RegistroAtivo = true
+
+            });
+            sintomas.Add(new Sintoma()
+            {
+                IdParteCorpo = 10,
+                Nome = "Dor na perna",
+                TraducaoCriolo = "Doulè nan janm",
+                TraducaoFrances = "Douleur à la jambe",
+                RegistroAtivo = true
+            });
+            sintomas.Add(new Sintoma()
+            {
+                IdParteCorpo = 10,
+                Nome = "Dor na panturrilha",
+                TraducaoCriolo = "Doulè ti bèf",
+                TraducaoFrances = "Douleur au mollet",
+                RegistroAtivo = true
+            });
+            sintomas.Add(new Sintoma()
+            {
+                IdParteCorpo = 10,
+                Nome = "Sangramento na perna",
+                TraducaoCriolo = "Senyen nan janm la",
+                TraducaoFrances = "Saignement à la jambe",
+                RegistroAtivo = true
+            });
+            sintomas.Add(new Sintoma()
+            {
+                IdParteCorpo = 10,
+                Nome = "Coceira na perna",
+                TraducaoCriolo = "Demanjezon nan janm la",
+                TraducaoFrances = "Démangeaisons à la jambe",
+                RegistroAtivo = true
+            });
+            sintomas.Add(new Sintoma()
+            {
+                IdParteCorpo = 10,
+                Nome = "Ardência",
+                TraducaoCriolo = "Boule",
+                TraducaoFrances = "Brûlant",
+                RegistroAtivo = true
+            });
+            sintomas.Add(new Sintoma()
+            {
+                IdParteCorpo = 10,
+                Nome = "Formigamento",
+                TraducaoCriolo = "Pikotman",
+                TraducaoFrances = "Picotement",
+                RegistroAtivo = true
+            });
+            sintomas.Add(new Sintoma()
+            {
+                IdParteCorpo = 10,
+                Nome = "Dormência",
+                TraducaoCriolo = "Pèt sansasyon",
+                TraducaoFrances = "Engourdissement",
+                RegistroAtivo = true
+
+            });
+            sintomas.Add(new Sintoma()
+            {
+                IdParteCorpo = 11,
+                Nome = "Pé quebrado",
+                TraducaoCriolo = "Pye kase",
+                TraducaoFrances = "Pied cassé",
+                RegistroAtivo = true
+            });
+            sintomas.Add(new Sintoma()
+            {
+                IdParteCorpo = 11,
+                Nome = "Coceira no pé",
+                TraducaoCriolo = "Pe grate",
+                TraducaoFrances = "Pied qui pique",
+                RegistroAtivo = true
+            });
+            sintomas.Add(new Sintoma()
+            {
+                IdParteCorpo = 11,
+                Nome = "Ardência",
+                TraducaoCriolo = "Boule",
+                TraducaoFrances = "Brûlant",
+                RegistroAtivo = true
+            });
+            sintomas.Add(new Sintoma()
+            {
+                IdParteCorpo = 11,
+                Nome = "Formigamento",
+                TraducaoCriolo = "Pikotman",
+                TraducaoFrances = "Picotement",
+                RegistroAtivo = true
+            });
+            sintomas.Add(new Sintoma()
+            {
+                IdParteCorpo = 11,
+                Nome = "Dormência",
+                TraducaoCriolo = "Pèt sansasyon",
+                TraducaoFrances = "Engourdissement",
+                RegistroAtivo = true
+
+            });
+            sintomas.Add(new Sintoma()
+            {
+                IdParteCorpo = 12,
+                Nome = "Coceira no pé",
+                TraducaoCriolo = "Pye grate",
+                TraducaoFrances = "Pied qui pique",
+                RegistroAtivo = true
+            });
+            sintomas.Add(new Sintoma()
+            {
+                IdParteCorpo = 12,
+                Nome = "Pé quebrado",
+                TraducaoCriolo = "Pye kase",
+                TraducaoFrances = "Pied cassé",
+                RegistroAtivo = true
+            });
+            sintomas.Add(new Sintoma()
+            {
+                IdParteCorpo = 12,
+                Nome = "Ardência",
+                TraducaoCriolo = "Boule",
+                TraducaoFrances = "Brûlant",
+                RegistroAtivo = true
+            });
+            sintomas.Add(new Sintoma()
+            {
+                IdParteCorpo = 12,
+                Nome = "Formigamento",
+                TraducaoCriolo = "Pikotman",
+                TraducaoFrances = "Picotement",
+                RegistroAtivo = true
+            });
+            sintomas.Add(new Sintoma()
+            {
+                IdParteCorpo = 12,
+                Nome = "Dormência",
+                TraducaoCriolo = "Pèt sansasyon",
+                TraducaoFrances = "Engourdissement",
+                RegistroAtivo = true
+
+            });
+
             context.Sintomas.AddRange(sintomas);
             #endregion
             base.Seed(context);

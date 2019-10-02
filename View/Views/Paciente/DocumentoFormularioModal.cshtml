@@ -41,10 +41,10 @@
                                             <div>
                                                 <div class="row">
                                                     <div class="col-6">
-                                                        <input type="text" required="" class="form-control" />
+                                                        <input id="campo-cidade" name="cidade" type="text" required="" class="form-control" />
                                                     </div>
                                                     <div class="col-6">
-                                                        <input type="text" required="" class="form-control" />
+                                                        <input id="campo-posto" name="posto" type="text" required="" class="form-control" />
                                                     </div>
                                                 </div>
                                                 <div>
@@ -59,10 +59,10 @@
                                                 </div>
                                                 <div class="row">
                                                     <div class="col">
-                                                        <input type="text" required="" class="form-control" />
+                                                        <input id="campo-nome" name="nome" type="text" required="" class="form-control" />
                                                     </div>
                                                     <div class="col">
-                                                        <input type="text" required="" class="form-control" />
+                                                        <input id="campo-lingua" name="lingua" type="text" required="" class="form-control" />
                                                     </div>
                                                 </div>
 
@@ -76,10 +76,10 @@
                                                 </div>
                                                 <div class="row">
                                                     <div class="col">
-                                                        <input type="text" required="" class="form-control" />
+                                                        <input id="campo-idade" name="idade" type="text" required="" class="form-control" />
                                                     </div>
                                                     <div class="col">
-                                                        <input type="text" required="" class="form-control" />
+                                                        <input id="campo-sexo" name="sexo" type="text" required="" class="form-control" />
                                                     </div>
                                                 </div>
 
@@ -93,10 +93,10 @@
                                                 </div>
                                                 <div class="row">
                                                     <div class="col">
-                                                        <input type="text" required="" class="form-control" />
+                                                        <input id="campo-cpf" name="cpf" type="text" required="" class="form-control" />
                                                     </div>
                                                     <div class="col">
-                                                        <input type="text" required="" class="form-control" />
+                                                        <input id="campo-rne" name="rne" type="text" required="" class="form-control" />
                                                     </div>
                                                 </div>
                                                 <div class="row mt-10">
@@ -109,10 +109,10 @@
                                                 </div>
                                                 <div class="row">
                                                     <div class="col">
-                                                        <input type="text" required="" class="form-control" />
+                                                        <input id="campo-cep" name="cep" type="text" required="" class="form-control" />
                                                     </div>
                                                     <div class="col">
-                                                        <input type="text" required="" class="form-control" />
+                                                        <input id="campo-endereco" name="endereco" type="text" required="" class="form-control" />
                                                     </div>
                                                 </div>
                                                 <div class="row mt-10">
@@ -125,10 +125,10 @@
                                                 </div>
                                                 <div class="row">
                                                     <div class="col">
-                                                        <input type="text" required="" class="form-control" />
+                                                        <input id="campo-passaporte" name="passaporte" type="text" required="" class="form-control" />
                                                     </div>
                                                     <div class="col">
-                                                        <input type="text" required="" class="form-control" />
+                                                        <input id="campo-telefone" name="telefone" type="text" required="" class="form-control" />
                                                     </div>
                                                 </div>
                                                 <div class="row mt-10">
@@ -141,10 +141,10 @@
                                                 </div>
                                                 <div class="row">
                                                     <div class="col">
-                                                        <input type="text" required="" class="form-control" />
+                                                        <input id="campo-pressao" name="pressao" type="text" required="" class="form-control" />
                                                     </div>
                                                     <div class="col">
-                                                        <input type="text" required="" class="form-control" />
+                                                        <input id="campo-peso" name="peso" type="text" required="" class="form-control" />
                                                     </div>
                                                 </div>
                                                 <div class="row mt-10">
@@ -157,16 +157,15 @@
                                                 </div>
                                                 <div class="row">
                                                     <div class="col">
-                                                        <input type="text" required="" class="form-control" />
+                                                        <input id="campo-altura" name="altura" type="text" required="" class="form-control" />
                                                     </div>
                                                     <div class="col">
-                                                        <input type="text" required="" class="form-control" />
+                                                        <input id="campo-temperatura" name="temperatura" type="text" required="" class="form-control" />
                                                     </div>
                                                 </div>
                                                 <table id="tabeladoc" class="mt-4 table table-striped">
                                                     <thead class="bg-dark text-white">
                                                         <tr>
-                                                            <td>Partes do corpo</td>
                                                             <td>Sintomas</td>
                                                         </tr>
                                                     </thead>
@@ -188,5 +187,9 @@
         </div>
     </div>
 </div>
+
+@section js{
+    <script src="~/Scripts/Encaminhamento/TesteEncaminhamento.js"></script>
+}
 
 

@@ -9,6 +9,11 @@ document.getElementById("btnPrint2").onclick = function () {
 document.getElementById("btnPrint3").onclick = function () {
     printElement(document.getElementById("printThis3"));
 }
+
+document.getElementById("btnPrint4").onclick = function () {
+    printElement(document.getElementById("printThis4"));
+}
+
 function printElement(elem) {
     var domClone = elem.cloneNode(true);
 

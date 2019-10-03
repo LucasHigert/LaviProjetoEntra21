@@ -4,8 +4,8 @@ using System.Data.Entity;
 
 namespace Repository
 {
-    internal class SistemaInitializer : DropCreateDatabaseAlways<SistemaContext>
-    //internal class SistemaInitializer : CreateDatabaseIfNotExists<SistemaContext>
+    //internal class SistemaInitializer : DropCreateDatabaseAlways<SistemaContext>
+    internal class SistemaInitializer : CreateDatabaseIfNotExists<SistemaContext>
     {
 
         protected override void Seed(SistemaContext context)
@@ -259,7 +259,8 @@ namespace Repository
                 Rne = "V565371-S",
                 Passaporte = " ",
                 Telefone = "4798856-0458",
-                RegistroAtivo = true
+                RegistroAtivo = true,
+                Lingua = 1
             });
             paciente.Add(new Paciente()
             {
@@ -276,7 +277,8 @@ namespace Repository
                 Rne = "K568371-F",
                 Passaporte = " ",
                 Telefone = "4799241-5064",
-                RegistroAtivo = true
+                RegistroAtivo = true,
+                Lingua = 1
             });
             paciente.Add(new Paciente()
             {
@@ -293,7 +295,26 @@ namespace Repository
                 Rne = "R5653971-J",
                 Passaporte = " ",
                 Telefone = " ",
-                RegistroAtivo = true
+                RegistroAtivo = true,
+                Lingua = 1
+            });
+            paciente.Add(new Paciente()
+            {
+                Id = 4,
+                IdPosto = 2,
+                Nome = "Emmanuel Macron",
+                Endereco = "Rua dos Franceses",
+                Cep = "89012-412",
+                Idade = 42,
+                Sexo = true,
+                Altura = 1.82,
+                Peso = 82,
+                Cpf = "769.127.850-00",
+                Rne = "R5653971-J",
+                Passaporte = " ",
+                Telefone = " ",
+                RegistroAtivo = true,
+                Lingua = 3
             });
             #endregion
             context.Pacientes.AddRange(paciente);

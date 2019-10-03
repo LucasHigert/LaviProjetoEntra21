@@ -1,7 +1,7 @@
 ﻿$(function () {
 
     $idPaciente = 0;
-    
+
     $("#campo-nome").keypress(function (e) {
         if (e.keyCode == 13) {
             AtualizaTabela();
@@ -23,25 +23,26 @@
             info: false,
             paging: false,
             columns: [
-                { 'data': 'DataAtendimento' },
-                {'data':'Nome'},
-           
                 {
                     render: function (data, type, row) {
-
+                        return moment(row).format("DD/MM/YYYY")
+                    }
+                },
+                {
+                    render: function (data, type, row) {
                         return '<a class="botao-atendimento btn btn-info" id=' + row.Id + '"\   data-id="' + row.Id + '"\
-                    data-nome="' + row.Nome +'"><i class="fa fa-user"></i></a>'
+                    data-nome="' + row.Nome + '"><i class="fa fa-user"></i></a>'
                     }
                 }
             ]
         });
     }
-    
+
     $("#tabelaAtendimento").on("click", ".botao-atendimento", function () {
         $('#documentoFormularioModal').modal('show');
-               $id = $(this).data("id");
+        $id = $(this).data("id");
         $nome = $(this).data("nome");
-        
+
         $("#campo-cidade").val($id);
         $("#campo-posto").val($nome);
 

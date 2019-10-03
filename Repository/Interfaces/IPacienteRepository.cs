@@ -20,7 +20,11 @@ namespace Repository.Interfaces
 
         List<Paciente> ObterPeloNome(string nome,int posto);
 
+        List<Paciente> ObterEstrangeiroNome(string nome,int posto);
+
         List<Paciente> ObterTodos();
+
+        List<Paciente> ObterTodosPosto(int posto);
 
         Paciente ObterPeloId(int id);
     }

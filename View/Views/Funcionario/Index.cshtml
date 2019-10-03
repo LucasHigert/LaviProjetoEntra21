@@ -10,7 +10,7 @@
         <a class="btn btn-dark float-right mt-30" href="/funcionario/cadastrar"><i class="fa fa-plus"></i> Adicionar Funcionário</a>
     </div>
 </div>
-<table class="table table-primary table-bordered table-hover text-dark">
+<table class="table table-primary table-striped table-bordered table-hover text-dark">
     <thead class="bg-dark">
         <tr>
             <td>Nome</td>
@@ -19,7 +19,7 @@
             <td width="220px">Ação</td>
         </tr>
     </thead>
-    <tbody>
+    <tbody class="font-weight-bold">
         @foreach (Model.Funcionario Funcionario in ViewBag.Funcionarios)
         {
             <tr>

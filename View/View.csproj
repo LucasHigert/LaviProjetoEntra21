@@ -300,7 +300,7 @@
     <Content Include="Content\Imagens\CorpoVermelho\pescoço vermelho.png" />
     <Content Include="Content\Imagens\CorpoVermelho\pé direito vermelho.png" />
     <Content Include="Content\Imagens\CorpoVermelho\pé esquerdo veremelho.png" />
-    <Content Include="Content\Imagens\Corpo\b-adult-masc.png" />
+    <Content Include="Content\Imagens\Corpo\b-adult-masc.svg" />
     <Content Include="Content\Imagens\Corpo\masc-adult-arms.png" />
     <Content Include="Content\Imagens\Corpo\masc-adult-back.png" />
     <Content Include="Content\Imagens\Corpo\masc-adult-foot.png" />

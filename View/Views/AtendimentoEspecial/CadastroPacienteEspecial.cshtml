@@ -43,7 +43,7 @@
 
                 <div class="col-3">
                     <label class="font-weight-bold" for="campo-idade">@View.Resources.Resource.Idade</label>
-                    <input type="number" id="campo-idade" name="idade" maxlength="3" class="form-control border-info" />
+                    <input type="number" min="0" id="campo-idade" name="idade" maxlength="3" class="form-control border-info" />
 
                 </div>
             </div>
@@ -54,17 +54,17 @@
 
                 <div class="col-4">
                     <label class="font-weight-bold" for="campo-telefone">@View.Resources.Resource.Telefone</label>
-                    <input type="tel" id="campo-telefone" name="telefone" maxlength="14" class="form-control border-info" />
+                    <input type="tel" placeholder="(00)00000-0000" id="campo-telefone" name="telefone" maxlength="14" class="form-control border-info" />
                 </div>
 
                 <div class="col-4">
                     <label class="font-weight-bold" for="campo-passaporte">@View.Resources.Resource.Passaporte</label>
-                    <input type="text" id="campo-passaporte" name="passaporte" maxlength="50" class="form-control border-info" />
+                    <input type="text" id="campo-passaporte" name="passaporte" maxlength="50" placeholder="AA000000" class="form-control border-info" />
                 </div>
 
                 <div class="col-4">
                     <label class="font-weight-bold" for="campo-cpf">@View.Resources.Resource.Cpf</label>
-                    <input type="text" required="" maxlength="15" id="campo-cpf" name="cpf" class="form-control border-info" />
+                    <input type="text" placeholder="000.000.000-00" required="" maxlength="15" id="campo-cpf" name="cpf" class="form-control border-info" />
                 </div>
 
             </div>
@@ -73,12 +73,12 @@
 
                 <div class="col-4">
                     <label class="font-weight-bold" for="campo-rne">@View.Resources.Resource.Rne</label>
-                    <input type="text" id="campo-rne" name="rne" maxlength="50" class="form-control border-info" />
+                    <input type="text" placeholder="A000000-A" id="campo-rne" name="rne" maxlength="50" class="form-control border-info" />
                 </div>
 
                 <div class="col-4">
                     <label class="font-weight-bold" for="campo-cep">@View.Resources.Resource.CEP</label>
-                    <input type="text" id="campo-cep" name="cep" maxlength="9" class="form-control border-info" />
+                    <input type="text" placeholder="00000-000" id="campo-cep" name="cep" maxlength="9" class="form-control border-info" />
                 </div>
 
 

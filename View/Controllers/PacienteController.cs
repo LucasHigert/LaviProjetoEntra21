@@ -115,10 +115,17 @@ namespace View.Controllers
 
 
         #region Documentos
+
         public ActionResult Documento()
         {
-            return View();
-
+            if (VerificaLogado() == true)
+            {
+                return View();
+            }
+            else
+            {
+                return Redirect("/login");
+            }
         }
 
         //obtem o paciente pelo nome

@@ -65,6 +65,13 @@ namespace Repository.Repository
             return context.Atendimentos.Include("Paciente").Where(x => x.Id == id).FirstOrDefault();
         }
 
+
+        //Irá retornar se ja existe um atendimento aberto para o paciente
+        public Atendimento ObterPeloPaciente(int idPaciente)
+        {
+            return context.Atendimentos.Where(x => x.IdPaciente == idPaciente && x.Status != 3).FirstOrDefault();
+        }
+
         public List<Atendimento> ObterTodosPaciente(int id)
         {
             return context.Atendimentos.OrderBy(x => x.IdPaciente == id).ToList();

@@ -15,9 +15,11 @@ namespace Repository.Interfaces
 
         bool Apagar(int id);
 
-        List<Atendimento> ObterTodosPeloCargoPosto(int NumeroCargo,int IdPosto);
+        List<Atendimento> ObterTodosPeloCargoPosto(int NumeroCargo, int IdPosto);
 
-       Atendimento ObterPeloId(int id);
+        Atendimento ObterPeloId(int id);
+
+        Atendimento ObterPeloPaciente(int idPaciente);
 
         List<Atendimento> ObterTodosPosto(int posto);
 

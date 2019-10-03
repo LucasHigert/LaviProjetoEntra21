@@ -55,8 +55,18 @@ namespace View.Controllers
         {
             if (VerificaLogado() == true)
             {
-                ViewBag.Funcionarios = repository.ObterTodos();
-                return View();
+                if (Session["usuarioLogadoPermissao"].ToString() != "4")
+                {
+
+                    Funcionario funcionario = repository.ObterPeloId(Convert.ToInt32(Session["usuarioLogadoId"]));
+                    ViewBag.Funcionarios = repository.ObterFuncionariosPeloIdPosto(funcionario.IdPosto);
+                    return View();
+                }
+                else
+                {
+                    ViewBag.Funcionarios = repository.ObterTodos();
+                    return View();
+                }
             }
             else
             {
@@ -71,7 +81,7 @@ namespace View.Controllers
             if (VerificaLogado() == true)
             {
 
-                if ((Session["usuarioLogadoPermissao"].ToString() == "4")||(Session["usuarioLogadoId"].ToString() == funcionario.Id.ToString() ))
+                if ((Session["usuarioLogadoPermissao"].ToString() == "4") || (Session["usuarioLogadoId"].ToString() == funcionario.Id.ToString()))
                 {
                     funcionario.RegistroAtivo = true;
                     repository.Alterar(funcionario);
@@ -92,7 +102,7 @@ namespace View.Controllers
         {
             if (VerificaLogado() == true)
             {
-                if ( (Session["usuarioLogadoPermissao"].ToString() == "4") || (id.ToString() == Session["usuarioLogadoId"].ToString() ))
+                if ((Session["usuarioLogadoPermissao"].ToString() == "4") || (id.ToString() == Session["usuarioLogadoId"].ToString()))
                 {
                     var funcionario = repository.ObterPeloId(id);
                     if (funcionario == null)

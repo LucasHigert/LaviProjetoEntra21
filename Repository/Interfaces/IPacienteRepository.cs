@@ -24,6 +24,8 @@ namespace Repository.Interfaces
 
         List<Paciente> ObterTodos();
 
+        List<Paciente> ObterTodosPosto(int posto);
+
         Paciente ObterPeloId(int id);
     }
 }

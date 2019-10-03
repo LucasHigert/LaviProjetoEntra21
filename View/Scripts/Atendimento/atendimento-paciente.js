@@ -36,7 +36,7 @@
 
     });
 
-    $("#botao-salvar").on("click", function () {
+    $("#botao-salvar-modal").on("click", function () {
         $nome = $("#campo-nome").val();
         $sexo = $("#campo-sexo").val();
         $idade = $("#campo-idade").val();

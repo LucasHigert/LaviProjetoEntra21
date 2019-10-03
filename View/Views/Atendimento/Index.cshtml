@@ -15,76 +15,83 @@
         <tr>
             <td>Paciente</td>
             <td>Prioridade</td>
-            <td>Observação</td>
+            <td>Lingua</td>
             <td width="220px">Ação</td>
         </tr>
     </thead>
     <tbody class="font-weight-bold">
         @foreach (Model.Atendimento atendimento in ViewBag.Atendimentos)
         {
-            if (atendimento.Paciente.Lingua != 0)
+            if (atendimento.Paciente.Lingua != 1)
             {
-                <tr class="bg-indigo-500">
+                <tr>
                     <td>@atendimento.Paciente.Nome</td>
+
+                    <!-- #region Prioridade-->
                     @if (atendimento.Prioridade == 0)
                     {
-                        <td>Não definido</td>
+                        <td><span class="badge badge-dark">Não definido</span></td>
                     }
                     else
                     {
                         if (atendimento.Prioridade == 3)
                         {
-                            <td>Alto</td>
+                            <td><span class="badge badge-danger">Alto</span></td>
 
                         }
                         else
                         if (atendimento.Prioridade == 2)
                         {
-                            <td>Medio</td>
+                            <td><span class="badge badge-warning">Medio</span>Medio</td>
 
                         }
                         else
                         if (atendimento.Prioridade == 1)
                         {
-                            <td>Baixo</td>
+                            <td><span class="badge badge-primary">Baixo</span></td>
 
                         }
                     }
-                    @if (atendimento.Observacao == null)
+
+                    <!--#endregion-->
+                    
+                    <!--#region Lingua-->
+                    @if (atendimento.Paciente.Lingua != 1)
                     {
-                        <td>Nulo</td>
-                    }
-                    else if (atendimento.Observacao.Length <= 41)
-                    {
-                        <td>@atendimento.Observacao </td>
+                        <td><span class="badge badge-danger">Estrangeiro</span></td>
                     }
                     else
                     {
-                        <td>A observação atingiu o limite maximo</td>
+                        <td><span class="badge badge-primary">Portugues</span></td>
                     }
+
+
+                    <!--#endregion-->
+
                     <td>
-                        <a class="btn btn-light" href="/atendimento/alterar?id=@atendimento.Id"><i class="fa fa-bookmark"></i> Atender</a>
+                        <a class="btn btn-info" href="/atendimento/alterar?id=@atendimento.Id"><i class="fa fa-bookmark"></i> Atender</a>
                     </td>
                 </tr>
             }
             else if (atendimento.Prioridade == 3)
             {
-                <tr class="bg-red-500">
+                <tr>
                     <td>@atendimento.Paciente.Nome</td>
-                    <td>Alto</td>
-                    @if (atendimento.Observacao == null)
-                    {
-                        <td>Nulo</td>
-                    }
-                    else if (atendimento.Observacao.Length <= 40)
-                    {
+                    <td><span class="badge badge-danger">Alto</span></td>
 
-                        <td>@atendimento.Observacao </td>
+                    <!--#region Lingua-->
+                    @if (atendimento.Paciente.Lingua != 1)
+                    {
+                        <td><span class="badge badge-primary">Estrangeiro</span></td>
                     }
                     else
                     {
-                        <td>A observação atingiu o limite maximo</td>
+                        <td><span class="badge badge-danger">Portugues</span></td>
                     }
+
+                    <!--#endregion-->
+                   
+
                     <td>
                         <a class="btn btn-info" href="/atendimento/alterar?id=@atendimento.Id"><i class="fa fa-bookmark"></i> Atender</a>
                     </td>
@@ -92,23 +99,22 @@
             }
             else if (atendimento.Prioridade == 2)
             {
-                <tr class="bg-yellow-500">
+                <tr>
                     <td hidden>@atendimento.Id</td>
                     <td>@atendimento.Paciente.Nome</td>
-                    <td>Medio</td>
-                    @if (atendimento.Observacao == null)
-                    {
-                        <td>Nulo</td>
-                    }
-                    else if (atendimento.Observacao.Length <= 40)
-                    {
+                    <td><span class="badge badge-warning">Medio</span></td>
 
-                        <td> @atendimento.Observacao </td>
+                    <!--#region Lingua-->
+                    @if (atendimento.Paciente.Lingua != 1)
+                    {
+                        <td><span class="badge badge-danger">Estrangeiro</span></td>
                     }
                     else
                     {
-                        <td> A observação atingiu o limite maximo </td>
+                        <td><span class="badge badge-primary">Portugues</span></td>
                     }
+                    <!--#endregion-->
+                    
 
                     <td>
                         <a class="btn btn-info" href="/atendimento/alterar?id=@atendimento.Id">
@@ -122,20 +128,22 @@
                 <tr>
                     <td hidden>@atendimento.Id</td>
                     <td>@atendimento.Paciente.Nome</td>
-                    <td>Baixo</td>
-                    @if (atendimento.Observacao == null)
-                    {
-                        <td>Nulo</td>
-                    }
-                    else if (atendimento.Observacao.Length <= 40)
-                    {
+                    <td><span class="badge badge-primary">Baixo</span></td>
 
-                        <td>@atendimento.Observacao </td>
+                    <!--#region Lingua-->
+                    @if (atendimento.Paciente.Lingua != 1)
+                    {
+                        <td><span class="badge badge-danger">Estrangeiro</span></td>
+
                     }
                     else
                     {
-                        <td>A observação atingiu o limite maximo</td>
-                    }n
+                        <td><span class="badge badge-primary">Portugues</span></td>
+                    }
+
+                    <!--#endregion-->
+                  
+
                     <td>
                         <a class="btn btn-info" href="/atendimento/alterar?id=@atendimento.Id"><i class="fa fa-bookmark"></i> Atender</a>
                     </td>
@@ -147,20 +155,19 @@
                 <tr>
                     <td hidden>@atendimento.Id</td>
                     <td>@atendimento.Paciente.Nome</td>
-                    <td>Não Definido</td>
-                    @if (atendimento.Observacao == null)
-                    {
-                        <td>Nulo</td>
-                    }
-                    else if (atendimento.Observacao.Length <= 40)
-                    {
+                    <td><span class="badge badge-dark">Não definido</span></td>
 
-                        <td>@atendimento.Observacao </td>
+                    <!--#region Lingua-->
+                    @if (atendimento.Paciente.Lingua != 1)
+                    {
+                        <td><span class="badge badge-danger">Estrangeiro</span></td>
                     }
                     else
                     {
-                        <td>A observação atingiu o limite maximo</td>
+                        <td><span class="badge badge-primary">Portugues</span></td>
                     }
+                    <!--#endregion-->
+
                     <td>
                         <a class="btn btn-info" href="/atendimento/alterar?id=@atendimento.Id"><i class="fa fa-bookmark"></i> Atender</a>
                     </td>

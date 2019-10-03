@@ -30,15 +30,16 @@
 <table id="tabelaAtendimento" class="table mt-4">
     <thead class="bg-dark text-white">
         <tr>
-            <td>Entrada</td>
-            <td>Saida</td>
+            <td>Data do atendimento</td>
             <td>Ação</td>
         </tr>
     </thead>
     <tbody></tbody>
 </table>
 
-    <script src="~/Scripts/Paciente/BuscaPacienteDocScript.js"></script>
-
+<script src="~/Scripts/Paciente/BuscaPacienteDocScript.js"></script>
+<script src="~/Scripts/Paciente/Imprimir.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 
 @RenderPage("DocumentoModal.cshtml")
+@RenderPage("DocumentoFormularioModal.cshtml")

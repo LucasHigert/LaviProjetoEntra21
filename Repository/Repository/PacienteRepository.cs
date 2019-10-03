@@ -96,7 +96,15 @@ namespace Repository.Repository
                 .ToList();
             return lista;
         }
-
+        public List<Paciente>ObterValores(string nome, string posto, string cidade)
+        {
+            return context.Pacientes
+                .Include("Posto")
+                .Include("Cidade")
+           
+                .Where(x => x.RegistroAtivo == true)
+                .ToList();
+        }
         public List<Paciente> ObterTodos()
         {
             return context.Pacientes

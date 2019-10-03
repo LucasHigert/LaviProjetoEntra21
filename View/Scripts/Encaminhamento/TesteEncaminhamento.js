@@ -9,6 +9,7 @@ document.getElementById("btnPrint2").onclick = function () {
 document.getElementById("btnPrint3").onclick = function () {
     printElement(document.getElementById("printThis3"));
 }
+
 function printElement(elem) {
     var domClone = elem.cloneNode(true);
 
@@ -43,4 +44,4 @@ function removerCampos(id) {
     var node1 = document.getElementById('destino');
     node1.removeChild(node1.lastChild);
 }
- 
+

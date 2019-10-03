@@ -18,6 +18,7 @@
             <td hidden>Id</td>
             <td>Paciente</td>
             <td>Posto</td>
+            <td>Lingua</td>
             <td width="220px">Ação</td>
         </tr>
     </thead>
@@ -26,10 +27,11 @@
         {
             if (paciente.Lingua == 0)
             {
-                <tr class="bg-indigo-400 text-dark">
+                <tr class="text-dark">
                     <td hidden>@paciente.Id</td>
                     <td>@paciente.Nome</td>
                     <td>@paciente.Posto.Nome</td>
+                    <td><span class="badge badge-danger">Estrangeiro</span></td>
                     <td>
                         <a class="btn btn-info ml-10" href="/paciente/alterar?id=@paciente.Id"><i class="fa fa-edit"></i> Alterar</a>
                         <a class="btn btn-danger ml-10" href="/paciente/apagar?id=@paciente.Id"><i class="fa fa-trash"></i> Apagar</a>
@@ -38,10 +40,11 @@
             }
             else
             {
-                <tr>
+                <tr class="text-dark">
                     <td hidden>@paciente.Id</td>
                     <td>@paciente.Nome</td>
                     <td>@paciente.Posto.Nome</td>
+                    <td><span class="badge badge-success">Português</span></td>
                     <td>
                         <a class="btn btn-info ml-10" href="/paciente/alterar?id=@paciente.Id"><i class="fa fa-edit"></i> Alterar</a>
                         <a class="btn btn-danger ml-10" href="/paciente/apagar?id=@paciente.Id"><i class="fa fa-trash"></i> Apagar</a>

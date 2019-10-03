@@ -72,6 +72,14 @@ namespace Repository.Repository
             return rows == 1;
         }
 
+        public List<Paciente> ObterEstrangeiroNome(string nome, int posto)
+        {
+            List<Paciente> lista = context.Pacientes
+                            .Where(x => x.Nome.Contains(nome) && x.IdPosto == posto && x.Lingua != 0)
+                            .ToList();
+            return lista;
+        }
+
         public Paciente ObterPeloId(int id)
         {
             var paciente = context.Pacientes.FirstOrDefault(x => x.Id == id);

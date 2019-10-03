@@ -114,10 +114,10 @@ a.gd-remake {
 /*COR DO CORPO*/
 
 .masc-adult-head {
-    width: 39px;
-    height: 40px;
-    top: 6px;
-    left: 46px;
+    width: 50px;
+    height: 50px;
+    top: 19px;
+    left: 117px;
     z-index: 30;
 }
 
@@ -128,17 +128,17 @@ a.gd-remake {
 .masc-adult-neck {
     width: 39px;
     height: 20px;
-    top: 35px;
-    left: 50px;
+    top: 85px;
+    left: 116px;
     z-index: 60;
 }
 
 .masc-adult-hands {
     width: 72px;
     height: 105px;
-    top: 135px;
-    top: 135px;
-    left: 33px;
+    top: 120px;
+    top: 295px;
+    left: 72px;
     z-index: 10;
 }
 
@@ -149,8 +149,8 @@ a.gd-remake {
 .masc-adult-arms {
     width: 72px;
     height: 105px;
-    top: 55px;
-    left: 33px;
+    top: 117px;
+    left: 72px;
     z-index: 10;
 }
 
@@ -173,8 +173,8 @@ a.gd-remake {
 .masc-adult-hip {
     width: 47px;
     height: 23px;
-    top: 125px;
-    left: 46px;
+    top: 266px;
+    left: 99px;
     z-index: 50;
 }
 
@@ -185,8 +185,8 @@ a.gd-remake {
 .masc-adult-leg {
     width: 47px;
     height: 123px;
-    top: 139px;
-    left: 46px;
+    top: 300px;
+    left: 99px;
     z-index: 30;
 }
 
@@ -197,8 +197,8 @@ a.gd-remake {
 .masc-adult-back {
     width: 43px;
     height: 77px;
-    top: 50px;
-    left: 48px;
+    top: 110px;
+    left: 100px;
     z-index: 30;
 }
 
@@ -210,8 +210,8 @@ a.gd-remake {
     width: 47px;
     height: 150px;
     top: 240px;
-    top: 240px;
-    left: 46px;
+    top: 530px;
+    left: 96px;
     z-index: 30;
 }
 

@@ -24,7 +24,7 @@
         {
             if (atendimento.Paciente.Lingua != 0)
             {
-                <tr class="bg-indigo-500">
+                <tr>
                     <td>@atendimento.Paciente.Nome</td>
                     @if (atendimento.Prioridade == 0)
                     {
@@ -135,7 +135,7 @@
                     else
                     {
                         <td>A observação atingiu o limite maximo</td>
-                    }n
+                    }
                     <td>
                         <a class="btn btn-info" href="/atendimento/alterar?id=@atendimento.Id"><i class="fa fa-bookmark"></i> Atender</a>
                     </td>

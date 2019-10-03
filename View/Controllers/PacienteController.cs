@@ -61,6 +61,8 @@ namespace View.Controllers
             var result = new { data = resultado };
             return Json(result, JsonRequestBehavior.AllowGet);
         }
+     
+        
         // GET: Cidade
         public JsonResult ObterPeloId(int id)
         {
@@ -118,6 +120,16 @@ namespace View.Controllers
             return View();
 
         }
+
+        //obtem o paciente pelo nome
+        //[HttpGet]
+        //public JsonResult ObterPeloNome(string nome)
+        //{
+        //    PacienteRepository pacienteRepository = new PacienteRepository();
+        //    var pessoas = pacienteRepository.ObterPeloNome(nome);
+        //    var result = new { data = pessoas };
+        //    return Json(result, JsonRequestBehavior.AllowGet);
+        //}
 
         [HttpGet]
         public JsonResult ObterPeloPaciente(int id)

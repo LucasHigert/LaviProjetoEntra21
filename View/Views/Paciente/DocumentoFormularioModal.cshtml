@@ -1,0 +1,195 @@
+﻿<head>
+    <link rel="stylesheet" href="~/Scripts/Encaminhamento/TesteEncaminhamento.css" />
+</head>
+@*'<a class="btn btn-info" href="/atendimentoespecial/InserirAtendimento?idPaciente=' + row.Id + '"><i class="fa fa-user"></i></a>'*@
+
+<div id="documentoFormularioModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal Content: begins -->
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+
+
+                <h4 class="modal-title" id="gridSystemModalLabel">Documento </h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+            </div>
+            <div id="printThis4">
+                <!-- Modal Body -->
+                <div class="modal-body printSection">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="body-message">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="body-message">
+                                            <h3 class="text-dark">Paciente</h3>
+                                            <div>
+                                                <div class="row mt-10">
+                                                    <div class="col-6">
+                                                        Cidade
+                                                    </div>
+                                                    <div class="col-6">
+                                                        Posto
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <input id="campo-cidade" value="" disabled="disabled" name="cidade" type="text" required="" class="form-control" />
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <input id="campo-posto"  value="" disabled="disabled" name="posto" type="text" required="" class="form-control" />
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div class="row mt-10">
+                                                        <div class="col-6">
+                                                            Nome
+                                                        </div>
+                                                        <div class="col-6">
+                                                            Língua
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <input id="campo-nome"  value="" disabled="disabled" name="nome" type="text" required="" class="form-control" />
+                                                    </div>
+                                                    <div class="col">
+                                                        <input id="campo-lingua"  value="" disabled="disabled" name="lingua" type="text" required="" class="form-control" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="row mt-10">
+                                                    <div class="col-6">
+                                                        Idade
+                                                    </div>
+                                                    <div class="col-6">
+                                                        Sexo
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <input id="campo-idade"  value="" disabled="disabled" name="idade" type="text" required="" class="form-control" />
+                                                    </div>
+                                                    <div class="col">
+                                                        <input id="campo-sexo"  value="" disabled="disabled" name="sexo" type="text" required="" class="form-control" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="row mt-10">
+                                                    <div class="col-6">
+                                                        CPF
+                                                    </div>
+                                                    <div class="col-6">
+                                                        RNE
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <input id="campo-cpf"  value="" disabled="disabled" name="cpf" type="text" required="" class="form-control" />
+                                                    </div>
+                                                    <div class="col">
+                                                        <input id="campo-rne"  value="" disabled="disabled" name="rne" type="text" required="" class="form-control" />
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-10">
+                                                    <div class="col-6">
+                                                        CEP
+                                                    </div>
+                                                    <div class="col-6">
+                                                        Endereço
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <input id="campo-cep"  value="" disabled="disabled" name="cep" type="text" required="" class="form-control" />
+                                                    </div>
+                                                    <div class="col">
+                                                        <input id="campo-endereco"  value="" disabled="disabled" name="endereco" type="text" required="" class="form-control" />
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-10">
+                                                    <div class="col-6">
+                                                        Passaporte
+                                                    </div>
+                                                    <div class="col-6">
+                                                        Telefone
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <input id="campo-passaporte"  value="" disabled="disabled" name="passaporte" type="text" required="" class="form-control" />
+                                                    </div>
+                                                    <div class="col">
+                                                        <input id="campo-telefone"  value="" disabled="disabled" name="telefone" type="text" required="" class="form-control" />
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-10">
+                                                    <div class="col-6">
+                                                        Pressão
+                                                    </div>
+                                                    <div class="col-6">
+                                                        Peso
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <input id="campo-pressao"  value="" disabled="disabled" name="pressao" type="text" required="" class="form-control" />
+                                                    </div>
+                                                    <div class="col">
+                                                        <input id="campo-peso"  value="" disabled="disabled" name="peso" type="text" required="" class="form-control" />
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-10">
+                                                    <div class="col-6">
+                                                        Altura
+                                                    </div>
+                                                    <div class="col-6">
+                                                        Temperatura
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <input id="campo-altura"  value="" disabled="disabled" name="altura" type="text" required="" class="form-control" />
+                                                    </div>
+                                                    <div class="col">
+                                                        <input id="campo-temperatura"  value="" disabled="disabled" name="temperatura" type="text" required="" class="form-control" />
+                                                    </div>
+                                                </div>
+                                                <table id="tabeladoc" class="mt-4 table table-striped">
+                                                    <thead class="bg-dark text-white">
+                                                        <tr>
+                                                            <td>Sintomas</td>
+                                                        </tr>
+                                                    </thead>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal Footer -->
+                </div>
+            </div>
+            <div class="modal-footer col-12">
+                <button id="btnPrint4" type="button" class="btn btn-info float-right">Imprimir</button>
+                @*<button class="btn float-right" data-dismiss="modal" aria-hidden="true">Fechar</button>*@
+            </div>
+        </div>
+    </div>
+</div>
+@section js{
+    <script src="~/Scripts/Paciente/Imprimir.js"></script>
+}
+
+
+

@@ -26,6 +26,7 @@
                             <div class="body-message">
                                 <div class="row">
                                     <div class="col-12">
+                                        <div hidden="hidden"></div>
                                         <div class="body-message">
                                             <h3 class="text-dark">Paciente</h3>
                                             <div>
@@ -163,10 +164,11 @@
                                                         <input id="campo-temperatura"  value="" disabled="disabled" name="temperatura" type="text" required="" class="form-control" />
                                                     </div>
                                                 </div>
-                                                <table id="tabeladoc" class="mt-4 table table-striped">
+                                                <table id="tabelaSintomas" class="mt-4 table table-striped">
                                                     <thead class="bg-dark text-white">
                                                         <tr>
                                                             <td>Sintomas</td>
+                                                            <td>Intensidade</td>
                                                         </tr>
                                                     </thead>
                                                 </table>
@@ -187,9 +189,30 @@
         </div>
     </div>
 </div>
-@section js{
-    <script src="~/Scripts/Paciente/Imprimir.js"></script>
-}
+    <script>
+        $('#tabelaSintomas').DataTable({
+            ajax: {
+                ajax: "/atendimentoespecial/ObterSintomaAtendimento?idAtendimento=" + $(this).("id"),
+            },
+            method: "GET",
+            serverSide: true,
+            searching: false,
+            info: false,
+            paging: false,
+            columns: [
+                {
+                    'data': 'sintoma',
+                    'data': 'nivelDeDor'
+                }
+            ]
+        });
+        //$id = $(this).data("id");
+        //$nome = document.getElementById("nome").val();
 
+        $("#campo-nome").val($nome);
+        $("#campo-posto").val($idPaciente);
+    </script>
+    <script src="~/Scripts/Paciente/Imprimir.js"></script>
+ 
 
 

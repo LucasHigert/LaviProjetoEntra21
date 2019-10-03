@@ -1,21 +1,14 @@
 ﻿$(function () {
 
-    $idPaciente = 0;
-
-    $("#campo-nome").keypress(function (e) {
-        if (e.keyCode == 13) {
-            AtualizaTabela();
-        }
-    });
-
-    $("#pesquisar").on("click", function () {
-        AtualizaTabela();
-    });
-
+    $controle = 0;
     function AtualizaTabela() {
-        $tabelaPaciente = $('#tabelaAtendimento').DataTable({
+        if ($controle == 0) {
+        $tabelaAtendimento = $('#tabelaAtendimento').DataTable({
             ajax: {
-                url: "/paciente/ObterPeloPaciente?id=" + $idPaciente,
+                url: "/paciente/ObterPeloPaciente",
+                data: function (d) {
+                    d.id = $("#campo-id").val()
+                }
             },
             method: "GET",
             serverSide: true,
@@ -35,21 +28,21 @@
                     }
                 }
             ]
-        });
+            });
+            $controle = 1;
+        } else {
+            $tabelaAtendimento.ajax.reload();
+        }
     }
 
-    $("#tabelaAtendimento").on("click", ".botao-atendimento", function () {
-        $('#documentoFormularioModal').modal('show');
-        $id = $(this).data("id");
-        $nome = $(this).data("nome");
-
-        $("#campo-cidade").val($id);
-        $("#campo-posto").val($nome);
-
-
-    })
+    //Botao pesquisar
     $("#botao").on("click", function () {
         $idPaciente = $("#campo-id").val();
         AtualizaTabela();
-    })
-}); 
+    });
+
+    $("#tabelaAtendimento").on("click", ".botao-atendimento", function () {
+        $('#documentoFormularioModal').modal('show');
+    });
+
+})

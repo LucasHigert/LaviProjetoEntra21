@@ -65,9 +65,14 @@ namespace Repository.Repository
             return context.Atendimentos.Include("Paciente").Where(x => x.Id == id).FirstOrDefault();
         }
 
+        public Atendimento ObterPeloIdPaciente(int idPaciente)
+        {
+            return context.Atendimentos.Include("Paciente").Where(x => x.IdPaciente == idPaciente).FirstOrDefault();
+        }
+
         public List<Atendimento> ObterTodosPaciente(int id)
         {
-            return context.Atendimentos.OrderBy(x => x.IdPaciente == id).ToList();
+            return context.Atendimentos.Where(x => x.IdPaciente == id).ToList();
 
         }
 

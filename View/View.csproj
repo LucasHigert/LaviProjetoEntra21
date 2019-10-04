@@ -326,6 +326,10 @@
     <Content Include="Content\Imagens\icones\favicon %282%29.ico" />
     <Content Include="Content\Imagens\icones\favicon.ico" />
     <Content Include="Content\Imagens\icones\Logo Lavi sem nome .png" />
+    <Content Include="Content\Imagens\Login\24-Pediatria.jpg" />
+    <Content Include="Content\Imagens\Login\diniz-bioetica-medico-o-proprio-sujeito-moral-do-codigo-de-etica-690x430.jpg" />
+    <Content Include="Content\Imagens\Login\O_impacto_da_tecnologia_em_saúde.jpg" />
+    <Content Include="Content\Imagens\Login\tecnologia-pacientes-pediatria.jpg" />
     <Content Include="Content\Imagens\Logo Lavi  Preto.png" />
     <Content Include="Content\Imagens\Logo Lavi.png" />
     <Content Include="Content\masc-adult-hands.png" />
@@ -563,6 +567,7 @@
     <Content Include="Scripts\jquery-3.0.0.slim.js" />
     <Content Include="Scripts\jquery-3.0.0.slim.min.js" />
     <Content Include="Scripts\lib\i18n\i18n.js" />
+    <Content Include="Scripts\Login\Login.css" />
     <Content Include="Scripts\Mask\jquery.mask.min.js" />
     <Content Include="Scripts\materialize\materialize.js" />
     <Content Include="Scripts\materialize\materialize.min.js" />
@@ -6147,6 +6152,7 @@
     <Content Include="Views\Paciente\Documento.cshtml" />
     <Content Include="Views\Paciente\DocumentoModal.cshtml" />
     <Content Include="Views\Paciente\DocumentoFormularioModal.cshtml" />
+    <Content Include="Views\Atendimento\PacienteDocumentos.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

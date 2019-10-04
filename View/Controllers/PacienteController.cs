@@ -126,8 +126,11 @@ namespace View.Controllers
 
 
         #region Documentos
+
         public ActionResult Documento()
         {
+            if (VerificaLogado() == true)
+            {
             if (Session["usuarioLogadoPermissao"].ToString() == "1")
             {
                 return Redirect("/login/sempermissao");

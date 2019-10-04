@@ -41,31 +41,13 @@
 
     <div class="row mt-2">
 
-        <div class="col-4">
+        <div class="col-3">
             <label class="font-weight-bold" for="campo-idade">Idade<a class="text-danger">*</a></label>
             <input type="number" id="campo-idade" name="idade" min="0" maxlength="3" class="form-control border-info" required="" />
         </div>
-        
-
-        <div class="col-4">
-            <label class="font-weight-bold" for="campo-cep">CEP</label>
-            <input type="text" id="campo-cep" placeholder="00000-000" name="cep" maxlength="9" class="form-control border-info" />
-        </div>
-
-
-        <div class="col-4">
-            <label class="font-weight-bold" for="campo-endereco">Endereço</label>
-            <input type="text" id="campo-endereco" name="endereco" class="form-control border-info" maxlength="100" />
-        </div>
-
-
-    </div>
-    <!------------------------------>
-    <div class="row mt-2">
-
         <div class="col-3">
-            <label class="font-weight-bold" for="campo-cpf">CPF</label>
-            <input type="text" maxlength="15" id="campo-cpf" placeholder="000.000.000-00" name="cpf" class="form-control border-info"/>
+            <label class="font-weight-bold" for="campo-cpf">CPF<a class="text-danger">*</a></label>
+            <input type="text" maxlength="15" required="" id="campo-cpf" placeholder="000.000.000-00" name="cpf" class="form-control border-info" />
         </div>
         <div class="col-3">
             <label class="font-weight-bold" for="campo-rne">RNE</label>
@@ -78,9 +60,27 @@
         </div>
 
 
+
+    </div>
+    <!------------------------------>
+    <div class="row mt-2">
+
+        <div class="col-4">
+            <label class="font-weight-bold" for="campo-cep">CEP</label>
+            <input type="text" id="campo-cep" placeholder="00000-000" name="cep" maxlength="9" class="form-control border-info" />
+        </div>
+
+
+        <div class="col-5">
+            <label class="font-weight-bold" for="campo-endereco">Endereço</label>
+            <input type="text" id="campo-endereco" name="endereco" class="form-control border-info" maxlength="100" />
+        </div>
+
+     
+
         <div class="col-3">
             <label class="font-weight-bold" for="campo-telefone">Telefone</label>
-            <input type="tel" id="campo-telefone" name="telefone" maxlength="14" class="form-control border-info" placeholder="(00)00000-0000"/>
+            <input type="tel" id="campo-telefone" name="telefone" maxlength="14" class="form-control border-info" placeholder="(00)00000-0000" />
         </div>
     </div>
 

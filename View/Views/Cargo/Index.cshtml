@@ -14,8 +14,7 @@
 <table class="table table-primary table-striped table-bordered table-hover" id="cargos-index">
     <thead class="bg-dark">
         <tr>
-            <td>Cargos</td>
-            <td>Nivel Permissão</td>
+            <td>Cargos</td>          
             <td width="220px">Ação</td>
         </tr>
     </thead>
@@ -23,8 +22,7 @@
         @foreach (Model.Cargo cargo in ViewBag.Cargos)
         {
             <tr>
-                <td>@cargo.Nome</td>
-                <td>@cargo.NivelPermissao</td>
+                <td>@cargo.Nome</td>               
                 <td>
                     <a class="btn btn-info ml-10" href="/cargo/alterar?id=@cargo.Id"><i class="fa fa-edit"></i> Editar</a>
                     <a class="btn btn-danger ml-10" href="/cargo/apagar?id=@cargo.Id"><i class="fa fa-trash"></i> Apagar</a>

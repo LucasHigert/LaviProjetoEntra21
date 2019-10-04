@@ -10,7 +10,52 @@ namespace View.Controllers
 {
     public class AtendimentoController : BaseController
     {
+        #region Documentos
+        public ActionResult PacienteDocumentos(int id)
+        {
 
+            if (VerificaLogado() == true)
+            {
+                if (Session["usuarioLogadoPermissao"].ToString() != "1")
+                {
+
+                    Atendimento atendimento = repositoryAtendimento.ObterPeloId(id);
+                    ViewBag.Atendimento = atendimento;
+                    Paciente paciente = repositoryPaciente.ObterPeloId(atendimento.IdPaciente);
+                    ViewBag.Paciente = paciente;
+                    if (paciente.Lingua != 0)
+                    {
+                        AtendimentoParteCorpoSintomaRepository atendimentoParteCorpoSintoma = new AtendimentoParteCorpoSintomaRepository();
+                        List<Sintoma> sintomas = new List<Sintoma>();
+                        List<AtendimentoParteCorpoSintoma> AtendimentoSintoma = atendimentoParteCorpoSintoma.ObterPeloIdAtentimento(atendimento.Id);
+                        for (int i = 0; i < AtendimentoSintoma.Count; i++)
+                        {
+                            sintomas.Add(new Sintoma { Nome = AtendimentoSintoma[i].Sintoma.Nome });
+                        }
+                        ViewBag.NivelDor = AtendimentoSintoma;
+                        ViewBag.Sintomas = sintomas;
+                        return View();
+                    }
+                    else
+                    {
+                        return View();
+                    }
+                }
+                else
+                {
+                    return Redirect("/login/sempermissao");
+
+                }
+
+
+            }
+            else
+            {
+                return Redirect("/login");
+            }
+
+        }
+        #endregion
         #region Verificação login
         private bool VerificaLogado()
         {
@@ -170,6 +215,7 @@ namespace View.Controllers
         }
         //Alterar
         #region
+            
         public ActionResult Alterar(int id)
         {
             if (VerificaLogado() == true)

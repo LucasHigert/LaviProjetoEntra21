@@ -23,16 +23,27 @@ namespace View.Controllers
         {
             if (VerificaLogado() == true)
             {
-                List<Paciente> pacientes = repository.ObterTodos();
-                ViewBag.Pacientes = pacientes;
-                return View();
+                if (Session["usuarioLogadoPermissao"].ToString() != "4")
+                {
+                    FuncionarioRepository funcionarioRepository = new FuncionarioRepository();
+                    Funcionario funcionario = funcionarioRepository.ObterPeloId(Convert.ToInt32(Session["usuarioLogadoId"]));
+                    List<Paciente> pacientes = repository.ObterTodosPosto(funcionario.IdPosto);
+                    ViewBag.Pacientes = pacientes;
+                    return View();
+                }
+                else
+                {
+                    List<Paciente> pacientes = repository.ObterTodos();
+                    ViewBag.Pacientes = pacientes;
+                    return View();
+                }
             }
             else
             {
                 return Redirect("/login");
             }
         }
-        
+
         #region Verificações Login
 
         private bool VerificaLogado()
@@ -57,12 +68,12 @@ namespace View.Controllers
             PacienteRepository pacienteRepository = new PacienteRepository();
             FuncionarioRepository funcionarioRepository = new FuncionarioRepository();
             Funcionario funcionario = funcionarioRepository.ObterPeloId(Convert.ToInt32(Session["usuarioLogadoId"]));
-            var resultado = pacienteRepository.ObterPeloNome(nome,funcionario.IdPosto);
+            var resultado = pacienteRepository.ObterPeloNome(nome, funcionario.IdPosto);
             var result = new { data = resultado };
             return Json(result, JsonRequestBehavior.AllowGet);
         }
-     
-        
+
+
         // GET: Cidade
         public JsonResult ObterPeloId(int id)
         {
@@ -115,32 +126,38 @@ namespace View.Controllers
 
 
         #region Documentos
+
         public ActionResult Documento()
         {
-            return View();
+            if (VerificaLogado() == true)
+            {
+                if (Session["usuarioLogadoPermissao"].ToString() == "1")
+                {
+                    return Redirect("/login/sempermissao");
+                }
+                else
+                {
+                    return View();
 
+                }
+            }
+            else
+            {
+                return Redirect("/login");
+            }
         }
 
-        //obtem o paciente pelo nome
-        //[HttpGet]
-        //public JsonResult ObterPeloNome(string nome)
-        //{
-        //    PacienteRepository pacienteRepository = new PacienteRepository();
-        //    var pessoas = pacienteRepository.ObterPeloNome(nome);
-        //    var result = new { data = pessoas };
-        //    return Json(result, JsonRequestBehavior.AllowGet);
-        //}
 
         [HttpGet]
         public JsonResult ObterPeloPaciente(int id)
         {
             AtendimentoRepository atendimentoRepository = new AtendimentoRepository();
             List<Atendimento> lista = atendimentoRepository.ObterTodosPaciente(id);
-            var result = new { data = lista};
+            var result = new { data = lista };
             return Json(result, JsonRequestBehavior.AllowGet);
         }
         #endregion
-        
+
         //Apagar
         #region Apagar
         public ActionResult Apagar(int id)
@@ -165,27 +182,8 @@ namespace View.Controllers
             if (VerificaLogado() == true)
             {
                 var alterou = repository.Alterar(paciente);
-                return RedirectToAction("index");
-                //Paciente paciente = new Paciente();
-                //paciente.Id = id;
-                //paciente.Nome = nome;
-                //paciente.Idade = idade;
-                //paciente.Cpf = cpf;
-                //paciente.Rne = rne;
-                //paciente.Passaporte = passaporte;
-                //paciente.Endereco = endereco;
-                //paciente.Telefone = telefone;
-                //paciente.Cep = cep;
-                //paciente.Sexo = sexo;
-                //paciente.Altura = altura;
-                //paciente.Peso = peso;
-                //paciente.Pressao = pressao;
-                //paciente.Posto = new Posto();
-                //paciente.Posto.Id = idPosto;
-                //paciente.Temperatura = temperatura;
-
-                //repository.Alterar(paciente);
-                //return RedirectToAction("Index");
+                repository.Alterar(paciente);
+                return RedirectToAction("Index");
             }
             else
             {

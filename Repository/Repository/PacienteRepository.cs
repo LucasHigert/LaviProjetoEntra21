@@ -24,20 +24,21 @@ namespace Repository.Repository
             if (pacienteOriginal == null)
                 return false;
 
+            pacienteOriginal.IdPosto = paciente.IdPosto;
             pacienteOriginal.Nome = paciente.Nome;
-            pacienteOriginal.Cpf = paciente.Cpf;
-            pacienteOriginal.Pressao = paciente.Pressao;
-            pacienteOriginal.Cep = paciente.Cep;
             pacienteOriginal.Idade = paciente.Idade;
+            pacienteOriginal.Cpf = paciente.Cpf;
+            pacienteOriginal.Rne = paciente.Rne;
+            pacienteOriginal.Passaporte = paciente.Passaporte;
+            pacienteOriginal.Endereco = paciente.Endereco;
+            pacienteOriginal.Telefone = paciente.Telefone;
+            pacienteOriginal.Cep = paciente.Cep;
+            pacienteOriginal.Lingua = paciente.Lingua;
             pacienteOriginal.Sexo = paciente.Sexo;
             pacienteOriginal.Altura = paciente.Altura;
             pacienteOriginal.Peso = paciente.Peso;
-            pacienteOriginal.Telefone = paciente.Passaporte;
-            pacienteOriginal.Rne = paciente.Rne;
-            pacienteOriginal.Endereco = paciente.Endereco;
-            pacienteOriginal.IdPosto = paciente.IdPosto;
+            pacienteOriginal.Pressao = paciente.Pressao;
             pacienteOriginal.Temperatura = paciente.Temperatura;
-
 
             int quantidadeAfetada = context.SaveChanges();
             return quantidadeAfetada == 1;
@@ -72,10 +73,11 @@ namespace Repository.Repository
             return rows == 1;
         }
 
+        //Tela atendimento especial busca o nome do paciente estrangeiro
         public List<Paciente> ObterEstrangeiroNome(string nome, int posto)
         {
             List<Paciente> lista = context.Pacientes
-                            .Where(x => x.Nome.Contains(nome) && x.IdPosto == posto && x.Lingua != 0)
+                            .Where(x => x.Nome.Contains(nome) && x.IdPosto == posto && x.Lingua != 1)
                             .ToList();
             return lista;
         }
@@ -86,10 +88,11 @@ namespace Repository.Repository
             return paciente;
         }
 
+        //Tela de documentos
         public List<Paciente> ObterPeloNome(string nome, int posto)
         {
             List<Paciente> lista = context.Pacientes
-                .Where(x=> x.Nome.Contains(nome) && x.IdPosto == posto)
+                .Where(x => x.Nome.Contains(nome) && x.IdPosto == posto)
                 .ToList();
             return lista;
         }
@@ -108,6 +111,15 @@ namespace Repository.Repository
                .Include("Posto")
                .Where(x => x.RegistroAtivo == true)
                .ToList();
+        }
+
+        //Tela index de paciente mostrar os pacientes do posto da pessoa logada
+        public List<Paciente> ObterTodosPosto(int posto)
+        {
+            return context.Pacientes
+            .Include("Posto")
+            .Where(x => x.RegistroAtivo == true && x.IdPosto == posto)
+            .ToList();
         }
     }
 }

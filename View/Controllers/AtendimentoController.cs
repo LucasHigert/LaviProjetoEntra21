@@ -92,10 +92,6 @@ namespace View.Controllers
         {
             if (VerificaLogado() == true)
             {
-
-                EncaminhamentoRepository encaminhamentoRepository = new EncaminhamentoRepository();
-                ViewBag.Encaminhamentos = encaminhamentoRepository.ObterTodos();
-                ViewBag.Pacientes = repositoryPaciente.ObterTodos();
                 return View();
             }
             else
@@ -110,6 +106,12 @@ namespace View.Controllers
             {
                 FuncionarioRepository funcionarioRepository = new FuncionarioRepository();
                 Funcionario funcionario = funcionarioRepository.ObterPeloId(Convert.ToInt32(Session["usuarioLogadoId"]));
+                Atendimento atendimentoExistente = repositoryAtendimento.ObterPeloPaciente(atendimento.IdPaciente);
+                if (atendimentoExistente != null)
+                {
+                    return JavaScript("<script>alert(\"some message\")</script>");
+                }
+
                 atendimento.IdFuncionario = funcionario.Id;
                 atendimento.IdPosto = funcionario.IdPosto;
                 atendimento.DataAtendimento = DateTime.Now;
@@ -130,7 +132,7 @@ namespace View.Controllers
                 var inseriu = repositoryAtendimento.Inserir(atendimento);
                 PacienteRepository pacienteRepository = new PacienteRepository();
                 Paciente paciente = pacienteRepository.ObterPeloId(atendimento.IdPaciente);
-                if (paciente.Lingua != 0)
+                if (paciente.Lingua != 1)
                 {
                     return Redirect("/atendimentoespecial/ParteCorpoEspecial?idAtendimento=" + atendimento.Id);
                 }

@@ -25,9 +25,9 @@
                     render: function (data, type, row) {
                         return '<a class="botao-atendimento btn btn-info"  href="/atendimento/pacienteDocumentos?id=' + row.Id + '"\   data-id="' + row.Id + '"\
                     data-nome="' + row.Nome + '"><i class="fa fa-user"></i></a>'
+                        }
                     }
-                }
-            ]
+                ]
             });
             $controle = 1;
         } else {

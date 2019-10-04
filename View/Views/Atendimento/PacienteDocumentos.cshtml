@@ -1,0 +1,203 @@
+﻿
+@{
+    ViewBag.Title = "PacienteDocumentos";
+}
+<h2 class="h2 mt-5 mb-5">Paciente  @ViewBag.Paciente.Nome</h2>
+
+<input type="text" name="id" value="@ViewBag.Atendimento.Id" hidden="hidden" />
+<div id="printThis">
+    <div printSection>
+        <div>
+            <div class="row mt-10">
+                <div class="col-6">
+                    Nome
+                </div>
+                <div class="col-6">
+                    Data de Atendimento
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <input id="campo-nome" value="@ViewBag.Paciente.Nome" disabled="disabled" name="nome" type="text" required="" class="form-control" />
+            </div>
+            <div class="col">
+                <input id="campo-lingua" value="@ViewBag.Atendimento.DataAtendimento" disabled="disabled" name="lingua" type="text" required="" class="form-control" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                Cidade
+            </div>
+            <div class="col-6">
+                Posto
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <input id="campo-cidade" value="" disabled="disabled" name="cidade" type="text" required="" class="form-control" />
+            </div>
+            <div class="col-6">
+                <input id="campo-posto" value="" disabled="disabled" name="posto" type="text" required="" class="form-control" />
+            </div>
+        </div>
+        <div>
+            <div class="row mt-10">
+
+                <div class="col-12">
+                    Língua
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col">
+                <input id="campo-lingua" value="@ViewBag.Paciente.Lingua" disabled="disabled" name="lingua" type="text" required="" class="form-control" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                Idade
+            </div>
+            <div class="col-6">
+                Sexo
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <input id="campo-idade" value="@ViewBag.Paciente.Idade" disabled="disabled" name="idade" type="text" required="" class="form-control" />
+            </div>
+            <div class="col">
+                <input id="campo-sexo" value="@ViewBag.Paciente.Sexo" disabled="disabled" name="sexo" type="text" required="" class="form-control" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                CPF
+            </div>
+            <div class="col-6">
+                RNE
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <input id="campo-cpf" value="@ViewBag.Paciente.Cpf" disabled="disabled" name="cpf" type="text" required="" class="form-control" />
+            </div>
+            <div class="col">
+                <input id="campo-rne" value="@ViewBag.Paciente.Rne" disabled="disabled" name="rne" type="text" required="" class="form-control" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                CEP
+            </div>
+            <div class="col-6">
+                Endereço
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <input id="campo-cep" value="@ViewBag.Paciente.Cep" disabled="disabled" name="cep" type="text" required="" class="form-control" />
+            </div>
+            <div class="col">
+                <input id="campo-endereco" value="@ViewBag.Paciente.Endereco" disabled="disabled" name="endereco" type="text" required="" class="form-control" />
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-6">
+                Passaporte
+            </div>
+            <div class="col-6">
+                Telefone
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <input id="campo-passaporte" value="@ViewBag.Paciente.Passaporte" disabled="disabled" name="passaporte" type="text" required="" class="form-control" />
+            </div>
+            <div class="col">
+                <input id="campo-telefone" value="" disabled="@ViewBag.Paciente.Telefone" name="telefone" type="text" required="" class="form-control" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                Pressão
+            </div>
+            <div class="col-6">
+                Peso
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <input id="campo-pressao" value="@ViewBag.Paciente.Pressao" disabled="disabled" name="pressao" type="text" required="" class="form-control" />
+            </div>
+            <div class="col">
+                <input id="campo-peso" value="@ViewBag.Paciente.Peso" disabled="disabled" name="peso" type="text" required="" class="form-control" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                Altura
+            </div>
+            <div class="col-6">
+                Temperatura
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <input id="campo-altura" value="@ViewBag.Paciente.Altura" disabled="disabled" name="altura" type="text" required="" class="form-control" />
+            </div>
+            <div class="col">
+                <input id="campo-temperatura" value="@ViewBag.Paciente.Temperatura" disabled="disabled" name="temperatura" type="text" required="" class="form-control" />
+            </div>
+        </div>
+
+    </div>
+    @if (ViewBag.Paciente.Lingua != 0)
+    {
+
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-primary table-hover table-bordered text-dark mt-4">
+                    <thead class="bg-dark">
+                        <tr>
+                            <td>Sintoma</td>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+
+                    @for (int i = 0; i < ViewBag.Sintomas.Count; i++)
+                    {
+                        if (ViewBag.NivelDor[i].NiverDor == 2)
+                        {
+                            <tr class="bg-yellow-900 text-white">
+                                <td>@ViewBag.Sintomas[i].Nome</td>
+                            </tr>
+                        }
+                        else if (ViewBag.NivelDor[i].NiverDor == 3)
+                        {
+                            <tr class="bg-red-900 text-white">
+                                <td>@ViewBag.Sintomas[i].Nome</td>
+                            </tr>
+                        }
+                        else
+                        {
+                            <tr>
+                                <td>@ViewBag.Sintomas[i].Nome</td>
+                            </tr>
+                        }
+                    }
+                </table>
+
+            </div>
+        </div>
+    }
+    <div class="col-6">
+        <button id="btnPrint4" type="button" class="btn btn-info float-right">Imprimir</button>
+    </div>
+</div>
+
+<script src="~/Scripts/Paciente/Imprimir.js"></script>

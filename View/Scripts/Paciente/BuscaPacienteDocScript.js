@@ -23,7 +23,7 @@
                 },
                 {
                     render: function (data, type, row) {
-                        return '<a class="botao-atendimento btn btn-info" id=' + row.Id + '"\   data-id="' + row.Id + '"\
+                        return '<a class="botao-atendimento btn btn-info"  href="/atendimento/pacienteDocumentos?id=' + row.Id + '"\   data-id="' + row.Id + '"\
                     data-nome="' + row.Nome + '"><i class="fa fa-user"></i></a>'
                     }
                 }
@@ -41,8 +41,6 @@
         AtualizaTabela();
     });
 
-    $("#tabelaAtendimento").on("click", ".botao-atendimento", function () {
-        $('#documentoFormularioModal').modal('show');
-    });
+    
 
 })

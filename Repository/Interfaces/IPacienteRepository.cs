@@ -14,8 +14,6 @@ namespace Repository.Interfaces
 
         bool Alterar(Paciente paciente);
 
-        //List<Paciente> ObterPacientesPeloIdPosto(int idPosto);
-
         bool Apagar(int id);
 
         List<Paciente> ObterPeloNome(string nome,int posto);
@@ -27,5 +25,7 @@ namespace Repository.Interfaces
         List<Paciente> ObterTodosPosto(int posto);
 
         Paciente ObterPeloId(int id);
+
+        Paciente VerificaJaExiste(string cpf);
     }
 }

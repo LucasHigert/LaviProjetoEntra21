@@ -36,13 +36,34 @@ namespace View.Controllers
             }
             else
             {
-               return RedirectToAction("index");
+                return RedirectToAction("index");
             }
         }
 
         public ActionResult SemPermissao()
         {
-            return View();
+            if (Session["usuarioLogadoId"] != null)
+            {
+                return View();
+
+            }
+            else
+            {
+                return Redirect("/login");
+            }
+        }
+
+        public ActionResult JaExiste()
+        {
+            if (Session["usuarioLogadoId"] != null)
+            {
+                return View();
+
+            }
+            else
+            {
+                return Redirect("/login");
+            }
         }
     }
 }

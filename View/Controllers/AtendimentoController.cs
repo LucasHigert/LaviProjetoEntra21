@@ -109,7 +109,7 @@ namespace View.Controllers
                 Atendimento atendimentoExistente = repositoryAtendimento.ObterPeloPaciente(atendimento.IdPaciente);
                 if (atendimentoExistente != null)
                 {
-                    return JavaScript("<script>alert(\"some message\")</script>");
+                    return Redirect("/login/jaexiste");
                 }
 
                 atendimento.IdFuncionario = funcionario.Id;

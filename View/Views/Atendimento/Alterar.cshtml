@@ -57,7 +57,7 @@
     </div>
     @if ((Session["usuarioLogadoPermissao"].ToString() == "3") || (Session["usuarioLogadoPermissao"].ToString() == "4"))
     {
-        if (ViewBag.Paciente.Lingua != 0)
+        if (ViewBag.Paciente.Lingua != 1)
         {
                 <a class="btn btn-primary pull-right mt-4" href="/atendimentoespecial/partecorpoespecial?idAtendimento=@ViewBag.Atendimento.Id"><i class="fa fa-plus"></i> Adicionar Sintomas</a>
 

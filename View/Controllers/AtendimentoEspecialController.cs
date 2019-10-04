@@ -197,7 +197,7 @@ namespace View.Controllers
             PacienteRepository pacienteRepository = new PacienteRepository();
             FuncionarioRepository funcionarioRepository = new FuncionarioRepository();
             Funcionario funcionario = funcionarioRepository.ObterPeloId(Convert.ToInt32(Session["usuarioLogadoId"]));
-            var pessoas = pacienteRepository.ObterEstrangeiroNome(nome,funcionario.IdPosto);
+            var pessoas = pacienteRepository.ObterEstrangeiroNome(nome, funcionario.IdPosto);
             var result = new { data = pessoas };
             return Json(result, JsonRequestBehavior.AllowGet);
         }
@@ -210,34 +210,43 @@ namespace View.Controllers
             {
 
                 AtendimentoRepository atendimentoRepository = new AtendimentoRepository();
-                Atendimento atendimento = new Atendimento();
-                atendimento.IdFuncionario = Convert.ToInt32(Session["usuarioLogadoId"]);
-                atendimento.IdPaciente = idPaciente;
-                atendimento.DataAtendimento = DateTime.Now;
-                if (Session["usuarioLogadoPermissao"].ToString() == "1")
+                Atendimento atendimentoOriginal = atendimentoRepository.ObterPeloPaciente(idPaciente);
+                if (atendimentoOriginal == null)
                 {
-                    atendimento.Status = 1;
 
-                }
-                else if (Session["usuarioLogadoPermissao"].ToString() == "4")
-                {
-                    atendimento.Status = 2;
+                    Atendimento atendimento = new Atendimento();
+                    atendimento.IdFuncionario = Convert.ToInt32(Session["usuarioLogadoId"]);
+                    atendimento.IdPaciente = idPaciente;
+                    atendimento.DataAtendimento = DateTime.Now;
+                    if (Session["usuarioLogadoPermissao"].ToString() == "1")
+                    {
+                        atendimento.Status = 1;
+
+                    }
+                    else if (Session["usuarioLogadoPermissao"].ToString() == "4")
+                    {
+                        atendimento.Status = 2;
+                    }
+                    else
+                    {
+                        atendimento.Status = (Convert.ToInt32(Session["usuarioLogadoPermissao"]) - 1);
+                    }
+                    FuncionarioRepository funcionarioRepository = new FuncionarioRepository();
+                    Funcionario funcionario = funcionarioRepository.ObterPeloId(Convert.ToInt32(Session["usuarioLogadoId"]));
+                    atendimento.IdPosto = funcionario.IdPosto;
+                    atendimentoRepository.Inserir(atendimento);
+                    if (Session["usuarioLogadoPermissao"].ToString() == "1")
+                    {
+                        return Redirect("/atendimentoespecial/FinalizaCadastro?id=" + idPaciente);
+                    }
+                    else
+                    {
+                        return Redirect("/atendimentoespecial/ParteCorpoEspecial?idAtendimento=" + atendimento.Id);
+                    }
                 }
                 else
                 {
-                    atendimento.Status = (Convert.ToInt32(Session["usuarioLogadoPermissao"]) - 1);
-                }
-                FuncionarioRepository funcionarioRepository = new FuncionarioRepository();
-                Funcionario funcionario = funcionarioRepository.ObterPeloId(Convert.ToInt32(Session["usuarioLogadoId"]));
-                atendimento.IdPosto = funcionario.IdPosto;
-                atendimentoRepository.Inserir(atendimento);
-                if (Session["usuarioLogadoPermissao"].ToString() == "1")
-                {
-                    return Redirect("/atendimentoespecial/FinalizaCadastro?id=" + idPaciente);
-                }
-                else
-                {
-                    return Redirect("/atendimentoespecial/ParteCorpoEspecial?idAtendimento=" + atendimento.Id);
+                    return Redirect("/login/jaexiste");
                 }
             }
             else
@@ -253,59 +262,71 @@ namespace View.Controllers
             {
                 FuncionarioRepository funcionarioRepository = new FuncionarioRepository();
                 Funcionario funcionario = funcionarioRepository.ObterPeloId(Convert.ToInt32(Session["usuarioLogadoId"]));
-                paciente.IdPosto = funcionario.IdPosto;
-                string cookie = Request.Cookies["Language"].Value;
-                if (cookie == "fr-HT")
+                Paciente pacienteOriginal = pacienteRepository.VerificaJaExiste(paciente.Cpf);
+                if (pacienteOriginal == null)
                 {
-                    paciente.Lingua = 1;
-                }
-                else if (cookie == "fr-FR")
-                {
-                    paciente.Lingua = 2;
+
+                    paciente.IdPosto = funcionario.IdPosto;
+                    string cookie = Request.Cookies["Language"].Value;
+                    if (cookie == "fr-HT")
+                    {
+                        paciente.Lingua = 1;
+                    }
+                    else if (cookie == "fr-FR")
+                    {
+                        paciente.Lingua = 2;
+                    }
+                    else
+                    {
+                        paciente.Lingua = 0;
+                    }
+                    paciente.RegistroAtivo = true;
+                    pacienteRepository.Inserir(paciente);
+
+                    AtendimentoRepository atendimentoRepository = new AtendimentoRepository();
+                    Atendimento atendimento = new Atendimento();
+                    atendimento.IdFuncionario = Convert.ToInt32(Session["usuarioLogadoId"]);
+                    atendimento.IdPaciente = paciente.Id;
+                    atendimento.DataAtendimento = DateTime.Now;
+                    atendimento.IdPosto = funcionario.IdPosto;
+                    if (Session["usuarioLogadoPermissao"].ToString() == "1")
+                    {
+                        atendimento.Status = 1;
+
+                    }
+                    else if (Session["usuarioLogadoPermissao"].ToString() == "4")
+                    {
+                        atendimento.Status = 2;
+                    }
+                    else
+                    {
+                        atendimento.Status = (Convert.ToInt32(Session["usuarioLogadoPermissao"]) - 1);
+                    }
+
+                    atendimentoRepository.Inserir(atendimento);
+
+                    if (Session["usuarioLogadoPermissao"].ToString() == "1")
+                    {
+                        return Redirect("/atendimentoespecial/FinalizaCadastro?id=" + paciente.Id);
+                    }
+                    else
+                    {
+
+                        return Redirect("/atendimentoespecial/ParteCorpoEspecial?idAtendimento=" + atendimento.Id);
+                    }
                 }
                 else
                 {
-                    paciente.Lingua = 0;
-                }
-                paciente.RegistroAtivo = true;
-                pacienteRepository.Inserir(paciente);
-
-                AtendimentoRepository atendimentoRepository = new AtendimentoRepository();
-                Atendimento atendimento = new Atendimento();
-                atendimento.IdFuncionario = Convert.ToInt32(Session["usuarioLogadoId"]);
-                atendimento.IdPaciente = paciente.Id;
-                atendimento.DataAtendimento = DateTime.Now;
-                atendimento.IdPosto = funcionario.IdPosto;
-                if (Session["usuarioLogadoPermissao"].ToString() == "1")
-                {
-                    atendimento.Status = 1;
-
-                }
-                else if(Session["usuarioLogadoPermissao"].ToString() == "4")
-                {
-                    atendimento.Status = 2;
-                }else
-                {
-                    atendimento.Status = (Convert.ToInt32(Session["usuarioLogadoPermissao"]) - 1);
+                    return Redirect("/login/jaexiste");
                 }
 
-                atendimentoRepository.Inserir(atendimento);
 
-                if (Session["usuarioLogadoPermissao"].ToString() == "1")
-                {
-                    return Redirect("/atendimentoespecial/FinalizaCadastro?id=" + paciente.Id);
-                }
-                else
-                {
-
-                    return Redirect("/atendimentoespecial/ParteCorpoEspecial?idAtendimento=" + atendimento.Id);
-                }
             }
             else
             {
                 return Redirect("/login");
-
             }
+
         }
 
         #region Telas

@@ -121,5 +121,10 @@ namespace Repository.Repository
             .Where(x => x.RegistroAtivo == true && x.IdPosto == posto)
             .ToList();
         }
+
+        public Paciente VerificaJaExiste(string cpf)
+        {
+            return context.Pacientes.Where(X => X.Cpf == cpf && X.RegistroAtivo == true).FirstOrDefault();
+        }
     }
 }

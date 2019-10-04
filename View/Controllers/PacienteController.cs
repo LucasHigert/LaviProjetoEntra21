@@ -109,12 +109,20 @@ namespace View.Controllers
         {
             if (VerificaLogado() == true)
             {
+                Paciente pacienteOriginal = repository.VerificaJaExiste(paciente.Cpf);
+                if (pacienteOriginal == null)
+                {
 
-                FuncionarioRepository funcionarioRepository = new FuncionarioRepository();
-                Funcionario funcionario = funcionarioRepository.ObterPeloId(Convert.ToInt32(Session["usuarioLogadoID"]));
-                paciente.IdPosto = funcionario.IdPosto;
-                repository.Inserir(paciente);
-                return RedirectToAction("Index");
+                    FuncionarioRepository funcionarioRepository = new FuncionarioRepository();
+                    Funcionario funcionario = funcionarioRepository.ObterPeloId(Convert.ToInt32(Session["usuarioLogadoID"]));
+                    paciente.IdPosto = funcionario.IdPosto;
+                    repository.Inserir(paciente);
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    return Redirect("/login/jaexiste");
+                }
             }
             else
             {

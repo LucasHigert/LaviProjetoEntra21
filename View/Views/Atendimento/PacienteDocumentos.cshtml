@@ -28,18 +28,12 @@
 
         <div class="row">
             <div class="col-6">
-                Cidade
-            </div>
-            <div class="col-6">
                 Posto
             </div>
         </div>
         <div class="row">
-            <div class="col-6">
-                <input id="campo-cidade" value="" disabled="disabled" name="cidade" type="text" required="" class="form-control" />
-            </div>
-            <div class="col-6">
-                <input id="campo-posto" value="" disabled="disabled" name="posto" type="text" required="" class="form-control" />
+            <div class="col-12">
+                <input id="campo-posto" value="@ViewBag.Atendimento.Posto.Nome" disabled="disabled" name="posto" type="text" required="" class="form-control" />
             </div>
         </div>
         <div>
@@ -53,7 +47,27 @@
         <div class="row">
 
             <div class="col">
-                <input id="campo-lingua" value="@ViewBag.Paciente.Lingua" disabled="disabled" name="lingua" type="text" required="" class="form-control" />
+                @if (ViewBag.Paciente.Lingua == 1)
+                {
+                    <input id="campo-lingua" value="Português" disabled="disabled" name="lingua" type="text" required="" class="form-control" />
+
+                }
+                else if (ViewBag.Paciente.Lingua == 2)
+                {
+                    <input id="campo-lingua" value="Criolo Haitiano" disabled="disabled" name="lingua" type="text" required="" class="form-control" />
+
+                }
+                else if (ViewBag.Paciente.Lingua == 3)
+                {
+                    <input id="campo-lingua" value="Francês" disabled="disabled" name="lingua" type="text" required="" class="form-control" />
+
+                }
+                else
+                {
+                    <input id="campo-lingua" value="Não definido" disabled="disabled" name="lingua" type="text" required="" class="form-control" />
+
+                }
+
             </div>
         </div>
 
@@ -70,7 +84,7 @@
                 <input id="campo-idade" value="@ViewBag.Paciente.Idade" disabled="disabled" name="idade" type="text" required="" class="form-control" />
             </div>
             <div class="col">
-                <input id="campo-sexo" value="@ViewBag.Paciente.Sexo" disabled="disabled" name="sexo" type="text" required="" class="form-control" />
+                    <input id="campo-sexo" value="@ViewBag.Paciente.Sexo" disabled="disabled" name="sexo" type="text" required="" class="form-control" />
             </div>
         </div>
 
@@ -161,8 +175,8 @@
 
         <div class="row">
             <div class="col-12">
-                <table class="table table-primary table-hover table-bordered text-dark mt-4">
-                    <thead class="bg-dark">
+                <table class="table table-secondary mt-4">
+                    <thead class="bg-secondary text-dark font-weight-bold">
                         <tr>
                             <td>Sintoma</td>
                         </tr>
@@ -173,13 +187,13 @@
                     {
                         if (ViewBag.NivelDor[i].NiverDor == 2)
                         {
-                            <tr class="bg-yellow-900 text-white">
+                            <tr>
                                 <td>@ViewBag.Sintomas[i].Nome</td>
                             </tr>
                         }
                         else if (ViewBag.NivelDor[i].NiverDor == 3)
                         {
-                            <tr class="bg-red-900 text-white">
+                            <tr>
                                 <td>@ViewBag.Sintomas[i].Nome</td>
                             </tr>
                         }

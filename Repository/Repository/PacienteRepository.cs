@@ -77,7 +77,7 @@ namespace Repository.Repository
         public List<Paciente> ObterEstrangeiroNome(string nome, int posto)
         {
             List<Paciente> lista = context.Pacientes
-                            .Where(x => x.Nome.Contains(nome) && x.IdPosto == posto && x.Lingua != 0)
+                            .Where(x => x.Nome.Contains(nome) && x.IdPosto == posto && x.Lingua != 1)
                             .ToList();
             return lista;
         }

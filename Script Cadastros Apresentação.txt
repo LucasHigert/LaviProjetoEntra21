@@ -1,0 +1,17 @@
+Entrar como atendente
+Criar paciente portgues
+Criar paciente estrangeiro
+
+Abrir atendimento com paciente criado (portugues)
+Abrir atendimento com paciente criado (estrangeiro)
+Inserir sintomas
+
+Sair e logar com triagem
+
+Atender os dois pacientes
+
+Sair e entrar com medico
+
+Atender e finalizar os dois pacientes
+
+colocar oq sigifica o nome de vcs

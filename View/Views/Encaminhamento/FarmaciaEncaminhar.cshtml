@@ -40,7 +40,7 @@
 
                 <!-- Modal Body -->
 
-                <div class="modal-body printSection">
+                <div class="modal-body printSection pt-0 pr-0">
                     <div class="row">
                         <div class="col-12">
                             <div class="body-message">
@@ -49,13 +49,13 @@
                                     <span id="farmacia-encaminhar" class="font-weight-bold"></span>
                                 </div>
                                 <div class="row mt-10">
-                                    <div class="text-left col-5">
+                                    <div class="text-left font-weight-bold col-5">
                                         Nome do remédio
                                     </div>
-                                    <div class="text-left col-3">
+                                    <div class="text-left font-weight-bold col-3">
                                         Quantidade por dia
                                     </div>
-                                    <div class="text-left col-3">
+                                    <div class="text-left font-weight-bold col-3">
                                         Dias que deverá usar
                                     </div>
                                 </div>
@@ -75,13 +75,13 @@
                                 <div id="origem">
                                     <div class="row">
                                         <div class="col-5">
-                                            <input class="col-12" type="text" />
+                                            <input class="col-12 border-info" type="text" />
                                         </div>
                                         <div class="col-3">
-                                            <input class="col-12" type="text" />
+                                            <input class="col-12 border-info" type="text" />
                                         </div>
                                         <div class="col-3">
-                                            <input class="col-12" type="number" />
+                                            <input class="col-12 border-info" type="number" />
                                         </div>
                                     </div>
                                 </div>
@@ -95,11 +95,11 @@
 
             <!-- Modal Footer -->
             <div class="modal-footer">
-                <div class="col-6">
+                <div>
                     <button class="btn btn-success botao" onclick="duplicarCampos()">+</button>
                     <button class="btn btn-danger botao" onclick="removerCampos(this)">-</button>
                 </div>
-                <div class="col-6">
+                <div>
                     <button id="btnPrint" type="button" class="btn btn-info float-right">Imprimir</button>
                     @*<button class="btn float-right" data-dismiss="modal" aria-hidden="true">Fechar</button>*@
                 </div>
@@ -108,6 +108,7 @@
         </div>
     </div>
 </div>
+
 
 @section js{
     <script src="~/Scripts/Encaminhamento/TesteEncaminhamento.js"></script>

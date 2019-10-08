@@ -56,7 +56,7 @@
 
         <div class="col-3">
             <label class="font-weight-bold" for="campo-passaporte">Passaporte</label>
-            <input type="text" id="campo-passaporte" name="passaporte" maxlength="50" class="form-control border-info" placeholder="AA000000" />
+            <input type="text" id="campo-passaporte" maxlenght="8" name="passaporte" maxlength="50" class="form-control border-info" placeholder="AA000000" />
         </div>
 
 
@@ -77,25 +77,6 @@
 
     </div>
     <!------------------------------>
-    <div class="row mt-2">
-
-        
-        <div class="col-3">
-            <label class="font-weight-bold" for="campo-rne">RNE</label>
-            <input type="text" id="campo-rne" placeholder="Ex: A000000-A" name="rne" maxlength="50" class="form-control border-info" />
-        </div>
-
-        <div class="col-3">
-            <label class="font-weight-bold" for="campo-passaporte">Passaporte</label>
-            <input type="text" id="campo-passaporte" name="passaporte" maxlength="50" class="form-control border-info" placeholder="AA000000" />
-        </div>
-
-
-        <div class="col-3">
-            <label class="font-weight-bold" for="campo-telefone">Telefone</label>
-            <input type="tel" id="campo-telefone" name="telefone" maxlength="14" class="form-control border-info" placeholder="(00)00000-0000" />
-        </div>
-    </div>
 
     @if (Session["usuarioLogadoPermissao"].ToString() != "1")
     {

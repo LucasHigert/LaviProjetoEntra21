@@ -23,15 +23,14 @@
         $lingua = document.getElementById("campo-lingua").classList.contains('border-success');
         $idade = document.getElementById("campo-idade").classList.contains('border-success');
 
-        $pressao = document.getElementById("campo-pressao").classList.contains("border-danger");
-        $peso = document.getElementById("campo-peso").classList.contains("border-danger");
-        $altura = document.getElementById("campo-altura").classList.contains("border-danger");
-        $temperatura = document.getElementById("campo-temperatura").classList.contains("border-danger");
+        //$pressao = document.getElementById("campo-pressao").classList.contains("border-danger");
+        //$peso = document.getElementById("campo-peso").classList.contains("border-danger");
+        //$altura = document.getElementById("campo-altura").classList.contains("border-danger");
+        //$temperatura = document.getElementById("campo-temperatura").classList.contains("border-danger");
 
-        $rne = document.getElementById("campo-rne").classList.contains("border-danger");
-        $cep = document.getElementById("campo-cep").classList.contains("border-danger");
-        $telefone = document.getElementById("campo-telefone").classList.contains("border-danger");
-        $passaporte = document.getElementById("campo-passaporte").classList.contains("border-danger");
+        //$rne = document.getElementById("campo-rne").classList.contains("border-danger");
+        //$telefone = document.getElementById("campo-telefone").classList.contains("border-danger");
+        //$passaporte = document.getElementById("campo-passaporte").classList.contains("border-danger");
 
 
         $botao = document.getElementById("botao-salvar");
@@ -242,13 +241,24 @@
     });
 
     $("#campo-passaporte").focusout(function () {
-        $campo = $("#campo-telefone").val();
+        $campo = $("#campo-passaporte").val();
         if ($campo.length < 8) {
             $resultado = false;
         } else {
             $resultado = true;
         }
         Cor("campo-passaporte", $resultado);
+    });
+
+    $("#campo-endereco").focusout(function () {
+        $campo = $("#campo-endereco").val();
+        if ($campo.length >= 5) {
+            $resultado = true;
+        } else {
+            $resultado = false;
+        }
+        Cor("campo-endereco", $resultado);
+        VerificaParaSalvar();
     });
     //#endregion
 });

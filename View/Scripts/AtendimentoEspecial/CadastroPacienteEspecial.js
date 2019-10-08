@@ -20,10 +20,10 @@
         $sexo = document.getElementById("campo-sexo").classList.contains('border-success');
         $idade = document.getElementById("campo-idade").classList.contains('border-success');
 
-        $rne = document.getElementById("campo-rne").classList.contains("border-danger");
-        $cep = document.getElementById("campo-cep").classList.contains("border-danger");
-        $telefone = document.getElementById("campo-telefone").classList.contains("border-danger");
-        $passaporte = document.getElementById("campo-passaporte").classList.contains("border-danger");
+        //$rne = document.getElementById("campo-rne").classList.contains("border-danger");
+        //$cep = document.getElementById("campo-cep").classList.contains("border-danger");
+        //$telefone = document.getElementById("campo-telefone").classList.contains("border-danger");
+        //$passaporte = document.getElementById("campo-passaporte").classList.contains("border-danger");
 
 
         $botao = document.getElementById("botao-salvar");
@@ -112,6 +112,9 @@
     //#region CPF
     $("#campo-cpf").focusout(function () {
         $cpf = $("#campo-cpf").val();
+        $cpf = $cpf.replace(".", "");
+        $cpf = $cpf.replace(".", "");
+        $cpf = $cpf.replace("-", "");
         $resultado = validaCPF($cpf);
         if ($resultado == false) {
             var campo = document.getElementById('campo-cpf');
@@ -163,7 +166,7 @@
     //#region Validação outros campos
     $("#campo-rne").focusout(function () {
         $campo = $("#campo-rne").val();
-        if ($campo.length <= 9) {
+        if ($campo.length < 9) {
             $resultado = false;
         } else {
             $resultado = true;
@@ -189,6 +192,17 @@
             $resultado = true;
         }
         Cor("campo-passaporte", $resultado);
+    });
+
+    $("#campo-endereco").focusout(function () {
+        $campo = $("#campo-endereco").val();
+        if ($campo.length >= 5) {
+            $resultado = true;
+        } else {
+            $resultado = false;
+        }
+        Cor("campo-endereco", $resultado);
+        VerificaParaSalvar();
     });
     //#endregion
 });

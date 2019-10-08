@@ -49,24 +49,33 @@
             </div>
         </div>
     </div>
+
     <div class="row">
         <div class="col-12">
             <label class="font-weight-bold" for="campo-observacao">Observação</label>
             <textarea class="form-control border-info" id="campo-observacao" name="observacao" maxlength="150"></textarea>
         </div>
     </div>
+
     @if ((Session["usuarioLogadoPermissao"].ToString() == "3") || (Session["usuarioLogadoPermissao"].ToString() == "4"))
     {
         if (ViewBag.Paciente.Lingua != 1)
         {
-                <a class="btn btn-primary pull-right mt-4" href="/atendimentoespecial/partecorpoespecial?idAtendimento=@ViewBag.Atendimento.Id"><i class="fa fa-plus"></i> Adicionar Sintomas</a>
 
             <div class="row">
                 <div class="col-12">
-                    <table class="table table-primary table-hover table-bordered text-dark mt-4">
+
+                    <h3>Lista de Sintomas</h3>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-9">
+                    <table class="table table-primary table-hover table-bordered text-dark mt-0">
                         <thead class="bg-dark">
                             <tr>
                                 <td>Sintoma</td>
+                                <td>Nivel de Dor</td>
                             </tr>
                         </thead>
                         <tbody></tbody>
@@ -75,27 +84,35 @@
                         {
                             if (ViewBag.NivelDor[i].NiverDor == 2)
                             {
-                                <tr class="bg-yellow-900 text-white">
+                                <tr>
                                     <td>@ViewBag.Sintomas[i].Nome</td>
+                                    <td>Médio</td>
                                 </tr>
                             }
                             else if (ViewBag.NivelDor[i].NiverDor == 3)
                             {
-                                <tr class="bg-red-900 text-white">
+                                <tr>
                                     <td>@ViewBag.Sintomas[i].Nome</td>
+                                    <td>Alto</td>
                                 </tr>
                             }
                             else
                             {
                                 <tr>
                                     <td>@ViewBag.Sintomas[i].Nome</td>
+                                    <td>Baixo</td>
                                 </tr>
                             }
                         }
                     </table>
-
+                </div>
+                <div class="col-3">
+                    <div>
+                        <a class="btn btn-primary pull-right" href="/atendimentoespecial/partecorpoespecial?idAtendimento=@ViewBag.Atendimento.Id"><i class="fa fa-plus"></i> Adicionar Sintomas</a>
+                    </div>
                 </div>
             </div>
+
         }
 
         <div class="row">

@@ -29,12 +29,12 @@
         <form action="/atendimentoespecial/inserirpaciente" method="post" class="form-group mt-20">
             <div class="row">
                 <div class="col-6">
-                    <label class="font-weight-bold" for="campo-nome">@View.Resources.Resource.Nome</label>
-                    <input type="text" id="campo-nome" name="nome" class="form-control border-info" maxlength="100" required="">
+                    <label class="font-weight-bold" for="campo-nome">@View.Resources.Resource.Nome<a class="text-danger">*</a></label>
+                    <input type="text" id="campo-nome" name="nome" class="form-control border-info" maxlength="100" required>
                 </div>
 
                 <div class="col-3">
-                    <label class="font-weight-bold" for="campo-sexo">@View.Resources.Resource.Sexo</label>
+                    <label class="font-weight-bold" for="campo-sexo">@View.Resources.Resource.Sexo<a class="text-danger">*</a></label>
                     <select id="campo-sexo" name="sexo" class="form-control border-info">
                         <option value="true">@View.Resources.Resource.Feminino</option>
                         <option value="false">@View.Resources.Resource.Masculino</option>
@@ -42,12 +42,11 @@
                 </div>
 
                 <div class="col-3">
-                    <label class="font-weight-bold" for="campo-idade">@View.Resources.Resource.Idade</label>
-                    <input type="number" min="0" id="campo-idade" name="idade" maxlength="3" class="form-control border-info" />
+                    <label class="font-weight-bold" for="campo-idade">@View.Resources.Resource.Idade<a class="text-danger">*</a></label>
+                    <input type="number" id="campo-idade" name="idade" maxlength="3" class="form-control border-info" required />
 
                 </div>
             </div>
-
 
             <!------------------------------>
             <div class="row">
@@ -81,12 +80,10 @@
                     <input type="text" placeholder="00000-000" id="campo-cep" name="cep" maxlength="9" class="form-control border-info" />
                 </div>
 
-
                 <div class="col-4">
                     <label class="font-weight-bold" for="campo-endereco">@View.Resources.Resource.Endereço</label>
                     <input type="text" id="campo-endereco" name="endereco" required="" class="form-control border-info" maxlength="100" />
                 </div>
-
 
             </div>
 
@@ -98,13 +95,12 @@
             <button id="botao-salvar" type="submit" class="btn btn-success disabled mt-15 float-right" style="margin-top: 5px"><i class="fa fa-save"></i> @View.Resources.Resource.Proximo</button>
         </form>
 
-
         <script src="~/Scripts/Tema/global/vendor/bootstrap/bootstrap.min.js"></script>
         <script src="~/Scripts/Tema/global/vendor/jquery/jquery.min.js"></script>
         <script src="~/Scripts/AtendimentoEspecial/CadastroPacienteEspecial.js"></script>
     </div>
+
+    <script src="~/Scripts/AtendimentoEspecial/CadastroPacienteEspecial.js"></script>
 </body>
 
 </html>
-
-

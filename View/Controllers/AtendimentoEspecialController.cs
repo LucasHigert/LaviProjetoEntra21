@@ -235,14 +235,7 @@ namespace View.Controllers
                     Funcionario funcionario = funcionarioRepository.ObterPeloId(Convert.ToInt32(Session["usuarioLogadoId"]));
                     atendimento.IdPosto = funcionario.IdPosto;
                     atendimentoRepository.Inserir(atendimento);
-                    if (Session["usuarioLogadoPermissao"].ToString() == "1")
-                    {
-                        return Redirect("/atendimentoespecial/FinalizaCadastro?id=" + idPaciente);
-                    }
-                    else
-                    {
                         return Redirect("/atendimentoespecial/ParteCorpoEspecial?idAtendimento=" + atendimento.Id);
-                    }
                 }
                 else
                 {
@@ -270,11 +263,11 @@ namespace View.Controllers
                     string cookie = Request.Cookies["Language"].Value;
                     if (cookie == "fr-HT")
                     {
-                        paciente.Lingua = 1;
+                        paciente.Lingua = 2;
                     }
                     else if (cookie == "fr-FR")
                     {
-                        paciente.Lingua = 2;
+                        paciente.Lingua = 3;
                     }
                     else
                     {
@@ -305,22 +298,12 @@ namespace View.Controllers
 
                     atendimentoRepository.Inserir(atendimento);
 
-                    if (Session["usuarioLogadoPermissao"].ToString() == "1")
-                    {
-                        return Redirect("/atendimentoespecial/FinalizaCadastro?id=" + paciente.Id);
-                    }
-                    else
-                    {
-
-                        return Redirect("/atendimentoespecial/ParteCorpoEspecial?idAtendimento=" + atendimento.Id);
-                    }
+                    return Redirect("/atendimentoespecial/ParteCorpoEspecial?idAtendimento=" + atendimento.Id);
                 }
                 else
                 {
                     return Redirect("/login/jaexiste");
                 }
-
-
             }
             else
             {
@@ -329,52 +312,53 @@ namespace View.Controllers
 
         }
 
-        #region Telas
-        public ActionResult BuscaPaciente()
-        {
-            if (VerificaLogado() == true)
-            {
-                return View();
-            }
-            else
-            {
-                return Redirect("/login");
-            }
-        }
 
-        public ActionResult CadastroPacienteEspecial()
+    #region Telas
+    public ActionResult BuscaPaciente()
+    {
+        if (VerificaLogado() == true)
         {
-            if (VerificaLogado() == true)
-            {
-                return View();
-            }
-            else
-            {
-                return Redirect("/login");
-            }
-        }
-
-        public ActionResult FinalizaCadastro(int id)
-        {
-            ViewBag.Atendimento = id;
             return View();
         }
-
-        [HttpPost]
-        public ActionResult InserirObservacao(int id, string observacao)
+        else
         {
-            if (observacao == null)
-            {
-                observacao = "";
-            }
-            AtendimentoRepository atendimentoRepository = new AtendimentoRepository();
-            Atendimento atendimentoOriginal = atendimentoRepository.ObterPeloId(id);
-            atendimentoOriginal.Observacao = observacao;
-            atendimentoRepository.Alerar(atendimentoOriginal);
-            return Redirect("/atendimento");
+            return Redirect("/login");
         }
-        #endregion
-
-        #endregion
     }
+
+    public ActionResult CadastroPacienteEspecial()
+    {
+        if (VerificaLogado() == true)
+        {
+            return View();
+        }
+        else
+        {
+            return Redirect("/login");
+        }
+    }
+
+    public ActionResult FinalizaCadastro(int id)
+    {
+        ViewBag.Atendimento = id;
+        return View();
+    }
+
+    [HttpPost]
+    public ActionResult InserirObservacao(int id, string observacao)
+    {
+        if (observacao == null)
+        {
+            observacao = "";
+        }
+        AtendimentoRepository atendimentoRepository = new AtendimentoRepository();
+        Atendimento atendimentoOriginal = atendimentoRepository.ObterPeloId(id);
+        atendimentoOriginal.Observacao = observacao;
+        atendimentoRepository.Alerar(atendimentoOriginal);
+        return Redirect("/atendimento");
+    }
+    #endregion
+
+    #endregion
+}
 }
